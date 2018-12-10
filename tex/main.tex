@@ -1,0 +1,62 @@
+\documentclass[grad,numbers]{coppe} %Universal input encoding G.L.
+
+\input{preamble}
+
+\input{glossaires_et_symb}
+
+\makelosymbols
+\makeloabbreviations
+
+% \final
+\draft
+\begin{document}
+
+  \title{Título da Tese}
+  \foreigntitle{Thesis Title}
+  \author{Rafael Accácio}{Nogueira}
+  \advisor{Prof.}{Marcos Vicente}{de Brito Moreira}{D.Sc.}
+  % \advisor{Prof.}{Nome do Segundo Orientador}{Sobrenome}{Ph.D.}
+  % \advisor{Prof.}{Nome do Terceiro Orientador}{Sobrenome}{D.Sc.}
+
+  \examiner{Prof.}{Nome do Primeiro Examinador Sobrenome}{D.Sc.}
+  \examiner{Prof.}{Nome do Segundo Examinador Sobrenome}{Ph.D.}
+  \examiner{Prof.}{Nome do Terceiro Examinador Sobrenome}{D.Sc.}
+  \department{ECA}
+
+  \date{03}{2019}
+
+  \keyword{Primeira palavra-chave}
+  
+  \maketitle
+
+  \frontmatter
+
+% \includepdf{../figures/frontpage.pdf} %frontpage assinada pela banca
+  \makefrontpage\warning{TURN DEBUG OFF}\newpage
+
+  \makecatalog
+  \include{frontMatter/dedicatoria}
+  \include{frontMatter/thanks}
+  \include{frontMatter/resumo}
+  \include{frontMatter/abstract}
+
+  \tableofcontents
+  \listoffigures
+  \listoftables
+  \printlosymbols
+  \printloabbreviations
+
+  \mainmatter
+  \include{mainMatter/chap01}
+  \include{mainMatter/chap02}
+  \include{mainMatter/chap03}
+  \include{mainMatter/chap04}
+  \include{mainMatter/chap05}
+
+  \backmatter
+  \bibliographystyle{coppe-unsrt}
+  \bibliography{thesis}
+
+  \appendix
+  \include{appendices/appenA}
+\end{document}

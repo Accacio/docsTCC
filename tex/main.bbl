@@ -1,0 +1,67 @@
+\begin{thebibliography}{9}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+\newcommand{\enquote}[1]{``#1''}
+
+\bibitem[\MakeUppercase{Abraham}\emph{ et~al.}(1988)Abraham, Marsden, e
+  Ratiu]{book-example}
+\MakeUppercase{Abraham, R., Marsden, J.~E., Ratiu, T.}
+\newblock \emph{Manifolds, Tensor Analysis, and Applications}.
+\newblock 2 ed. New York, Springer-Verlag, 1988.
+
+\bibitem[\MakeUppercase{Iesan}(1996)Iesan]{article-example}
+\MakeUppercase{Iesan, D.}
+\newblock \enquote{Existence Theorems in the Theory of Mixtures}, \emph{Journal
+  of Elasticity}, v.~42, n.~2, \penalty0 pp.~145--163, fev. 1996.
+
+\bibitem[\MakeUppercase{Maestrello}(1976)Maestrello]{techreport-example}
+\MakeUppercase{Maestrello, L.}
+\newblock \emph{Two-Point Correlations of Sound Pressure in the Far Field of a
+  Jet: Experiment}.
+\newblock {NASA} {TM}~{X}-72835, 1976.
+
+\bibitem[\MakeUppercase{Garret}(1977)Garret]{techreport-exampleIn}
+\MakeUppercase{Garret, D.~A.}
+\newblock \emph{The Microscopic Detection of Corrosion in Aluminum Aircraft
+  Structures with Thermal Neutron Beams and Film Imaging Methods}.
+\newblock In: Report NBSIR 78-1434, National Bureau of Standards, Washington,
+  D.C., 1977.
+
+\bibitem[\MakeUppercase{Gurtin}(1977)Gurtin]{inproceedings-example}
+\MakeUppercase{Gurtin, M.~E.}
+\newblock \enquote{On the nonlinear theory of elasticity}. In:
+  \emph{Proceedings of the International Symposium on Continuum Mechanics and
+  Partial Differential Equations: Contemporary Developments in Continuum
+  Mechanics and Partial Differential Equations}, pp. 237--253, Rio de Janeiro,
+  ago. 1977.
+
+\bibitem[\MakeUppercase{Cowin}(1987)Cowin]{incollection-example}
+\MakeUppercase{Cowin, S.~C.}
+\newblock \enquote{Adaptive Anisotropy: An Example in Living Bone}. In:
+  \emph{Non-Classical Continuum Mechanics}, v. 122, \emph{London Mathematical
+  Society Lecture Note Series}, Cambridge University Press, pp. 174--186, 1987.
+
+\bibitem[\MakeUppercase{Edwards}(1976)Edwards]{inbook-example}
+\MakeUppercase{Edwards, D.~K.}
+\newblock \enquote{Thermal Radiation Measurements}. In: Eckert, E. R.~G.,
+  Goldstein, R.~J. (Eds.), \emph{Measurements in Heat Transfer}, 2 ed.,
+  cap.~10, New York, USA, Hemisphere Publishing Corporation, 1976.
+
+\bibitem[\MakeUppercase{Tuntomo}(1990)Tuntomo]{mastersthesis-example}
+\MakeUppercase{Tuntomo, A.}
+\newblock \emph{Transport Phenomena in a Small Particle with Internal Radiant
+  Absorption}.
+\newblock {Ph.D.} dissertation, University of California at Berkeley, Berkeley,
+  California, USA, 1990.
+
+\bibitem[\MakeUppercase{Paes~Junior}(1994)Paes~Junior]{phdthesis-example}
+\MakeUppercase{Paes~Junior, H.~R.}
+\newblock \emph{Influ{\^e}ncia da Espessura da Camada Intr{\'i}nseca e Energia
+  do Foton na Degrada{\c c}\~ao de C{\'e}lulas Solares de Sil{\'i}cio Amorfo
+  Hidrogenado}.
+\newblock Tese de {D.Sc.}, COPPE/UFRJ, Rio de Janeiro, RJ, Brasil, 1994.
+
+\end{thebibliography}
