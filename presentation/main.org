@@ -7,4 +7,4 @@
 #+BEAMER_THEME: default
 #+LATEX_CLASS: beamer
 
-* Test
+* clear
