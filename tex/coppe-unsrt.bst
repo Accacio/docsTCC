@@ -1295,9 +1295,10 @@ FUNCTION {bib.sort.order}
 { sort.label  'sort.key$ :=
 }
 
-ITERATE {bib.sort.order}
+% Sorts by appearance
+% ITERATE {bib.sort.order}
 
-SORT
+% SORT
 
 FUNCTION {begin.bib}
 {   preamble$ empty$
