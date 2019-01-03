@@ -1,6 +1,6 @@
 %
 % This is file `coppe-unsrt.bst',
-% A modification of `unsrtnat.bst' for use with natbib package 
+% A modification of `unsrtnat.bst' for use with natbib package
 %
 % Numbered BibTeX style for using with CoppeTeX package.
 % It is Natbib compatible.
@@ -219,7 +219,7 @@ FUNCTION {format.names}
 		{
 		  numnames #3 >
 		    {
-			", " * "\MakeLowercase{et~al.}" * 
+			", " * "\MakeLowercase{et al.}" *
 			#1 'namesleft :=
 		    }
 		    { ", " * t * }

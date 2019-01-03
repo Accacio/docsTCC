@@ -1,4 +1,4 @@
-\documentclass[grad,numbers]{coppe} %Universal input encoding G.L.
+\documentclass[grad]{coppe} %Universal input encoding G.L.
 
 \input{preamble}
 
@@ -25,8 +25,8 @@
 
   \date{03}{2019}
 
-  \keyword{Primeira palavra-chave}
-  
+  \keyword{Diagnóstico de Falhas}
+  \keyword{Sistemas a Eventos Discretos}
   \maketitle
 
   \frontmatter
@@ -41,22 +41,50 @@
   \include{frontMatter/abstract}
 
   \tableofcontents
+
   \listoffigures
   \listoftables
   \printlosymbols
   \printloabbreviations
 
   \mainmatter
+  
   \include{mainMatter/chap01}
   \include{mainMatter/chap02}
   \include{mainMatter/chap03}
   \include{mainMatter/chap04}
   \include{mainMatter/chap05}
+  na transição
+
+  \begin{table}[H]
+    \centering
+    \begin{tabular}{cc}
+      \label{tab:tab1}                                                              
+      \hypertarget{tab:1}{}
+      Transição&Significado\\
+      \hline \\
+      \hyperlink{net:1}{$t_{1}$}&Test
+                                                                
+                                                                
+    \end{tabular}
+    \caption{table}
+  \end{table}
+
+  
+
+
+
+
+
 
   \backmatter
   \bibliographystyle{coppe-unsrt}
-  \bibliography{thesis}
+  \todo[Fazer Bibliografia]{
+    \nocite{*}
+    \bibliography{thesis}
+  }
 
+  
   \appendix
   \include{appendices/appenA}
 \end{document}

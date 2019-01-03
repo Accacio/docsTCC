@@ -23,6 +23,31 @@
 \usepackage{ladder} %https://github.com/AurelienC/tex-ladder/blob/master/ladder.sty
 \usetikzlibrary{arrows,shapes,automata,petri}
 
+\tikzset{
+  place/.style={
+    circle,
+    thick,
+    draw=black!100, % draw=blue!75,
+    % fill=blue!20,
+    minimum size=6mm
+  },
+  transition/.style={
+    rectangle,
+    thick,
+    fill=black,
+    minimum width=8mm,
+    inner ysep=0.7pt
+  },
+  timedtransition/.style={
+    rectangle,
+    thick,
+    fill=black,
+    minimum width=8mm,
+    inner ysep=2pt
+  },
+  inhibitor/.style={-o},
+  text/.style={}
+}
 
 \definecolor{darkblue}{rgb}{0,0,0.1}
 \definecolor{blue}{rgb}{0,0,0.5}
@@ -31,19 +56,19 @@
 % hyperref setup
 
 \hypersetup{
-    % pdftitle={\title},
-    pdfauthor={Rafael Accacio Nogueira},
-    bookmarksnumbered=true,     
-    bookmarksopen=true,         
-    bookmarksopenlevel=1,       
-    colorlinks=true,
-    linkcolor=darkblue,
-    filecolor=red,  
-    urlcolor=blue,  
-    citecolor=blue,              
-    pdfstartview=Fit,          
-    pdfpagemode=UseOutlines,    % this is the option you were lookin for
-    pdfpagelayout=TwoPageRight,
+  % pdftitle={\title},
+  pdfauthor={Rafael Accacio Nogueira},
+  bookmarksnumbered=true,     
+  bookmarksopen=true,         
+  bookmarksopenlevel=1,       
+  colorlinks=true, % false => boxes 
+  linkcolor=darkblue,
+  filecolor=red,  
+  urlcolor=blue,  
+  citecolor=blue,              
+  pdfstartview=Fit,          
+  pdfpagemode=UseOutlines,    % this is the option you were lookin for
+  pdfpagelayout=TwoPageRight,
 }
 
 \let\oldsection\section
@@ -88,14 +113,14 @@
 \newcommand\warning[1]{\ifdebug {\color{red}#1}\fi}
 \newcommand\note[1]{\ifdebug {\color{orange}#1}\fi}
 
-% \usepackage{fancyhdr}
-% \pagestyle{plain}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
 
-% \fancyhead[L]{\warning{DRAFT}}
-% \fancyhead[R]{\warning{DEBUG ON}}
+\fancyhead[L]{\warning{DRAFT}}
+\fancyhead[R]{\warning{DEBUG ON}}
 
-% \fancyfoot[L]{\warning{TURN DEBUG OFF}}
-% \fancyfoot[R]{\warning{DRAFT}}
+\fancyfoot[L]{\warning{TURN DEBUG OFF}}
+\fancyfoot[R]{\warning{DRAFT}}
 
 \newtheorem{example}{Exemplo}
 \numberwithin{example}{chapter}
@@ -105,64 +130,6 @@
 
 \newtheorem{observation}{Observação}
 %\numberwithin{observation}{chapter}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 %%% Local Variables:
 %%% mode: latex

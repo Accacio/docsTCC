@@ -39,36 +39,104 @@
   text/.style={}
 }
 
+
+
+
 \renewcommand{\netTitle}{netTeste}
 \tikzsetnextfilename{\netTitle}
 \begin{dot2tex}[mathmode,autosize,outputdir="aux/",file="\netTitle"]
   digraph A {
     rankdir=LR;
 
-    subgraph place {
-      node [style="place, tokens=0",label=""];
-      p1 [style="place,label=below:$p_1$"]
-      p2 [style="label=below:$p_2$,place, tokens=0",label=6]
+    p0 [style="place,tokens=1 ,label=above:,label=below:$p_{0}$",label=""]
+    p1 [style="place,label=above:,label=below:$p_{1}$",label=""]
+    p2 [style="place,label=above:,label=below:$p_{2}$",label=""]
+    p3 [style="place,label=above:,label=below:$p_{3}$",label=""]
+    p4 [style="place,label=above:,label=below:$p_{4}$",label=""]
+    p5 [style="place,label=above:,label=below:$p_{5}$",label=""]
+    p6 [style="place,label=above:,label=below:$p_{6}$",label=""]
+    p7 [style="place,label=above:,label=below:$p_{7}$",label=""]
+    p8 [style="place,label=above:,label=below:$p_{8}$",label=""]
+    p9 [style="place,label=above:,label=below:$p_{9}$",label=""]
+    p10 [style="place,label=above:,label=below:$p_{10}$",label=""]
+    p11 [style="place,label=above:,label=below:$p_{11}$",label=""]
+    p12 [style="place,label=above:,label=below:$p_{12}$",label=""]
+    p13 [style="place,label=above:,label=below:$p_{13}$",label=""]
+    p14 [style="place,label=above:,label=below:$p_{14}$",label=""]
+    p15 [style="place,label=above:,label=below:$p_{15}$",label=""]
+    p16 [style="place,label=above:,label=below:$p_{16}$",label=""]
+    p17 [style="place,label=above:,label=below:$p_{17}$",label=""]
 
-    }
-    
-    subgraph transitions {
-      node [style="transition, label=left:$t_1$,rotate=90",label=""];
-      t1 
 
-    }
 
-    subgraph timedTransitions {
-      node [style="timedtransition, rotate=90, label=left:$t_2$",height=0.5,label="",xlabel="\N",fillcolor="white",width=0.2];
-      t2 
+    t0  [style="transition, label=above:, label=left:$t_{0}$,rotate=90",label=""]
+    t1  [style="transition, label=above:, label=left:$t_{1}$,rotate=90",label=""]
+    t2  [style="transition, label=above:, label=left:$t_{2}$,rotate=90",label=""]
+    t3  [style="transition, label=above:, label=left:$t_{3}$,rotate=90",label=""]
+    t4  [style="transition, label=above:, label=left:$t_{4}$,rotate=90",label=""]
+    t5  [style="transition, label=above:, label=left:$t_{5}$,rotate=90",label=""]
+    t6  [style="transition, label=above:, label=left:$t_{6}$,rotate=90",label=""]
+    t7  [style="timedtransition, label=above:, label=left:$t_{7}$,rotate=90",label=""]
+    t8  [style="transition, label=above:, label=left:$t_{8}$,rotate=90",label=""]
+    t9  [style="timedtransition, label=above:, label=left:$t_{9}$,rotate=90",label=""]
+    t10  [style="transition, label=above:, label=left:$t_{10}$,rotate=90",label=""]
+    t11  [style="transition, label=above:, label=left:$t_{11}$,rotate=90",label=""]
 
-    }
 
-    p1 -> t1 [label=2,weight=0.2]
-    t1 -> p2 
-    p2 -> t1
-    t2 -> p1 [topath="bend left"]
+    p0 -> t0
+    t0 -> p1
+    t0 -> p3
+    t0 -> p5
+    t0 -> p7
+    t0 -> p9
+    t0 -> p12
+
+    p1 -> t1
+    p3 -> t2
+    p5 -> t3
+    p7 -> t4
+    p9 -> t5
+
+    t1 -> p2
+    t2 -> p4
+    t3 -> p6
+    t4 -> p8
+    t5 -> p10
+
+
+    p2 -> t6
+    p4 -> t6
+    p6 -> t6
+    p8 -> t6
+    p10 -> t6
+
+    p11 -> t7
+
+    t7 -> p13
+    p13 -> t8
+
+
+    t6 -> p11
+    p12 -> t8
+
+    t0 -> p14
+    t9 -> p15
+    t10 -> p16
+    t11 -> p17
+
+    p14 -> t9
+    p15 -> t10
+    p16 -> t11
+    p17 -> t8   
+
   }  
 \end{dot2tex}
+
+
+
+    % t1  [style="transition, label=above:,
+    % label=left:\hyperlink{tab:1}{$t_{1}$},rotate=90",label=""]
+
+
 
 \end{document}
