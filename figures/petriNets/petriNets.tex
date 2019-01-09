@@ -66,8 +66,17 @@
     p15 [style="place,label=above:,label=below:$p_{15}$",label=""]
     p16 [style="place,label=above:,label=below:$p_{16}$",label=""]
     p17 [style="place,label=above:,label=below:$p_{17}$",label=""]
-
-
+    p18 [style="place,label=above:,label=below:$p_{18}$",label=""]
+    p19 [style="place,label=above:,label=below:$p_{19}$",label=""]
+    p20 [style="place,label=above:,label=below:$p_{20}$",label=""]
+    p21 [style="place,label=above:,label=below:$p_{21}$",label=""]
+    p22 [style="place,label=above:,label=below:$p_{22}$",label=""]
+    p23 [style="place,label=above:,label=below:$p_{23}$",label=""]
+    p24 [style="place,label=above:,label=below:$p_{24}$",label=""]
+    p25 [style="place,label=above:,label=below:$p_{25}$",label=""]
+    p26 [style="place,label=above:,label=below:$p_{26}$",label=""]
+    p27 [style="place,label=above:,label=below:$p_{27}$",label=""]
+    p28 [style="place,label=above:,label=below:$p_{28}$",label=""]
 
     t0  [style="transition, label=above:, label=left:$t_{0}$,rotate=90",label=""]
     t1  [style="transition, label=above:, label=left:$t_{1}$,rotate=90",label=""]
@@ -81,6 +90,15 @@
     t9  [style="timedtransition, label=above:, label=left:$t_{9}$,rotate=90",label=""]
     t10  [style="transition, label=above:, label=left:$t_{10}$,rotate=90",label=""]
     t11  [style="transition, label=above:, label=left:$t_{11}$,rotate=90",label=""]
+    t12  [style="transition, label=above:, label=left:$t_{12}$,rotate=90",label=""]
+    t13  [style="transition, label=above:, label=left:$t_{13}$,rotate=90",label=""]
+    t14  [style="transition, label=above:, label=left:$t_{14}$,rotate=90",label=""]
+    t15  [style="timedtransition, label=above:, label=left:$t_{15}$,rotate=90",label=""]
+    t16  [style="transition, label=above:, label=left:$t_{16}$,rotate=90",label=""]
+    t17  [style="timedtransition, label=above:, label=left:$t_{17}$,rotate=90",label=""]
+    t18  [style="transition, label=above:, label=left:$t_{18}$,rotate=90",label=""]
+    t19  [style="transition, label=above:, label=left:$t_{19}$,rotate=90",label=""]
+    t20  [style="transition, label=above:, label=left:$t_{20}$,rotate=90",label=""]
 
 
     p0 -> t0
@@ -127,7 +145,34 @@
     p14 -> t9
     p15 -> t10
     p16 -> t11
-    p17 -> t8   
+    p17 -> t8
+
+
+    t0 -> p18
+    t12 -> p19
+    t12 -> p21
+    t13 -> p20
+    t14 -> p22
+    t15 -> p23
+    t16 -> p24
+    t17 -> p27
+    t17 -> p25
+    t18 -> p25
+    t18 -> p26
+    t20 -> p28
+
+
+    p18 -> t12
+    p19 -> t13
+    p21 -> t14
+    p20 -> t15
+    p22 -> t15
+    p23 -> t16
+    p24 -> t17
+    p25 -> t18
+    p26 -> t19
+    p27 -> t20
+    p28 -> t8
 
   }  
 \end{dot2tex}

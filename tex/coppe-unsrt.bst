@@ -955,6 +955,24 @@ FUNCTION {manual}
   fin.entry
 }
 
+FUNCTION {graduation}
+{ output.bibitem
+  format.authors "author" output.check
+  author format.key output
+  new.block
+  format.btitle "title" output.check
+  new.block
+  "Projeto de Graduação" format.thesis.type output.nonnull
+  school "school" output.check
+  address output
+  format.date "year" output.check
+  format.url output
+  format.access output
+  new.block
+  note output
+  fin.entry
+}
+
 FUNCTION {mastersthesis}
 { output.bibitem
   format.authors "author" output.check
