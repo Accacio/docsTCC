@@ -27,3 +27,14 @@
 *.pdfsync
 *.abx
 *.syx
+
+*.lab
+*.los
+*.nav
+*.snm
+
+
+*.md5
+*.dpth
+*.bpn
+*.auxlock

@@ -1,0 +1,155 @@
+% Created 2019-01-09 Wed 11:32
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{fixltx2e}
+\usepackage{graphicx}
+\usepackage{longtable}
+\usepackage{float}
+\usepackage{wrapfig}
+\usepackage{rotating}
+\usepackage[normalem]{ulem}
+\usepackage{amsmath}
+\usepackage{textcomp}
+\usepackage{marvosym}
+\usepackage{wasysym}
+\usepackage{amssymb}
+\usepackage{hyperref}
+\tolerance=1000
+\author{Rafael Accácio Nogueira}
+\date{\today}
+\title{logica}
+\hypersetup{
+  pdfkeywords={},
+  pdfsubject={},
+  pdfcreator={Emacs 25.2.2 (Org mode 8.2.10)}}
+\begin{document}
+
+\maketitle
+\tableofcontents
+
+\newpage
+\section{Esteira}
+\label{sec-1}
+\begin{center}
+\begin{tabular}{ll}
+t$_{\text{0}}$ & Botão de inicialização\\
+\hline
+t$_{\text{1}}$ & Fim de curso MAG 1 Retraído\\
+t$_{\text{2}}$ & Fim de curso MAG 2 Retraído\\
+t$_{\text{3}}$ & Fim de curso descarte D Retraído\\
+t$_{\text{4}}$ & Fim de curso descarte C Retraído\\
+t$_{\text{5}}$ & Fim de curso descarte E Retraído\\
+t$_{\text{6}}$ & \\
+t$_{\text{7}}$ & T=15s\\
+t$_{\text{8}}$ & \\
+t$_{\text{9}}$ & T=2.5s\\
+t$_{\text{10}}$ & Sensor porta prensa aberta\\
+t$_{\text{11}}$ & Sensor atuador horizontal da prensa estendido\\
+t$_{\text{12}}$ & Sensor atuador horizontal e vertical do armazenador de cubos retraídos\\
+t$_{\text{13}}$ & Fim de curso direito do armazenador de cubos\\
+t$_{\text{14}}$ & Fim de curso inferior do armazenador de cubos\\
+t$_{\text{15}}$ & T=2s\\
+t$_{\text{16}}$ & Sensor Indutivo do braço\\
+t$_{\text{17}}$ & T=2s\\
+ & \\
+\end{tabular}
+\end{center}
+
+
+
+\begin{center}
+\begin{tabular}{ll}
+P$_{\text{0}}$ & Sistema Parado\\
+P$_{\text{1}}$ & Recuar Pistão MAG 1\\
+P$_{\text{2}}$ & Pistão MAG 1 Recuado\\
+P$_{\text{3}}$ & Recuar Pistão MAG 2\\
+P$_{\text{4}}$ & Pistão MAG 2 Recuado\\
+P$_{\text{5}}$ & Recuar pistão de descarte D\\
+P$_{\text{6}}$ & Pistão de descarte D Recuado\\
+P$_{\text{7}}$ & Recuar pistão de descarte C\\
+P$_{\text{8}}$ & Pistão de descarte C Recuado\\
+P$_{\text{9}}$ & Recuar pistão de descarte E\\
+P$_{\text{10}}$ & Pistão de descarte E Recuado\\
+P$_{\text{11}}$ & Ligar esteira sentido reverso\\
+P$_{\text{12}}$ & Resetar Variáveis\footnotemark\\
+P$_{\text{13}}$ & Esteira limpa\\
+P$_{\text{14}}$ & Retrair atuador vertical da prensa\\
+P$_{\text{15}}$ & Levantar porta da prensa\\
+P$_{\text{16}}$ & Estender atuador horizontal da prensa\\
+P$_{\text{17}}$ & Prensa cubo pronto\\
+P$_{\text{18}}$ & Retrair atuadores vertical e horizontal do armazenador de cubos\\
+P$_{\text{19}}$ & Mover armazenador de cubos para direita\\
+P$_{\text{20}}$ & Armazenador pronto na horizontal\\
+P$_{\text{21}}$ & Mover armazenador de cubos para baixo\\
+P$_{\text{22}}$ & Armazenador pronto na vertical\\
+P$_{\text{23}}$ & Girar braço antihorário\footnotemark\\
+P$_{\text{24}}$ & Parar braço\\
+ & \\
+\end{tabular}
+\end{center}\footnotetext[1]{Variáveis de peças requeridas e das peças
+já verificadas}\footnotetext[2]{Verificar sentido de rotação do braço}
+
+\subsection{Inicialização}
+\label{sec-1-1}
+\subsubsection{Retrair todos pistões}
+\label{sec-1-1-1}
+\begin{enumerate}
+\item MAG 1 e 2
+\item Pistões de descarte
+\end{enumerate}
+\subsubsection{Limpar esteira}
+\label{sec-1-1-2}
+\begin{enumerate}
+\item liga esteira reversa
+\item para x segundos depois
+\end{enumerate}
+\subsubsection{Resetar variáveis:}
+\label{sec-1-1-3}
+\begin{enumerate}
+\item Tipos de peças requerida
+\item Tipos de peças verificadas
+\end{enumerate}
+\subsubsection{Setar qual é a primeira peça}
+\label{sec-1-1-4}
+\subsection{Identificação de Peça}
+\label{sec-1-2}
+\subsubsection{Colocar peça}
+\label{sec-1-2-1}
+\begin{enumerate}
+\item Verificar lógica de presença de peça
+\item empurrar pistão e retrair
+\end{enumerate}
+\subsubsection{Ativar Esteira}
+\label{sec-1-2-2}
+\subsubsection{Parar esteira quando trocar o valor do sensor}
+\label{sec-1-2-3}
+\subsubsection{Verificar tipo de peça e colocar numa variável}
+\label{sec-1-2-4}
+\subsection{Triagem de peça}
+\label{sec-1-3}
+\subsubsection{verificar se peça é igual a peça requerida}
+\label{sec-1-3-1}
+\begin{enumerate}
+\item Caso não for, rejeitar usando o pistão correspondente:
+\label{sec-1-3-1-1}
+\begin{enumerate}
+\item Ligar esteira
+\item Parar quando o sensor correspondente ao pistão for ativado
+\item Empurrar pistão correspondente e o retrair
+\item Recomeçar a partir da identificação de peça
+\end{enumerate}
+\item Caso for
+\label{sec-1-3-1-2}
+\begin{enumerate}
+\item ligar esteira
+\item Parar quando sensor fim de curso
+\item Quando peça for retirada setar próxima peça
+\item Recomeçar a partir da identificação de peça
+\end{enumerate}
+\newpage
+\end{enumerate}
+\section{Elevador}
+\label{sec-2}
+% Emacs 25.2.2 (Org mode 8.2.10)
+\end{document}

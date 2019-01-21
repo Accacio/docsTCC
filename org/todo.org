@@ -1,0 +1,5 @@
+* TODO Fazer Rede de Petri
+* TODO Transformar rede de petri em ladder
+* TODO Colocar livro na bibliografia
+* TODO Colocar artigo na bibliografia
+* 

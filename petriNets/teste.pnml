@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<pnml>
+  <net id="n0">
+    <name>
+      <text>Untitled0</text>
+    </name>
+    <place id="p12">
+      <graphics>
+        <position x="205" y="185"/>
+      </graphics>
+      <name>
+        <text>p12</text>
+        <graphics>
+          <offset x="50" y="0"/>
+        </graphics>
+      </name>
+      <initialMarking>
+        <text/>
+      </initialMarking>
+    </place>
+    <place id="p1">
+      <graphics>
+        <position x="115" y="65"/>
+      </graphics>
+      <name>
+        <text>p1</text>
+        <graphics>
+          <offset x="50" y="0"/>
+        </graphics>
+      </name>
+    </place>
+    <arc id="o15" source="t2" target="p12">
+      <expression>
+        <text>1</text>
+      </expression>
+      <graphics>
+        <position x="251" y="110"/>
+        <position x="218" y="163"/>
+      </graphics>
+    </arc>
+    <arc id="i3" source="p1" target="t2">
+      <expression>
+        <text>getTokenSet().size()&gt;0</text>
+      </expression>
+      <expression>
+        <text>1</text>
+      </expression>
+      <graphics>
+        <position x="139" y="72"/>
+        <position x="237" y="100"/>
+      </graphics>
+    </arc>
+    <transition id="t2">
+      <graphics>
+        <position x="255" y="105"/>
+      </graphics>
+      <name>
+        <text>t2</text>
+        <graphics>
+          <offset x="50" y="0"/>
+        </graphics>
+      </name>
+      <guard>
+        <text>return true;</text>
+      </guard>
+    </transition>
+  </net>
+</pnml>
