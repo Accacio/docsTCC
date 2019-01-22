@@ -510,6 +510,8 @@ cluster_2pt1 {
 
 \section{Modulo 2}
 
+\subsection{pt1}
+
 \renewcommand{\netTitle}{modulo2pt1}
 \tikzsetnextfilename{\netTitle}
 \begin{dot2tex}[mathmode,autosize,outputdir="aux/",file="\netTitle"]
@@ -666,6 +668,166 @@ cluster_2pt1 {
 
   }
 \end{dot2tex}
+
+\subsection{pt2}
+
+\renewcommand{\netTitle}{modulo2pt2}
+\tikzsetnextfilename{\netTitle}
+\begin{dot2tex}[mathmode,autosize,outputdir="aux/",file="\netTitle"]
+  digraph A {
+    rankdir=LR;
+    graph [nodesep="0.2", ranksep="0.2"];
+#    ratio="fill";
+#   size="2,1!";
+    margin=0;
+
+    p54 [style="place,label=above:,label=below:$p_{54}$",label=""]
+    p55 [style="place,label=above:,label=below:$p_{55}$",label=""]
+    p56 [style="place,label=above:,label=below:$p_{56}$",label=""]
+    p57 [style="place,label=above:,label=below:$p_{57}$",label=""]
+    p58 [style="place,label=above:,label=below:$p_{58}$",label=""]
+    p59 [style="place,label=above:,label=below:$p_{59}$",label=""]
+    p60 [style="place,label=above:,label=below:$p_{60}$",label=""]
+    p61 [style="place,label=above:,label=below:$p_{61}$",label=""]
+    p62 [style="place,label=above:,label=below:$p_{62}$",label=""]
+    p63 [style="place,label=above:,label=below:$p_{63}$",label=""]
+    p64 [style="place,label=above:,label=below:$p_{64}$",label=""]
+    p65 [style="place,label=above:,label=below:$p_{65}$",label=""]
+    p66 [style="place,label=above:,label=below:$p_{66}$",label=""]
+    p67 [style="place,label=above:,label=below:$p_{67}$",label=""]
+    p68 [style="place,label=above:,label=below:$p_{68}$",label=""]
+    p69 [style="place,label=above:,label=below:$p_{69}$",label=""]
+    p70 [style="place,label=above:,label=below:$p_{70}$",label=""]
+    p71 [style="place,label=above:,label=below:$p_{71}$",label=""]
+    p72 [style="place,label=above:,label=below:$p_{72}$",label=""]
+    p73 [style="place,label=above:,label=below:$p_{73}$",label=""]
+    p74 [style="place,label=above:,label=below:$p_{74}$",label=""]
+    p75 [style="place,label=above:,label=below:$p_{75}$",label=""]
+    p76 [style="place,label=above:,label=below:$p_{76}$",label=""]
+    p77 [style="place,label=above:,label=below:$p_{77}$",label=""]
+
+
+
+    t51  [style="transition, label=above:, label=left:$t_{51}$,rotate=90",label=""]
+    t52  [style="transition, label=above:, label=left:$t_{52}$,rotate=90",label=""]
+    t53  [style="transition, label=above:, label=left:$t_{53}$,rotate=90",label=""]
+    t54  [style="transition, label=above:, label=left:$t_{54}$,rotate=90",label=""]
+    t55  [style="transition, label=above:, label=left:$t_{55}$,rotate=90",label=""]
+    t56  [style="transition, label=above:, label=left:$t_{56}$,rotate=90",label=""]
+    t57  [style="transition, label=above:, label=left:$t_{57}$,rotate=90",label=""]
+    t58  [style="transition, label=above:, label=left:$t_{58}$,rotate=90",label=""]
+    t59  [style="transition, label=above:, label=left:$t_{59}$,rotate=90",label=""]
+    t60  [style="transition, label=above:, label=left:$t_{60}$,rotate=90",label=""]
+    t61  [style="transition, label=above:, label=left:$t_{61}$,rotate=90",label=""]
+    t62  [style="transition, label=above:, label=left:$t_{62}$,rotate=90",label=""]
+    t63  [style="transition, label=above:, label=left:$t_{63}$,rotate=90",label=""]
+    t64  [style="transition, label=above:, label=left:$t_{64}$,rotate=90",label=""]
+    t65  [style="transition, label=above:, label=left:$t_{65}$,rotate=90",label=""]
+    t66  [style="transition, label=above:, label=left:$t_{66}$,rotate=90",label=""]
+    t67  [style="transition, label=above:, label=left:$t_{67}$,rotate=90",label=""]
+    t68  [style="transition, label=above:, label=left:$t_{68}$,rotate=90",label=""]
+    t69  [style="transition, label=above:, label=left:$t_{69}$,rotate=90",label=""]
+    t70  [style="transition, label=above:, label=left:$t_{70}$,rotate=90",label=""]
+    t71  [style="transition, label=above:, label=left:$t_{71}$,rotate=90",label=""]
+    t72  [style="transition, label=above:, label=left:$t_{72}$,rotate=90",label=""]
+    t73  [style="transition, label=above:, label=left:$t_{73}$,rotate=90",label=""]
+    t74  [style="transition, label=above:, label=left:$t_{74}$,rotate=90",label=""]
+    t75  [style="transition, label=above:, label=left:$t_{75}$,rotate=90",label=""]
+    t76  [style="transition, label=above:, label=left:$t_{76}$,rotate=90",label=""]
+    t77  [style="transition, label=above:, label=left:$t_{77}$,rotate=90",label=""]
+    t78  [style="transition, label=above:, label=left:$t_{78}$,rotate=90",label=""]
+    t79  [style="transition, label=above:, label=left:$t_{79}$,rotate=90",label=""]
+
+    # pre
+    p54 -> t51
+    p55 -> t52
+    p56 -> t53
+    p57 -> t54
+    p58 -> t55
+
+    p59 -> t56
+    p60 -> t57
+
+    p59 -> t58
+
+    p61 -> t59
+    p62 -> t60
+
+    p61 -> t61
+    p63 -> t62
+
+    p64 -> t63
+    p65 -> t64
+
+    p64 -> t65
+
+    p66 -> t66
+
+
+    p67 -> {t67 t78}
+
+     p68 -> {t68 t71 t74}
+
+      p69 -> t69
+      p70 -> t70
+
+      p71 -> t72
+      p72 -> t73
+
+      p73 -> t75
+      p74 -> t76
+
+    p75 -> t77
+
+    p76 -> t79
+
+    # post
+
+    t51 -> p55
+    t52 -> p56
+    t53 -> p57
+    t54 -> p58
+
+    t55 -> p59
+
+    t56 -> p60
+    t57 -> p64
+
+    t58 -> p61
+
+    t59 -> p62
+    t60 -> p64
+
+    t61 -> p63
+    t62 -> p64
+
+    t63 -> p65
+    t64 -> p67
+
+    t65 -> p66
+    t66 -> p67
+
+      t67 -> p68
+        t68 -> p69
+        t69 -> p70
+        t70 -> p75
+
+        t71 -> p71
+        t72 -> p72
+        t73 -> p75
+        
+        t74 -> p73
+        t75 -> p74
+        t76 -> p75
+    t77 -> p54
+
+    t78 -> p76
+
+    t79 -> p77
+
+  }
+\end{dot2tex}
+
 
 
 
