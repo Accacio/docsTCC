@@ -60,67 +60,69 @@ po\newpage
 | t_{21}        | Botão Iniciar                                                          |
 
 #+ATTR_LATEX: :caption  \caption{Transições do Módulo 2 pt 1}
-| t_{22}        | Chave de presença de peça Mag1                                         |
-| t_{23}        |                                                                        |
-| t_{24}        | Mag1 Estendido                                                         |
-| t_{25}        | Mag1 Retraído                                                          |
-| t_{26}        | Sensor presença/profundidade                                           |
-| t_{27}        | Sensor Metal                                                           |
-| t_{28}        |                                                                        |
-| t_{29}        | Sensor Plástico                                                        |
-| t_{30}        | Sensor Branco                                                          |
-| t_{31}        |                                                                        |
-| t_{32}        | Sensor Preto                                                           |
-| t_{33}        |                                                                        |
-| t_{34}        | Sensor cima                                                            |
-| t_{35}        |                                                                        |
-| t_{36}        | Sensor baixo                                                           |
-| t_{37}        |                                                                        |
-| t_{38}        | Cset!=Creq v Mset!=Mreq v Oset!=Oreq (peça setada != peça requerida)   |
-| t_{39}        | Sensor presença pistão prata TODO^ Mset=1                              |
-| t_{40}        | Pistão prata estendido                                                 |
-| t_{41}        | Pistão prata retraído                                                  |
-| t_{42}        | Sensor presença pistão branco TODO^ Mset=1                             |
-| t_{43}        | Pistão branco estendido                                                |
-| t_{44}        | Pistão branco retraído                                                 |
-| t_{45}        | Sensor presença pistão preto TODO^ Mset=1                              |
-| t_{46}        | Pistão preto estendido                                                 |
-| t_{47}        | Pistão preto retraído                                                  |
-| t_{48}        | Recomeçar seleção de peça atual                                        |
-| t_{49}        | Cset=Creq ^ Mset=Mreq ^ Oset=Oreq (peça setada = peça requerida)       |
-| t_{50}        | sensor fim esteira                                                     |
+| t_{22} | Chave de presença de peça Mag1                                       |
+| t_{23} |                                                                      |
+| t_{24} | Mag1 Estendido                                                       |
+| t_{25} | Mag1 Retraído                                                        |
+| t_{26} | Sensor presença/profundidade                                         |
+| t_{27} | Sensor Metal                                                         |
+| t_{28} |                                                                      |
+| t_{29} | Sensor Plástico                                                      |
+| t_{30} | Sensor Branco                                                        |
+| t_{31} |                                                                      |
+| t_{32} | Sensor Preto                                                         |
+| t_{33} |                                                                      |
+| t_{34} | Sensor cima                                                          |
+| t_{35} |                                                                      |
+| t_{36} | Sensor baixo                                                         |
+| t_{37} |                                                                      |
+| t_{38} | Cset!=Creq v Mset!=Mreq v Oset!=Oreq (peça setada != peça requerida) |
+| t_{39} | Sensor presença pistão prata TODO^ Mset=1                            |
+| t_{40} | Pistão prata estendido                                               |
+| t_{41} | Pistão prata retraído                                                |
+| t_{42} | Sensor presença pistão branco TODO^ Mset=1                           |
+| t_{43} | Pistão branco estendido                                              |
+| t_{44} | Pistão branco retraído                                               |
+| t_{45} | Sensor presença pistão preto TODO^ Mset=1                            |
+| t_{46} | Pistão preto estendido                                               |
+| t_{47} | Pistão preto retraído                                                |
+| t_{48} | Recomeçar seleção de peça atual                                      |
+| t_{49} | Cset=Creq ^ Mset=Mreq ^ Oset=Oreq (peça setada = peça requerida)     |
+| t_{50} | sensor fim esteira                                                   |
+| t_{51} | Peça retirada                                                        |
 
 #+ATTR_LATEX: :caption  \caption{Transições do Módulo 2 pt 2}
-| t_{51}        | Chave de presença de peça Mag2                                       |
-| t_{52}        |                                                                      |
-| t_{53}        | Mag1 Estendido                                                       |
-| t_{54}        | Mag1 Retraído                                                        |
-| t_{55}        | Sensor presença/profundidade                                         |
-| t_{56}        | Sensor Metal                                                         |
-| t_{57}        |                                                                      |
-| t_{58}        | Sensor Plástico                                                      |
-| t_{59}        | Sensor Branco                                                        |
-| t_{60}        |                                                                      |
-| t_{61}        | Sensor Preto                                                         |
-| t_{62}        |                                                                      |
-| t_{63}        | Sensor cima                                                          |
-| t_{64}        |                                                                      |
-| t_{65}        | Sensor baixo                                                         |
-| t_{66}        |                                                                      |
-| t_{67}        | Cset!=Creq v Mset!=Mreq v Oset!=Oreq (peça setada != peça requerida) |
-| t_{68}        | Sensor presença pistão prata TODO^ Mset=1                            |
-| t_{69}        | Pistão prata estendido                                               |
-| t_{70}        | Pistão prata retraído                                                |
-| t_{71}        | Sensor presença pistão branco TODO^ Mset=1                           |
-| t_{72}        | Pistão branco estendido                                              |
-| t_{73}        | Pistão branco retraído                                               |
-| t_{74}        | Sensor presença pistão preto TODO^ Mset=1                            |
-| t_{75}        | Pistão preto estendido                                               |
-| t_{76}        | Pistão preto retraído                                                |
-| t_{77}        | Recomeçar seleção de peça atual                                      |
-| t_{78}        | Cset=Creq ^ Mset=Mreq ^ Oset=Oreq (peça setada = peça requerida)     |
-| t_{79}        | sensor fim esteira                                                   |
-
+| t_{52} | Chave de presença de peça Mag2                                       |
+| t_{53} |                                                                      |
+| t_{54} | Mag1 Estendido                                                       |
+| t_{55} | Mag1 Retraído                                                        |
+| t_{56} | Sensor presença/profundidade                                         |
+| t_{57} | Sensor Metal                                                         |
+| t_{58} |                                                                      |
+| t_{59} | Sensor Plástico                                                      |
+| t_{60} | Sensor Branco                                                        |
+| t_{61} |                                                                      |
+| t_{62} | Sensor Preto                                                         |
+| t_{63} |                                                                      |
+| t_{64} | Sensor cima                                                          |
+| t_{65} |                                                                      |
+| t_{66} | Sensor baixo                                                         |
+| t_{67} |                                                                      |
+| t_{68} | Cset!=Creq v Mset!=Mreq v Oset!=Oreq (peça setada != peça requerida) |
+| t_{69} | Sensor presença pistão prata TODO^ Mset=1                            |
+| t_{70} | Pistão prata estendido                                               |
+| t_{71} | Pistão prata retraído                                                |
+| t_{72} | Sensor presença pistão branco TODO^ Mset=1                           |
+| t_{73} | Pistão branco estendido                                              |
+| t_{74} | Pistão branco retraído                                               |
+| t_{75} | Sensor presença pistão preto TODO^ Mset=1                            |
+| t_{76} | Pistão preto estendido                                               |
+| t_{77} | Pistão preto retraído                                                |
+| t_{78} | Recomeçar seleção de peça atual                                      |
+| t_{79} | Cset=Creq ^ Mset=Mreq ^ Oset=Oreq (peça setada = peça requerida)     |
+| t_{80} | sensor fim esteira                                                   |
+| t_{81} | peça retirada                                                        |
+|        |                                                                      |
 #+ATTR_LATEX: :caption  \caption{Lugares do Módulo 1}
 | P_{0}         | Sistema Parado                                                  |
 | P_{1}         | Recuar Pistão MAG 1                                             |

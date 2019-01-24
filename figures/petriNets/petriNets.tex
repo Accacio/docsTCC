@@ -547,6 +547,7 @@ cluster_2pt1 {
     p52 [style="place,label=above:,label=below:$p_{52}$",label=""]
     p53 [style="place,label=above:,label=below:$p_{53}$",label=""]
 
+    p54 [style="extPlace,label=above:,label=below:$p_{54}$",label=""]
 
 
     t22  [style="transition, label=above:, label=left:$t_{22}$,rotate=90",label=""]
@@ -578,6 +579,8 @@ cluster_2pt1 {
     t48  [style="transition, label=above:, label=left:$t_{48}$,rotate=90",label=""]
     t49  [style="transition, label=above:, label=left:$t_{49}$,rotate=90",label=""]
     t50  [style="transition, label=above:, label=left:$t_{50}$,rotate=90",label=""]
+    t51  [style="transition, label=above:, label=left:$t_{51}$,rotate=90",label=""]
+
 
     # pre
     p30 -> t22
@@ -666,6 +669,15 @@ cluster_2pt1 {
 
     t50 -> p53
 
+
+    p53 -> t51
+
+# external
+    t51 -> p54
+
+
+
+
   }
 \end{dot2tex}
 
@@ -706,9 +718,8 @@ cluster_2pt1 {
     p76 [style="place,label=above:,label=below:$p_{76}$",label=""]
     p77 [style="place,label=above:,label=below:$p_{77}$",label=""]
 
+    p78 [style="extPlace,label=above:,label=below:$p_{77}$",label=""]
 
-
-    t51  [style="transition, label=above:, label=left:$t_{51}$,rotate=90",label=""]
     t52  [style="transition, label=above:, label=left:$t_{52}$,rotate=90",label=""]
     t53  [style="transition, label=above:, label=left:$t_{53}$,rotate=90",label=""]
     t54  [style="transition, label=above:, label=left:$t_{54}$,rotate=90",label=""]
@@ -737,93 +748,102 @@ cluster_2pt1 {
     t77  [style="transition, label=above:, label=left:$t_{77}$,rotate=90",label=""]
     t78  [style="transition, label=above:, label=left:$t_{78}$,rotate=90",label=""]
     t79  [style="transition, label=above:, label=left:$t_{79}$,rotate=90",label=""]
+    t80  [style="transition, label=above:, label=left:$t_{80}$,rotate=90",label=""]
+    t81  [style="transition, label=above:, label=left:$t_{81}$,rotate=90",label=""]
+
 
     # pre
-    p54 -> t51
-    p55 -> t52
-    p56 -> t53
-    p57 -> t54
-    p58 -> t55
+    p54 -> t52
+    p55 -> t53
+    p56 -> t54
+    p57 -> t55
+    p58 -> t56
 
-    p59 -> t56
-    p60 -> t57
+    p59 -> t57
+    p60 -> t58
 
-    p59 -> t58
+    p59 -> t59
 
-    p61 -> t59
-    p62 -> t60
+    p61 -> t60
+    p62 -> t61
 
-    p61 -> t61
-    p63 -> t62
+    p61 -> t62
+    p63 -> t63
 
-    p64 -> t63
-    p65 -> t64
+    p64 -> t64
+    p65 -> t65
 
-    p64 -> t65
+    p64 -> t66
 
-    p66 -> t66
+    p66 -> t67
 
 
-    p67 -> {t67 t78}
+    p67 -> {t68 t79}
 
-     p68 -> {t68 t71 t74}
+     p68 -> {t69 t72 t75}
 
-      p69 -> t69
-      p70 -> t70
+      p69 -> t70
+      p70 -> t71
 
-      p71 -> t72
-      p72 -> t73
+      p71 -> t73
+      p72 -> t74
 
-      p73 -> t75
-      p74 -> t76
+      p73 -> t76
+      p74 -> t77
 
-    p75 -> t77
+    p75 -> t78
 
-    p76 -> t79
+    p76 -> t80
+
+    p77 -> t81
 
     # post
 
-    t51 -> p55
-    t52 -> p56
-    t53 -> p57
-    t54 -> p58
+    t52 -> p55
+    t53 -> p56
+    t54 -> p57
+    t55 -> p58
 
-    t55 -> p59
+    t56 -> p59
 
-    t56 -> p60
-    t57 -> p64
+    t57 -> p60
+    t58 -> p64
 
-    t58 -> p61
+    t59 -> p61
 
-    t59 -> p62
-    t60 -> p64
+    t60 -> p62
+    t61 -> p64
 
-    t61 -> p63
-    t62 -> p64
+    t62 -> p63
+    t63 -> p64
 
-    t63 -> p65
-    t64 -> p67
+    t64 -> p65
+    t65 -> p67
 
-    t65 -> p66
-    t66 -> p67
+    t66 -> p66
+    t67 -> p67
 
-      t67 -> p68
-        t68 -> p69
-        t69 -> p70
-        t70 -> p75
+      t68 -> p68
+        t69 -> p69
+        t70 -> p70
+        t71 -> p75
 
-        t71 -> p71
-        t72 -> p72
-        t73 -> p75
+        t72 -> p71
+        t73 -> p72
+        t74 -> p75
         
-        t74 -> p73
-        t75 -> p74
-        t76 -> p75
-    t77 -> p54
+        t75 -> p73
+        t76 -> p74
+        t77 -> p75
+    t78 -> p54
 
-    t78 -> p76
+    t79 -> p76
 
-    t79 -> p77
+    t80 -> p77
+
+# external
+
+  t81 -> p78
 
   }
 \end{dot2tex}
