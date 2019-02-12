@@ -6,6 +6,9 @@
     rankdir=LR;
     graph [pad="2", nodesep="0.25", ranksep="0.2"];
     margin=0;
+
+
+# Modulo Iinicialização
     
     p0 [style="place,tokens=1 ,label=above:,label=below:$p_{0}$",label=""]
     p1 [style="place,label=above:,label=below:$p_{1}$",label=""]
@@ -47,106 +50,23 @@
     t5  [style="transition, label=above:, label=left:$t_{5}$,rotate=90",label=""]
     t6  [style="transition, label=above:, label=left:$t_{6}$,rotate=90",label=""]
     t7  [style="timedtransition, label=above:, label=left:$t_{7}$,rotate=90",label=""]
-    t8  [style="transition, label=above:, label=left:$t_{8}$,rotate=90",label=""]
-    t9  [style="timedtransition, label=above:, label=left:$t_{9}$,rotate=90",label=""]
+    t8  [style="timedtransition, label=above:, label=left:$t_{8}$,rotate=90",label=""]
+    t9  [style="transition, label=above:, label=left:$t_{9}$,rotate=90",label=""]
     t10  [style="transition, label=above:, label=left:$t_{10}$,rotate=90",label=""]
     t11  [style="transition, label=above:, label=left:$t_{11}$,rotate=90",label=""]
     t12  [style="transition, label=above:, label=left:$t_{12}$,rotate=90",label=""]
     t13  [style="transition, label=above:, label=left:$t_{13}$,rotate=90",label=""]
-    t14  [style="transition, label=above:, label=left:$t_{14}$,rotate=90",label=""]
-    t15  [style="timedtransition, label=above:, label=left:$t_{15}$,rotate=90",label=""]
-    t16  [style="transition, label=above:, label=left:$t_{16}$,rotate=90",label=""]
-    t17  [style="timedtransition, label=above:, label=left:$t_{17}$,rotate=90",label=""]
+    t14  [style="timedtransition, label=above:, label=left:$t_{14}$,rotate=90",label=""]
+    t15  [style="transition, label=above:, label=left:$t_{15}$,rotate=90",label=""]
+    t16  [style="timedtransition, label=above:, label=left:$t_{16}$,rotate=90",label=""]
+    t17  [style="transition, label=above:, label=left:$t_{17}$,rotate=90",label=""]
     t18  [style="transition, label=above:, label=left:$t_{18}$,rotate=90",label=""]
     t19  [style="transition, label=above:, label=left:$t_{19}$,rotate=90",label=""]
     t20  [style="transition, label=above:, label=left:$t_{20}$,rotate=90",label=""]
     t21  [style="transition, label=above:, label=left:$t_{21}$,rotate=90",label=""]
 
-cluster_1 {
-  label="Modulo  1";
-    p0 -> t0
-    t0 -> p1
-    t0 -> p3
-    t0 -> p5
-    t0 -> p7
-    t0 -> p9
-    t0 -> p12
-
-    p1 -> t1
-    p3 -> t2
-    p5 -> t3
-    p7 -> t4
-    p9 -> t5
-
-    t1 -> p2
-    t2 -> p4
-    t3 -> p6
-    t4 -> p8
-    t5 -> p10
-
-
-    p2 -> t6
-    p4 -> t6
-    p6 -> t6
-    p8 -> t6
-    p10 -> t6
-
-    p11 -> t7
-
-    t7 -> p13
-    p13 -> t8
-
-
-    t6 -> p11
-    p12 -> t8
-
-    t0 -> p14
-    t9 -> p15
-    t10 -> p16
-    t11 -> p17
-
-    p14 -> t9
-    p15 -> t10
-    p16 -> t11
-    p17 -> t8
-
-
-    t0 -> p18
-    t12 -> p19
-    t12 -> p21
-    t13 -> p20
-    t14 -> p22
-    t15 -> p23
-    t16 -> p24
-    t17 -> p27
-    t17 -> p25
-    t18 -> p25
-    t18 -> p26
-    t20 -> p28
-
-
-    p18 -> t12
-    p19 -> t13
-    p21 -> t14
-    p20 -> t15
-    p22 -> t15
-    p23 -> t16
-    p24 -> t17
-    p25 -> t18
-    p26 -> t19
-    p27 -> t20
-    p28 -> t8
-
-    t8 -> p29
-    p29 -> t21 }
-
-    t21->p30
-
-
-
-
-# Modulo2pt1
-
+# Modulo Metal V
+    
     p30 [style="place,label=above:,label=below:$p_{30}$",label=""]
     p31 [style="place,label=above:,label=below:$p_{31}$",label=""]
     p32 [style="place,label=above:,label=below:$p_{32}$",label=""]
@@ -169,16 +89,12 @@ cluster_1 {
     p49 [style="place,label=above:,label=below:$p_{49}$",label=""]
     p50 [style="place,label=above:,label=below:$p_{50}$",label=""]
     p51 [style="place,label=above:,label=below:$p_{51}$",label=""]
-    p52 [style="place,label=above:,label=below:$p_{52}$",label=""]
-    p53 [style="place,label=above:,label=below:$p_{53}$",label=""]
-
-
 
     t22  [style="transition, label=above:, label=left:$t_{22}$,rotate=90",label=""]
     t23  [style="transition, label=above:, label=left:$t_{23}$,rotate=90",label=""]
     t24  [style="transition, label=above:, label=left:$t_{24}$,rotate=90",label=""]
     t25  [style="transition, label=above:, label=left:$t_{25}$,rotate=90",label=""]
-    t26  [style="transition, label=above:, label=left:$t_{26}$,rotate=90",label=""]
+    t26  [style="timedtransition, label=above:, label=left:$t_{26}$,rotate=90",label=""]
     t27  [style="transition, label=above:, label=left:$t_{27}$,rotate=90",label=""]
     t28  [style="transition, label=above:, label=left:$t_{28}$,rotate=90",label=""]
     t29  [style="transition, label=above:, label=left:$t_{29}$,rotate=90",label=""]
@@ -196,266 +112,313 @@ cluster_1 {
     t41  [style="transition, label=above:, label=left:$t_{41}$,rotate=90",label=""]
     t42  [style="transition, label=above:, label=left:$t_{42}$,rotate=90",label=""]
     t43  [style="transition, label=above:, label=left:$t_{43}$,rotate=90",label=""]
-    t44  [style="transition, label=above:, label=left:$t_{44}$,rotate=90",label=""]
+    t44  [style="timedtransition, label=above:, label=left:$t_{44}$,rotate=90",label=""]
     t45  [style="transition, label=above:, label=left:$t_{45}$,rotate=90",label=""]
     t46  [style="transition, label=above:, label=left:$t_{46}$,rotate=90",label=""]
-    t47  [style="transition, label=above:, label=left:$t_{47}$,rotate=90",label=""]
-    t48  [style="transition, label=above:, label=left:$t_{48}$,rotate=90",label=""]
-    t49  [style="transition, label=above:, label=left:$t_{49}$,rotate=90",label=""]
-    t50  [style="transition, label=above:, label=left:$t_{50}$,rotate=90",label=""]
-    t51  [style="transition, label=above:, label=left:$t_{51}$,rotate=90",label=""]
-
-
-    # pre
-    p30 -> t22
-    p31 -> t23
-    p32 -> t24
-    p33 -> t25
-    p34 -> t26
-
-    p35 -> t27
-    p36 -> t28
-
-    p35 -> t29
-
-    p37 -> t30
-    p38 -> t31
-
-    p37 -> t32
-    p39 -> t33
-
-    p40 -> t34
-    p41 -> t35
-
-    p40 -> t36
-
-    p42 -> t37
-
-
-    p43 -> {t38 t49}
-
-     p44 -> {t39 t42 t45}
-
-      p45 -> t40
-      p46 -> t41
-
-      p47 -> t43
-      p48 -> t44
-
-      p49 -> t46
-      p50 -> t47
-
-    p51 -> t48
-
-    p52 -> t50
-
-    # post
-
-    t22 -> p31
-    t23 -> p32
-    t24 -> p33
-    t25 -> p34
-
-    t26 -> p35
-
-    t27 -> p36
-    t28 -> p40
-
-    t29 -> p37
-
-    t30 -> p38
-    t31 -> p40
-
-    t32 -> p39
-    t33 -> p40
-
-    t34 -> p41
-    t35 -> p43
-
-    t36 -> p42
-    t37 -> p43
-
-      t38 -> p44
-        t39 -> p45
-        t40 -> p46
-        t41 -> p51
-
-        t42 -> p47
-        t43 -> p48
-        t44 -> p51
-        
-        t45 -> p49
-        t46 -> p50
-        t47 -> p51
-    t48 -> p30
-
-    t49 -> p52
-
-    t50 -> p53
-
-
-    p53 -> t51
-
-# external
-    t51 -> p54
-
-# Modulo2pt2    
-    p54 [style="place,label=above:,label=below:$p_{54}$",label=""]
-    p55 [style="place,label=above:,label=below:$p_{55}$",label=""]
-    p56 [style="place,label=above:,label=below:$p_{56}$",label=""]
-    p57 [style="place,label=above:,label=below:$p_{57}$",label=""]
-    p58 [style="place,label=above:,label=below:$p_{58}$",label=""]
-    p59 [style="place,label=above:,label=below:$p_{59}$",label=""]
-    p60 [style="place,label=above:,label=below:$p_{60}$",label=""]
-    p61 [style="place,label=above:,label=below:$p_{61}$",label=""]
-    p62 [style="place,label=above:,label=below:$p_{62}$",label=""]
-    p63 [style="place,label=above:,label=below:$p_{63}$",label=""]
-    p64 [style="place,label=above:,label=below:$p_{64}$",label=""]
-    p65 [style="place,label=above:,label=below:$p_{65}$",label=""]
-    p66 [style="place,label=above:,label=below:$p_{66}$",label=""]
-    p67 [style="place,label=above:,label=below:$p_{67}$",label=""]
-    p68 [style="place,label=above:,label=below:$p_{68}$",label=""]
-    p69 [style="place,label=above:,label=below:$p_{69}$",label=""]
-    p70 [style="place,label=above:,label=below:$p_{70}$",label=""]
-    p71 [style="place,label=above:,label=below:$p_{71}$",label=""]
-    p72 [style="place,label=above:,label=below:$p_{72}$",label=""]
-    p73 [style="place,label=above:,label=below:$p_{73}$",label=""]
-    p74 [style="place,label=above:,label=below:$p_{74}$",label=""]
-    p75 [style="place,label=above:,label=below:$p_{75}$",label=""]
-    p76 [style="place,label=above:,label=below:$p_{76}$",label=""]
-    p77 [style="place,label=above:,label=below:$p_{77}$",label=""]
-
-    p78 [style="extPlace,label=above:,label=below:$p_{77}$",label=""]
-
-    t52  [style="transition, label=above:, label=left:$t_{52}$,rotate=90",label=""]
-    t53  [style="transition, label=above:, label=left:$t_{53}$,rotate=90",label=""]
-    t54  [style="transition, label=above:, label=left:$t_{54}$,rotate=90",label=""]
-    t55  [style="transition, label=above:, label=left:$t_{55}$,rotate=90",label=""]
-    t56  [style="transition, label=above:, label=left:$t_{56}$,rotate=90",label=""]
-    t57  [style="transition, label=above:, label=left:$t_{57}$,rotate=90",label=""]
-    t58  [style="transition, label=above:, label=left:$t_{58}$,rotate=90",label=""]
-    t59  [style="transition, label=above:, label=left:$t_{59}$,rotate=90",label=""]
-    t60  [style="transition, label=above:, label=left:$t_{60}$,rotate=90",label=""]
-    t61  [style="transition, label=above:, label=left:$t_{61}$,rotate=90",label=""]
-    t62  [style="transition, label=above:, label=left:$t_{62}$,rotate=90",label=""]
-    t63  [style="transition, label=above:, label=left:$t_{63}$,rotate=90",label=""]
-    t64  [style="transition, label=above:, label=left:$t_{64}$,rotate=90",label=""]
-    t65  [style="transition, label=above:, label=left:$t_{65}$,rotate=90",label=""]
-    t66  [style="transition, label=above:, label=left:$t_{66}$,rotate=90",label=""]
-    t67  [style="transition, label=above:, label=left:$t_{67}$,rotate=90",label=""]
-    t68  [style="transition, label=above:, label=left:$t_{68}$,rotate=90",label=""]
-    t69  [style="transition, label=above:, label=left:$t_{69}$,rotate=90",label=""]
-    t70  [style="transition, label=above:, label=left:$t_{70}$,rotate=90",label=""]
-    t71  [style="transition, label=above:, label=left:$t_{71}$,rotate=90",label=""]
-    t72  [style="transition, label=above:, label=left:$t_{72}$,rotate=90",label=""]
-    t73  [style="transition, label=above:, label=left:$t_{73}$,rotate=90",label=""]
-    t74  [style="transition, label=above:, label=left:$t_{74}$,rotate=90",label=""]
-    t75  [style="transition, label=above:, label=left:$t_{75}$,rotate=90",label=""]
-    t76  [style="transition, label=above:, label=left:$t_{76}$,rotate=90",label=""]
-    t77  [style="transition, label=above:, label=left:$t_{77}$,rotate=90",label=""]
-    t78  [style="transition, label=above:, label=left:$t_{78}$,rotate=90",label=""]
-    t79  [style="transition, label=above:, label=left:$t_{79}$,rotate=90",label=""]
-    t80  [style="transition, label=above:, label=left:$t_{80}$,rotate=90",label=""]
-    t81  [style="transition, label=above:, label=left:$t_{81}$,rotate=90",label=""]
-
-
-    # pre
-    p54 -> t52
-    p55 -> t53
-    p56 -> t54
-    p57 -> t55
-    p58 -> t56
-
-    p59 -> t57
-    p60 -> t58
-
-    p59 -> t59
-
-    p61 -> t60
-    p62 -> t61
-
-    p61 -> t62
-    p63 -> t63
-
-    p64 -> t64
-    p65 -> t65
-
-    p64 -> t66
-
-    p66 -> t67
-
-
-    p67 -> {t68 t79}
-
-     p68 -> {t69 t72 t75}
-
-      p69 -> t70
-      p70 -> t71
-
-      p71 -> t73
-      p72 -> t74
-
-      p73 -> t76
-      p74 -> t77
-
-    p75 -> t78
-
-    p76 -> t80
-
-    p77 -> t81
-
-    # post
-
-    t52 -> p55
-    t53 -> p56
-    t54 -> p57
-    t55 -> p58
-
-    t56 -> p59
-
-    t57 -> p60
-    t58 -> p64
-
-    t59 -> p61
-
-    t60 -> p62
-    t61 -> p64
-
-    t62 -> p63
-    t63 -> p64
-
-    t64 -> p65
-    t65 -> p67
-
-    t66 -> p66
-    t67 -> p67
-
-      t68 -> p68
-        t69 -> p69
-        t70 -> p70
-        t71 -> p75
-
-        t72 -> p71
-        t73 -> p72
-        t74 -> p75
-        
-        t75 -> p73
-        t76 -> p74
-        t77 -> p75
-    t78 -> p54
-
-    t79 -> p76
-
-    t80 -> p77
-
-# external
-
-t81 -> p78
-
-#modulo3
-
-
-  }
+    
+
+
+
+
+
+subgraph cluster_1 {
+  label="Modulo\ Inicialização";
+  labelloc = b
+  style="dashed"
+  # color="red"
+  # pre
+  
+  p0 -> t0
+  
+  p1 -> t1
+  p2 -> t6
+  p3 -> t2
+  p4 -> t6
+  p5 -> t3
+  p6 -> t6
+  p7 -> t4
+  p8 -> t6
+  p9 -> t5
+  p10 -> t6
+  p11 -> t7
+  p12 -> t20
+
+  p13 -> t20
+
+  p14 -> t8
+  p15 -> t9
+  p16 -> t10
+  p17 -> t20
+
+  p18 -> t11
+  p19 -> t12
+  p20 -> t14
+  p21 -> t13
+  p22 -> t14
+  p23 -> t15
+  p24 -> t16
+  p25 -> t17
+  p25 -> t19
+  p26 -> t18
+  p27 -> t19
+  p28 -> t20
+
+  p29 -> t21
+
+# pos
+
+  t0 -> p1
+  t0 -> p3
+  t0 -> p5
+  t0 -> p7
+  t0 -> p9
+  t0 -> p13
+  t0 -> p14
+  t0 -> p18
+
+  t1 -> p2
+  t2 -> p4
+  t3 -> p6
+  t4 -> p8
+  t5 -> p10
+  t6 -> p11
+  t7 -> p12
+
+  t8 -> p15
+  t9 -> p16
+  t10 -> p17
+
+  t11 -> p19
+  t11 -> p21
+  t12 -> p20
+  t13 -> p22
+  t14 -> p23
+  t15 -> p24
+  t16 -> p25
+  t16 -> p27
+  t17 -> p25
+  t17 -> p26
+  t19 -> p28
+
+  t20 -> p29
+}
+t21 -> p30
+
+subgraph cluster_2 {
+  label="Modulo\ Metal"
+  style="dashed"
+  #color="white"
+  labelloc = b
+  margin=0
+  #pre
+
+  p30 -> t22
+  p31 -> t23
+  p32 -> t24
+  p33 -> t25
+  p34 -> t26
+  p35 -> t27  
+  p35 -> t36
+
+  p36 -> t28
+  p36 -> t32
+
+  p37 -> t29
+  p38 -> t30
+  p39 -> t31
+
+  p40 -> t33
+  p41 -> t34
+  p42 -> t35
+
+  p43 -> t41
+
+  p44 -> t37
+  p44 -> t42
+
+  p45 -> t38
+  p46 -> t39
+  p47 -> t40
+
+  p48 -> t43
+  p49 -> t44
+  p50 -> t45
+
+  p51 -> t46
+
+  #pos
+
+  t22 -> p31
+  t23 -> p32
+  t24 -> p33
+  t25 -> p34
+  t26 -> p35
+
+  t27 -> p36
+
+  t28 -> p37
+  t29 -> p38
+  t30 -> p39
+  t31 -> p43
+
+  t32 -> p40
+  t33 -> p41
+  t34 -> p42
+  t35 -> p43
+
+  t36 -> p44
+
+  t37 -> p45
+  t38 -> p46
+  t39 -> p47
+  t40 -> p43
+
+  t41 -> p30 
+
+  t42 -> p48
+  t43 -> p49
+  t44 -> p50
+  t44 -> p51
+
+}
+
+t45 -> p52
+
+# Modulo Plastico branco ^
+
+p52 [style="place,label=above:,label=below:$p_{52}$",label=""]
+p53 [style="place,label=above:,label=below:$p_{53}$",label=""]
+p54 [style="place,label=above:,label=below:$p_{54}$",label=""]
+p55 [style="place,label=above:,label=below:$p_{55}$",label=""]
+p56 [style="place,label=above:,label=below:$p_{56}$",label=""]
+p57 [style="place,label=above:,label=below:$p_{57}$",label=""]
+p58 [style="place,label=above:,label=below:$p_{58}$",label=""]
+p59 [style="place,label=above:,label=below:$p_{59}$",label=""]
+p60 [style="place,label=above:,label=below:$p_{60}$",label=""]
+p61 [style="place,label=above:,label=below:$p_{61}$",label=""]
+p62 [style="place,label=above:,label=below:$p_{62}$",label=""]
+p63 [style="place,label=above:,label=below:$p_{63}$",label=""]
+p64 [style="place,label=above:,label=below:$p_{64}$",label=""]
+p65 [style="place,label=above:,label=below:$p_{65}$",label=""]
+p66 [style="place,label=above:,label=below:$p_{66}$",label=""]
+p67 [style="place,label=above:,label=below:$p_{67}$",label=""]
+p68 [style="place,label=above:,label=below:$p_{68}$",label=""]
+p69 [style="place,label=above:,label=below:$p_{69}$",label=""]
+p70 [style="place,label=above:,label=below:$p_{70}$",label=""]
+p71 [style="place,label=above:,label=below:$p_{71}$",label=""]
+p72 [style="place,label=above:,label=below:$p_{72}$",label=""]
+p73 [style="place,label=above:,label=below:$p_{73}$",label=""]
+
+t47  [style="transition, label=above:, label=left:$t_{47}$,rotate=90",label=""]
+t48  [style="transition, label=above:, label=left:$t_{48}$,rotate=90",label=""]
+t49  [style="transition, label=above:, label=left:$t_{49}$,rotate=90",label=""]
+t50  [style="transition, label=above:, label=left:$t_{50}$,rotate=90",label=""]
+t51  [style="transition, label=above:, label=left:$t_{51}$,rotate=90",label=""]
+t52  [style="transition, label=above:, label=left:$t_{52}$,rotate=90",label=""]
+t53  [style="transition, label=above:, label=left:$t_{53}$,rotate=90",label=""]
+t54  [style="transition, label=above:, label=left:$t_{54}$,rotate=90",label=""]
+t55  [style="transition, label=above:, label=left:$t_{55}$,rotate=90",label=""]
+t56  [style="transition, label=above:, label=left:$t_{56}$,rotate=90",label=""]
+t57  [style="transition, label=above:, label=left:$t_{57}$,rotate=90",label=""]
+t58  [style="transition, label=above:, label=left:$t_{58}$,rotate=90",label=""]
+t59  [style="transition, label=above:, label=left:$t_{59}$,rotate=90",label=""]
+t60  [style="transition, label=above:, label=left:$t_{60}$,rotate=90",label=""]
+t61  [style="transition, label=above:, label=left:$t_{61}$,rotate=90",label=""]
+t62  [style="transition, label=above:, label=left:$t_{62}$,rotate=90",label=""]
+t63  [style="transition, label=above:, label=left:$t_{63}$,rotate=90",label=""]
+t64  [style="transition, label=above:, label=left:$t_{64}$,rotate=90",label=""]
+t65  [style="transition, label=above:, label=left:$t_{65}$,rotate=90",label=""]
+t66  [style="transition, label=above:, label=left:$t_{66}$,rotate=90",label=""]
+t67  [style="transition, label=above:, label=left:$t_{67}$,rotate=90",label=""]
+t68  [style="transition, label=above:, label=left:$t_{68}$,rotate=90",label=""]
+t69  [style="transition, label=above:, label=left:$t_{69}$,rotate=90",label=""]
+t70  [style="transition, label=above:, label=left:$t_{70}$,rotate=90",label=""]
+t71  [style="transition, label=above:, label=left:$t_{71}$,rotate=90",label=""]
+
+subgraph cluster_3 {
+  label="Modulo\ Plastico"
+  style="dashed"
+  #color="white"
+  labelloc = b
+  margin=0
+
+# pre
+
+p52 -> t47
+p53 -> t48
+p54 -> t49
+p55 -> t50
+p56 -> t51
+
+p57 -> t52
+p57 -> t56
+
+p58 -> t53
+p59 -> t54
+p60 -> t55
+
+p61 -> t57
+p61 -> t61
+
+p62 -> t58
+p63 -> t59
+p64 -> t60
+
+p65 -> t62
+p65 -> t67
+
+p66 -> t63
+p67 -> t64
+p68 -> t65
+
+p69 -> t66
+
+p70 -> t68
+p71 -> t69
+
+p72 -> t70
+
+p73 -> t71
+
+#pos
+
+t47 -> p53
+t48 -> p54
+t49 -> p55
+t50 -> p56
+t51 -> p57
+
+t52 -> p58
+t53 -> p59
+t54 -> p60
+t55 -> p69
+
+t56 -> p61
+
+t57 -> p62
+t58 -> p63
+t59 -> p64
+t60 -> p69
+
+t61 -> p65
+
+t62 -> p66
+t63 -> p67
+t64 -> p68
+t65 -> p69
+
+t66 -> p52
+
+t67 -> p70
+t68 -> p71
+t69 -> p72
+t69 -> p73
+}
+
+t70 -> p30
+
+
+}
 \end{dot2tex}
 
 %%% Local Variables:

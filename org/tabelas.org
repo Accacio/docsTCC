@@ -1,0 +1,175 @@
+* Tabelas
+** Inicialização
+#+ATTR_LATEX: :caption  \caption{Lugares do Módulo de Inicialização}
+| P_{0}  | Sistema Parado                                               |
+| P_{1}  | Retrair Pistão MAG 1*                                        |
+| P_{2}  | Pistão MAG 1 Recuado                                         |
+| P_{3}  | Retrair Pistão MAG 2*                                        |
+| P_{4}  | Pistão MAG 2 Recuado                                         |
+| P_{5}  | Retrair pistão de descarte D*                                |
+| P_{6}  | Pistão de descarte D Recuado                                 |
+| P_{7}  | Retrair pistão de descarte C*                                |
+| P_{8}  | Pistão de descarte C Recuado                                 |
+| P_{9}  | Retrair pistão de descarte E*                                |
+| P_{10} | Pistão de descarte E Recuado                                 |
+| P_{11} | Ligar esteira sentido reverso                                |
+| P_{12} | Esteira limpa                                                |
+| P_{13} | Resetar Variáveis[fn:1]                                      |
+| P_{14} | Retrair atuador vertical da prensa                           |
+| P_{15} | Levantar porta da prensa                                     |
+| P_{16} | Estender atuador horizontal da prensa                        |
+| P_{17} | Prensa pronta                                                |
+| P_{18} | Braço retraído e armazenador de cubos retraído na horizontal |
+| P_{19} | Mover armazenador para direita                               |
+| P_{20} | Armazenador pronto na horizontal                             |
+| P_{21} | nMover armazenador para baixo                                |
+| P_{22} | Armazenador pronto na vertical                               |
+| P_{23} | Girar braço sentido antihorário[fn:2]                        |
+| P_{24} | Braço parado                                                 |
+| P_{25} | Girar braço sentido horário[fn:2]                            |
+| P_{26} | HSC:=HSC+1                                                   |
+| P_{27} | Habilita HSC                                                 |
+| P_{28} | Braço parado frente a esteira                                |
+| P_{29} | Sistema Pronto                                               |
+
+
+#+ATTR_LATEX: :caption \caption{Transições do Módulo de Inicialização}
+| t_{0}  | Botão de inicialização                                     |
+| t_{1}  | Sensor MAG 1 Retraído                                      |
+| t_{2}  | Sensor MAG 2 Retraído                                |
+| t_{3}  | Sensor pistão de descarte D Retraído                           |
+| t_{4}  | Sensor pistão de descarte C Retraído                           |
+| t_{5}  | Sensor pistão de descarte E Retraído                           |
+| t_{6}  |                                                            |
+| t_{7}  | T=15s                                                      |
+| t_{8}  | T=2.5s                                                     |
+| t_{9}  | Sensor porta prensa aberta                                 |
+| t_{10} | Sensor atuador horizontal da prensa estendido              |
+| t_{11} | Sensor Hz armazenador de cubos e braço retraídos           |
+| t_{12} | Fim de curso direito do armazenador de cubos               |
+| t_{13} | Fim de curso inferior do armazenador de cubos              |
+| t_{14} | T=2s                                                       |
+| t_{15} | Sensor Indutivo do braço                                   |
+| t_{16} | T=2s                                                       |
+| t_{17} | Count\under{}300C.DB.CountVal < \todo{-808} e Encoder CH A |
+| t_{18} | \lambda                                                    |
+| t_{19} | Count\under{}300C.DB.Countval = \todo{-808}                |
+| t_{20} |                                                            |
+| t_{21} | Botão Começar                                              |
+
+** Metal V
+
+#+ATTR_LATEX: :caption \caption{Lugares do Módulo 2 pt 1}
+| P_{30} | Mag1 vazio                     |
+| p_{31} | Mag1 com peça                  |
+| p_{32} | Estender Mag1 Horizontal*      |
+| p_{33} | Retrair Mag1 Horizontal*       |
+| p_{34} | Mag1 Horizontal retraído       |
+| p_{35} | Ligar esteira sentido normal   |
+| p_{36} | Peça de Plástico               |
+| p_{37} | Ligar esteira sentido normal   |
+| p_{38} | Estender Pistão de descarte D* |
+| p_{39} | Retrair Pistão de descarte D*  |
+| p_{40} | Ligar esteira sentido normal   |
+| p_{41} | Estender Pistão de descarte C* |
+| p_{42} | Retrair Pistão de descarte C*  |
+| p_{43} |                                |
+| p_{44} | Peça de Metal                  |
+| p_{45} | Ligar esteira sentido normal   |
+| p_{46} | Estender Pistão de descarte E* |
+| p_{47} | Retrair Pistão de descarte E*  |
+| p_{48} | Ligar esteira sentido normal   |
+| p_{49} | Ligar esteira sentido normal   |
+| p_{50} | Peça Metal Pronta              |
+| p_{51} | Esteira Parada                 |
+
+
+#+ATTR_LATEX: :caption  \caption{Transições do Módulo 2 pt 1}
+| t_{22} | $\overline{\mbox{Sensor Chave de Presença de Peça Mag1}}$ |
+| t_{23} |                                                           |
+| t_{24} | Mag1 Horizontal estendido \uparrow                        |
+| t_{25} | Mag1 Horizontal retraído \uparrow                         |
+| t_{26} | T=0.5s                                                    |
+| t_{27} | $\overline{\mbox{Sensor Metal}}$ e Presença \uparrow      |
+| t_{28} | Sensor Preto                                              |
+| t_{29} | Presença Pistão de D \uparrow                             |
+| t_{30} | Sensor pistão de descarte D estendido                     |
+| t_{31} | Sensor pistão de descarte D retraído                      |
+| t_{32} | Sensor Branco                                             |
+| t_{33} | Presença Pistão de C \uparrow                             |
+| t_{34} | Sensor pistão de descarte C estendido                     |
+| t_{35} | Sensor pistão de descarte C retraído                      |
+| t_{36} | Sensor Metal e Presença \uparrow                          |
+| t_{37} | Sensor peça concavidade para baixo                        |
+| t_{38} | Presença Pistão de E \uparrow                             |
+| t_{39} | Sensor pistão de descarte E estendido                     |
+| t_{40} | Sensor pistão de descarte E retraído                      |
+| t_{41} |                                                           |
+| t_{42} | Sensor peça concavidade para cima                         |
+| t_{43} | Sensor final da esteira \uparrow                          |
+| t_{44} | T=0.5s                                                    |
+| t_{45} | Sensor final da esteira \downarrow                        |
+| t_{46} |                                                           |
+
+** Plástico Branco ^
+#+ATTR_LATEX: :caption  \caption{Lugares do Módulo 2 pt 2}
+| P_{52} | Mag2 vazio                     |
+| P_{53} | Mag2 com peça                  |
+| P_{54} | Estender Mag2 Horizontal*      |
+| p_{55} | Retrair Mag2 Horizontal*       |
+| p_{56} | Mag2 Horizontal Retraído       |
+| p_{57} | Ligar esteira sentido normal   |
+| p_{58} | Ligar esteira sentido normal   |
+| p_{59} | Estender Pistão de descarte E* |
+| p_{60} | Retrair Pistão de descarte E*  |
+| p_{61} | Peça de Metal                  |
+| p_{62} | Ligar esteira sentido normal   |
+| p_{63} | Estender Pistão de descarte D* |
+| p_{64} | Retrair Pistão de descarte D*  |
+| p_{65} | Peça Branca                    |
+| p_{66} | Ligar esteira sentido normal   |
+| p_{67} | Estender Pistão de descarte C* |
+| p_{68} | Retrair Pistão de descarte C*  |
+| p_{69} |                                |
+| p_{70} | Ligar esteira sentido normal   |
+| p_{71} | Ligar esteira sentido normal   |
+| p_{72} | Peça branca pronta             |
+| p_{73} | Esteira parada                 |
+
+ 
+#+ATTR_LATEX: :caption  \caption{Transições do Módulo 2 pt 2}
+| t_{47} | $\overline{\mbox{Sensor Chave de Presença de Peça Mag2}}$            |
+| t_{48} |                                                                      |
+| t_{49} | Mag2 Horizontal estendido \uparrow                                   |
+| t_{50} | Mag2 Horizontal retraído \uparrow                                    |
+| t_{51} | T=0.5s                                                               |
+| t_{52} | Presença \uparrow e Sensor Metal                                     |
+| t_{53} | Presença Pistão de E \uparrow                                        |
+| t_{54} | Sensor pistão de descarte E estendido                                |
+| t_{55} | Sensor pistão de descarte E retraído                                 |
+| t_{56} | $\overline{\mbox{Sensor Metal}}$ e Presença \uparrow                 |
+| t_{57} | Sensor Preto                                                         |
+| t_{58} | Presença Pistão de D \uparrow                                        |
+| t_{59} | Sensor pistão de descarte D estendido                                |
+| t_{60} | Sensor pistão de descarte D retraído                                 |
+| t_{61} | Sensor Branco                                                        |
+| t_{62} | Sensor peça concavidade para cima                                    |
+| t_{63} | Presença Pistão de C \uparrow        
+| t_{64} | Sensor pistão de descarte C estendido
+| t_{65} | Sensor pistão de descarte C retraído                                                                      |
+| t_{66} | 
+| t_{67} | Sensor peça concavidade para baixo                               |                                                                     |
+| t_{68} | Sensor final da esteira \uparrow
+| t_{69} | T=0.5s
+| t_{70} | Sensor final da esteira \downarrow
+| t_{71} | 
+
+
+
+
+
+# cor = {0,1:branca,2:preta}
+# material = {0,1:metal,2:plástico}
+# orientação = {0,1:cima,2:baixo}
+[fn:1] Variáveis IEC_COUNTER, IEC_COUNTER1, IEC_COUNTER2, IEC_COUNTER3, IEC_COUNTER4, IEC_COUNTER5.
+[fn:2] Verificar sentido de rotação do braço.

@@ -2,4 +2,5 @@
 * TODO Transformar rede de petri em ladder
 * TODO Colocar livro na bibliografia
 * TODO Colocar artigo na bibliografia
+* catar SIMATIC STEP 7 V12 (TIA Portal)
 * 

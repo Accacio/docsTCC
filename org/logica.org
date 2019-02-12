@@ -1,6 +1,20 @@
-po\newpage
+\newpage
+
+#+LATEX_HEADER: \usepackage{color}
+
+#+LATEX_HEADER: \newif\ifdebug
+#+LATEX_HEADER: \newcommand{\draft}{\debugtrue}
+#+LATEX_HEADER: \newcommand{\final}{\debugfalse}
+#+LATEX_HEADER: \newcommand{\todo}[2][FORGOT TO DO SOMETHING]{\ifdebug {\color{red}#2}\else \PackageError{}{#1}{}\fi}
+#+LATEX_HEADER: \newcommand\doing[1]{\ifdebug {\color{blue}#1}\else \PackageError{}{FORGOT TO DO SOMETHING}{}\fi}
+#+LATEX_HEADER: \newcommand\warning[1]{\ifdebug {\color{red}#1}\fi}
+#+LATEX_HEADER: \newcommand\note[1]{\ifdebug {\color{orange}#1}\fi}
+\draft
+
+
 * Esteira
 ** Inicialização
+
 *** Retrair todos pistões
     1. MAG 1 e 2
     2. Pistões de descarte
@@ -33,189 +47,3 @@ po\newpage
      4. Recomeçar a partir da identificação de peça
      \newpage
 * Elevador
-* Tabelas
-
-#+ATTR_LATEX: :caption \caption{Transições do Módulo 1}
-| t_0           | Botão de inicialização                                                 |
-| t_{1}         | Fim de curso MAG 1 Retraído                                            |
-| t_{2}         | Fim de curso MAG 2 Retraído                                            |
-| t_{3}         | Fim de curso descarte D Retraído                                       |
-| t_{4}         | Fim de curso descarte C Retraído                                       |
-| t_{5}         | Fim de curso descarte E Retraído                                       |
-| t_{6}         |                                                                        |
-| t_{7}         | T=15s                                                                  |
-| t_{8}         |                                                                        |
-| t_{9}         | T=2.5s                                                                 |
-| t_{10}        | Sensor porta prensa aberta                                             |
-| t_{11}        | Sensor atuador horizontal da prensa estendido                          |
-| t_{12}        | Sensor atuador horizontal e vertical do armazenador de cubos retraídos |
-| t_{13}        | Fim de curso direito do armazenador de cubos                           |
-| t_{14}        | Fim de curso inferior do armazenador de cubos                          |
-| t_{15}        | T=2s                                                                   |
-| t_{16}        | Sensor Indutivo do braço                                               |
-| t_{17}        | T=2s                                                                   |
-| t_{18}        | Count_300C.DB.CountVal < 808 Encoder CH A                              |
-| t_{19}        |                                                                        |
-| t_{20}        | Count_300C.DB.Countval = 808                                           |
-| t_{21}        | Botão Iniciar                                                          |
-
-#+ATTR_LATEX: :caption  \caption{Transições do Módulo 2 pt 1}
-| t_{22} | Chave de presença de peça Mag1                                       |
-| t_{23} |                                                                      |
-| t_{24} | Mag1 Estendido                                                       |
-| t_{25} | Mag1 Retraído                                                        |
-| t_{26} | Sensor presença/profundidade                                         |
-| t_{27} | Sensor Metal                                                         |
-| t_{28} |                                                                      |
-| t_{29} | Sensor Plástico                                                      |
-| t_{30} | Sensor Branco                                                        |
-| t_{31} |                                                                      |
-| t_{32} | Sensor Preto                                                         |
-| t_{33} |                                                                      |
-| t_{34} | Sensor cima                                                          |
-| t_{35} |                                                                      |
-| t_{36} | Sensor baixo                                                         |
-| t_{37} |                                                                      |
-| t_{38} | Cset!=Creq v Mset!=Mreq v Oset!=Oreq (peça setada != peça requerida) |
-| t_{39} | Sensor presença pistão prata TODO^ Mset=1                            |
-| t_{40} | Pistão prata estendido                                               |
-| t_{41} | Pistão prata retraído                                                |
-| t_{42} | Sensor presença pistão branco TODO^ Mset=1                           |
-| t_{43} | Pistão branco estendido                                              |
-| t_{44} | Pistão branco retraído                                               |
-| t_{45} | Sensor presença pistão preto TODO^ Mset=1                            |
-| t_{46} | Pistão preto estendido                                               |
-| t_{47} | Pistão preto retraído                                                |
-| t_{48} | Recomeçar seleção de peça atual                                      |
-| t_{49} | Cset=Creq ^ Mset=Mreq ^ Oset=Oreq (peça setada = peça requerida)     |
-| t_{50} | sensor fim esteira                                                   |
-| t_{51} | Peça retirada                                                        |
-
-#+ATTR_LATEX: :caption  \caption{Transições do Módulo 2 pt 2}
-| t_{52} | Chave de presença de peça Mag2                                       |
-| t_{53} |                                                                      |
-| t_{54} | Mag1 Estendido                                                       |
-| t_{55} | Mag1 Retraído                                                        |
-| t_{56} | Sensor presença/profundidade                                         |
-| t_{57} | Sensor Metal                                                         |
-| t_{58} |                                                                      |
-| t_{59} | Sensor Plástico                                                      |
-| t_{60} | Sensor Branco                                                        |
-| t_{61} |                                                                      |
-| t_{62} | Sensor Preto                                                         |
-| t_{63} |                                                                      |
-| t_{64} | Sensor cima                                                          |
-| t_{65} |                                                                      |
-| t_{66} | Sensor baixo                                                         |
-| t_{67} |                                                                      |
-| t_{68} | Cset!=Creq v Mset!=Mreq v Oset!=Oreq (peça setada != peça requerida) |
-| t_{69} | Sensor presença pistão prata TODO^ Mset=1                            |
-| t_{70} | Pistão prata estendido                                               |
-| t_{71} | Pistão prata retraído                                                |
-| t_{72} | Sensor presença pistão branco TODO^ Mset=1                           |
-| t_{73} | Pistão branco estendido                                              |
-| t_{74} | Pistão branco retraído                                               |
-| t_{75} | Sensor presença pistão preto TODO^ Mset=1                            |
-| t_{76} | Pistão preto estendido                                               |
-| t_{77} | Pistão preto retraído                                                |
-| t_{78} | Recomeçar seleção de peça atual                                      |
-| t_{79} | Cset=Creq ^ Mset=Mreq ^ Oset=Oreq (peça setada = peça requerida)     |
-| t_{80} | sensor fim esteira                                                   |
-| t_{81} | peça retirada                                                        |
-|        |                                                                      |
-#+ATTR_LATEX: :caption  \caption{Lugares do Módulo 1}
-| P_{0}         | Sistema Parado                                                  |
-| P_{1}         | Recuar Pistão MAG 1                                             |
-| P_{2}         | Pistão MAG 1 Recuado                                            |
-| P_{3}         | Recuar Pistão MAG 2                                             |
-| P_{4}         | Pistão MAG 2 Recuado                                            |
-| P_{5}         | Recuar pistão de descarte D                                     |
-| P_{6}         | Pistão de descarte D Recuado                                    |
-| P_{7}         | Recuar pistão de descarte C                                     |
-| P_{8}         | Pistão de descarte C Recuado                                    |
-| P_{9}         | Recuar pistão de descarte E                                     |
-| P_{10}        | Pistão de descarte E Recuado                                    |
-| P_{11}        | Ligar esteira sentido reverso                                   |
-| P_{12}        | Resetar Variáveis[fn:1]                                         |
-| P_{13}        | Esteira limpa                                                   |
-| P_{14}        | Retrair atuador vertical da prensa                              |
-| P_{15}        | Levantar porta da prensa                                        |
-| P_{16}        | Estender atuador horizontal da prensa                           |
-| P_{17}        | Prensa cubo pronto                                              |
-| P_{18}        | Retrair atuadores vertical e horizontal do armazenador de cubos |
-| P_{19}        | Mover armazenador de cubos para direita                         |
-| P_{20}        | Armazenador pronto na horizontal                                |
-| P_{21}        | Mover armazenador de cubos para baixo                           |
-| P_{22}        | Armazenador pronto na vertical                                  |
-| P_{23}        | Girar braço sentido antihorário[fn:2]                           |
-| P_{24}        | Parar braço                                                     |
-| P_{25}        | Girar braço sentido horário[fn:2]                               |
-| P_{26}        | HSC:=HSC+1                                                      |
-| P_{27}        | Habilita HSC                                                    |
-| P_{28}        | Parar braço sobre esteira                                       |
-| P_{29}        | Sistema Pronto                                                  |
-
-
-#+ATTR_LATEX: :caption \caption{Lugares do Módulo 2 pt 1}
-| P_{30} | Mag1 vazio                                      |
-| p_{31} | Mag1 com peça                                   |
-| p_{32} | Estender Mag1                                   |
-| p_{33} | Retrair Mag1                                    |
-| p_{34} | Ligar Esteira sentido normal                    |
-| p_{35} |                                                 |
-| p_{36} | material:=1 (material é metal)                  |
-| p_{37} | material:=2 (material é plástico)               |
-| p_{38} | cor:=1 (cor é branca)                           |
-| p_{39} | cor:=2 (cor é preta)                            |
-| p_{40} | cor e material setados                          |
-| p_{41} | orientação:=1 (orientação é para cima)          |
-| p_{42} | orientação:=2 (orientação é para baixo)         |
-| p_{43} | tipo peça atual setado                          |
-| p_{44} | liga esteira sentido normal                     |
-| p_{45} | estender pistão prata                           |
-| p_{46} | retrair pistão prata                            |
-| p_{47} | estender pistão branco                          |
-| p_{48} | retrair pistão branco                           |
-| p_{49} | estender pistão preto                           |
-| p_{50} | retrair pistão preto                            |
-| p_{51} | Cset:=0, Mset:=0, Oset:=0 (resetar peça setada) |
-| p_{52} | liga esteira sentido normal                     |
-| p_{53} | peça pronta                                     |
-
-
-#+ATTR_LATEX: :caption  \caption{Lugares do Módulo 2 pt 2}
-| P_{54} | Mag2 vazio                                      |
-| p_{55} | Mag2 com peça                                   |
-| p_{56} | Estender Mag2                                   |
-| p_{57} | Retrair Mag2                                    |
-| p_{58} | Ligar Esteira sentido normal                    |
-| p_{59} |                                                 |
-| p_{60} | material:=1 (material é metal)                  |
-| p_{61} | material:=2 (material é plástico)               |
-| p_{62} | cor:=1 (cor é branca)                           |
-| p_{63} | cor:=2 (cor é preta)                            |
-| p_{64} | cor e material setados                          |
-| p_{65} | orientação:=1 (orientação é para cima)          |
-| p_{66} | orientação:=2 (orientação é para baixo)         |
-| p_{67} | tipo peça atual setado                          |
-| p_{68} | liga esteira sentido normal                     |
-| p_{69} | estender pistão prata                           |
-| p_{70} | retrair pistão prata                            |
-| p_{71} | estender pistão branco                          |
-| p_{72} | retrair pistão branco                           |
-| p_{73} | estender pistão preto                           |
-| p_{74} | retrair pistão preto                            |
-| p_{75} | Cset:=0, Mset:=0, Oset:=0 (resetar peça setada) |
-| p_{76} | liga esteira sentido normal                     |
-| p_{77} | peça pronta                                     |
-  
-
-
-[fn:1] Variáveis de peças requeridas e das peças
- já verificadas
-
-[fn:2] Verificar sentido de rotação do braço
-
-cor = {0,1:branca,2:preta}
-material = {0,1:metal,2:plástico}
-orientação = {0,1:cima,2:baixo}
