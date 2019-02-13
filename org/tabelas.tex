@@ -1,4 +1,4 @@
-% Created 2019-02-12 Tue 10:27
+% Created 2019-02-12 Tue 23:19
 \documentclass[11pt]{article}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
@@ -111,17 +111,17 @@ p$_{\text{31}}$ & Mag1 com peça\\
 p$_{\text{32}}$ & Estender Mag1 Horizontal*\\
 p$_{\text{33}}$ & Retrair Mag1 Horizontal*\\
 p$_{\text{34}}$ & Mag1 Horizontal retraído\\
-p$_{\text{35}}$ & Ligar Esteira sentido normal\\
+p$_{\text{35}}$ & Ligar esteira sentido normal\\
 p$_{\text{36}}$ & Peça de Plástico\\
 p$_{\text{37}}$ & Ligar esteira sentido normal\\
 p$_{\text{38}}$ & Estender Pistão de descarte D*\\
 p$_{\text{39}}$ & Retrair Pistão de descarte D*\\
-p$_{\text{40}}$ & Ligar Esteira sentido normal\\
+p$_{\text{40}}$ & Ligar esteira sentido normal\\
 p$_{\text{41}}$ & Estender Pistão de descarte C*\\
 p$_{\text{42}}$ & Retrair Pistão de descarte C*\\
 p$_{\text{43}}$ & \\
 p$_{\text{44}}$ & Peça de Metal\\
-p$_{\text{45}}$ & Ligar Esteira sentido normal\\
+p$_{\text{45}}$ & Ligar esteira sentido normal\\
 p$_{\text{46}}$ & Estender Pistão de descarte E*\\
 p$_{\text{47}}$ & Retrair Pistão de descarte E*\\
 p$_{\text{48}}$ & Ligar esteira sentido normal\\
@@ -155,86 +155,165 @@ t$_{\text{37}}$ & Sensor peça concavidade para baixo\\
 t$_{\text{38}}$ & Presença Pistão de E $\uparrow$\\
 t$_{\text{39}}$ & Sensor pistão de descarte E estendido\\
 t$_{\text{40}}$ & Sensor pistão de descarte E retraído\\
-t$_{\text{41}}$\\
+t$_{\text{41}}$ & \\
 t$_{\text{42}}$ & Sensor peça concavidade para cima\\
 t$_{\text{43}}$ & Sensor final da esteira $\uparrow$\\
 t$_{\text{44}}$ & T=0.5s\\
 t$_{\text{45}}$ & Sensor final da esteira $\downarrow$\\
-t$_{\text{46}}$\\
-t$_{\text{47}}$\\
-t$_{\text{48}}$ & Recomeçar seleção de peça atual\\
-t$_{\text{49}}$ & Cset=Creq \^{} Mset=Mreq \^{} Oset=Oreq (peça setada = peça requerida)\\
-t$_{\text{50}}$ & sensor fim esteira\\
-t$_{\text{51}}$ & Peça retirada\\
+t$_{\text{46}}$ & \\
 \end{tabular}
 \end{table}
 
+\subsection{Plástico Branco \^{}}
+\label{sec-1-3}
 \begin{table}[htb]
 \caption{Lugares do Módulo 2 pt 2}
 \centering
 \begin{tabular}{ll}
-P$_{\text{54}}$ & Mag2 vazio\\
-p$_{\text{55}}$ & Mag2 com peça\\
-p$_{\text{56}}$ & Estender Mag2\\
-p$_{\text{57}}$ & Retrair Mag2\\
-p$_{\text{58}}$ & Ligar Esteira sentido normal\\
-p$_{\text{59}}$ & \\
-p$_{\text{60}}$ & material:=1 (material é metal)\\
-p$_{\text{61}}$ & material:=2 (material é plástico)\\
-p$_{\text{62}}$ & cor:=1 (cor é branca)\\
-p$_{\text{63}}$ & cor:=2 (cor é preta)\\
-p$_{\text{64}}$ & cor e material setados\\
-p$_{\text{65}}$ & orientação:=1 (orientação é para cima)\\
-p$_{\text{66}}$ & orientação:=2 (orientação é para baixo)\\
-p$_{\text{67}}$ & tipo peça atual setado\\
-p$_{\text{68}}$ & liga esteira sentido normal\\
-p$_{\text{69}}$ & estender pistão prata\\
-p$_{\text{70}}$ & retrair pistão prata\\
-p$_{\text{71}}$ & estender pistão branco\\
-p$_{\text{72}}$ & retrair pistão branco\\
-p$_{\text{73}}$ & estender pistão preto\\
-p$_{\text{74}}$ & retrair pistão preto\\
-p$_{\text{75}}$ & Cset:=0, Mset:=0, Oset:=0 (resetar peça setada)\\
-p$_{\text{76}}$ & liga esteira sentido normal\\
-p$_{\text{77}}$ & peça pronta\\
+P$_{\text{52}}$ & Mag2 vazio\\
+P$_{\text{53}}$ & Mag2 com peça\\
+P$_{\text{54}}$ & Estender Mag2 Horizontal*\\
+p$_{\text{55}}$ & Retrair Mag2 Horizontal*\\
+p$_{\text{56}}$ & Mag2 Horizontal Retraído\\
+p$_{\text{57}}$ & Ligar esteira sentido normal\\
+p$_{\text{58}}$ & Ligar esteira sentido normal\\
+p$_{\text{59}}$ & Estender Pistão de descarte E*\\
+p$_{\text{60}}$ & Retrair Pistão de descarte E*\\
+p$_{\text{61}}$ & Peça de Metal\\
+p$_{\text{62}}$ & Ligar esteira sentido normal\\
+p$_{\text{63}}$ & Estender Pistão de descarte D*\\
+p$_{\text{64}}$ & Retrair Pistão de descarte D*\\
+p$_{\text{65}}$ & Peça Branca\\
+p$_{\text{66}}$ & Ligar esteira sentido normal\\
+p$_{\text{67}}$ & Estender Pistão de descarte C*\\
+p$_{\text{68}}$ & Retrair Pistão de descarte C*\\
+p$_{\text{69}}$ & \\
+p$_{\text{70}}$ & Ligar esteira sentido normal\\
+p$_{\text{71}}$ & Ligar esteira sentido normal\\
+p$_{\text{72}}$ & Peça branca pronta\\
+p$_{\text{73}}$ & Esteira parada\\
 \end{tabular}
 \end{table}
+
 
 \begin{table}[htb]
 \caption{Transições do Módulo 2 pt 2}
 \centering
 \begin{tabular}{ll}
-t$_{\text{52}}$ & Chave de presença de peça Mag2\\
-t$_{\text{53}}$ & \\
-t$_{\text{54}}$ & Mag1 Estendido\\
-t$_{\text{55}}$ & Mag1 Retraído\\
-t$_{\text{56}}$ & Sensor presença/profundidade\\
-t$_{\text{57}}$ & Sensor Metal\\
-t$_{\text{58}}$ & \\
-t$_{\text{59}}$ & Sensor Plástico\\
-t$_{\text{60}}$ & Sensor Branco\\
-t$_{\text{61}}$ & \\
-t$_{\text{62}}$ & Sensor Preto\\
-t$_{\text{63}}$ & \\
-t$_{\text{64}}$ & Sensor cima\\
-t$_{\text{65}}$ & \\
-t$_{\text{66}}$ & Sensor baixo\\
-t$_{\text{67}}$ & \\
-t$_{\text{68}}$ & Cset!=Creq v Mset!=Mreq v Oset!=Oreq (peça setada != peça requerida)\\
-t$_{\text{69}}$ & Sensor presença pistão prata TODO\^{} Mset=1\\
-t$_{\text{70}}$ & Pistão prata estendido\\
-t$_{\text{71}}$ & Pistão prata retraído\\
-t$_{\text{72}}$ & Sensor presença pistão branco TODO\^{} Mset=1\\
-t$_{\text{73}}$ & Pistão branco estendido\\
-t$_{\text{74}}$ & Pistão branco retraído\\
-t$_{\text{75}}$ & Sensor presença pistão preto TODO\^{} Mset=1\\
-t$_{\text{76}}$ & Pistão preto estendido\\
-t$_{\text{77}}$ & Pistão preto retraído\\
-t$_{\text{78}}$ & Recomeçar seleção de peça atual\\
-t$_{\text{79}}$ & Cset=Creq \^{} Mset=Mreq \^{} Oset=Oreq (peça setada = peça requerida)\\
-t$_{\text{80}}$ & sensor fim esteira\\
-t$_{\text{81}}$ & peça retirada\\
- & \\
+t$_{\text{47}}$ & $\overline{\mbox{Sensor Chave de Presença de Peça Mag2}}$\\
+t$_{\text{48}}$ & \\
+t$_{\text{49}}$ & Mag2 Horizontal estendido $\uparrow$\\
+t$_{\text{50}}$ & Mag2 Horizontal retraído $\uparrow$\\
+t$_{\text{51}}$ & T=0.5s\\
+t$_{\text{52}}$ & Presença $\uparrow$ e Sensor Metal\\
+t$_{\text{53}}$ & Presença Pistão de E $\uparrow$\\
+t$_{\text{54}}$ & Sensor pistão de descarte E estendido\\
+t$_{\text{55}}$ & Sensor pistão de descarte E retraído\\
+t$_{\text{56}}$ & $\overline{\mbox{Sensor Metal}}$ e Presença $\uparrow$\\
+t$_{\text{57}}$ & Sensor Preto\\
+t$_{\text{58}}$ & Presença Pistão de D $\uparrow$\\
+t$_{\text{59}}$ & Sensor pistão de descarte D estendido\\
+t$_{\text{60}}$ & Sensor pistão de descarte D retraído\\
+t$_{\text{61}}$ & Sensor Branco\\
+t$_{\text{62}}$ & Sensor peça concavidade para cima\\
+t$_{\text{63}}$ & Presença Pistão de C $\uparrow$\\
+t$_{\text{64}}$ & Sensor pistão de descarte C estendido\\
+t$_{\text{65}}$ & Sensor pistão de descarte C retraído\\
+t$_{\text{66}}$ & \\
+t$_{\text{67}}$ & Sensor peça concavidade para baixo\\
+t$_{\text{68}}$ & Sensor final da esteira $\uparrow$\\
+t$_{\text{69}}$ & T=0.5s\\
+t$_{\text{70}}$ & Sensor final da esteira $\downarrow$\\
+t$_{\text{71}}$ & \\
+\end{tabular}
+\end{table}
+
+\subsection{Modulo  Braço (Esteira $\rightarrow$ Prensa)}
+\label{sec-1-4}
+\begin{table}[htb]
+\caption{Lugares do Módulo Braço Esteira Prensa}
+\centering
+\begin{tabular}{ll}
+p$_{\text{74}}$ & Estender verticalmente o braço\\
+p$_{\text{75}}$ & Estender vertical e horizontalmente o braço e Ligar o vácuo\\
+p$_{\text{76}}$ & Estender horizontalmente o braço e Ligar o vácuo\\
+p$_{\text{77}}$ & Estender vertical e horizontalmente o braço e Ligar o vácuo\\
+p$_{\text{78}}$ & Estender verticalmente o braço e Ligar o vácuo\\
+p$_{\text{79}}$ & Estender verticalmente o braço, Ligar o vácuo e Girar Braço no sentido horário\\
+p$_{\text{80}}$ & HSC:=HSC+1\\
+p$_{\text{81}}$ & Habilita HSC\\
+p$_{\text{82}}$ & Estender vertical e horizontalmente o braço e Ligar o vácuo\\
+p$_{\text{83}}$ & Estender horizontalmente o braço e Ligar o vácuo\\
+p$_{\text{84}}$ & Estender horizontalmente o braço\\
+p$_{\text{85}}$ & Estender vertical e horizontalmente o braço\\
+p$_{\text{86}}$ & Estender verticalmente o braço\\
+p$_{\text{87}}$ & Estender verticalmente o braço e Girar Braço no sentido antihorário\\
+p$_{\text{88}}$ & HSC:=HSC+1\\
+p$_{\text{89}}$ & Habilita HSC\\
+p$_{\text{90}}$ & Estender Verticalmente o braço e IEC$_{\text{COUNTER}}$:=IEC$_{\text{COUNTER}}$+1\\
+\end{tabular}
+\end{table}
+
+
+
+\begin{table}[htb]
+\caption{Transições do Módulo Braço Esteira Prensa}
+\centering
+\begin{tabular}{ll}
+t$_{\text{72}}$ & Sensor vertical braço estendido\\
+t$_{\text{73}}$ & T=1.5s\\
+t$_{\text{74}}$ & T=1.5s e Sensor vertical braço retraído\\
+t$_{\text{75}}$ & T=1.5s e Sensor vertical braço estendido\\
+t$_{\text{76}}$ & T=1.5s e Sensor vertical braço estendido\\
+t$_{\text{77}}$ & Count\_300C.DB.CountVal < \todo{-807} e Encoder CH A\\
+t$_{\text{78}}$ & $\lambda$\\
+t$_{\text{79}}$ & Count\_300C.DB.CountVal = \todo{-807}\\
+t$_{\text{80}}$ & T=1.5s e Sensor vertical braço estendido\\
+t$_{\text{81}}$ & T=1.5s e Sensor vertical braço retraído\\
+t$_{\text{82}}$ & T=1.5s\\
+t$_{\text{83}}$ & T=1.5s e Sensor vertical braço estendido\\
+t$_{\text{84}}$ & IEC$_{\text{COUNTER0}}$.DB=1 e Sensor Hz prensa estendido e porta prensa aberta\\
+t$_{\text{85}}$ & T=1.5s e IEC$_{\text{COUNTER0}}$.DB=0 e Sensor vertical braço estendido\\
+t$_{\text{86}}$ & Count\_300C.DB.CountVal < \todo{815} e Encoder CH A\\
+t$_{\text{87}}$ & $\lambda$\\
+t$_{\text{88}}$ & Count\_300C.DB.CountVal = \todo{815}\\
+t$_{\text{89}}$ & \\
+\end{tabular}
+\end{table}
+
+
+
+
+\subsection{Módulo prensa cubo}
+\label{sec-1-5}
+\begin{table}[htb]
+\caption{Lugares do Módulo prensa cubo}
+\centering
+\begin{tabular}{ll}
+p$_{\text{91}}$ & Retrair atuador horizontal prensa*\\
+p$_{\text{92}}$ & Fechar Porta prensa*\\
+p$_{\text{93}}$ & Estender atuador vertical prensa*\\
+p$_{\text{94}}$ & Retrair atuador vertical prensa*\\
+p$_{\text{95}}$ & Abrir Porta prensa*\\
+p$_{\text{96}}$ & Estender atuador horizontal prensa*\\
+p$_{\text{97}}$ & Cubo pronto\\
+p$_{\text{98}}$ & Estender horizontalmente o braço e Ligar Vácuo\\
+p$_{\text{99}}$ & Estender verticalmente o braço\\
+\end{tabular}
+\end{table}
+
+\begin{table}[htb]
+\caption{Transições do Módulo prensa cubo}
+\centering
+\begin{tabular}{ll}
+t$_{\text{90}}$ & T=1s e Sensosr horizontal prensa retraído\\
+t$_{\text{91}}$ & T=1s e Sensor porta fechada\\
+t$_{\text{92}}$ & T=1s\\
+t$_{\text{93}}$ & T=1s\\
+t$_{\text{94}}$ & T=1s e sensor porta aberta\\
+t$_{\text{95}}$ & T=1s e sensor horizontal prensa estendido\\
+t$_{\text{96}}$ & \\
+t$_{\text{97}}$ & T=1.5s e Sensor horizontal do braço estendido\\
 \end{tabular}
 \end{table}
 % Emacs 25.2.2 (Org mode 8.2.10)
