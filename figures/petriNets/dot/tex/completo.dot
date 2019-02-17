@@ -6,59 +6,59 @@
 
 # Modulo iinicialização
 
-    p0m1 [label=""]
-    p1 [label=""]
-    p2 [label=""]
-    p3 [label=""]
-    p4 [label=""]
-    p5 [label=""]
-    p6 [label=""]
-    p7 [label=""]
-    p8 [label=""]
-    p9 [label=""]
-    p10 [label=""]
-    p11 [label=""]
-    p12 [label=""]
-    p13 [label=""]
-    p14 [label=""]
-    p15 [label=""]
-    p16 [label=""]
-    p17 [label=""]
-    p18 [label=""]
-    p19 [label=""]
-    p20 [label=""]
-    p21 [label=""]
-    p22 [label=""]
-    p23 [label=""]
-    p24 [label=""]
-    p25 [label=""]
-    p26 [label=""]
-    p27 [label=""]
-    p28 [label=""]
-    p29 [label=""]
+    p0m1
+    p1
+    p2
+    p3
+    p4
+    p5
+    p6
+    p7
+    p8
+    p9
+    p10
+    p11
+    p12
+    p13
+    p14
+    p15
+    p16
+    p17
+    p18
+    p19
+    p20
+    p21
+    p22
+    p23
+    p24
+    p25
+    p26
+    p27
+    p28
+    p29
 
-    t0  [label=""]
-    t1  [label=""]
-    t2  [label=""]
-    t3  [label=""]
-    t4  [label=""]
-    t5  [label=""]
-    t6  [label=""]
-    tt7  [label=""]
-    tt8  [label=""]
-    t9  [label=""]
-    t10  [label=""]
-    t11  [label=""]
-    t12  [label=""]
-    t13  [label=""]
-    tt14  [label=""]
-    t15  [label=""]
-    tt16  [label=""]
-    t17  [label=""]
-    t18  [label=""]
-    t19  [label=""]
-    t20  [label=""]
-    t21  [label=""]
+    t0
+    t1
+    t2
+    t3
+    t4
+    t5
+    t6
+    tt7
+    tt8
+    t9
+    t10
+    t11
+    t12
+    t13
+    tt14
+    t15
+    tt16
+    t17
+    t18
+    t19
+    t20
+    t21
 
 subgraph cluster_1 {
   label="Módulo de inicialização";
@@ -145,54 +145,54 @@ t21 -> p30
 
 # Modulo Metal V
 
-    p30 [label=""]
-    p31 [label=""]
-    p32 [label=""]
-    p33 [label=""]
-    p34 [label=""]
-    p35 [label=""]
-    p36 [label=""]
-    p37 [label=""]
-    p38 [label=""]
-    p39 [label=""]
-    p40 [label=""]
-    p41 [label=""]
-    p42 [label=""]
-    p43 [label=""]
-    p44 [label=""]
-    p45 [label=""]
-    p46 [label=""]
-    p47 [label=""]
-    p48 [label=""]
-    p49 [label=""]
-    p50 [label=""]
-    p51 [label=""]
+    p30
+    p31
+    p32
+    p33
+    p34
+    p35
+    p36
+    p37
+    p38
+    p39
+    p40
+    p41
+    p42
+    p43
+    p44
+    p45
+    p46
+    p47
+    p48
+    p49
+    p50
+    p51
 
-    t22  [label=""]
-    t23  [label=""]
-    t24  [label=""]
-    t25  [label=""]
-    tt26  [label=""]
-    t27  [label=""]
-    t28  [label=""]
-    t29  [label=""]
-    t30  [label=""]
-    t31  [label=""]
-    t32  [label=""]
-    t33  [label=""]
-    t34  [label=""]
-    t35  [label=""]
-    t36  [label=""]
-    t37  [label=""]
-    t38  [label=""]
-    t39  [label=""]
-    t40  [label=""]
-    t41  [label=""]
-    t42  [label=""]
-    t43  [label=""]
-    tt44  [label=""]
-    t45  [label=""]
-    t46  [label=""]
+    t22
+    t23
+    t24
+    t25
+    tt26
+    t27
+    t28
+    t29
+    t30
+    t31
+    t32
+    t33
+    t34
+    t35
+    t36
+    t37
+    t38
+    t39
+    t40
+    t41
+    t42
+    t43
+    tt44
+    t45
+    t46
 
 subgraph cluster_2 {
   label="Módulo peça de metal"
@@ -279,54 +279,54 @@ t45 -> p52
 
 # Modulo Plastico branco ^
 
-    p52 [label=""]
-    p53 [label=""]
-    p54 [label=""]
-    p55 [label=""]
-    p56 [label=""]
-    p57 [label=""]
-    p58 [label=""]
-    p59 [label=""]
-    p60 [label=""]
-    p61 [label=""]
-    p62 [label=""]
-    p63 [label=""]
-    p64 [label=""]
-    p65 [label=""]
-    p66 [label=""]
-    p67 [label=""]
-    p68 [label=""]
-    p69 [label=""]
-    p70 [label=""]
-    p71 [label=""]
-    p72 [label=""]
-    p73 [label=""]
+    p52
+    p53
+    p54
+    p55
+    p56
+    p57
+    p58
+    p59
+    p60
+    p61
+    p62
+    p63
+    p64
+    p65
+    p66
+    p67
+    p68
+    p69
+    p70
+    p71
+    p72
+    p73
 
-    t47  [label=""]
-    t48  [label=""]
-    t49  [label=""]
-    t50  [label=""]
-    t51  [label=""]
-    t52  [label=""]
-    t53  [label=""]
-    t54  [label=""]
-    t55  [label=""]
-    t56  [label=""]
-    t57  [label=""]
-    t58  [label=""]
-    t59  [label=""]
-    t60  [label=""]
-    t61  [label=""]
-    t62  [label=""]
-    t63  [label=""]
-    t64  [label=""]
-    t65  [label=""]
-    t66  [label=""]
-    t67  [label=""]
-    t68  [label=""]
-    t69  [label=""]
-    t70  [label=""]
-    t71  [label=""]
+    t47
+    t48
+    t49
+    t50
+    t51
+    t52
+    t53
+    t54
+    t55
+    t56
+    t57
+    t58
+    t59
+    t60
+    t61
+    t62
+    t63
+    t64
+    t65
+    t66
+    t67
+    t68
+    t69
+    t70
+    t71
 
 subgraph cluster_3 {
   label="Módulo peça de plástico"
@@ -412,44 +412,45 @@ t71 -> p74
 
 t70 -> p30
 
+
 # Modulo Braço (Esteira -> Prensa)
 
-    p74 [label=""]
-    p75 [label=""]
-    p76 [label=""]
-    p77 [label=""]
-    p78 [label=""]
-    p79 [label=""]
-    p80 [label=""]
-    p81 [label=""]
-    p82 [label=""]
-    p83 [label=""]
-    p84 [label=""]
-    p85 [label=""]
-    p86 [label=""]
-    p87 [label=""]
-    p88 [label=""]
-    p89 [label=""]
-    p90 [label=""]
+    p74
+    p75
+    p76
+    p77
+    p78
+    p79
+    p80
+    p81
+    p82
+    p83
+    p84
+    p85
+    p86
+    p87
+    p88
+    p89
+    p90
 
-    t72  [label=""]
-    tt73  [label=""]
-    tt74  [label=""]
-    tt75  [label=""]
-    tt76  [label=""]
-    t77  [label=""]
-    t78  [label=""]
-    t79  [label=""]
-    tt80  [label=""]
-    tt81  [label=""]
-    tt82  [label=""]
-    tt83  [label=""]
-    t84  [label=""]
-    tt85  [label=""]
-    t86  [label=""]
-    t87  [label=""]
-    t88  [label=""]
-    t89  [label=""]
+    t72
+    tt73
+    tt74
+    tt75
+    tt76
+    t77
+    t78
+    t79
+    tt80
+    tt81
+    tt82
+    tt83
+    t84
+    tt85
+    t86
+    t87
+    t88
+    t89
 
 subgraph cluster_4 {
   label="Módulo braço esteira->prensa";
@@ -523,24 +524,24 @@ t84 -> p99
 
 # Modulo prensa cubo
 
-    p91 [label=""]
-    p92 [label=""]
-    p93 [label=""]
-    p94 [label=""]
-    p95 [label=""]
-    p96 [label=""]
-    p97 [label=""]
-    p98 [label=""]
-    p99 [label=""]
+    p91
+    p92
+    p93
+    p94
+    p95
+    p96
+    p97
+    p98
+    p99
 
-    tt90  [label=""]
-    tt91  [label=""]
-    tt92  [label=""]
-    tt93  [label=""]
-    tt94  [label=""]
-    tt95  [label=""]
-    t96  [label=""]
-    tt97  [label=""]
+    tt90
+    tt91
+    tt92
+    tt93
+    tt94
+    tt95
+    t96
+    tt97
 
 subgraph cluster_5 {
   label="Módulo prensa cubo";
@@ -575,38 +576,38 @@ subgraph cluster_5 {
   t89 -> p115
 
     # Modulo Braço Prensa -> Armazenador
-    p100 [label=""]
-    p101 [label=""]
-    p102 [label=""]
-    p103 [label=""]
-    p104 [label=""]
-    p105 [label=""]
-    p106 [label=""]
-    p107 [label=""]
-    p108 [label=""]
-    p109 [label=""]
-    p110 [label=""]
-    p111 [label=""]
-    p112 [label=""]
-    p113 [label=""]
-    p114 [label=""]
-    p115 [label=""]
+    p100
+    p101
+    p102
+    p103
+    p104
+    p105
+    p106
+    p107
+    p108
+    p109
+    p110
+    p111
+    p112
+    p113
+    p114
+    p115
 
-    tt98  [label=""]
-    t99  [label=""]
-    t100  [label=""]
-    t101  [label=""]
-    t102  [label=""]
-    t103  [label=""]
-    tt104  [label=""]
-    tt105  [label=""]
-    t106  [label=""]
-    t107  [label=""]
-    t108  [label=""]
-    tt109  [label=""]
-    t110  [label=""]
-    t111  [label=""]
-    t112  [label=""]
+    tt98
+    t99
+    t100
+    t101
+    t102
+    t103
+    tt104
+    tt105
+    t106
+    t107
+    t108
+    tt109
+    t110
+    t111
+    t112
 
 subgraph cluster_6 {
   label="Módulo braço prensa->armazenamento";
@@ -674,45 +675,45 @@ t106->p116
 
 # Modulo armazenador y
 
-    p116 [label=""]
-    p117 [label=""]
-    p118 [label=""]
-    p119 [label=""]
-    p120 [label=""]
-    p121 [label=""]
-    p122 [label=""]
-    p123 [label=""]
-    p124 [label=""]
-    p125 [label=""]
-    p126 [label=""]
-    p127 [label=""]
-    p128 [label=""]
-    p129 [label=""]
-    p130 [label=""]
-    p131 [label=""]
+    p116
+    p117
+    p118
+    p119
+    p120
+    p121
+    p122
+    p123
+    p124
+    p125
+    p126
+    p127
+    p128
+    p129
+    p130
+    p131
 
-    tt113  [label=""]
-    tt114  [label=""]
-    t115  [label=""]
-    t116  [label=""]
-    t117  [label=""]
-    t118  [label=""]
-    t119  [label=""]
-    t120  [label=""]
-    t121  [label=""]
-    t122  [label=""]
-    t123  [label=""]
-    t124  [label=""]
-    t125  [label=""]
-    t126 [label=""]
-    t127 [label=""]
-    t128 [label=""]
-    t129 [label=""]
-    t130 [label=""]
-    t131 [label=""]
-    t132 [label=""]
-    t133 [label=""]
-    t134 [label=""]
+    tt113
+    tt114
+    t115
+    t116
+    t117
+    t118
+    t119
+    t120
+    t121
+    t122
+    t123
+    t124
+    t125
+    t126
+    t127
+    t128
+    t129
+    t130
+    t131
+    t132
+    t133
+    t134
 
 subgraph cluster_7 {
   label="Modulo armazenador (y)";
@@ -798,5 +799,252 @@ subgraph cluster_7 {
   t134 -> p131
 
 }
+
+  tt114 -> p132
+
+# Módulo armazenador (x)
+
+    p132
+    p133
+    p134
+    p135
+    p136
+    p137
+    p138
+    p139
+    p140
+    p141
+    p142
+    p143
+    p144
+    p145
+    p146
+    p147
+    p148
+    p149
+    p150
+    p151
+    p152
+    p153
+    p154
+
+    t135
+    t136
+    t137
+    t138
+    t139
+    t140
+    t141
+    t142
+    t143
+    t144
+    t145
+    t146
+    t147
+    t148
+    t149
+    t150
+    t151
+    t152
+    t153
+    t154
+    t155
+    t156
+    t157
+    t158
+    t159
+    t160
+    t161
+    t162
+    t163
+    t164
+    t165
+    t166
+    t167
+    t168
+    t169
+    
+subgraph cluster_8 {
+  label="Modulo armazenador (x)";
+  labelloc = b
+  style="dashed"
+  # color="red"
+  # pre
+
+  p132 -> t135
+  p132 -> t140
+  p132 -> t145
+  p132 -> t150
+  p132 -> t155
+  p132 -> t160
+  p132 -> t165
+
+
+  p133 -> t136
+  p133 -> t138
+
+  p134 -> t137
+
+  p135 -> t139
+
+  p136 -> t141
+  p136 -> t143
+
+  p137 -> t142
+
+  p138 -> t144
+
+  p139 -> t146
+  p139 -> t148
+
+  p140 -> t147
+
+  p141 -> t149
+
+
+  p142 -> t151
+  p142 -> t153
+
+  p143 -> t152
+
+  p144 -> t154
+
+
+  p145 -> t156
+  p145 -> t158
+
+  p146 -> t157
+
+  p147 -> t159
+
+
+  p148 -> t161
+  p148 -> t163
+
+  p149 -> t162
+
+  p150 -> t164
+
+  p151 -> t166
+  p151 -> t168
+
+  p152 -> t167
+
+  p153 -> t169
+
+  #pos
+
+  t135 -> p133
+  t136 -> p134
+  t136 -> p133
+  t138 -> p135
+  t139 -> p154
+
+  t140 -> p136
+  t141 -> p137
+  t141 -> p136
+  t143 -> p138
+  t144 -> p154
+
+  t145 -> p139
+  t146 -> p140
+  t146 -> p139
+  t148 -> p141
+  t149 -> p154
+
+
+  t150 -> p142
+  t151 -> p143
+  t151 -> p142
+  t153 -> p144
+  t154 -> p154
+
+  t155 -> p145
+  t156 -> p146
+  t156 -> p145
+  t158 -> p147
+  t159 -> p154
+
+  t160 -> p148
+  t161 -> p149
+  t161 -> p148
+  t163 -> p150
+  t164 -> p154
+
+  t165 -> p151
+  t166 -> p152
+  t166 -> p151
+  t168 -> p153
+  t169 -> p154
+
+}
+    p131 -> tt170
+    p154 -> tt170
+
+# Módulo armazenador (coloca peça e reset)
+
+    p155
+    p156
+    p157
+    p158
+    p159
+    p160
+    p161
+    p162
+    p163
+    p164
+    
+    tt170
+    tt171
+    tt172
+    tt173
+    tt174
+    t175
+    t176
+    t177
+    t178
+    t179
+
+subgraph cluster_9 {
+  label="Modulo armazenador (armazena peça)";
+  labelloc = b
+  style="dashed"
+  # color="red"
+  # pre
+
+  p155 -> tt171
+  p156 -> tt172
+  p157 -> tt173
+  p158 -> tt174
+
+  p159 -> t175
+  p160 -> t177
+
+  p161 -> t176
+  p162 -> t177
+
+  p163 -> t178
+  p163 -> t179
+
+  #pos
+
+  tt170 -> p155
+  tt171 -> p156
+  tt172 -> p157
+  tt173 -> p158
+
+  tt174 -> p159
+  tt174 -> p161
+
+  t175 -> p160
+  t176 -> p162
+
+  t177 -> p163
+
+  t178 -> p164
+
+}
+
+
 
 }
