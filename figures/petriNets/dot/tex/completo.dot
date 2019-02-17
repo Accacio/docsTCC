@@ -1,4 +1,5 @@
   digraph A {
+  splines = ortho;
     rankdir=LR;
     graph [pad="2", nodesep="0.25", ranksep="0.2"];
     margin=0;
@@ -142,6 +143,12 @@ subgraph cluster_1 {
   t20 -> p29
 }
 t21 -> p30
+
+t21 -> p163
+
+t21 -> p115
+
+
 
 # Modulo Metal V
 
@@ -520,7 +527,7 @@ subgraph cluster_4 {
 
 t84 -> p91
 t84 -> p99
-
+t89 -> p115
 
 # Modulo prensa cubo
 
@@ -573,7 +580,6 @@ subgraph cluster_5 {
 }
 
   tt97 -> p100
-  t89 -> p115
 
     # Modulo Braço Prensa -> Armazenador
     p100
@@ -611,7 +617,7 @@ subgraph cluster_5 {
 
 subgraph cluster_6 {
   label="Módulo braço prensa->armazenamento";
-  labelloc = b
+  labelloc = t
   style="dashed"
   # color="red"
   # pre
@@ -672,6 +678,10 @@ subgraph cluster_6 {
 }
 
 t106->p116
+
+p115 -> t46
+p115 -> t71
+
 
 # Modulo armazenador y
 
@@ -801,6 +811,7 @@ subgraph cluster_7 {
 }
 
   tt114 -> p132
+  p131 -> tt170
 
 # Módulo armazenador (x)
 
@@ -978,7 +989,7 @@ subgraph cluster_8 {
   t169 -> p154
 
 }
-    p131 -> tt170
+
     p154 -> tt170
 
 # Módulo armazenador (coloca peça e reset)
@@ -1045,6 +1056,7 @@ subgraph cluster_9 {
 
 }
 
-
+t179 -> p0m1
+p164 -> t100
 
 }
