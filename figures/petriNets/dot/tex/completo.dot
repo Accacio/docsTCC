@@ -1,7 +1,8 @@
   digraph A {
-  splines = ortho;
+    splines = ortho
     rankdir=LR;
-    graph [pad="2", nodesep="0.25", ranksep="0.2"];
+    ratio=fill
+    graph [pad="0.5", nodesep="0.25", ranksep="0.2"];
     margin=0;
 
 
@@ -206,7 +207,7 @@ subgraph cluster_2 {
   style="dashed"
   #color="white"
   labelloc = b
-  margin=0
+  # margin=0
   #pre
 
   p30 -> t22
@@ -340,7 +341,7 @@ subgraph cluster_3 {
   style="dashed"
   #color="white"
   labelloc = b
-  margin=0
+  # margin=0
 
 # pre
 
@@ -617,7 +618,8 @@ subgraph cluster_5 {
 
 subgraph cluster_6 {
   label="Módulo braço prensa->armazenamento";
-  labelloc = t
+  margin=0.3
+  labelloc = b
   style="dashed"
   # color="red"
   # pre
@@ -1019,6 +1021,7 @@ subgraph cluster_8 {
 subgraph cluster_9 {
   label="Modulo armazenador (armazena peça)";
   labelloc = b
+  margin=0.3
   style="dashed"
   # color="red"
   # pre
