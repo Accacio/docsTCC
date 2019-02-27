@@ -118,23 +118,30 @@ class DAOCT(automaton.DeterministicAutomaton):
         return event                     
     
     def printAutomaton(self):
-        print('States: ',end='')
-        for x in self.X:
-            print(x.label,end=' ')
+        # print('States: ',end='')
+        # for x in self.X:
+            # print(x.label,end=' ')
 #        print('\nEvents: ',end='')
 #        for sigma in self.Sigma:
 #            print(sigma.label,end=' ')
-        print('\nTransition function (xin,event) --> xout')
+        # print('\nTransition function (xin,event) -> xout')
+        print('digraph a {\nrankdir=LR;')
+        print('ratio=fill')
+        print('graph [pad="0.5", nodesep="0.25", ranksep="0.2"];')
+        print('margin=0;')
+        
         for xe,xout in self.f.items():
-            print((int(xe[0].label),xe[1]),' --> ',xout.label)
+            # print((int(xe[0].label),xe[1]),' -> ',xout.label)
+            print((int(xe[0].label)),' -> ',xout.label,'[label="',xe[1],'"]')
             print('\n')
-        print('\nInitial state: '+str(self.x0.label))
-        print('\n\nTheta (xin,xout) --> set of paths from xin to xout')
-        for x,paths in self.theta.items():
-            print((int(x[0].label),int(x[1].label)),' --> ',paths)
+        print('}')
+        # print('\nInitial state: '+str(self.x0.label))
+        # print('\n\nTheta (xin,xout) --> set of paths from xin to xout')
+        # for x,paths in self.theta.items():
+            # print((int(x[0].label),int(x[1].label)),' --> ',paths)
 ##        for x,paths in self.theta.items():
 ##            print((x[0].label,x[1].label),' --> ',paths,' MaxTime:',\
 ##                  str(max(self.thetaTimes[x]))+'ms')    
-        print('\n-----------')  
+        # print('\n-----------')  
 
-#G = DAOCT(P,2)
+# G = DAOCT(P,2)

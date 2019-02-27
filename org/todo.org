@@ -1,6 +1,12 @@
-* TODO Fazer Rede de Petri
+* DONE Fazer Rede de Petri
 * TODO Transformar rede de petri em ladder
 * TODO Colocar livro na bibliografia
 * TODO Colocar artigo na bibliografia
-* catar SIMATIC STEP 7 V12 (TIA Portal)
+* TODO Verificar valor rotação do braço
+
+valores sensor profundidade/presença
+
+Sem peça 90~95 abaixo de 1000
+concavidade para cima 2450 
+concavidade para baixo 11892
 * 
