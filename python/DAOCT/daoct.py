@@ -128,8 +128,10 @@ class DAOCT(automaton.DeterministicAutomaton):
         print('digraph a {\nrankdir=LR;')
         print('ratio=fill')
         print('graph [pad="0.5", nodesep="0.25", ranksep="0.2"];')
+        print('node [shape=circle];')
         print('margin=0;')
-        
+        print('init [style=invis]')
+        print('init ->',self.x0.label)
         for xe,xout in self.f.items():
             # print((int(xe[0].label),xe[1]),' -> ',xout.label)
             print((int(xe[0].label)),' -> ',xout.label,'[label="',xe[1],'"]')
