@@ -1,0 +1,17 @@
+.\" Manpage for daoct.
+.\" Contact raccacio@poli.ufrj.br .in to correct errors or typos.
+.TH man 8 "04 March 2019" "0.0" "daoct man page"
+.SH NAME
+daoct \- generates identified automata from csv with inputs and outputs using DAOCT Mehtod
+.SH SYNOPSIS
+daoct [-h] -i
+.SH DESCRIPTION
+daoct is a python program that implements
+
+
+\# .SH SEE ALSO
+\#useradd(8), passwd(5), nuseradd.debian(8) 
+\# .SH BUGS
+\# No known bugs.
+.SH AUTHOR
+Rafael Accácio Nogueira (raccacio@poli.ufrj.br)

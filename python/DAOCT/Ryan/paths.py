@@ -120,5 +120,5 @@ def nbOfCycles(*filenames):
        
 P = pathsConstructionFromFiles('DATA_IDENTIFICATION_BESTSOFAR.csv',
                                'DATA_IDENTIFICATION_BESTSOFAR2.csv')
-G = daoct.DAOCT(P,1)
+G = daoct.DAOCT(P,2)
 G.printAutomaton()

@@ -1,149 +1,85 @@
+#!/usr/bin/python3
 # -*- coding: utf-8 -*-
-"""
-Created on Tue Dec 18 17:56:04 2018
 
-@author: Ryan
-"""
-import automaton
-import table_read
-import IO
+import sys
+import getopt
+import utils as ut
 
-class DAOCT(automaton.DeterministicAutomaton):
-    
-    def __init__(self,P,k):
-        self.Pk = []
-        for p in P:
-            self.Pk.append(self.newPath(p,k))    
-        self.__construction(self.Pk)
-        
-    def __construction(self,Pk):
-        counter = 0
-        self.Lambda = {}
-        self.LambdaTilde = {}
-        self.x0 = automaton.State(counter)
-        self.X = []
-        self.X.append(self.x0)
-        self.Lambda[self.X[0]] = self.y(Pk[0][0])
-        self.LambdaTilde[self.X[0]] = self.Lambda[self.X[0]]
-        self.theta = {}
-        self.f = {}
-        self.Sigma = set()
-        self.Events = {}
-        self.Xf = set()
-        r = len(Pk)
-        for i in range(r):
-            li = len(Pk[i])
-            for j in range(li - 1):
-                for x in self.X:
-                    if self.LambdaTilde[x] == self.y(Pk[i][j]):
-                        curr = x
-                        break
-                foundxprime = 0
-                for x in self.X:
-                    if self.LambdaTilde[x]==self.y(Pk[i][j+1]):
-                        foundxprime = 1
-                        xprime = x
-                        break
-                if not foundxprime:
-                    counter+=1
-                    xprime = automaton.State(counter)
-                    self.X.append(xprime)
-                    self.LambdaTilde[xprime] = self.y(Pk[i][j+1])
-                    self.Lambda[xprime] = self.yL(Pk[i][j+1])
-                sigma = self.getEvent(self.Lambda[curr],self.Lambda[xprime])
-                self.Sigma.add(sigma)
-                self.f[(curr,sigma)] = xprime
-                if (curr,xprime) in self.theta:
-                    self.theta[(curr,xprime)].append(i)
-                else:
-                    self.theta[(curr,xprime)] = [i]
-                if j == li - 2: self.Xf.add(xprime)
-                    
-    def y(self,vectorm):
-        if isinstance(vectorm,list):
-            label = ''
-            for rec in vectorm:
-                label = label + rec.vector + ''
-        else:
-            label = vectorm.vector
-        return label
-    
-    def yL(self,vectorm):
-        if isinstance(vectorm,list):
-            return vectorm[-1].vector
-        else:
-            return vectorm.vector
-    
-    def newPath(self,path,k):
-        if k>1:
-            newpath = []
-            l = len(path)
-            for j in range(l):
-                if k<=j+1 and j<=l-1:
-                    newvector = path[j-k+1:j+1]
-                if j+1<k:
-                    newvector = path[:j+1]
-                newpath.append(newvector)
-        else:
-            newpath = path
-        return newpath
-    
-    def getReachableStates(self,curr):
-        #curr = self.getStateFromVector(currVector)
-        #reachVectors = []
-        reachStates = set()
-        for state in self.X:
-            if (curr,state) in self.theta:
-                reachStates.add(state)
-        return reachStates
-    
-    def getStatesFromVector(self,vector):
-        possStates = set()
-        for x in self.X:
-            if self.Lambda[x] == vector: possStates.add(x)
-        return possStates
-            
-    def getEvent(self,vecin,vecout):
-        N = table_read.ioVectorLength
-        event = ''
-        for i in range(len(vecin)):
-            if vecin[i]!=vecout[i]:
-                kvector = '0'*i+'1'+'0'*(N-i-1)
-                e = IO.tagger(kvector)[0]
-                #e = str(i)
-                if vecin[i]=='0': 
-                    event = event + e + '_1 '
-                else: event = event + e + '_0 '
-        if event=='': return 'Equal vectors!'
-        return event                     
-    
-    def printAutomaton(self):
-        # print('States: ',end='')
-        # for x in self.X:
-            # print(x.label,end=' ')
-#        print('\nEvents: ',end='')
-#        for sigma in self.Sigma:
-#            print(sigma.label,end=' ')
-        # print('\nTransition function (xin,event) -> xout')
-        print('digraph a {\nrankdir=LR;')
-        print('ratio=fill')
-        print('graph [pad="0.5", nodesep="0.25", ranksep="0.2"];')
-        print('node [shape=circle];')
-        print('margin=0;')
-        print('init [style=invis]')
-        print('init ->',self.x0.label)
-        for xe,xout in self.f.items():
-            # print((int(xe[0].label),xe[1]),' -> ',xout.label)
-            print((int(xe[0].label)),' -> ',xout.label,'[label="',xe[1],'"]')
-            print('\n')
-        print('}')
-        # print('\nInitial state: '+str(self.x0.label))
-        # print('\n\nTheta (xin,xout) --> set of paths from xin to xout')
-        # for x,paths in self.theta.items():
-            # print((int(x[0].label),int(x[1].label)),' --> ',paths)
-##        for x,paths in self.theta.items():
-##            print((x[0].label,x[1].label),' --> ',paths,' MaxTime:',\
-##                  str(max(self.thetaTimes[x]))+'ms')    
-        # print('\n-----------')  
+# config variables
+version=0.0
+inputFile=""
+outputFile=""
+verbose=False
+graphviz=False
+debug=False
 
-# G = DAOCT(P,2)
+
+
+def usage():
+    print("Usage: daoct [OPTION]")
+    return 
+
+try:
+    opts, args = getopt.gnu_getopt(sys.argv[1:],"shgi:o:",["input=","output=","verbose","graphviz","debug","version"])
+except getopt.GetoptError:
+    usage()
+    sys.exit(-1)
+
+if opts==[] or opts==[('--debug','')]or opts in [('--verbose','')]:
+    usage()
+    sys.exit(-1)
+
+
+file=""
+for opt, arg in opts:
+    if opt in ("-h","--help"):
+        usage()
+        sys.exit()
+    if opt in ("","--version"):
+        print("VERSION:",version)
+        sys.exit()
+    if opt in ("--verbose"):
+        verbose=True
+    if opt in ("-g","--graphviz"):
+        graphviz=True
+    if opt in ("--debug"):
+        debug=True
+    if opt in ("-i", "--input"):
+        inputFile=arg
+    if opt in ("-s", "--stdin"):
+        fromStdin=True
+    if opt in ("-o", "--output"):
+        outputFile=arg
+
+myutil = ut.MyUtil(verbose,debug)    
+if inputFile=="" and fromStdin==True:
+    try:
+        file=sys.stdin.readlines()
+    except KeyboardInterrupt:
+        sys.stdout.flush()
+        sys.exit(-1)
+elif inputFile!="":
+    try:
+        file=open(inputFile,newline='')
+        # filedata=file.read()
+    except FileNotFoundError:
+        print("File not Found, please insert a valid file name")
+        sys.exit(-1)
+else:
+    usage()
+    
+
+
+myutil.printd("VERSION          :",version)
+myutil.printd("ARGUMENTS        :",sys.argv[:])
+myutil.printd("OPTS             :",opts)
+myutil.printd("ARGS             :",args)
+myutil.printd("VERBOSE          :",verbose)
+myutil.printd("GRAPHVIZ         :",graphviz)
+myutil.printd("INPUTFILE        :",inputFile)
+myutil.printd("OUTPUT FILE NAME :",outputFile)
+# myutil.printd("PATH SIZE        :","\n",file.read())
+
+myTR= ut.TableReader(file,verbose,debug)
+data, collumns = myTR.readTable()
+print(collumns)

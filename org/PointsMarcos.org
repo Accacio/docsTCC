@@ -1,0 +1,13 @@
+* 2019-02-26
+** Pedir para verificar lógica da rede de Petri
+dividir t27 lugar 
+lógica do sensor de profundidade
+Lucas Antunes Floriano -> Movimentos do braço
+aumentar seta do petri
+alterar inicial para seta 
+** Mostrar processo com dot2tex para desenho de rede de Petri (linux)
+** Perguntar sobre o algoritmo online  DAOCT
+** Perguntar sobre comunicação de rede
+** perguntar sobre o HMI
+** falar sobre doutorado
+
