@@ -4,24 +4,14 @@ import csv
 
 
 class Record: 
-    def __init__(self,seq,date,utctime,time,iovector):
+    def __init__(self,seq,inputVector,outputVector):
         self.seq = seq
-        self.date = date
-        self.utctime = utctime
-        self.timestamp = time
-        self.vector = iovector
-        self.__timeConversion()
-        self.minTime = self.time
-        self.maxTime = self.time
-        #self.times = []
-        
-    def __timeConversion(self):
-        t = self.timestamp
-        tsplit = t.split(':')
-        secsplit = tsplit[-1].split('.')
-        timeInMilisseconds = 60*60*1000*int(tsplit[0]) + \
-        60*1000*int(tsplit[1]) + 1000*int(secsplit[0]) + int(secsplit[1])
-        self.time = timeInMilisseconds    
+        self.iVec = inputVector
+        self.oVec = inputVector
+
+    def __str__(self):
+        return str(self.seq) + "," + str(self.vector)
+
         
     def copyRecord(self):
         return Record(self.seq,self.date,self.utctime,self.timestamp,\
@@ -45,30 +35,48 @@ class MyUtil:
             for i in string:
                 print(i, end='')
             print("")
-
             
+
 class TableReader(MyUtil):
-    def __init__(self,file,verbose,debug):
+    def __init__(self,files,verbose,debug):
         MyUtil.__init__(self,verbose,debug)
-        self.file = file
+        self.files = files
 
+    def getRecordFromFile(self,numInputs,numOutputs):
+        self.printd("<<==Reading Table - BEGIN ==>>")
+        readers=[]
+        for file in self.files:
+            readers.append(csv.DictReader(file,delimiter=','))
 
-        
-
-    def readTable(self):
-        reader = csv.DictReader(self.file,delimiter=',')
-        collumNames=[]
         data=[]
-        # print(reader.rows)
-        lineCount=0
-        for row in reader:
-            if lineCount==0:
-                for collum in row:
-                    collumNames.append(collum)
-            data.append(row)
-            self.printd(row)
-            lineCount+=1
-        return (data, collumNames)
+        records=[]
+        # todo test number of collumns
+        for reader in readers:
+            lineCount=0
+            collumnNames=[]
+            for row in reader:
+                if lineCount==0:
+                    for collumn in row:
+                        collumnNames.append(collumn)
+                    self.printd("Collumn Names: ",collumnNames)
+                    
+                if row[collumnNames[0]]!="//END":
+                    data.append(row)
+                    print(row[collumnNames[1]])
+                    
+                    inputVector=row
+                    outputVector=row
+                    records.append(Record(row[collumnNames[0]],inputVector,outputVector))
+
+                    self.printd(row)
+
+                lineCount+=1
+
+        for i in records:
+            print("Input Vector", i.iVec)
+            print("Output Vector", i.oVec)
+        self.printd("<<==Reading Table - END ==>>")
+        return (data, collumnNames)
 
     
 

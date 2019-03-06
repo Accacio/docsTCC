@@ -7,12 +7,13 @@ import utils as ut
 
 # config variables
 version=0.0
-inputFile=""
+inputFiles=[]
 outputFile=""
 verbose=False
 graphviz=False
 debug=False
-
+numInputs=0
+numOutputs=0
 
 
 def usage():
@@ -20,7 +21,7 @@ def usage():
     return 
 
 try:
-    opts, args = getopt.gnu_getopt(sys.argv[1:],"shgi:o:",["input=","output=","verbose","graphviz","debug","version"])
+    opts, args = getopt.gnu_getopt(sys.argv[1:],"shgi:o:",["input=","output=","verbose","graphviz","debug","version","numInputs","numOutputs"])
 except getopt.GetoptError:
     usage()
     sys.exit(-1)
@@ -30,7 +31,7 @@ if opts==[] or opts==[('--debug','')]or opts in [('--verbose','')]:
     sys.exit(-1)
 
 
-file=""
+files=[]
 for opt, arg in opts:
     if opt in ("-h","--help"):
         usage()
@@ -40,27 +41,32 @@ for opt, arg in opts:
         sys.exit()
     if opt in ("--verbose"):
         verbose=True
+    if opt in ("--numInputs"):
+        numInputs=arg
+    if opt in ("--numOutputs"):
+        numOutputs=arg
     if opt in ("-g","--graphviz"):
         graphviz=True
     if opt in ("--debug"):
         debug=True
     if opt in ("-i", "--input"):
-        inputFile=arg
+        inputFiles.append(arg)
     if opt in ("-s", "--stdin"):
         fromStdin=True
     if opt in ("-o", "--output"):
         outputFile=arg
 
 myutil = ut.MyUtil(verbose,debug)    
-if inputFile=="" and fromStdin==True:
+if inputFiles==[] and fromStdin==True:
     try:
-        file=sys.stdin.readlines()
+        files.append(sys.stdin.readlines())
     except KeyboardInterrupt:
         sys.stdout.flush()
         sys.exit(-1)
-elif inputFile!="":
+elif inputFiles!=[]:
     try:
-        file=open(inputFile,newline='')
+        for inputFile in inputFiles:
+            files.append(open(inputFile,newline=''))
         # filedata=file.read()
     except FileNotFoundError:
         print("File not Found, please insert a valid file name")
@@ -76,10 +82,13 @@ myutil.printd("OPTS             :",opts)
 myutil.printd("ARGS             :",args)
 myutil.printd("VERBOSE          :",verbose)
 myutil.printd("GRAPHVIZ         :",graphviz)
-myutil.printd("INPUTFILE        :",inputFile)
+myutil.printd("INPUTFILES       :",inputFiles)
 myutil.printd("OUTPUT FILE NAME :",outputFile)
+myutil.printd("NUMINPUTS       :",numInputs)
+myutil.printd("NUMOUTPUTS       :",numOutputs)
 # myutil.printd("PATH SIZE        :","\n",file.read())
 
-myTR= ut.TableReader(file,verbose,debug)
-data, collumns = myTR.readTable()
-print(collumns)
+myTR= ut.TableReader(files,verbose,debug)
+records, collumns = myTR.getRecordFromFile(numInputs,numOutputs)
+
+
