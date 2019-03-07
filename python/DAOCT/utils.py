@@ -2,6 +2,7 @@ import math
 import sys
 import csv
 import functools
+import itertools
 
 class Record: 
     def __init__(self,seq,ioVector,ioNames):
@@ -69,7 +70,7 @@ class TableReader(MyUtil):
                     ioVector=list(map(lambda x : x[1],listItems[1:len(row)]))
                     ioVector=functools.reduce(lambda x,y: str(x) + str(y),ioVector)
                     newRecord=Record(row[collumnNames[0]],ioVector,collumnNames[1:])
-                    print(newRecord)
+                    self.printd(newRecord)
                     records.append(newRecord)
 
                 lineCount+=1
@@ -81,7 +82,57 @@ class PathManager(MyUtil):
     def __init__(self,records,verbose,debug):
         MyUtil.__init__(self,verbose,debug)
         self.records = records
+        self.paths=self.getPathsFromRecord()
         
+
+    def printPathd(self,paths):
+        if self.debug==True:
+            for path in paths:
+                print("Path",paths.index(path))
+                if isinstance(path,list):
+                    for i in path:
+                        print(i.ioVec,"",end="")
+                else:
+                    print(p)
+                print()
+
+    def printModifiedPathd(self,paths):
+        if self.debug==True:
+            for path in paths:
+                print("Path",paths.index(path))
+                if isinstance(path,list):
+                    for i in path:
+                        for j in i:
+                            print(j.ioVec,"")
+                        print()
+                else:
+                    print(p)
+                print()
+
+
+    def getPaths(self):
+        return self.paths
+
+    def getModifiedPaths(self,k):
+        sigma=[]
+
+        modifiedPaths=[]
+        for path in self.paths:
+            if k>1:
+                newpath = []
+                l = len(path)
+                for j in range(l):
+                    if k<=j+1 and j<=l-1:
+                        newvector = path[j-k+1:j+1]
+                    if j+1<k:
+                        newvector = path[:j+1]
+                    newpath.append(newvector)
+            else:
+                newpath = self.path
+            modifiedPaths.append(newpath)
+        return (modifiedPaths, sigma)
+
+            
     def getPathsFromRecord(self):
         self.printd("<<==Getting Paths from Record - BEGIN ==>>")
         paths=[]
@@ -122,70 +173,73 @@ class PathManager(MyUtil):
                 path=newRecords[pathsBeginInd[i]:pathsBeginInd[i+1]+1]
             self.printd("path ", i)
             for p in path:
-                self.printdnl(p.ioVec)
+                self.printdnl(p.ioVec," ")
             self.printd("")
             self.printd("end")
             P.append(path)
 
-        self.printd("==== Remove superposed")
-        pathNoSuper=[]
-        for i in range(len(P)):
-            for j in range(len(P)):
-                if i!=j and P[i]!=0 and P[j]!=0:
+        self.printd("==== Removing superposed")
+        pathsNoSuper=P.copy()
+        for i in pathsNoSuper:
+            for j in pathsNoSuper:
+                if i!=j:
 
-                    ioVeci = [rec.ioVec for rec in P[i]]
-                    ioVecj = [rec.ioVec for rec in P[j]]
+                    ioVeci = [rec.ioVec for rec in i]
+                    ioVecj = [rec.ioVec for rec in j]
+
                     if ioVecj==ioVeci[:len(ioVecj)]:
-                        self.printdnl("Path ", i, " includes path ",j)
-                        self.printd(" -> removing path ",j)
-                        P[j]=0
+                        # self.printdnl("Path ", pathsNoSuper.index(i), " includes path ", pathsNoSuper.index(j))
+                        # self.printd(" -> removing path ", pathsNoSuper.index(j))
+                        pathsNoSuper.remove(j)
+            
+        self.printPathd(pathsNoSuper)
 
-
-
-                    # if ioVecj:
-                    #     print("i", end=" ")
-                    # for p in ioVeci:
-                    #     print(p, end=" ")
-                    # print()
-                    # print("j", end=" ")
-                    # for p in ioVecj:
-                    #     print(p, end=" ")
-                    # print()
-                        
+        # self.printd("==== Removing superposed Met-0")
+        # for i in range(len(P)):
+        #     for j in range(len(P)):
+        #         if i!=j and P[i]!=0 and P[j]!=0:
+        #             ioVeci = [rec.ioVec for rec in P[i]]
+        #             ioVecj = [rec.ioVec for rec in P[j]]
+        #             if ioVecj==ioVeci[:len(ioVecj)]:
+        #                 self.printdnl("Path ", i, " includes path ",j)
+        #                 self.printd(" -> removing path ",j)
+        #                 P[j]=0
                     
-        for i in range(len(P)):
-            if isinstance(P[i],list):
-                if P[i][0].ioVec == P[i][1].ioVec:
-                    P[i] = 0
         # i = 0
         # while i < len(P):
         #     if P[i]==0:
         #         del P[i]
         #     else:
         #         i+=1
-        for p in P:
-            if isinstance(p,list):
-                for i in p:
-                    print(i.ioVec,end=" ")
-                print()
-            else:
-                print(p)
-        
+        # self.printPathd(P)
 
+        #Eliminate paths formed by two elements where both are the initial state                    
+        self.printd("==== Removing 2 node circular path")
+        # pathsNoTwoElemCircPath=pathsNoSuper.copy()
+        # for i in pathsNoTwoElemCircPath:
+        #     if i[0].ioVec == i[1].ioVec:
+        #         pathsNoTwoElemCircPath.remove(i)
+        pathsNoTwoElemCircPath=list(filter(lambda x: x[0].ioVec!=x[1].ioVec,pathsNoSuper))
+
+        self.printPathd(pathsNoTwoElemCircPath)
+        
+        # #Eliminate paths formed by two elements where both are the initial state                    
+        # self.printd("==== Removing 2 node circular path - Met 0")
         # for i in range(len(P)):
-        #     if i == len(P)-1:
-        #         path=newRecords[pathsBeginInd[i]:]
-        #     else:
-        #         path=newRecords[pathsBeginInd[i]:pathsBeginInd[i+1]+1]
-        #     print(i)
-        #     self.printd("path ", i+1)
-        #     for p in P[i]:
-        #         self.printd(p)
-                
-        #     self.printd("end")
-            
-        
+        #     if isinstance(P[i],list):
+        #         if P[i][0].ioVec == P[i][1].ioVec:
+        #             P[i] = 0
 
+        # i = 0
+        # while i < len(P):
+        #     if P[i]==0:
+        #         del P[i]
+        #     else:
+        #         i+=1
+
+        # self.printPathd(P)
+
+        paths = pathsNoTwoElemCircPath
         self.printd("<<==Getting Paths from Record - END ==>>")
         return paths
 

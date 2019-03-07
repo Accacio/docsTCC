@@ -13,7 +13,7 @@ verbose=False
 graphviz=False
 fromStdin=False
 debug=False
-
+paramk=1
 
 
 def usage():
@@ -21,7 +21,7 @@ def usage():
     return 
 
 try:
-    opts, args = getopt.gnu_getopt(sys.argv[1:],"shgi:o:",["input=","output=","verbose","graphviz","debug","version"])
+    opts, args = getopt.gnu_getopt(sys.argv[1:],"k:shgi:o:",["input=","output=","verbose","graphviz","debug","version","paramk="])
 except getopt.GetoptError:
     usage()
     sys.exit(-1)
@@ -43,6 +43,8 @@ for opt, arg in opts:
         verbose=True
     if opt in ("-g","--graphviz"):
         graphviz=True
+    if opt in ("-k"):
+        paramk=int(arg)
     if opt in ("--debug"):
         debug=True
     if opt in ("-i", "--input"):
@@ -81,10 +83,16 @@ myutil.printd("VERBOSE          :",verbose)
 myutil.printd("GRAPHVIZ         :",graphviz)
 myutil.printd("INPUTFILES       :",inputFiles)
 myutil.printd("OUTPUT FILE NAME :",outputFile)
+myutil.printd("PARAMETER k      :",paramk)
 
 myTR = ut.TableReader(files,verbose,debug)
 records = myTR.getRecordFromFile()
 myPM = ut.PathManager(records,verbose,debug)
-paths = myPM.getPathsFromRecord()
+paths = myPM.getPaths()
+modifiedPaths, modifiedSigmas = myPM.getModifiedPaths(paramk)
 
+print("original")
+myPM.printPathd(paths)
+print("modified")
+myPM.printModifiedPathd(modifiedPaths)
 
