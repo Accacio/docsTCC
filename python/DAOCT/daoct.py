@@ -11,9 +11,9 @@ inputFiles=[]
 outputFile=""
 verbose=False
 graphviz=False
+fromStdin=False
 debug=False
-numInputs=0
-numOutputs=0
+
 
 
 def usage():
@@ -21,7 +21,7 @@ def usage():
     return 
 
 try:
-    opts, args = getopt.gnu_getopt(sys.argv[1:],"shgi:o:",["input=","output=","verbose","graphviz","debug","version","numInputs","numOutputs"])
+    opts, args = getopt.gnu_getopt(sys.argv[1:],"shgi:o:",["input=","output=","verbose","graphviz","debug","version"])
 except getopt.GetoptError:
     usage()
     sys.exit(-1)
@@ -36,15 +36,11 @@ for opt, arg in opts:
     if opt in ("-h","--help"):
         usage()
         sys.exit()
-    if opt in ("","--version"):
+    if opt in ("--version"):
         print("VERSION:",version)
         sys.exit()
     if opt in ("--verbose"):
         verbose=True
-    if opt in ("--numInputs"):
-        numInputs=arg
-    if opt in ("--numOutputs"):
-        numOutputs=arg
     if opt in ("-g","--graphviz"):
         graphviz=True
     if opt in ("--debug"):
@@ -73,6 +69,7 @@ elif inputFiles!=[]:
         sys.exit(-1)
 else:
     usage()
+    sys.exit(-1)
     
 
 
@@ -84,11 +81,10 @@ myutil.printd("VERBOSE          :",verbose)
 myutil.printd("GRAPHVIZ         :",graphviz)
 myutil.printd("INPUTFILES       :",inputFiles)
 myutil.printd("OUTPUT FILE NAME :",outputFile)
-myutil.printd("NUMINPUTS       :",numInputs)
-myutil.printd("NUMOUTPUTS       :",numOutputs)
-# myutil.printd("PATH SIZE        :","\n",file.read())
 
-myTR= ut.TableReader(files,verbose,debug)
-records, collumns = myTR.getRecordFromFile(numInputs,numOutputs)
+myTR = ut.TableReader(files,verbose,debug)
+records = myTR.getRecordFromFile()
+myPM = ut.PathManager(records,verbose,debug)
+paths = myPM.getPathsFromRecord()
 
 
