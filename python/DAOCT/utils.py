@@ -96,7 +96,7 @@ class PathManager(MyUtil):
                     print(p)
                 print()
 
-    def printModifiedPathd(self,paths):
+    def printModifiedPathsd(self,paths):
         if self.debug==True:
             for path in paths:
                 print("Path",paths.index(path))
@@ -114,25 +114,77 @@ class PathManager(MyUtil):
         return self.paths
 
     def getModifiedPaths(self,k):
-        sigma=[]
+        self.printd("<<==Getting Modified Paths from Paths - BEGIN ==>>")
 
+
+
+        # def getEvent(self,vecin,vecout):
+        #     N = table_read.ioVectorLength
+        #     event = ''
+        #     for i in range(len(vecin)):
+        #         if vecin[i]!=vecout[i]:
+        #         kvector = '0'*i+'1'+'0'*(N-i-1)
+        #         e = IO.tagger(kvector)[0]
+        #         #e = str(i)
+        #         if vecin[i]=='0': 
+        #             event = event + e + '_1 '
+        #         else: event = event + e + '_0 '
+        # if event=='': return 'Equal vectors!'
+        # return event                     
+
+
+        sigma=[]
         modifiedPaths=[]
         for path in self.paths:
-            if k>1:
-                newpath = []
-                l = len(path)
-                for j in range(l):
-                    if k<=j+1 and j<=l-1:
-                        newvector = path[j-k+1:j+1]
-                    if j+1<k:
-                        newvector = path[:j+1]
-                    newpath.append(newvector)
-            else:
-                newpath = self.path
+            newpath = []
+            newSigma = []
+            l = len(path)
+            self.printd("Path ",self.paths.index(path))
+            for j in range(l):
+                if j<=l-1:
+                    if k<=j+1:
+                        newVector = path[j-k+1:j+1]
+                    
+                    elif j+1<k:
+                        newVector = path[:j+1]
+
+                    if j<l-1:
+                        newSigma = self.getSigma(path[j],path[j+1])
+
+                newpath.append(newVector)
+                
+                for i in newVector:
+                    self.printd(i.ioVec)
+                self.printd()
+
+                
+                
+                
             modifiedPaths.append(newpath)
+        self.printd("<<==Getting Modified Paths from Paths - END ==>>")            
         return (modifiedPaths, sigma)
 
-            
+    def getSigma(self,record,recordPrime):
+        vec=record.ioVec
+        vecPrime=recordPrime.ioVec
+        names=record.ioNames
+        self.printd(record.ioVec," -> ",recordPrime.ioVec)
+        self.printd()
+        diff=[i for i in range(len(vec)) if vec[i] != vecPrime[i]]
+
+        for i in diff:
+            self.printdnl(names[i])
+            if vec[i]=='0' and vecPrime[i]=='1':
+                self.printdnl("^ ")
+            if vec[i]=='1' and vecPrime[i]=='0':
+                self.printdnl("v ")
+        self.printd()
+        
+        # for i in record.ioVec:
+        #     self.printd(i,recordPrime.ioVec[int(i)])
+        
+        # return
+    
     def getPathsFromRecord(self):
         self.printd("<<==Getting Paths from Record - BEGIN ==>>")
         paths=[]
