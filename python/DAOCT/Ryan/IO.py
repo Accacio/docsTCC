@@ -1,6 +1,6 @@
 def tagger(state):
 # state written in base 10 or in binary
-    
+
     AcqValues = []
     AcqValues.append("fmag1")
     AcqValues.append("rmag1")
@@ -29,7 +29,7 @@ def tagger(state):
 
     def f(state):
         if isinstance(state,int):
-            
+
             binstate = bin(state)
 
             s = list(binstate)
@@ -44,7 +44,7 @@ def tagger(state):
         if isinstance(state,str):
 
             s = list(state)
-            
+
             s.reverse()
             io = []
             for k in range(len(s)):
@@ -74,8 +74,8 @@ def printPath(path):
             ios = tagger(v)
             print(str(c)+': ',ios,end=' ')
             print(', time '+str(t)+'ms')
-        c+=1    
-        
+        c+=1
+
 def printPathPrime(path):
     c = 0
     for vec in path:
@@ -89,8 +89,8 @@ def printPathPrime(path):
             ios = tagger(u)
             print(str(c)+': ',ios,end=' ')
             print(', intervals '+str(t))
-        c+=1    
+        c+=1
 
-    
 
-        
+
+

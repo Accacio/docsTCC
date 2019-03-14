@@ -47,10 +47,12 @@ def readRecordsFromFiles(*filenames):
                                   row['Time'],int(row['IOvector'])))    
         
     for rec in records:
+        # print("rec.vector init: ",rec.vector)
         vec = bin(rec.vector)[2:]
+        # print(vec)
         #vec = [int(b) for b in vec]
         rec.vector = '0'*(ioVectorLength - len(vec)) + vec 
-        
+        # print("rec.vector fin: ",rec.vector)
         
         
     return records

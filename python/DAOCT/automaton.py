@@ -32,6 +32,9 @@ class State(graph.Vertex):
                 #print('Improve label loop!')
                 self.improveLabel(p)
 
+    def __str__(self):
+        return "x" + self.label
+
 class Event:
     def __init__(self,label):
         self.label = str(label)

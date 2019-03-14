@@ -9,13 +9,13 @@ import table_read
 import IO
 
 class DAOCT(automaton.DeterministicAutomaton):
-    
+
     def __init__(self,P,k):
         self.Pk = []
         for p in P:
-            self.Pk.append(self.newPath(p,k))    
+            self.Pk.append(self.newPath(p,k))
         self.__construction(self.Pk)
-        
+
     def __construction(self,Pk):
         counter = 0
         self.Lambda = {}
@@ -58,7 +58,7 @@ class DAOCT(automaton.DeterministicAutomaton):
                 else:
                     self.theta[(curr,xprime)] = [i]
                 if j == li - 2: self.Xf.add(xprime)
-                    
+
     def y(self,vectorm):
         if isinstance(vectorm,list):
             label = ''
@@ -67,13 +67,13 @@ class DAOCT(automaton.DeterministicAutomaton):
         else:
             label = vectorm.vector
         return label
-    
+
     def yL(self,vectorm):
         if isinstance(vectorm,list):
             return vectorm[-1].vector
         else:
             return vectorm.vector
-    
+
     def newPath(self,path,k):
         if k>1:
             newpath = []
@@ -87,7 +87,7 @@ class DAOCT(automaton.DeterministicAutomaton):
         else:
             newpath = path
         return newpath
-    
+
     def getReachableStates(self,curr):
         #curr = self.getStateFromVector(currVector)
         #reachVectors = []
@@ -96,13 +96,13 @@ class DAOCT(automaton.DeterministicAutomaton):
             if (curr,state) in self.theta:
                 reachStates.add(state)
         return reachStates
-    
+
     def getStatesFromVector(self,vector):
         possStates = set()
         for x in self.X:
             if self.Lambda[x] == vector: possStates.add(x)
         return possStates
-            
+
     def getEvent(self,vecin,vecout):
         N = table_read.ioVectorLength
         event = ''
@@ -111,39 +111,52 @@ class DAOCT(automaton.DeterministicAutomaton):
                 kvector = '0'*i+'1'+'0'*(N-i-1)
                 e = IO.tagger(kvector)[0]
                 #e = str(i)
-                if vecin[i]=='0': 
+                if vecin[i]=='0':
                     event = event + e + '_1 '
                 else: event = event + e + '_0 '
         if event=='': return 'Equal vectors!'
-        return event                     
-    
+        return event
+
     def printAutomaton(self):
-        # print('States: ',end='')
-        # for x in self.X:
-            # print(x.label,end=' ')
-#        print('\nEvents: ',end='')
-#        for sigma in self.Sigma:
-#            print(sigma.label,end=' ')
-        # print('\nTransition function (xin,event) -> xout')
-        print('digraph a {\nrankdir=LR;')
-        print('ratio=fill')
-        print('graph [pad="0.5", nodesep="0.25", ranksep="0.2"];')
-        print('node [shape=circle];')
-        print('margin=0;')
-        print('init [style=invis]')
-        print('init ->',self.x0.label)
+        print('States: ',end='')
+        for x in self.X:
+            print(x.label,end=' ')
+        print('\nEvents: ',end='')
+        for sigma in self.Sigma:
+            print(sigma,end=' ')
+        print('\nTransition function (xin,event) -> xout')
+
         for xe,xout in self.f.items():
-            # print((int(xe[0].label),xe[1]),' -> ',xout.label)
-            print((int(xe[0].label)),' -> ',xout.label,'[label="',xe[1],'"]')
-            print('\n')
-        print('}')
-        # print('\nInitial state: '+str(self.x0.label))
-        # print('\n\nTheta (xin,xout) --> set of paths from xin to xout')
+            print((int(xe[0].label),xe[1]),' -> ',xout.label)
+
+
+
+        print('\nInitial state: '+str(self.x0.label))
+        print('\nTheta (xin,xout) --> set of paths from xin to xout')
+        for x,paths in self.theta.items():
+            print((int(x[0].label),int(x[1].label)),' --> ',paths)
         # for x,paths in self.theta.items():
-            # print((int(x[0].label),int(x[1].label)),' --> ',paths)
-##        for x,paths in self.theta.items():
-##            print((x[0].label,x[1].label),' --> ',paths,' MaxTime:',\
-##                  str(max(self.thetaTimes[x]))+'ms')    
-        # print('\n-----------')  
+            # print((x[0].label,x[1].label),' --> ',paths,' MaxTime:',\
+                  # str(max(self.thetaTimes[x]))+'ms')
+        print('\n-----------')
+
+        # print('digraph a {\nrankdir=LR;')
+        # print('ratio=fill')
+        # print('graph [pad="0.5", nodesep="0.25", ranksep="0.2"];')
+        # print('node [shape=circle];')
+        # print('margin=0;')
+        # print('init [style=invis]')
+        # print('init ->',self.x0.label)
+        # for xe,xout in self.f.items():
+        #     # print((int(xe[0].label),xe[1]),' -> ',xout.label)
+        #     print((int(xe[0].label)),' -> ',xout.label,'[label="',xe[1],'"]')
+        #     print('\n')
+        # print('}')
+
+
+
+
+
+
 
 # G = DAOCT(P,2)

@@ -12,28 +12,27 @@ import daoct
 
 def pathsConstructionFromFiles(*filenames):
 
-    records = table_read.readRecordsFromFiles(*filenames) 
-    
+    records = table_read.readRecordsFromFiles(*filenames)
+
     #Exclude the neighbours vectors that are equal
     recordsn = [records[0]]
     for i in range(len(records) - 1):
         if records[i].vector!=records[i+1].vector or records[i].vector==records[0].vector:
             recordsn.append(records[i+1])
         #else: print(i)
-            
+
     #Find the vectors that are equal to the first one to separate the paths
     ind = [0]
     for i in range(1,len(recordsn)):
         if recordsn[0].vector==recordsn[i].vector:
             ind.append(i)
-    
-    
+
     #Obtain the candidates to paths
     P = []
     for i in range(len(ind) - 1):
         P.append(recordsn[ind[i]:ind[i+1]+1])
-        recordsn[ind[i+1]] = recordsn[ind[i+1]].copyRecord() 
-        
+        recordsn[ind[i+1]] = recordsn[ind[i+1]].copyRecord()
+
     #Change definition of time so as to represent durations of transitions
     #x0.time is the time between recordings of x0 and of the next state
     #The times corresponding to the initial state are set to 'x ' because they are
@@ -49,7 +48,7 @@ def pathsConstructionFromFiles(*filenames):
         p[-1].time = 'x '
         p[-1].minTime = p[-1].time
         p[-1].maxTime = p[-1].time
-        
+
     #Eliminate the paths that are contained in a longer path keeping the longest
     #    time durations
     #similarPaths = []
@@ -66,18 +65,18 @@ def pathsConstructionFromFiles(*filenames):
                             P[j][q].minTime = min([P[j][q].minTime,P[i][q].minTime])
                             P[j][q].maxTime = max([P[j][q].maxTime,P[i][q].maxTime])
                         P[i] = 0
-                       
-                        
-    #Eliminate paths formed by two elements where both are the initial state                    
+
+
+    #Eliminate paths formed by two elements where both are the initial state
     for i in range(len(P)):
         if isinstance(P[i],list):
             if P[i][0].vector == P[i][1].vector:
                 P[i] = 0
-                
+
     #Remove grey paths
     #P = removeGreyPaths(P)
-    
-    #Path elimination          
+
+    #Path elimination
     i = 0
     while i < len(P):
         if P[i]==0:
@@ -90,7 +89,7 @@ def pathsConstructionFromFiles(*filenames):
 #    for i in range(len(P)):
 #        if isinstance(P[i],list):
 #            if P[i][1].vector == '00001000000001010101010':
-#                P[i] = 0  
+#                P[i] = 0
 #    i = 0
 #    while i < len(P):
 #        if P[i]==0:
@@ -108,7 +107,7 @@ def pathDistinction(P,i):
             for q in range(min([len(path),len(p)])):
                 if path[q]!=p[q]:
                     break
-            diffindex.append(q)         
+            diffindex.append(q)
     return max(diffindex)
 
 def nbOfCycles(*filenames):
@@ -117,7 +116,7 @@ def nbOfCycles(*filenames):
     for rec in records:
         if rec.vector == records[0].vector: c+=1
     return c
-       
+
 P = pathsConstructionFromFiles('DATA_IDENTIFICATION_BESTSOFAR.csv',
                                'DATA_IDENTIFICATION_BESTSOFAR2.csv')
 G = daoct.DAOCT(P,2)
