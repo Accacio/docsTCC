@@ -1,0 +1,28 @@
+Gostaria de agradecer primeiramente a Deus, pois sem Ele nada é
+possível e por *todas* as pessoas qu'Ele colocou em meu
+caminho, que me fizeram crescer e ser o indivíduo que hoje sou.
+
+* Meus Pais
+
+  Agradeço aos meus pais
+
+* Professores (Colégio Aplicação de Vista Alegre, Adlai Stevenson, Colégio Pedro II, CEFET )
+
+   Que me deram a base acadêmica necessária para prosseguir o meu caminho
+
+* Colegas dos colégios
+
+   Principalmente os do Pedro II que 
+
+* Professores da Faculdade
+* Colegas de turma T17
+* Peli, Moysés
+* Felipe e Philipe
+* Evelise
+* Orientador
+
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "../monografia.tex"
+%%% End:

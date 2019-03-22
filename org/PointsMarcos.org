@@ -5,9 +5,9 @@ lógica do sensor de profundidade
 Lucas Antunes Floriano -> Movimentos do braço
 aumentar seta do petri
 alterar inicial para seta 
-** Mostrar processo com dot2tex para desenho de rede de Petri (linux)
-** Perguntar sobre o algoritmo online  DAOCT
-** Perguntar sobre comunicação de rede
-** perguntar sobre o HMI
+** DONE Mostrar processo com dot2tex para desenho de rede de Petri (linux)
+** DONE Perguntar sobre o algoritmo online  DAOCT
+** DONE Perguntar sobre comunicação de rede
+** DONE perguntar sobre o HMI
 ** falar sobre doutorado
 

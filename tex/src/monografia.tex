@@ -1,0 +1,136 @@
+\input{preamble}
+
+\input{glossaires_et_symb}
+\makeindex
+\makelosymbols
+\makeloabbreviations
+\acr{ECA}{ECA}{Engenharia de controle e Automação}
+% \final
+\draft
+\begin{document}
+% Identificação e Detecção de Falhas em um Sistema de Manufatura Didático
+\title{Identification and Failure~Detection in a Didactic~Manufacture~System}
+\foreigntitle{Identification and Failure~Detection in a Didactic~Manufacture~System}
+\author{Rafael Accácio}{Nogueira}
+\advisor{Prof.}{Marcos Vicente de Brito}{Moreira}{D.Sc.}
+% \advisor{Prof.}{Nome do Segundo Orientador}{Sobrenome}{Ph.D.}
+% \advisor{Prof.}{Nome do Terceiro Orientador}{Sobrenome}{D.Sc.}
+
+% \examiner{Prof.}{Nome do Primeiro Examinador Sobrenome}{D.Sc.}
+% \examiner{Prof.}{Nome do Segundo Examinador Sobrenome}{Ph.D.}
+% \examiner{Prof.}{Nome do Terceiro Examinador Sobrenome}{D.Sc.}
+\department{ECA}
+
+\date{04}{2019}
+
+\keyword{Failure~Detection}
+\keyword{Discrete~Event~Systems}
+\maketitle
+
+\frontmatter
+
+% \includepdf{../figures/frontpage.pdf} %frontpage assinada pela banca
+\makefrontpage\warning{TURN DEBUG OFF}\newpage
+
+\makecatalog
+\include{frontMatter/dedicatoria}
+\include{frontMatter/thanks}
+\include{frontMatter/resumo}
+\include{frontMatter/abstract}
+
+\tableofcontents
+
+\listoffigures
+\listoftables
+\printlosymbols
+\printloabbreviations
+\setglossarystyle{long4col}
+\renewcommand*{\glsnamefont}[1]{\textmd{#1}}
+
+\newglossarystyle{dottedlocations}{%
+   \glossarystyle{list}%
+   \renewcommand*{\glossaryentryfield}[5]{%
+   \item[\glsentryitem{##1}\glstarget{##1}{##2}] ##3, p %
+       \unskip\leaders\hbox to 2.9mm{} ##5}%
+   \renewcommand*{\glsgroupskip}{}%
+}
+ 
+ \newglossarystyle{mylist}{%  
+ % put the glossary in the itemize environment:  
+ \renewenvironment{theglossary}%  
+   {\begin{tabular}{ll}}{\end{tabular}}%  
+ % have nothing after \begin{theglossary}:  
+ \renewcommand*{\glossaryheader}{}%  
+ % have nothing between glossary groups:  
+ \renewcommand*{\glsgroupheading}[1]{}%  
+ \renewcommand*{\glsgroupskip}{}%  
+ % set how each entry should appear:  
+ \renewcommand*{\glossentry}[2]{%  
+
+ \glstarget{##1}{\glossentryname{##1}}&% the entry name  
+  \glossentrysymbol{##1}% the symbol in brackets  
+ \space \glossentrydesc{##1},% the description  
+ \space p. ##2\\% the number list in square brackets  
+ }%  
+ % set how sub-entries appear:  
+ \renewcommand*{\subglossentry}[3]{%  
+   \glossentry{##2}{##3}}%  
+ }
+
+\glossarystyle{mylist}
+ 
+\newacronym{manet}{MANET}{Mobile Ad hoc NETwork}
+\newacronym{rwp}{RWP}{Random WayPoint}
+\newacronym{rw}{RW}{Random Walk}
+\glsaddall
+\newpage
+\printglossary[type=\acronymtype,title=Acronyms]
+% \phantomsection\addcontentsline{toc}{chapter}{Acronyms}
+\newpage 
+\printglossary[title=Glossary]
+% \phantomsection\addcontentsline{toc}{chapter}{Glossary}
+\newpage
+\mainmatter
+
+\gls{Qgdx}
+
+\include{mainMatter/chap01}
+\include{mainMatter/chap02}
+\include{mainMatter/chap03}
+\include{mainMatter/chap04}
+\include{mainMatter/chap05}
+
+
+
+
+\gls{ECA}
+Teste de teste
+\begin{table}[H]
+  \centering
+  \begin{tabular}{cc}
+    \label{tab:tab1}
+    \hypertarget{tab:1}{}
+    Transição&Significado\\
+    \hline \\
+    \hyperlink{net:1}{$t_{1}$}&Test
+
+  \end{tabular}
+  \caption{table}
+\end{table}
+
+
+
+
+
+
+
+
+\backmatter
+\bibliographystyle{coppe-unsrt}
+\nocite{*}
+\bibliography{bibliography}
+
+
+\appendix
+\include{appendices/appenA}
+\end{document}
