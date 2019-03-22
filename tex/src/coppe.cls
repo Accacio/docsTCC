@@ -6,31 +6,31 @@
 %% The original source files were:
 %%
 %% coppe.dtx  (with options: `class')
-%% 
+%%
 %% This is the `coppe' document class used for composition of LaTeX
 %% monographs (master and PhD thesis, and PhD qualifying exams)
 %% satisfying the requirements of the Coordination of Research and
 %% Graduate Courses in Engineering at the Federal University of
 %% Rio de Janeiro.
-%% 
+%%
 %% Copyright (C) 2008 Vicente Helano and George Ainsworth Jr.
-%% 
+%%
 %% This program is free software; you can redistribute it and/or modify
 %% it under the terms of the GNU General Public License version 3 as
 %% published by the Free Software Foundation.
-%% 
+%%
 %% This program is distributed in the hope that it will be useful,
 %% but WITHOUT ANY WARRANTY; without even the implied warranty of
 %% MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 %% GNU General Public License version 3 for more details.
-%% 
+%%
 %% You should have received a copy of the GNU General Public License
 %% version 3 along with this package (see COPYING file).
 %% If not, see <http://www.gnu.org/licenses/>.
-%% 
+%%
 %% Author(s): Vicente Helano,
 %%            George Ainsworth
-%% 
+%%
 %% \CheckSum{1416}
 %% \CharacterTable
 %%  {Upper-case    \A\B\C\D\E\F\G\H\I\J\K\L\M\N\O\P\Q\R\S\T\U\V\W\X\Y\Z
@@ -54,6 +54,9 @@
 
 %% Adapted by Lima, Públio for EQ undergraduated projects
 
+%% Adapted by Nogueira, Rafael Accácio for POLI undergraduated
+%% projects
+
 \def\filename{coppe.dtx}
 \def\fileversion{v2.2}
 \def\filedate{2011/02/08}
@@ -63,7 +66,7 @@
 \RequirePackage[sort&compress]{natbib}
 \RequirePackage{hyphenat}
 \RequirePackage{lastpage}
-\RequirePackage[english,brazil]{babel}
+\RequirePackage[brazil,english]{babel}
 \RequirePackage{ifthen}
 \RequirePackage{graphicx}
 \RequirePackage{setspace}
@@ -81,11 +84,24 @@ T\kern-.1667em\lower.5ex\hbox{E}\kern-.125emX\spacefactor1000}
 \setboolean{eqvar}{false}
 \newboolean{maledoc}
 \setboolean{maledoc}{false}
+\newboolean{male}
+\newif\ifmale
+\malefalse
 \newboolean{poli}
 \setboolean{poli}{false}
 \DeclareOption{aprovado}{%
-	\setboolean{signature}{true}
+  \setboolean{signature}{true}
+      }
+\DeclareOption{masc}{%
+  \maletrue
 }
+\DeclareOption{fem}{%
+  \malefalse
+}
+\newcommand\signedFrontPage[1]{%
+  \global\def\frontMatter{#1}%
+}
+
 
 \DeclareOption{msc}{%
   \newcommand{\@degree}{M.Sc.}
@@ -99,7 +115,7 @@ T\kern-.1667em\lower.5ex\hbox{E}\kern-.125emX\spacefactor1000}
 \DeclareOption{dscexam}{%
   \newcommand{\@degree}{D.Sc.}
   \newcommand{\@degreename}{Doutorado}
-  \newcommand{\local@degname}{Doutor}
+  \newcommand{\local@degname}{Doutor\ifmale o \else a\fi}
   \newcommand{\foreign@degname}{Doctor}
   \setboolean{maledoc}{true}
   \newcommand\local@doctype{Exame de Qualifica{\c c}{\~ a}o}
@@ -118,7 +134,7 @@ T\kern-.1667em\lower.5ex\hbox{E}\kern-.125emX\spacefactor1000}
 \DeclareOption{grad}{%
 	% \newcommand{\@degree}{Eletricista}
 	\newcommand{\@degreename}{Gradua\c{c}\~{a}o}
-	\newcommand{\local@degname}{Engenheiro}
+	\newcommand{\local@degname}{Engenheir\ifmale o \else a\fi}
 	\newcommand{\foreign@degname}{Engineer}
 	\setboolean{maledoc}{true}
 	\setboolean{poli}{true}
@@ -215,9 +231,9 @@ T\kern-.1667em\lower.5ex\hbox{E}\kern-.125emX\spacefactor1000}
   	\global\def\foreign@deptname{Computer Engineering }
   	\global\def\@degree{de Computação}}{}
   \ifthenelse{\equal{#1}{ECA}}
-  {\global\def\local@deptname{Engenharia de Controle e Automa\c{c}\~{a}o}
-  	\global\def\foreign@deptname{Automation and Control Engineering}
-  	\global\def\@degree{de Controle e Automa\c{c}\~{a}o}}{}
+  {\global\def\local@deptname{Engenharia~de~Controle~e~Automa\c{c}\~{a}o}
+  	\global\def\foreign@deptname{Automation~and~Control~Engineering}
+  	\global\def\@degree{de~Controle~e~Automa\c{c}\~{a}o}}{}
   \ifthenelse{\equal{#1}{EMAT}}
   {\global\def\local@deptname{Engenharia de Materiais}
   	\global\def\foreign@deptname{Materials Engineering}
@@ -262,14 +278,21 @@ T\kern-.1667em\lower.5ex\hbox{E}\kern-.125emX\spacefactor1000}
   \global\def\foreign@title{#1}%
 }
 \newcount\@advisor\@advisor0
-\newcommand\advisor[4]{%
+\newcount\@advisorf\@advisorf0
+\newcommand\advisor[5]{%
   \global\@namedef{CoppeAdvisorTitle:\expandafter\the\@advisor}{#1}
   \global\@namedef{CoppeAdvisorName:\expandafter\the\@advisor}{#2}
   \global\@namedef{CoppeAdvisorSurname:\expandafter\the\@advisor}{#3}
   \global\@namedef{CoppeAdvisorDegree:\expandafter\the\@advisor}{#4}
+  \def\f{f}
+  \if f#5 \renewcommand\local@advisorstring{Orientadora} \global\advance\@advisorf by 1\fi
   \global\advance\@advisor by 1
   \ifnum\@advisor>1
+    \ifnum\@advisor=\@advisorf
+    \renewcommand\local@advisorstring{Orientadoras}
+    \else
     \renewcommand\local@advisorstring{Orientadores}
+    \fi
     \renewcommand\foreign@advisorstring{Advisors}
   \fi
 }
@@ -373,7 +396,7 @@ T\kern-.1667em\lower.5ex\hbox{E}\kern-.125emX\spacefactor1000}
   \global\let\maketitle\relax%
   \global\let\and\relax}
 \newcommand\makefrontpage{%
-\ifthenelse{\boolean{signature}}{\includepdf{aprovacao.pdf}}{
+\ifthenelse{\boolean{signature}}{\includepdf{\frontMatter}}{
   \begin{center}
     \sloppy\nohyphens{\MakeUppercase\local@title}\par
     \vspace*{7mm}
@@ -446,7 +469,7 @@ T\kern-.1667em\lower.5ex\hbox{E}\kern-.125emX\spacefactor1000}
       \nohyphens\@authname\par
 %     \nohyphens{\local@title/\@authname\ \@authsurn. -- \local@cityname:
 %     UFRJ/COPPE, \number\year.}\par
-      \ifthenelse{\boolean{poli}}{\nohyphens{\local@title/\@authname\ \@authsurn. -- \local@cityname:
+      \ifthenelse{\boolean{poli}}{\nohyphens{\foreign@title/\@authname\ \@authsurn. -- \local@cityname:
     		UFRJ/ Escola Polit\'{e}cnica, \number\year.}}{\nohyphens{\local@title/\@authname\ \@authsurn. -- \local@cityname:
     		UFRJ/COPPE, \number\year.}}\par
       \pageref{front:pageno},
@@ -513,7 +536,7 @@ T\kern-.1667em\lower.5ex\hbox{E}\kern-.125emX\spacefactor1000}
   \abstract@toptext\par
   \vspace*{8.6mm}
   \begin{center}
-    \sloppy\nohyphens{\MakeUppercase\local@title}\par
+    \sloppy\nohyphens{\MakeUppercase\foreign@title}\par
     \vspace*{13.2mm}
     \@authname\ \@authsurn \par
     \vspace*{7mm}
@@ -551,7 +574,7 @@ T\kern-.1667em\lower.5ex\hbox{E}\kern-.125emX\spacefactor1000}
   \foreignabstract@toptext\par
   \vspace*{8.6mm}
   \begin{center}
-    \sloppy\nohyphens{\MakeUppercase\foreign@title}\par
+    \sloppy\nohyphens{\MakeUppercase\local@title}\par
     \vspace*{13.2mm}
     \@authname\ \@authsurn \par
     \vspace*{7mm}
@@ -781,8 +804,8 @@ T\kern-.1667em\lower.5ex\hbox{E}\kern-.125emX\spacefactor1000}
 			\sloppy\nohyphens{\local@doctype\ de \@degreename\
 				\ifthenelse{\boolean{maledoc}}{apresentado}{apresentada}
 				ao Curso de \local@deptname\ da Escola de Qu\'imica, \local@universityname, como parte dos requisitos
-				necess{\' a}rios {\` a} obten{\c c}{\~ a}o do t{\' i}tulo de 
-				\local@degname 
+				necess{\' a}rios {\` a} obten{\c c}{\~ a}o do t{\' i}tulo de
+				\local@degname
 				\@degree.\par}
 				}}
 		{\ifthenelse{\boolean{poli}}{\newcommand\frontcover@maintext{
@@ -844,7 +867,7 @@ T\kern-.1667em\lower.5ex\hbox{E}\kern-.125emX\spacefactor1000}
 		\newcommand\foreignabstract@toptext{%
 			\noindent \sloppy\nohyphens{Abstract of \foreign@doctype\ presented to
 				EQ/UFRJ as a partial fulfillment of the requirements for the
-				degree of 
+				degree of
 				{\foreign@deptname}.}
 		}}{
 \ifthenelse{\boolean{poli}}{\newcommand\abstract@toptext{%
@@ -857,7 +880,7 @@ T\kern-.1667em\lower.5ex\hbox{E}\kern-.125emX\spacefactor1000}
 	\newcommand\foreignabstract@toptext{%
 		\noindent \sloppy\nohyphens{Abstract of \foreign@doctype\ presented to
 			POLI/UFRJ as a partial fulfillment of the requirements for the
-			degree of 
+			degree of
 			{\foreign@deptname}.}
 	}}{\newcommand\abstract@toptext{%
   \noindent Resumo \ifthenelse{\boolean{maledoc}}{do}{da}
@@ -871,6 +894,6 @@ T\kern-.1667em\lower.5ex\hbox{E}\kern-.125emX\spacefactor1000}
   COPPE/UFRJ as a partial fulfillment of the requirements for the
   degree of \foreign@degname\ of Science (\@degree)}
 }}}
-%% 
+%%
 %%
 %% End of file `coppepoli.cls'.

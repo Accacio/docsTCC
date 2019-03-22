@@ -1,3 +1,5 @@
+\documentclass[masc,grad]{coppe} %Universal input encoding G.L.
+% \documentclass[aprovado,masc,grad]{coppe} %Universal input encoding G.L.
 \input{preamble}
 
 \input{glossaires_et_symb}
@@ -7,12 +9,23 @@
 \acr{ECA}{ECA}{Engenharia de controle e Automação}
 % \final
 \draft
+
+% include only to speed up tests
+% \includeonly{test/examples}
+\signedFrontPage{../../figures/poli-logo.pdf}
+
 \begin{document}
 % Identificação e Detecção de Falhas em um Sistema de Manufatura Didático
 \title{Identification and Failure~Detection in a Didactic~Manufacture~System}
-\foreigntitle{Identification and Failure~Detection in a Didactic~Manufacture~System}
+\foreigntitle{Identificação e Detecção~de~Falhas em um Sistema~de~Manufatura~Didático}
 \author{Rafael Accácio}{Nogueira}
+
 \advisor{Prof.}{Marcos Vicente de Brito}{Moreira}{D.Sc.}
+
+
+% Case advisor is a woman add {f} Example:
+% \advisor{Prof.}{Marie}{Sklodowksca-Curie}{PhD.}{f}
+
 % \advisor{Prof.}{Nome do Segundo Orientador}{Sobrenome}{Ph.D.}
 % \advisor{Prof.}{Nome do Terceiro Orientador}{Sobrenome}{D.Sc.}
 
@@ -29,12 +42,14 @@
 
 \frontmatter
 
-% \includepdf{../figures/frontpage.pdf} %frontpage assinada pela banca
+
 \makefrontpage\warning{TURN DEBUG OFF}\newpage
+
 
 \makecatalog
 \include{frontMatter/dedicatoria}
 \include{frontMatter/thanks}
+
 \include{frontMatter/resumo}
 \include{frontMatter/abstract}
 
@@ -54,54 +69,71 @@
        \unskip\leaders\hbox to 2.9mm{} ##5}%
    \renewcommand*{\glsgroupskip}{}%
 }
- 
- \newglossarystyle{mylist}{%  
- % put the glossary in the itemize environment:  
- \renewenvironment{theglossary}%  
-   {\begin{tabular}{ll}}{\end{tabular}}%  
- % have nothing after \begin{theglossary}:  
- \renewcommand*{\glossaryheader}{}%  
- % have nothing between glossary groups:  
- \renewcommand*{\glsgroupheading}[1]{}%  
- \renewcommand*{\glsgroupskip}{}%  
- % set how each entry should appear:  
- \renewcommand*{\glossentry}[2]{%  
 
- \glstarget{##1}{\glossentryname{##1}}&% the entry name  
-  \glossentrysymbol{##1}% the symbol in brackets  
- \space \glossentrydesc{##1},% the description  
- \space p. ##2\\% the number list in square brackets  
- }%  
- % set how sub-entries appear:  
- \renewcommand*{\subglossentry}[3]{%  
-   \glossentry{##2}{##3}}%  
+ \newglossarystyle{tabular}{%
+ % put the glossary in the itemize environment:
+ \renewenvironment{theglossary}%
+   {\begin{tabular}{ll}}{\end{tabular}}%
+ % have nothing after \begin{theglossary}:
+ \renewcommand*{\glossaryheader}{}%
+ % have nothing between glossary groups:
+ \renewcommand*{\glsgroupheading}[1]{}%
+ \renewcommand*{\glsgroupskip}{}%
+ % set how each entry should appear:
+ \renewcommand*{\glossentry}[2]{%
+
+ \glstarget{##1}{\glossentryname{##1}}&% the entry name
+  \glossentrysymbol{##1}% the symbol in brackets
+ \space \glossentrydesc{##1},% the description
+ \space p. ##2\\% the number list in square brackets
+ }%
+ % set how sub-entries appear:
+ \renewcommand*{\subglossentry}[3]{%
+   \glossentry{##2}{##3}}%
+}
+
+ \newglossarystyle{mylist}{%
+ % put the glossary in the itemize environment:
+ \renewenvironment{theglossary}%
+   {\begin{tabbing}}{\end{tabbing}}%
+ % have nothing after \begin{theglossary}:
+ \renewcommand*{\glossaryheader}{}%
+ % have nothing between glossary groups:
+ \renewcommand*{\glsgroupheading}[1]{}%
+ \renewcommand*{\glsgroupskip}{}%
+ % set how each entry should appear:
+ \renewcommand*{\glossentry}[2]{%
+
+ \glstarget{##1}{\glossentryname{##1}}\\% \kill % the entry name
+ \=\glossentrysymbol{##1}% the symbol in brackets
+ \space \glossentrydesc{##1},% the description
+ \space p. ##2\\% the number list in square brackets
+ }%
+ % set how sub-entries appear:
+ \renewcommand*{\subglossentry}[3]{%
+   \glossentry{##2}{##3}}%
  }
 
 \glossarystyle{mylist}
- 
+
 \newacronym{manet}{MANET}{Mobile Ad hoc NETwork}
 \newacronym{rwp}{RWP}{Random WayPoint}
 \newacronym{rw}{RW}{Random Walk}
 \glsaddall
+
+\printglossary[type=\acronymtype]\newpage
+\printglossary[]
+
 \newpage
-\printglossary[type=\acronymtype,title=Acronyms]
-% \phantomsection\addcontentsline{toc}{chapter}{Acronyms}
-\newpage 
-\printglossary[title=Glossary]
-% \phantomsection\addcontentsline{toc}{chapter}{Glossary}
-\newpage
+
 \mainmatter
 
-\gls{Qgdx}
-
-\include{mainMatter/chap01}
+\include{test/examples}
+\include{mainMatter/introduction}
 \include{mainMatter/chap02}
 \include{mainMatter/chap03}
 \include{mainMatter/chap04}
 \include{mainMatter/chap05}
-
-
-
 
 \gls{ECA}
 Teste de teste
@@ -118,18 +150,10 @@ Teste de teste
   \caption{table}
 \end{table}
 
-
-
-
-
-
-
-
 \backmatter
 \bibliographystyle{coppe-unsrt}
 \nocite{*}
 \bibliography{bibliography}
-
 
 \appendix
 \include{appendices/appenA}
