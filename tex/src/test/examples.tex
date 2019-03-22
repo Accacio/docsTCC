@@ -1,0 +1,33 @@
+\begin{algorithm2e}
+\caption{Gauss-Seidel Algorithm}\label{alg:gauss-seidel}
+\KwIn
+{%
+scalar $\epsilon$,
+matrix $\mathbf{A} = (a_{ij})$,
+vector $\vec{b}$
+and initial vector $\vec{x}^{(0)}$
+}
+\For{$k\leftarrow 1$ \KwTo maximum iterations}
+{
+\For{$i\leftarrow 1$ \KwTo $n$}
+{
+$
+x_i^{(k)} =
+\frac
+{
+b_i-\sum_{j=1}^{i-1}a_{ij}x_j^{(k)}
+-\sum_{j=i+1}^{n}a_{ij}x_j^{(k-1)}
+}%
+{a_{ii}}
+$\;
+}
+\If{$\lvert\vec{x}^{(k)}-\vec{x}^{(k-1)}\rvert < \epsilon$}
+{Stop}
+}
+\end{algorithm2e}
+
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "../monografia"
+%%% End:

@@ -13,6 +13,17 @@
 *.cb2
 .*.lb
 
+*.acn
+*.acr
+*.alg
+*.glg
+*.glo
+*.gls
+*.glsdefs
+*.idx
+*.ilg
+*.ind
+
 *.bbl
 *.bcf
 *.blg
