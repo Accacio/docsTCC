@@ -125,7 +125,7 @@ T\kern-.1667em\lower.5ex\hbox{E}\kern-.125emX\spacefactor1000}
 \DeclareOption{dsc}{%
   \newcommand{\@degree}{D.Sc.}
   \newcommand{\@degreename}{Doutorado}
-  \newcommand{\local@degname}{Doutor}
+  \newcommand{\local@degname}{Doutor\ifmale o \else a\fi}
   \newcommand{\foreign@degname}{Doctor}
   \newcommand\local@doctype{Tese}
   \newcommand\foreign@doctype{Thesis}
@@ -145,7 +145,7 @@ T\kern-.1667em\lower.5ex\hbox{E}\kern-.125emX\spacefactor1000}
 \DeclareOption{gradeq}{%
 	% \newcommand{\@degree}{Eletricista}
 	\newcommand{\@degreename}{Gradua\c{c}\~{a}o}
-	\newcommand{\local@degname}{Engenheiro}
+	\newcommand{\local@degname}{Engenheir\ifmale o \else a\fi}
 	\newcommand{\foreign@degname}{Engineer}
 	\setboolean{maledoc}{true}
 	\setboolean{eqvar}{true}
@@ -336,7 +336,8 @@ T\kern-.1667em\lower.5ex\hbox{E}\kern-.125emX\spacefactor1000}
   \cleardoublepage
   \@mainmattertrue
   \pagestyle{plain}
-  \pagenumbering{arabic}}
+  \pagenumbering{arabic}
+}
 \renewcommand\backmatter{%
   \if@openright
     \cleardoublepage
@@ -418,7 +419,7 @@ T\kern-.1667em\lower.5ex\hbox{E}\kern-.125emX\spacefactor1000}
   \end{flushright}
      \end{center}
   \vspace*{\fill}
-  \frontpage@bottomtext}}
+  \frontpage@bottomtext}\newpage}
 \newcommand\coppe@hypersetup{%
 \begingroup
   % changes to \toks@ and \count@ are kept local;
@@ -566,7 +567,14 @@ T\kern-.1667em\lower.5ex\hbox{E}\kern-.125emX\spacefactor1000}
   \end{tabularx}\par
   \vspace*{2mm}
   \noindent\local@deptstring: \local@deptname\par
-  \vspace*{7mm}}{\vspace*{\fill}}
+  \vspace*{7mm}}{\par \vspace*{7mm}
+      \count1=0
+      \count2=1
+      \nohyphens{\@whilenum \count1<\value{keywords} \do {%
+        \number\count2. \csname CoppeKeyword:\the\count1 \endcsname.
+        \advance\count1 by 1
+        \advance\count2 by 1}}
+  \vspace*{\fill}}
 \newenvironment{foreignabstract}{%
   \clearpage
   \thispagestyle{plain}
@@ -606,16 +614,24 @@ T\kern-.1667em\lower.5ex\hbox{E}\kern-.125emX\spacefactor1000}
   \noindent\foreign@deptstring: \foreign@deptname\par
   \vspace*{7mm}}{%
   \end{otherlanguage}
-  \vspace*{\fill}
-  \global\let\@author\@empty
-  \global\let\@date\@empty
-  \global\let\foreign@title\@empty
-  \global\let\foreign@title\relax
-  \global\let\local@title\@empty
-  \global\let\local@title\relax
-  \global\let\author\relax
-  \global\let\author\relax
-  \global\let\date\relax}
+\par \vspace*{7mm}
+      \count1=0
+      \count2=1
+      \nohyphens{\@whilenum \count1<\value{keywords} \do {%
+        \number\count2. \csname CoppeKeyword:\the\count1 \endcsname.
+        \advance\count1 by 1
+        \advance\count2 by 1}}
+  \vspace*{\fill}}
+  % \vspace*{\fill}
+  % \global\let\@author\@empty
+  % \global\let\@date\@empty
+  % \global\let\foreign@title\@empty
+  % \global\let\foreign@title\relax
+  % \global\let\local@title\@empty
+  % \global\let\local@title\relax
+  % \global\let\author\relax
+  % \global\let\author\relax
+  % \global\let\date\relax}
 \renewcommand\listoffigures{%
     \coppe@hasLof
     \if@twocolumn

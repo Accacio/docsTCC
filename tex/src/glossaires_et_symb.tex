@@ -1,7 +1,63 @@
+
+
+\newglossarystyle{dottedlocations}{%
+   \glossarystyle{list}%
+   \renewcommand*{\glossaryentryfield}[5]{%
+   \item[\glsentryitem{##1}\glstarget{##1}{##2}] ##3, p %
+       \unskip\leaders\hbox to 2.9mm{} ##5}%
+   \renewcommand*{\glsgroupskip}{}%
+}
+
+ \newglossarystyle{acronyms}{%
+ % put the glossary in the itemize environment:
+ \renewenvironment{theglossary}%
+   {\begin{tabbing}}{\end{tabbing}}%
+ % have nothing after \begin{theglossary}:
+ \renewcommand*{\glossaryheader}{}%
+ % have nothing between glossary groups:
+ \renewcommand*{\glsgroupheading}[1]{}%
+ \renewcommand*{\glsgroupskip}{}%
+ % set how each entry should appear:
+ \renewcommand*{\glossentry}[2]{%
+ \glstarget{##1}{\glossentryname{##1}}\\% \kill % the entry name
+ \=\glossentrysymbol{##1}% the symbol in brackets
+ \space \glossentrydesc{##1},% the description
+ \space p. ##2\\% the number list in square brackets
+ }%
+ % set how sub-entries appear:
+ \renewcommand*{\subglossentry}[3]{%
+   \glossentry{##2}{##3}}%
+}
+
+
+ \newglossarystyle{symbols}{%
+ % put the glossary in the itemize environment:
+ \renewenvironment{theglossary}%
+   {\begin{tabbing}}{\end{tabbing}}%
+ % have nothing after \begin{theglossary}:
+ \renewcommand*{\glossaryheader}{}%
+ % have nothing between glossary groups:
+ \renewcommand*{\glsgroupheading}[1]{}%
+ \renewcommand*{\glsgroupskip}{}%
+ % set how each entry should appear:
+ \renewcommand*{\glossentry}[2]{%
+ \glstarget{##1}{\glossentryname{##1}}\\% \kill % the entry name
+ \=\textbf{\glossentrysymbol{##1}}% the symbol in brackets
+ 
+ \space \glossentrydesc{##1},% the description
+ \space p. ##2\\% the number list in square brackets
+ }%
+ % set how sub-entries appear:
+ \renewcommand*{\subglossentry}[3]{%
+   \glossentry{##2}{##3}}%
+ }
+
+
 \acr{DAOCT}{DAOCT}{Deterministic Automaton
-with Outputs and Conditional Transitions}
-\symbl{Qgdx}{$Q_{GDx}$}{Puissance Réactive du générateur $ GDx $}
-% \abbrev{ECA}{Engenharia de contorle e Automação}
+  with Outputs and Conditional Transitions}
+\acr{ECA}{ECA}{Engenharia de controle e Automação}
+\symbl{OmegaSet}{$\Omega$}{Set of IO vectors}
+
 
 %%% Local Variables:
 %%% mode: latex

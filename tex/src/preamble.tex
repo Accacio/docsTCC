@@ -59,8 +59,8 @@
 
 \hypersetup{
   % pdftitle={\title},
-  pdfauthor={Rafael Accacio Nogueira},
-  bookmarksnumbered=true,     
+  pdfauthor={Rafael Accácio Nogueira},
+  pdfcreator={Rafael Accácio Nogueira},     
   bookmarksopen=true,         
   bookmarksopenlevel=1,       
   colorlinks=true, % false => boxes 
@@ -72,7 +72,15 @@
   pdfpagemode=UseOutlines,    % this is the option you were lookin for
   pdfpagelayout=TwoPageRight,
 }
-
+% \hypersetup{%
+%   pdfauthor={\@authname\ \@authsurn},
+%   pdftitle={\local@title},
+%   pdfsubject={\local@doctype\ de \@degreename\ em \local@deptname\ da COPPE/UFRJ},
+%   pdfcreator={LaTeX with CoppeTeX toolkit},
+%   breaklinks={true},
+%   raiselinks={true},
+%   pageanchor={true},
+% }}
 \let\oldsection\section
 \renewcommand\section[1]{%
     \addtocontents{toc}{\protect\hypertarget{#1}{}}
@@ -93,8 +101,12 @@
 \let\oldtoc\tableofcontents
 \renewcommand{\tableofcontents}{\oldtoc\label{tocsection}}
 
-\newcommand{\acr}[3]{\newacronym{#1}{#2}{#3}}
-\newcommand{\symbl}[3]{\newglossaryentry{#1}{name = #2,	description = #3,}}
+\newcommand{\acr}[3]{\newacronym{#1}{#2}{#3}
+  \expandafter\newcommand\csname #1\endcsname{\gls{#1}}}
+
+\newcommand{\symbl}[3]{\newglossaryentry{#1}{name = #2,	description = #3}
+  \expandafter\newcommand\csname #1\endcsname{\gls{#1}}
+}
 
 \newcommand{\figplaceholder}[2]{
 	\begin{figure}[H]

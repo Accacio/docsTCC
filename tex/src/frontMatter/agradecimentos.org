@@ -2,27 +2,41 @@ Gostaria de agradecer primeiramente a Deus, pois sem Ele nada é
 possível e por *todas* as pessoas qu'Ele colocou em meu
 caminho, que me fizeram crescer e ser o indivíduo que hoje sou.
 
-* Meus Pais
+* Meus Pais :ignore:
+  Agradeço aos meus pais, Rosemeri e Rogério. Por todo amor e carinho, pela
+  atenção dada e a primeira educação, pontapé inicial essencial para toda minha
+  trajetória, educação não só acadêmica, mas também moral. Agradeço também por
+  terem sempre escolhido as melhores escolas que proporcionaram o conhecimento
+  necessário para entrar no Colégio Pedro II. 
 
-  Agradeço aos meus pais
+* Professores (Colégio Aplicação de Vista Alegre, Adlai Stevenson, Colégio Pedro II, CEFET ) :ignore:
+Gostaria de agradecer a todos meus professores e professoras por terem mostrado o quão importante e bonita é a
+   profissão e por terem sempre instigado a sede pelo aprendizado.
+   Agradeço a todos que contribuíram para minha base acadêmica e profissional.
 
-* Professores (Colégio Aplicação de Vista Alegre, Adlai Stevenson, Colégio Pedro II, CEFET )
+* Colegas dos colégios :ignore:
+Agradeço a todas as amizades que fiz, principalmente as do Pedro II, com os
+   quais convivi durante 7 anos, passando o fim da infância e por grande parte
+   da adolêscencia e também as da UFRJ, mais especificamente da nossa turma T17,
+   pois se chegamos até onde chegamos foi porque estivemos juntos, fortes, lado a lado,
+   ombro no ombro, não deixando o outro cair, mas quando alguém caía sempre uma
+   mão se estendia para ajudar a levantar e recomeçar.
+Dos amigos da T17 alguns não poderiam não ser mencionados:
 
-   Que me deram a base acadêmica necessária para prosseguir o meu caminho
+Os melhores companheiros de grupo, Gabriel Pelielo e Rodrigo Moysés, um
+verdadeiro ``Power Trio'', sinergia define bem todos trabalhos que fizemos. E também os amigos Philipe Moura e
+Felipe Matheus, que me incentivaram a sair da minha zona de conforto e me
+fizeram compreender de fato o sentido do quão ``perigoso'' é sair pela porta de casa, pois
+quando saímos da nossa zona de conforto, coisas mágicas podem acontecer e
+pessoas mágicas podem aparecer em nossas vidas.
 
-* Colegas dos colégios
+* Evelise :ignore:
+* Orientador :ignore:
 
-   Principalmente os do Pedro II que 
-
-* Professores da Faculdade
-* Colegas de turma T17
-* Peli, Moysés
-* Felipe e Philipe
-* Evelise
-* Orientador
-
-
+#+BEGIN_EXPORT latex
 %%% Local Variables:
 %%% mode: latex
 %%% TeX-master: "../monografia.tex"
 %%% End:
+#+END_EXPORT
+
