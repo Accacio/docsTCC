@@ -1,0 +1,40 @@
+\begin{table}[htbp]
+\caption{Lugares do Módulo Braço Esteira Prensa}
+\centering
+\begin{tabular}{ll}
+p\textsubscript{74} & Estender verticalmente o braço\\
+p\textsubscript{75} & Estender vertical e horizontalmente o braço e Ligar o vácuo\\
+p\textsubscript{76} & Estender horizontalmente o braço e Ligar o vácuo\\
+p\textsubscript{77} & Estender vertical e horizontalmente o braço e Ligar o vácuo\\
+p\textsubscript{78} & Estender verticalmente o braço e Ligar o vácuo\\
+p\textsubscript{79} & Habilita HSC e Estender verticalmente o braço, Ligar o vácuo e Girar Braço no sentido horário\\
+p\textsubscript{80} & Estender vertical e horizontalmente o braço e Ligar o vácuo\\
+p\textsubscript{81} & Estender horizontalmente o braço e Ligar o vácuo\\
+p\textsubscript{82} & Estender horizontalmente o braço\\
+p\textsubscript{83} & Estender vertical e horizontalmente o braço\\
+p\textsubscript{84} & Estender verticalmente o braço\\
+p\textsubscript{85} & Habilita HSC e Estender verticalmente o braço e Girar Braço no sentido antihorário\\
+p\textsubscript{86} & Estender Verticalmente o braço e IEC\textsubscript{COUNTER}:=IEC\textsubscript{COUNTER}+1\\
+\end{tabular}
+\end{table}
+
+\begin{table}[htbp]
+\caption{Transições do Módulo Braço Esteira Prensa}
+\centering
+\begin{tabular}{ll}
+t\textsubscript{72} & Sensor vertical braço estendido\\
+t\textsubscript{73} & T=1.5s\\
+t\textsubscript{74} & T=1.5s e Sensor vertical braço retraído\\
+t\textsubscript{75} & T=1.5s e Sensor vertical braço estendido\\
+t\textsubscript{76} & T=1.5s e Sensor vertical braço estendido\\
+t\textsubscript{77} & Count\_300C.DB.CountVal = \todo{-3330}\\
+t\textsubscript{78} & T=1.5s e Sensor vertical braço estendido\\
+t\textsubscript{79} & T=1.5s e Sensor vertical braço retraído\\
+t\textsubscript{80} & T=1.5s\\
+t\textsubscript{81} & T=1.5s e Sensor vertical braço estendido\\
+t\textsubscript{82} & IEC\textsubscript{COUNTER0.DB}=1 e Sensor Hz prensa estendido e porta prensa aberta\\
+t\textsubscript{83} & T=1.5s e IEC\textsubscript{COUNTER0.DB}=0 e Sensor vertical braço estendido\\
+t\textsubscript{84} & Count\_300C.DB.CountVal = \todo{-1690}\\
+t\textsubscript{85} & \\
+\end{tabular}
+\end{table}

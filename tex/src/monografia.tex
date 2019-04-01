@@ -1,8 +1,8 @@
 \documentclass[masc,grad]{coppe} %Universal input encoding G.L.
 % \documentclass[aprovado,masc,grad]{coppe} %Universal input encoding G.L.
 \input{preamble}
-\usepackage{fontspec}
-\usepackage{fontawesome}
+% \usepackage{fontspec}
+% \usepackage{fontawesome}
 \input{glossaires_et_symb}
 \makeindex
 \makelosymbols
@@ -15,7 +15,64 @@
 % \includeonly{test/examples}
 \signedFrontPage{../../figures/poli-logo.pdf}
 
+	
+
+
+
+\usetikzlibrary{arrows,shapes,petri,external,arrows.meta}
+	\tikzset{
+	place/.style={
+	circle,
+	thick,
+	draw=black!100, % draw=blue!75,
+    % fill=blue!20,
+    minimum size=6mm
+  },
+  extPlace/.style={
+    circle,
+    dotted,
+    draw=black!100, % draw=blue!75,
+    % fill=blue!20,
+    minimum size=6mm
+  },
+  extTransition/.style={
+    rectangle,
+    dotted,
+    fill=white,
+    minimum width=8mm,
+    inner ysep=0.7pt
+  },
+  transition/.style={
+    rectangle,
+    thick,
+    fill=black,
+    minimum width=8mm,
+    inner ysep=0.7pt
+  },
+  extTimedtransition/.style={
+    rectangle,
+    dotted,
+    fill=white,
+    minimum width=8mm,
+    inner ysep=2pt
+  },
+  timedtransition/.style={
+    rectangle,
+    thick,
+    fill=black,
+    minimum width=8mm,
+    inner ysep=2pt
+  },
+  inhibitor/.style={-o},
+  text/.style={}
+}
+
 \begin{document}
+
+
+
+
+
 % Identificação e Detecção de Falhas em um Sistema de Manufatura Didático
 \title{Identification and Failure~Detection in a Didactic~Manufacture~System}
 \foreigntitle{Identificação e Detecção~de~Falhas em um Sistema~de~Manufatura~Didático}
@@ -35,7 +92,7 @@
 \department{ECA}
 
 \date{04}{2019}
-\newfontfamily{\FA}{FontAwesome}
+% \newfontfamily{\FA}{FontAwesome}
 
 \keyword{Failure~Detection}
 \keyword{Discrete~Event~Systems}
@@ -45,8 +102,8 @@
 \makefrontpage
 \makecatalog
 
-\def\Github{{\FA \faGithub}}
-\href{http://github.com/Accacio}{\Github Accacio}
+% \def\Github{{\FA \faGithub}}
+% \href{http://github.com/Accacio}{\Github Accacio}
 \include{frontMatter/dedicatoria}
 
 \chapter*{Agradecimentos}
@@ -62,7 +119,7 @@
 \printlosymbols
 \printloabbreviations
 
-\printglossary[style=acronyms,type=\acronymtype]\newpage
+\printglossary[style=acronyms,title=List of Acronyms,type=\acronymtype]\newpage
 \printglossary[style=symbols,title=List of Symbols]
 
 \newpage
@@ -70,6 +127,7 @@
 \mainmatter
 
 \include{test/examples}
+
 \include{mainMatter/introduction}
 \include{mainMatter/results}
 \include{mainMatter/conclusion}
@@ -82,5 +140,6 @@
 
 \appendix
 \include{appendices/petriNet}
+\include{appendices/complete}
 
 \end{document}

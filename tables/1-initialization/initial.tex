@@ -1,0 +1,64 @@
+\begin{table}[htbp]
+\caption{Lugares do Módulo de Inicialização}
+\centering
+\begin{tabular}{c|c}
+Places & Meaning\\
+\hline
+P\textsubscript{0} & Sistema Parado\\
+P\textsubscript{1} & Retrair Pistão MAG 1*\\
+P\textsubscript{2} & Pistão MAG 1 Recuado\\
+P\textsubscript{3} & Retrair Pistão MAG 2*\\
+P\textsubscript{4} & Pistão MAG 2 Recuado\\
+P\textsubscript{5} & Retrair pistão de descarte D*\\
+P\textsubscript{6} & Pistão de descarte D Recuado\\
+P\textsubscript{7} & Retrair pistão de descarte C*\\
+P\textsubscript{8} & Pistão de descarte C Recuado\\
+P\textsubscript{9} & Retrair pistão de descarte E*\\
+P\textsubscript{10} & Pistão de descarte E Recuado\\
+P\textsubscript{11} & Ligar esteira sentido reverso\\
+P\textsubscript{12} & Esteira limpa\\
+P\textsubscript{13} & Resetar Variáveis\footnotemark\\
+P\textsubscript{14} & Retrair atuador vertical da prensa\\
+P\textsubscript{15} & Levantar porta da prensa\\
+P\textsubscript{16} & Estender atuador horizontal da prensa\\
+P\textsubscript{17} & Prensa pronta\\
+P\textsubscript{18} & Braço retraído e armazenador de cubos retraído na horizontal\\
+P\textsubscript{19} & Mover armazenador para direita\\
+P\textsubscript{20} & Armazenador pronto na horizontal\\
+P\textsubscript{21} & Mover armazenador para baixo\\
+P\textsubscript{22} & Armazenador pronto na vertical\\
+P\textsubscript{23} & Girar braço sentido antihorário\footnotemark\\
+P\textsubscript{24} & Braço parado\\
+P\textsubscript{25} & Girar braço sentido horário\textsuperscript{\ref{org871b750}} e Habilita HSC\\
+P\textsubscript{26} & Braço parado frente a esteira\\
+P\textsubscript{27} & Sistema Pronto\\
+\end{tabular}
+\end{table}\footnotetext[1]{\label{org8181e89}Variáveis IEC\textsubscript{COUNTER}, IEC\textsubscript{COUNTER1}, IEC\textsubscript{COUNTER2}, IEC\textsubscript{COUNTER3}, IEC\textsubscript{COUNTER4}, IEC\textsubscript{COUNTER5}.}\footnotetext[2]{\label{org871b750}Verificar sentido de rotação do braço.}
+
+\begin{table}[htbp]
+\caption{Transições do Módulo de Inicialização}
+\centering
+\begin{tabular}{ll}
+Transitions & Meaning\\
+t\textsubscript{0} & Botão de inicialização\\
+t\textsubscript{1} & Sensor MAG 1 Retraído\\
+t\textsubscript{2} & Sensor MAG 2 Retraído\\
+t\textsubscript{3} & Sensor pistão de descarte D Retraído\\
+t\textsubscript{4} & Sensor pistão de descarte C Retraído\\
+t\textsubscript{5} & Sensor pistão de descarte E Retraído\\
+t\textsubscript{6} & \\
+t\textsubscript{7} & T=15s\\
+t\textsubscript{8} & T=2.5s\\
+t\textsubscript{9} & Sensor porta prensa aberta\\
+t\textsubscript{10} & Sensor atuador horizontal da prensa estendido\\
+t\textsubscript{11} & Sensor Hz armazenador de cubos e braço retraídos\\
+t\textsubscript{12} & Fim de curso direito do armazenador de cubos\\
+t\textsubscript{13} & Fim de curso inferior do armazenador de cubos\\
+t\textsubscript{14} & T=2s\\
+t\textsubscript{15} & Sensor Indutivo do braço\\
+t\textsubscript{16} & T=1s\\
+t\textsubscript{17} & Count\_300C.DB.Countval = \todo{-1690}\\
+t\textsubscript{18} & \\
+t\textsubscript{19} & Botão Começar\\
+\end{tabular}
+\end{table}

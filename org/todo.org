@@ -3,10 +3,110 @@
 * TODO Colocar livro na bibliografia
 * TODO Colocar artigo na bibliografia
 * TODO Verificar valor rotação do braço
-
+* Valores 
 valores sensor profundidade/presença
+| Condição         | Valor |
+|------------------+-------|
+| Sem Peça         |    95 |
+| Cunha para cima  |  3000 |
+| Cunha para baixo | 12000 |
+
+Valores HSC
+
+| Local       | Valor |
+|-------------+-------|
+| Calibração  |     0 |
+| Esteira     | -1690 |
+| Prensa      | -3330 |
+| Armazenador | -4920 |
+
+Entradas Planta CLP1
+
+| Entrada                   | Endereço |
+|---------------------------+----------|
+| Armazenador 1 estendido   | I0.0     |
+| Armazenador 1 recuado     | I0.1     |
+| Sem Peça (Armazenador 1 ) | I0.2     |
+| Armazenador 2 estendido   | I0.3     |
+| Armazenador 2 recuado     | I0.4     |
+| Sem Peça (Armazenador 2 ) | I0.5     |
+| Sensor óptico 4           | I2.0     |
+| Sensor óptico 3           | I2.1     |
+| Sensor óptico 2           | I2.2     |
+| Relé                      | I2.3     |
+| Rejeita 3 estendido       | I1.0     |
+| Rejeita 3 recuado         | I1.1     |
+| Rejeita 2 estendido       | I1.2     |
+| Rejeita 2 recuado         | I1.3     |
+| Rejeita 1 estendido       | I1.4     |
+| Rejeita 1 recuado         | I1.5     |
+| Sensor óptico 1           | I1.6     |
+| Sensor Metálico           | I0.7     |
+| Sensor Fim de curso       | I0.6     |
+
+Saídas Planta CLP 1
+
+| Saída                 | Endereço |
+|-----------------------+----------|
+| Estende Armazenador 1 | Q1.0     |
+| Recua Armazenador 1   | Q1.1     |
+| Estende Armazenador 2 | Q1.2     |
+| Estende Armazenador 2 | Q1.3     |
+| Estende Rejeita 3     | Q0.0     |
+| Estende Rejeita 2     | Q0.1     |
+| Estende Rejeita 1     | Q0.2     |
+| Esteira frente        | Q1.4     |
+| Esteira ré            | Q1.5     |
+
+Entradas Planta CLP 2
+
+| Entrada                                | Endereço |
+|----------------------------------------+----------|
+| Porta Prensa Aberta                    | I1.0     |
+| Porta Prensa Fechada                   | I1.1     |
+| Prensa Estendida                       | I1.2     |
+| Prensa Recuada                         | I1.3     |
+| Sensor indutivo (braço)                | I0.2     |
+| Braço abaixado                         | I0.4     |
+| Braço levantado                        | I0.3     |
+| Braço recuado                          | I0.6     |
+| Braço estendido                        | I0.5     |
+| Encoder vertical Armazenador           | I2.0     |
+| Fim de Curso inferior Armazenador      | I2.2     |
+| Fim de Curso superior Armazenador      | I2.1     |
+| Armazenador estendido                  | I2.3     |
+| Armazenador recuado                    | I2.4     |
+| Relé                                   | I2.5     |
+| Encoder Horizontal B10                 | I1.4     |
+| Fim de Curso trajeto máximo horizontal | I1.6     |
+| Fim de Curso origem horizontal         | I1.5     |
+| Encoder Horizontal B15                 | I1.7     |
+
+| Saída                        | Endereço |
+|------------------------------+----------|
+| Levanta Porta PrensaCubo     | Q0.6     |
+| Abaixa Porta Prensa Cubo     | Q0.7     |
+| Recua Prensa                 | Q0.0     |
+| Estende PrensaCubo           | Q1.1     |
+| Abaixa PrensaCubo            | Q1.2     |
+| Levanta PrensaCubo           | Q1.3     |
+| Levanta Braço                | Q0.0     |
+| Liga Vácuo                   | Q0.1     |
+| Estende Braço                | Q0.2     |
+| Gira Braço antihorário       | Q0.3     |
+| Gira Braço horário           | Q0.4     |
+| Estender Armazenador         | Q0.5     |
+| Move Armazenador para cima   | Q1.6     |
+| Move Armazenador para baixo  | Q1.7     |
+| Move Armazenador para frente | Q1.4     |
+| Move Armazenador para trás   | Q1.3     |
+
+* Nomenclatura
+
+** Forward/ Reverse Conveyor Belt
+
+**  
 
 Sem peça 90~95 abaixo de 1000
-concavidade para cima 2450 
-concavidade para baixo 11892
-* 
+ concavidade para cima 2450 
+ concavidade para baixo 11892

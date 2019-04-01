@@ -1,0 +1,34 @@
+
+#+ATTR_LATEX: :caption  \caption{Lugares do Módulo Braço Esteira Prensa}
+| Places | Meaning                                                                                       |
+| p_{74} | Estender verticalmente o braço                                                                |
+| p_{75} | Estender vertical e horizontalmente o braço e Ligar o vácuo                                   |
+| p_{76} | Estender horizontalmente o braço e Ligar o vácuo                                              |
+| p_{77} | Estender vertical e horizontalmente o braço e Ligar o vácuo                                   |
+| p_{78} | Estender verticalmente o braço e Ligar o vácuo                                                |
+| p_{79} | Habilita HSC e Estender verticalmente o braço, Ligar o vácuo e Girar Braço no sentido horário |
+| p_{80} | Estender vertical e horizontalmente o braço e Ligar o vácuo                                   |
+| p_{81} | Estender horizontalmente o braço e Ligar o vácuo                                              |
+| p_{82} | Estender horizontalmente o braço                                                              |
+| p_{83} | Estender vertical e horizontalmente o braço                                                   |
+| p_{84} | Estender verticalmente o braço                                                                |
+| p_{85} | Habilita HSC e Estender verticalmente o braço e Girar Braço no sentido antihorário            |
+| p_{86} | Estender Verticalmente o braço e IEC_COUNTER:=IEC_COUNTER+1                                   |
+
+#+ATTR_LATEX: :caption  \caption{Transições do Módulo Braço Esteira Prensa}
+| Transitions | Meaning                                                              |
+| t_{72}      | Sensor vertical braço estendido                                      |
+| t_{73}      | T=1.5s                                                               |
+| t_{74}      | T=1.5s e Sensor vertical braço retraído                              |
+| t_{75}      | T=1.5s e Sensor vertical braço estendido                             |
+| t_{76}      | T=1.5s e Sensor vertical braço estendido                             |
+| t_{77}      | Count\under{}300C.DB.CountVal = \todo{-3330}                         |
+| t_{78}      | T=1.5s e Sensor vertical braço estendido                             |
+| t_{79}      | T=1.5s e Sensor vertical braço retraído                              |
+| t_{80}      | T=1.5s                                                               |
+| t_{81}      | T=1.5s e Sensor vertical braço estendido                             |
+| t_{82}      | IEC_COUNTER0.DB=1 e Sensor Hz prensa estendido e porta prensa aberta |
+| t_{83}      | T=1.5s e IEC_COUNTER0.DB=0 e Sensor vertical braço estendido         |
+| t_{84}      | Count\under{}300C.DB.CountVal = \todo{-1690}                         |
+| t_{85}      |                                                                      |
+

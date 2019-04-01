@@ -1,0 +1,354 @@
+* Tabelas
+** Inicialização
+
+#+INCLUDE: "../
+
+#+ATTR_LATEX: :caption  \caption{Lugares do Módulo de Inicialização}
+| P_{0}  | Sistema Parado                                               |
+| P_{1}  | Retrair Pistão MAG 1*                                        |
+| P_{2}  | Pistão MAG 1 Recuado                                         |
+| P_{3}  | Retrair Pistão MAG 2*                                        |
+| P_{4}  | Pistão MAG 2 Recuado                                         |
+| P_{5}  | Retrair pistão de descarte D*                                |
+| P_{6}  | Pistão de descarte D Recuado                                 |
+| P_{7}  | Retrair pistão de descarte C*                                |
+| P_{8}  | Pistão de descarte C Recuado                                 |
+| P_{9}  | Retrair pistão de descarte E*                                |
+| P_{10} | Pistão de descarte E Recuado                                 |
+| P_{11} | Ligar esteira sentido reverso                                |
+| P_{12} | Esteira limpa                                                |
+| P_{13} | Resetar Variáveis[fn:1]                                      |
+| P_{14} | Retrair atuador vertical da prensa                           |
+| P_{15} | Levantar porta da prensa                                     |
+| P_{16} | Estender atuador horizontal da prensa                        |
+| P_{17} | Prensa pronta                                                |
+| P_{18} | Braço retraído e armazenador de cubos retraído na horizontal |
+| P_{19} | Mover armazenador para direita                               |
+| P_{20} | Armazenador pronto na horizontal                             |
+| P_{21} | Mover armazenador para baixo                                 |
+| P_{22} | Armazenador pronto na vertical                               |
+| P_{23} | Girar braço sentido antihorário[fn:2]                        |
+| P_{24} | Braço parado                                                 |
+| P_{25} | Girar braço sentido horário[fn:2] e Habilita HSC             |
+| P_{26} | Braço parado frente a esteira                                |
+| P_{27} | Sistema Pronto                                               |
+
+#+ATTR_LATEX: :caption \caption{Transições do Módulo de Inicialização}
+| t_{0}  | Botão de inicialização                           |
+| t_{1}  | Sensor MAG 1 Retraído                            |
+| t_{2}  | Sensor MAG 2 Retraído                            |
+| t_{3}  | Sensor pistão de descarte D Retraído             |
+| t_{4}  | Sensor pistão de descarte C Retraído             |
+| t_{5}  | Sensor pistão de descarte E Retraído             |
+| t_{6}  |                                                  |
+| t_{7}  | T=15s                                            |
+| t_{8}  | T=2.5s                                           |
+| t_{9}  | Sensor porta prensa aberta                       |
+| t_{10} | Sensor atuador horizontal da prensa estendido    |
+| t_{11} | Sensor Hz armazenador de cubos e braço retraídos |
+| t_{12} | Fim de curso direito do armazenador de cubos     |
+| t_{13} | Fim de curso inferior do armazenador de cubos    |
+| t_{14} | T=2s                                             |
+| t_{15} | Sensor Indutivo do braço                         |
+| t_{16} | T=1s                                             |
+| t_{17} | Count\under{}300C.DB.Countval = \todo{-1690}     |
+| t_{18} |                                                  |
+| t_{19} | Botão Começar                                    |
+
+** Metal V
+
+#+ATTR_LATEX: :caption \caption{Lugares do Módulo 2 pt 1}
+| p_{28} | Mag1 vazio                     |
+| p_{29} | Mag1 com peça                  |
+| p_{30} | Estender Mag1 Horizontal*      |
+| p_{31} | Retrair Mag1 Horizontal*       |
+| p_{32} | Mag1 Horizontal retraído       |
+| p_{33} | Ligar esteira sentido normal   |
+| p_{34} |                                |
+| p_{35} | Peça de Plástico               |
+| p_{36} | Ligar esteira sentido normal   |
+| p_{37} | Estender Pistão de descarte D* |
+| p_{38} | Retrair Pistão de descarte D*  |
+| p_{39} | Ligar esteira sentido normal   |
+| p_{40} | Estender Pistão de descarte C* |
+| p_{41} | Retrair Pistão de descarte C*  |
+| p_{42} |                                |
+| p_{43} | Peça de Metal                  |
+| p_{44} | Ligar esteira sentido normal   |
+| p_{45} | Estender Pistão de descarte E* |
+| p_{46} | Retrair Pistão de descarte E*  |
+| p_{47} | Ligar esteira sentido normal   |
+| p_{48} | Ligar esteira sentido normal   |
+| p_{49} | Peça Metal Pronta              |
+| p_{50} | Esteira Parada                 |
+
+
+#+ATTR_LATEX: :caption  \caption{Transições do Módulo 2 pt 1}
+| t_{20} | $\overline{\mbox{Sensor Chave de Presença de Peça Mag1}}$ |
+| t_{21} |                                                           |
+| t_{22} | Mag1 Horizontal estendido \uparrow                        |
+| t_{23} | Mag1 Horizontal retraído \uparrow                         |
+| t_{24} | T=0.5s                                                    |
+| t_{25} | Presença \uparrow T=0.5s                                  |
+| t_{26} | $\overline{\mbox{Sensor Metal}}$                          |
+| t_{27} | Sensor Preto                                              |
+| t_{28} | Presença Pistão de D \uparrow                             |
+| t_{29} | Sensor pistão de descarte D estendido                     |
+| t_{30} | Sensor pistão de descarte D retraído                      |
+| t_{31} | Sensor Branco                                             |
+| t_{32} | Presença Pistão de C \uparrow                             |
+| t_{33} | Sensor pistão de descarte C estendido                     |
+| t_{34} | Sensor pistão de descarte C retraído                      |
+| t_{35} | Sensor Metal                                              |
+| t_{36} | Sensor peça concavidade para baixo                        |
+| t_{37} | Presença Pistão de E \uparrow                             |
+| t_{38} | Sensor pistão de descarte E estendido                     |
+| t_{39} | Sensor pistão de descarte E retraído                      |
+| t_{40} |                                                           |
+| t_{41} | Sensor peça concavidade para cima                         |
+| t_{42} | Sensor final da esteira \uparrow                          |
+| t_{43} | T=0.5s                                                    |
+| t_{44} | Sensor final da esteira \downarrow                        |
+| t_{45} |                                                           |
+
+** Plástico Branco ^
+#+ATTR_LATEX: :caption  \caption{Lugares do Módulo 2 pt 2}
+| P_{51} | Mag2 vazio                     |
+| P_{52} | Mag2 com peça                  |
+| P_{53} | Estender Mag2 Horizontal*      |
+| p_{54} | Retrair Mag2 Horizontal*       |
+| p_{55} | Mag2 Horizontal Retraído       |
+| p_{56} | Ligar esteira sentido normal   |
+| p_{57} |                                |
+| p_{58} | Ligar esteira sentido normal   |
+| p_{59} | Estender Pistão de descarte E* |
+| p_{60} | Retrair Pistão de descarte E*  |
+| p_{61} | Peça de Metal                  |
+| p_{62} | Ligar esteira sentido normal   |
+| p_{63} | Estender Pistão de descarte D* |
+| p_{64} | Retrair Pistão de descarte D*  |
+| p_{65} | Peça Branca                    |
+| p_{66} | Ligar esteira sentido normal   |
+| p_{67} | Estender Pistão de descarte C* |
+| p_{68} | Retrair Pistão de descarte C*  |
+| p_{69} |                                |
+| p_{70} | Ligar esteira sentido normal   |
+| p_{71} | Ligar esteira sentido normal   |
+| p_{72} | Peça branca pronta             |
+| p_{73} | Esteira parada                 |
+
+ 
+#+ATTR_LATEX: :caption  \caption{Transições do Módulo 2 pt 2}
+| t_{46} | $\overline{\mbox{Sensor Chave de Presença de Peça Mag2}}$ |
+| t_{47} |                                                           |
+| t_{48} | Mag2 Horizontal estendido \uparrow                        |
+| t_{49} | Mag2 Horizontal retraído \uparrow                         |
+| t_{50} | T=0.5s                                                    |
+| t_{51} | Presença \uparrow T=0.5s                                  |
+| t_{52} | Sensor Metal                                              |
+| t_{53} | Presença Pistão de E \uparrow                             |
+| t_{54} | Sensor pistão de descarte E estendido                     |
+| t_{55} | Sensor pistão de descarte E retraído                      |
+| t_{56} | $\overline{\mbox{Sensor Metal}}$                          |
+| t_{57} | Sensor Preto                                              |
+| t_{58} | Presença Pistão de D \uparrow                             |
+| t_{59} | Sensor pistão de descarte D estendido                     |
+| t_{60} | Sensor pistão de descarte D retraído                      |
+| t_{61} | Sensor Branco                                             |
+| t_{62} | Sensor peça concavidade para cima                         |
+| t_{63} | Presença Pistão de C \uparrow                             |
+| t_{64} | Sensor pistão de descarte C estendido                     |
+| t_{65} | Sensor pistão de descarte C retraído                      |
+| t_{66} |                                                           |
+| t_{67} | Sensor peça concavidade para baixo                        |
+| t_{68} | Sensor final da esteira \uparrow                          |
+| t_{69} | T=0.5s                                                    |
+| t_{70} | Sensor final da esteira \downarrow                        |
+| t_{71} |                                                           |
+ 
+** Modulo  Braço (Esteira \rightarrow Prensa)
+#+ATTR_LATEX: :caption  \caption{Lugares do Módulo Braço Esteira Prensa}
+| p_{74} | Estender verticalmente o braço                                                 | 
+| p_{75} | Estender vertical e horizontalmente o braço e Ligar o vácuo                    | 
+| p_{76} | Estender horizontalmente o braço e Ligar o vácuo                               | 
+| p_{77} | Estender vertical e horizontalmente o braço e Ligar o vácuo                    | 
+| p_{78} | Estender verticalmente o braço e Ligar o vácuo                                 | 
+| p_{79} | Habilita HSC e Estender verticalmente o braço, Ligar o vácuo e Girar Braço no sentido horário | 
+| p_{80} | Estender vertical e horizontalmente o braço e Ligar o vácuo                    | 
+| p_{81} | Estender horizontalmente o braço e Ligar o vácuo                               | 
+| p_{82} | Estender horizontalmente o braço                                               | 
+| p_{83} | Estender vertical e horizontalmente o braço                                    | 
+| p_{84} | Estender verticalmente o braço                                                 | 
+| p_{85} | Habilita HSC e Estender verticalmente o braço e Girar Braço no sentido antihorário | 
+| p_{86} | Estender Verticalmente o braço e IEC_COUNTER:=IEC_COUNTER+1                    | 
+
+#+ATTR_LATEX: :caption  \caption{Transições do Módulo Braço Esteira Prensa}
+| t_{72} | Sensor vertical braço estendido                                      |
+| t_{73} | T=1.5s                                                               |
+| t_{74} | T=1.5s e Sensor vertical braço retraído                              |
+| t_{75} | T=1.5s e Sensor vertical braço estendido                             |
+| t_{76} | T=1.5s e Sensor vertical braço estendido                             |
+| t_{77} | Count\under{}300C.DB.CountVal = \todo{-3330}                      |
+| t_{78} | T=1.5s e Sensor vertical braço estendido                             |
+| t_{79} | T=1.5s e Sensor vertical braço retraído                              |
+| t_{80} | T=1.5s                                                               |
+| t_{81} | T=1.5s e Sensor vertical braço estendido                             |
+| t_{82} | IEC_COUNTER0.DB=1 e Sensor Hz prensa estendido e porta prensa aberta |
+| t_{83} | T=1.5s e IEC_COUNTER0.DB=0 e Sensor vertical braço estendido         |
+| t_{84} | Count\under{}300C.DB.CountVal = \todo{-1690}                    |
+| t_{85} |                                                                      |
+
+** Módulo prensa cubo
+#+ATTR_LATEX: :caption  \caption{Lugares do Módulo prensa cubo}
+| p_{87} | Retrair atuador horizontal prensa*             |
+| p_{88} | Fechar Porta prensa*                           |
+| p_{89} | Estender atuador vertical prensa*              |
+| p_{90} | Retrair atuador vertical prensa*               |
+| p_{91} | Abrir Porta prensa*                            |
+| p_{92} | Estender atuador horizontal prensa*            |
+| p_{93} | Cubo pronto                                    |
+| p_{94} | Estender horizontalmente o braço e Ligar Vácuo |
+| p_{95} | Estender verticalmente o braço                 |
+
+#+ATTR_: :caption  \caption{Transições do Módulo prensa cubo}
+| t_{86} | T=1s e Sensosr horizontal prensa retraído     |
+| t_{87} | T=1s e Sensor porta fechada                   |
+| t_{88} | T=1s                                          |
+| t_{89} | T=1s                                          |
+| t_{90} | T=1s e sensor porta aberta                    |
+| t_{91} | T=1s e sensor horizontal prensa estendido     |
+| t_{92} |                                               |
+| t_{93} | T=1.5s e Sensor horizontal do braço estendido |
+
+** Módulo Braço Prensa -> Armazenador
+#+ATTR_LATEX: :caption  \caption{Lugares do Módulo braço prensa armazenador}
+| p_{96}  | Estender horizontalmente o braço e Ligar Vácuo                                                |
+| p_{97}  | Estender vertical e horizontalmente o braço e Ligar Vácuo                                     |
+| p_{98}  | Resetar IEC_COUNTER0*, estender verticalmente o braço e Ligar Vácuo                           |
+| p_{99}  | Habilita HSC e Estender verticalmente o braço, Ligar Vácuo e Girar o Braço no sentido horário |
+| p_{100}  | Estender vertical e horizontalmente o braço e Ligar Vácuo                                     |
+| p_{101} | Estender horizontalmente o braço e Ligar Vácuo                                                |
+| p_{102} | Estender horizontalmente o braço                                                              |
+| p_{103} | Estender vertical e horizontalmente o braço                                                   |
+| p_{104} | Girar o braço no sentido antihorário                                                          |
+| p_{105} | Braço parado                                                                                  |
+| p_{106} | Habilita HSC e Girar o braço no sentido horário                                               |
+| p_{107} | Braço na esteira                                                                              |
+
+#+ATTR_LATEX: :caption  \caption{Transições do Módulo braço prensa armazenador}
+| t_{94}  | T=1.5s e Sensor vertical braço retraído                                      |
+| t_{95}  | Sensor vertical braço estendido, Fim de curso inferior e direito armazenador |
+| t_{96} |                                                                              |
+| t_{97} | Count\under{}300C.DB.CountVal = \todo{-4920}                                 |
+| t_{98} | T=2s                                                                         |
+| t_{99} | T=2s                                                                         |
+| t_{100} | Sensor vertical braço retraído                                               |
+| t_{101} | Sensor vertical braço estendido, Fim de curso inferior e direito armazenador |
+| t_{102} | Sensor indutivo do braço                                                     |
+| t_{103} | T=1s                                                                         |
+| t_{104} | Count\under{}300C.DB.CountVal = \todo{-1690}                                 |
+
+** Módulo Armazenador (y)
+#+ATTR_LATEX: :caption  \caption{Lugares do Módulo armazenador y}
+| p_{108} | cubo no armazenador                              |
+| p_{109} | mover armazenador para direita                   |
+| p_{110} |                                                  |
+| p_{111} | COUNTER3:=COUNTER3+1 mover armazenador para cima |
+| p_{112} | Reset COUNTER3*                                  |
+| p_{113} | COUNTER3:=COUNTER3+1 mover armazenador para cima |
+| p_{114} | Reset COUNTER3*                                  |
+| p_{115} | COUNTER3:=COUNTER3+1 mover armazenador para cima |
+| p_{116} | Reset COUNTER3*                                  |
+| p_{117} | COUNTER3:=COUNTER3+1 mover armazenador para cima |
+| p_{118} | Reset COUNTER3*                                  |
+| p_{119} |                                                  |
+
+#+ATTR_LATEX: :caption  \caption{Transições do Módulo armazenador y}
+| t_{105} | T=2s       |
+| t_{106} | T=2s       |
+| t_{107} | COUNTER2=0 |
+| t_{108} | COUNTER3=4 |
+| t_{109} |            |
+| t_{110} | COUNTER2=1 |
+| t_{111} | COUNTER3=3 |
+| t_{112} |            |
+| t_{113} | COUNTER2=2 |
+| t_{114} | COUNTER3=2 |
+| t_{115} |            |
+| t_{116} | COUNTER2=3 |
+| t_{117} | COUNTER3=1 |
+| t_{118} |            |
+
+** Armazenador (x)
+#+ATTR_LATEX: :caption  \caption{Lugares do Módulo armazenador (x)}
+| p_{120} | COUNTER1:=COUNTER1+1 e COUNTER4:=COUNTER4+1              |
+| p_{121} | COUNTER5:=COUNTER5+1 e mover armazenador para a esquerda |
+| p_{122} | Reset COUNTER5*                                          |
+| p_{123} | COUNTER5:=COUNTER5+1 e mover armazenador para a esquerda |
+| p_{124} | Reset COUNTER5*                                          |
+| p_{125} | COUNTER5:=COUNTER5+1 e mover armazenador para a esquerda |
+| p_{126} | Reset COUNTER5*                                          |
+| p_{127} | COUNTER5:=COUNTER5+1 e mover armazenador para a esquerda |
+| p_{128} | Reset COUNTER5*                                          |
+| p_{129} | COUNTER5:=COUNTER5+1 e mover armazenador para a esquerda |
+| p_{130} | Reset COUNTER5*                                          |
+| p_{131} | COUNTER5:=COUNTER5+1 e mover armazenador para a esquerda |
+| p_{132} | Reset COUNTER5*                                          |
+| p_{133} | COUNTER5:=COUNTER5+1 e mover armazenador para a esquerda |
+| p_{134} | Reset COUNTER5* Reset COUNTER4* , COUNTER2:=COUNTER2+1   |
+| p_{135} |                                                          |
+
+#+ATTR_LATEX: :caption  \caption{Transições Módulo armazenador (x)}
+| t_{119} | COUNTER4=0                          |
+| t_{120} | COUNTER5=1                          |
+| t_{121} |                                     |
+| t_{122} | COUNTER4=1                          |
+| t_{123} | COUNTER5=2                          |
+| t_{124} |                                     |
+| t_{125} | COUNTER4=2                          |
+| t_{126} | COUNTER5=3                          |
+| t_{127} |                                     |
+| t_{128} | COUNTER4=3                          |
+| t_{129} | COUNTER5=4                          |
+| t_{130} |                                     |
+| t_{131} | COUNTER4=4                          |
+| t_{132} | COUNTER5=5                          |
+| t_{133} |                                     |
+| t_{134} | COUNTER4=5                          |
+| t_{135} | COUNTER5=8                          |
+| t_{136} |                                     |
+| t_{137} | COUNTER4=6                          |
+| t_{138} | COUNTER5=9                          |
+| t_{139} |                                     |
+
+** Armazenador (armazena peça e reset)
+#+ATTR_LATEX: :caption  \caption{Lugares do Módulo armazenador (coloca peça e reseta)}
+| p_{136} | Estender horizontalmente armazenador                                |
+| p_{137} | Estender horizontalmente armazenador e mover armazenador para baixo |
+| p_{138} | Estender horizontalmente armazenador                                |
+| p_{139} | Peça armazenada                                                     |
+| p_{140} | Mover armazenador para a direita                                    |
+| p_{141} | Armazenador pronto na horizontal                                    |
+| p_{142} | Mover armazenador para baixo                                        |
+| p_{143} | Armazenador pronto na vertical                                      |
+| p_{144} |                                                                     |
+| p_{145} | Armazenador pronto                                                  |
+
+
+#+ATTR_LATEX: :caption  \caption{Transições Módulo armazenador (coloca peça e reseta)}
+| t_{140} | T=2s                                 |
+| t_{141} | T=3s                                 |
+| t_{142} | T=0.25s                              |
+| t_{143} | T=3s                                 |
+| t_{144} | T=7s                                 |
+| t_{145} | Fim de curso direito do armazenador  |
+| t_{146} | Fim de curso inferior do armazenador |
+| t_{147} |                                      |
+| t_{148} | COUNTER1<28                          |
+| t_{149} | COUNTER1=28                          |
+
+
+[fn:1] Variáveis IEC_COUNTER, IEC_COUNTER1, IEC_COUNTER2, IEC_COUNTER3, IEC_COUNTER4, IEC_COUNTER5.
+[fn:2] Verificar sentido de rotação do braço.
+
+

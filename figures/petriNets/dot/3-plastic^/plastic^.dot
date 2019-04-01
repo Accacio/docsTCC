@@ -1,0 +1,150 @@
+digraph A {
+    # splines = ortho
+    rankdir=LR;
+    ratio=fill
+    graph [pad="0.5", nodesep="0.25", ranksep="0.2"];
+    margin=0;
+
+
+
+# Modulo Plastico branco ^
+
+  p51
+  p52
+  p53
+  p54
+  p55
+  p56
+  p57
+  p58
+  p59
+  p60
+  p61
+  p62
+  p63
+  p64
+  p65
+  p66
+  p67
+  p68
+  p69
+  p70
+  p71
+  p72
+  p73
+
+  t46
+  t47
+  t48
+  t49
+  tt50
+  tt51
+  t52
+  t53
+  t54
+  t55
+  t56
+  t57
+  t58
+  t59
+  t60
+  t61
+  t62
+  t63
+  t64
+  t65
+  t66
+  t67
+  t68
+  tt69
+  t70
+  t71
+  
+
+subgraph cluster_3 {
+  label="Plastic Piece"
+  style="dashed"
+  #color="white"
+  labelloc = b
+  # margin=0
+
+# pre
+
+  p51 -> t46
+  p52 -> t47
+  p53 -> t48
+  p54 -> t49
+  p55 -> tt50
+  p56 -> tt51
+
+  p57 -> t56
+  p57 -> t52
+
+  p58 -> t53
+  p59 -> t54
+  p60 -> t55
+
+  p61 -> t57
+  p61 -> t61
+
+  p62 -> t58
+  p63 -> t59
+  p64 -> t60
+
+  p65 -> t62
+  p65 -> t67
+
+  p66 -> t63
+  p67 -> t64
+  p68 -> t65
+
+  p69 -> t66
+
+  p70 -> t68
+  p71 -> tt69
+  p72 -> t70
+  p73 -> t71
+
+#pos
+  t46 -> p52
+  t47 -> p53
+  t48 -> p54
+  t49 -> p55
+  tt50 -> p56
+  tt51 -> p57
+  t52 -> p58
+  t53 -> p59
+  t54 -> p60
+  t55 -> p69
+
+  t56 -> p61
+  t57 -> p62
+  t58 -> p63
+  t59 -> p64
+  t60 -> p69
+
+  t61 -> p65
+  t62 -> p66
+  t63 -> p67
+  t64 -> p68
+  t65 -> p69
+  t66 -> p52
+  t67 -> p70
+  t68 -> p71
+  tt69 -> p72
+  tt69 -> p73
+
+}
+
+et44
+et44 -> p51
+ep107
+ep107 -> t71
+
+
+ep28
+ep74
+t71 -> ep74
+t70 -> ep28
+
+}

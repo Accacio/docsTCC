@@ -1,0 +1,53 @@
+
+#+ATTR_LATEX: :caption  \caption{Lugares do Módulo 2 pt 2}
+| P_{51} | Mag2 vazio                     |
+| P_{52} | Mag2 com peça                  |
+| P_{53} | Estender Mag2 Horizontal*      |
+| p_{54} | Retrair Mag2 Horizontal*       |
+| p_{55} | Mag2 Horizontal Retraído       |
+| p_{56} | Ligar esteira sentido normal   |
+| p_{57} |                                |
+| p_{58} | Ligar esteira sentido normal   |
+| p_{59} | Estender Pistão de descarte E* |
+| p_{60} | Retrair Pistão de descarte E*  |
+| p_{61} | Peça de Metal                  |
+| p_{62} | Ligar esteira sentido normal   |
+| p_{63} | Estender Pistão de descarte D* |
+| p_{64} | Retrair Pistão de descarte D*  |
+| p_{65} | Peça Branca                    |
+| p_{66} | Ligar esteira sentido normal   |
+| p_{67} | Estender Pistão de descarte C* |
+| p_{68} | Retrair Pistão de descarte C*  |
+| p_{69} |                                |
+| p_{70} | Ligar esteira sentido normal   |
+| p_{71} | Ligar esteira sentido normal   |
+| p_{72} | Peça branca pronta             |
+| p_{73} | Esteira parada                 |
+
+#+ATTR_LATEX: :caption  \caption{Transições do Módulo 2 pt 2}
+| t_{46} | $\overline{\mbox{Sensor Chave de Presença de Peça Mag2}}$ |
+| t_{47} |                                                           |
+| t_{48} | Mag2 Horizontal estendido \uparrow                        |
+| t_{49} | Mag2 Horizontal retraído \uparrow                         |
+| t_{50} | T=0.5s                                                    |
+| t_{51} | Presença \uparrow T=0.5s                                  |
+| t_{52} | Sensor Metal                                              |
+| t_{53} | Presença Pistão de E \uparrow                             |
+| t_{54} | Sensor pistão de descarte E estendido                     |
+| t_{55} | Sensor pistão de descarte E retraído                      |
+| t_{56} | $\overline{\mbox{Sensor Metal}}$                          |
+| t_{57} | Sensor Preto                                              |
+| t_{58} | Presença Pistão de D \uparrow                             |
+| t_{59} | Sensor pistão de descarte D estendido                     |
+| t_{60} | Sensor pistão de descarte D retraído                      |
+| t_{61} | Sensor Branco                                             |
+| t_{62} | Sensor peça concavidade para cima                         |
+| t_{63} | Presença Pistão de C \uparrow                             |
+| t_{64} | Sensor pistão de descarte C estendido                     |
+| t_{65} | Sensor pistão de descarte C retraído                      |
+| t_{66} |                                                           |
+| t_{67} | Sensor peça concavidade para baixo                        |
+| t_{68} | Sensor final da esteira \uparrow                          |
+| t_{69} | T=0.5s                                                    |
+| t_{70} | Sensor final da esteira \downarrow                        |
+| t_{71} |                                                           |

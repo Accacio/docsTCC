@@ -1,0 +1,85 @@
+digraph A {
+    # splines = ortho
+    rankdir=LR;
+    ratio=fill
+    graph [pad="0.5", nodesep="0.05", ranksep="0.02"];
+    margin=0;
+
+
+# Módulo armazenador (coloca peça e reset)
+
+  p136
+  p137
+  p138
+  p139
+  p140
+  p141
+  p142
+  p143
+  p144
+  p145
+
+
+  tt140
+  tt141
+  tt142
+  tt143
+  tt144
+  t145
+  t146
+  t147
+  t148
+  t149
+
+
+subgraph cluster_9 {
+  label="Store Piece";
+  labelloc = b
+  margin=0.3
+  style="dashed"
+  # color="red"
+  # pre
+
+  p136 -> tt141
+  p137 -> tt142
+  p138 -> tt143
+  p139 -> tt144
+  p140 -> t145
+  p141 -> t147
+  p142 -> t146
+  p143 -> t147
+  p144 -> t148
+  p144 -> t149
+
+
+  #pos
+
+  tt140 -> p136
+  tt141 -> p137
+  tt142 -> p138
+  tt143 -> p139
+  tt144 -> p140
+  tt144 -> p142
+  t145 -> p141
+  t146 -> p143
+  t147 -> p144
+  t148 -> p145
+
+
+}
+
+ep119
+ep135
+ep119 -> tt140
+ep135 -> tt140
+
+ep0
+t149 -> ep0
+
+et96
+p145 -> et96
+
+et19
+et19 -> p144
+
+}

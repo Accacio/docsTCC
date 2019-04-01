@@ -1,0 +1,27 @@
+
+#+ATTR_LATEX: :caption  \caption{Lugares do Módulo braço prensa armazenador}
+| p_{96}  | Estender horizontalmente o braço e Ligar Vácuo                                                |
+| p_{97}  | Estender vertical e horizontalmente o braço e Ligar Vácuo                                     |
+| p_{98}  | Resetar IEC_COUNTER0*, estender verticalmente o braço e Ligar Vácuo                           |
+| p_{99}  | Habilita HSC e Estender verticalmente o braço, Ligar Vácuo e Girar o Braço no sentido horário |
+| p_{100} | Estender vertical e horizontalmente o braço e Ligar Vácuo                                     |
+| p_{101} | Estender horizontalmente o braço e Ligar Vácuo                                                |
+| p_{102} | Estender horizontalmente o braço                                                              |
+| p_{103} | Estender vertical e horizontalmente o braço                                                   |
+| p_{104} | Girar o braço no sentido antihorário                                                          |
+| p_{105} | Braço parado                                                                                  |
+| p_{106} | Habilita HSC e Girar o braço no sentido horário                                               |
+| p_{107} | Braço na esteira                                                                              |
+
+#+ATTR_LATEX: :caption  \caption{Transições do Módulo braço prensa armazenador}
+| t_{94}  | T=1.5s e Sensor vertical braço retraído                                      |
+| t_{95}  | Sensor vertical braço estendido, Fim de curso inferior e direito armazenador |
+| t_{96}  |                                                                              |
+| t_{97}  | Count\under{}300C.DB.CountVal = \todo{-4920}                                 |
+| t_{98}  | T=2s                                                                         |
+| t_{99}  | T=2s                                                                         |
+| t_{100} | Sensor vertical braço retraído                                               |
+| t_{101} | Sensor vertical braço estendido, Fim de curso inferior e direito armazenador |
+| t_{102} | Sensor indutivo do braço                                                     |
+| t_{103} | T=1s                                                                         |
+| t_{104} | Count\under{}300C.DB.CountVal = \todo{-1690}                                 |

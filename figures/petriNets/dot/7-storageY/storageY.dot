@@ -1,0 +1,98 @@
+
+digraph A {
+    # splines = ortho
+    rankdir=LR;
+    ratio=fill
+    graph [pad="0.5", nodesep="0.25", ranksep="0.2"];
+    margin=0;
+
+# Modulo armazenador y
+
+    p108
+    p109
+    p110
+    p111
+    p112
+    p113
+    p114
+    p115
+    p116
+    p117
+    p118
+    p119
+
+    tt105
+    tt106
+    t107
+    t108
+    t109
+    t110
+    t111
+    t112
+    t113
+    t114
+    t115
+    t116
+    t117
+    t118
+
+
+subgraph cluster_7 {
+  label="Storage (y)";
+  labelloc = b
+  style="dashed"
+  # color="red"
+  # pre
+
+  p108 -> tt105
+  p109 -> tt106
+
+  p110 -> t107
+  p110 -> t110
+  p110 -> t113
+  p110 -> t116
+
+
+  p111 -> t108
+  p112 -> t109
+  p113 -> t111
+  p114 -> t112
+  p115 -> t114
+  p116 -> t115
+  p117 -> t117
+  p118 -> t118
+
+
+
+
+  #pos
+
+  tt105 -> p109
+  tt106 -> p110
+  t107 -> p111
+  t108 -> p112
+  t109 -> p119
+  t110 -> p113
+  t111 -> p114
+  t112 -> p119
+  t113 -> p115
+  t114 -> p116
+  t115 -> p119
+  t116 -> p117
+  t117 -> p118
+  t118 -> p119
+
+
+}
+
+et100
+
+et100 -> p108
+ep120
+
+tt106 -> ep120
+et140
+p119 -> et140
+
+
+}

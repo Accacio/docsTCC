@@ -1,0 +1,68 @@
+digraph A {
+    # splines = ortho
+    rankdir=LR;
+    ratio=fill
+    graph [pad="0.5", nodesep="0.25", ranksep="0.2"];
+    margin=0;
+
+# Modulo prensa cubo
+
+    p87
+    p88
+    p89
+    p90
+    p91
+    p92
+    p93
+    p94
+    p95
+
+    tt86
+    tt87
+    tt88
+    tt89
+    tt90
+    tt91
+    t92
+    tt93
+
+subgraph cluster_5 {
+  label="Press";
+  labelloc = b
+  style="dashed"
+  # color="red"
+
+  # pre
+
+  p87 -> tt86
+  p88 -> tt87
+  p89 -> tt88
+  p90 -> tt89
+  p91 -> tt90
+  p92 -> tt91
+  p93 -> t92
+  p94 -> tt93
+  p95 -> tt93
+
+
+  #pos
+
+  tt86 -> p88
+  tt87 -> p89
+  tt88 -> p90
+  tt89 -> p91
+  tt90 -> p92
+  tt91 -> p93
+  t92 -> p94
+
+
+}
+
+et82
+
+et82 -> p87 
+et82 -> p95
+ep96
+tt93 -> ep96
+
+}
