@@ -149,6 +149,36 @@
 \newtheorem{observation}{Observação}
 %\numberwithin{observation}{chapter}
 
+\newcommand{\addtikzfigure}[3]{
+\begin{landscape}
+  \begin{figure}[h]
+    \centering
+    \resizebox{\hsize}{!}{
+      \input{#1}
+    }
+    \caption{#2}
+    \label{fig:#3}
+  \end{figure}
+\end{landscape}
+}
+
+\newcommand{\addtikzfigureVertCent}[3]{
+\begin{landscape}
+\vspace*{\fill}
+  \begin{figure}[h]
+    \centering
+    \resizebox{\hsize}{!}{
+      \input{#1}
+    }
+    \caption{#2}
+    \label{fig:#3}
+  \end{figure}
+\vspace*{\fill}
+\end{landscape}
+}
+
+
+
 %%% Local Variables:
 %%% mode: latex
 %%% TeX-master: "./monografia.tex"

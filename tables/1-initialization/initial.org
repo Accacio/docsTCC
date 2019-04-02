@@ -1,35 +1,35 @@
 
 #+ATTR_LATEX: :caption  \caption{Lugares do Módulo de Inicialização} :align c|c
-| Places | Meaning                                                      |
-|--------+--------------------------------------------------------------|
-| p_{0}  | Sistema Parado                                               |
-| p_{1}  | Retrair Pistão MAG 1*                                        |
-| p_{2}  | Pistão MAG 1 Recuado                                         |
-| p_{3}  | Retrair Pistão MAG 2*                                        |
-| p_{4}  | Pistão MAG 2 Recuado                                         |
-| p_{5}  | Retrair pistão de descarte D*                                |
-| p_{6}  | Pistão de descarte D Recuado                                 |
-| p_{7}  | Retrair pistão de descarte C*                                |
-| p_{8}  | Pistão de descarte C Recuado                                 |
-| p_{9}  | Retrair pistão de descarte E*                                |
-| p_{10} | Pistão de descarte E Recuado                                 |
-| p_{11} | Ligar esteira sentido reverso                                |
-| p_{12} | Esteira limpa                                                |
-| p_{13} | Resetar Variáveis[fn:1]                                      |
-| p_{14} | Retrair atuador vertical da prensa                           |
-| p_{15} | Levantar porta da prensa                                     |
-| p_{16} | Estender atuador horizontal da prensa                        |
-| p_{17} | Prensa pronta                                                |
-| p_{18} | Braço retraído e armazenador de cubos retraído na horizontal |
-| p_{19} | Mover armazenador para direita                               |
-| p_{20} | Armazenador pronto na horizontal                             |
-| p_{21} | Mover armazenador para baixo                                 |
-| p_{22} | Armazenador pronto na vertical                               |
-| p_{23} | Girar braço sentido antihorário[fn:2]                        |
-| p_{24} | Braço parado                                                 |
-| p_{25} | Girar braço sentido horário[fn:2] e Habilita HSC             |
-| p_{26} | Braço parado frente a esteira                                |
-| p_{27} | Sistema Pronto                                               |
+| Places | Meaning                                                  |
+|--------+----------------------------------------------------------|
+| p_{0}  | System Stopped                                           |
+| p_{1}  | Retract MAG 1 Cylinder *                                 |
+| p_{2}  | MAG1's Cylinder Retracted                                |
+| p_{3}  | Retract MAG 2 Cylinder *                                 |
+| p_{4}  | MAG2's Cylinder Retracted                                |
+| p_{5}  | Retract Right Discharge Cylinder *                       |
+| p_{6}  | Right Discharge Cylinder Retracted                       |
+| p_{7}  | Retract Center Discharge Cylinder                        |
+| p_{8}  | Center Discharge Cylinder Retracted                      |
+| p_{9}  | Retract Left Discharge Cylinder *                        |
+| p_{10} | Left Dischange Cylinder Retracted                        |
+| p_{11} | Turn Conveyor Belt On (Reverse)                          |
+| p_{12} | No Pieces On Conveyor Belt                               |
+| p_{13} | Reset Variables[fn:1]                                    |
+| p_{14} | Retract Joining Cylinder                                 |
+| p_{15} | Open Safety Door                                         |
+| p_{16} | Extend Assembly Unit Holder                              |
+| p_{17} | Assembly Unit Ready                                      |
+| p_{18} | Arm Retracted and Storage Device Retracted On The Z Axis |
+| p_{19} | Move armazenador para direita                            |
+| p_{20} | Armazenador pronto na horizontal                         |
+| p_{21} | Mover armazenador para baixo                             |
+| p_{22} | Armazenador pronto na vertical                           |
+| p_{23} | Girar braço sentido antihorário[fn:2]                    |
+| p_{24} | Braço parado                                             |
+| p_{25} | Girar braço sentido horário[fn:2] e Habilita HSC         |
+| p_{26} | Braço parado frente a esteira                            |
+| p_{27} | Sistema Pronto                                           |
 
 #+ATTR_LATEX: :caption \caption{Transições do Módulo de Inicialização}
 | Transitions | Meaning                                          |
