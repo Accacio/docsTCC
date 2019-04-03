@@ -2,57 +2,57 @@
 #+ATTR_LATEX: :caption  \caption{Lugares do Módulo de Inicialização} :align c|c
 | Places | Meaning                                                  |
 |--------+----------------------------------------------------------|
-| p_{0}  | System Stopped                                           |
-| p_{1}  | Retract MAG 1 Cylinder *                                 |
-| p_{2}  | MAG1's Cylinder Retracted                                |
-| p_{3}  | Retract MAG 2 Cylinder *                                 |
-| p_{4}  | MAG2's Cylinder Retracted                                |
-| p_{5}  | Retract Right Discharge Cylinder *                       |
-| p_{6}  | Right Discharge Cylinder Retracted                       |
-| p_{7}  | Retract Center Discharge Cylinder                        |
-| p_{8}  | Center Discharge Cylinder Retracted                      |
-| p_{9}  | Retract Left Discharge Cylinder *                        |
-| p_{10} | Left Dischange Cylinder Retracted                        |
-| p_{11} | Turn Conveyor Belt On (Reverse)                          |
-| p_{12} | No Pieces On Conveyor Belt                               |
-| p_{13} | Reset Variables[fn:1]                                    |
-| p_{14} | Retract Joining Cylinder                                 |
-| p_{15} | Open Safety Door                                         |
-| p_{16} | Extend Assembly Unit Holder                              |
-| p_{17} | Assembly Unit Ready                                      |
-| p_{18} | Arm Retracted and Storage Device Retracted On The Z Axis |
-| p_{19} | Move armazenador para direita                            |
-| p_{20} | Armazenador pronto na horizontal                         |
-| p_{21} | Mover armazenador para baixo                             |
-| p_{22} | Armazenador pronto na vertical                           |
-| p_{23} | Girar braço sentido antihorário[fn:2]                    |
-| p_{24} | Braço parado                                             |
-| p_{25} | Girar braço sentido horário[fn:2] e Habilita HSC         |
-| p_{26} | Braço parado frente a esteira                            |
-| p_{27} | Sistema Pronto                                           |
+| p0m1   | System Stopped                                           |
+| p1     | Retract MAG 1 Cylinder *                                 |
+| p2     | MAG1's Cylinder Retracted                                |
+| p3     | Retract MAG 2 Cylinder *                                 |
+| p4     | MAG2's Cylinder Retracted                                |
+| p5     | Retract Right Discharge Cylinder *                       |
+| p6     | Right Discharge Cylinder Retracted                       |
+| p7     | Retract Center Discharge Cylinder                        |
+| p8     | Center Discharge Cylinder Retracted                      |
+| p9     | Retract Left Discharge Cylinder *                        |
+| p10    | Left Dischange Cylinder Retracted                        |
+| p11    | Turn Conveyor Belt On (Reverse)                          |
+| p12    | No Pieces On Conveyor Belt                               |
+| p13    | Reset Variables[fn:1]                                    |
+| p14    | Retract Joining Cylinder                                 |
+| p15    | Open Safety Door                                         |
+| p16    | Extend Assembly Unit Holder                              |
+| p17    | Assembly Unit Ready                                      |
+| p18    | Arm Retracted and Storage Device Retracted On The Z Axis |
+| p19    | Move armazenador para direita                            |
+| p20    | Armazenador pronto na horizontal                         |
+| p21    | Mover armazenador para baixo                             |
+| p22    | Armazenador pronto na vertical                           |
+| p23    | Girar braço sentido antihorário[fn:2]                    |
+| p24    | Braço parado                                             |
+| p25    | Girar braço sentido horário[fn:2] e Habilita HSC         |
+| p26    | Braço parado frente a esteira                            |
+| p27    | Sistema Pronto                                           |
 
 #+ATTR_LATEX: :caption \caption{Transições do Módulo de Inicialização}
 | Transitions | Meaning                                          |
-| t_{0}       | Botão de inicialização                           |
-| t_{1}       | Sensor MAG 1 Retraído                            |
-| t_{2}       | Sensor MAG 2 Retraído                            |
-| t_{3}       | Sensor pistão de descarte D Retraído             |
-| t_{4}       | Sensor pistão de descarte C Retraído             |
-| t_{5}       | Sensor pistão de descarte E Retraído             |
-| t_{6}       |                                                  |
-| t_{7}       | T=15s                                            |
-| t_{8}       | T=2.5s                                           |
-| t_{9}       | Sensor porta prensa aberta                       |
-| t_{10}      | Sensor atuador horizontal da prensa estendido    |
-| t_{11}      | Sensor Hz armazenador de cubos e braço retraídos |
-| t_{12}      | Fim de curso direito do armazenador de cubos     |
-| t_{13}      | Fim de curso inferior do armazenador de cubos    |
-| t_{14}      | T=2s                                             |
-| t_{15}      | Sensor Indutivo do braço                         |
-| t_{16}      | T=1s                                             |
-| t_{17}      | Count\under{}300C.DB.Countval = \todo{-1690}     |
-| t_{18}      |                                                  |
-| t_{19}      | Botão Começar                                    |
+| t0          | Botão de inicialização                           |
+| t1          | Sensor MAG 1 Retraído                            |
+| t2          | Sensor MAG 2 Retraído                            |
+| t3          | Sensor pistão de descarte D Retraído             |
+| t4          | Sensor pistão de descarte C Retraído             |
+| t5          | Sensor pistão de descarte E Retraído             |
+| t6          |                                                  |
+| tt7         | T=15s                                            |
+| tt8         | T=2.5s                                           |
+| t9          | Sensor porta prensa aberta                       |
+| t10         | Sensor atuador horizontal da prensa estendido    |
+| t11         | Sensor Hz armazenador de cubos e braço retraídos |
+| t12         | Fim de curso direito do armazenador de cubos     |
+| t13         | Fim de curso inferior do armazenador de cubos    |
+| tt14        | T=2s                                             |
+| t15         | Sensor Indutivo do braço                         |
+| tt16        | T=1s                                             |
+| t17         | Count\under{}300C.DB.Countval = \todo{-1690}     |
+| t18         |                                                  |
+| t19         | Botão Começar                                    |
 
 [fn:1] Variáveis IEC_COUNTER, IEC_COUNTER1, IEC_COUNTER2, IEC_COUNTER3, IEC_COUNTER4, IEC_COUNTER5.
 [fn:2] Verificar sentido de rotação do braço.

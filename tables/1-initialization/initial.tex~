@@ -29,11 +29,11 @@ p21 & Mover armazenador para baixo\\
 p22 & Armazenador pronto na vertical\\
 p23 & Girar braço sentido antihorário\footnotemark\\
 p24 & Braço parado\\
-p25 & Girar braço sentido horário\textsuperscript{\ref{orgce50fad}} e Habilita HSC\\
+p25 & Girar braço sentido horário\textsuperscript{\ref{orge133c32}} e Habilita HSC\\
 p26 & Braço parado frente a esteira\\
 p27 & Sistema Pronto\\
 \end{tabular}
-\end{table}\footnotetext[1]{\label{org7601084}Variáveis IEC\(_{\text{COUNTER}}\), IEC\(_{\text{COUNTER1}}\), IEC\(_{\text{COUNTER2}}\), IEC\(_{\text{COUNTER3}}\), IEC\(_{\text{COUNTER4}}\), IEC\(_{\text{COUNTER5}}\).}\footnotetext[2]{\label{orgce50fad}Verificar sentido de rotação do braço.}
+\end{table}\footnotetext[1]{\label{org909ffcf}Variáveis IEC\(_{\text{COUNTER}}\), IEC\(_{\text{COUNTER1}}\), IEC\(_{\text{COUNTER2}}\), IEC\(_{\text{COUNTER3}}\), IEC\(_{\text{COUNTER4}}\), IEC\(_{\text{COUNTER5}}\).}\footnotetext[2]{\label{orge133c32}Verificar sentido de rotação do braço.}
 
 \begin{table}[htbp]
 \caption{Transições do Módulo de Inicialização}

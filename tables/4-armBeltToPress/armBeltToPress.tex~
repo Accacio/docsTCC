@@ -27,17 +27,17 @@ p86 & Estender Verticalmente o braço e IEC\(_{\text{COUNTER}}\):=IEC\(_{\text{C
 Transitions & Meaning\\
 \hline
 t72 & Sensor vertical braço estendido\\
-tt73 & T=1.5s\\
-tt74 & T=1.5s e Sensor vertical braço retraído\\
-tt75 & T=1.5s e Sensor vertical braço estendido\\
-tt76 & T=1.5s e Sensor vertical braço estendido\\
+t73 & T=1.5s\\
+t74 & T=1.5s e Sensor vertical braço retraído\\
+t75 & T=1.5s e Sensor vertical braço estendido\\
+t76 & T=1.5s e Sensor vertical braço estendido\\
 t77 & Count\_300C.DB.CountVal = \todo{-3330}\\
-tt78 & T=1.5s e Sensor vertical braço estendido\\
-tt79 & T=1.5s e Sensor vertical braço retraído\\
-tt80 & T=1.5s\\
-tt81 & T=1.5s e Sensor vertical braço estendido\\
+t78 & T=1.5s e Sensor vertical braço estendido\\
+t79 & T=1.5s e Sensor vertical braço retraído\\
+t80 & T=1.5s\\
+t81 & T=1.5s e Sensor vertical braço estendido\\
 t82 & IEC\(_{\text{COUNTER0.DB}}\)=1 e Sensor Hz prensa estendido e porta prensa aberta\\
-tt83 & T=1.5s e IEC\(_{\text{COUNTER0.DB}}\)=0 e Sensor vertical braço estendido\\
+t83 & T=1.5s e IEC\(_{\text{COUNTER0.DB}}\)=0 e Sensor vertical braço estendido\\
 t84 & Count\_300C.DB.CountVal = \todo{-1690}\\
 t85 & \\
 \end{tabular}

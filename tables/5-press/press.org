@@ -1,21 +1,25 @@
 
 #+ATTR_LATEX: :caption  \caption{Lugares do Módulo prensa cubo}
-| p_{87} | Retrair atuador horizontal prensa*             |
-| p_{88} | Fechar Porta prensa*                           |
-| p_{89} | Estender atuador vertical prensa*              |
-| p_{90} | Retrair atuador vertical prensa*               |
-| p_{91} | Abrir Porta prensa*                            |
-| p_{92} | Estender atuador horizontal prensa*            |
-| p_{93} | Cubo pronto                                    |
-| p_{94} | Estender horizontalmente o braço e Ligar Vácuo |
-| p_{95} | Estender verticalmente o braço                 |
+| Places | Meaning                                        |
+|--------+------------------------------------------------|
+| p87 | Retrair atuador horizontal prensa*             |
+| p88 | Fechar Porta prensa*                           |
+| p89 | Estender atuador vertical prensa*              |
+| p90 | Retrair atuador vertical prensa*               |
+| p91 | Abrir Porta prensa*                            |
+| p92 | Estender atuador horizontal prensa*            |
+| p93 | Cubo pronto                                    |
+| p94 | Estender horizontalmente o braço e Ligar Vácuo |
+| p95 | Estender verticalmente o braço                 |
 
 #+ATTR_LATEX:caption  \caption{Transições do Módulo prensa cubo}
-| t_{86} | T=1s e Sensosr horizontal prensa retraído     |
-| t_{87} | T=1s e Sensor porta fechada                   |
-| t_{88} | T=1s                                          |
-| t_{89} | T=1s                                          |
-| t_{90} | T=1s e sensor porta aberta                    |
-| t_{91} | T=1s e sensor horizontal prensa estendido     |
-| t_{92} |                                               |
-| t_{93} | T=1.5s e Sensor horizontal do braço estendido |
+| Transitions | Meaning                                       |
+|-------------+-----------------------------------------------|
+| tt86        | T=1s e Sensosr horizontal prensa retraído     |
+| tt87        | T=1s e Sensor porta fechada                   |
+| tt88        | T=1s                                          |
+| tt89        | T=1s                                          |
+| tt90        | T=1s e sensor porta aberta                    |
+| tt91        | T=1s e sensor horizontal prensa estendido     |
+| t92         |                                               |
+| tt93        | T=1.5s e Sensor horizontal do braço estendido |

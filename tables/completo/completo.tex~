@@ -29,11 +29,11 @@ p21 & Mover armazenador para baixo\\
 p22 & Armazenador pronto na vertical\\
 p23 & Girar braço sentido antihorário\footnotemark\\
 p24 & Braço parado\\
-p25 & Girar braço sentido horário\textsuperscript{\ref{org040dc32}} e Habilita HSC\\
+p25 & Girar braço sentido horário\textsuperscript{\ref{orgabef047}} e Habilita HSC\\
 p26 & Braço parado frente a esteira\\
 p27 & Sistema Pronto\\
 \end{tabular}
-\end{table}\footnotetext[1]{\label{org957b7de}Variáveis IEC\(_{\text{COUNTER}}\), IEC\(_{\text{COUNTER1}}\), IEC\(_{\text{COUNTER2}}\), IEC\(_{\text{COUNTER3}}\), IEC\(_{\text{COUNTER4}}\), IEC\(_{\text{COUNTER5}}\).}\footnotetext[2]{\label{org040dc32}Verificar sentido de rotação do braço.}
+\end{table}\footnotetext[1]{\label{orgdbe1239}Variáveis IEC\(_{\text{COUNTER}}\), IEC\(_{\text{COUNTER1}}\), IEC\(_{\text{COUNTER2}}\), IEC\(_{\text{COUNTER3}}\), IEC\(_{\text{COUNTER4}}\), IEC\(_{\text{COUNTER5}}\).}\footnotetext[2]{\label{orgabef047}Verificar sentido de rotação do braço.}
 
 \begin{table}[htbp]
 \caption{Transições do Módulo de Inicialização}
@@ -47,16 +47,16 @@ t3 & Sensor pistão de descarte D Retraído\\
 t4 & Sensor pistão de descarte C Retraído\\
 t5 & Sensor pistão de descarte E Retraído\\
 t6 & \\
-tt7 & T=15s\\
-tt8 & T=2.5s\\
+t7 & T=15s\\
+t8 & T=2.5s\\
 t9 & Sensor porta prensa aberta\\
 t10 & Sensor atuador horizontal da prensa estendido\\
 t11 & Sensor Hz armazenador de cubos e braço retraídos\\
 t12 & Fim de curso direito do armazenador de cubos\\
 t13 & Fim de curso inferior do armazenador de cubos\\
-tt14 & T=2s\\
+t14 & T=2s\\
 t15 & Sensor Indutivo do braço\\
-tt16 & T=1s\\
+t16 & T=1s\\
 t17 & Count\_300C.DB.Countval = \todo{-1690}\\
 t18 & \\
 t19 & Botão Começar\\
@@ -104,8 +104,8 @@ t20 & \(\overline{\mbox{Sensor Chave de Presença de Peça Mag1}}\)\\
 t21 & \\
 t22 & Mag1 Horizontal estendido \(\uparrow\)\\
 t23 & Mag1 Horizontal retraído \(\uparrow\)\\
-tt24 & T=0.5s\\
-tt25 & Presença \(\uparrow\) T=0.5s\\
+t24 & T=0.5s\\
+t25 & Presença \(\uparrow\) T=0.5s\\
 t26 & \(\overline{\mbox{Sensor Metal}}\)\\
 t27 & Sensor Preto\\
 t28 & Presença Pistão de D \(\uparrow\)\\
@@ -123,7 +123,7 @@ t39 & Sensor pistão de descarte E retraído\\
 t40 & \\
 t41 & Sensor peça concavidade para cima\\
 t42 & Sensor final da esteira \(\uparrow\)\\
-tt43 & T=0.5s\\
+t43 & T=0.5s\\
 t44 & Sensor final da esteira \(\downarrow\)\\
 t45 & \\
 \end{tabular}
@@ -170,8 +170,8 @@ t46 & \(\overline{\mbox{Sensor Chave de Presença de Peça Mag2}}\)\\
 t47 & \\
 t48 & Mag2 Horizontal estendido \(\uparrow\)\\
 t49 & Mag2 Horizontal retraído \(\uparrow\)\\
-tt50 & T=0.5s\\
-tt51 & Presença \(\uparrow\) T=0.5s\\
+t50 & T=0.5s\\
+t51 & Presença \(\uparrow\) T=0.5s\\
 t52 & Sensor Metal\\
 t53 & Presença Pistão de E \(\uparrow\)\\
 t54 & Sensor pistão de descarte E estendido\\
@@ -189,7 +189,7 @@ t65 & Sensor pistão de descarte C retraído\\
 t66 & \\
 t67 & Sensor peça concavidade para baixo\\
 t68 & Sensor final da esteira \(\uparrow\)\\
-tt69 & T=0.5s\\
+t69 & T=0.5s\\
 t70 & Sensor final da esteira \(\downarrow\)\\
 t71 & \\
 \end{tabular}
@@ -223,17 +223,17 @@ p86 & Estender Verticalmente o braço e IEC\(_{\text{COUNTER}}\):=IEC\(_{\text{C
 Transitions & Meaning\\
 \hline
 t72 & Sensor vertical braço estendido\\
-tt73 & T=1.5s\\
-tt74 & T=1.5s e Sensor vertical braço retraído\\
-tt75 & T=1.5s e Sensor vertical braço estendido\\
-tt76 & T=1.5s e Sensor vertical braço estendido\\
+t73 & T=1.5s\\
+t74 & T=1.5s e Sensor vertical braço retraído\\
+t75 & T=1.5s e Sensor vertical braço estendido\\
+t76 & T=1.5s e Sensor vertical braço estendido\\
 t77 & Count\_300C.DB.CountVal = \todo{-3330}\\
-tt78 & T=1.5s e Sensor vertical braço estendido\\
-tt79 & T=1.5s e Sensor vertical braço retraído\\
-tt80 & T=1.5s\\
-tt81 & T=1.5s e Sensor vertical braço estendido\\
+t78 & T=1.5s e Sensor vertical braço estendido\\
+t79 & T=1.5s e Sensor vertical braço retraído\\
+t80 & T=1.5s\\
+t81 & T=1.5s e Sensor vertical braço estendido\\
 t82 & IEC\(_{\text{COUNTER0.DB}}\)=1 e Sensor Hz prensa estendido e porta prensa aberta\\
-tt83 & T=1.5s e IEC\(_{\text{COUNTER0.DB}}\)=0 e Sensor vertical braço estendido\\
+t83 & T=1.5s e IEC\(_{\text{COUNTER0.DB}}\)=0 e Sensor vertical braço estendido\\
 t84 & Count\_300C.DB.CountVal = \todo{-1690}\\
 t85 & \\
 \end{tabular}
@@ -260,14 +260,14 @@ p95 & Estender verticalmente o braço\\
 \begin{tabular}{ll}
 Transitions & Meaning\\
 \hline
-tt86 & T=1s e Sensosr horizontal prensa retraído\\
-tt87 & T=1s e Sensor porta fechada\\
-tt88 & T=1s\\
-tt89 & T=1s\\
-tt90 & T=1s e sensor porta aberta\\
-tt91 & T=1s e sensor horizontal prensa estendido\\
+t86 & T=1s e Sensosr horizontal prensa retraído\\
+t87 & T=1s e Sensor porta fechada\\
+t88 & T=1s\\
+t89 & T=1s\\
+t90 & T=1s e sensor porta aberta\\
+t91 & T=1s e sensor horizontal prensa estendido\\
 t92 & \\
-tt93 & T=1.5s e Sensor horizontal do braço estendido\\
+t93 & T=1.5s e Sensor horizontal do braço estendido\\
 \end{tabular}
 \end{center}
 \begin{table}[htbp]
@@ -297,16 +297,16 @@ p107 & Braço na esteira\\
 \begin{tabular}{ll}
 Transitions & Meaning\\
 \hline
-tt94 & T=1.5s e Sensor vertical braço retraído\\
+t94 & T=1.5s e Sensor vertical braço retraído\\
 t95 & Sensor vertical braço estendido, Fim de curso inferior e direito armazenador\\
 t96 & \\
 t97 & Count\_300C.DB.CountVal = \todo{-4920}\\
-tt98 & T=2s\\
-tt99 & T=2s\\
+t98 & T=2s\\
+t99 & T=2s\\
 t100 & Sensor vertical braço retraído\\
 t101 & Sensor vertical braço estendido, Fim de curso inferior e direito armazenador\\
 t102 & Sensor indutivo do braço\\
-tt103 & T=1s\\
+t103 & T=1s\\
 t104 & Count\_300C.DB.CountVal = \todo{-1690}\\
 \end{tabular}
 \end{table}
@@ -337,8 +337,8 @@ p119 & \\
 \begin{tabular}{ll}
 Transitions & Meaning\\
 \hline
-tt105 & T=2s\\
-tt106 & T=2s\\
+t105 & T=2s\\
+t106 & T=2s\\
 t107 & COUNTER2=0\\
 t108 & COUNTER3=4\\
 t109 & \\
@@ -432,11 +432,11 @@ p145 & Armazenador pronto\\
 \begin{tabular}{ll}
 Transitions & Meaning\\
 \hline
-tt140 & T=2s\\
-tt141 & T=3s\\
-tt142 & T=0.25s\\
-tt143 & T=3s\\
-tt144 & T=7s\\
+t140 & T=2s\\
+t141 & T=3s\\
+t142 & T=0.25s\\
+t143 & T=3s\\
+t144 & T=7s\\
 t145 & Fim de curso direito do armazenador\\
 t146 & Fim de curso inferior do armazenador\\
 t147 & \\

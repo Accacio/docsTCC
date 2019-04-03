@@ -1,53 +1,57 @@
 
 #+ATTR_LATEX: :caption \caption{Lugares do Módulo 2 pt 1}
-| p_{28} | Mag1 vazio                     |
-| p_{29} | Mag1 com peça                  |
-| p_{30} | Estender Mag1 Horizontal*      |
-| p_{31} | Retrair Mag1 Horizontal*       |
-| p_{32} | Mag1 Horizontal retraído       |
-| p_{33} | Ligar esteira sentido normal   |
-| p_{34} |                                |
-| p_{35} | Peça de Plástico               |
-| p_{36} | Ligar esteira sentido normal   |
-| p_{37} | Estender Pistão de descarte D* |
-| p_{38} | Retrair Pistão de descarte D*  |
-| p_{39} | Ligar esteira sentido normal   |
-| p_{40} | Estender Pistão de descarte C* |
-| p_{41} | Retrair Pistão de descarte C*  |
-| p_{42} |                                |
-| p_{43} | Peça de Metal                  |
-| p_{44} | Ligar esteira sentido normal   |
-| p_{45} | Estender Pistão de descarte E* |
-| p_{46} | Retrair Pistão de descarte E*  |
-| p_{47} | Ligar esteira sentido normal   |
-| p_{48} | Ligar esteira sentido normal   |
-| p_{49} | Peça Metal Pronta              |
-| p_{50} | Esteira Parada                 |
+| Places | Meaning                        |
+|--------+--------------------------------|
+| p28 | Mag1 vazio                     |
+| p29 | Mag1 com peça                  |
+| p30 | Estender Mag1 Horizontal*      |
+| p31 | Retrair Mag1 Horizontal*       |
+| p32 | Mag1 Horizontal retraído       |
+| p33 | Ligar esteira sentido normal   |
+| p34 |                                |
+| p35 | Peça de Plástico               |
+| p36 | Ligar esteira sentido normal   |
+| p37 | Estender Pistão de descarte D* |
+| p38 | Retrair Pistão de descarte D*  |
+| p39 | Ligar esteira sentido normal   |
+| p40 | Estender Pistão de descarte C* |
+| p41 | Retrair Pistão de descarte C*  |
+| p42 |                                |
+| p43 | Peça de Metal                  |
+| p44 | Ligar esteira sentido normal   |
+| p45 | Estender Pistão de descarte E* |
+| p46 | Retrair Pistão de descarte E*  |
+| p47 | Ligar esteira sentido normal   |
+| p48 | Ligar esteira sentido normal   |
+| p49 | Peça Metal Pronta              |
+| p50 | Esteira Parada                 |
 
 #+ATTR_LATEX: :caption  \caption{Transições do Módulo 2 pt 1}
-| t_{20} | $\overline{\mbox{Sensor Chave de Presença de Peça Mag1}}$ |
-| t_{21} |                                                           |
-| t_{22} | Mag1 Horizontal estendido \uparrow                        |
-| t_{23} | Mag1 Horizontal retraído \uparrow                         |
-| t_{24} | T=0.5s                                                    |
-| t_{25} | Presença \uparrow T=0.5s                                  |
-| t_{26} | $\overline{\mbox{Sensor Metal}}$                          |
-| t_{27} | Sensor Preto                                              |
-| t_{28} | Presença Pistão de D \uparrow                             |
-| t_{29} | Sensor pistão de descarte D estendido                     |
-| t_{30} | Sensor pistão de descarte D retraído                      |
-| t_{31} | Sensor Branco                                             |
-| t_{32} | Presença Pistão de C \uparrow                             |
-| t_{33} | Sensor pistão de descarte C estendido                     |
-| t_{34} | Sensor pistão de descarte C retraído                      |
-| t_{35} | Sensor Metal                                              |
-| t_{36} | Sensor peça concavidade para baixo                        |
-| t_{37} | Presença Pistão de E \uparrow                             |
-| t_{38} | Sensor pistão de descarte E estendido                     |
-| t_{39} | Sensor pistão de descarte E retraído                      |
-| t_{40} |                                                           |
-| t_{41} | Sensor peça concavidade para cima                         |
-| t_{42} | Sensor final da esteira \uparrow                          |
-| t_{43} | T=0.5s                                                    |
-| t_{44} | Sensor final da esteira \downarrow                        |
-| t_{45} |                                                           |
+| Transitions | Meaning                                                   |
+|-------------+-----------------------------------------------------------|
+| t20      | $\overline{\mbox{Sensor Chave de Presença de Peça Mag1}}$ |
+| t21      |                                                           |
+| t22      | Mag1 Horizontal estendido \uparrow                        |
+| t23      | Mag1 Horizontal retraído \uparrow                         |
+| tt24     | T=0.5s                                                    |
+| tt25     | Presença \uparrow T=0.5s                                  |
+| t26      | $\overline{\mbox{Sensor Metal}}$                          |
+| t27      | Sensor Preto                                              |
+| t28      | Presença Pistão de D \uparrow                             |
+| t29      | Sensor pistão de descarte D estendido                     |
+| t30      | Sensor pistão de descarte D retraído                      |
+| t31      | Sensor Branco                                             |
+| t32      | Presença Pistão de C \uparrow                             |
+| t33      | Sensor pistão de descarte C estendido                     |
+| t34      | Sensor pistão de descarte C retraído                      |
+| t35      | Sensor Metal                                              |
+| t36      | Sensor peça concavidade para baixo                        |
+| t37      | Presença Pistão de E \uparrow                             |
+| t38      | Sensor pistão de descarte E estendido                     |
+| t39      | Sensor pistão de descarte E retraído                      |
+| t40      |                                                           |
+| t41      | Sensor peça concavidade para cima                         |
+| t42      | Sensor final da esteira \uparrow                          |
+| tt43     | T=0.5s                                                    |
+| t44      | Sensor final da esteira \downarrow                        |
+| t45      |                                                           |

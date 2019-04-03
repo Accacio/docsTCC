@@ -25,8 +25,8 @@ p119 & \\
 \begin{tabular}{ll}
 Transitions & Meaning\\
 \hline
-tt105 & T=2s\\
-tt106 & T=2s\\
+t105 & T=2s\\
+t106 & T=2s\\
 t107 & COUNTER2=0\\
 t108 & COUNTER3=4\\
 t109 & \\

@@ -1,41 +1,45 @@
 
 #+ATTR_LATEX: :caption  \caption{Lugares do Módulo armazenador (x)}
-| p_{120} | COUNTER1:=COUNTER1+1 e COUNTER4:=COUNTER4+1              |
-| p_{121} | COUNTER5:=COUNTER5+1 e mover armazenador para a esquerda |
-| p_{122} | Reset COUNTER5*                                          |
-| p_{123} | COUNTER5:=COUNTER5+1 e mover armazenador para a esquerda |
-| p_{124} | Reset COUNTER5*                                          |
-| p_{125} | COUNTER5:=COUNTER5+1 e mover armazenador para a esquerda |
-| p_{126} | Reset COUNTER5*                                          |
-| p_{127} | COUNTER5:=COUNTER5+1 e mover armazenador para a esquerda |
-| p_{128} | Reset COUNTER5*                                          |
-| p_{129} | COUNTER5:=COUNTER5+1 e mover armazenador para a esquerda |
-| p_{130} | Reset COUNTER5*                                          |
-| p_{131} | COUNTER5:=COUNTER5+1 e mover armazenador para a esquerda |
-| p_{132} | Reset COUNTER5*                                          |
-| p_{133} | COUNTER5:=COUNTER5+1 e mover armazenador para a esquerda |
-| p_{134} | Reset COUNTER5* Reset COUNTER4* , COUNTER2:=COUNTER2+1   |
-| p_{135} |                                                          |
+| Places | Meaning                                                  |
+|--------+----------------------------------------------------------|
+| p120   | COUNTER1:=COUNTER1+1 e COUNTER4:=COUNTER4+1              |
+| p121   | COUNTER5:=COUNTER5+1 e mover armazenador para a esquerda |
+| p122   | Reset COUNTER5*                                          |
+| p123   | COUNTER5:=COUNTER5+1 e mover armazenador para a esquerda |
+| p124   | Reset COUNTER5*                                          |
+| p125   | COUNTER5:=COUNTER5+1 e mover armazenador para a esquerda |
+| p126   | Reset COUNTER5*                                          |
+| p127   | COUNTER5:=COUNTER5+1 e mover armazenador para a esquerda |
+| p128   | Reset COUNTER5*                                          |
+| p129   | COUNTER5:=COUNTER5+1 e mover armazenador para a esquerda |
+| p130   | Reset COUNTER5*                                          |
+| p131   | COUNTER5:=COUNTER5+1 e mover armazenador para a esquerda |
+| p132   | Reset COUNTER5*                                          |
+| p133   | COUNTER5:=COUNTER5+1 e mover armazenador para a esquerda |
+| p134   | Reset COUNTER5* Reset COUNTER4* , COUNTER2:=COUNTER2+1   |
+| p135   |                                                          |
 
 #+ATTR_LATEX: :caption  \caption{Transições Módulo armazenador (x)} 
-| t_{119} | COUNTER4=0                          |
-| t_{120} | COUNTER5=1                          |
-| t_{121} |                                     |
-| t_{122} | COUNTER4=1                          |
-| t_{123} | COUNTER5=2                          |
-| t_{124} |                                     |
-| t_{125} | COUNTER4=2                          |
-| t_{126} | COUNTER5=3                          |
-| t_{127} |                                     |
-| t_{128} | COUNTER4=3                          |
-| t_{129} | COUNTER5=4                          |
-| t_{130} |                                     |
-| t_{131} | COUNTER4=4                          |
-| t_{132} | COUNTER5=5                          |
-| t_{133} |                                     |
-| t_{134} | COUNTER4=5                          |
-| t_{135} | COUNTER5=8                          |
-| t_{136} |                                     |
-| t_{137} | COUNTER4=6                          |
-| t_{138} | COUNTER5=9                          |
-| t_{139} |                                     |
+| Transitions | Meaning    |
+|-------------+------------|
+| t119        | COUNTER4=0 |
+| t120        | COUNTER5=1 |
+| t121        |            |
+| t122        | COUNTER4=1 |
+| t123        | COUNTER5=2 |
+| t124        |            |
+| t125        | COUNTER4=2 |
+| t126        | COUNTER5=3 |
+| t127        |            |
+| t128        | COUNTER4=3 |
+| t129        | COUNTER5=4 |
+| t130        |            |
+| t131        | COUNTER4=4 |
+| t132        | COUNTER5=5 |
+| t133        |            |
+| t134        | COUNTER4=5 |
+| t135        | COUNTER5=8 |
+| t136        |            |
+| t137        | COUNTER4=6 |
+| t138        | COUNTER5=9 |
+| t139        |            |

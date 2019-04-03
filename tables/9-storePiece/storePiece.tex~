@@ -23,11 +23,11 @@ p145 & Armazenador pronto\\
 \begin{tabular}{ll}
 Transitions & Meaning\\
 \hline
-tt140 & T=2s\\
-tt141 & T=3s\\
-tt142 & T=0.25s\\
-tt143 & T=3s\\
-tt144 & T=7s\\
+t140 & T=2s\\
+t141 & T=3s\\
+t142 & T=0.25s\\
+t143 & T=3s\\
+t144 & T=7s\\
 t145 & Fim de curso direito do armazenador\\
 t146 & Fim de curso inferior do armazenador\\
 t147 & \\

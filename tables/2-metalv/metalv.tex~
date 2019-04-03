@@ -40,8 +40,8 @@ t20 & \(\overline{\mbox{Sensor Chave de Presença de Peça Mag1}}\)\\
 t21 & \\
 t22 & Mag1 Horizontal estendido \(\uparrow\)\\
 t23 & Mag1 Horizontal retraído \(\uparrow\)\\
-tt24 & T=0.5s\\
-tt25 & Presença \(\uparrow\) T=0.5s\\
+t24 & T=0.5s\\
+t25 & Presença \(\uparrow\) T=0.5s\\
 t26 & \(\overline{\mbox{Sensor Metal}}\)\\
 t27 & Sensor Preto\\
 t28 & Presença Pistão de D \(\uparrow\)\\
@@ -59,7 +59,7 @@ t39 & Sensor pistão de descarte E retraído\\
 t40 & \\
 t41 & Sensor peça concavidade para cima\\
 t42 & Sensor final da esteira \(\uparrow\)\\
-tt43 & T=0.5s\\
+t43 & T=0.5s\\
 t44 & Sensor final da esteira \(\downarrow\)\\
 t45 & \\
 \end{tabular}

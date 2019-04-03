@@ -20,13 +20,13 @@ p95 & Estender verticalmente o braço\\
 \begin{tabular}{ll}
 Transitions & Meaning\\
 \hline
-tt86 & T=1s e Sensosr horizontal prensa retraído\\
-tt87 & T=1s e Sensor porta fechada\\
-tt88 & T=1s\\
-tt89 & T=1s\\
-tt90 & T=1s e sensor porta aberta\\
-tt91 & T=1s e sensor horizontal prensa estendido\\
+t86 & T=1s e Sensosr horizontal prensa retraído\\
+t87 & T=1s e Sensor porta fechada\\
+t88 & T=1s\\
+t89 & T=1s\\
+t90 & T=1s e sensor porta aberta\\
+t91 & T=1s e sensor horizontal prensa estendido\\
 t92 & \\
-tt93 & T=1.5s e Sensor horizontal do braço estendido\\
+t93 & T=1.5s e Sensor horizontal do braço estendido\\
 \end{tabular}
 \end{center}

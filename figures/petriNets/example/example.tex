@@ -1,12 +1,12 @@
 \begin{tikzpicture}[>=latex',line join=bevel,]
 %%
 \node (p0m2) at (27.0bp,18.0bp) [draw,ellipse,place, tokens=2, label=above:, label=left:$p_{0}$,rotate=90] {};
+  \node (tt1) at (114.0bp,18.0bp) [draw,ellipse,timedtransition, label=above:, label=left:$t_{1}$,rotate=90] {};
   \node (ep1) at (185.0bp,18.0bp) [draw,ellipse,extPlace, label=above:, label=left:$p_{1}$,rotate=90] {};
-  \node (t1) at (114.0bp,18.0bp) [draw,ellipse,transition, label=above:, label=left:$t_{1}$,rotate=90] {};
-  \draw [-Latex] (t1) ..controls (141.25bp,18.0bp) and (147.94bp,18.0bp)  .. (ep1);
-  \draw [-Latex,inhibitor] (p0m2) ..controls (54.05bp,18.0bp) and (76.966bp,18.0bp)  .. (t1);
+  \draw [-Latex,inhibitor] (p0m2) ..controls (54.05bp,18.0bp) and (76.966bp,18.0bp)  .. (tt1);
   \definecolor{strokecol}{rgb}{0.0,0.0,0.0};
   \pgfsetstrokecolor{strokecol}
   \draw (70.5bp,27.0bp) node {3};
+  \draw [-Latex] (tt1) ..controls (141.25bp,18.0bp) and (147.94bp,18.0bp)  .. (ep1);
 %
 \end{tikzpicture}
