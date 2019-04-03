@@ -4,91 +4,91 @@
 \begin{tabular}{c|c}
 Places & Meaning\\
 \hline
-p\textsubscript{0} & Sistema Parado\\
-p\textsubscript{1} & Retrair Pistão MAG 1*\\
-p\textsubscript{2} & Pistão MAG 1 Recuado\\
-p\textsubscript{3} & Retrair Pistão MAG 2*\\
-p\textsubscript{4} & Pistão MAG 2 Recuado\\
-p\textsubscript{5} & Retrair pistão de descarte D*\\
-p\textsubscript{6} & Pistão de descarte D Recuado\\
-p\textsubscript{7} & Retrair pistão de descarte C*\\
-p\textsubscript{8} & Pistão de descarte C Recuado\\
-p\textsubscript{9} & Retrair pistão de descarte E*\\
-p\textsubscript{10} & Pistão de descarte E Recuado\\
-p\textsubscript{11} & Ligar esteira sentido reverso\\
-p\textsubscript{12} & Esteira limpa\\
-p\textsubscript{13} & Resetar Variáveis\footnotemark\\
-p\textsubscript{14} & Retrair atuador vertical da prensa\\
-p\textsubscript{15} & Levantar porta da prensa\\
-p\textsubscript{16} & Estender atuador horizontal da prensa\\
-p\textsubscript{17} & Prensa pronta\\
-p\textsubscript{18} & Braço retraído e armazenador de cubos retraído na horizontal\\
-p\textsubscript{19} & Mover armazenador para direita\\
-p\textsubscript{20} & Armazenador pronto na horizontal\\
-p\textsubscript{21} & Mover armazenador para baixo\\
-p\textsubscript{22} & Armazenador pronto na vertical\\
-p\textsubscript{23} & Girar braço sentido antihorário\footnotemark\\
-p\textsubscript{24} & Braço parado\\
-p\textsubscript{25} & Girar braço sentido horário\textsuperscript{\ref{orgd3eba8c}} e Habilita HSC\\
-p\textsubscript{26} & Braço parado frente a esteira\\
-p\textsubscript{27} & Sistema Pronto\\
+p\(_{\text{0}}\) & System Stopped\\
+p\(_{\text{1}}\) & Retract MAG 1 Cylinder *\\
+p\(_{\text{2}}\) & MAG1's Cylinder Retracted\\
+p\(_{\text{3}}\) & Retract MAG 2 Cylinder *\\
+p\(_{\text{4}}\) & MAG2's Cylinder Retracted\\
+p\(_{\text{5}}\) & Retract Right Discharge Cylinder *\\
+p\(_{\text{6}}\) & Right Discharge Cylinder Retracted\\
+p\(_{\text{7}}\) & Retract Center Discharge Cylinder\\
+p\(_{\text{8}}\) & Center Discharge Cylinder Retracted\\
+p\(_{\text{9}}\) & Retract Left Discharge Cylinder *\\
+p\(_{\text{10}}\) & Left Dischange Cylinder Retracted\\
+p\(_{\text{11}}\) & Turn Conveyor Belt On (Reverse)\\
+p\(_{\text{12}}\) & No Pieces On Conveyor Belt\\
+p\(_{\text{13}}\) & Reset Variables\footnotemark\\
+p\(_{\text{14}}\) & Retract Joining Cylinder\\
+p\(_{\text{15}}\) & Open Safety Door\\
+p\(_{\text{16}}\) & Extend Assembly Unit Holder\\
+p\(_{\text{17}}\) & Assembly Unit Ready\\
+p\(_{\text{18}}\) & Arm Retracted and Storage Device Retracted On The Z Axis\\
+p\(_{\text{19}}\) & Move armazenador para direita\\
+p\(_{\text{20}}\) & Armazenador pronto na horizontal\\
+p\(_{\text{21}}\) & Mover armazenador para baixo\\
+p\(_{\text{22}}\) & Armazenador pronto na vertical\\
+p\(_{\text{23}}\) & Girar braço sentido antihorário\footnotemark\\
+p\(_{\text{24}}\) & Braço parado\\
+p\(_{\text{25}}\) & Girar braço sentido horário\textsuperscript{\ref{org0e01364}} e Habilita HSC\\
+p\(_{\text{26}}\) & Braço parado frente a esteira\\
+p\(_{\text{27}}\) & Sistema Pronto\\
 \end{tabular}
-\end{table}\footnotetext[1]{\label{orgc093fd8}Variáveis IEC\textsubscript{COUNTER}, IEC\textsubscript{COUNTER1}, IEC\textsubscript{COUNTER2}, IEC\textsubscript{COUNTER3}, IEC\textsubscript{COUNTER4}, IEC\textsubscript{COUNTER5}.}\footnotetext[2]{\label{orgd3eba8c}Verificar sentido de rotação do braço.}
+\end{table}\footnotetext[1]{\label{org1b6f86a}Variáveis IEC\(_{\text{COUNTER}}\), IEC\(_{\text{COUNTER1}}\), IEC\(_{\text{COUNTER2}}\), IEC\(_{\text{COUNTER3}}\), IEC\(_{\text{COUNTER4}}\), IEC\(_{\text{COUNTER5}}\).}\footnotetext[2]{\label{org0e01364}Verificar sentido de rotação do braço.}
 
 \begin{table}[htbp]
 \caption{Transições do Módulo de Inicialização}
 \centering
 \begin{tabular}{ll}
 Transitions & Meaning\\
-t\textsubscript{0} & Botão de inicialização\\
-t\textsubscript{1} & Sensor MAG 1 Retraído\\
-t\textsubscript{2} & Sensor MAG 2 Retraído\\
-t\textsubscript{3} & Sensor pistão de descarte D Retraído\\
-t\textsubscript{4} & Sensor pistão de descarte C Retraído\\
-t\textsubscript{5} & Sensor pistão de descarte E Retraído\\
-t\textsubscript{6} & \\
-t\textsubscript{7} & T=15s\\
-t\textsubscript{8} & T=2.5s\\
-t\textsubscript{9} & Sensor porta prensa aberta\\
-t\textsubscript{10} & Sensor atuador horizontal da prensa estendido\\
-t\textsubscript{11} & Sensor Hz armazenador de cubos e braço retraídos\\
-t\textsubscript{12} & Fim de curso direito do armazenador de cubos\\
-t\textsubscript{13} & Fim de curso inferior do armazenador de cubos\\
-t\textsubscript{14} & T=2s\\
-t\textsubscript{15} & Sensor Indutivo do braço\\
-t\textsubscript{16} & T=1s\\
-t\textsubscript{17} & Count\_300C.DB.Countval = \todo{-1690}\\
-t\textsubscript{18} & \\
-t\textsubscript{19} & Botão Começar\\
+t\(_{\text{0}}\) & Botão de inicialização\\
+t\(_{\text{1}}\) & Sensor MAG 1 Retraído\\
+t\(_{\text{2}}\) & Sensor MAG 2 Retraído\\
+t\(_{\text{3}}\) & Sensor pistão de descarte D Retraído\\
+t\(_{\text{4}}\) & Sensor pistão de descarte C Retraído\\
+t\(_{\text{5}}\) & Sensor pistão de descarte E Retraído\\
+t\(_{\text{6}}\) & \\
+t\(_{\text{7}}\) & T=15s\\
+t\(_{\text{8}}\) & T=2.5s\\
+t\(_{\text{9}}\) & Sensor porta prensa aberta\\
+t\(_{\text{10}}\) & Sensor atuador horizontal da prensa estendido\\
+t\(_{\text{11}}\) & Sensor Hz armazenador de cubos e braço retraídos\\
+t\(_{\text{12}}\) & Fim de curso direito do armazenador de cubos\\
+t\(_{\text{13}}\) & Fim de curso inferior do armazenador de cubos\\
+t\(_{\text{14}}\) & T=2s\\
+t\(_{\text{15}}\) & Sensor Indutivo do braço\\
+t\(_{\text{16}}\) & T=1s\\
+t\(_{\text{17}}\) & Count\_300C.DB.Countval = \todo{-1690}\\
+t\(_{\text{18}}\) & \\
+t\(_{\text{19}}\) & Botão Começar\\
 \end{tabular}
 \end{table}
 \begin{table}[htbp]
 \caption{Lugares do Módulo 2 pt 1}
 \centering
 \begin{tabular}{ll}
-p\textsubscript{28} & Mag1 vazio\\
-p\textsubscript{29} & Mag1 com peça\\
-p\textsubscript{30} & Estender Mag1 Horizontal*\\
-p\textsubscript{31} & Retrair Mag1 Horizontal*\\
-p\textsubscript{32} & Mag1 Horizontal retraído\\
-p\textsubscript{33} & Ligar esteira sentido normal\\
-p\textsubscript{34} & \\
-p\textsubscript{35} & Peça de Plástico\\
-p\textsubscript{36} & Ligar esteira sentido normal\\
-p\textsubscript{37} & Estender Pistão de descarte D*\\
-p\textsubscript{38} & Retrair Pistão de descarte D*\\
-p\textsubscript{39} & Ligar esteira sentido normal\\
-p\textsubscript{40} & Estender Pistão de descarte C*\\
-p\textsubscript{41} & Retrair Pistão de descarte C*\\
-p\textsubscript{42} & \\
-p\textsubscript{43} & Peça de Metal\\
-p\textsubscript{44} & Ligar esteira sentido normal\\
-p\textsubscript{45} & Estender Pistão de descarte E*\\
-p\textsubscript{46} & Retrair Pistão de descarte E*\\
-p\textsubscript{47} & Ligar esteira sentido normal\\
-p\textsubscript{48} & Ligar esteira sentido normal\\
-p\textsubscript{49} & Peça Metal Pronta\\
-p\textsubscript{50} & Esteira Parada\\
+p\(_{\text{28}}\) & Mag1 vazio\\
+p\(_{\text{29}}\) & Mag1 com peça\\
+p\(_{\text{30}}\) & Estender Mag1 Horizontal*\\
+p\(_{\text{31}}\) & Retrair Mag1 Horizontal*\\
+p\(_{\text{32}}\) & Mag1 Horizontal retraído\\
+p\(_{\text{33}}\) & Ligar esteira sentido normal\\
+p\(_{\text{34}}\) & \\
+p\(_{\text{35}}\) & Peça de Plástico\\
+p\(_{\text{36}}\) & Ligar esteira sentido normal\\
+p\(_{\text{37}}\) & Estender Pistão de descarte D*\\
+p\(_{\text{38}}\) & Retrair Pistão de descarte D*\\
+p\(_{\text{39}}\) & Ligar esteira sentido normal\\
+p\(_{\text{40}}\) & Estender Pistão de descarte C*\\
+p\(_{\text{41}}\) & Retrair Pistão de descarte C*\\
+p\(_{\text{42}}\) & \\
+p\(_{\text{43}}\) & Peça de Metal\\
+p\(_{\text{44}}\) & Ligar esteira sentido normal\\
+p\(_{\text{45}}\) & Estender Pistão de descarte E*\\
+p\(_{\text{46}}\) & Retrair Pistão de descarte E*\\
+p\(_{\text{47}}\) & Ligar esteira sentido normal\\
+p\(_{\text{48}}\) & Ligar esteira sentido normal\\
+p\(_{\text{49}}\) & Peça Metal Pronta\\
+p\(_{\text{50}}\) & Esteira Parada\\
 \end{tabular}
 \end{table}
 
@@ -96,61 +96,61 @@ p\textsubscript{50} & Esteira Parada\\
 \caption{Transições do Módulo 2 pt 1}
 \centering
 \begin{tabular}{ll}
-t\textsubscript{20} & \(\overline{\mbox{Sensor Chave de Presença de Peça Mag1}}\)\\
-t\textsubscript{21} & \\
-t\textsubscript{22} & Mag1 Horizontal estendido \(\uparrow\)\\
-t\textsubscript{23} & Mag1 Horizontal retraído \(\uparrow\)\\
-t\textsubscript{24} & T=0.5s\\
-t\textsubscript{25} & Presença \(\uparrow\) T=0.5s\\
-t\textsubscript{26} & \(\overline{\mbox{Sensor Metal}}\)\\
-t\textsubscript{27} & Sensor Preto\\
-t\textsubscript{28} & Presença Pistão de D \(\uparrow\)\\
-t\textsubscript{29} & Sensor pistão de descarte D estendido\\
-t\textsubscript{30} & Sensor pistão de descarte D retraído\\
-t\textsubscript{31} & Sensor Branco\\
-t\textsubscript{32} & Presença Pistão de C \(\uparrow\)\\
-t\textsubscript{33} & Sensor pistão de descarte C estendido\\
-t\textsubscript{34} & Sensor pistão de descarte C retraído\\
-t\textsubscript{35} & Sensor Metal\\
-t\textsubscript{36} & Sensor peça concavidade para baixo\\
-t\textsubscript{37} & Presença Pistão de E \(\uparrow\)\\
-t\textsubscript{38} & Sensor pistão de descarte E estendido\\
-t\textsubscript{39} & Sensor pistão de descarte E retraído\\
-t\textsubscript{40} & \\
-t\textsubscript{41} & Sensor peça concavidade para cima\\
-t\textsubscript{42} & Sensor final da esteira \(\uparrow\)\\
-t\textsubscript{43} & T=0.5s\\
-t\textsubscript{44} & Sensor final da esteira \(\downarrow\)\\
-t\textsubscript{45} & \\
+t\(_{\text{20}}\) & \(\overline{\mbox{Sensor Chave de Presença de Peça Mag1}}\)\\
+t\(_{\text{21}}\) & \\
+t\(_{\text{22}}\) & Mag1 Horizontal estendido \(\uparrow\)\\
+t\(_{\text{23}}\) & Mag1 Horizontal retraído \(\uparrow\)\\
+t\(_{\text{24}}\) & T=0.5s\\
+t\(_{\text{25}}\) & Presença \(\uparrow\) T=0.5s\\
+t\(_{\text{26}}\) & \(\overline{\mbox{Sensor Metal}}\)\\
+t\(_{\text{27}}\) & Sensor Preto\\
+t\(_{\text{28}}\) & Presença Pistão de D \(\uparrow\)\\
+t\(_{\text{29}}\) & Sensor pistão de descarte D estendido\\
+t\(_{\text{30}}\) & Sensor pistão de descarte D retraído\\
+t\(_{\text{31}}\) & Sensor Branco\\
+t\(_{\text{32}}\) & Presença Pistão de C \(\uparrow\)\\
+t\(_{\text{33}}\) & Sensor pistão de descarte C estendido\\
+t\(_{\text{34}}\) & Sensor pistão de descarte C retraído\\
+t\(_{\text{35}}\) & Sensor Metal\\
+t\(_{\text{36}}\) & Sensor peça concavidade para baixo\\
+t\(_{\text{37}}\) & Presença Pistão de E \(\uparrow\)\\
+t\(_{\text{38}}\) & Sensor pistão de descarte E estendido\\
+t\(_{\text{39}}\) & Sensor pistão de descarte E retraído\\
+t\(_{\text{40}}\) & \\
+t\(_{\text{41}}\) & Sensor peça concavidade para cima\\
+t\(_{\text{42}}\) & Sensor final da esteira \(\uparrow\)\\
+t\(_{\text{43}}\) & T=0.5s\\
+t\(_{\text{44}}\) & Sensor final da esteira \(\downarrow\)\\
+t\(_{\text{45}}\) & \\
 \end{tabular}
 \end{table}
 \begin{table}[htbp]
 \caption{Lugares do Módulo 2 pt 2}
 \centering
 \begin{tabular}{ll}
-P\textsubscript{51} & Mag2 vazio\\
-P\textsubscript{52} & Mag2 com peça\\
-P\textsubscript{53} & Estender Mag2 Horizontal*\\
-p\textsubscript{54} & Retrair Mag2 Horizontal*\\
-p\textsubscript{55} & Mag2 Horizontal Retraído\\
-p\textsubscript{56} & Ligar esteira sentido normal\\
-p\textsubscript{57} & \\
-p\textsubscript{58} & Ligar esteira sentido normal\\
-p\textsubscript{59} & Estender Pistão de descarte E*\\
-p\textsubscript{60} & Retrair Pistão de descarte E*\\
-p\textsubscript{61} & Peça de Metal\\
-p\textsubscript{62} & Ligar esteira sentido normal\\
-p\textsubscript{63} & Estender Pistão de descarte D*\\
-p\textsubscript{64} & Retrair Pistão de descarte D*\\
-p\textsubscript{65} & Peça Branca\\
-p\textsubscript{66} & Ligar esteira sentido normal\\
-p\textsubscript{67} & Estender Pistão de descarte C*\\
-p\textsubscript{68} & Retrair Pistão de descarte C*\\
-p\textsubscript{69} & \\
-p\textsubscript{70} & Ligar esteira sentido normal\\
-p\textsubscript{71} & Ligar esteira sentido normal\\
-p\textsubscript{72} & Peça branca pronta\\
-p\textsubscript{73} & Esteira parada\\
+p\(_{\text{51}}\) & Mag2 vazio\\
+p\(_{\text{52}}\) & Mag2 com peça\\
+p\(_{\text{53}}\) & Estender Mag2 Horizontal*\\
+p\(_{\text{54}}\) & Retrair Mag2 Horizontal*\\
+p\(_{\text{55}}\) & Mag2 Horizontal Retraído\\
+p\(_{\text{56}}\) & Ligar esteira sentido normal\\
+p\(_{\text{57}}\) & \\
+p\(_{\text{58}}\) & Ligar esteira sentido normal\\
+p\(_{\text{59}}\) & Estender Pistão de descarte E*\\
+p\(_{\text{60}}\) & Retrair Pistão de descarte E*\\
+p\(_{\text{61}}\) & Peça de Metal\\
+p\(_{\text{62}}\) & Ligar esteira sentido normal\\
+p\(_{\text{63}}\) & Estender Pistão de descarte D*\\
+p\(_{\text{64}}\) & Retrair Pistão de descarte D*\\
+p\(_{\text{65}}\) & Peça Branca\\
+p\(_{\text{66}}\) & Ligar esteira sentido normal\\
+p\(_{\text{67}}\) & Estender Pistão de descarte C*\\
+p\(_{\text{68}}\) & Retrair Pistão de descarte C*\\
+p\(_{\text{69}}\) & \\
+p\(_{\text{70}}\) & Ligar esteira sentido normal\\
+p\(_{\text{71}}\) & Ligar esteira sentido normal\\
+p\(_{\text{72}}\) & Peça branca pronta\\
+p\(_{\text{73}}\) & Esteira parada\\
 \end{tabular}
 \end{table}
 
@@ -158,32 +158,32 @@ p\textsubscript{73} & Esteira parada\\
 \caption{Transições do Módulo 2 pt 2}
 \centering
 \begin{tabular}{ll}
-t\textsubscript{46} & \(\overline{\mbox{Sensor Chave de Presença de Peça Mag2}}\)\\
-t\textsubscript{47} & \\
-t\textsubscript{48} & Mag2 Horizontal estendido \(\uparrow\)\\
-t\textsubscript{49} & Mag2 Horizontal retraído \(\uparrow\)\\
-t\textsubscript{50} & T=0.5s\\
-t\textsubscript{51} & Presença \(\uparrow\) T=0.5s\\
-t\textsubscript{52} & Sensor Metal\\
-t\textsubscript{53} & Presença Pistão de E \(\uparrow\)\\
-t\textsubscript{54} & Sensor pistão de descarte E estendido\\
-t\textsubscript{55} & Sensor pistão de descarte E retraído\\
-t\textsubscript{56} & \(\overline{\mbox{Sensor Metal}}\)\\
-t\textsubscript{57} & Sensor Preto\\
-t\textsubscript{58} & Presença Pistão de D \(\uparrow\)\\
-t\textsubscript{59} & Sensor pistão de descarte D estendido\\
-t\textsubscript{60} & Sensor pistão de descarte D retraído\\
-t\textsubscript{61} & Sensor Branco\\
-t\textsubscript{62} & Sensor peça concavidade para cima\\
-t\textsubscript{63} & Presença Pistão de C \(\uparrow\)\\
-t\textsubscript{64} & Sensor pistão de descarte C estendido\\
-t\textsubscript{65} & Sensor pistão de descarte C retraído\\
-t\textsubscript{66} & \\
-t\textsubscript{67} & Sensor peça concavidade para baixo\\
-t\textsubscript{68} & Sensor final da esteira \(\uparrow\)\\
-t\textsubscript{69} & T=0.5s\\
-t\textsubscript{70} & Sensor final da esteira \(\downarrow\)\\
-t\textsubscript{71} & \\
+t\(_{\text{46}}\) & \(\overline{\mbox{Sensor Chave de Presença de Peça Mag2}}\)\\
+t\(_{\text{47}}\) & \\
+t\(_{\text{48}}\) & Mag2 Horizontal estendido \(\uparrow\)\\
+t\(_{\text{49}}\) & Mag2 Horizontal retraído \(\uparrow\)\\
+t\(_{\text{50}}\) & T=0.5s\\
+t\(_{\text{51}}\) & Presença \(\uparrow\) T=0.5s\\
+t\(_{\text{52}}\) & Sensor Metal\\
+t\(_{\text{53}}\) & Presença Pistão de E \(\uparrow\)\\
+t\(_{\text{54}}\) & Sensor pistão de descarte E estendido\\
+t\(_{\text{55}}\) & Sensor pistão de descarte E retraído\\
+t\(_{\text{56}}\) & \(\overline{\mbox{Sensor Metal}}\)\\
+t\(_{\text{57}}\) & Sensor Preto\\
+t\(_{\text{58}}\) & Presença Pistão de D \(\uparrow\)\\
+t\(_{\text{59}}\) & Sensor pistão de descarte D estendido\\
+t\(_{\text{60}}\) & Sensor pistão de descarte D retraído\\
+t\(_{\text{61}}\) & Sensor Branco\\
+t\(_{\text{62}}\) & Sensor peça concavidade para cima\\
+t\(_{\text{63}}\) & Presença Pistão de C \(\uparrow\)\\
+t\(_{\text{64}}\) & Sensor pistão de descarte C estendido\\
+t\(_{\text{65}}\) & Sensor pistão de descarte C retraído\\
+t\(_{\text{66}}\) & \\
+t\(_{\text{67}}\) & Sensor peça concavidade para baixo\\
+t\(_{\text{68}}\) & Sensor final da esteira \(\uparrow\)\\
+t\(_{\text{69}}\) & T=0.5s\\
+t\(_{\text{70}}\) & Sensor final da esteira \(\downarrow\)\\
+t\(_{\text{71}}\) & \\
 \end{tabular}
 \end{table}
 \begin{table}[htbp]
@@ -191,19 +191,19 @@ t\textsubscript{71} & \\
 \centering
 \begin{tabular}{ll}
 Places & Meaning\\
-p\textsubscript{74} & Estender verticalmente o braço\\
-p\textsubscript{75} & Estender vertical e horizontalmente o braço e Ligar o vácuo\\
-p\textsubscript{76} & Estender horizontalmente o braço e Ligar o vácuo\\
-p\textsubscript{77} & Estender vertical e horizontalmente o braço e Ligar o vácuo\\
-p\textsubscript{78} & Estender verticalmente o braço e Ligar o vácuo\\
-p\textsubscript{79} & Habilita HSC e Estender verticalmente o braço, Ligar o vácuo e Girar Braço no sentido horário\\
-p\textsubscript{80} & Estender vertical e horizontalmente o braço e Ligar o vácuo\\
-p\textsubscript{81} & Estender horizontalmente o braço e Ligar o vácuo\\
-p\textsubscript{82} & Estender horizontalmente o braço\\
-p\textsubscript{83} & Estender vertical e horizontalmente o braço\\
-p\textsubscript{84} & Estender verticalmente o braço\\
-p\textsubscript{85} & Habilita HSC e Estender verticalmente o braço e Girar Braço no sentido antihorário\\
-p\textsubscript{86} & Estender Verticalmente o braço e IEC\textsubscript{COUNTER}:=IEC\textsubscript{COUNTER}+1\\
+p\(_{\text{74}}\) & Estender verticalmente o braço\\
+p\(_{\text{75}}\) & Estender vertical e horizontalmente o braço e Ligar o vácuo\\
+p\(_{\text{76}}\) & Estender horizontalmente o braço e Ligar o vácuo\\
+p\(_{\text{77}}\) & Estender vertical e horizontalmente o braço e Ligar o vácuo\\
+p\(_{\text{78}}\) & Estender verticalmente o braço e Ligar o vácuo\\
+p\(_{\text{79}}\) & Habilita HSC e Estender verticalmente o braço, Ligar o vácuo e Girar Braço no sentido horário\\
+p\(_{\text{80}}\) & Estender vertical e horizontalmente o braço e Ligar o vácuo\\
+p\(_{\text{81}}\) & Estender horizontalmente o braço e Ligar o vácuo\\
+p\(_{\text{82}}\) & Estender horizontalmente o braço\\
+p\(_{\text{83}}\) & Estender vertical e horizontalmente o braço\\
+p\(_{\text{84}}\) & Estender verticalmente o braço\\
+p\(_{\text{85}}\) & Habilita HSC e Estender verticalmente o braço e Girar Braço no sentido antihorário\\
+p\(_{\text{86}}\) & Estender Verticalmente o braço e IEC\(_{\text{COUNTER}}\):=IEC\(_{\text{COUNTER}}\)+1\\
 \end{tabular}
 \end{table}
 
@@ -212,66 +212,66 @@ p\textsubscript{86} & Estender Verticalmente o braço e IEC\textsubscript{COUNTE
 \centering
 \begin{tabular}{ll}
 Transitions & Meaning\\
-t\textsubscript{72} & Sensor vertical braço estendido\\
-t\textsubscript{73} & T=1.5s\\
-t\textsubscript{74} & T=1.5s e Sensor vertical braço retraído\\
-t\textsubscript{75} & T=1.5s e Sensor vertical braço estendido\\
-t\textsubscript{76} & T=1.5s e Sensor vertical braço estendido\\
-t\textsubscript{77} & Count\_300C.DB.CountVal = \todo{-3330}\\
-t\textsubscript{78} & T=1.5s e Sensor vertical braço estendido\\
-t\textsubscript{79} & T=1.5s e Sensor vertical braço retraído\\
-t\textsubscript{80} & T=1.5s\\
-t\textsubscript{81} & T=1.5s e Sensor vertical braço estendido\\
-t\textsubscript{82} & IEC\textsubscript{COUNTER0.DB}=1 e Sensor Hz prensa estendido e porta prensa aberta\\
-t\textsubscript{83} & T=1.5s e IEC\textsubscript{COUNTER0.DB}=0 e Sensor vertical braço estendido\\
-t\textsubscript{84} & Count\_300C.DB.CountVal = \todo{-1690}\\
-t\textsubscript{85} & \\
+t\(_{\text{72}}\) & Sensor vertical braço estendido\\
+t\(_{\text{73}}\) & T=1.5s\\
+t\(_{\text{74}}\) & T=1.5s e Sensor vertical braço retraído\\
+t\(_{\text{75}}\) & T=1.5s e Sensor vertical braço estendido\\
+t\(_{\text{76}}\) & T=1.5s e Sensor vertical braço estendido\\
+t\(_{\text{77}}\) & Count\_300C.DB.CountVal = \todo{-3330}\\
+t\(_{\text{78}}\) & T=1.5s e Sensor vertical braço estendido\\
+t\(_{\text{79}}\) & T=1.5s e Sensor vertical braço retraído\\
+t\(_{\text{80}}\) & T=1.5s\\
+t\(_{\text{81}}\) & T=1.5s e Sensor vertical braço estendido\\
+t\(_{\text{82}}\) & IEC\(_{\text{COUNTER0.DB}}\)=1 e Sensor Hz prensa estendido e porta prensa aberta\\
+t\(_{\text{83}}\) & T=1.5s e IEC\(_{\text{COUNTER0.DB}}\)=0 e Sensor vertical braço estendido\\
+t\(_{\text{84}}\) & Count\_300C.DB.CountVal = \todo{-1690}\\
+t\(_{\text{85}}\) & \\
 \end{tabular}
 \end{table}
 \begin{table}[htbp]
 \caption{Lugares do Módulo prensa cubo}
 \centering
 \begin{tabular}{ll}
-p\textsubscript{87} & Retrair atuador horizontal prensa*\\
-p\textsubscript{88} & Fechar Porta prensa*\\
-p\textsubscript{89} & Estender atuador vertical prensa*\\
-p\textsubscript{90} & Retrair atuador vertical prensa*\\
-p\textsubscript{91} & Abrir Porta prensa*\\
-p\textsubscript{92} & Estender atuador horizontal prensa*\\
-p\textsubscript{93} & Cubo pronto\\
-p\textsubscript{94} & Estender horizontalmente o braço e Ligar Vácuo\\
-p\textsubscript{95} & Estender verticalmente o braço\\
+p\(_{\text{87}}\) & Retrair atuador horizontal prensa*\\
+p\(_{\text{88}}\) & Fechar Porta prensa*\\
+p\(_{\text{89}}\) & Estender atuador vertical prensa*\\
+p\(_{\text{90}}\) & Retrair atuador vertical prensa*\\
+p\(_{\text{91}}\) & Abrir Porta prensa*\\
+p\(_{\text{92}}\) & Estender atuador horizontal prensa*\\
+p\(_{\text{93}}\) & Cubo pronto\\
+p\(_{\text{94}}\) & Estender horizontalmente o braço e Ligar Vácuo\\
+p\(_{\text{95}}\) & Estender verticalmente o braço\\
 \end{tabular}
 \end{table}
 
 \begin{center}
 \begin{tabular}{ll}
-t\textsubscript{86} & T=1s e Sensosr horizontal prensa retraído\\
-t\textsubscript{87} & T=1s e Sensor porta fechada\\
-t\textsubscript{88} & T=1s\\
-t\textsubscript{89} & T=1s\\
-t\textsubscript{90} & T=1s e sensor porta aberta\\
-t\textsubscript{91} & T=1s e sensor horizontal prensa estendido\\
-t\textsubscript{92} & \\
-t\textsubscript{93} & T=1.5s e Sensor horizontal do braço estendido\\
+t\(_{\text{86}}\) & T=1s e Sensosr horizontal prensa retraído\\
+t\(_{\text{87}}\) & T=1s e Sensor porta fechada\\
+t\(_{\text{88}}\) & T=1s\\
+t\(_{\text{89}}\) & T=1s\\
+t\(_{\text{90}}\) & T=1s e sensor porta aberta\\
+t\(_{\text{91}}\) & T=1s e sensor horizontal prensa estendido\\
+t\(_{\text{92}}\) & \\
+t\(_{\text{93}}\) & T=1.5s e Sensor horizontal do braço estendido\\
 \end{tabular}
 \end{center}
 \begin{table}[htbp]
 \caption{Lugares do Módulo braço prensa armazenador}
 \centering
 \begin{tabular}{ll}
-p\textsubscript{96} & Estender horizontalmente o braço e Ligar Vácuo\\
-p\textsubscript{97} & Estender vertical e horizontalmente o braço e Ligar Vácuo\\
-p\textsubscript{98} & Resetar IEC\textsubscript{COUNTER0}*, estender verticalmente o braço e Ligar Vácuo\\
-p\textsubscript{99} & Habilita HSC e Estender verticalmente o braço, Ligar Vácuo e Girar o Braço no sentido horário\\
-p\textsubscript{100} & Estender vertical e horizontalmente o braço e Ligar Vácuo\\
-p\textsubscript{101} & Estender horizontalmente o braço e Ligar Vácuo\\
-p\textsubscript{102} & Estender horizontalmente o braço\\
-p\textsubscript{103} & Estender vertical e horizontalmente o braço\\
-p\textsubscript{104} & Girar o braço no sentido antihorário\\
-p\textsubscript{105} & Braço parado\\
-p\textsubscript{106} & Habilita HSC e Girar o braço no sentido horário\\
-p\textsubscript{107} & Braço na esteira\\
+p\(_{\text{96}}\) & Estender horizontalmente o braço e Ligar Vácuo\\
+p\(_{\text{97}}\) & Estender vertical e horizontalmente o braço e Ligar Vácuo\\
+p\(_{\text{98}}\) & Resetar IEC\(_{\text{COUNTER0}}\)*, estender verticalmente o braço e Ligar Vácuo\\
+p\(_{\text{99}}\) & Habilita HSC e Estender verticalmente o braço, Ligar Vácuo e Girar o Braço no sentido horário\\
+p\(_{\text{100}}\) & Estender vertical e horizontalmente o braço e Ligar Vácuo\\
+p\(_{\text{101}}\) & Estender horizontalmente o braço e Ligar Vácuo\\
+p\(_{\text{102}}\) & Estender horizontalmente o braço\\
+p\(_{\text{103}}\) & Estender vertical e horizontalmente o braço\\
+p\(_{\text{104}}\) & Girar o braço no sentido antihorário\\
+p\(_{\text{105}}\) & Braço parado\\
+p\(_{\text{106}}\) & Habilita HSC e Girar o braço no sentido horário\\
+p\(_{\text{107}}\) & Braço na esteira\\
 \end{tabular}
 \end{table}
 
@@ -279,35 +279,35 @@ p\textsubscript{107} & Braço na esteira\\
 \caption{Transições do Módulo braço prensa armazenador}
 \centering
 \begin{tabular}{ll}
-t\textsubscript{94} & T=1.5s e Sensor vertical braço retraído\\
-t\textsubscript{95} & Sensor vertical braço estendido, Fim de curso inferior e direito armazenador\\
-t\textsubscript{96} & \\
-t\textsubscript{97} & Count\_300C.DB.CountVal = \todo{-4920}\\
-t\textsubscript{98} & T=2s\\
-t\textsubscript{99} & T=2s\\
-t\textsubscript{100} & Sensor vertical braço retraído\\
-t\textsubscript{101} & Sensor vertical braço estendido, Fim de curso inferior e direito armazenador\\
-t\textsubscript{102} & Sensor indutivo do braço\\
-t\textsubscript{103} & T=1s\\
-t\textsubscript{104} & Count\_300C.DB.CountVal = \todo{-1690}\\
+t\(_{\text{94}}\) & T=1.5s e Sensor vertical braço retraído\\
+t\(_{\text{95}}\) & Sensor vertical braço estendido, Fim de curso inferior e direito armazenador\\
+t\(_{\text{96}}\) & \\
+t\(_{\text{97}}\) & Count\_300C.DB.CountVal = \todo{-4920}\\
+t\(_{\text{98}}\) & T=2s\\
+t\(_{\text{99}}\) & T=2s\\
+t\(_{\text{100}}\) & Sensor vertical braço retraído\\
+t\(_{\text{101}}\) & Sensor vertical braço estendido, Fim de curso inferior e direito armazenador\\
+t\(_{\text{102}}\) & Sensor indutivo do braço\\
+t\(_{\text{103}}\) & T=1s\\
+t\(_{\text{104}}\) & Count\_300C.DB.CountVal = \todo{-1690}\\
 \end{tabular}
 \end{table}
 \begin{table}[htbp]
 \caption{Lugares do Módulo armazenador y}
 \centering
 \begin{tabular}{ll}
-p\textsubscript{108} & cubo no armazenador\\
-p\textsubscript{109} & mover armazenador para direita\\
-p\textsubscript{110} & \\
-p\textsubscript{111} & COUNTER3:=COUNTER3+1 mover armazenador para cima\\
-p\textsubscript{112} & Reset COUNTER3*\\
-p\textsubscript{113} & COUNTER3:=COUNTER3+1 mover armazenador para cima\\
-p\textsubscript{114} & Reset COUNTER3*\\
-p\textsubscript{115} & COUNTER3:=COUNTER3+1 mover armazenador para cima\\
-p\textsubscript{116} & Reset COUNTER3*\\
-p\textsubscript{117} & COUNTER3:=COUNTER3+1 mover armazenador para cima\\
-p\textsubscript{118} & Reset COUNTER3*\\
-p\textsubscript{119} & \\
+p\(_{\text{108}}\) & cubo no armazenador\\
+p\(_{\text{109}}\) & mover armazenador para direita\\
+p\(_{\text{110}}\) & \\
+p\(_{\text{111}}\) & COUNTER3:=COUNTER3+1 mover armazenador para cima\\
+p\(_{\text{112}}\) & Reset COUNTER3*\\
+p\(_{\text{113}}\) & COUNTER3:=COUNTER3+1 mover armazenador para cima\\
+p\(_{\text{114}}\) & Reset COUNTER3*\\
+p\(_{\text{115}}\) & COUNTER3:=COUNTER3+1 mover armazenador para cima\\
+p\(_{\text{116}}\) & Reset COUNTER3*\\
+p\(_{\text{117}}\) & COUNTER3:=COUNTER3+1 mover armazenador para cima\\
+p\(_{\text{118}}\) & Reset COUNTER3*\\
+p\(_{\text{119}}\) & \\
 \end{tabular}
 \end{table}
 
@@ -315,42 +315,42 @@ p\textsubscript{119} & \\
 \caption{Transições do Módulo armazenador y}
 \centering
 \begin{tabular}{ll}
-t\textsubscript{105} & T=2s\\
-t\textsubscript{106} & T=2s\\
-t\textsubscript{107} & COUNTER2=0\\
-t\textsubscript{108} & COUNTER3=4\\
-t\textsubscript{109} & \\
-t\textsubscript{110} & COUNTER2=1\\
-t\textsubscript{111} & COUNTER3=3\\
-t\textsubscript{112} & \\
-t\textsubscript{113} & COUNTER2=2\\
-t\textsubscript{114} & COUNTER3=2\\
-t\textsubscript{115} & \\
-t\textsubscript{116} & COUNTER2=3\\
-t\textsubscript{117} & COUNTER3=1\\
-t\textsubscript{118} & \\
+t\(_{\text{105}}\) & T=2s\\
+t\(_{\text{106}}\) & T=2s\\
+t\(_{\text{107}}\) & COUNTER2=0\\
+t\(_{\text{108}}\) & COUNTER3=4\\
+t\(_{\text{109}}\) & \\
+t\(_{\text{110}}\) & COUNTER2=1\\
+t\(_{\text{111}}\) & COUNTER3=3\\
+t\(_{\text{112}}\) & \\
+t\(_{\text{113}}\) & COUNTER2=2\\
+t\(_{\text{114}}\) & COUNTER3=2\\
+t\(_{\text{115}}\) & \\
+t\(_{\text{116}}\) & COUNTER2=3\\
+t\(_{\text{117}}\) & COUNTER3=1\\
+t\(_{\text{118}}\) & \\
 \end{tabular}
 \end{table}
 \begin{table}[htbp]
 \caption{Lugares do Módulo armazenador (x)}
 \centering
 \begin{tabular}{ll}
-p\textsubscript{120} & COUNTER1:=COUNTER1+1 e COUNTER4:=COUNTER4+1\\
-p\textsubscript{121} & COUNTER5:=COUNTER5+1 e mover armazenador para a esquerda\\
-p\textsubscript{122} & Reset COUNTER5*\\
-p\textsubscript{123} & COUNTER5:=COUNTER5+1 e mover armazenador para a esquerda\\
-p\textsubscript{124} & Reset COUNTER5*\\
-p\textsubscript{125} & COUNTER5:=COUNTER5+1 e mover armazenador para a esquerda\\
-p\textsubscript{126} & Reset COUNTER5*\\
-p\textsubscript{127} & COUNTER5:=COUNTER5+1 e mover armazenador para a esquerda\\
-p\textsubscript{128} & Reset COUNTER5*\\
-p\textsubscript{129} & COUNTER5:=COUNTER5+1 e mover armazenador para a esquerda\\
-p\textsubscript{130} & Reset COUNTER5*\\
-p\textsubscript{131} & COUNTER5:=COUNTER5+1 e mover armazenador para a esquerda\\
-p\textsubscript{132} & Reset COUNTER5*\\
-p\textsubscript{133} & COUNTER5:=COUNTER5+1 e mover armazenador para a esquerda\\
-p\textsubscript{134} & Reset COUNTER5* Reset COUNTER4* , COUNTER2:=COUNTER2+1\\
-p\textsubscript{135} & \\
+p\(_{\text{120}}\) & COUNTER1:=COUNTER1+1 e COUNTER4:=COUNTER4+1\\
+p\(_{\text{121}}\) & COUNTER5:=COUNTER5+1 e mover armazenador para a esquerda\\
+p\(_{\text{122}}\) & Reset COUNTER5*\\
+p\(_{\text{123}}\) & COUNTER5:=COUNTER5+1 e mover armazenador para a esquerda\\
+p\(_{\text{124}}\) & Reset COUNTER5*\\
+p\(_{\text{125}}\) & COUNTER5:=COUNTER5+1 e mover armazenador para a esquerda\\
+p\(_{\text{126}}\) & Reset COUNTER5*\\
+p\(_{\text{127}}\) & COUNTER5:=COUNTER5+1 e mover armazenador para a esquerda\\
+p\(_{\text{128}}\) & Reset COUNTER5*\\
+p\(_{\text{129}}\) & COUNTER5:=COUNTER5+1 e mover armazenador para a esquerda\\
+p\(_{\text{130}}\) & Reset COUNTER5*\\
+p\(_{\text{131}}\) & COUNTER5:=COUNTER5+1 e mover armazenador para a esquerda\\
+p\(_{\text{132}}\) & Reset COUNTER5*\\
+p\(_{\text{133}}\) & COUNTER5:=COUNTER5+1 e mover armazenador para a esquerda\\
+p\(_{\text{134}}\) & Reset COUNTER5* Reset COUNTER4* , COUNTER2:=COUNTER2+1\\
+p\(_{\text{135}}\) & \\
 \end{tabular}
 \end{table}
 
@@ -358,43 +358,43 @@ p\textsubscript{135} & \\
 \caption{Transições Módulo armazenador (x)}
 \centering
 \begin{tabular}{ll}
-t\textsubscript{119} & COUNTER4=0\\
-t\textsubscript{120} & COUNTER5=1\\
-t\textsubscript{121} & \\
-t\textsubscript{122} & COUNTER4=1\\
-t\textsubscript{123} & COUNTER5=2\\
-t\textsubscript{124} & \\
-t\textsubscript{125} & COUNTER4=2\\
-t\textsubscript{126} & COUNTER5=3\\
-t\textsubscript{127} & \\
-t\textsubscript{128} & COUNTER4=3\\
-t\textsubscript{129} & COUNTER5=4\\
-t\textsubscript{130} & \\
-t\textsubscript{131} & COUNTER4=4\\
-t\textsubscript{132} & COUNTER5=5\\
-t\textsubscript{133} & \\
-t\textsubscript{134} & COUNTER4=5\\
-t\textsubscript{135} & COUNTER5=8\\
-t\textsubscript{136} & \\
-t\textsubscript{137} & COUNTER4=6\\
-t\textsubscript{138} & COUNTER5=9\\
-t\textsubscript{139} & \\
+t\(_{\text{119}}\) & COUNTER4=0\\
+t\(_{\text{120}}\) & COUNTER5=1\\
+t\(_{\text{121}}\) & \\
+t\(_{\text{122}}\) & COUNTER4=1\\
+t\(_{\text{123}}\) & COUNTER5=2\\
+t\(_{\text{124}}\) & \\
+t\(_{\text{125}}\) & COUNTER4=2\\
+t\(_{\text{126}}\) & COUNTER5=3\\
+t\(_{\text{127}}\) & \\
+t\(_{\text{128}}\) & COUNTER4=3\\
+t\(_{\text{129}}\) & COUNTER5=4\\
+t\(_{\text{130}}\) & \\
+t\(_{\text{131}}\) & COUNTER4=4\\
+t\(_{\text{132}}\) & COUNTER5=5\\
+t\(_{\text{133}}\) & \\
+t\(_{\text{134}}\) & COUNTER4=5\\
+t\(_{\text{135}}\) & COUNTER5=8\\
+t\(_{\text{136}}\) & \\
+t\(_{\text{137}}\) & COUNTER4=6\\
+t\(_{\text{138}}\) & COUNTER5=9\\
+t\(_{\text{139}}\) & \\
 \end{tabular}
 \end{table}
 \begin{table}[htbp]
 \caption{Places from the cube storage module.}
 \centering
 \begin{tabular}{ll}
-p\textsubscript{136} & Estender horizontalmente armazenador\\
-p\textsubscript{137} & Estender horizontalmente armazenador e mover armazenador para baixo\\
-p\textsubscript{138} & Estender horizontalmente armazenador\\
-p\textsubscript{139} & Peça armazenada\\
-p\textsubscript{140} & Mover armazenador para a direita\\
-p\textsubscript{141} & Armazenador pronto na horizontal\\
-p\textsubscript{142} & Mover armazenador para baixo\\
-p\textsubscript{143} & Armazenador pronto na vertical\\
-p\textsubscript{144} & \\
-p\textsubscript{145} & Armazenador pronto\\
+p\(_{\text{136}}\) & Estender horizontalmente armazenador\\
+p\(_{\text{137}}\) & Estender horizontalmente armazenador e mover armazenador para baixo\\
+p\(_{\text{138}}\) & Estender horizontalmente armazenador\\
+p\(_{\text{139}}\) & Peça armazenada\\
+p\(_{\text{140}}\) & Mover armazenador para a direita\\
+p\(_{\text{141}}\) & Armazenador pronto na horizontal\\
+p\(_{\text{142}}\) & Mover armazenador para baixo\\
+p\(_{\text{143}}\) & Armazenador pronto na vertical\\
+p\(_{\text{144}}\) & \\
+p\(_{\text{145}}\) & Armazenador pronto\\
 \end{tabular}
 \end{table}
 
@@ -402,15 +402,15 @@ p\textsubscript{145} & Armazenador pronto\\
 \caption{Transitions from the cube storage module.}
 \centering
 \begin{tabular}{ll}
-t\textsubscript{140} & T=2s\\
-t\textsubscript{141} & T=3s\\
-t\textsubscript{142} & T=0.25s\\
-t\textsubscript{143} & T=3s\\
-t\textsubscript{144} & T=7s\\
-t\textsubscript{145} & Fim de curso direito do armazenador\\
-t\textsubscript{146} & Fim de curso inferior do armazenador\\
-t\textsubscript{147} & \\
-t\textsubscript{148} & COUNTER1<28\\
-t\textsubscript{149} & COUNTER1=28\\
+t\(_{\text{140}}\) & T=2s\\
+t\(_{\text{141}}\) & T=3s\\
+t\(_{\text{142}}\) & T=0.25s\\
+t\(_{\text{143}}\) & T=3s\\
+t\(_{\text{144}}\) & T=7s\\
+t\(_{\text{145}}\) & Fim de curso direito do armazenador\\
+t\(_{\text{146}}\) & Fim de curso inferior do armazenador\\
+t\(_{\text{147}}\) & \\
+t\(_{\text{148}}\) & COUNTER1<28\\
+t\(_{\text{149}}\) & COUNTER1=28\\
 \end{tabular}
 \end{table}

@@ -1,8 +1,8 @@
 
 #+ATTR_LATEX: :caption  \caption{Lugares do Módulo 2 pt 2}
-| P_{51} | Mag2 vazio                     |
-| P_{52} | Mag2 com peça                  |
-| P_{53} | Estender Mag2 Horizontal*      |
+| p_{51} | Mag2 vazio                     |
+| p_{52} | Mag2 com peça                  |
+| p_{53} | Estender Mag2 Horizontal*      |
 | p_{54} | Retrair Mag2 Horizontal*       |
 | p_{55} | Mag2 Horizontal Retraído       |
 | p_{56} | Ligar esteira sentido normal   |

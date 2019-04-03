@@ -28,16 +28,34 @@ $\;
 
 \begin{table}[H]
   \centering
+  \caption{table}
   \begin{tabular}{cc}
     \label{tab:tab1}
     \hypertarget{tab:1}{}
     Transição&Significado\\
     \hline \\
-    \hyperlink{net:1}{$t_{1}$}&Test
-
+    \hyperlink{partialNet:t1}{\hypertarget{partialTable:t1}{$t_{1}$}}&Test\\
+    \hyperlink{partialNet:p1}{\hypertarget{partialTable:p1}{$p_{1}$}}&balbalbal\\
+    \hyperlink{partialNet:p0m2}{\hypertarget{partialTable:p0m2}{$p_{0}$}}&balbalbal
   \end{tabular}
-  \caption{table}
 \end{table}
+
+\newpage
+\begin{figure}[h]
+  \centering
+  \input{../../figures/petriNets/example/test}
+  \caption{example }
+  \label{fig:example}
+\end{figure}
+
+\newpage
+\begin{figure}[h]
+  \centering
+  \input{../../figures/petriNets/example/test2}
+  \caption{example }
+  \label{fig:example}
+\end{figure}
+
 \OmegaSet
 
 \clearpage
@@ -54,7 +72,7 @@ $\;
 
 \input{../../tables/2-metalv/metalv}
 
-\addtikzfigureVertCent{../../figures/petriNets/dot/3-plastic^/plastic^}
+\addtikzfigureVertCent{../../figures/petriNets/dot/3-plastic^/plastic}
 {Petri net of plastic cube half sorting module.}
 {petri_initialization}
 
@@ -85,7 +103,7 @@ $\;
 
 \input{../../tables/7-storageY/storageY}
 
-\addtikzfigureVertCent{../../figures/petriNets/dot/8-storageX/storageX}
+\addtikzfigure{../../figures/petriNets/dot/8-storageX/storageX}
 {Petri net of storage unit positioning module (x axis).}
 {petri_initialization}
 

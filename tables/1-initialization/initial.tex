@@ -4,61 +4,61 @@
 \begin{tabular}{c|c}
 Places & Meaning\\
 \hline
-p\textsubscript{0} & System Stopped\\
-p\textsubscript{1} & Retract MAG 1 Cylinder *\\
-p\textsubscript{2} & MAG1's Cylinder Retracted\\
-p\textsubscript{3} & Retract MAG 2 Cylinder *\\
-p\textsubscript{4} & MAG2's Cylinder Recuado\\
-p\textsubscript{5} & Retrair pistão de descarte D*\\
-p\textsubscript{6} & Pistão de descarte D Recuado\\
-p\textsubscript{7} & Retrair pistão de descarte C*\\
-p\textsubscript{8} & Pistão de descarte C Recuado\\
-p\textsubscript{9} & Retrair pistão de descarte E*\\
-p\textsubscript{10} & Pistão de descarte E Recuado\\
-p\textsubscript{11} & Ligar esteira sentido reverso\\
-p\textsubscript{12} & Esteira limpa\\
-p\textsubscript{13} & Resetar Variáveis\footnotemark\\
-p\textsubscript{14} & Retrair atuador vertical da prensa\\
-p\textsubscript{15} & Levantar porta da prensa\\
-p\textsubscript{16} & Estender atuador horizontal da prensa\\
-p\textsubscript{17} & Prensa pronta\\
-p\textsubscript{18} & Braço retraído e armazenador de cubos retraído na horizontal\\
-p\textsubscript{19} & Mover armazenador para direita\\
-p\textsubscript{20} & Armazenador pronto na horizontal\\
-p\textsubscript{21} & Mover armazenador para baixo\\
-p\textsubscript{22} & Armazenador pronto na vertical\\
-p\textsubscript{23} & Girar braço sentido antihorário\footnotemark\\
-p\textsubscript{24} & Braço parado\\
-p\textsubscript{25} & Girar braço sentido horário\textsuperscript{\ref{org074bf9c}} e Habilita HSC\\
-p\textsubscript{26} & Braço parado frente a esteira\\
-p\textsubscript{27} & Sistema Pronto\\
+p\(_{\text{0}}\) & System Stopped\\
+p\(_{\text{1}}\) & Retract MAG 1 Cylinder *\\
+p\(_{\text{2}}\) & MAG1's Cylinder Retracted\\
+p\(_{\text{3}}\) & Retract MAG 2 Cylinder *\\
+p\(_{\text{4}}\) & MAG2's Cylinder Retracted\\
+p\(_{\text{5}}\) & Retract Right Discharge Cylinder *\\
+p\(_{\text{6}}\) & Right Discharge Cylinder Retracted\\
+p\(_{\text{7}}\) & Retract Center Discharge Cylinder\\
+p\(_{\text{8}}\) & Center Discharge Cylinder Retracted\\
+p\(_{\text{9}}\) & Retract Left Discharge Cylinder *\\
+p\(_{\text{10}}\) & Left Dischange Cylinder Retracted\\
+p\(_{\text{11}}\) & Turn Conveyor Belt On (Reverse)\\
+p\(_{\text{12}}\) & No Pieces On Conveyor Belt\\
+p\(_{\text{13}}\) & Reset Variables\footnotemark\\
+p\(_{\text{14}}\) & Retract Joining Cylinder\\
+p\(_{\text{15}}\) & Open Safety Door\\
+p\(_{\text{16}}\) & Extend Assembly Unit Holder\\
+p\(_{\text{17}}\) & Assembly Unit Ready\\
+p\(_{\text{18}}\) & Arm Retracted and Storage Device Retracted On The Z Axis\\
+p\(_{\text{19}}\) & Move armazenador para direita\\
+p\(_{\text{20}}\) & Armazenador pronto na horizontal\\
+p\(_{\text{21}}\) & Mover armazenador para baixo\\
+p\(_{\text{22}}\) & Armazenador pronto na vertical\\
+p\(_{\text{23}}\) & Girar braço sentido antihorário\footnotemark\\
+p\(_{\text{24}}\) & Braço parado\\
+p\(_{\text{25}}\) & Girar braço sentido horário\textsuperscript{\ref{orge7ecc67}} e Habilita HSC\\
+p\(_{\text{26}}\) & Braço parado frente a esteira\\
+p\(_{\text{27}}\) & Sistema Pronto\\
 \end{tabular}
-\end{table}\footnotetext[1]{\label{org10fa1d9}Variáveis IEC\textsubscript{COUNTER}, IEC\textsubscript{COUNTER1}, IEC\textsubscript{COUNTER2}, IEC\textsubscript{COUNTER3}, IEC\textsubscript{COUNTER4}, IEC\textsubscript{COUNTER5}.}\footnotetext[2]{\label{org074bf9c}Verificar sentido de rotação do braço.}
+\end{table}\footnotetext[1]{\label{org957fd9f}Variáveis IEC\(_{\text{COUNTER}}\), IEC\(_{\text{COUNTER1}}\), IEC\(_{\text{COUNTER2}}\), IEC\(_{\text{COUNTER3}}\), IEC\(_{\text{COUNTER4}}\), IEC\(_{\text{COUNTER5}}\).}\footnotetext[2]{\label{orge7ecc67}Verificar sentido de rotação do braço.}
 
 \begin{table}[htbp]
 \caption{Transições do Módulo de Inicialização}
 \centering
 \begin{tabular}{ll}
 Transitions & Meaning\\
-t\textsubscript{0} & Botão de inicialização\\
-t\textsubscript{1} & Sensor MAG 1 Retraído\\
-t\textsubscript{2} & Sensor MAG 2 Retraído\\
-t\textsubscript{3} & Sensor pistão de descarte D Retraído\\
-t\textsubscript{4} & Sensor pistão de descarte C Retraído\\
-t\textsubscript{5} & Sensor pistão de descarte E Retraído\\
-t\textsubscript{6} & \\
-t\textsubscript{7} & T=15s\\
-t\textsubscript{8} & T=2.5s\\
-t\textsubscript{9} & Sensor porta prensa aberta\\
-t\textsubscript{10} & Sensor atuador horizontal da prensa estendido\\
-t\textsubscript{11} & Sensor Hz armazenador de cubos e braço retraídos\\
-t\textsubscript{12} & Fim de curso direito do armazenador de cubos\\
-t\textsubscript{13} & Fim de curso inferior do armazenador de cubos\\
-t\textsubscript{14} & T=2s\\
-t\textsubscript{15} & Sensor Indutivo do braço\\
-t\textsubscript{16} & T=1s\\
-t\textsubscript{17} & Count\_300C.DB.Countval = \todo{-1690}\\
-t\textsubscript{18} & \\
-t\textsubscript{19} & Botão Começar\\
+t\(_{\text{0}}\) & Botão de inicialização\\
+t\(_{\text{1}}\) & Sensor MAG 1 Retraído\\
+t\(_{\text{2}}\) & Sensor MAG 2 Retraído\\
+t\(_{\text{3}}\) & Sensor pistão de descarte D Retraído\\
+t\(_{\text{4}}\) & Sensor pistão de descarte C Retraído\\
+t\(_{\text{5}}\) & Sensor pistão de descarte E Retraído\\
+t\(_{\text{6}}\) & \\
+t\(_{\text{7}}\) & T=15s\\
+t\(_{\text{8}}\) & T=2.5s\\
+t\(_{\text{9}}\) & Sensor porta prensa aberta\\
+t\(_{\text{10}}\) & Sensor atuador horizontal da prensa estendido\\
+t\(_{\text{11}}\) & Sensor Hz armazenador de cubos e braço retraídos\\
+t\(_{\text{12}}\) & Fim de curso direito do armazenador de cubos\\
+t\(_{\text{13}}\) & Fim de curso inferior do armazenador de cubos\\
+t\(_{\text{14}}\) & T=2s\\
+t\(_{\text{15}}\) & Sensor Indutivo do braço\\
+t\(_{\text{16}}\) & T=1s\\
+t\(_{\text{17}}\) & Count\_300C.DB.Countval = \todo{-1690}\\
+t\(_{\text{18}}\) & \\
+t\(_{\text{19}}\) & Botão Começar\\
 \end{tabular}
 \end{table}
