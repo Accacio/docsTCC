@@ -5,7 +5,8 @@ digraph A {
     ratio=fill
     graph [pad="0.5", nodesep="0.25", ranksep="0.2"];
     margin=0;
-    # size="11.7,8.3!"
+    size="11.7,8.3!"
+
 # { rank =same; p96;tt99}
 # { rank =same; tt94;p102}
 # { rank =same; p97;t100;p101}
@@ -46,12 +47,12 @@ digraph A {
    t104
 
 
-subgraph cluster_6 {
-  # label="Arm From Press to Storage";
-  margin=0.3
-  labelloc = b
-  style="dashed"
-  color="white"
+# subgraph cluster_6 {
+#   # label="Arm From Press to Storage";
+#   margin=0.3
+#   labelloc = b
+#   style="dashed"
+#   color="white"
   # pre
 
   p96 -> tt94
@@ -81,7 +82,7 @@ subgraph cluster_6 {
   t104 -> p107
 
 
-}
+# }
 
 ett93
 

@@ -5,6 +5,7 @@ digraph A {
     ratio=fill
     graph [pad="0.5", nodesep="0.25", ranksep="0.2"];
     margin=0;
+    size="11.7,8.3!"
 
 # Modulo armazenador y
 
@@ -37,10 +38,10 @@ digraph A {
     t118
 
 
-subgraph cluster_7 {
-  label="Storage (y)";
-  labelloc = b
-  style="dashed"
+# subgraph cluster_7 {
+#   label="Storage (y)";
+#   labelloc = b
+#   style="dashed"
   # color="red"
   # pre
 
@@ -83,7 +84,7 @@ subgraph cluster_7 {
   t118 -> p119
 
 
-}
+# }
 
 et100
 
@@ -91,8 +92,8 @@ et100 -> p108
 ep120
 
 tt106 -> ep120
-et140
-p119 -> et140
+ett140
+p119 -> ett140
 
 
 }

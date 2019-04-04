@@ -4,15 +4,15 @@
 \begin{tabular}{ll}
 Places & Meaning\\
 \hline
-p87 & Retrair atuador horizontal prensa*\\
-p88 & Fechar Porta prensa*\\
-p89 & Estender atuador vertical prensa*\\
-p90 & Retrair atuador vertical prensa*\\
-p91 & Abrir Porta prensa*\\
-p92 & Estender atuador horizontal prensa*\\
-p93 & Cubo pronto\\
-p94 & Estender horizontalmente o braço e Ligar Vácuo\\
-p95 & Estender verticalmente o braço\\
+\hyperlink{partialNet:p87}{\hypertarget{partialTable:p87}{$p_{87}$}} & Retrair atuador horizontal prensa*\\
+\hyperlink{partialNet:p88}{\hypertarget{partialTable:p88}{$p_{88}$}} & Fechar Porta prensa*\\
+\hyperlink{partialNet:p89}{\hypertarget{partialTable:p89}{$p_{89}$}} & Estender atuador vertical prensa*\\
+\hyperlink{partialNet:p90}{\hypertarget{partialTable:p90}{$p_{90}$}} & Retrair atuador vertical prensa*\\
+\hyperlink{partialNet:p91}{\hypertarget{partialTable:p91}{$p_{91}$}} & Abrir Porta prensa*\\
+\hyperlink{partialNet:p92}{\hypertarget{partialTable:p92}{$p_{92}$}} & Estender atuador horizontal prensa*\\
+\hyperlink{partialNet:p93}{\hypertarget{partialTable:p93}{$p_{93}$}} & Cubo pronto\\
+\hyperlink{partialNet:p94}{\hypertarget{partialTable:p94}{$p_{94}$}} & Estender horizontalmente o braço e Ligar Vácuo\\
+\hyperlink{partialNet:p95}{\hypertarget{partialTable:p95}{$p_{95}$}} & Estender verticalmente o braço\\
 \end{tabular}
 \end{table}
 
@@ -20,13 +20,13 @@ p95 & Estender verticalmente o braço\\
 \begin{tabular}{ll}
 Transitions & Meaning\\
 \hline
-t86 & T=1s e Sensosr horizontal prensa retraído\\
-t87 & T=1s e Sensor porta fechada\\
-t88 & T=1s\\
-t89 & T=1s\\
-t90 & T=1s e sensor porta aberta\\
-t91 & T=1s e sensor horizontal prensa estendido\\
-t92 & \\
-t93 & T=1.5s e Sensor horizontal do braço estendido\\
+\hyperlink{partialNet:tt86}{\hypertarget{partialTable:tt86}{$t_{86}$}} & T=1s e Sensosr horizontal prensa retraído\\
+\hyperlink{partialNet:tt87}{\hypertarget{partialTable:tt87}{$t_{87}$}} & T=1s e Sensor porta fechada\\
+\hyperlink{partialNet:tt88}{\hypertarget{partialTable:tt88}{$t_{88}$}} & T=1s\\
+\hyperlink{partialNet:tt89}{\hypertarget{partialTable:tt89}{$t_{89}$}} & T=1s\\
+\hyperlink{partialNet:tt90}{\hypertarget{partialTable:tt90}{$t_{90}$}} & T=1s e sensor porta aberta\\
+\hyperlink{partialNet:tt91}{\hypertarget{partialTable:tt91}{$t_{91}$}} & T=1s e sensor horizontal prensa estendido\\
+\hyperlink{partialNet:t92}{\hypertarget{partialTable:t92}{$t_{92}$}} & \\
+\hyperlink{partialNet:tt93}{\hypertarget{partialTable:tt93}{$t_{93}$}} & T=1.5s e Sensor horizontal do braço estendido\\
 \end{tabular}
 \end{center}

@@ -4,61 +4,61 @@
 \begin{tabular}{c|c}
 Places & Meaning\\
 \hline
-p0m1 & System Stopped\\
-p1 & Retract MAG 1 Cylinder *\\
-p2 & MAG1's Cylinder Retracted\\
-p3 & Retract MAG 2 Cylinder *\\
-p4 & MAG2's Cylinder Retracted\\
-p5 & Retract Right Discharge Cylinder *\\
-p6 & Right Discharge Cylinder Retracted\\
-p7 & Retract Center Discharge Cylinder\\
-p8 & Center Discharge Cylinder Retracted\\
-p9 & Retract Left Discharge Cylinder *\\
-p10 & Left Dischange Cylinder Retracted\\
-p11 & Turn Conveyor Belt On (Reverse)\\
-p12 & No Pieces On Conveyor Belt\\
-p13 & Reset Variables\footnotemark\\
-p14 & Retract Joining Cylinder\\
-p15 & Open Safety Door\\
-p16 & Extend Assembly Unit Holder\\
-p17 & Assembly Unit Ready\\
-p18 & Arm Retracted and Storage Device Retracted On The Z Axis\\
-p19 & Move armazenador para direita\\
-p20 & Armazenador pronto na horizontal\\
-p21 & Mover armazenador para baixo\\
-p22 & Armazenador pronto na vertical\\
-p23 & Girar braço sentido antihorário\footnotemark\\
-p24 & Braço parado\\
-p25 & Girar braço sentido horário\textsuperscript{\ref{orge133c32}} e Habilita HSC\\
-p26 & Braço parado frente a esteira\\
-p27 & Sistema Pronto\\
+\hyperlink{partialNet:p0}{\hypertarget{partialTable:p0}{$p_{0}$}} & System Stopped\\
+\hyperlink{partialNet:p1}{\hypertarget{partialTable:p1}{$p_{1}$}} & Retract MAG 1 Cylinder *\\
+\hyperlink{partialNet:p2}{\hypertarget{partialTable:p2}{$p_{2}$}} & MAG1's Cylinder Retracted\\
+\hyperlink{partialNet:p3}{\hypertarget{partialTable:p3}{$p_{3}$}} & Retract MAG 2 Cylinder *\\
+\hyperlink{partialNet:p4}{\hypertarget{partialTable:p4}{$p_{4}$}} & MAG2's Cylinder Retracted\\
+\hyperlink{partialNet:p5}{\hypertarget{partialTable:p5}{$p_{5}$}} & Retract Right Discharge Cylinder *\\
+\hyperlink{partialNet:p6}{\hypertarget{partialTable:p6}{$p_{6}$}} & Right Discharge Cylinder Retracted\\
+\hyperlink{partialNet:p7}{\hypertarget{partialTable:p7}{$p_{7}$}} & Retract Center Discharge Cylinder\\
+\hyperlink{partialNet:p8}{\hypertarget{partialTable:p8}{$p_{8}$}} & Center Discharge Cylinder Retracted\\
+\hyperlink{partialNet:p9}{\hypertarget{partialTable:p9}{$p_{9}$}} & Retract Left Discharge Cylinder *\\
+\hyperlink{partialNet:p10}{\hypertarget{partialTable:p10}{$p_{10}$}} & Left Dischange Cylinder Retracted\\
+\hyperlink{partialNet:p11}{\hypertarget{partialTable:p11}{$p_{11}$}} & Turn Conveyor Belt On (Reverse)\\
+\hyperlink{partialNet:p12}{\hypertarget{partialTable:p12}{$p_{12}$}} & No Pieces On Conveyor Belt\\
+\hyperlink{partialNet:p13}{\hypertarget{partialTable:p13}{$p_{13}$}} & Reset Variables\footnotemark\\
+\hyperlink{partialNet:p14}{\hypertarget{partialTable:p14}{$p_{14}$}} & Retract Joining Cylinder\\
+\hyperlink{partialNet:p15}{\hypertarget{partialTable:p15}{$p_{15}$}} & Open Safety Door\\
+\hyperlink{partialNet:p16}{\hypertarget{partialTable:p16}{$p_{16}$}} & Extend Assembly Unit Holder\\
+\hyperlink{partialNet:p17}{\hypertarget{partialTable:p17}{$p_{17}$}} & Assembly Unit Ready\\
+\hyperlink{partialNet:p18}{\hypertarget{partialTable:p18}{$p_{18}$}} & Arm Retracted and Storage Device Retracted On The Z Axis\\
+\hyperlink{partialNet:p19}{\hypertarget{partialTable:p19}{$p_{19}$}} & Move armazenador para direita\\
+\hyperlink{partialNet:p20}{\hypertarget{partialTable:p20}{$p_{20}$}} & Armazenador pronto na horizontal\\
+\hyperlink{partialNet:p21}{\hypertarget{partialTable:p21}{$p_{21}$}} & Mover armazenador para baixo\\
+\hyperlink{partialNet:p22}{\hypertarget{partialTable:p22}{$p_{22}$}} & Armazenador pronto na vertical\\
+\hyperlink{partialNet:p23}{\hypertarget{partialTable:p23}{$p_{23}$}} & Girar braço sentido antihorário\footnotemark\\
+\hyperlink{partialNet:p24}{\hypertarget{partialTable:p24}{$p_{24}$}} & Braço parado\\
+\hyperlink{partialNet:p25}{\hypertarget{partialTable:p25}{$p_{25}$}} & Girar braço sentido horário\textsuperscript{\ref{org4465f90}} e Habilita HSC\\
+\hyperlink{partialNet:p26}{\hypertarget{partialTable:p26}{$p_{26}$}} & Braço parado frente a esteira\\
+\hyperlink{partialNet:p27}{\hypertarget{partialTable:p27}{$p_{27}$}} & Sistema Pronto\\
 \end{tabular}
-\end{table}\footnotetext[1]{\label{org909ffcf}Variáveis IEC\(_{\text{COUNTER}}\), IEC\(_{\text{COUNTER1}}\), IEC\(_{\text{COUNTER2}}\), IEC\(_{\text{COUNTER3}}\), IEC\(_{\text{COUNTER4}}\), IEC\(_{\text{COUNTER5}}\).}\footnotetext[2]{\label{orge133c32}Verificar sentido de rotação do braço.}
+\end{table}\footnotetext[1]{\label{org27ea0ce}Variáveis IEC\(_{\text{COUNTER}}\), IEC\(_{\text{COUNTER1}}\), IEC\(_{\text{COUNTER2}}\), IEC\(_{\text{COUNTER3}}\), IEC\(_{\text{COUNTER4}}\), IEC\(_{\text{COUNTER5}}\).}\footnotetext[2]{\label{org4465f90}Verificar sentido de rotação do braço.}
 
 \begin{table}[htbp]
 \caption{Transições do Módulo de Inicialização}
 \centering
 \begin{tabular}{ll}
 Transitions & Meaning\\
-t0 & Botão de inicialização\\
-t1 & Sensor MAG 1 Retraído\\
-t2 & Sensor MAG 2 Retraído\\
-t3 & Sensor pistão de descarte D Retraído\\
-t4 & Sensor pistão de descarte C Retraído\\
-t5 & Sensor pistão de descarte E Retraído\\
-t6 & \\
-tt7 & T=15s\\
-tt8 & T=2.5s\\
-t9 & Sensor porta prensa aberta\\
-t10 & Sensor atuador horizontal da prensa estendido\\
-t11 & Sensor Hz armazenador de cubos e braço retraídos\\
-t12 & Fim de curso direito do armazenador de cubos\\
-t13 & Fim de curso inferior do armazenador de cubos\\
-tt14 & T=2s\\
-t15 & Sensor Indutivo do braço\\
-tt16 & T=1s\\
-t17 & Count\_300C.DB.Countval = \todo{-1690}\\
-t18 & \\
-t19 & Botão Começar\\
+\hyperlink{partialNet:t0}{\hypertarget{partialTable:t0}{$t_{0}$}} & Botão de inicialização\\
+\hyperlink{partialNet:t1}{\hypertarget{partialTable:t1}{$t_{1}$}} & Sensor MAG 1 Retraído\\
+\hyperlink{partialNet:t2}{\hypertarget{partialTable:t2}{$t_{2}$}} & Sensor MAG 2 Retraído\\
+\hyperlink{partialNet:t3}{\hypertarget{partialTable:t3}{$t_{3}$}} & Sensor pistão de descarte D Retraído\\
+\hyperlink{partialNet:t4}{\hypertarget{partialTable:t4}{$t_{4}$}} & Sensor pistão de descarte C Retraído\\
+\hyperlink{partialNet:t5}{\hypertarget{partialTable:t5}{$t_{5}$}} & Sensor pistão de descarte E Retraído\\
+\hyperlink{partialNet:t6}{\hypertarget{partialTable:t6}{$t_{6}$}} & \\
+\hyperlink{partialNet:tt7}{\hypertarget{partialTable:tt7}{$t_{7}$}} & T=15s\\
+\hyperlink{partialNet:tt8}{\hypertarget{partialTable:tt8}{$t_{8}$}} & T=2.5s\\
+\hyperlink{partialNet:t9}{\hypertarget{partialTable:t9}{$t_{9}$}} & Sensor porta prensa aberta\\
+\hyperlink{partialNet:t10}{\hypertarget{partialTable:t10}{$t_{10}$}} & Sensor atuador horizontal da prensa estendido\\
+\hyperlink{partialNet:t11}{\hypertarget{partialTable:t11}{$t_{11}$}} & Sensor Hz armazenador de cubos e braço retraídos\\
+\hyperlink{partialNet:t12}{\hypertarget{partialTable:t12}{$t_{12}$}} & Fim de curso direito do armazenador de cubos\\
+\hyperlink{partialNet:t13}{\hypertarget{partialTable:t13}{$t_{13}$}} & Fim de curso inferior do armazenador de cubos\\
+\hyperlink{partialNet:tt14}{\hypertarget{partialTable:tt14}{$t_{14}$}} & T=2s\\
+\hyperlink{partialNet:t15}{\hypertarget{partialTable:t15}{$t_{15}$}} & Sensor Indutivo do braço\\
+\hyperlink{partialNet:tt16}{\hypertarget{partialTable:tt16}{$t_{16}$}} & T=1s\\
+\hyperlink{partialNet:t17}{\hypertarget{partialTable:t17}{$t_{17}$}} & Count\_300C.DB.Countval = \todo{-1690}\\
+\hyperlink{partialNet:t18}{\hypertarget{partialTable:t18}{$t_{18}$}} & \\
+\hyperlink{partialNet:t19}{\hypertarget{partialTable:t19}{$t_{19}$}} & Botão Começar\\
 \end{tabular}
 \end{table}

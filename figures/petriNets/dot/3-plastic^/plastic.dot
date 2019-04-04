@@ -4,7 +4,7 @@ digraph A {
     ratio=fill
     graph [pad="0.5", nodesep="0.25", ranksep="0.2"];
     margin=0;
-
+    size="11.7,8.3!";
 
 
 # Modulo Plastico branco ^
@@ -61,11 +61,11 @@ digraph A {
   t71
   
 
-subgraph cluster_3 {
-  label="Plastic Piece"
-  style="dashed"
-  #color="white"
-  labelloc = b
+# subgraph cluster_3 {
+#   label="Plastic Piece"
+#   style="dashed"
+#   #color="white"
+#   labelloc = b
   # margin=0
 
 # pre
@@ -134,7 +134,7 @@ subgraph cluster_3 {
   tt69 -> p72
   tt69 -> p73
 
-}
+# }
 
 et44
 et44 -> p51

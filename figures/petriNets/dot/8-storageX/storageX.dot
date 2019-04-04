@@ -5,6 +5,7 @@ digraph A {
     ratio=fill
     graph [pad="0.5", nodesep="0.25", ranksep="0.2"];
     margin=0;
+    size="11.7,8.3!"
 
 # Módulo armazenador (x)
 
@@ -49,10 +50,10 @@ digraph A {
     t139
 
     
-subgraph cluster_8 {
-  label="Storage (x)";
-  labelloc = b
-  style="dashed"
+# subgraph cluster_8 {
+#   label="Storage (x)";
+#   labelloc = b
+#   style="dashed"
   # color="red"
 
   # pre
@@ -107,10 +108,10 @@ subgraph cluster_8 {
 
 
 
-}
+# }
 ett106
 ett106 -> p120
 
-et140
-p135 ->  et140
+ett140
+p135 ->  ett140
 }

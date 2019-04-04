@@ -4,19 +4,19 @@
 \begin{tabular}{ll}
 Places & Meaning\\
 \hline
-p74 & Estender verticalmente o braço\\
-p75 & Estender vertical e horizontalmente o braço e Ligar o vácuo\\
-p76 & Estender horizontalmente o braço e Ligar o vácuo\\
-p77 & Estender vertical e horizontalmente o braço e Ligar o vácuo\\
-p78 & Estender verticalmente o braço e Ligar o vácuo\\
-p79 & Habilita HSC e Estender verticalmente o braço, Ligar o vácuo e Girar Braço no sentido horário\\
-p80 & Estender vertical e horizontalmente o braço e Ligar o vácuo\\
-p81 & Estender horizontalmente o braço e Ligar o vácuo\\
-p82 & Estender horizontalmente o braço\\
-p83 & Estender vertical e horizontalmente o braço\\
-p84 & Estender verticalmente o braço\\
-p85 & Habilita HSC e Estender verticalmente o braço e Girar Braço no sentido antihorário\\
-p86 & Estender Verticalmente o braço e IEC\(_{\text{COUNTER}}\):=IEC\(_{\text{COUNTER}}\)+1\\
+\hyperlink{partialNet:p74}{\hypertarget{partialTable:p74}{$p_{74}$}} & Estender verticalmente o braço\\
+\hyperlink{partialNet:p75}{\hypertarget{partialTable:p75}{$p_{75}$}} & Estender vertical e horizontalmente o braço e Ligar o vácuo\\
+\hyperlink{partialNet:p76}{\hypertarget{partialTable:p76}{$p_{76}$}} & Estender horizontalmente o braço e Ligar o vácuo\\
+\hyperlink{partialNet:p77}{\hypertarget{partialTable:p77}{$p_{77}$}} & Estender vertical e horizontalmente o braço e Ligar o vácuo\\
+\hyperlink{partialNet:p78}{\hypertarget{partialTable:p78}{$p_{78}$}} & Estender verticalmente o braço e Ligar o vácuo\\
+\hyperlink{partialNet:p79}{\hypertarget{partialTable:p79}{$p_{79}$}} & Habilita HSC e Estender verticalmente o braço, Ligar o vácuo e Girar Braço no sentido horário\\
+\hyperlink{partialNet:p80}{\hypertarget{partialTable:p80}{$p_{80}$}} & Estender vertical e horizontalmente o braço e Ligar o vácuo\\
+\hyperlink{partialNet:p81}{\hypertarget{partialTable:p81}{$p_{81}$}} & Estender horizontalmente o braço e Ligar o vácuo\\
+\hyperlink{partialNet:p82}{\hypertarget{partialTable:p82}{$p_{82}$}} & Estender horizontalmente o braço\\
+\hyperlink{partialNet:p83}{\hypertarget{partialTable:p83}{$p_{83}$}} & Estender vertical e horizontalmente o braço\\
+\hyperlink{partialNet:p84}{\hypertarget{partialTable:p84}{$p_{84}$}} & Estender verticalmente o braço\\
+\hyperlink{partialNet:p85}{\hypertarget{partialTable:p85}{$p_{85}$}} & Habilita HSC e Estender verticalmente o braço e Girar Braço no sentido antihorário\\
+\hyperlink{partialNet:p86}{\hypertarget{partialTable:p86}{$p_{86}$}} & Estender Verticalmente o braço e IEC\(_{\text{COUNTER}}\):=IEC\(_{\text{COUNTER}}\)+1\\
 \end{tabular}
 \end{table}
 
@@ -26,19 +26,19 @@ p86 & Estender Verticalmente o braço e IEC\(_{\text{COUNTER}}\):=IEC\(_{\text{C
 \begin{tabular}{ll}
 Transitions & Meaning\\
 \hline
-t72 & Sensor vertical braço estendido\\
-t73 & T=1.5s\\
-t74 & T=1.5s e Sensor vertical braço retraído\\
-t75 & T=1.5s e Sensor vertical braço estendido\\
-t76 & T=1.5s e Sensor vertical braço estendido\\
-t77 & Count\_300C.DB.CountVal = \todo{-3330}\\
-t78 & T=1.5s e Sensor vertical braço estendido\\
-t79 & T=1.5s e Sensor vertical braço retraído\\
-t80 & T=1.5s\\
-t81 & T=1.5s e Sensor vertical braço estendido\\
-t82 & IEC\(_{\text{COUNTER0.DB}}\)=1 e Sensor Hz prensa estendido e porta prensa aberta\\
-t83 & T=1.5s e IEC\(_{\text{COUNTER0.DB}}\)=0 e Sensor vertical braço estendido\\
-t84 & Count\_300C.DB.CountVal = \todo{-1690}\\
-t85 & \\
+\hyperlink{partialNet:t72}{\hypertarget{partialTable:t72}{$t_{72}$}} & Sensor vertical braço estendido\\
+\hyperlink{partialNet:tt73}{\hypertarget{partialTable:tt73}{$t_{73}$}} & T=1.5s\\
+\hyperlink{partialNet:tt74}{\hypertarget{partialTable:tt74}{$t_{74}$}} & T=1.5s e Sensor vertical braço retraído\\
+\hyperlink{partialNet:tt75}{\hypertarget{partialTable:tt75}{$t_{75}$}} & T=1.5s e Sensor vertical braço estendido\\
+\hyperlink{partialNet:tt76}{\hypertarget{partialTable:tt76}{$t_{76}$}} & T=1.5s e Sensor vertical braço estendido\\
+\hyperlink{partialNet:t77}{\hypertarget{partialTable:t77}{$t_{77}$}} & Count\_300C.DB.CountVal = \todo{-3330}\\
+\hyperlink{partialNet:tt78}{\hypertarget{partialTable:tt78}{$t_{78}$}} & T=1.5s e Sensor vertical braço estendido\\
+\hyperlink{partialNet:tt79}{\hypertarget{partialTable:tt79}{$t_{79}$}} & T=1.5s e Sensor vertical braço retraído\\
+\hyperlink{partialNet:tt80}{\hypertarget{partialTable:tt80}{$t_{80}$}} & T=1.5s\\
+\hyperlink{partialNet:tt81}{\hypertarget{partialTable:tt81}{$t_{81}$}} & T=1.5s e Sensor vertical braço estendido\\
+\hyperlink{partialNet:t82}{\hypertarget{partialTable:t82}{$t_{82}$}} & IEC\(_{\text{COUNTER0.DB}}\)=1 e Sensor Hz prensa estendido e porta prensa aberta\\
+\hyperlink{partialNet:tt83}{\hypertarget{partialTable:tt83}{$t_{83}$}} & T=1.5s e IEC\(_{\text{COUNTER0.DB}}\)=0 e Sensor vertical braço estendido\\
+\hyperlink{partialNet:t84}{\hypertarget{partialTable:t84}{$t_{84}$}} & Count\_300C.DB.CountVal = \todo{-1690}\\
+\hyperlink{partialNet:t85}{\hypertarget{partialTable:t85}{$t_{85}$}} & \\
 \end{tabular}
 \end{table}

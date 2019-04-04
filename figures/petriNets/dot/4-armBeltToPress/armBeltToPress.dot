@@ -4,6 +4,8 @@ digraph A {
     ratio=fill
     graph [pad="0.5", nodesep="0.25", ranksep="0.2"];
     margin=0;
+    size="11.7,8.3!";
+
 
 # Modulo Braço (Esteira -> Prensa)
 
@@ -36,10 +38,10 @@ digraph A {
     t84
     t85
 
-subgraph cluster_4 {
-  label="Arm From Belt to Press";
-  labelloc = b
-  style="dashed"
+# subgraph cluster_4 {
+#   label="Arm From Belt to Press";
+#   labelloc = b
+#   style="dashed"
   # color="red"
 
   # pre
@@ -86,7 +88,7 @@ subgraph cluster_4 {
   t84 -> p86
 
 
-}
+# }
 
 et45
 et71

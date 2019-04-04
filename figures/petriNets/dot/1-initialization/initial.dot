@@ -2,9 +2,11 @@ digraph A {
     # splines = ortho
     rankdir=LR;
     ratio=fill
-    graph [pad="0.01", nodesep="0.01", ranksep="0.01"];
-    # size="11.7,8.3!";
+    graph [pad="0.01", nodesep="0.1", ranksep="0.01"];
+    size="11.7,8.3!";
     margin=0;
+       
+       
 
 
 {rank =same; }
@@ -61,12 +63,12 @@ digraph A {
     t18
     t19
 
-subgraph cluster_1 {
-  label="Initialization";
-  labelloc = b
-  style="dashed"
-  # color="red"
-  # pre
+# subgraph cluster_1 {
+#   # label="Initialization";
+#   labelloc = b
+#   style="dashed"
+#   color="red"
+#   # pre
 
   p0m1 -> t0
 
@@ -133,7 +135,7 @@ subgraph cluster_1 {
   t17 -> p26
   t18 -> p27
 
-}
+# }
 ep28
 ep107
 ep144

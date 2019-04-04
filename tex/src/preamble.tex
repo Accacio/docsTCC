@@ -3,6 +3,8 @@
 % \usepackage[brazil]{babel}
 \usepackage[T1]{fontenc}
 \usepackage{graphicx}
+\usepackage{pax}
+\usepackage{tikzscale}
 \usepackage{rotating}
 \usepackage{pdflscape}
 \usepackage{afterpage}
@@ -67,7 +69,7 @@
   pdfcreator={Rafael Accácio Nogueira},     
   bookmarksopen=true,         
   bookmarksopenlevel=1,       
-  colorlinks=true, % false => boxes 
+  colorlinks=false, % false => boxes 
   linkcolor=darkblue,
   filecolor=red,  
   urlcolor=blue,  
@@ -85,25 +87,45 @@
 %   raiselinks={true},
 %   pageanchor={true},
 % }}
-\let\oldsection\section
-\renewcommand\section[1]{%
-    \addtocontents{toc}{\protect\hypertarget{#1}{}}
-    \oldsection[#1]{\protect\hyperlink{tocsection.\thesection}{#1}}
-    }
 
-\let\oldsubsection\subsection
-\renewcommand\subsection[1]{%
-    \addtocontents{toc}{\protect\hypertarget{#1}{}}
-    \oldsubsection[#1]{\protect\hyperlink{tocsection.\thesection}{#1}}
-    }
+\makeatletter
+\let\stdchapter\chapter
+\renewcommand*\chapter{%
+  \@ifstar{\starchapter}{\@dblarg\nostarchapter}}
+\newcommand*\starchapter[1]{\stdchapter*{#1}}
+\def\nostarchapter[#1]#2{
+  \stdchapter[#1]{\protect\hyperlink{tocsection}{#1}}}
+\makeatother
 
-\let\oldsubsubsection\subsubsection
-\renewcommand\subsubsection[1]{%
-    \addtocontents{toc}{\protect\hypertarget{#1}{}}
-    \oldsubsubsection[#1]{\protect\hyperlink{tocsection.\thesection}{#1}}
-    }
+\makeatletter
+\let\stdsection\section
+\renewcommand*\section{%
+  \@ifstar{\starsection}{\@dblarg\nostarsection}}
+\newcommand*\starsection[1]{\stdsection*{#1}}
+\def\nostarsection[#1]#2{
+  \stdsection[#1]{\protect\hyperlink{tocsection}{#1}}}
+\makeatother
+
+\makeatletter
+\let\stdsubsection\subsection
+\renewcommand*\subsection{%
+  \@ifstar{\starsubsection}{\@dblarg\nostarsubsection}}
+\newcommand*\starsubsection[1]{\stdsubsection*{#1}}
+\def\nostarsubsection[#1]#2{
+  \stdsubsection[#1]{\protect\hyperlink{tocsection}{#1}}}
+\makeatother
+
+\makeatletter
+\let\stdsubsubsection\subsubsection
+\renewcommand*\subsubsection{%
+  \@ifstar{\starsubsubsection}{\@dblarg\nostarsubsubsection}}
+\newcommand*\starsubsubsection[1]{\stdsubsubsection*{#1}}
+\def\nostarsubsubsection[#1]#2{
+  \stdsubsubsection[#1]{\protect\hyperlink{tocsection}{#1}}}
+\makeatother
+
 \let\oldtoc\tableofcontents
-\renewcommand{\tableofcontents}{\oldtoc\label{tocsection}}
+\renewcommand{\tableofcontents}{\oldtoc\hypertarget{tocsection}{}\label{tocsection}}
 
 \newcommand{\acr}[3]{\newacronym{#1}{#2}{#3}
   \expandafter\newcommand\csname #1\endcsname{\gls{#1}}}
@@ -148,36 +170,42 @@
 
 \newtheorem{observation}{Observação}
 %\numberwithin{observation}{chapter}
+\usepackage[export]{adjustbox}
 
 \newcommand{\addtikzfigure}[3]{
-\begin{landscape}
-  \begin{figure}[h]
+\KOMAoptions{paper=landscape}
+\recalctypearea
+  \vspace*{\fill}
+  \begin{figure}[H]
     \centering
-    \resizebox{\hsize}{!}{
-      \input{#1}
-    }
+      \includegraphics[width=0.8\textwidth]{#1}
     \caption{#2}
     \label{fig:#3}
   \end{figure}
-\end{landscape}
+  \vspace*{\fill}
+\KOMAoptions{paper=portrait}
+\recalctypearea
 }
 
-\newcommand{\addtikzfigureVertCent}[3]{
-\begin{landscape}
-\vspace*{\fill}
-  \begin{figure}[h]
-    \centering
-    \resizebox{\hsize}{!}{
-      \input{#1}
-    }
-    \caption{#2}
-    \label{fig:#3}
-  \end{figure}
-\vspace*{\fill}
-\end{landscape}
-}
-
-
+% \newcommand{\addtikzfigureVertCent}[3]{
+% \KOMAoptions{paper=landscape}
+% \recalctypearea
+% % \begin{landscape}
+% \vspace*{\fill}
+%   \begin{figure}[H]
+%     % \centering
+%     % \resizebox{\hsize}{!}{
+%     % \input{#1}
+%      \includegraphics[width=1.15\textwidth]{#1}
+%     % }
+%     \caption{#2}
+%     \label{fig:#3}
+%   \end{figure}
+% \vspace*{\fill}
+% % \end{landscape}
+% \KOMAoptions{paper=portrait}
+% \recalctypearea
+% }
 
 %%% Local Variables:
 %%% mode: latex

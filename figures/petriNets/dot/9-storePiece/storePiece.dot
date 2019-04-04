@@ -4,7 +4,7 @@ digraph A {
     ratio=fill
     graph [pad="0.5", nodesep="0.05", ranksep="0.02"];
     margin=0;
-
+    size="11.7,8.3!"
 
 # Módulo armazenador (coloca peça e reset)
 
@@ -32,11 +32,11 @@ digraph A {
   t149
 
 
-subgraph cluster_9 {
-  label="Store Piece";
-  labelloc = b
-  margin=0.3
-  style="dashed"
+# subgraph cluster_9 {
+#   label="Store Piece";
+#   labelloc = b
+#   margin=0.3
+#   style="dashed"
   # color="red"
   # pre
 
@@ -66,15 +66,15 @@ subgraph cluster_9 {
   t148 -> p145
 
 
-}
+# }
 
 ep119
 ep135
 ep119 -> tt140
 ep135 -> tt140
 
-ep0
-t149 -> ep0
+ep0m1
+t149 -> ep0m1
 
 et96
 p145 -> et96
