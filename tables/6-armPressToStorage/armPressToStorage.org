@@ -1,5 +1,5 @@
 
-#+ATTR_LATEX: :caption  \caption{Lugares do Módulo braço prensa armazenador}
+#+ATTR_LATEX: :caption  \caption{Lugares do Módulo braço prensa armazenador} :align c|c
 | Places  | Meaning                                                                                       |
 |---------+-----------------------------------------------------------------------------------------------|
 | p96  | Estender horizontalmente o braço e Ligar Vácuo                                                |
@@ -15,7 +15,7 @@
 | p106 | Habilita HSC e Girar o braço no sentido horário                                               |
 | p107 | Braço na esteira                                                                              |
 
-#+ATTR_LATEX: :caption  \caption{Transições do Módulo braço prensa armazenador}
+#+ATTR_LATEX: :caption  \caption{Transições do Módulo braço prensa armazenador} :align c|c
 | Transitions | Meaning                                                                      |
 |-------------+------------------------------------------------------------------------------|
 | tt94        | T=1.5s e Sensor vertical braço retraído                                      |

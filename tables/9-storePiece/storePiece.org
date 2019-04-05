@@ -1,5 +1,5 @@
 
-#+ATTR_LATEX: :caption  \caption{Places from the cube storage module.} 
+#+ATTR_LATEX: :caption  \caption{Places from the cube storage module.} :align c|c
 | Places | Meaning                                                             |
 |--------+---------------------------------------------------------------------|
 | p136   | Estender horizontalmente armazenador                                |
@@ -13,7 +13,7 @@
 | p144   |                                                                     |
 | p145   | Armazenador pronto                                                  |
 
-#+ATTR_LATEX: :caption  \caption{Transitions from the cube storage module.} 
+#+ATTR_LATEX: :caption  \caption{Transitions from the cube storage module.} :align c|c
 | Transitions | Meaning                              |
 |-------------+--------------------------------------|
 | tt140       | T=2s                                 |

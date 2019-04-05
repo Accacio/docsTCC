@@ -1,21 +1,21 @@
 
-#+ATTR_LATEX: :caption  \caption{Lugares do Módulo armazenador y}
-| Places  | Meaning                                          |
-|---------+--------------------------------------------------|
-| p108 | cubo no armazenador                              |
-| p109 | mover armazenador para direita                   |
-| p110 |                                                  |
-| p111 | COUNTER3:=COUNTER3+1 mover armazenador para cima |
-| p112 | Reset COUNTER3*                                  |
-| p113 | COUNTER3:=COUNTER3+1 mover armazenador para cima |
-| p114 | Reset COUNTER3*                                  |
-| p115 | COUNTER3:=COUNTER3+1 mover armazenador para cima |
-| p116 | Reset COUNTER3*                                  |
-| p117 | COUNTER3:=COUNTER3+1 mover armazenador para cima |
-| p118 | Reset COUNTER3*                                  |
-| p119 |                                                  |
+#+ATTR_LATEX: :caption  \caption{Lugares do Módulo armazenador y} :align c|c
+| Places | Meaning                                          |
+|--------+--------------------------------------------------|
+| p108   | cubo no armazenador                              |
+| p109   | mover armazenador para direita                   |
+| p110   |                                                  |
+| p111   | COUNTER3:=COUNTER3+1 mover armazenador para cima |
+| p112   | Reset COUNTER3*                                  |
+| p113   | COUNTER3:=COUNTER3+1 mover armazenador para cima |
+| p114   | Reset COUNTER3*                                  |
+| p115   | COUNTER3:=COUNTER3+1 mover armazenador para cima |
+| p116   | Reset COUNTER3*                                  |
+| p117   | COUNTER3:=COUNTER3+1 mover armazenador para cima |
+| p118   | Reset COUNTER3*                                  |
+| p119   |                                                  |
 
-#+ATTR_LATEX: :caption  \caption{Transições do Módulo armazenador y}
+#+ATTR_LATEX: :caption  \caption{Transições do Módulo armazenador y} :align c|c
 | Transitions | Meaning    |
 |-------------+------------|
 | tt105       | T=2s       |

@@ -1,18 +1,19 @@
 
-#+ATTR_LATEX: :caption  \caption{Lugares do Módulo prensa cubo}
+#+ATTR_LATEX: :caption  \caption{Lugares do Módulo prensa cubo} :align c|c
 | Places | Meaning                                        |
 |--------+------------------------------------------------|
-| p87 | Retrair atuador horizontal prensa*             |
-| p88 | Fechar Porta prensa*                           |
-| p89 | Estender atuador vertical prensa*              |
-| p90 | Retrair atuador vertical prensa*               |
-| p91 | Abrir Porta prensa*                            |
-| p92 | Estender atuador horizontal prensa*            |
-| p93 | Cubo pronto                                    |
-| p94 | Estender horizontalmente o braço e Ligar Vácuo |
-| p95 | Estender verticalmente o braço                 |
+| p87    | Retrair atuador horizontal prensa*             |
+| p88    | Fechar Porta prensa*                           |
+| p89    | Estender atuador vertical prensa*              |
+| p90    | Retrair atuador vertical prensa*               |
+| p91    | Abrir Porta prensa*                            |
+| p92    | Estender atuador horizontal prensa*            |
+| p93    | Cubo pronto                                    |
+| p94    | Estender horizontalmente o braço e Ligar Vácuo |
+| p95    | Estender verticalmente o braço                 |
+|        |                                                |
 
-#+ATTR_LATEX:caption  \caption{Transições do Módulo prensa cubo}
+#+ATTR_LATEX:caption  \caption{Transições do Módulo prensa cubo} :align c|c
 | Transitions | Meaning                                       |
 |-------------+-----------------------------------------------|
 | tt86        | T=1s e Sensosr horizontal prensa retraído     |

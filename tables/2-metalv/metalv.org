@@ -1,5 +1,5 @@
 
-#+ATTR_LATEX: :caption \caption{Lugares do Módulo 2 pt 1}
+#+ATTR_LATEX: :caption \caption{Lugares do Módulo 2 pt 1} :align c|c
 | Places | Meaning                        |
 |--------+--------------------------------|
 | p28 | Mag1 vazio                     |
@@ -26,7 +26,7 @@
 | p49 | Peça Metal Pronta              |
 | p50 | Esteira Parada                 |
 
-#+ATTR_LATEX: :caption  \caption{Transições do Módulo 2 pt 1}
+#+ATTR_LATEX: :caption  \caption{Transições do Módulo 2 pt 1} :align c|c
 | Transitions | Meaning                                                   |
 |-------------+-----------------------------------------------------------|
 | t20      | $\overline{\mbox{Sensor Chave de Presença de Peça Mag1}}$ |

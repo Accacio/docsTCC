@@ -12,7 +12,7 @@
 | p7     | Retract Center Discharge Cylinder                        |
 | p8     | Center Discharge Cylinder Retracted                      |
 | p9     | Retract Left Discharge Cylinder *                        |
-| p10    | Left Dischange Cylinder Retracted                        |
+| p10    | Left Discharge Cylinder Retracted                        |
 | p11    | Turn Conveyor Belt On (Reverse)                          |
 | p12    | No Pieces On Conveyor Belt                               |
 | p13    | Reset Variables[fn:1]                                    |
@@ -21,30 +21,30 @@
 | p16    | Extend Assembly Unit Holder                              |
 | p17    | Assembly Unit Ready                                      |
 | p18    | Arm Retracted and Storage Device Retracted On The Z Axis |
-| p19    | Move armazenador para direita                            |
-| p20    | Armazenador pronto na horizontal                         |
-| p21    | Mover armazenador para baixo                             |
-| p22    | Armazenador pronto na vertical                           |
-| p23    | Girar braço sentido antihorário[fn:2]                    |
-| p24    | Braço parado                                             |
-| p25    | Girar braço sentido horário[fn:2] e Habilita HSC         |
-| p26    | Braço parado frente a esteira                            |
-| p27    | Sistema Pronto                                           |
+| p19    | Move Storage Device to the Right                         |
+| p20    | Storage Device ready ( horizontal )                      |
+| p21    | Move Storage Device Downwards                            |
+| p22    | Storage Device ready ( vertical )                        |
+| p23    | Rotate Arm CCW                                           |
+| p24    | Arm Stopped                                              |
+| p25    | Rotate Arm CW e Turn HSC ON                              |
+| p26    | Arm Stopped ( facing conveyor belt )                     |
+| p27    | System Ready                                             |
 
-#+ATTR_LATEX: :caption \caption{Transições do Módulo de Inicialização}
+#+ATTR_LATEX: :caption \caption{Transições do Módulo de Inicialização} :align c|c
 | Transitions | Meaning                                          |
-| t0          | Botão de inicialização                           |
-| t1          | Sensor MAG 1 Retraído                            |
-| t2          | Sensor MAG 2 Retraído                            |
-| t3          | Sensor pistão de descarte D Retraído             |
-| t4          | Sensor pistão de descarte C Retraído             |
-| t5          | Sensor pistão de descarte E Retraído             |
+| t0          | Initialization Button                            |
+| t1          | Sensor MAG 1 Cylinder Retracted                  |
+| t2          | Sensor MAG 2 Cylinder Retracted                  |
+| t3          | Sensor Right Discharge Cylinder Retracted        |
+| t4          | Sensor Center Discharge Cylinder Retracted       |
+| t5          | Sensor Left Discharge Cylinder Retracted         |
 | t6          |                                                  |
 | tt7         | T=15s                                            |
 | tt8         | T=2.5s                                           |
-| t9          | Sensor porta prensa aberta                       |
-| t10         | Sensor atuador horizontal da prensa estendido    |
-| t11         | Sensor Hz armazenador de cubos e braço retraídos |
+| t9          | Sensor Safety Door Opened                        |
+| t10         | Sensor Assembly Unit Holder Extended             |
+| t11         | Sensor Storage Device Retracted on Z Axis and Hz armazenador de cubos e braço retraídos |
 | t12         | Fim de curso direito do armazenador de cubos     |
 | t13         | Fim de curso inferior do armazenador de cubos    |
 | tt14        | T=2s                                             |
@@ -55,4 +55,4 @@
 | t19         | Botão Começar                                    |
 
 [fn:1] Variáveis IEC_COUNTER, IEC_COUNTER1, IEC_COUNTER2, IEC_COUNTER3, IEC_COUNTER4, IEC_COUNTER5.
-[fn:2] Verificar sentido de rotação do braço.
+

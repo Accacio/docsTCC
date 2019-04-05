@@ -29,16 +29,16 @@ p21 & Mover armazenador para baixo\\
 p22 & Armazenador pronto na vertical\\
 p23 & Girar braço sentido antihorário\footnotemark\\
 p24 & Braço parado\\
-p25 & Girar braço sentido horário\textsuperscript{\ref{orgcd15c80}} e Habilita HSC\\
+p25 & Girar braço sentido horário\textsuperscript{\ref{orgc4af6e5}} e Habilita HSC\\
 p26 & Braço parado frente a esteira\\
 p27 & Sistema Pronto\\
 \end{tabular}
-\end{table}\footnotetext[1]{\label{orgd5a055f}Variáveis IEC\(_{\text{COUNTER}}\), IEC\(_{\text{COUNTER1}}\), IEC\(_{\text{COUNTER2}}\), IEC\(_{\text{COUNTER3}}\), IEC\(_{\text{COUNTER4}}\), IEC\(_{\text{COUNTER5}}\).}\footnotetext[2]{\label{orgcd15c80}Verificar sentido de rotação do braço.}
+\end{table}\footnotetext[1]{\label{orgfec5123}Variáveis IEC\(_{\text{COUNTER}}\), IEC\(_{\text{COUNTER1}}\), IEC\(_{\text{COUNTER2}}\), IEC\(_{\text{COUNTER3}}\), IEC\(_{\text{COUNTER4}}\), IEC\(_{\text{COUNTER5}}\).}\footnotetext[2]{\label{orgc4af6e5}Verificar sentido de rotação do braço.}
 
 \begin{table}[htbp]
 \caption{Transições do Módulo de Inicialização}
 \centering
-\begin{tabular}{ll}
+\begin{tabular}{c|c}
 Transitions & Meaning\\
 t0 & Botão de inicialização\\
 t1 & Sensor MAG 1 Retraído\\
@@ -65,7 +65,7 @@ t19 & Botão Começar\\
 \begin{table}[htbp]
 \caption{Lugares do Módulo 2 pt 1}
 \centering
-\begin{tabular}{ll}
+\begin{tabular}{c|c}
 Places & Meaning\\
 \hline
 p28 & Mag1 vazio\\
@@ -97,7 +97,7 @@ p50 & Esteira Parada\\
 \begin{table}[htbp]
 \caption{Transições do Módulo 2 pt 1}
 \centering
-\begin{tabular}{ll}
+\begin{tabular}{c|c}
 Transitions & Meaning\\
 \hline
 t20 & \(\overline{\mbox{Sensor Chave de Presença de Peça Mag1}}\)\\
@@ -131,7 +131,7 @@ t45 & \\
 \begin{table}[htbp]
 \caption{Lugares do Módulo 2 pt 2}
 \centering
-\begin{tabular}{ll}
+\begin{tabular}{c|c}
 Places & Meaning\\
 \hline
 p51 & Mag2 vazio\\
@@ -163,7 +163,7 @@ p73 & Esteira parada\\
 \begin{table}[htbp]
 \caption{Transições do Módulo 2 pt 2}
 \centering
-\begin{tabular}{ll}
+\begin{tabular}{c|c}
 Transitions & Meaning\\
 \hline
 t46 & \(\overline{\mbox{Sensor Chave de Presença de Peça Mag2}}\)\\
@@ -197,7 +197,7 @@ t71 & \\
 \begin{table}[htbp]
 \caption{Lugares do Módulo Braço Esteira Prensa}
 \centering
-\begin{tabular}{ll}
+\begin{tabular}{c|c}
 Places & Meaning\\
 \hline
 p74 & Estender verticalmente o braço\\
@@ -219,7 +219,7 @@ p86 & Estender Verticalmente o braço e IEC\(_{\text{COUNTER}}\):=IEC\(_{\text{C
 \begin{table}[htbp]
 \caption{Transições do Módulo Braço Esteira Prensa}
 \centering
-\begin{tabular}{ll}
+\begin{tabular}{c|c}
 Transitions & Meaning\\
 \hline
 t72 & Sensor vertical braço estendido\\
@@ -241,7 +241,7 @@ t85 & \\
 \begin{table}[htbp]
 \caption{Lugares do Módulo prensa cubo}
 \centering
-\begin{tabular}{ll}
+\begin{tabular}{c|c}
 Places & Meaning\\
 \hline
 p87 & Retrair atuador horizontal prensa*\\
@@ -253,11 +253,12 @@ p92 & Estender atuador horizontal prensa*\\
 p93 & Cubo pronto\\
 p94 & Estender horizontalmente o braço e Ligar Vácuo\\
 p95 & Estender verticalmente o braço\\
+ & \\
 \end{tabular}
 \end{table}
 
 \begin{center}
-\begin{tabular}{ll}
+\begin{tabular}{c|c}
 Transitions & Meaning\\
 \hline
 tt86 & T=1s e Sensosr horizontal prensa retraído\\
@@ -273,7 +274,7 @@ tt93 & T=1.5s e Sensor horizontal do braço estendido\\
 \begin{table}[htbp]
 \caption{Lugares do Módulo braço prensa armazenador}
 \centering
-\begin{tabular}{ll}
+\begin{tabular}{c|c}
 Places & Meaning\\
 \hline
 p96 & Estender horizontalmente o braço e Ligar Vácuo\\
@@ -294,7 +295,7 @@ p107 & Braço na esteira\\
 \begin{table}[htbp]
 \caption{Transições do Módulo braço prensa armazenador}
 \centering
-\begin{tabular}{ll}
+\begin{tabular}{c|c}
 Transitions & Meaning\\
 \hline
 tt94 & T=1.5s e Sensor vertical braço retraído\\
@@ -313,7 +314,7 @@ t104 & Count\_300C.DB.CountVal = \todo{-1690}\\
 \begin{table}[htbp]
 \caption{Lugares do Módulo armazenador y}
 \centering
-\begin{tabular}{ll}
+\begin{tabular}{c|c}
 Places & Meaning\\
 \hline
 p108 & cubo no armazenador\\
@@ -334,7 +335,7 @@ p119 & \\
 \begin{table}[htbp]
 \caption{Transições do Módulo armazenador y}
 \centering
-\begin{tabular}{ll}
+\begin{tabular}{c|c}
 Transitions & Meaning\\
 \hline
 tt105 & T=2s\\
@@ -356,7 +357,7 @@ t118 & \\
 \begin{table}[htbp]
 \caption{Lugares do Módulo armazenador (x)}
 \centering
-\begin{tabular}{ll}
+\begin{tabular}{c|c}
 Places & Meaning\\
 \hline
 p120 & COUNTER1:=COUNTER1+1 e COUNTER4:=COUNTER4+1\\
@@ -381,7 +382,7 @@ p135 & \\
 \begin{table}[htbp]
 \caption{Transições Módulo armazenador (x)}
 \centering
-\begin{tabular}{ll}
+\begin{tabular}{c|c}
 Transitions & Meaning\\
 \hline
 t119 & COUNTER4=0\\
@@ -410,7 +411,7 @@ t139 & \\
 \begin{table}[htbp]
 \caption{Places from the cube storage module.}
 \centering
-\begin{tabular}{ll}
+\begin{tabular}{c|c}
 Places & Meaning\\
 \hline
 p136 & Estender horizontalmente armazenador\\
@@ -429,7 +430,7 @@ p145 & Armazenador pronto\\
 \begin{table}[htbp]
 \caption{Transitions from the cube storage module.}
 \centering
-\begin{tabular}{ll}
+\begin{tabular}{c|c}
 Transitions & Meaning\\
 \hline
 tt140 & T=2s\\

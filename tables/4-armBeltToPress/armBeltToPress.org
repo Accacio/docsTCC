@@ -1,5 +1,5 @@
 
-#+ATTR_LATEX: :caption  \caption{Lugares do Módulo Braço Esteira Prensa}
+#+ATTR_LATEX: :caption  \caption{Lugares do Módulo Braço Esteira Prensa} :align c|c
 | Places | Meaning                                                                                       |
 |--------+-----------------------------------------------------------------------------------------------|
 | p74 | Estender verticalmente o braço                                                                |
@@ -16,7 +16,7 @@
 | p85 | Habilita HSC e Estender verticalmente o braço e Girar Braço no sentido antihorário            |
 | p86 | Estender Verticalmente o braço e IEC_COUNTER:=IEC_COUNTER+1                                   |
 
-#+ATTR_LATEX: :caption  \caption{Transições do Módulo Braço Esteira Prensa}
+#+ATTR_LATEX: :caption  \caption{Transições do Módulo Braço Esteira Prensa} :align c|c
 | Transitions | Meaning                                                              |
 |-------------+----------------------------------------------------------------------|
 | t72      | Sensor vertical braço estendido                                      |
