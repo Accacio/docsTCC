@@ -20,7 +20,7 @@
 | p15    | Open Safety Door                                         |
 | p16    | Extend Assembly Unit Holder                              |
 | p17    | Assembly Unit Ready                                      |
-| p18    | Arm Retracted and Storage Device Retracted On The Z Axis |
+| p18    | Arm Lowered and Retracted, and Storage Device Retracted On The Z Axis |
 | p19    | Move Storage Device to the Right                         |
 | p20    | Storage Device ready ( horizontal )                      |
 | p21    | Move Storage Device Downwards                            |
@@ -32,27 +32,27 @@
 | p27    | System Ready                                             |
 
 #+ATTR_LATEX: :caption \caption{Transições do Módulo de Inicialização} :align c|c
-| Transitions | Meaning                                          |
-| t0          | Initialization Button                            |
-| t1          | Sensor MAG 1 Cylinder Retracted                  |
-| t2          | Sensor MAG 2 Cylinder Retracted                  |
-| t3          | Sensor Right Discharge Cylinder Retracted        |
-| t4          | Sensor Center Discharge Cylinder Retracted       |
-| t5          | Sensor Left Discharge Cylinder Retracted         |
-| t6          |                                                  |
-| tt7         | T=15s                                            |
-| tt8         | T=2.5s                                           |
-| t9          | Sensor Safety Door Opened                        |
-| t10         | Sensor Assembly Unit Holder Extended             |
-| t11         | Sensor Storage Device Retracted on Z Axis and Hz armazenador de cubos e braço retraídos |
-| t12         | Fim de curso direito do armazenador de cubos     |
-| t13         | Fim de curso inferior do armazenador de cubos    |
-| tt14        | T=2s                                             |
-| t15         | Sensor Indutivo do braço                         |
-| tt16        | T=1s                                             |
-| t17         | Count\under{}300C.DB.Countval = \todo{-1690}     |
-| t18         |                                                  |
-| t19         | Botão Começar                                    |
+| Transitions | Meaning                                                       |
+| t0          | Initialization Button                                         |
+| t1          | Sensor MAG 1 Cylinder Retracted                               |
+| t2          | Sensor MAG 2 Cylinder Retracted                               |
+| t3          | Sensor Right Discharge Cylinder Retracted                     |
+| t4          | Sensor Center Discharge Cylinder Retracted                    |
+| t5          | Sensor Left Discharge Cylinder Retracted                      |
+| t6          |                                                               |
+| tt7         | T=15s                                                         |
+| tt8         | T=2.5s                                                        |
+| t9          | Sensor Safety Door Opened                                     |
+| t10         | Sensor Assembly Unit Holder Extended                          |
+| t11         | Sensor Storage Device Retracted and Arm Lowered and Retracted |
+| t12         | Fim de curso direito do armazenador de cubos                  |
+| t13         | Fim de curso inferior do armazenador de cubos                 |
+| tt14        | T=2s                                                          |
+| t15         | Sensor Indutivo do braço                                      |
+| tt16        | T=1s                                                          |
+| t17         | Count\under{}300C.DB.Countval = \todo{-1690}                  |
+| t18         |                                                               |
+| t19         | Botão Começar                                                 |
 
 [fn:1] Variáveis IEC_COUNTER, IEC_COUNTER1, IEC_COUNTER2, IEC_COUNTER3, IEC_COUNTER4, IEC_COUNTER5.
 

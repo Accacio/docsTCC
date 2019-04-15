@@ -1,5 +1,5 @@
 
-#+ATTR_LATEX: :caption \caption{Inputs CLP1} :align c|c|c
+#+ATTR_LATEX: :caption \caption{Inputs PLC1} :align c|c|c
 | Input                                      | Address | Tag        |
 |--------------------------------------------+---------+------------|
 | MAG 1 Cylinder Extended                    | I0.0    | I_MAG1EXT  |
@@ -18,12 +18,12 @@
 | Center Discharge Cylinder Retracted        | I1.3    | I_CDCRET   |
 | Right Discharge Cylinder Extended          | I1.4    | I_RDCEXT   |
 | Right Discharge Cylinder Retracted         | I1.5    | I_RDCRET   |
-| Proximity Sensor Presence                  | I1.6    | I_PSP      |
+| White Color Sensor                         | I1.6    | I_WHIT     |
 | Metalic Sensor                             | I0.7    | I_METAL    |
 | Proximity Sensor End Of Conveyor Belt      | I0.6    | I_PSEOC    |
 | Distance Sensor                            | IW4     | I_DS       |
 
-#+ATTR_LATEX: :caption \caption{Outputs CLP1} :align c|c|c
+#+ATTR_LATEX: :caption \caption{Outputs PLC1} :align c|c|c
 | Output                           | Address | Tag       |
 |----------------------------------+---------+-----------|
 | Extend MAG 1 Cylinder            | Q1.0    | O_MAG1EXT |
@@ -36,7 +36,7 @@
 | Conveyor Belt Forward            | Q1.4    | O_CBFW    |
 | Conveyor Belt Reverse            | Q1.5    | O_CBREV   |
 
-#+ATTR_LATEX: :caption \caption{Inputs CLP2} :align c|c|c
+#+ATTR_LATEX: :caption \caption{Inputs PLC2} :align c|c|c
 | Input                              | Address | Tag        |
 |------------------------------------+---------+------------|
 | Safety Door Opened                 | I1.0    | I_SDO      |
@@ -59,7 +59,7 @@
 | Storage Unit Left Limit Switch     | I1.5    | I_SULLS    |
 | Horizontal Encoder B15             | I1.7    | I_HZENCB15 |
 
-#+ATTR_LATEX: :caption \caption{Outputs CLP2} :align c|c|c
+#+ATTR_LATEX: :caption \caption{Outputs PLC2} :align c|c|c
 | Output                         | Address | Tag        |
 |--------------------------------+---------+------------|
 | Open Safety Door               | Q0.6    | O_SDO      |

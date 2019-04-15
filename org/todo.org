@@ -24,3 +24,12 @@ Valores HSC
 Sem peça 90~95 abaixo de 1000
  concavidade para cima 2450 
  concavidade para baixo 11892
+* Valores para GET
+p17
+p26
+
+* Valores para PUT
+p14
+p18
+p17
+P26

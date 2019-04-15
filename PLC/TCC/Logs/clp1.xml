@@ -1,0 +1,7 @@
+<?xml version="1.0" standalone="no"?>
+<?xml-stylesheet type='text/xsl' href='MassDataHandlerLogFile.xsl'?>
+<LogFile titleName="clp1.xml" projectName="D:\Users\Accacio\Documents\docsTCC\tables\nomenclature\clp1.xlsx" typeText="Type" messageText="Message" timeText="Time">
+  <LogEntry type="Error" dateTime="2:05:55 PM">
+    <Message>Error found while loading file D:\Users\Accacio\Documents\docsTCC\tables\nomenclature\clp1.xlsx, the file may be in use or read-only.</Message>
+  </LogEntry>
+</LogFile>
