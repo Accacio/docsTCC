@@ -22,24 +22,24 @@
 #+ATTR_LATEX: :caption  \caption{Transições Módulo armazenador (x)} :align c|c
 | Transitions | Meaning    |
 |-------------+------------|
-| t119        | COUNTER4=0 |
+| t119        | COUNTER4=1 |
 | t120        | COUNTER5=1 |
 | t121        |            |
-| t122        | COUNTER4=1 |
+| t122        | COUNTER4=2 |
 | t123        | COUNTER5=2 |
 | t124        |            |
-| t125        | COUNTER4=2 |
+| t125        | COUNTER4=3 |
 | t126        | COUNTER5=3 |
 | t127        |            |
-| t128        | COUNTER4=3 |
+| t128        | COUNTER4=4 |
 | t129        | COUNTER5=4 |
 | t130        |            |
-| t131        | COUNTER4=4 |
+| t131        | COUNTER4=5 |
 | t132        | COUNTER5=5 |
 | t133        |            |
-| t134        | COUNTER4=5 |
+| t134        | COUNTER4=6 |
 | t135        | COUNTER5=8 |
 | t136        |            |
-| t137        | COUNTER4=6 |
+| t137        | COUNTER4=7 |
 | t138        | COUNTER5=9 |
 | t139        |            |
