@@ -37,27 +37,28 @@
 | Conveyor Belt Reverse            | Q1.5    | O_CBREV   |
 
 #+ATTR_LATEX: :caption \caption{Inputs PLC2} :align c|c|c
-| Input                              | Address | Tag        |
-|------------------------------------+---------+------------|
-| Safety Door Opened                 | I1.0    | I_SDO      |
-| Safety Door Closed                 | I1.1    | I_SDC      |
-| Assembly Unit Holder Extended      | I1.2    | I_AUHEXT   |
-| Assembly Unit Holder Retracted     | I1.3    | I_AUHRET   |
-| Inductive Sensor Arm               | I0.2    | I_INDARM   |
-| Arm Lowered                        | I0.4    | I_ARMLOW   |
-| Arm Raised                         | I0.3    | I_ARMHIG   |
-| Arm Retracted                      | I0.6    | I_ARMRET   |
-| Arm Extended                       | I0.5    | I_ARMEXT   |
-| Storage Unit Vertical Encoder      | I2.0    | I_SUVE     |
-| Storage Unit Inferior Limit Switch | I2.2    | I_SUILS    |
-| Storage Unit Superior Limit Switch | I2.1    | I_SUSLS    |
-| Storage Unit Extended              | I2.3    | I_SUEXT    |
-| Storage Unit Retracted             | I2.4    | I_SURET    |
-| Relay                              | I2.5    | I_RELAY2   |
-| Horizontal Encoder B10             | I1.4    | I_HZENCB10 |
-| Storage Unit Right Limit Switch    | I1.6    | I_SURLS    |
-| Storage Unit Left Limit Switch     | I1.5    | I_SULLS    |
-| Horizontal Encoder B15             | I1.7    | I_HZENCB15 |
+| Input                               | Address | Tag        |
+|-------------------------------------+---------+------------|
+| Safety Door Opened                  | I1.0    | I_SDO      |
+| Safety Door Closed                  | I1.1    | I_SDC      |
+| Assembly Unit Holder Extended       | I1.2    | I_AUHEXT   |
+| Assembly Unit Holder Retracted      | I1.3    | I_AUHRET   |
+| Inductive Sensor Arm                | I0.2    | I_INDARM   |
+| Arm Lowered                         | I0.4    | I_ARMLOW   |
+| Arm Raised                          | I0.3    | I_ARMHIG   |
+| Arm Retracted                       | I0.6    | I_ARMRET   |
+| Arm Extended                        | I0.5    | I_ARMEXT   |
+| Storage Unit Vertical Encoder       | I2.0    | I_SUVE     |
+| Storage Unit Inferior Limit Switch  | I2.2    | I_SUILS    |
+| Storage Unit Superior Limit Switch  | I2.1    | I_SUSLS    |
+| Storage Unit Extended               | I2.3    | I_SUEXT    |
+| Storage Unit Retracted              | I2.4    | I_SURET    |
+| Relay                               | I2.5    | I_RELAY2   |
+| Storage Unit Horizontal Encoder     | I1.4    | I_SUHE     |
+| Storage Unit Right Limit Switch     | I1.6    | I_SURLS    |
+| Storage Unit Left Limit Switch      | I1.5    | I_SULLS    |
+| Storage Unit Arm Alignement Encoder | I1.7    | I_SUARMALE |
+
 
 #+ATTR_LATEX: :caption \caption{Outputs PLC2} :align c|c|c
 | Output                         | Address | Tag        |
