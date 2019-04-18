@@ -38,5 +38,7 @@
 | t138        | Horizontal Encoder |
 | t139        | COUNTER4=7         |
 | t140        | COUNTER5=9         |
-| t141        |                    |
+| t141        | Horizontal Encoder |
 | t142        |                    |
+| t143        |                    |
+| t144        |                    |

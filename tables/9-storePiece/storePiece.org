@@ -16,14 +16,14 @@
 #+ATTR_LATEX: :caption  \caption{Transitions from the cube storage module.} :align c|c
 | Transitions | Meaning                            |
 |-------------+------------------------------------|
-| tt143       | T=2s                               |
-| tt144       | T=3s                               |
-| tt145       | T=0.25s                            |
+| tt145       | T=2s                               |
 | tt146       | T=3s                               |
-| tt147       | T=7s                               |
-| t148        | Storage Unit Right Limit Switch    |
-| t149        | Storage Unit Inferior Limit Switch |
-| t150        |                                    |
-| t151        | COUNTER1<28                        |
-| t152        | COUNTER1=28                        |
+| tt147       | T=0.25s                            |
+| tt148       | T=3s                               |
+| tt149       | T=7s                               |
+| t150        | Storage Unit Right Limit Switch    |
+| t151        | Storage Unit Inferior Limit Switch |
+| t152        |                                    |
+| t153        | COUNTER1<28                        |
+| t154        | COUNTER1=28                        |
 
