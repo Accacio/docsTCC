@@ -138,12 +138,12 @@ digraph A {
 # }
 ep28
 ep107
-ep144
-et149
+ep138
+et152
 
 
 t19 -> ep28
 t19 -> ep107
-t19 -> ep144
-et149 -> p0m1
+t19 -> ep138
+et152 -> p0m1
 }
