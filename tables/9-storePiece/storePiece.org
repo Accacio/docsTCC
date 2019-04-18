@@ -2,28 +2,28 @@
 #+ATTR_LATEX: :caption  \caption{Places from the cube storage module.} :align c|c
 | Places | Meaning                                                             |
 |--------+---------------------------------------------------------------------|
-| p136   | Estender horizontalmente armazenador                                |
-| p137   | Estender horizontalmente armazenador e mover armazenador para baixo |
-| p138   | Estender horizontalmente armazenador                                |
-| p139   | Peça armazenada                                                     |
-| p140   | Mover armazenador para a direita                                    |
-| p141   | Armazenador pronto na horizontal                                    |
-| p142   | Mover armazenador para baixo                                        |
-| p143   | Armazenador pronto na vertical                                      |
-| p144   |                                                                     |
-| p145   | Armazenador pronto                                                  |
+| p130   | Extend horizontalmente armazenador                                  |
+| p131   | Estender horizontalmente armazenador e mover armazenador para baixo |
+| p132   | Estender horizontalmente armazenador                                |
+| p133   | Piece Stored                                                        |
+| p134   | Move Storage Unit to the Right                                      |
+| p135   | Storage Unit Ready ( horizontal )                                   |
+| p136   | Move Storage Unit Downwards                                         |
+| p137   | Storage Unit Ready ( vertical )                                     |
+| p138   |                                                                     |
+| p139   | Storage Unit Ready                                                  |
 
 #+ATTR_LATEX: :caption  \caption{Transitions from the cube storage module.} :align c|c
-| Transitions | Meaning                              |
-|-------------+--------------------------------------|
-| tt140       | T=2s                                 |
-| tt141       | T=3s                                 |
-| tt142       | T=0.25s                              |
-| tt143       | T=3s                                 |
-| tt144       | T=7s                                 |
-| t145        | Fim de curso direito do armazenador  |
-| t146        | Fim de curso inferior do armazenador |
-| t147        |                                      |
-| t148        | COUNTER1<28                          |
-| t149        | COUNTER1=28                          |
+| Transitions | Meaning                            |
+|-------------+------------------------------------|
+| tt143       | T=2s                               |
+| tt144       | T=3s                               |
+| tt145       | T=0.25s                            |
+| tt146       | T=3s                               |
+| tt147       | T=7s                               |
+| t148        | Storage Unit Right Limit Switch    |
+| t149        | Storage Unit Inferior Limit Switch |
+| t150        |                                    |
+| t151        | COUNTER1<28                        |
+| t152        | COUNTER1=28                        |
 
