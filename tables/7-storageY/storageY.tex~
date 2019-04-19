@@ -1,7 +1,7 @@
 \begin{table}[htbp]
 \caption{Lugares do Módulo armazenador y}
 \centering
-\begin{tabular}{ll}
+\begin{tabular}{c|c}
 Places & Meaning\\
 \hline
 \hyperlink{partialNet:p108}{\hypertarget{partialTable:p108}{$p_{108}$}} & cubo no armazenador\\
@@ -22,7 +22,7 @@ Places & Meaning\\
 \begin{table}[htbp]
 \caption{Transições do Módulo armazenador y}
 \centering
-\begin{tabular}{ll}
+\begin{tabular}{c|c}
 Transitions & Meaning\\
 \hline
 \hyperlink{partialNet:tt105}{\hypertarget{partialTable:tt105}{$t_{105}$}} & T=2s\\

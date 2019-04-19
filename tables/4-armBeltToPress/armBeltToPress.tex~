@@ -1,7 +1,7 @@
 \begin{table}[htbp]
 \caption{Lugares do Módulo Braço Esteira Prensa}
 \centering
-\begin{tabular}{ll}
+\begin{tabular}{c|c}
 Places & Meaning\\
 \hline
 \hyperlink{partialNet:p74}{\hypertarget{partialTable:p74}{$p_{74}$}} & Estender verticalmente o braço\\
@@ -23,7 +23,7 @@ Places & Meaning\\
 \begin{table}[htbp]
 \caption{Transições do Módulo Braço Esteira Prensa}
 \centering
-\begin{tabular}{ll}
+\begin{tabular}{c|c}
 Transitions & Meaning\\
 \hline
 \hyperlink{partialNet:t72}{\hypertarget{partialTable:t72}{$t_{72}$}} & Sensor vertical braço estendido\\

@@ -1,7 +1,7 @@
 \begin{table}[htbp]
 \caption{Places from the cube storage module.}
 \centering
-\begin{tabular}{ll}
+\begin{tabular}{c|c}
 Places & Meaning\\
 \hline
 \hyperlink{partialNet:p136}{\hypertarget{partialTable:p136}{$p_{136}$}} & Estender horizontalmente armazenador\\
@@ -20,7 +20,7 @@ Places & Meaning\\
 \begin{table}[htbp]
 \caption{Transitions from the cube storage module.}
 \centering
-\begin{tabular}{ll}
+\begin{tabular}{c|c}
 Transitions & Meaning\\
 \hline
 \hyperlink{partialNet:tt140}{\hypertarget{partialTable:tt140}{$t_{140}$}} & T=2s\\

@@ -1,7 +1,7 @@
 \begin{table}[htbp]
 \caption{Lugares do Módulo braço prensa armazenador}
 \centering
-\begin{tabular}{ll}
+\begin{tabular}{c|c}
 Places & Meaning\\
 \hline
 \hyperlink{partialNet:p96}{\hypertarget{partialTable:p96}{$p_{96}$}} & Estender horizontalmente o braço e Ligar Vácuo\\
@@ -22,7 +22,7 @@ Places & Meaning\\
 \begin{table}[htbp]
 \caption{Transições do Módulo braço prensa armazenador}
 \centering
-\begin{tabular}{ll}
+\begin{tabular}{c|c}
 Transitions & Meaning\\
 \hline
 \hyperlink{partialNet:tt94}{\hypertarget{partialTable:tt94}{$t_{94}$}} & T=1.5s e Sensor vertical braço retraído\\

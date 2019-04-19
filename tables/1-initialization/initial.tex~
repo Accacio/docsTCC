@@ -4,7 +4,7 @@
 \begin{tabular}{c|c}
 Places & Meaning\\
 \hline
-\hyperlink{partialNet:p0}{\hypertarget{partialTable:p0}{$p_{0}$}} & System Stopped\\
+\hyperlink{partialNet:p0}{\hypertarget{partialTable:p0m1}{$p_{0}$}} & System Stopped\\
 \hyperlink{partialNet:p1}{\hypertarget{partialTable:p1}{$p_{1}$}} & Retract MAG 1 Cylinder *\\
 \hyperlink{partialNet:p2}{\hypertarget{partialTable:p2}{$p_{2}$}} & MAG1's Cylinder Retracted\\
 \hyperlink{partialNet:p3}{\hypertarget{partialTable:p3}{$p_{3}$}} & Retract MAG 2 Cylinder *\\
@@ -29,16 +29,16 @@ Places & Meaning\\
 \hyperlink{partialNet:p22}{\hypertarget{partialTable:p22}{$p_{22}$}} & Armazenador pronto na vertical\\
 \hyperlink{partialNet:p23}{\hypertarget{partialTable:p23}{$p_{23}$}} & Girar braço sentido antihorário\footnotemark\\
 \hyperlink{partialNet:p24}{\hypertarget{partialTable:p24}{$p_{24}$}} & Braço parado\\
-\hyperlink{partialNet:p25}{\hypertarget{partialTable:p25}{$p_{25}$}} & Girar braço sentido horário\textsuperscript{\ref{org4465f90}} e Habilita HSC\\
+\hyperlink{partialNet:p25}{\hypertarget{partialTable:p25}{$p_{25}$}} & Girar braço sentido horário\textsuperscript{\ref{org0f5bd23}} e Habilita HSC\\
 \hyperlink{partialNet:p26}{\hypertarget{partialTable:p26}{$p_{26}$}} & Braço parado frente a esteira\\
 \hyperlink{partialNet:p27}{\hypertarget{partialTable:p27}{$p_{27}$}} & Sistema Pronto\\
 \end{tabular}
-\end{table}\footnotetext[1]{\label{org27ea0ce}Variáveis IEC\(_{\text{COUNTER}}\), IEC\(_{\text{COUNTER1}}\), IEC\(_{\text{COUNTER2}}\), IEC\(_{\text{COUNTER3}}\), IEC\(_{\text{COUNTER4}}\), IEC\(_{\text{COUNTER5}}\).}\footnotetext[2]{\label{org4465f90}Verificar sentido de rotação do braço.}
+\end{table}\footnotetext[1]{\label{org3589211}Variáveis IEC\(_{\text{COUNTER}}\), IEC\(_{\text{COUNTER1}}\), IEC\(_{\text{COUNTER2}}\), IEC\(_{\text{COUNTER3}}\), IEC\(_{\text{COUNTER4}}\), IEC\(_{\text{COUNTER5}}\).}\footnotetext[2]{\label{org0f5bd23}Verificar sentido de rotação do braço.}
 
 \begin{table}[htbp]
 \caption{Transições do Módulo de Inicialização}
 \centering
-\begin{tabular}{ll}
+\begin{tabular}{c|c}
 Transitions & Meaning\\
 \hyperlink{partialNet:t0}{\hypertarget{partialTable:t0}{$t_{0}$}} & Botão de inicialização\\
 \hyperlink{partialNet:t1}{\hypertarget{partialTable:t1}{$t_{1}$}} & Sensor MAG 1 Retraído\\

@@ -1,7 +1,7 @@
 \begin{table}[htbp]
 \caption{Lugares do Módulo 2 pt 2}
 \centering
-\begin{tabular}{ll}
+\begin{tabular}{c|c}
 Places & Meaning\\
 \hline
 \hyperlink{partialNet:p51}{\hypertarget{partialTable:p51}{$p_{51}$}} & Mag2 vazio\\
@@ -33,7 +33,7 @@ Places & Meaning\\
 \begin{table}[htbp]
 \caption{Transições do Módulo 2 pt 2}
 \centering
-\begin{tabular}{ll}
+\begin{tabular}{c|c}
 Transitions & Meaning\\
 \hline
 \hyperlink{partialNet:t46}{\hypertarget{partialTable:t46}{$t_{46}$}} & \(\overline{\mbox{Sensor Chave de Presença de Peça Mag2}}\)\\

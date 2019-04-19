@@ -14,7 +14,7 @@ p6 & Right Discharge Cylinder Retracted\\
 p7 & Retract Center Discharge Cylinder\\
 p8 & Center Discharge Cylinder Retracted\\
 p9 & Retract Left Discharge Cylinder *\\
-p10 & Left Dischange Cylinder Retracted\\
+p10 & Left Discharge Cylinder Retracted\\
 p11 & Turn Conveyor Belt On (Reverse)\\
 p12 & No Pieces On Conveyor Belt\\
 p13 & Reset Variables\footnotemark\\
@@ -22,36 +22,36 @@ p14 & Retract Joining Cylinder\\
 p15 & Open Safety Door\\
 p16 & Extend Assembly Unit Holder\\
 p17 & Assembly Unit Ready\\
-p18 & Arm Retracted and Storage Device Retracted On The Z Axis\\
-p19 & Move armazenador para direita\\
-p20 & Armazenador pronto na horizontal\\
-p21 & Mover armazenador para baixo\\
-p22 & Armazenador pronto na vertical\\
-p23 & Girar braço sentido antihorário\footnotemark\\
-p24 & Braço parado\\
-p25 & Girar braço sentido horário\textsuperscript{\ref{orgc4af6e5}} e Habilita HSC\\
-p26 & Braço parado frente a esteira\\
-p27 & Sistema Pronto\\
+p18 & Arm Lowered and Retracted, and Storage Device Retracted On The Z Axis\\
+p19 & Move Storage Device to the Right\\
+p20 & Storage Device ready ( horizontal )\\
+p21 & Move Storage Device Downwards\\
+p22 & Storage Device ready ( vertical )\\
+p23 & Rotate Arm CCW\\
+p24 & Arm Stopped\\
+p25 & Rotate Arm CW e Turn HSC ON\\
+p26 & Arm Stopped ( facing conveyor belt )\\
+p27 & System Ready\\
 \end{tabular}
-\end{table}\footnotetext[1]{\label{orgfec5123}Variáveis IEC\(_{\text{COUNTER}}\), IEC\(_{\text{COUNTER1}}\), IEC\(_{\text{COUNTER2}}\), IEC\(_{\text{COUNTER3}}\), IEC\(_{\text{COUNTER4}}\), IEC\(_{\text{COUNTER5}}\).}\footnotetext[2]{\label{orgc4af6e5}Verificar sentido de rotação do braço.}
+\end{table}\footnotetext[1]{\label{org5d9c410}Variáveis IEC\(_{\text{COUNTER}}\), IEC\(_{\text{COUNTER1}}\), IEC\(_{\text{COUNTER2}}\), IEC\(_{\text{COUNTER3}}\), IEC\(_{\text{COUNTER4}}\), IEC\(_{\text{COUNTER5}}\).}
 
 \begin{table}[htbp]
 \caption{Transições do Módulo de Inicialização}
 \centering
 \begin{tabular}{c|c}
 Transitions & Meaning\\
-t0 & Botão de inicialização\\
-t1 & Sensor MAG 1 Retraído\\
-t2 & Sensor MAG 2 Retraído\\
-t3 & Sensor pistão de descarte D Retraído\\
-t4 & Sensor pistão de descarte C Retraído\\
-t5 & Sensor pistão de descarte E Retraído\\
+t0 & Initialization Button\\
+t1 & Sensor MAG 1 Cylinder Retracted\\
+t2 & Sensor MAG 2 Cylinder Retracted\\
+t3 & Sensor Right Discharge Cylinder Retracted\\
+t4 & Sensor Center Discharge Cylinder Retracted\\
+t5 & Sensor Left Discharge Cylinder Retracted\\
 t6 & \\
 tt7 & T=15s\\
 tt8 & T=2.5s\\
-t9 & Sensor porta prensa aberta\\
-t10 & Sensor atuador horizontal da prensa estendido\\
-t11 & Sensor Hz armazenador de cubos e braço retraídos\\
+t9 & Sensor Safety Door Opened\\
+t10 & Sensor Assembly Unit Holder Extended\\
+t11 & Sensor Storage Device Retracted and Arm Lowered and Retracted\\
 t12 & Fim de curso direito do armazenador de cubos\\
 t13 & Fim de curso inferior do armazenador de cubos\\
 tt14 & T=2s\\
@@ -212,7 +212,7 @@ p82 & Estender horizontalmente o braço\\
 p83 & Estender vertical e horizontalmente o braço\\
 p84 & Estender verticalmente o braço\\
 p85 & Habilita HSC e Estender verticalmente o braço e Girar Braço no sentido antihorário\\
-p86 & Estender Verticalmente o braço e IEC\(_{\text{COUNTER}}\):=IEC\(_{\text{COUNTER}}\)+1\\
+p86 & Estender Verticalmente o braço e HALFPIECECOUNTER:=HALFPIECECOUNTER+1\\
 \end{tabular}
 \end{table}
 
@@ -232,8 +232,8 @@ tt78 & T=1.5s e Sensor vertical braço estendido\\
 tt79 & T=1.5s e Sensor vertical braço retraído\\
 tt80 & T=1.5s\\
 tt81 & T=1.5s e Sensor vertical braço estendido\\
-t82 & IEC\(_{\text{COUNTER0.DB}}\)=1 e Sensor Hz prensa estendido e porta prensa aberta\\
-tt83 & T=1.5s e IEC\(_{\text{COUNTER0.DB}}\)=0 e Sensor vertical braço estendido\\
+t82 & HALFPIECECOUNTER0=1 e Sensor Hz prensa estendido e porta prensa aberta\\
+tt83 & T=1.5s e HALFPIECECOUNTER=0 e Sensor vertical braço estendido\\
 t84 & Count\_300C.DB.CountVal = \todo{-1690}\\
 t85 & \\
 \end{tabular}
@@ -317,20 +317,19 @@ t104 & Count\_300C.DB.CountVal = \todo{-1690}\\
 \begin{tabular}{c|c}
 Places & Meaning\\
 \hline
-p108 & cubo no armazenador\\
-p109 & mover armazenador para direita\\
+p108 & Cubo On Storage Unit\\
+p109 & Move Storage Unit to the Right\\
 p110 & \\
-p111 & COUNTER3:=COUNTER3+1 mover armazenador para cima\\
-p112 & Reset COUNTER3*\\
-p113 & COUNTER3:=COUNTER3+1 mover armazenador para cima\\
-p114 & Reset COUNTER3*\\
-p115 & COUNTER3:=COUNTER3+1 mover armazenador para cima\\
-p116 & Reset COUNTER3*\\
-p117 & COUNTER3:=COUNTER3+1 mover armazenador para cima\\
-p118 & Reset COUNTER3*\\
-p119 & \\
+p111 & Move Storage Unit Upwards\\
+p112 & Move Storage Unit Upwards\\
+p113 & Move Storage Unit Upwards\\
+p114 & Move Storage Unit Upwards\\
+p115 & COUNTER3:=COUNTER3+1\\
+p116 & RESET COUNTER3*\\
+p117 & \\
 \end{tabular}
 \end{table}
+
 
 \begin{table}[htbp]
 \caption{Transições do Módulo armazenador y}
@@ -342,16 +341,18 @@ tt105 & T=2s\\
 tt106 & T=2s\\
 t107 & COUNTER2=0\\
 t108 & COUNTER3=4\\
-t109 & \\
+t109 & Vertical Encoder\\
 t110 & COUNTER2=1\\
 t111 & COUNTER3=3\\
-t112 & \\
+t112 & Vertical Encoder\\
 t113 & COUNTER2=2\\
 t114 & COUNTER3=2\\
-t115 & \\
+t115 & Vertical Encoder\\
 t116 & COUNTER2=3\\
 t117 & COUNTER3=1\\
-t118 & \\
+t118 & Vertical Encoder\\
+t119 & \\
+t120 & \\
 \end{tabular}
 \end{table}
 \begin{table}[htbp]
@@ -360,22 +361,18 @@ t118 & \\
 \begin{tabular}{c|c}
 Places & Meaning\\
 \hline
-p120 & COUNTER1:=COUNTER1+1 e COUNTER4:=COUNTER4+1\\
-p121 & COUNTER5:=COUNTER5+1 e mover armazenador para a esquerda\\
-p122 & Reset COUNTER5*\\
-p123 & COUNTER5:=COUNTER5+1 e mover armazenador para a esquerda\\
-p124 & Reset COUNTER5*\\
-p125 & COUNTER5:=COUNTER5+1 e mover armazenador para a esquerda\\
-p126 & Reset COUNTER5*\\
-p127 & COUNTER5:=COUNTER5+1 e mover armazenador para a esquerda\\
-p128 & Reset COUNTER5*\\
-p129 & COUNTER5:=COUNTER5+1 e mover armazenador para a esquerda\\
-p130 & Reset COUNTER5*\\
-p131 & COUNTER5:=COUNTER5+1 e mover armazenador para a esquerda\\
-p132 & Reset COUNTER5*\\
-p133 & COUNTER5:=COUNTER5+1 e mover armazenador para a esquerda\\
-p134 & Reset COUNTER5* Reset COUNTER4* , COUNTER2:=COUNTER2+1\\
-p135 & \\
+p118 & COUNTER1:=COUNTER1+1 e COUNTER4:=COUNTER4+1\\
+p119 & Move Storage Unit to the Left\\
+p120 & Move Storage Unit to the Left\\
+p121 & Move Storage Unit to the Left\\
+p122 & Move Storage Unit to the Left\\
+p123 & Move Storage Unit to the Left\\
+p124 & Move Storage Unit to the Left\\
+p125 & Move Storage Unit to the Left\\
+p126 & COUNTER5:=COUNTER5+1\\
+p127 & Reset COUNTER5*\\
+p128 & Reset COUNTER4* , COUNTER2:=COUNTER2+1\\
+p129 & \\
 \end{tabular}
 \end{table}
 
@@ -385,27 +382,30 @@ p135 & \\
 \begin{tabular}{c|c}
 Transitions & Meaning\\
 \hline
-t119 & COUNTER4=0\\
-t120 & COUNTER5=1\\
-t121 & \\
-t122 & COUNTER4=1\\
-t123 & COUNTER5=2\\
-t124 & \\
-t125 & COUNTER4=2\\
-t126 & COUNTER5=3\\
-t127 & \\
-t128 & COUNTER4=3\\
-t129 & COUNTER5=4\\
-t130 & \\
-t131 & COUNTER4=4\\
-t132 & COUNTER5=5\\
-t133 & \\
-t134 & COUNTER4=5\\
-t135 & COUNTER5=8\\
-t136 & \\
-t137 & COUNTER4=6\\
-t138 & COUNTER5=9\\
-t139 & \\
+t121 & COUNTER4=1\\
+t122 & COUNTER5=1\\
+t123 & Horizontal Encoder\\
+t124 & COUNTER4=2\\
+t125 & COUNTER5=2\\
+t126 & Horizontal Encoder\\
+t127 & COUNTER4=3\\
+t128 & COUNTER5=3\\
+t129 & Horizontal Encoder\\
+t130 & COUNTER4=4\\
+t131 & COUNTER5=4\\
+t132 & Horizontal Encoder\\
+t133 & COUNTER4=5\\
+t134 & COUNTER5=5\\
+t135 & Horizontal Encoder\\
+t136 & COUNTER4=6\\
+t137 & COUNTER5=8\\
+t138 & Horizontal Encoder\\
+t139 & COUNTER4=7\\
+t140 & COUNTER5=9\\
+t141 & Horizontal Encoder\\
+t142 & \\
+t143 & \\
+t144 & \\
 \end{tabular}
 \end{table}
 \begin{table}[htbp]
@@ -414,16 +414,16 @@ t139 & \\
 \begin{tabular}{c|c}
 Places & Meaning\\
 \hline
-p136 & Estender horizontalmente armazenador\\
-p137 & Estender horizontalmente armazenador e mover armazenador para baixo\\
-p138 & Estender horizontalmente armazenador\\
-p139 & Peça armazenada\\
-p140 & Mover armazenador para a direita\\
-p141 & Armazenador pronto na horizontal\\
-p142 & Mover armazenador para baixo\\
-p143 & Armazenador pronto na vertical\\
-p144 & \\
-p145 & Armazenador pronto\\
+p130 & Extend horizontalmente armazenador\\
+p131 & Estender horizontalmente armazenador e mover armazenador para baixo\\
+p132 & Estender horizontalmente armazenador\\
+p133 & Piece Stored\\
+p134 & Move Storage Unit to the Right\\
+p135 & Storage Unit Ready ( horizontal )\\
+p136 & Move Storage Unit Downwards\\
+p137 & Storage Unit Ready ( vertical )\\
+p138 & \\
+p139 & Storage Unit Ready\\
 \end{tabular}
 \end{table}
 
@@ -433,15 +433,15 @@ p145 & Armazenador pronto\\
 \begin{tabular}{c|c}
 Transitions & Meaning\\
 \hline
-tt140 & T=2s\\
-tt141 & T=3s\\
-tt142 & T=0.25s\\
-tt143 & T=3s\\
-tt144 & T=7s\\
-t145 & Fim de curso direito do armazenador\\
-t146 & Fim de curso inferior do armazenador\\
-t147 & \\
-t148 & COUNTER1<28\\
-t149 & COUNTER1=28\\
+tt145 & T=2s\\
+tt146 & T=3s\\
+tt147 & T=0.25s\\
+tt148 & T=3s\\
+tt149 & T=7s\\
+t150 & Storage Unit Right Limit Switch\\
+t151 & Storage Unit Inferior Limit Switch\\
+t152 & \\
+t153 & COUNTER1<28\\
+t154 & COUNTER1=28\\
 \end{tabular}
 \end{table}
