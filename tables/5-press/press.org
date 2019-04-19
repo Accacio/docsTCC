@@ -1,26 +1,27 @@
 
-#+ATTR_LATEX: :caption  \caption{Lugares do Módulo prensa cubo} :align c|c
-| Places | Meaning                                        |
-|--------+------------------------------------------------|
-| p87    | Retrair atuador horizontal prensa*             |
-| p88    | Fechar Porta prensa*                           |
-| p89    | Estender atuador vertical prensa*              |
-| p90    | Retrair atuador vertical prensa*               |
-| p91    | Abrir Porta prensa*                            |
-| p92    | Estender atuador horizontal prensa*            |
-| p93    | Cubo pronto                                    |
-| p94    | Estender horizontalmente o braço e Ligar Vácuo |
-| p95    | Estender verticalmente o braço                 |
-|        |                                                |
+#+ATTR_LATEX: :caption  \caption{Assembly Unit Module Places.} :align cc
+| Places | Meaning                        |
+|--------+--------------------------------|
+| p87    | Retract Assembly Unit Holder * |
+| p88    | Close Safety Door *            |
+| p89    | Lower Press *                  |
+| p90    | Raise Press *                  |
+| p91    | Open Safety Door *             |
+| p92    | Extend Assembly Unit Holder *  |
+| p93    | Cube Ready                     |
+| p94    | Extend Arm and Turn Vacuum On  |
+| p95    | Raise Arm                      |
+|        |                                |
 
-#+ATTR_LATEX:caption  \caption{Transições do Módulo prensa cubo} :align c|c
-| Transitions | Meaning                                       |
-|-------------+-----------------------------------------------|
-| tt86        | T=1s e Sensosr horizontal prensa retraído     |
-| tt87        | T=1s e Sensor porta fechada                   |
-| tt88        | T=1s                                          |
-| tt89        | T=1s                                          |
-| tt90        | T=1s e sensor porta aberta                    |
-| tt91        | T=1s e sensor horizontal prensa estendido     |
-| t92         |                                               |
-| tt93        | T=1.5s e Sensor horizontal do braço estendido |
+#+ATTR_LATEX: :caption  \caption{Assembly Unit Module Transitions.} :align cc
+| Transitions | Meaning                                 |
+|-------------+-----------------------------------------|
+| tt86        | T=1s and Assembly Unit Holder Retracted |
+| tt87        | T=1s and Safety Door Closed             |
+| tt88        | T=1s                                    |
+| tt89        | T=1s                                    |
+| tt90        | T=1s and Safety Door Opened             |
+| tt91        | T=1s and Assembly Unit Holder Extended  |
+| t92         |                                         |
+| tt93        | T=1.5s and Arm Extended                 |
+

@@ -1,44 +1,44 @@
 \begin{table}[htbp]
-\caption{Lugares do Módulo Braço Esteira Prensa}
+\caption{Arm From Conveyor Belt to Press Module Places.}
 \centering
-\begin{tabular}{c|c}
+\begin{tabular}{cc}
 Places & Meaning\\
 \hline
-\hyperlink{partialNet:p74}{\hypertarget{partialTable:p74}{$p_{74}$}} & Estender verticalmente o braço\\
-\hyperlink{partialNet:p75}{\hypertarget{partialTable:p75}{$p_{75}$}} & Estender vertical e horizontalmente o braço e Ligar o vácuo\\
-\hyperlink{partialNet:p76}{\hypertarget{partialTable:p76}{$p_{76}$}} & Estender horizontalmente o braço e Ligar o vácuo\\
-\hyperlink{partialNet:p77}{\hypertarget{partialTable:p77}{$p_{77}$}} & Estender vertical e horizontalmente o braço e Ligar o vácuo\\
-\hyperlink{partialNet:p78}{\hypertarget{partialTable:p78}{$p_{78}$}} & Estender verticalmente o braço e Ligar o vácuo\\
-\hyperlink{partialNet:p79}{\hypertarget{partialTable:p79}{$p_{79}$}} & Habilita HSC e Estender verticalmente o braço, Ligar o vácuo e Girar Braço no sentido horário\\
-\hyperlink{partialNet:p80}{\hypertarget{partialTable:p80}{$p_{80}$}} & Estender vertical e horizontalmente o braço e Ligar o vácuo\\
-\hyperlink{partialNet:p81}{\hypertarget{partialTable:p81}{$p_{81}$}} & Estender horizontalmente o braço e Ligar o vácuo\\
-\hyperlink{partialNet:p82}{\hypertarget{partialTable:p82}{$p_{82}$}} & Estender horizontalmente o braço\\
-\hyperlink{partialNet:p83}{\hypertarget{partialTable:p83}{$p_{83}$}} & Estender vertical e horizontalmente o braço\\
-\hyperlink{partialNet:p84}{\hypertarget{partialTable:p84}{$p_{84}$}} & Estender verticalmente o braço\\
-\hyperlink{partialNet:p85}{\hypertarget{partialTable:p85}{$p_{85}$}} & Habilita HSC e Estender verticalmente o braço e Girar Braço no sentido antihorário\\
-\hyperlink{partialNet:p86}{\hypertarget{partialTable:p86}{$p_{86}$}} & Estender Verticalmente o braço e HALFPIECECOUNTER:=HALFPIECECOUNTER+1\\
+\hyperlink{partialNet:p74}{\hypertarget{partialTable:p74}{$p_{74}$}} & Raise Arm\\
+\hyperlink{partialNet:p75}{\hypertarget{partialTable:p75}{$p_{75}$}} & Raise and Extend Arm, and Turn Vacuum On\\
+\hyperlink{partialNet:p76}{\hypertarget{partialTable:p76}{$p_{76}$}} & Extend Arm and Turn Vacuum On\\
+\hyperlink{partialNet:p77}{\hypertarget{partialTable:p77}{$p_{77}$}} & Raise and Extend Arm and Turn Vacuum On\\
+\hyperlink{partialNet:p78}{\hypertarget{partialTable:p78}{$p_{78}$}} & Raise Arm and Turn Vacuum On\\
+\hyperlink{partialNet:p79}{\hypertarget{partialTable:p79}{$p_{79}$}} & Turn HSC On e Raise Arm, Turn Vacuum On and  Rotate Arm CW\\
+\hyperlink{partialNet:p80}{\hypertarget{partialTable:p80}{$p_{80}$}} & Raise and Extend Arm and Turn Vacuum On\\
+\hyperlink{partialNet:p81}{\hypertarget{partialTable:p81}{$p_{81}$}} & Extend Arm and  Turn Vacuum On\\
+\hyperlink{partialNet:p82}{\hypertarget{partialTable:p82}{$p_{82}$}} & Extend Arm\\
+\hyperlink{partialNet:p83}{\hypertarget{partialTable:p83}{$p_{83}$}} & Raise and Extend Arm\\
+\hyperlink{partialNet:p84}{\hypertarget{partialTable:p84}{$p_{84}$}} & Raise Arm\\
+\hyperlink{partialNet:p85}{\hypertarget{partialTable:p85}{$p_{85}$}} & Turn HSC On, Raise Arm and Rotate Arm CCW\\
+\hyperlink{partialNet:p86}{\hypertarget{partialTable:p86}{$p_{86}$}} & Raise Arm and HALFPIECECOUNTER:=HALFPIECECOUNTER+1\\
 \end{tabular}
 \end{table}
 
 \begin{table}[htbp]
-\caption{Transições do Módulo Braço Esteira Prensa}
+\caption{Arm From Conveyor Belt to Press Module Transitions.}
 \centering
-\begin{tabular}{c|c}
+\begin{tabular}{cm{8cm}}
 Transitions & Meaning\\
 \hline
-\hyperlink{partialNet:t72}{\hypertarget{partialTable:t72}{$t_{72}$}} & Sensor vertical braço estendido\\
+\hyperlink{partialNet:t72}{\hypertarget{partialTable:t72}{$t_{72}$}} & Arm Raised\\
 \hyperlink{partialNet:tt73}{\hypertarget{partialTable:tt73}{$t_{73}$}} & T=1.5s\\
-\hyperlink{partialNet:tt74}{\hypertarget{partialTable:tt74}{$t_{74}$}} & T=1.5s e Sensor vertical braço retraído\\
-\hyperlink{partialNet:tt75}{\hypertarget{partialTable:tt75}{$t_{75}$}} & T=1.5s e Sensor vertical braço estendido\\
-\hyperlink{partialNet:tt76}{\hypertarget{partialTable:tt76}{$t_{76}$}} & T=1.5s e Sensor vertical braço estendido\\
-\hyperlink{partialNet:t77}{\hypertarget{partialTable:t77}{$t_{77}$}} & Count\_300C.DB.CountVal = \todo{-3330}\\
-\hyperlink{partialNet:tt78}{\hypertarget{partialTable:tt78}{$t_{78}$}} & T=1.5s e Sensor vertical braço estendido\\
-\hyperlink{partialNet:tt79}{\hypertarget{partialTable:tt79}{$t_{79}$}} & T=1.5s e Sensor vertical braço retraído\\
+\hyperlink{partialNet:tt74}{\hypertarget{partialTable:tt74}{$t_{74}$}} & T=1.5s and Arm Lowered\\
+\hyperlink{partialNet:tt75}{\hypertarget{partialTable:tt75}{$t_{75}$}} & T=1.5s and Arm Raised\\
+\hyperlink{partialNet:tt76}{\hypertarget{partialTable:tt76}{$t_{76}$}} & T=1.5s and Arm Raised\\
+\hyperlink{partialNet:t77}{\hypertarget{partialTable:t77}{$t_{77}$}} & ARMCOUNTER = \todo{-3330}\\
+\hyperlink{partialNet:tt78}{\hypertarget{partialTable:tt78}{$t_{78}$}} & T=1.5s and Arm Raised\\
+\hyperlink{partialNet:tt79}{\hypertarget{partialTable:tt79}{$t_{79}$}} & T=1.5s and Arm Lowered\\
 \hyperlink{partialNet:tt80}{\hypertarget{partialTable:tt80}{$t_{80}$}} & T=1.5s\\
-\hyperlink{partialNet:tt81}{\hypertarget{partialTable:tt81}{$t_{81}$}} & T=1.5s e Sensor vertical braço estendido\\
-\hyperlink{partialNet:t82}{\hypertarget{partialTable:t82}{$t_{82}$}} & HALFPIECECOUNTER0=1 e Sensor Hz prensa estendido e porta prensa aberta\\
-\hyperlink{partialNet:tt83}{\hypertarget{partialTable:tt83}{$t_{83}$}} & T=1.5s e HALFPIECECOUNTER=0 e Sensor vertical braço estendido\\
-\hyperlink{partialNet:t84}{\hypertarget{partialTable:t84}{$t_{84}$}} & Count\_300C.DB.CountVal = \todo{-1690}\\
+\hyperlink{partialNet:tt81}{\hypertarget{partialTable:tt81}{$t_{81}$}} & T=1.5s and Arm Raised\\
+\hyperlink{partialNet:t82}{\hypertarget{partialTable:t82}{$t_{82}$}} & HALFPIECECOUNTER=1, Assembly Unit Holder Extended and Safety Door Opened\\
+\hyperlink{partialNet:tt83}{\hypertarget{partialTable:tt83}{$t_{83}$}} & T=1.5s, HALFPIECECOUNTER=0 and Raised Arm\\
+\hyperlink{partialNet:t84}{\hypertarget{partialTable:t84}{$t_{84}$}} & ARMCOUNTER = \todo{-1690}\\
 \hyperlink{partialNet:t85}{\hypertarget{partialTable:t85}{$t_{85}$}} & \\
 \end{tabular}
 \end{table}

@@ -1,8 +1,8 @@
 
-#+ATTR_LATEX: :caption  \caption{Lugares do Módulo armazenador y} :align c|c
+#+ATTR_LATEX: :caption  \caption{Storage Unit (Y axis) Module Places.} :align cc
 | Places | Meaning                        |
 |--------+--------------------------------|
-| p108   | Cubo On Storage Unit           |
+| p108   | Cube on Storage Unit           |
 | p109   | Move Storage Unit to the Right |
 | p110   |                                |
 | p111   | Move Storage Unit Upwards      |
@@ -14,7 +14,7 @@
 | p117   |                                |
 
 
-#+ATTR_LATEX: :caption  \caption{Transições do Módulo armazenador y} :align c|c
+#+ATTR_LATEX: :caption  \caption{Storage Unit (Y axis) Module Transitions.} :align cc
 | Transitions | Meaning          |
 |-------------+------------------|
 | tt105       | T=2s             |

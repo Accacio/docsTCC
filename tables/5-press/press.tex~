@@ -1,24 +1,26 @@
 \begin{table}[htbp]
-\caption{Lugares do Módulo prensa cubo}
+\caption{Assembly Unit Module Places.}
 \centering
-\begin{tabular}{c|c}
+\begin{tabular}{cc}
 Places & Meaning\\
 \hline
-\hyperlink{partialNet:p87}{\hypertarget{partialTable:p87}{$p_{87}$}} & Retrair atuador horizontal prensa*\\
-\hyperlink{partialNet:p88}{\hypertarget{partialTable:p88}{$p_{88}$}} & Fechar Porta prensa*\\
-\hyperlink{partialNet:p89}{\hypertarget{partialTable:p89}{$p_{89}$}} & Estender atuador vertical prensa*\\
-\hyperlink{partialNet:p90}{\hypertarget{partialTable:p90}{$p_{90}$}} & Retrair atuador vertical prensa*\\
-\hyperlink{partialNet:p91}{\hypertarget{partialTable:p91}{$p_{91}$}} & Abrir Porta prensa*\\
-\hyperlink{partialNet:p92}{\hypertarget{partialTable:p92}{$p_{92}$}} & Estender atuador horizontal prensa*\\
-\hyperlink{partialNet:p93}{\hypertarget{partialTable:p93}{$p_{93}$}} & Cubo pronto\\
-\hyperlink{partialNet:p94}{\hypertarget{partialTable:p94}{$p_{94}$}} & Estender horizontalmente o braço e Ligar Vácuo\\
-\hyperlink{partialNet:p95}{\hypertarget{partialTable:p95}{$p_{95}$}} & Estender verticalmente o braço\\
+\hyperlink{partialNet:p87}{\hypertarget{partialTable:p87}{$p_{87}$}} & Retract Assembly Unit Holder *\\
+\hyperlink{partialNet:p88}{\hypertarget{partialTable:p88}{$p_{88}$}} & Close Safety Door *\\
+\hyperlink{partialNet:p89}{\hypertarget{partialTable:p89}{$p_{89}$}} & Lower Press *\\
+\hyperlink{partialNet:p90}{\hypertarget{partialTable:p90}{$p_{90}$}} & Raise Press *\\
+\hyperlink{partialNet:p91}{\hypertarget{partialTable:p91}{$p_{91}$}} & Open Safety Door *\\
+\hyperlink{partialNet:p92}{\hypertarget{partialTable:p92}{$p_{92}$}} & Extend Assembly Unit Holder *\\
+\hyperlink{partialNet:p93}{\hypertarget{partialTable:p93}{$p_{93}$}} & Cube Ready\\
+\hyperlink{partialNet:p94}{\hypertarget{partialTable:p94}{$p_{94}$}} & Extend Arm and Turn Vacuum On\\
+\hyperlink{partialNet:p95}{\hypertarget{partialTable:p95}{$p_{95}$}} & Raise Arm\\
  & \\
 \end{tabular}
 \end{table}
 
-\begin{center}
-\begin{tabular}{c|c}
+\begin{table}[htbp]
+\caption{Assembly Unit Module Transitions.}
+\centering
+\begin{tabular}{cc}
 Transitions & Meaning\\
 \hline
 \hyperlink{partialNet:tt86}{\hypertarget{partialTable:tt86}{$t_{86}$}} & T=1s e Sensosr horizontal prensa retraído\\
@@ -30,4 +32,4 @@ Transitions & Meaning\\
 \hyperlink{partialNet:t92}{\hypertarget{partialTable:t92}{$t_{92}$}} & \\
 \hyperlink{partialNet:tt93}{\hypertarget{partialTable:tt93}{$t_{93}$}} & T=1.5s e Sensor horizontal do braço estendido\\
 \end{tabular}
-\end{center}
+\end{table}

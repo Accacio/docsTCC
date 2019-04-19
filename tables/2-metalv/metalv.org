@@ -1,57 +1,57 @@
 
-#+ATTR_LATEX: :caption \caption{Lugares do Módulo 2 pt 1} :align c|c
-| Places | Meaning                        |
-|--------+--------------------------------|
-| p28 | Mag1 vazio                     |
-| p29 | Mag1 com peça                  |
-| p30 | Estender Mag1 Horizontal*      |
-| p31 | Retrair Mag1 Horizontal*       |
-| p32 | Mag1 Horizontal retraído       |
-| p33 | Ligar esteira sentido normal   |
-| p34 |                                |
-| p35 | Peça de Plástico               |
-| p36 | Ligar esteira sentido normal   |
-| p37 | Estender Pistão de descarte D* |
-| p38 | Retrair Pistão de descarte D*  |
-| p39 | Ligar esteira sentido normal   |
-| p40 | Estender Pistão de descarte C* |
-| p41 | Retrair Pistão de descarte C*  |
-| p42 |                                |
-| p43 | Peça de Metal                  |
-| p44 | Ligar esteira sentido normal   |
-| p45 | Estender Pistão de descarte E* |
-| p46 | Retrair Pistão de descarte E*  |
-| p47 | Ligar esteira sentido normal   |
-| p48 | Ligar esteira sentido normal   |
-| p49 | Peça Metal Pronta              |
-| p50 | Esteira Parada                 |
+#+ATTR_LATEX: :caption \caption{Metal Half-cube Selection Module Places.} :align cc
+| Places | Meaning                             |
+|--------+-------------------------------------|
+| p28    | MAG1 Empty                          |
+| p29    | MAG1 Not Empty                      |
+| p30    | Extend MAG1's Cylinder *            |
+| p31    | Retract MAG1's Cylinder *           |
+| p32    | MAG1's Cylinder Retracted           |
+| p33    | Turn Conveyor Belt On               |
+| p34    |                                     |
+| p35    | Plastic Half-cube                   |
+| p36    | Turn Conveyor Belt On               |
+| p37    | Extend Right Discharge Cylinder *   |
+| p38    | Retract Right Discharge Cylinder *  |
+| p39    | Turn Conveyor Belt On               |
+| p40    | Extend Center Discharge Cylinder *  |
+| p41    | Retract Center Discharge Cylinder * |
+| p42    |                                     |
+| p43    | Metal Half-cube                     |
+| p44    | Turn Conveyor Belt On               |
+| p45    | Extend Left Discharge Cylinder *    |
+| p46    | Retract Left Discharge Cylinder *   |
+| p47    | Turn Conveyor Belt On               |
+| p48    | Turn Conveyor Belt On               |
+| p49    | Metal Half-cube Ready               |
+| p50    | Conveyor Belt Stopped               |
 
-#+ATTR_LATEX: :caption  \caption{Transições do Módulo 2 pt 1} :align c|c
-| Transitions | Meaning                                                   |
-|-------------+-----------------------------------------------------------|
-| t20      | $\overline{\mbox{Sensor Chave de Presença de Peça Mag1}}$ |
-| t21      |                                                           |
-| t22      | Mag1 Horizontal estendido \uparrow                        |
-| t23      | Mag1 Horizontal retraído \uparrow                         |
-| tt24     | T=0.5s                                                    |
-| tt25     | Presença \uparrow T=0.5s                                  |
-| t26      | $\overline{\mbox{Sensor Metal}}$                          |
-| t27      | Sensor Preto                                              |
-| t28      | Presença Pistão de D \uparrow                             |
-| t29      | Sensor pistão de descarte D estendido                     |
-| t30      | Sensor pistão de descarte D retraído                      |
-| t31      | Sensor Branco                                             |
-| t32      | Presença Pistão de C \uparrow                             |
-| t33      | Sensor pistão de descarte C estendido                     |
-| t34      | Sensor pistão de descarte C retraído                      |
-| t35      | Sensor Metal                                              |
-| t36      | Sensor peça concavidade para baixo                        |
-| t37      | Presença Pistão de E \uparrow                             |
-| t38      | Sensor pistão de descarte E estendido                     |
-| t39      | Sensor pistão de descarte E retraído                      |
-| t40      |                                                           |
-| t41      | Sensor peça concavidade para cima                         |
-| t42      | Sensor final da esteira \uparrow                          |
-| tt43     | T=0.5s                                                    |
-| t44      | Sensor final da esteira \downarrow                        |
-| t45      |                                                           |
+#+ATTR_LATEX: :caption  \caption{Metal Half-cube Selection Module Transitions.} :align cc
+| Transitions | Meaning                                             |
+|-------------+-----------------------------------------------------|
+| t20         | $\overline{\mbox{MAG1 Empty}}$                      |
+| t21         |                                                     |
+| t22         | MAG1's Cylinder Extended \uparrow                   |
+| t23         | MAG1's Cylinder Retracted \uparrow                  |
+| tt24        | T=0.5s                                              |
+| tt25        | Presence \uparrow T=0.5s                            |
+| t26         | $\overline{\mbox{Metallic Sensor}}$                 |
+| t27         | $\overline{\mbox{White Color Sensor}}$              |
+| t28         | Proximity Sensor Left Discharge Cylinder \uparrow   |
+| t29         | Right Discharge Cylinder Extended                   |
+| t30         | Right Discharge Cylinder Retracted                  |
+| t31         | White Color Sensor                                  |
+| t32         | Proximity Sensor Center Discharge Cylinder \uparrow |
+| t33         | Center Discharge Cylinder Extended                  |
+| t34         | Center Discharge Cylinder Retracted                 |
+| t35         | Metallic Sensor                                     |
+| t36         | Concavity Downwards                                 |
+| t37         | Proximity Sensor Left Discharge Cylinder \uparrow   |
+| t38         | Left Discharge Cylinder Extended                    |
+| t39         | Left Discharge Cylinder Retracted                   |
+| t40         |                                                     |
+| t41         | Concavity Upwards                                 |
+| t42         | Proximity Sensor End Of Conveyor Belt \uparrow      |
+| tt43        | T=0.5s                                              |
+| t44         | Proximity Sensor End Of Conveyor Belt \downarrow    |
+| t45         |                                                     |

@@ -1,36 +1,36 @@
 
-#+ATTR_LATEX: :caption  \caption{Lugares do Módulo Braço Esteira Prensa} :align c|c
-| Places | Meaning                                                                                       |
-|--------+-----------------------------------------------------------------------------------------------|
-| p74 | Estender verticalmente o braço                                                                |
-| p75 | Estender vertical e horizontalmente o braço e Ligar o vácuo                                   |
-| p76 | Estender horizontalmente o braço e Ligar o vácuo                                              |
-| p77 | Estender vertical e horizontalmente o braço e Ligar o vácuo                                   |
-| p78 | Estender verticalmente o braço e Ligar o vácuo                                                |
-| p79 | Habilita HSC e Estender verticalmente o braço, Ligar o vácuo e Girar Braço no sentido horário |
-| p80 | Estender vertical e horizontalmente o braço e Ligar o vácuo                                   |
-| p81 | Estender horizontalmente o braço e Ligar o vácuo                                              |
-| p82 | Estender horizontalmente o braço                                                              |
-| p83 | Estender vertical e horizontalmente o braço                                                   |
-| p84 | Estender verticalmente o braço                                                                |
-| p85 | Habilita HSC e Estender verticalmente o braço e Girar Braço no sentido antihorário            |
-| p86 | Estender Verticalmente o braço e HALFPIECECOUNTER:=HALFPIECECOUNTER+1                                   |
+#+ATTR_LATEX: :caption  \caption{Arm From Conveyor Belt to Press Module Places.} :align cc
+| Places | Meaning                                                    |
+|--------+------------------------------------------------------------|
+| p74    | Raise Arm                                                  |
+| p75    | Raise and Extend Arm, and Turn Vacuum On                   |
+| p76    | Extend Arm and Turn Vacuum On                              |
+| p77    | Raise and Extend Arm and Turn Vacuum On                    |
+| p78    | Raise Arm and Turn Vacuum On                               |
+| p79    | Turn HSC On e Raise Arm, Turn Vacuum On and  Rotate Arm CW |
+| p80    | Raise and Extend Arm and Turn Vacuum On                    |
+| p81    | Extend Arm and  Turn Vacuum On                             |
+| p82    | Extend Arm                                                 |
+| p83    | Raise and Extend Arm                                       |
+| p84    | Raise Arm                                                  |
+| p85    | Turn HSC On, Raise Arm and Rotate Arm CCW                  |
+| p86    | Raise Arm and HALFPIECECOUNTER:=HALFPIECECOUNTER+1         |
 
-#+ATTR_LATEX: :caption  \caption{Transições do Módulo Braço Esteira Prensa} :align c|c
-| Transitions | Meaning                                                              |
-|-------------+----------------------------------------------------------------------|
-| t72      | Sensor vertical braço estendido                                      |
-| tt73     | T=1.5s                                                               |
-| tt74     | T=1.5s e Sensor vertical braço retraído                              |
-| tt75     | T=1.5s e Sensor vertical braço estendido                             |
-| tt76     | T=1.5s e Sensor vertical braço estendido                             |
-| t77      | Count\under{}300C.DB.CountVal = \todo{-3330}                         |
-| tt78     | T=1.5s e Sensor vertical braço estendido                             |
-| tt79     | T=1.5s e Sensor vertical braço retraído                              |
-| tt80     | T=1.5s                                                               |
-| tt81     | T=1.5s e Sensor vertical braço estendido                             |
-| t82      | HALFPIECECOUNTER0=1 e Sensor Hz prensa estendido e porta prensa aberta |
-| tt83     | T=1.5s e HALFPIECECOUNTER=0 e Sensor vertical braço estendido         |
-| t84      | Count\under{}300C.DB.CountVal = \todo{-1690}                         |
-| t85      |                                                                      |
+#+ATTR_LATEX: :caption  \caption{Arm From Conveyor Belt to Press Module Transitions.} :align cm{8cm}
+| Transitions | Meaning                                                                  |
+|-------------+--------------------------------------------------------------------------|
+| t72         | Arm Raised                                                               |
+| tt73        | T=1.5s                                                                   |
+| tt74        | T=1.5s and Arm Lowered                                                   |
+| tt75        | T=1.5s and Arm Raised                                                    |
+| tt76        | T=1.5s and Arm Raised                                                    |
+| t77         | ARMCOUNTER = \todo{-3330}                                                |
+| tt78        | T=1.5s and Arm Raised                                                    |
+| tt79        | T=1.5s and Arm Lowered                                                   |
+| tt80        | T=1.5s                                                                   |
+| tt81        | T=1.5s and Arm Raised                                                    |
+| t82         | HALFPIECECOUNTER=1, Assembly Unit Holder Extended and Safety Door Opened |
+| tt83        | T=1.5s, HALFPIECECOUNTER=0 and Raised Arm                                |
+| t84         | ARMCOUNTER = \todo{-1690}                                                |
+| t85         |                                                                          |
 

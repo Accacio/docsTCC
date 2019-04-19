@@ -1,13 +1,16 @@
 all: clean
 	cp *.pdf ../
 
-tables: table/initial table/metal table/plastic table/armBeltToPress table/press table/armPressToStorage table/storageY table/storageX table/storePiece table/complete
+tables: table/initial table/metalv table/plastic table/armBeltToPress table/press table/armPressToStorage table/storageY table/storageX table/storePiece table/complete
+
+watchTables:
+	inotifywait -qm --event modify --format %w ../../tables/*/*.org | while read line; do make "table/$$(basename $${line%.*})"; done
 
 table/initial:
 	@emacs ../../tables/1-initialization/initial.org --batch --eval="(org-latex-export-to-latex nil nil nil t)" --kill;
 	linkTables ../../tables/1-initialization/initial.tex
 
-table/metal:
+table/metalv:
 	@emacs ../../tables/2-metalv/metalv.org --batch --eval="(org-latex-export-to-latex nil nil nil t)" --kill;
 	linkTables ../../tables/2-metalv/metalv.tex
 
@@ -42,13 +45,16 @@ table/storePiece:
 table/complete:
 	@emacs ../../tables/completo/completo.org --batch --eval="(org-latex-export-to-latex nil nil nil t)" --kill;
 
-petriNets: petriNet/initial petriNet/metal petriNet/plastic petriNet/armBeltToPress petriNet/press petriNet/armPressToStorage petriNet/storageY petriNet/storageX petriNet/storePiece 
+petriNets: petriNet/initial petriNet/metalv petriNet/plastic petriNet/armBeltToPress petriNet/press petriNet/armPressToStorage petriNet/storageY petriNet/storageX petriNet/storePiece 
+
+watchpetriNets:
+	inotifywait -qm --event modify --format %w ../../figures/petriNets/dot/*/*.dot | while read line; do make "petriNet/$$(basename $${line%.*})"; done
 
 petriNet/initial:
 	dot2petri ../../figures/petriNets/dot/1-initialization/initial.dot -py
 	linkPetriNets ../../figures/petriNets/dot/1-initialization/initial.tex
 
-petriNet/metal:
+petriNet/metalv:
 	dot2petri ../../figures/petriNets/dot/2-metalv/metalv.dot -py
 	linkPetriNets ../../figures/petriNets/dot/2-metalv/metalv.tex
 

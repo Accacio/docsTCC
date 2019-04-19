@@ -1,37 +1,37 @@
 \begin{table}[htbp]
-\caption{Places from the cube storage module.}
+\caption{Cube Storage Module Places.}
 \centering
-\begin{tabular}{c|c}
+\begin{tabular}{cc}
 Places & Meaning\\
 \hline
-\hyperlink{partialNet:p136}{\hypertarget{partialTable:p136}{$p_{136}$}} & Estender horizontalmente armazenador\\
-\hyperlink{partialNet:p137}{\hypertarget{partialTable:p137}{$p_{137}$}} & Estender horizontalmente armazenador e mover armazenador para baixo\\
-\hyperlink{partialNet:p138}{\hypertarget{partialTable:p138}{$p_{138}$}} & Estender horizontalmente armazenador\\
-\hyperlink{partialNet:p139}{\hypertarget{partialTable:p139}{$p_{139}$}} & Peça armazenada\\
-\hyperlink{partialNet:p140}{\hypertarget{partialTable:p140}{$p_{140}$}} & Mover armazenador para a direita\\
-\hyperlink{partialNet:p141}{\hypertarget{partialTable:p141}{$p_{141}$}} & Armazenador pronto na horizontal\\
-\hyperlink{partialNet:p142}{\hypertarget{partialTable:p142}{$p_{142}$}} & Mover armazenador para baixo\\
-\hyperlink{partialNet:p143}{\hypertarget{partialTable:p143}{$p_{143}$}} & Armazenador pronto na vertical\\
-\hyperlink{partialNet:p144}{\hypertarget{partialTable:p144}{$p_{144}$}} & \\
-\hyperlink{partialNet:p145}{\hypertarget{partialTable:p145}{$p_{145}$}} & Armazenador pronto\\
+\hyperlink{partialNet:p130}{\hypertarget{partialTable:p130}{$p_{130}$}} & Extend Storage Unit\\
+\hyperlink{partialNet:p131}{\hypertarget{partialTable:p131}{$p_{131}$}} & Extend Storage Unit and Move Storage Unit Downwards\\
+\hyperlink{partialNet:p132}{\hypertarget{partialTable:p132}{$p_{132}$}} & Extend Storage Unit\\
+\hyperlink{partialNet:p133}{\hypertarget{partialTable:p133}{$p_{133}$}} & Piece Stored\\
+\hyperlink{partialNet:p134}{\hypertarget{partialTable:p134}{$p_{134}$}} & Move Storage Unit to the Right\\
+\hyperlink{partialNet:p135}{\hypertarget{partialTable:p135}{$p_{135}$}} & Storage Unit Ready ( horizontal )\\
+\hyperlink{partialNet:p136}{\hypertarget{partialTable:p136}{$p_{136}$}} & Move Storage Unit Downwards\\
+\hyperlink{partialNet:p137}{\hypertarget{partialTable:p137}{$p_{137}$}} & Storage Unit Ready ( vertical )\\
+\hyperlink{partialNet:p138}{\hypertarget{partialTable:p138}{$p_{138}$}} & \\
+\hyperlink{partialNet:p139}{\hypertarget{partialTable:p139}{$p_{139}$}} & Storage Unit Ready\\
 \end{tabular}
 \end{table}
 
 \begin{table}[htbp]
-\caption{Transitions from the cube storage module.}
+\caption{Cube Storage Module Transitions.}
 \centering
-\begin{tabular}{c|c}
+\begin{tabular}{cc}
 Transitions & Meaning\\
 \hline
-\hyperlink{partialNet:tt140}{\hypertarget{partialTable:tt140}{$t_{140}$}} & T=2s\\
-\hyperlink{partialNet:tt141}{\hypertarget{partialTable:tt141}{$t_{141}$}} & T=3s\\
-\hyperlink{partialNet:tt142}{\hypertarget{partialTable:tt142}{$t_{142}$}} & T=0.25s\\
-\hyperlink{partialNet:tt143}{\hypertarget{partialTable:tt143}{$t_{143}$}} & T=3s\\
-\hyperlink{partialNet:tt144}{\hypertarget{partialTable:tt144}{$t_{144}$}} & T=7s\\
-\hyperlink{partialNet:t145}{\hypertarget{partialTable:t145}{$t_{145}$}} & Fim de curso direito do armazenador\\
-\hyperlink{partialNet:t146}{\hypertarget{partialTable:t146}{$t_{146}$}} & Fim de curso inferior do armazenador\\
-\hyperlink{partialNet:t147}{\hypertarget{partialTable:t147}{$t_{147}$}} & \\
-\hyperlink{partialNet:t148}{\hypertarget{partialTable:t148}{$t_{148}$}} & COUNTER1<28\\
-\hyperlink{partialNet:t149}{\hypertarget{partialTable:t149}{$t_{149}$}} & COUNTER1=28\\
+\hyperlink{partialNet:tt145}{\hypertarget{partialTable:tt145}{$t_{145}$}} & T=2s\\
+\hyperlink{partialNet:tt146}{\hypertarget{partialTable:tt146}{$t_{146}$}} & T=3s\\
+\hyperlink{partialNet:tt147}{\hypertarget{partialTable:tt147}{$t_{147}$}} & T=0.25s\\
+\hyperlink{partialNet:tt148}{\hypertarget{partialTable:tt148}{$t_{148}$}} & T=3s\\
+\hyperlink{partialNet:tt149}{\hypertarget{partialTable:tt149}{$t_{149}$}} & T=7s\\
+\hyperlink{partialNet:t150}{\hypertarget{partialTable:t150}{$t_{150}$}} & Storage Unit Right Limit Switch\\
+\hyperlink{partialNet:t151}{\hypertarget{partialTable:t151}{$t_{151}$}} & Storage Unit Inferior Limit Switch\\
+\hyperlink{partialNet:t152}{\hypertarget{partialTable:t152}{$t_{152}$}} & \\
+\hyperlink{partialNet:t153}{\hypertarget{partialTable:t153}{$t_{153}$}} & COUNTER1<28\\
+\hyperlink{partialNet:t154}{\hypertarget{partialTable:t154}{$t_{154}$}} & COUNTER1=28\\
 \end{tabular}
 \end{table}

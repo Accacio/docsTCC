@@ -1,40 +1,40 @@
 \begin{table}[htbp]
-\caption{Lugares do Módulo braço prensa armazenador}
+\caption{Arm From Press To Storage Unit Module Places.}
 \centering
-\begin{tabular}{c|c}
+\begin{tabular}{cc}
 Places & Meaning\\
 \hline
-\hyperlink{partialNet:p96}{\hypertarget{partialTable:p96}{$p_{96}$}} & Estender horizontalmente o braço e Ligar Vácuo\\
-\hyperlink{partialNet:p97}{\hypertarget{partialTable:p97}{$p_{97}$}} & Estender vertical e horizontalmente o braço e Ligar Vácuo\\
-\hyperlink{partialNet:p98}{\hypertarget{partialTable:p98}{$p_{98}$}} & Resetar IEC\(_{\text{COUNTER0}}\)*, estender verticalmente o braço e Ligar Vácuo\\
-\hyperlink{partialNet:p99}{\hypertarget{partialTable:p99}{$p_{99}$}} & Habilita HSC e Estender verticalmente o braço, Ligar Vácuo e Girar o Braço no sentido horário\\
-\hyperlink{partialNet:p100}{\hypertarget{partialTable:p100}{$p_{100}$}} & Estender vertical e horizontalmente o braço e Ligar Vácuo\\
-\hyperlink{partialNet:p101}{\hypertarget{partialTable:p101}{$p_{101}$}} & Estender horizontalmente o braço e Ligar Vácuo\\
-\hyperlink{partialNet:p102}{\hypertarget{partialTable:p102}{$p_{102}$}} & Estender horizontalmente o braço\\
-\hyperlink{partialNet:p103}{\hypertarget{partialTable:p103}{$p_{103}$}} & Estender vertical e horizontalmente o braço\\
-\hyperlink{partialNet:p104}{\hypertarget{partialTable:p104}{$p_{104}$}} & Girar o braço no sentido antihorário\\
-\hyperlink{partialNet:p105}{\hypertarget{partialTable:p105}{$p_{105}$}} & Braço parado\\
-\hyperlink{partialNet:p106}{\hypertarget{partialTable:p106}{$p_{106}$}} & Habilita HSC e Girar o braço no sentido horário\\
-\hyperlink{partialNet:p107}{\hypertarget{partialTable:p107}{$p_{107}$}} & Braço na esteira\\
+\hyperlink{partialNet:p96}{\hypertarget{partialTable:p96}{$p_{96}$}} & Extend Arm e Turn Vacuum On\\
+\hyperlink{partialNet:p97}{\hypertarget{partialTable:p97}{$p_{97}$}} & Raise and Extend Arm and Turn Vacuum On\\
+\hyperlink{partialNet:p98}{\hypertarget{partialTable:p98}{$p_{98}$}} & Reset HALFPIECECOUNTER*, Raise Arm and Turn Vacuum On\\
+\hyperlink{partialNet:p99}{\hypertarget{partialTable:p99}{$p_{99}$}} & Turn HSC On, Raise Arm, Turn Vacuum On, Rotate Arm CW\\
+\hyperlink{partialNet:p100}{\hypertarget{partialTable:p100}{$p_{100}$}} & Raise and Extend Arm and Turn Vacuum On\\
+\hyperlink{partialNet:p101}{\hypertarget{partialTable:p101}{$p_{101}$}} & Extend Arm and Turn Vacuum On\\
+\hyperlink{partialNet:p102}{\hypertarget{partialTable:p102}{$p_{102}$}} & Extend Arm\\
+\hyperlink{partialNet:p103}{\hypertarget{partialTable:p103}{$p_{103}$}} & Raise and Extend Arm\\
+\hyperlink{partialNet:p104}{\hypertarget{partialTable:p104}{$p_{104}$}} & Turn Arm CCW\\
+\hyperlink{partialNet:p105}{\hypertarget{partialTable:p105}{$p_{105}$}} & Arm Stoppen\\
+\hyperlink{partialNet:p106}{\hypertarget{partialTable:p106}{$p_{106}$}} & Turn HSC On, Turn Arm CW\\
+\hyperlink{partialNet:p107}{\hypertarget{partialTable:p107}{$p_{107}$}} & Arm Stopped ( facing conveyor belt )\\
 \end{tabular}
 \end{table}
 
 \begin{table}[htbp]
-\caption{Transições do Módulo braço prensa armazenador}
+\caption{Arm From Press To Storage Unit Module Transitions.}
 \centering
-\begin{tabular}{c|c}
+\begin{tabular}{cc}
 Transitions & Meaning\\
 \hline
-\hyperlink{partialNet:tt94}{\hypertarget{partialTable:tt94}{$t_{94}$}} & T=1.5s e Sensor vertical braço retraído\\
-\hyperlink{partialNet:t95}{\hypertarget{partialTable:t95}{$t_{95}$}} & Sensor vertical braço estendido, Fim de curso inferior e direito armazenador\\
+\hyperlink{partialNet:tt94}{\hypertarget{partialTable:tt94}{$t_{94}$}} & T=1.5s and Arm Lowered\\
+\hyperlink{partialNet:t95}{\hypertarget{partialTable:t95}{$t_{95}$}} & Arm Raised, Storage Unit Right and Inferior Limit Switches\\
 \hyperlink{partialNet:t96}{\hypertarget{partialTable:t96}{$t_{96}$}} & \\
-\hyperlink{partialNet:t97}{\hypertarget{partialTable:t97}{$t_{97}$}} & Count\_300C.DB.CountVal = \todo{-4920}\\
+\hyperlink{partialNet:t97}{\hypertarget{partialTable:t97}{$t_{97}$}} & ARMCOUNTER = \todo{-4920}\\
 \hyperlink{partialNet:tt98}{\hypertarget{partialTable:tt98}{$t_{98}$}} & T=2s\\
 \hyperlink{partialNet:tt99}{\hypertarget{partialTable:tt99}{$t_{99}$}} & T=2s\\
-\hyperlink{partialNet:t100}{\hypertarget{partialTable:t100}{$t_{100}$}} & Sensor vertical braço retraído\\
-\hyperlink{partialNet:t101}{\hypertarget{partialTable:t101}{$t_{101}$}} & Sensor vertical braço estendido, Fim de curso inferior e direito armazenador\\
-\hyperlink{partialNet:t102}{\hypertarget{partialTable:t102}{$t_{102}$}} & Sensor indutivo do braço\\
+\hyperlink{partialNet:t100}{\hypertarget{partialTable:t100}{$t_{100}$}} & Arm Lowered\\
+\hyperlink{partialNet:t101}{\hypertarget{partialTable:t101}{$t_{101}$}} & Arm Raised, Storage Unit Right and Inferior Limit Switches\\
+\hyperlink{partialNet:t102}{\hypertarget{partialTable:t102}{$t_{102}$}} & Inductive Sensor Arm\\
 \hyperlink{partialNet:tt103}{\hypertarget{partialTable:tt103}{$t_{103}$}} & T=1s\\
-\hyperlink{partialNet:t104}{\hypertarget{partialTable:t104}{$t_{104}$}} & Count\_300C.DB.CountVal = \todo{-1690}\\
+\hyperlink{partialNet:t104}{\hypertarget{partialTable:t104}{$t_{104}$}} & ARMCOUNTER = \todo{-1690}\\
 \end{tabular}
 \end{table}

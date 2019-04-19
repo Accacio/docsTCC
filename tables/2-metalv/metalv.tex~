@@ -1,66 +1,66 @@
 \begin{table}[htbp]
-\caption{Lugares do Módulo 2 pt 1}
+\caption{Metal Half-cube Selection Module Places.}
 \centering
-\begin{tabular}{c|c}
+\begin{tabular}{cc}
 Places & Meaning\\
 \hline
-\hyperlink{partialNet:p28}{\hypertarget{partialTable:p28}{$p_{28}$}} & Mag1 vazio\\
-\hyperlink{partialNet:p29}{\hypertarget{partialTable:p29}{$p_{29}$}} & Mag1 com peça\\
-\hyperlink{partialNet:p30}{\hypertarget{partialTable:p30}{$p_{30}$}} & Estender Mag1 Horizontal*\\
-\hyperlink{partialNet:p31}{\hypertarget{partialTable:p31}{$p_{31}$}} & Retrair Mag1 Horizontal*\\
-\hyperlink{partialNet:p32}{\hypertarget{partialTable:p32}{$p_{32}$}} & Mag1 Horizontal retraído\\
-\hyperlink{partialNet:p33}{\hypertarget{partialTable:p33}{$p_{33}$}} & Ligar esteira sentido normal\\
+\hyperlink{partialNet:p28}{\hypertarget{partialTable:p28}{$p_{28}$}} & MAG1 Empty\\
+\hyperlink{partialNet:p29}{\hypertarget{partialTable:p29}{$p_{29}$}} & MAG1 Not Empty\\
+\hyperlink{partialNet:p30}{\hypertarget{partialTable:p30}{$p_{30}$}} & Extend MAG1's Cylinder *\\
+\hyperlink{partialNet:p31}{\hypertarget{partialTable:p31}{$p_{31}$}} & Retract MAG1's Cylinder *\\
+\hyperlink{partialNet:p32}{\hypertarget{partialTable:p32}{$p_{32}$}} & MAG1's Cylinder Retracted\\
+\hyperlink{partialNet:p33}{\hypertarget{partialTable:p33}{$p_{33}$}} & Turn Conveyor Belt On\\
 \hyperlink{partialNet:p34}{\hypertarget{partialTable:p34}{$p_{34}$}} & \\
-\hyperlink{partialNet:p35}{\hypertarget{partialTable:p35}{$p_{35}$}} & Peça de Plástico\\
-\hyperlink{partialNet:p36}{\hypertarget{partialTable:p36}{$p_{36}$}} & Ligar esteira sentido normal\\
-\hyperlink{partialNet:p37}{\hypertarget{partialTable:p37}{$p_{37}$}} & Estender Pistão de descarte D*\\
-\hyperlink{partialNet:p38}{\hypertarget{partialTable:p38}{$p_{38}$}} & Retrair Pistão de descarte D*\\
-\hyperlink{partialNet:p39}{\hypertarget{partialTable:p39}{$p_{39}$}} & Ligar esteira sentido normal\\
-\hyperlink{partialNet:p40}{\hypertarget{partialTable:p40}{$p_{40}$}} & Estender Pistão de descarte C*\\
-\hyperlink{partialNet:p41}{\hypertarget{partialTable:p41}{$p_{41}$}} & Retrair Pistão de descarte C*\\
+\hyperlink{partialNet:p35}{\hypertarget{partialTable:p35}{$p_{35}$}} & Plastic Half-cube\\
+\hyperlink{partialNet:p36}{\hypertarget{partialTable:p36}{$p_{36}$}} & Turn Conveyor Belt On\\
+\hyperlink{partialNet:p37}{\hypertarget{partialTable:p37}{$p_{37}$}} & Extend Right Discharge Cylinder *\\
+\hyperlink{partialNet:p38}{\hypertarget{partialTable:p38}{$p_{38}$}} & Retract Right Discharge Cylinder *\\
+\hyperlink{partialNet:p39}{\hypertarget{partialTable:p39}{$p_{39}$}} & Turn Conveyor Belt On\\
+\hyperlink{partialNet:p40}{\hypertarget{partialTable:p40}{$p_{40}$}} & Extend Center Discharge Cylinder *\\
+\hyperlink{partialNet:p41}{\hypertarget{partialTable:p41}{$p_{41}$}} & Retract Center Discharge Cylinder *\\
 \hyperlink{partialNet:p42}{\hypertarget{partialTable:p42}{$p_{42}$}} & \\
-\hyperlink{partialNet:p43}{\hypertarget{partialTable:p43}{$p_{43}$}} & Peça de Metal\\
-\hyperlink{partialNet:p44}{\hypertarget{partialTable:p44}{$p_{44}$}} & Ligar esteira sentido normal\\
-\hyperlink{partialNet:p45}{\hypertarget{partialTable:p45}{$p_{45}$}} & Estender Pistão de descarte E*\\
-\hyperlink{partialNet:p46}{\hypertarget{partialTable:p46}{$p_{46}$}} & Retrair Pistão de descarte E*\\
-\hyperlink{partialNet:p47}{\hypertarget{partialTable:p47}{$p_{47}$}} & Ligar esteira sentido normal\\
-\hyperlink{partialNet:p48}{\hypertarget{partialTable:p48}{$p_{48}$}} & Ligar esteira sentido normal\\
-\hyperlink{partialNet:p49}{\hypertarget{partialTable:p49}{$p_{49}$}} & Peça Metal Pronta\\
-\hyperlink{partialNet:p50}{\hypertarget{partialTable:p50}{$p_{50}$}} & Esteira Parada\\
+\hyperlink{partialNet:p43}{\hypertarget{partialTable:p43}{$p_{43}$}} & Metal Half-cube\\
+\hyperlink{partialNet:p44}{\hypertarget{partialTable:p44}{$p_{44}$}} & Turn Conveyor Belt On\\
+\hyperlink{partialNet:p45}{\hypertarget{partialTable:p45}{$p_{45}$}} & Extend Left Discharge Cylinder *\\
+\hyperlink{partialNet:p46}{\hypertarget{partialTable:p46}{$p_{46}$}} & Retract Left Discharge Cylinder *\\
+\hyperlink{partialNet:p47}{\hypertarget{partialTable:p47}{$p_{47}$}} & Turn Conveyor Belt On\\
+\hyperlink{partialNet:p48}{\hypertarget{partialTable:p48}{$p_{48}$}} & Turn Conveyor Belt On\\
+\hyperlink{partialNet:p49}{\hypertarget{partialTable:p49}{$p_{49}$}} & Metal Half-cube Ready\\
+\hyperlink{partialNet:p50}{\hypertarget{partialTable:p50}{$p_{50}$}} & Conveyor Belt Stopped\\
 \end{tabular}
 \end{table}
 
 \begin{table}[htbp]
-\caption{Transições do Módulo 2 pt 1}
+\caption{Metal Half-cube Selection Module Transitions.}
 \centering
-\begin{tabular}{c|c}
+\begin{tabular}{cc}
 Transitions & Meaning\\
 \hline
-\hyperlink{partialNet:t20}{\hypertarget{partialTable:t20}{$t_{20}$}} & \(\overline{\mbox{Sensor Chave de Presença de Peça Mag1}}\)\\
+\hyperlink{partialNet:t20}{\hypertarget{partialTable:t20}{$t_{20}$}} & \(\overline{\mbox{MAG1 Empty}}\)\\
 \hyperlink{partialNet:t21}{\hypertarget{partialTable:t21}{$t_{21}$}} & \\
-\hyperlink{partialNet:t22}{\hypertarget{partialTable:t22}{$t_{22}$}} & Mag1 Horizontal estendido \(\uparrow\)\\
-\hyperlink{partialNet:t23}{\hypertarget{partialTable:t23}{$t_{23}$}} & Mag1 Horizontal retraído \(\uparrow\)\\
+\hyperlink{partialNet:t22}{\hypertarget{partialTable:t22}{$t_{22}$}} & MAG1's Cylinder Extended \(\uparrow\)\\
+\hyperlink{partialNet:t23}{\hypertarget{partialTable:t23}{$t_{23}$}} & MAG1's Cylinder Retracted \(\uparrow\)\\
 \hyperlink{partialNet:tt24}{\hypertarget{partialTable:tt24}{$t_{24}$}} & T=0.5s\\
-\hyperlink{partialNet:tt25}{\hypertarget{partialTable:tt25}{$t_{25}$}} & Presença \(\uparrow\) T=0.5s\\
-\hyperlink{partialNet:t26}{\hypertarget{partialTable:t26}{$t_{26}$}} & \(\overline{\mbox{Sensor Metal}}\)\\
-\hyperlink{partialNet:t27}{\hypertarget{partialTable:t27}{$t_{27}$}} & Sensor Preto\\
-\hyperlink{partialNet:t28}{\hypertarget{partialTable:t28}{$t_{28}$}} & Presença Pistão de D \(\uparrow\)\\
-\hyperlink{partialNet:t29}{\hypertarget{partialTable:t29}{$t_{29}$}} & Sensor pistão de descarte D estendido\\
-\hyperlink{partialNet:t30}{\hypertarget{partialTable:t30}{$t_{30}$}} & Sensor pistão de descarte D retraído\\
-\hyperlink{partialNet:t31}{\hypertarget{partialTable:t31}{$t_{31}$}} & Sensor Branco\\
-\hyperlink{partialNet:t32}{\hypertarget{partialTable:t32}{$t_{32}$}} & Presença Pistão de C \(\uparrow\)\\
-\hyperlink{partialNet:t33}{\hypertarget{partialTable:t33}{$t_{33}$}} & Sensor pistão de descarte C estendido\\
-\hyperlink{partialNet:t34}{\hypertarget{partialTable:t34}{$t_{34}$}} & Sensor pistão de descarte C retraído\\
-\hyperlink{partialNet:t35}{\hypertarget{partialTable:t35}{$t_{35}$}} & Sensor Metal\\
-\hyperlink{partialNet:t36}{\hypertarget{partialTable:t36}{$t_{36}$}} & Sensor peça concavidade para baixo\\
-\hyperlink{partialNet:t37}{\hypertarget{partialTable:t37}{$t_{37}$}} & Presença Pistão de E \(\uparrow\)\\
-\hyperlink{partialNet:t38}{\hypertarget{partialTable:t38}{$t_{38}$}} & Sensor pistão de descarte E estendido\\
-\hyperlink{partialNet:t39}{\hypertarget{partialTable:t39}{$t_{39}$}} & Sensor pistão de descarte E retraído\\
+\hyperlink{partialNet:tt25}{\hypertarget{partialTable:tt25}{$t_{25}$}} & Presence \(\uparrow\) T=0.5s\\
+\hyperlink{partialNet:t26}{\hypertarget{partialTable:t26}{$t_{26}$}} & \(\overline{\mbox{Metallic Sensor}}\)\\
+\hyperlink{partialNet:t27}{\hypertarget{partialTable:t27}{$t_{27}$}} & \(\overline{\mbox{White Color Sensor}}\)\\
+\hyperlink{partialNet:t28}{\hypertarget{partialTable:t28}{$t_{28}$}} & Proximity Sensor Left Discharge Cylinder \(\uparrow\)\\
+\hyperlink{partialNet:t29}{\hypertarget{partialTable:t29}{$t_{29}$}} & Right Discharge Cylinder Extended\\
+\hyperlink{partialNet:t30}{\hypertarget{partialTable:t30}{$t_{30}$}} & Right Discharge Cylinder Retracted\\
+\hyperlink{partialNet:t31}{\hypertarget{partialTable:t31}{$t_{31}$}} & White Color Sensor\\
+\hyperlink{partialNet:t32}{\hypertarget{partialTable:t32}{$t_{32}$}} & Proximity Sensor Center Discharge Cylinder \(\uparrow\)\\
+\hyperlink{partialNet:t33}{\hypertarget{partialTable:t33}{$t_{33}$}} & Center Discharge Cylinder Extended\\
+\hyperlink{partialNet:t34}{\hypertarget{partialTable:t34}{$t_{34}$}} & Center Discharge Cylinder Retracted\\
+\hyperlink{partialNet:t35}{\hypertarget{partialTable:t35}{$t_{35}$}} & Metallic Sensor\\
+\hyperlink{partialNet:t36}{\hypertarget{partialTable:t36}{$t_{36}$}} & Concavity Downwards\\
+\hyperlink{partialNet:t37}{\hypertarget{partialTable:t37}{$t_{37}$}} & Proximity Sensor Left Discharge Cylinder \(\uparrow\)\\
+\hyperlink{partialNet:t38}{\hypertarget{partialTable:t38}{$t_{38}$}} & Left Discharge Cylinder Extended\\
+\hyperlink{partialNet:t39}{\hypertarget{partialTable:t39}{$t_{39}$}} & Left Discharge Cylinder Retracted\\
 \hyperlink{partialNet:t40}{\hypertarget{partialTable:t40}{$t_{40}$}} & \\
-\hyperlink{partialNet:t41}{\hypertarget{partialTable:t41}{$t_{41}$}} & Sensor peça concavidade para cima\\
-\hyperlink{partialNet:t42}{\hypertarget{partialTable:t42}{$t_{42}$}} & Sensor final da esteira \(\uparrow\)\\
+\hyperlink{partialNet:t41}{\hypertarget{partialTable:t41}{$t_{41}$}} & Concavity Upwards\\
+\hyperlink{partialNet:t42}{\hypertarget{partialTable:t42}{$t_{42}$}} & Proximity Sensor End Of Conveyor Belt \(\uparrow\)\\
 \hyperlink{partialNet:tt43}{\hypertarget{partialTable:tt43}{$t_{43}$}} & T=0.5s\\
-\hyperlink{partialNet:t44}{\hypertarget{partialTable:t44}{$t_{44}$}} & Sensor final da esteira \(\downarrow\)\\
+\hyperlink{partialNet:t44}{\hypertarget{partialTable:t44}{$t_{44}$}} & Proximity Sensor End Of Conveyor Belt \(\downarrow\)\\
 \hyperlink{partialNet:t45}{\hypertarget{partialTable:t45}{$t_{45}$}} & \\
 \end{tabular}
 \end{table}

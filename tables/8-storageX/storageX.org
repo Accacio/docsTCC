@@ -1,5 +1,5 @@
 
-#+ATTR_LATEX: :caption  \caption{Lugares do Módulo armazenador (x)} :align c|c
+#+ATTR_LATEX: :caption  \caption{Storage Unit (X axis) Module Places.} :align cc
 | Places | Meaning                                                  |
 |--------+----------------------------------------------------------|
 | p118   | COUNTER1:=COUNTER1+1 e COUNTER4:=COUNTER4+1              |
@@ -15,7 +15,7 @@
 | p128   | Reset COUNTER4* , COUNTER2:=COUNTER2+1                   |
 | p129   |                                                          |
 
-#+ATTR_LATEX: :caption  \caption{Transições Módulo armazenador (x)} :align c|c
+#+ATTR_LATEX: :caption  \caption{Storage Unit (X axis) Module Transitions.} :align cc
 | Transitions | Meaning            |
 |-------------+--------------------|
 | t121        | COUNTER4=1         |

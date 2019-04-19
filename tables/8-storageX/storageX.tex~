@@ -1,54 +1,53 @@
 \begin{table}[htbp]
-\caption{Lugares do Módulo armazenador (x)}
+\caption{Storage Unit (X axis) Module Places.}
 \centering
-\begin{tabular}{c|c}
+\begin{tabular}{cc}
 Places & Meaning\\
 \hline
-\hyperlink{partialNet:p120}{\hypertarget{partialTable:p120}{$p_{120}$}} & COUNTER1:=COUNTER1+1 e COUNTER4:=COUNTER4+1\\
-\hyperlink{partialNet:p121}{\hypertarget{partialTable:p121}{$p_{121}$}} & COUNTER5:=COUNTER5+1 e mover armazenador para a esquerda\\
-\hyperlink{partialNet:p122}{\hypertarget{partialTable:p122}{$p_{122}$}} & Reset COUNTER5*\\
-\hyperlink{partialNet:p123}{\hypertarget{partialTable:p123}{$p_{123}$}} & COUNTER5:=COUNTER5+1 e mover armazenador para a esquerda\\
-\hyperlink{partialNet:p124}{\hypertarget{partialTable:p124}{$p_{124}$}} & Reset COUNTER5*\\
-\hyperlink{partialNet:p125}{\hypertarget{partialTable:p125}{$p_{125}$}} & COUNTER5:=COUNTER5+1 e mover armazenador para a esquerda\\
-\hyperlink{partialNet:p126}{\hypertarget{partialTable:p126}{$p_{126}$}} & Reset COUNTER5*\\
-\hyperlink{partialNet:p127}{\hypertarget{partialTable:p127}{$p_{127}$}} & COUNTER5:=COUNTER5+1 e mover armazenador para a esquerda\\
-\hyperlink{partialNet:p128}{\hypertarget{partialTable:p128}{$p_{128}$}} & Reset COUNTER5*\\
-\hyperlink{partialNet:p129}{\hypertarget{partialTable:p129}{$p_{129}$}} & COUNTER5:=COUNTER5+1 e mover armazenador para a esquerda\\
-\hyperlink{partialNet:p130}{\hypertarget{partialTable:p130}{$p_{130}$}} & Reset COUNTER5*\\
-\hyperlink{partialNet:p131}{\hypertarget{partialTable:p131}{$p_{131}$}} & COUNTER5:=COUNTER5+1 e mover armazenador para a esquerda\\
-\hyperlink{partialNet:p132}{\hypertarget{partialTable:p132}{$p_{132}$}} & Reset COUNTER5*\\
-\hyperlink{partialNet:p133}{\hypertarget{partialTable:p133}{$p_{133}$}} & COUNTER5:=COUNTER5+1 e mover armazenador para a esquerda\\
-\hyperlink{partialNet:p134}{\hypertarget{partialTable:p134}{$p_{134}$}} & Reset COUNTER5* Reset COUNTER4* , COUNTER2:=COUNTER2+1\\
-\hyperlink{partialNet:p135}{\hypertarget{partialTable:p135}{$p_{135}$}} & \\
+\hyperlink{partialNet:p118}{\hypertarget{partialTable:p118}{$p_{118}$}} & COUNTER1:=COUNTER1+1 e COUNTER4:=COUNTER4+1\\
+\hyperlink{partialNet:p119}{\hypertarget{partialTable:p119}{$p_{119}$}} & Move Storage Unit to the Left\\
+\hyperlink{partialNet:p120}{\hypertarget{partialTable:p120}{$p_{120}$}} & Move Storage Unit to the Left\\
+\hyperlink{partialNet:p121}{\hypertarget{partialTable:p121}{$p_{121}$}} & Move Storage Unit to the Left\\
+\hyperlink{partialNet:p122}{\hypertarget{partialTable:p122}{$p_{122}$}} & Move Storage Unit to the Left\\
+\hyperlink{partialNet:p123}{\hypertarget{partialTable:p123}{$p_{123}$}} & Move Storage Unit to the Left\\
+\hyperlink{partialNet:p124}{\hypertarget{partialTable:p124}{$p_{124}$}} & Move Storage Unit to the Left\\
+\hyperlink{partialNet:p125}{\hypertarget{partialTable:p125}{$p_{125}$}} & Move Storage Unit to the Left\\
+\hyperlink{partialNet:p126}{\hypertarget{partialTable:p126}{$p_{126}$}} & COUNTER5:=COUNTER5+1\\
+\hyperlink{partialNet:p127}{\hypertarget{partialTable:p127}{$p_{127}$}} & Reset COUNTER5*\\
+\hyperlink{partialNet:p128}{\hypertarget{partialTable:p128}{$p_{128}$}} & Reset COUNTER4* , COUNTER2:=COUNTER2+1\\
+\hyperlink{partialNet:p129}{\hypertarget{partialTable:p129}{$p_{129}$}} & \\
 \end{tabular}
 \end{table}
 
 \begin{table}[htbp]
-\caption{Transições Módulo armazenador (x)}
+\caption{Storage Unit (X axis) Module Transitions.}
 \centering
-\begin{tabular}{c|c}
+\begin{tabular}{cc}
 Transitions & Meaning\\
 \hline
-\hyperlink{partialNet:t119}{\hypertarget{partialTable:t119}{$t_{119}$}} & COUNTER4=0\\
-\hyperlink{partialNet:t120}{\hypertarget{partialTable:t120}{$t_{120}$}} & COUNTER5=1\\
-\hyperlink{partialNet:t121}{\hypertarget{partialTable:t121}{$t_{121}$}} & \\
-\hyperlink{partialNet:t122}{\hypertarget{partialTable:t122}{$t_{122}$}} & COUNTER4=1\\
-\hyperlink{partialNet:t123}{\hypertarget{partialTable:t123}{$t_{123}$}} & COUNTER5=2\\
-\hyperlink{partialNet:t124}{\hypertarget{partialTable:t124}{$t_{124}$}} & \\
-\hyperlink{partialNet:t125}{\hypertarget{partialTable:t125}{$t_{125}$}} & COUNTER4=2\\
-\hyperlink{partialNet:t126}{\hypertarget{partialTable:t126}{$t_{126}$}} & COUNTER5=3\\
-\hyperlink{partialNet:t127}{\hypertarget{partialTable:t127}{$t_{127}$}} & \\
-\hyperlink{partialNet:t128}{\hypertarget{partialTable:t128}{$t_{128}$}} & COUNTER4=3\\
-\hyperlink{partialNet:t129}{\hypertarget{partialTable:t129}{$t_{129}$}} & COUNTER5=4\\
-\hyperlink{partialNet:t130}{\hypertarget{partialTable:t130}{$t_{130}$}} & \\
-\hyperlink{partialNet:t131}{\hypertarget{partialTable:t131}{$t_{131}$}} & COUNTER4=4\\
-\hyperlink{partialNet:t132}{\hypertarget{partialTable:t132}{$t_{132}$}} & COUNTER5=5\\
-\hyperlink{partialNet:t133}{\hypertarget{partialTable:t133}{$t_{133}$}} & \\
-\hyperlink{partialNet:t134}{\hypertarget{partialTable:t134}{$t_{134}$}} & COUNTER4=5\\
-\hyperlink{partialNet:t135}{\hypertarget{partialTable:t135}{$t_{135}$}} & COUNTER5=8\\
-\hyperlink{partialNet:t136}{\hypertarget{partialTable:t136}{$t_{136}$}} & \\
-\hyperlink{partialNet:t137}{\hypertarget{partialTable:t137}{$t_{137}$}} & COUNTER4=6\\
-\hyperlink{partialNet:t138}{\hypertarget{partialTable:t138}{$t_{138}$}} & COUNTER5=9\\
-\hyperlink{partialNet:t139}{\hypertarget{partialTable:t139}{$t_{139}$}} & \\
+\hyperlink{partialNet:t121}{\hypertarget{partialTable:t121}{$t_{121}$}} & COUNTER4=1\\
+\hyperlink{partialNet:t122}{\hypertarget{partialTable:t122}{$t_{122}$}} & COUNTER5=1\\
+\hyperlink{partialNet:t123}{\hypertarget{partialTable:t123}{$t_{123}$}} & Horizontal Encoder\\
+\hyperlink{partialNet:t124}{\hypertarget{partialTable:t124}{$t_{124}$}} & COUNTER4=2\\
+\hyperlink{partialNet:t125}{\hypertarget{partialTable:t125}{$t_{125}$}} & COUNTER5=2\\
+\hyperlink{partialNet:t126}{\hypertarget{partialTable:t126}{$t_{126}$}} & Horizontal Encoder\\
+\hyperlink{partialNet:t127}{\hypertarget{partialTable:t127}{$t_{127}$}} & COUNTER4=3\\
+\hyperlink{partialNet:t128}{\hypertarget{partialTable:t128}{$t_{128}$}} & COUNTER5=3\\
+\hyperlink{partialNet:t129}{\hypertarget{partialTable:t129}{$t_{129}$}} & Horizontal Encoder\\
+\hyperlink{partialNet:t130}{\hypertarget{partialTable:t130}{$t_{130}$}} & COUNTER4=4\\
+\hyperlink{partialNet:t131}{\hypertarget{partialTable:t131}{$t_{131}$}} & COUNTER5=4\\
+\hyperlink{partialNet:t132}{\hypertarget{partialTable:t132}{$t_{132}$}} & Horizontal Encoder\\
+\hyperlink{partialNet:t133}{\hypertarget{partialTable:t133}{$t_{133}$}} & COUNTER4=5\\
+\hyperlink{partialNet:t134}{\hypertarget{partialTable:t134}{$t_{134}$}} & COUNTER5=5\\
+\hyperlink{partialNet:t135}{\hypertarget{partialTable:t135}{$t_{135}$}} & Horizontal Encoder\\
+\hyperlink{partialNet:t136}{\hypertarget{partialTable:t136}{$t_{136}$}} & COUNTER4=6\\
+\hyperlink{partialNet:t137}{\hypertarget{partialTable:t137}{$t_{137}$}} & COUNTER5=8\\
+\hyperlink{partialNet:t138}{\hypertarget{partialTable:t138}{$t_{138}$}} & Horizontal Encoder\\
+\hyperlink{partialNet:t139}{\hypertarget{partialTable:t139}{$t_{139}$}} & COUNTER4=7\\
+\hyperlink{partialNet:t140}{\hypertarget{partialTable:t140}{$t_{140}$}} & COUNTER5=9\\
+\hyperlink{partialNet:t141}{\hypertarget{partialTable:t141}{$t_{141}$}} & Horizontal Encoder\\
+\hyperlink{partialNet:t142}{\hypertarget{partialTable:t142}{$t_{142}$}} & \\
+\hyperlink{partialNet:t143}{\hypertarget{partialTable:t143}{$t_{143}$}} & \\
+\hyperlink{partialNet:t144}{\hypertarget{partialTable:t144}{$t_{144}$}} & \\
 \end{tabular}
 \end{table}
