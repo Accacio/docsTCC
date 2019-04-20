@@ -1,6 +1,5 @@
 
 #+ATTR_LATEX: :caption  \caption{Initialization Module Places.} :align cc :booktabs
-|--------+-------------------------------------------------------|
 | Places | Meaning                                               |
 |--------+-------------------------------------------------------|
 | p0m1   | System Stopped                                        |
@@ -16,7 +15,7 @@
 | p10    | Left Discharge Cylinder Retracted                     |
 | p11    | Turn Conveyor Belt On (Reverse)                       |
 | p12    | No Pieces On Conveyor Belt                            |
-| p13    | Reset Variables[fn:1]                                 |
+| p13    | Reset Variables                                       |
 | p14    | Raise Press                                           |
 | p15    | Open Safety Door                                      |
 | p16    | Extend Assembly Unit Holder                           |
@@ -55,7 +54,5 @@
 | t17         | ARMCOUNTER = \todo{-1690}                            |
 | t18         |                                                      |
 | t19         | Start Button                                         |
-|             |                                                      |
 
-[fn:1] Counter Variables: HALFPIECECOUNTER, COUNTER1, COUNTER2, COUNTER3, COUNTER4, COUNTER5.
 

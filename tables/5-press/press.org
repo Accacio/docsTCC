@@ -11,7 +11,7 @@
 | p93    | Cube Ready                     |
 | p94    | Extend Arm and Turn Vacuum On  |
 | p95    | Raise Arm                      |
-|        |                                |
+
 
 #+ATTR_LATEX: :caption  \caption{Assembly Unit Module Transitions.} :align cc
 | Transitions | Meaning                                 |

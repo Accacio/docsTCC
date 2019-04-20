@@ -43,7 +43,7 @@ table/storePiece:
 	linkTables	../../tables/9-storePiece/storePiece.tex
 
 table/complete:
-	@emacs ../../tables/completo/completo.org --batch --eval="(org-latex-export-to-latex nil nil nil t)" --kill;
+	@emacs ../../tables/completo/complete.org --batch --eval="(org-latex-export-to-latex nil nil nil t)" --kill;
 
 petriNets: petriNet/initial petriNet/metalv petriNet/plastic petriNet/armBeltToPress petriNet/press petriNet/armPressToStorage petriNet/storageY petriNet/storageX petriNet/storePiece 
 
