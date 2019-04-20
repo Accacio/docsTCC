@@ -1,0 +1,873 @@
+  digraph A {
+    splines = ortho
+    rankdir=LR;
+    ratio=fill
+    graph [pad="0.5", nodesep="0.25", ranksep="0.2", nodesep="0.2"];
+    margin=0;
+    # size="11.7,8.3!"
+
+# Modulo inicialização
+
+    p0m1
+    p1
+    p2
+    p3
+    p4
+    p5
+    p6
+    p7
+    p8
+    p9
+    p10
+    p11
+    p12
+    p13
+    p14
+    p15
+    p16
+    p17
+    p18
+    p19
+    p20
+    p21
+    p22
+    p23
+    p24
+    p25
+    p26
+    p27
+
+    t0
+    t1
+    t2
+    t3
+    t4
+    t5
+    t6
+    tt7
+    tt8
+    t9
+    t10
+    t11
+    t12
+    t13
+    tt14
+    t15
+    tt16
+    t17
+    t18
+    t19
+
+subgraph cluster_1 {
+  label="Initialization";
+  labelloc = b
+  style="dashed"
+  # color="red"
+  # pre
+
+  p0m1 -> t0
+
+  p1 -> t1
+  p2 -> t6
+  p3 -> t2
+  p4 -> t6
+  p5 -> t3
+  p6 -> t6
+  p7 -> t4
+  p8 -> t6
+  p9 -> t5
+  p10 -> t6
+  p11 -> tt7
+  p12 -> t18
+
+  p13 -> t18
+
+  p14 -> tt8
+  p15 -> t9
+  p16 -> t10
+  p17 -> t18
+
+  p18 -> t11
+  p19 -> t12
+  p20 -> tt14
+  p21 -> t13
+  p22 -> tt14
+  p23 -> t15
+  p24 -> tt16
+  p25 -> t17
+  p26 -> t18
+  p27 -> t19
+# pos
+
+  t0 -> p1
+  t0 -> p3
+  t0 -> p5
+  t0 -> p7
+  t0 -> p9
+  t0 -> p13
+  t0 -> p14
+  t0 -> p18
+
+  t1 -> p2
+  t2 -> p4
+  t3 -> p6
+  t4 -> p8
+  t5 -> p10
+  t6 -> p11
+  tt7 -> p12
+
+  tt8 -> p15
+  t9 -> p16
+  t10 -> p17
+
+  t11 -> p19
+  t11 -> p21
+  t12 -> p20
+  t13 -> p22
+  tt14 -> p23
+  t15 -> p24
+  tt16 -> p25
+  t17 -> p26
+  t18 -> p27
+
+}
+
+t19 -> p28
+t19 -> p107
+t19 -> p144
+
+    p28
+    p29
+    p30
+    p31
+    p32
+    p33
+    p34
+    p35
+    p36
+    p37
+    p38
+    p39
+    p40
+    p41
+    p42
+    p43
+    p44
+    p45
+    p46
+    p47
+    p48
+    p49
+    p50
+
+    t20
+    t21
+    t22
+    t23
+    tt24
+    tt25
+    t26
+    t27
+    t28
+    t29
+    t30
+    t31
+    t32
+    t33
+    t34
+    t35
+    t36
+    t37
+    t38
+    t39
+    t40
+    t41
+    t42
+    tt43
+    t44
+    t45
+
+subgraph cluster_2 {
+  label="Metal Piece"
+  style="dashed"
+  #color="white"
+  labelloc = b
+  # margin=0
+  #pre
+
+  p28 -> t20
+  p29 -> t21
+  p30 -> t22
+  p31 -> t23
+  p32 -> tt24
+  p33 -> tt25
+  p34 -> t26
+  p34 -> t35
+  
+
+
+
+  p35 -> t27
+  p35 -> t31
+
+  p36 -> t28
+  p37 -> t29
+  p38 -> t30
+  
+  p39 -> t32
+  p40 -> t33
+  p41 -> t34
+  
+  p42 -> t40
+
+  p43 -> t36
+  p43 -> t41
+
+  p44 -> t37
+  p45 -> t38
+  p46 -> t39
+  
+  p47 -> t42
+  p48 -> tt43
+  p49 -> t44
+  p50 -> t45
+
+
+  #pos
+
+  t20 -> p29
+  t21 -> p30
+  t22 -> p31
+  t23 -> p32
+  tt24 -> p33
+  tt25 -> p34
+  t26 -> p35
+  t27 -> p36
+  t28 -> p37
+  t29 -> p38
+  t30 -> p42
+  t31 -> p39
+  t32 -> p40
+  t33 -> p41
+  t34 -> p42
+  t35 -> p43
+  t36 -> p44
+  t37 -> p45
+  t38 -> p46
+  t39 -> p42
+  t40 -> p28
+  t41 -> p47
+  t42 -> p48
+  tt43 -> p49
+  tt43 -> p50
+
+}
+
+t45 -> p74
+t44 -> p51
+
+
+# Modulo Plastico branco ^
+
+  p51
+  p52
+  p53
+  p54
+  p55
+  p56
+  p57
+  p58
+  p59
+  p60
+  p61
+  p62
+  p63
+  p64
+  p65
+  p66
+  p67
+  p68
+  p69
+  p70
+  p71
+  p72
+  p73
+
+  t46
+  t47
+  t48
+  t49
+  tt50
+  tt51
+  t52
+  t53
+  t54
+  t55
+  t56
+  t57
+  t58
+  t59
+  t60
+  t61
+  t62
+  t63
+  t64
+  t65
+  t66
+  t67
+  t68
+  tt69
+  t70
+  t71
+  
+
+subgraph cluster_3 {
+  label="Plastic Piece"
+  style="dashed"
+  #color="white"
+  labelloc = b
+  # margin=0
+
+# pre
+
+  p51 -> t46
+  p52 -> t47
+  p53 -> t48
+  p54 -> t49
+  p55 -> tt50
+  p56 -> tt51
+
+  p57 -> t56
+  p57 -> t52
+
+  p58 -> t53
+  p59 -> t54
+  p60 -> t55
+
+  p61 -> t57
+  p61 -> t61
+
+  p62 -> t58
+  p63 -> t59
+  p64 -> t60
+
+  p65 -> t62
+  p65 -> t67
+
+  p66 -> t63
+  p67 -> t64
+  p68 -> t65
+
+  p69 -> t66
+
+  p70 -> t68
+  p71 -> tt69
+  p72 -> t70
+  p73 -> t71
+
+#pos
+  t46 -> p52
+  t47 -> p53
+  t48 -> p54
+  t49 -> p55
+  tt50 -> p56
+  tt51 -> p57
+  t52 -> p58
+  t53 -> p59
+  t54 -> p60
+  t55 -> p69
+
+  t56 -> p61
+  t57 -> p62
+  t58 -> p63
+  t59 -> p64
+  t60 -> p69
+
+  t61 -> p65
+  t62 -> p66
+  t63 -> p67
+  t64 -> p68
+  t65 -> p69
+  t66 -> p52
+  t67 -> p70
+  t68 -> p71
+  tt69 -> p72
+  tt69 -> p73
+
+
+
+}
+t70 -> p28
+t71 -> p74
+
+
+
+
+
+
+# Modulo Braço (Esteira -> Prensa)
+
+    p74
+    p75
+    p76
+    p77
+    p78
+    p79
+    p80
+    p81
+    p82
+    p83
+    p84
+    p85
+    p86
+
+    t72
+    tt73
+    tt74
+    tt75
+    tt76
+    t77
+    tt78
+    tt79
+    tt80
+    tt81
+    t82
+    tt83
+    t84
+    t85
+
+subgraph cluster_4 {
+  label="Arm From Belt to Press";
+  labelloc = b
+  style="dashed"
+  # color="red"
+
+  # pre
+
+  p74 -> t72
+  p75 -> tt73
+  p76 -> tt74
+  p77 -> tt75
+  p78 -> tt76
+
+  p79 -> t77
+
+  p80 -> tt78
+
+  p81 -> tt79
+
+  p82 -> tt80
+  p83 -> tt81
+  p84 -> t82
+  p84 -> tt83
+
+  p85 -> t84
+
+  p86 -> t85
+
+
+  #pos
+  t72 -> p75
+  tt73 -> p76
+  tt74 -> p77
+  tt75 -> p78
+
+  tt76 -> p79
+
+  t77 -> p80
+
+  tt78 -> p81
+
+  tt79 -> p82
+  tt80 -> p83
+  tt81 -> p84
+  
+  tt83 -> p85
+  t84 -> p86
+
+
+}
+
+
+t82 -> p87
+t82 -> p95
+t85 -> p107
+
+
+# Modulo prensa cubo
+
+    p87
+    p88
+    p89
+    p90
+    p91
+    p92
+    p93
+    p94
+    p95
+
+    tt86
+    tt87
+    tt88
+    tt89
+    tt90
+    tt91
+    t92
+    tt93
+
+subgraph cluster_5 {
+  label="Press";
+  labelloc = b
+  style="dashed"
+  # color="red"
+
+  # pre
+
+  p87 -> tt86
+  p88 -> tt87
+  p89 -> tt88
+  p90 -> tt89
+  p91 -> tt90
+  p92 -> tt91
+  p93 -> t92
+  p94 -> tt93
+  p95 -> tt93
+
+
+  #pos
+
+  tt86 -> p88
+  tt87 -> p89
+  tt88 -> p90
+  tt89 -> p91
+  tt90 -> p92
+  tt91 -> p93
+  t92 -> p94
+
+
+}
+
+tt93 -> p96
+
+
+   # Modulo Braço Prensa -> Armazenador
+   p96
+   p97
+   p98
+   p99
+   p100
+   p101
+   p102
+   p103
+   p104
+   p105
+   p106
+   p107
+
+   tt94
+   t95
+   t96
+   t97
+   tt98
+   tt99
+   t100
+   t101
+   t102
+   tt103
+   t104
+
+
+subgraph cluster_6 {
+  label="Arm From Press to Storage";
+  margin=0.3
+  labelloc = b
+  style="dashed"
+  # color="red"
+  # pre
+
+  p96 -> tt94
+  p97 -> t95
+  p98 -> t96
+  p99 -> t97
+  p100 -> tt98
+  p101 -> tt99
+  p102 -> t100
+  p103 -> t101
+  p104 -> t102
+  p105 -> tt103
+  p106 -> t104
+
+  #pos
+
+  tt94 -> p97
+  t95 -> p98
+  t96 -> p99
+  t97 -> p100
+  tt98 -> p101
+  tt99 -> p102
+  t100 -> p103
+  t101 ->p104
+  t102 -> p105
+  tt103 -> p106
+  t104 -> p107
+
+
+}
+
+t100 -> p108
+
+
+# Modulo armazenador y
+
+    p108
+    p109
+    p110
+    p111
+    p112
+    p113
+    p114
+    p115
+    p116
+    p117
+    p118
+    p119
+
+    tt105
+    tt106
+    t107
+    t108
+    t109
+    t110
+    t111
+    t112
+    t113
+    t114
+    t115
+    t116
+    t117
+    t118
+
+
+subgraph cluster_7 {
+  label="Storage (y)";
+  labelloc = b
+  style="dashed"
+  # color="red"
+  # pre
+
+  p108 -> tt105
+  p109 -> tt106
+
+  p110 -> t107
+  p110 -> t110
+  p110 -> t113
+  p110 -> t116
+
+
+  p111 -> t108
+  p112 -> t109
+  p113 -> t111
+  p114 -> t112
+  p115 -> t114
+  p116 -> t115
+  p117 -> t117
+  p118 -> t118
+
+
+
+
+  #pos
+
+  tt105 -> p109
+  tt106 -> p110
+  t107 -> p111
+  t108 -> p112
+  t109 -> p119
+  t110 -> p113
+  t111 -> p114
+  t112 -> p119
+  t113 -> p115
+  t114 -> p116
+  t115 -> p119
+  t116 -> p117
+  t117 -> p118
+  t118 -> p119
+
+
+}
+tt106 -> p120
+p119 -> tt140
+
+# Módulo armazenador (x)
+
+    p120
+    p121
+    p122
+    p123
+    p124
+    p125
+    p126
+    p127
+    p128
+    p129
+    p130
+    p131
+    p132
+    p133
+    p134
+    p135
+
+
+    t119
+    t120
+    t121
+    t122
+    t123
+    t124
+    t125
+    t126
+    t127
+    t128
+    t129
+    t130
+    t131
+    t132
+    t133
+    t134
+    t135
+    t136
+    t137
+    t138
+    t139
+
+    
+subgraph cluster_8 {
+  label="Storage (x)";
+  labelloc = b
+  style="dashed"
+  # color="red"
+
+  # pre
+
+  p120 -> t119
+  p120 -> t122
+  p120 -> t125
+  p120 -> t128
+  p120 -> t131
+  p120 -> t134
+  p120 -> t137
+
+  p121 -> t120
+  p122 -> t121
+  p123 -> t123
+  p124 -> t124
+  p125 -> t126
+  p126 -> t127
+  p127 -> t129
+  p128 -> t130
+  p129 -> t132
+  p130 -> t133
+  p131 -> t135
+  p132 -> t136
+  p133 -> t138
+  p134 -> t139
+
+
+  #pos
+
+  t119 -> p121
+  t120 -> p122
+  t121 -> p135
+  t122 -> p123
+  t123 -> p124
+  t124 -> p135
+  t125 -> p125
+  t126 -> p126
+  t127 -> p135
+  t128 -> p127
+  t129 -> p128
+  t130 -> p135
+  t131 -> p129
+  t132 -> p130
+  t133 -> p135
+  t134 -> p131
+  t135 -> p132
+  t136 -> p135
+  t137 -> p133
+  t138 -> p134
+  t139 -> p135
+
+
+
+
+
+}
+
+p135 -> tt140
+
+# Módulo armazenador (coloca peça e reset)
+
+  p136
+  p137
+  p138
+  p139
+  p140
+  p141
+  p142
+  p143
+  p144
+  p145
+
+
+  tt140
+  tt141
+  tt142
+  tt143
+  tt144
+  t145
+  t146
+  t147
+  t148
+  t149
+
+
+subgraph cluster_9 {
+  label="Store Piece";
+  labelloc = b
+  margin=0.3
+  style="dashed"
+  # color="red"
+  # pre
+
+  p136 -> tt141
+  p137 -> tt142
+  p138 -> tt143
+  p139 -> tt144
+  p140 -> t145
+  p141 -> t147
+  p142 -> t146
+  p143 -> t147
+  p144 -> t148
+  p144 -> t149
+
+
+  #pos
+
+  tt140 -> p136
+  tt141 -> p137
+  tt142 -> p138
+  tt143 -> p139
+  tt144 -> p140
+  tt144 -> p142
+  t145 -> p141
+  t146 -> p143
+  t147 -> p144
+  t148 -> p145
+
+
+}
+
+t149 -> p0m1
+p145 -> t96
+
+}
