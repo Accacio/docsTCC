@@ -1,3 +1,4 @@
+\maxdeadcycles=20
 \usepackage[utf8]{inputenc}
 \usepackage[english]{babel}
 % \usepackage[brazil]{babel}
@@ -30,15 +31,28 @@
 \usepackage[acronym,toc]{glossaries}\makeglossaries
 \usepackage{tikz}
 \usepackage{ladder} %https://github.com/AurelienC/tex-ladder/blob/master/ladder.sty
-\usetikzlibrary{arrows,shapes,automata,petri}
-
-\tikzset{
-  place/.style={
+\usetikzlibrary{arrows,shapes,automata,petri,external,arrows.meta}
+	\tikzset{
+	place/.style={
+	circle,
+	thick,
+	draw=black!100, % draw=blue!75,
+    % fill=blue!20,
+    minimum size=6mm
+  },
+  extPlace/.style={
     circle,
-    thick,
+    dotted,
     draw=black!100, % draw=blue!75,
     % fill=blue!20,
     minimum size=6mm
+  },
+  extTransition/.style={
+    rectangle,
+    dotted,
+    fill=white,
+    minimum width=8mm,
+    inner ysep=0.7pt
   },
   transition/.style={
     rectangle,
@@ -46,6 +60,13 @@
     fill=black,
     minimum width=8mm,
     inner ysep=0.7pt
+  },
+  extTimedtransition/.style={
+    rectangle,
+    dotted,
+    fill=white,
+    minimum width=8mm,
+    inner ysep=2pt
   },
   timedtransition/.style={
     rectangle,
@@ -61,9 +82,7 @@
 \definecolor{darkblue}{rgb}{0,0,0.3}
 \definecolor{blue}{rgb}{0,0,0.5}
 
-
 % hyperref setup
-
 \hypersetup{
   % pdftitle={\title},
   pdfauthor={Rafael Accácio Nogueira},
@@ -79,15 +98,6 @@
   pdfpagemode=UseOutlines,    % this is the option you were lookin for
   pdfpagelayout=TwoPageRight,
 }
-% \hypersetup{%
-%   pdfauthor={\@authname\ \@authsurn},
-%   pdftitle={\local@title},
-%   pdfsubject={\local@doctype\ de \@degreename\ em \local@deptname\ da COPPE/UFRJ},
-%   pdfcreator={LaTeX with CoppeTeX toolkit},
-%   breaklinks={true},
-%   raiselinks={true},
-%   pageanchor={true},
-% }}
 
 \makeatletter
 \let\stdchapter\chapter
@@ -144,7 +154,6 @@
 		\end{center}
 	\end{figure}
 }
-
 
 \newif\ifdebug
 \newcommand{\draft}{\debugtrue}
@@ -207,6 +216,10 @@
 % \KOMAoptions{paper=portrait}
 % \recalctypearea
 % }
+
+\newcolumntype{P}[1]{>{\centering\arraybackslash}p{#1}}
+\newcolumntype{M}[1]{>{\centering\arraybackslash}m{#1}}
+
 
 %%% Local Variables:
 %%% mode: latex
