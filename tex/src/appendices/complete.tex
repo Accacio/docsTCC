@@ -1,41 +1,43 @@
-
-
-
-
-% \KOMAoptions{paper=a4}
-
-% \recalctypearea
-
-
-%   \vspace*{\fill}
-%   \begin{figure}[H]
-%     \centering
-%       \includegraphics[width=0.8\textwidth]{#1}
-%     \caption{#2}
-%     \label{fig:#3}
-%   \end{figure}
-%   \vspace*{\fill}
-
-
-% \eject \pdfpagewidth=420mm \pdfpageheight=297mm
-% \let\oldhsize\hsize
-% \let\hsize2\oldhsize
-% \begin{landscape}
+\tikzset{
+  place/.style={
+    circle,
+    thick,
+    draw=black!100, % draw=blue!75,
+    % fill=blue!20,
+    minimum size=0.3mm
+  },
+  transition/.style={
+    rectangle,
+    thick,
+    fill=black,
+    minimum width=2mm,
+    inner ysep=0.7pt,
+  },
+  timedtransition/.style={
+    rectangle,
+    thick,
+    fill=black,
+    minimum width=4mm,
+    inner ysep=0.5pt
+  },
+  inhibitor/.style={-o},
+  text=\small
+}  
+\chapter{Complete Petri Net} 
+\input{../../tables/complete/complete}
  
-\KOMAoptions{paper=a1,paper=landscape}
+\KOMAoptions{paper=a3,paper=landscape}
 \recalctypearea
- \chapter{Complete Petri Net} 
 
 
-  \begin{figure}[h]
-    \centering
-    \includegraphics[width=0.8\textwidth]{../../figures/petriNets/dot/completo/completo.pdf}
-  \end{figure}
+\begin{figure}[H]
+\vspace{-2cm}
+\centerline{\includegraphics[height=1.28\textheight]{../../figures/petriNet/dot/complete/complete.tikz}}
+% \centerline{\resizebox{!}{1.2\textheight}{\input{../../figures/petriNet/dot/complete/stdin.tikz}}}
+\end{figure}
 
-  % \end{landscape}
-% \eject \pdfpagewidth=210mm \pdfpageheight=297mm
-% \KOMAoptions{paper=a4}
-% \recalctypearea
+
+
 \KOMAoptions{paper=a4,paper=portrait}
 \recalctypearea
 
