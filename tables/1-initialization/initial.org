@@ -1,5 +1,5 @@
-
-#+ATTR_LATEX: :caption  \caption{Initialization Module Places.} :align cc :booktabs
+# PlacesBegin
+#+ATTR_LATEX: :caption  \caption{Initialization Module Places.} :align M{5cm}M{10cm}
 | Places | Meaning                                               |
 |--------+-------------------------------------------------------|
 | p0m1   | System Stopped                                        |
@@ -30,8 +30,10 @@
 | p25    | Rotate Arm CW e Turn HSC ON                           |
 | p26    | Arm Stopped ( facing conveyor belt )                  |
 | p27    | System Ready                                          |
+# PlacesEnd
 
-#+ATTR_LATEX: :caption \caption{Initialization Module Transitions.} :align cc
+# TransitionsBegin
+#+ATTR_LATEX: :caption \caption{Initialization Module Transitions.} :placement [H] :align M{5cm}M{10cm}
 | Transitions | Meaning                                              |
 |-------------+------------------------------------------------------|
 | t0          | Initialization Button                                |
@@ -54,5 +56,4 @@
 | t17         | ARMCOUNTER = \todo{-1690}                            |
 | t18         |                                                      |
 | t19         | Start Button                                         |
-
-
+# TransitionsEnd

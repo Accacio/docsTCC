@@ -1,7 +1,7 @@
 \begin{table}[htbp]
 \caption{Initialization Module Places.}
 \centering
-\begin{tabular}{cc}
+\begin{tabular}{M{5cm}M{10cm}}
 Places & Meaning\\
 \hline
 \hyperlink{partialNet:p0}{\hypertarget{partialTable:p0m1}{$p_{0}$}} & System Stopped\\
@@ -17,7 +17,7 @@ Places & Meaning\\
 \hyperlink{partialNet:p10}{\hypertarget{partialTable:p10}{$p_{10}$}} & Left Discharge Cylinder Retracted\\
 \hyperlink{partialNet:p11}{\hypertarget{partialTable:p11}{$p_{11}$}} & Turn Conveyor Belt On (Reverse)\\
 \hyperlink{partialNet:p12}{\hypertarget{partialTable:p12}{$p_{12}$}} & No Pieces On Conveyor Belt\\
-\hyperlink{partialNet:p13}{\hypertarget{partialTable:p13}{$p_{13}$}} & Reset Variables\footnotemark\\
+\hyperlink{partialNet:p13}{\hypertarget{partialTable:p13}{$p_{13}$}} & Reset Variables\\
 \hyperlink{partialNet:p14}{\hypertarget{partialTable:p14}{$p_{14}$}} & Raise Press\\
 \hyperlink{partialNet:p15}{\hypertarget{partialTable:p15}{$p_{15}$}} & Open Safety Door\\
 \hyperlink{partialNet:p16}{\hypertarget{partialTable:p16}{$p_{16}$}} & Extend Assembly Unit Holder\\
@@ -33,12 +33,12 @@ Places & Meaning\\
 \hyperlink{partialNet:p26}{\hypertarget{partialTable:p26}{$p_{26}$}} & Arm Stopped ( facing conveyor belt )\\
 \hyperlink{partialNet:p27}{\hypertarget{partialTable:p27}{$p_{27}$}} & System Ready\\
 \end{tabular}
-\end{table}\footnotetext[1]{\label{org87f9370}Counter Variables: HALFPIECECOUNTER, COUNTER1, COUNTER2, COUNTER3, COUNTER4, COUNTER5.}
+\end{table}
 
-\begin{table}[htbp]
+\begin{table}[H]
 \caption{Initialization Module Transitions.}
 \centering
-\begin{tabular}{cc}
+\begin{tabular}{M{5cm}M{10cm}}
 Transitions & Meaning\\
 \hline
 \hyperlink{partialNet:t0}{\hypertarget{partialTable:t0}{$t_{0}$}} & Initialization Button\\
@@ -61,6 +61,5 @@ Transitions & Meaning\\
 \hyperlink{partialNet:t17}{\hypertarget{partialTable:t17}{$t_{17}$}} & ARMCOUNTER = \todo{-1690}\\
 \hyperlink{partialNet:t18}{\hypertarget{partialTable:t18}{$t_{18}$}} & \\
 \hyperlink{partialNet:t19}{\hypertarget{partialTable:t19}{$t_{19}$}} & Start Button\\
- & \\
 \end{tabular}
 \end{table}

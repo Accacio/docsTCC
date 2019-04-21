@@ -1,7 +1,7 @@
-\begin{table}[htbp]
+\begin{table}[H]
 \caption{Arm From Press To Storage Unit Module Places.}
 \centering
-\begin{tabular}{cc}
+\begin{tabular}{M{5cm}M{10cm}}
 Places & Meaning\\
 \hline
 \hyperlink{partialNet:p96}{\hypertarget{partialTable:p96}{$p_{96}$}} & Extend Arm e Turn Vacuum On\\
@@ -19,10 +19,10 @@ Places & Meaning\\
 \end{tabular}
 \end{table}
 
-\begin{table}[htbp]
+\begin{table}[H]
 \caption{Arm From Press To Storage Unit Module Transitions.}
 \centering
-\begin{tabular}{cc}
+\begin{tabular}{M{5cm}M{10cm}}
 Transitions & Meaning\\
 \hline
 \hyperlink{partialNet:tt94}{\hypertarget{partialTable:tt94}{$t_{94}$}} & T=1.5s and Arm Lowered\\

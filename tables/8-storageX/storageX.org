@@ -1,5 +1,5 @@
-
-#+ATTR_LATEX: :caption  \caption{Storage Unit (X axis) Module Places.} :align cc
+# PlacesBegin
+#+ATTR_LATEX: :caption  \caption{Storage Unit (X axis) Module Places.} :placement [H] :align M{5cm}M{10cm}
 | Places | Meaning                                                  |
 |--------+----------------------------------------------------------|
 | p118   | COUNTER1:=COUNTER1+1 e COUNTER4:=COUNTER4+1              |
@@ -14,8 +14,10 @@
 | p127   | Reset COUNTER5*                                          |
 | p128   | Reset COUNTER4* , COUNTER2:=COUNTER2+1                   |
 | p129   |                                                          |
+# PlacesEnd
 
-#+ATTR_LATEX: :caption  \caption{Storage Unit (X axis) Module Transitions.} :align cc
+# TransitionsBegin
+#+ATTR_LATEX: :caption  \caption{Storage Unit (X axis) Module Transitions.} :placement [H] :align M{5cm}M{10cm}
 | Transitions | Meaning            |
 |-------------+--------------------|
 | t121        | COUNTER4=1         |
@@ -42,3 +44,4 @@
 | t142        |                    |
 | t143        |                    |
 | t144        |                    |
+# TransitionsEnd

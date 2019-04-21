@@ -1,5 +1,5 @@
-
-#+ATTR_LATEX: :caption  \caption{Arm From Conveyor Belt to Press Module Places.} :align cc
+# PlacesBegin
+#+ATTR_LATEX: :caption  \caption{Arm From Conveyor Belt to Press Module Places.} :placement [H] :align M{5cm}M{10cm}
 | Places | Meaning                                                    |
 |--------+------------------------------------------------------------|
 | p74    | Raise Arm                                                  |
@@ -15,8 +15,10 @@
 | p84    | Raise Arm                                                  |
 | p85    | Turn HSC On, Raise Arm and Rotate Arm CCW                  |
 | p86    | Raise Arm and HALFPIECECOUNTER:=HALFPIECECOUNTER+1         |
+# PlacesEnd
 
-#+ATTR_LATEX: :caption  \caption{Arm From Conveyor Belt to Press Module Transitions.} :align cm{8cm}
+# TransitionsBegin
+#+ATTR_LATEX: :caption  \caption{Arm From Conveyor Belt to Press Module Transitions.} :placement [H] :align M{5cm}M{10cm}
 | Transitions | Meaning                                                                  |
 |-------------+--------------------------------------------------------------------------|
 | t72         | Arm Raised                                                               |
@@ -33,4 +35,4 @@
 | tt83        | T=1.5s, HALFPIECECOUNTER=0 and Raised Arm                                |
 | t84         | ARMCOUNTER = \todo{-1690}                                                |
 | t85         |                                                                          |
-
+# TransitionsEnd

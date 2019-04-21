@@ -1,5 +1,5 @@
-
-#+ATTR_LATEX: :caption  \caption{Arm From Press To Storage Unit Module Places.} :align cc
+# PlacesBegin
+#+ATTR_LATEX: :caption  \caption{Arm From Press To Storage Unit Module Places.} :placement [H] :align M{5cm}M{10cm}
 | Places | Meaning                                               |
 |--------+-------------------------------------------------------|
 | p96    | Extend Arm e Turn Vacuum On                           |
@@ -14,8 +14,10 @@
 | p105   | Arm Stoppen                                           |
 | p106   | Turn HSC On, Turn Arm CW                              |
 | p107   | Arm Stopped ( facing conveyor belt )                  |
+# PlacesEnd
 
-#+ATTR_LATEX: :caption  \caption{Arm From Press To Storage Unit Module Transitions.} :align cc
+# TransitionsBegin
+#+ATTR_LATEX: :caption  \caption{Arm From Press To Storage Unit Module Transitions.} :placement [H] :align M{5cm}M{10cm}
 | Transitions | Meaning                                                    |
 |-------------+------------------------------------------------------------|
 | tt94        | T=1.5s and Arm Lowered                                     |
@@ -29,4 +31,4 @@
 | t102        | Inductive Sensor Arm                                       |
 | tt103       | T=1s                                                       |
 | t104        | ARMCOUNTER = \todo{-1690}                                  |
-
+# TransitionsEnd

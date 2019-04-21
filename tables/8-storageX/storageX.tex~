@@ -1,7 +1,7 @@
-\begin{table}[htbp]
+\begin{table}[H]
 \caption{Storage Unit (X axis) Module Places.}
 \centering
-\begin{tabular}{cc}
+\begin{tabular}{M{5cm}M{10cm}}
 Places & Meaning\\
 \hline
 \hyperlink{partialNet:p118}{\hypertarget{partialTable:p118}{$p_{118}$}} & COUNTER1:=COUNTER1+1 e COUNTER4:=COUNTER4+1\\
@@ -19,10 +19,10 @@ Places & Meaning\\
 \end{tabular}
 \end{table}
 
-\begin{table}[htbp]
+\begin{table}[H]
 \caption{Storage Unit (X axis) Module Transitions.}
 \centering
-\begin{tabular}{cc}
+\begin{tabular}{M{5cm}M{10cm}}
 Transitions & Meaning\\
 \hline
 \hyperlink{partialNet:t121}{\hypertarget{partialTable:t121}{$t_{121}$}} & COUNTER4=1\\

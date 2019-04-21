@@ -7,12 +7,12 @@
   \definecolor{fillcol}{rgb}{1.0,1.0,1.0};
   \pgfsetfillcolor{fillcol}
 \end{scope}
-  \node (p2) at (349.0bp,386.9bp) [draw,ellipse,place, label=above:, label=left:\hyperlink{partialTable:p2}{\hypertarget{partialNet:p2}{$p_{2}$}},rotate=90] {};
-  \node (p1) at (636.0bp,386.9bp) [draw,ellipse,place, label=above:, label=left:\hyperlink{partialTable:p1}{\hypertarget{partialNet:p1}{$p_{1}$}},rotate=90] {};
-  \node (t2) at (780.0bp,210.9bp) [draw,ellipse,transition, label=above:, label=left:\hyperlink{partialTable:t2}{\hypertarget{partialNet:t2}{$t_{2}$}},rotate=90] {};
-  \node (t0) at (206.0bp,386.9bp) [draw,ellipse,transition, label=above:, label=left:\hyperlink{partialTable:t0}{\hypertarget{partialNet:t0}{$t_{0}$}},rotate=90] {};
-  \node (t1) at (493.0bp,386.9bp) [draw,ellipse,transition, label=above:, label=left:\hyperlink{partialTable:t1}{\hypertarget{partialNet:t1}{$t_{1}$}},rotate=90] {};
-  \node (p0m1) at (62.0bp,210.9bp) [draw,ellipse,place, tokens=1, label=above:, label=left:\hyperlink{partialTable:p0m1}{\hypertarget{partialNet:p0m1}{$p_{0}$}},rotate=90] {};
+  \node (p2) at (349.0bp,386.9bp) [draw,ellipse,place, label=above:, label=left:\hyperlink{figuretestesTable:p2}{\hypertarget{figuretestes:p2}{$p_{2}$}},rotate=90] {};
+  \node (p1) at (636.0bp,386.9bp) [draw,ellipse,place, label=above:, label=left:\hyperlink{figuretestesTable:p1}{\hypertarget{figuretestes:p1}{$p_{1}$}},rotate=90] {};
+  \node (t2) at (780.0bp,210.9bp) [draw,ellipse,transition, label=above:, label=left:\hyperlink{figuretestesTable:t2}{\hypertarget{figuretestes:t2}{$t_{2}$}},rotate=90] {};
+  \node (t0) at (206.0bp,386.9bp) [draw,ellipse,transition, label=above:, label=left:\hyperlink{figuretestesTable:t0}{\hypertarget{figuretestes:t0}{$t_{0}$}},rotate=90] {};
+  \node (t1) at (493.0bp,386.9bp) [draw,ellipse,transition, label=above:, label=left:\hyperlink{figuretestesTable:t1}{\hypertarget{figuretestes:t1}{$t_{1}$}},rotate=90] {};
+  \node (p0m1) at (62.0bp,210.9bp) [draw,ellipse,place, tokens=1, label=above:, label=left:\hyperlink{figuretestesTable:p0m1}{\hypertarget{figuretestes:p0m1}{$p_{0}$}},rotate=90] {};
   \draw [-Latex] (p1) ..controls (674.35bp,340.03bp) and (730.31bp,271.63bp)  .. (t2);
   \draw [-Latex] (p2) ..controls (398.47bp,386.9bp) and (430.5bp,386.9bp)  .. (t1);
   \draw [-Latex] (t1) ..controls (542.5bp,386.9bp) and (574.2bp,386.9bp)  .. (p1);

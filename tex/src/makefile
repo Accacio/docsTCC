@@ -43,51 +43,55 @@ table/storePiece:
 	linkTables	../../tables/9-storePiece/storePiece.tex
 
 table/complete:
-	@emacs ../../tables/completo/complete.org --batch --eval="(org-latex-export-to-latex nil nil nil t)" --kill;
+	cd ../../tables/complete/ && ./makeCompleteTable > complete.org
+	@emacs ../../tables/complete/complete.org --batch --eval="(org-latex-export-to-latex nil nil nil t)" --kill;
+	linkTables ../../tables/complete/complete.tex
 
-petriNets: petriNet/initial petriNet/metalv petriNet/plastic petriNet/armBeltToPress petriNet/press petriNet/armPressToStorage petriNet/storageY petriNet/storageX petriNet/storePiece 
+petriNets: petriNet/initial petriNet/metalv petriNet/plastic petriNet/armBeltToPress petriNet/press petriNet/armPressToStorage petriNet/storageY petriNet/storageX petriNet/storePiece petriNet/complete
 
 watchpetriNets:
-	inotifywait -qm --event modify --format %w ../../figures/petriNets/dot/*/*.dot | while read line; do make "petriNet/$$(basename $${line%.*})"; done
+	inotifywait -qm --event modify --format %w ../../figures/petriNet/dot/*/*.dot | while read line; do make "petriNet/$$(basename $${line%.*})"; done
 
 petriNet/initial:
-	dot2petri ../../figures/petriNets/dot/1-initialization/initial.dot -py
-	linkPetriNets ../../figures/petriNets/dot/1-initialization/initial.tex
+	dot2petri ../../figures/petriNet/dot/1-initialization/initial.dot -py
+	linkPetriNets ../../figures/petriNet/dot/1-initialization/initial.tex
 
 petriNet/metalv:
-	dot2petri ../../figures/petriNets/dot/2-metalv/metalv.dot -py
-	linkPetriNets ../../figures/petriNets/dot/2-metalv/metalv.tex
+	dot2petri ../../figures/petriNet/dot/2-metalv/metalv.dot -py
+	linkPetriNets ../../figures/petriNet/dot/2-metalv/metalv.tex
 
 petriNet/plastic:
-	dot2petri ../../figures/petriNets/dot/3-plastic^/plastic.dot -py
-	linkPetriNets ../../figures/petriNets/dot/3-plastic^/plastic.tex
+	dot2petri ../../figures/petriNet/dot/3-plastic^/plastic.dot -py
+	linkPetriNets ../../figures/petriNet/dot/3-plastic^/plastic.tex
 
 petriNet/armBeltToPress:
-	dot2petri ../../figures/petriNets/dot/4-armBeltToPress/armBeltToPress.dot -py
-	linkPetriNets ../../figures/petriNets/dot/4-armBeltToPress/armBeltToPress.tex
+	dot2petri ../../figures/petriNet/dot/4-armBeltToPress/armBeltToPress.dot -py
+	linkPetriNets ../../figures/petriNet/dot/4-armBeltToPress/armBeltToPress.tex
 
 petriNet/press:
-	dot2petri ../../figures/petriNets/dot/5-press/press.dot -py
-	linkPetriNets ../../figures/petriNets/dot/5-press/press.tex
+	dot2petri ../../figures/petriNet/dot/5-press/press.dot -py
+	linkPetriNets ../../figures/petriNet/dot/5-press/press.tex
 
 petriNet/armPressToStorage:
-	dot2petri ../../figures/petriNets/dot/6-armPressToStorage/armPressToStorage.dot -py
-	linkPetriNets ../../figures/petriNets/dot/6-armPressToStorage/armPressToStorage.tex
+	dot2petri ../../figures/petriNet/dot/6-armPressToStorage/armPressToStorage.dot -py
+	linkPetriNets ../../figures/petriNet/dot/6-armPressToStorage/armPressToStorage.tex
 
 petriNet/storageY:
-	dot2petri ../../figures/petriNets/dot/7-storageY/storageY.dot -py
-	linkPetriNets ../../figures/petriNets/dot/7-storageY/storageY.tex
+	dot2petri ../../figures/petriNet/dot/7-storageY/storageY.dot -py
+	linkPetriNets ../../figures/petriNet/dot/7-storageY/storageY.tex
 
 petriNet/storageX:
-	dot2petri ../../figures/petriNets/dot/8-storageX/storageX.dot -py
-	linkPetriNets ../../figures/petriNets/dot/8-storageX/storageX.tex
+	dot2petri ../../figures/petriNet/dot/8-storageX/storageX.dot -py
+	linkPetriNets ../../figures/petriNet/dot/8-storageX/storageX.tex
 
 petriNet/storePiece:
-	dot2petri ../../figures/petriNets/dot/9-storePiece/storePiece.dot -py
-	linkPetriNets ../../figures/petriNets/dot/9-storePiece/storePiece.tex
+	dot2petri ../../figures/petriNet/dot/9-storePiece/storePiece.dot -py
+	linkPetriNets ../../figures/petriNet/dot/9-storePiece/storePiece.tex
 
 petriNet/complete:
-	dot2petri ../../figures/petriNets/dot/completo/completo.dot  -py
+	cd ../../figures/petriNet/dot/complete && ./makeCompletePetriNet > complete.dot
+	dot2petri ../../figures/petriNet/dot/complete/complete.dot -py
+	linkPetriNets ../../figures/petriNet/dot/complete/complete.tex
 
 clean:
 	@cleanLatex

@@ -1,5 +1,5 @@
-
-#+ATTR_LATEX: :caption \caption{Metal Half-cube Selection Module Places.} :align cc
+# PlacesBegin
+#+ATTR_LATEX: :caption \caption{Metal Half-cube Selection Module Places.} :placement [H] :align M{5cm}M{10cm}
 | Places | Meaning                             |
 |--------+-------------------------------------|
 | p28    | MAG1 Empty                          |
@@ -25,8 +25,10 @@
 | p48    | Turn Conveyor Belt On               |
 | p49    | Metal Half-cube Ready               |
 | p50    | Conveyor Belt Stopped               |
+# PlacesEnd
 
-#+ATTR_LATEX: :caption  \caption{Metal Half-cube Selection Module Transitions.} :align cc
+# TransitionsBegin
+#+ATTR_LATEX: :caption  \caption{Metal Half-cube Selection Module Transitions.} :placement [H] :align M{5cm}M{10cm}
 | Transitions | Meaning                                             |
 |-------------+-----------------------------------------------------|
 | t20         | $\overline{\mbox{MAG1 Empty}}$                      |
@@ -55,3 +57,4 @@
 | tt43        | T=0.5s                                              |
 | t44         | Proximity Sensor End Of Conveyor Belt \downarrow    |
 | t45         |                                                     |
+# TransitionsEnd

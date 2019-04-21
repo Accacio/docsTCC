@@ -1,0 +1,43 @@
+#!/bin/bash
+
+function getPlacesTable {
+    cat $1 | sed -n -e '/^# PlacesBegin$/,/^# PlacesEnd$/!d;p' | sed '5,$!d' | sed '$d'
+}
+
+function getTransitionsTable {
+    cat $1 | sed -n -e '/^# TransitionsBegin$/,/^# TransitionsEnd$/!d;p' | sed '5,$!d' | sed '$d'
+}
+
+# Places
+echo "#+ATTR_LATEX: :caption \caption{Complete Places.} :environment longtable :align M{5cm}M{10cm}"
+echo "| Places | Meaning |"
+echo "|----+---------|"
+echo -e "$(getPlacesTable ../1-initialization/initial.org)\n" \
+     "$(getPlacesTable ../2-metalv/metalv.org)\n" \
+     "$(getPlacesTable ../3-plastic^/plastic.org)\n" \
+     "$(getPlacesTable ../4-armBeltToPress/armBeltToPress.org)\n" \
+     "$(getPlacesTable ../5-press/press.org)\n" \
+     "$(getPlacesTable ../6-armPressToStorage/armPressToStorage.org)\n" \
+     "$(getPlacesTable ../7-storageY/storageY.org)\n" \
+     "$(getPlacesTable ../8-storageX/storageX.org)\n" \
+     "$(getPlacesTable ../9-storePiece/storePiece.org)" \
+    | sed -E "s|\ +|\ |g;" | sed "s(\ |(|(g;s(|\ (|(g" \
+    | awk -F'|' '{a[$3]=a[$3]", c"$2;}END{for (x in a) print "|" substr(a[x],2)"|"  x "|";}' | sort -V
+
+echo ""
+#Transitions
+echo "#+ATTR_LATEX: :caption \caption{Complete Transitions.} :environment longtable :align M{5cm}M{10cm}"
+echo "| Transitions | Meaning |"
+echo "|----+---------|"
+echo -e "$(getTransitionsTable ../1-initialization/initial.org)\n" \
+     "$(getTransitionsTable ../2-metalv/metalv.org)\n" \
+     "$(getTransitionsTable ../3-plastic^/plastic.org)\n" \
+     "$(getTransitionsTable ../4-armBeltToPress/armBeltToPress.org)\n" \
+     "$(getTransitionsTable ../5-press/press.org)\n" \
+     "$(getTransitionsTable ../6-armPressToStorage/armPressToStorage.org)\n" \
+     "$(getTransitionsTable ../7-storageY/storageY.org)\n" \
+     "$(getTransitionsTable ../8-storageX/storageX.org)\n" \
+     "$(getTransitionsTable ../9-storePiece/storePiece.org)" \
+    | sed -E "s|\ +|\ |g;" | sed "s(\ |(|(g;s(|\ (|(g" \
+    | awk -F'|' '{a[$3]=a[$3]", c"$2;}END{for (x in a) print "|" substr(a[x],2)"|"  x "|";}' | sort -V
+
