@@ -1,0 +1,31 @@
+# PlacesBegin
+#+ATTR_LATEX: :caption  \caption{Cube Storage Module Places.} :placement [H] :align M{5cm}M{10cm}
+| Places | Meaning                                             |
+|--------+-----------------------------------------------------|
+| p130   | Extend Storage Unit                                 |
+| p131   | Extend Storage Unit and Move Storage Unit Downwards |
+| p132   | Extend Storage Unit                                 |
+| p133   | Piece Stored                                        |
+| p134   | Move Storage Unit to the Right                      |
+| p135   | Storage Unit Ready ( horizontal )                   |
+| p136   | Move Storage Unit Downwards                         |
+| p137   | Storage Unit Ready ( vertical )                     |
+| p138   |                                                     |
+| p139   | Storage Unit Ready                                  |
+# PlacesEnd
+
+# TransitionsBegin
+#+ATTR_LATEX: :caption  \caption{Cube Storage Module Transitions.} :placement [H] :align M{5cm}M{10cm}
+| Transitions | Meaning                            |
+|-------------+------------------------------------|
+| tt145       | T=2s                               |
+| tt146       | T=3s                               |
+| tt147       | T=0.25s                            |
+| tt148       | T=3s                               |
+| tt149       | T=7s                               |
+| t150        | Storage Unit Right Limit Switch    |
+| t151        | Storage Unit Inferior Limit Switch |
+| t152        |                                    |
+| t153        | COUNTER1<28                        |
+| t154        | COUNTER1=28                        |
+# TransitionsEnd

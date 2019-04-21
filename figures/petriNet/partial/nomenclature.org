@@ -1,0 +1,81 @@
+
+#+ATTR_LATEX: :caption \caption{Inputs PLC1} :align c|c|c
+| Input                                      | Address | Tag        |
+|--------------------------------------------+---------+------------|
+| MAG 1 Cylinder Extended                    | I0.0    | I_MAG1EXT  |
+| MAG 1 Cylinder Retracted                   | I0.1    | I_MAG1RET  |
+| MAG 1 Empty                                | I0.2    | I_MAG1EMPT |
+| MAG 2 Cylinder Extended                    | I0.3    | I_MAG2EXT  |
+| MAG 2 Cylinder Retracted                   | I0.4    | I_MAG2RET  |
+| MAG 2 Empty                                | I0.5    | I_MAG2EMPT |
+| Proximity Sensor Left Discharge Cylinder   | I2.0    | I_PSLD     |
+| Proximity Sensor Center Discharge Cylinder | I2.1    | I_PSCD     |
+| Proximity Sensor Right Discharge Cylinder  | I2.2    | I_PSRD     |
+| Relay                                      | I2.3    | I_RELAY1   |
+| Left Discharge Cylinder Extended           | I1.0    | I_LDCEXT   |
+| Left Discharge Cylinder Retracted          | I1.1    | I_LDCRET   |
+| Center Discharge Cylinder Extended         | I1.2    | I_CDCEXT   |
+| Center Discharge Cylinder Retracted        | I1.3    | I_CDCRET   |
+| Right Discharge Cylinder Extended          | I1.4    | I_RDCEXT   |
+| Right Discharge Cylinder Retracted         | I1.5    | I_RDCRET   |
+| White Color Sensor                         | I1.6    | I_WHIT     |
+| Metalic Sensor                             | I0.7    | I_METAL    |
+| Proximity Sensor End Of Conveyor Belt      | I0.6    | I_PSEOC    |
+| Distance Sensor                            | IW4     | I_DS       |
+
+#+ATTR_LATEX: :caption \caption{Outputs PLC1} :align c|c|c
+| Output                           | Address | Tag       |
+|----------------------------------+---------+-----------|
+| Extend MAG 1 Cylinder            | Q1.0    | O_MAG1EXT |
+| Retract MAG 1 Cylinder           | Q1.1    | O_MAG1RET |
+| Extend MAG 2 Cylinder            | Q1.2    | O_MAG2EXT |
+| Retra MAG 2 Cylinder             | Q1.3    | O_MAG2RET |
+| Extend Right Discharge Cylinder  | Q0.0    | O_RDCEXT  |
+| Extend Center Discharge Cylinder | Q0.1    | O_CDCEXT  |
+| Extend Left Discharge Cylinder   | Q0.2    | O_LDCEXT  |
+| Conveyor Belt Forward            | Q1.4    | O_CBFW    |
+| Conveyor Belt Reverse            | Q1.5    | O_CBREV   |
+
+#+ATTR_LATEX: :caption \caption{Inputs PLC2} :align c|c|c
+| Input                               | Address | Tag        |
+|-------------------------------------+---------+------------|
+| Safety Door Opened                  | I1.0    | I_SDO      |
+| Safety Door Closed                  | I1.1    | I_SDC      |
+| Assembly Unit Holder Extended       | I1.2    | I_AUHEXT   |
+| Assembly Unit Holder Retracted      | I1.3    | I_AUHRET   |
+| Inductive Sensor Arm                | I0.2    | I_INDARM   |
+| Arm Lowered                         | I0.4    | I_ARMLOW   |
+| Arm Raised                          | I0.3    | I_ARMHIG   |
+| Arm Retracted                       | I0.6    | I_ARMRET   |
+| Arm Extended                        | I0.5    | I_ARMEXT   |
+| Storage Unit Vertical Encoder       | I2.0    | I_SUVE     |
+| Storage Unit Inferior Limit Switch  | I2.2    | I_SUILS    |
+| Storage Unit Superior Limit Switch  | I2.1    | I_SUSLS    |
+| Storage Unit Extended               | I2.3    | I_SUEXT    |
+| Storage Unit Retracted              | I2.4    | I_SURET    |
+| Relay                               | I2.5    | I_RELAY2   |
+| Storage Unit Horizontal Encoder     | I1.4    | I_SUHE     |
+| Storage Unit Right Limit Switch     | I1.6    | I_SURLS    |
+| Storage Unit Left Limit Switch      | I1.5    | I_SULLS    |
+| Storage Unit Arm Alignement Encoder | I1.7    | I_SUARMALE |
+
+
+#+ATTR_LATEX: :caption \caption{Outputs PLC2} :align c|c|c
+| Output                         | Address | Tag        |
+|--------------------------------+---------+------------|
+| Open Safety Door               | Q0.6    | O_SDO      |
+| Close Safety Door              | Q0.7    | O_SDC      |
+| Retract Assembly Unit Holder   | Q0.0    | O_AUHRET   |
+| Extend Assembly Unit Holder    | Q1.1    | O_AUHEXT   |
+| Lower Press                    | Q1.2    | O_PRESSLOW |
+| Raise Press                    | Q1.3    | O_PRESSHIG |
+| Raise Arm                      | Q0.0    | O_ARMHIG   |
+| Turn Vacuum Gripper ON         | Q0.1    | O_VACON    |
+| Extend Arm                     | Q0.2    | O_ARMEXT   |
+| Turn Arm CCW                   | Q0.3    | O_ARMCCW   |
+| Turn Arm CW                    | Q0.4    | O_ARMCW    |
+| Extend Storage Unit            | Q0.5    | O_SUEXT    |
+| Move Storage Unit Upwards      | Q1.6    | O_SUUP     |
+| Move Storage Unit Downwards    | Q1.7    | O_SUDWN    |
+| Move Storage Unit to the Right | Q1.4    | O_SURIGHT  |
+| Move Storage Unit to the Left  | Q1.3    | O_SULEFT   |

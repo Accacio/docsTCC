@@ -1,0 +1,38 @@
+# PlacesBegin
+#+ATTR_LATEX: :caption  \caption{Arm From Conveyor Belt to Press Module Places.} :placement [H] :align M{5cm}M{10cm}
+| Places | Meaning                                                    |
+|--------+------------------------------------------------------------|
+| p74    | Raise Arm                                                  |
+| p75    | Raise and Extend Arm, and Turn Vacuum On                   |
+| p76    | Extend Arm and Turn Vacuum On                              |
+| p77    | Raise and Extend Arm and Turn Vacuum On                    |
+| p78    | Raise Arm and Turn Vacuum On                               |
+| p79    | Turn HSC On e Raise Arm, Turn Vacuum On and  Rotate Arm CW |
+| p80    | Raise and Extend Arm and Turn Vacuum On                    |
+| p81    | Extend Arm and  Turn Vacuum On                             |
+| p82    | Extend Arm                                                 |
+| p83    | Raise and Extend Arm                                       |
+| p84    | Raise Arm                                                  |
+| p85    | Turn HSC On, Raise Arm and Rotate Arm CCW                  |
+| p86    | Raise Arm and HALFPIECECOUNTER:=HALFPIECECOUNTER+1         |
+# PlacesEnd
+
+# TransitionsBegin
+#+ATTR_LATEX: :caption  \caption{Arm From Conveyor Belt to Press Module Transitions.} :placement [H] :align M{5cm}M{10cm}
+| Transitions | Meaning                                                                  |
+|-------------+--------------------------------------------------------------------------|
+| t72         | Arm Raised                                                               |
+| tt73        | T=1.5s                                                                   |
+| tt74        | T=1.5s and Arm Lowered                                                   |
+| tt75        | T=1.5s and Arm Raised                                                    |
+| tt76        | T=1.5s and Arm Raised                                                    |
+| t77         | ARMCOUNTER = \todo{-3330}                                                |
+| tt78        | T=1.5s and Arm Raised                                                    |
+| tt79        | T=1.5s and Arm Lowered                                                   |
+| tt80        | T=1.5s                                                                   |
+| tt81        | T=1.5s and Arm Raised                                                    |
+| t82         | HALFPIECECOUNTER=1, Assembly Unit Holder Extended and Safety Door Opened |
+| tt83        | T=1.5s, HALFPIECECOUNTER=0 and Raised Arm                                |
+| t84         | ARMCOUNTER = \todo{-1690}                                                |
+| t85         |                                                                          |
+# TransitionsEnd

@@ -1,0 +1,60 @@
+# PlacesBegin
+#+ATTR_LATEX: :caption \caption{Metal Half-cube Selection Module Places.} :placement [H] :align M{5cm}M{10cm}
+| Places | Meaning                             |
+|--------+-------------------------------------|
+| p28    | MAG1 Empty                          |
+| p29    | MAG1 Not Empty                      |
+| p30    | Extend MAG1's Cylinder *            |
+| p31    | Retract MAG1's Cylinder *           |
+| p32    | MAG1's Cylinder Retracted           |
+| p33    | Turn Conveyor Belt On               |
+| p34    |                                     |
+| p35    | Plastic Half-cube                   |
+| p36    | Turn Conveyor Belt On               |
+| p37    | Extend Right Discharge Cylinder *   |
+| p38    | Retract Right Discharge Cylinder *  |
+| p39    | Turn Conveyor Belt On               |
+| p40    | Extend Center Discharge Cylinder *  |
+| p41    | Retract Center Discharge Cylinder * |
+| p42    |                                     |
+| p43    | Metal Half-cube                     |
+| p44    | Turn Conveyor Belt On               |
+| p45    | Extend Left Discharge Cylinder *    |
+| p46    | Retract Left Discharge Cylinder *   |
+| p47    | Turn Conveyor Belt On               |
+| p48    | Turn Conveyor Belt On               |
+| p49    | Metal Half-cube Ready               |
+| p50    | Conveyor Belt Stopped               |
+# PlacesEnd
+
+# TransitionsBegin
+#+ATTR_LATEX: :caption  \caption{Metal Half-cube Selection Module Transitions.} :placement [H] :align M{5cm}M{10cm}
+| Transitions | Meaning                                             |
+|-------------+-----------------------------------------------------|
+| t20         | $\overline{\mbox{MAG1 Empty}}$                      |
+| t21         |                                                     |
+| t22         | MAG1's Cylinder Extended \uparrow                   |
+| t23         | MAG1's Cylinder Retracted \uparrow                  |
+| tt24        | T=0.5s                                              |
+| tt25        | Presence \uparrow T=0.5s                            |
+| t26         | $\overline{\mbox{Metallic Sensor}}$                 |
+| t27         | $\overline{\mbox{White Color Sensor}}$              |
+| t28         | Proximity Sensor Left Discharge Cylinder \uparrow   |
+| t29         | Right Discharge Cylinder Extended                   |
+| t30         | Right Discharge Cylinder Retracted                  |
+| t31         | White Color Sensor                                  |
+| t32         | Proximity Sensor Center Discharge Cylinder \uparrow |
+| t33         | Center Discharge Cylinder Extended                  |
+| t34         | Center Discharge Cylinder Retracted                 |
+| t35         | Metallic Sensor                                     |
+| t36         | Concavity Downwards                                 |
+| t37         | Proximity Sensor Left Discharge Cylinder \uparrow   |
+| t38         | Left Discharge Cylinder Extended                    |
+| t39         | Left Discharge Cylinder Retracted                   |
+| t40         |                                                     |
+| t41         | Concavity Upwards                                 |
+| t42         | Proximity Sensor End Of Conveyor Belt \uparrow      |
+| tt43        | T=0.5s                                              |
+| t44         | Proximity Sensor End Of Conveyor Belt \downarrow    |
+| t45         |                                                     |
+# TransitionsEnd

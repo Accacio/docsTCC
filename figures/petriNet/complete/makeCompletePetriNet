@@ -1,0 +1,26 @@
+#!/bin/bash
+function getPetriNet {
+    cat $1 | sed -n -e '/^# PetriNetBegin$/,/^# PetriNetEnd$/!d;p' | sed '5,$!d' | sed '$d' | sed "s;^\ *;;" | sed -E "s/e([tp])(t|)([0-9]+)(|m[0-9]+)/\1\2\3\4/" | sed -E "s/^#[^#](.*)/\1/" | sed /^#/d
+}
+
+
+echo 'digraph A {
+splines = ortho
+rankdir=LR;
+ratio=fill
+graph [pad="0.5", nodesep="0.25", ranksep="0.2", nodesep="0.2"];
+margin=0;
+size="1.41,1!";
+'
+echo -e "$(getPetriNet ../partial/initial.dot)\n" \
+     "$(getPetriNet ../partial/metalv.dot)\n" \
+     "$(getPetriNet ../partial/plastic.dot)\n" \
+     "$(getPetriNet ../partial/armBeltToPress.dot)\n" \
+     "$(getPetriNet ../partial/press.dot)\n" \
+     "$(getPetriNet ../partial/armPressToStorage.dot)\n" \
+     "$(getPetriNet ../partial/storageY.dot)\n" \
+     "$(getPetriNet ../partial/storageX.dot)\n" \
+     "$(getPetriNet ../partial/storePiece.dot)" \
+    | sed -E "s|[[:space:]]+| |g;s|^\ *||;s|[[:space:]]*$||" | awk '/(^label|^}|^style)/ { print; next; }; !seen[$0]++' | sed -E "s;([tp])(t|)([0-9]+)(|m[0-9]+);c\1\2\3\4;g"
+
+echo "}"

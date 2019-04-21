@@ -1,0 +1,37 @@
+# PlacesBegin
+#+ATTR_LATEX: :caption  \caption{Storage Unit (Y axis) Module Places.} :placement [H] :align M{5cm}M{10cm}
+| Places | Meaning                        |
+|--------+--------------------------------|
+| p108   | Cube on Storage Unit           |
+| p109   | Move Storage Unit to the Right |
+| p110   |                                |
+| p111   | Move Storage Unit Upwards      |
+| p112   | Move Storage Unit Upwards      |
+| p113   | Move Storage Unit Upwards      |
+| p114   | Move Storage Unit Upwards      |
+| p115   | COUNTER3:=COUNTER3+1           |
+| p116   | RESET COUNTER3*                |
+| p117   |                                |
+# PlacesEnd
+
+# TransitionsBegin
+#+ATTR_LATEX: :caption  \caption{Storage Unit (Y axis) Module Transitions.} :placement [H] :align M{5cm}M{10cm}
+| Transitions | Meaning          |
+|-------------+------------------|
+| tt105       | T=2s             |
+| tt106       | T=2s             |
+| t107        | COUNTER2=0       |
+| t108        | COUNTER3=4       |
+| t109        | Vertical Encoder |
+| t110        | COUNTER2=1       |
+| t111        | COUNTER3=3       |
+| t112        | Vertical Encoder |
+| t113        | COUNTER2=2       |
+| t114        | COUNTER3=2       |
+| t115        | Vertical Encoder |
+| t116        | COUNTER2=3       |
+| t117        | COUNTER3=1       |
+| t118        | Vertical Encoder |
+| t119        |                  |
+| t120        |                  |
+# TransitionsEnd

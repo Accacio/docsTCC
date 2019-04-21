@@ -1,0 +1,152 @@
+digraph A {
+    # splines = ortho
+    rankdir=LR;
+    ratio=fill
+    graph [pad="0.01", nodesep="0.1", ranksep="0.01"];
+    size="11.7,8.3!";
+    margin=0;
+
+
+
+
+{rank =same; }
+# PetriNetBegin
+## Modulo inicialização
+
+    p0m1
+    p1
+    p2
+    p3
+    p4
+    p5
+    p6
+    p7
+    p8
+    p9
+    p10
+    p11
+    p12
+    p13
+    p14
+    p15
+    p16
+    p17
+    p18
+    p19
+    p20
+    p21
+    p22
+    p23
+    p24
+    p25
+    p26
+    p27
+
+    t0
+    t1
+    t2
+    t3
+    t4
+    t5
+    t6
+    tt7
+    tt8
+    t9
+    t10
+    t11
+    t12
+    t13
+    tt14
+    t15
+    tt16
+    t17
+    t18
+    t19
+
+# subgraph cluster_1 {
+#   label="Initialization";
+#   labelloc = b
+#   style="dashed"
+##  color="red"
+##  pre
+
+  p0m1 -> t0
+
+  p1 -> t1
+  p2 -> t6
+  p3 -> t2
+  p4 -> t6
+  p5 -> t3
+  p6 -> t6
+  p7 -> t4
+  p8 -> t6
+  p9 -> t5
+  p10 -> t6
+  p11 -> tt7
+  p12 -> t18
+
+  p13 -> t18
+
+  p14 -> tt8
+  p15 -> t9
+  p16 -> t10
+  p17 -> t18
+
+  p18 -> t11
+  p19 -> t12
+  p20 -> tt14
+  p21 -> t13
+  p22 -> tt14
+  p23 -> t15
+  p24 -> tt16
+  p25 -> t17
+  p26 -> t18
+  p27 -> t19
+## pos
+
+  t0 -> p1
+  t0 -> p3
+  t0 -> p5
+  t0 -> p7
+  t0 -> p9
+  t0 -> p13
+  t0 -> p14
+  t0 -> p18
+
+  t1 -> p2
+  t2 -> p4
+  t3 -> p6
+  t4 -> p8
+  t5 -> p10
+  t6 -> p11
+  tt7 -> p12
+
+  tt8 -> p15
+  t9 -> p16
+  t10 -> p17
+
+  t11 -> p19
+  t11 -> p21
+  t12 -> p20
+  t13 -> p22
+  tt14 -> p23
+  t15 -> p24
+  tt16 -> p25
+  t17 -> p26
+  t18 -> p27
+
+# }
+ep28
+ep107
+ep138
+et154
+
+
+t19 -> ep28
+t19 -> ep107
+t19 -> ep138
+et154 -> p0m1
+
+
+# PetriNetEnd
+}

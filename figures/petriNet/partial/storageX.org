@@ -1,0 +1,47 @@
+# PlacesBegin
+#+ATTR_LATEX: :caption  \caption{Storage Unit (X axis) Module Places.} :placement [H] :align M{5cm}M{10cm}
+| Places | Meaning                                                  |
+|--------+----------------------------------------------------------|
+| p118   | COUNTER1:=COUNTER1+1 e COUNTER4:=COUNTER4+1              |
+| p119   | Move Storage Unit to the Left                            |
+| p120   | Move Storage Unit to the Left                            |
+| p121   | Move Storage Unit to the Left                            |
+| p122   | Move Storage Unit to the Left                            |
+| p123   | Move Storage Unit to the Left                            |
+| p124   | Move Storage Unit to the Left                            |
+| p125   | Move Storage Unit to the Left                            |
+| p126   | COUNTER5:=COUNTER5+1                                     |
+| p127   | Reset COUNTER5*                                          |
+| p128   | Reset COUNTER4* , COUNTER2:=COUNTER2+1                   |
+| p129   |                                                          |
+# PlacesEnd
+
+# TransitionsBegin
+#+ATTR_LATEX: :caption  \caption{Storage Unit (X axis) Module Transitions.} :placement [H] :align M{5cm}M{10cm}
+| Transitions | Meaning            |
+|-------------+--------------------|
+| t121        | COUNTER4=1         |
+| t122        | COUNTER5=1         |
+| t123        | Horizontal Encoder |
+| t124        | COUNTER4=2         |
+| t125        | COUNTER5=2         |
+| t126        | Horizontal Encoder |
+| t127        | COUNTER4=3         |
+| t128        | COUNTER5=3         |
+| t129        | Horizontal Encoder |
+| t130        | COUNTER4=4         |
+| t131        | COUNTER5=4         |
+| t132        | Horizontal Encoder |
+| t133        | COUNTER4=5         |
+| t134        | COUNTER5=5         |
+| t135        | Horizontal Encoder |
+| t136        | COUNTER4=6         |
+| t137        | COUNTER5=8         |
+| t138        | Horizontal Encoder |
+| t139        | COUNTER4=7         |
+| t140        | COUNTER5=9         |
+| t141        | Horizontal Encoder |
+| t142        |                    |
+| t143        |                    |
+| t144        |                    |
+# TransitionsEnd

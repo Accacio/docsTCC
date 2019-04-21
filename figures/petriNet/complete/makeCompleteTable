@@ -1,0 +1,45 @@
+#!/bin/bash
+
+function getPlacesTable {
+    cat $1 | sed -n -e '/^# PlacesBegin$/,/^# PlacesEnd$/!d;p' | sed '5,$!d' | sed '$d'
+}
+
+function getTransitionsTable {
+    cat $1 | sed -n -e '/^# TransitionsBegin$/,/^# TransitionsEnd$/!d;p' | sed '5,$!d' | sed '$d'
+}
+
+# Places
+echo "# PlacesBegin"
+echo "#+ATTR_LATEX: :caption \caption{Complete Places.} :environment longtable :align M{5cm}M{10cm}"
+echo "| Places | Meaning |"
+echo "|----+---------|"
+echo -e "$(getPlacesTable ../partial/initial.org)\n" \
+     "$(getPlacesTable ../partial/metalv.org)\n" \
+     "$(getPlacesTable ../partial/plastic.org)\n" \
+     "$(getPlacesTable ../partial/armBeltToPress.org)\n" \
+     "$(getPlacesTable ../partial/press.org)\n" \
+     "$(getPlacesTable ../partial/armPressToStorage.org)\n" \
+     "$(getPlacesTable ../partial/storageY.org)\n" \
+     "$(getPlacesTable ../partial/storageX.org)\n" \
+     "$(getPlacesTable ../partial/storePiece.org)" \
+    | sed -E "s|\ +|\ |g;" | sed "s(\ |(|(g;s(|\ (|(g" \
+    | awk -F'|' '{a[$3]=a[$3]", c"$2;}END{for (x in a) print "|" substr(a[x],2)"|"  x "|";}' | sort -V
+echo "# PlacesEnd"
+echo ""
+#Transitions
+echo "# TransitionsBegin"
+echo "#+ATTR_LATEX: :caption \caption{Complete Transitions.} :environment longtable :align M{5cm}M{10cm}"
+echo "| Transitions | Meaning |"
+echo "|----+---------|"
+echo -e "$(getTransitionsTable ../partial/initial.org)\n" \
+     "$(getTransitionsTable ../partial/metalv.org)\n" \
+     "$(getTransitionsTable ../partial/plastic.org)\n" \
+     "$(getTransitionsTable ../partial/armBeltToPress.org)\n" \
+     "$(getTransitionsTable ../partial/press.org)\n" \
+     "$(getTransitionsTable ../partial/armPressToStorage.org)\n" \
+     "$(getTransitionsTable ../partial/storageY.org)\n" \
+     "$(getTransitionsTable ../partial/storageX.org)\n" \
+     "$(getTransitionsTable ../partial/storePiece.org)" \
+    | sed -E "s|\ +|\ |g;" | sed "s(\ |(|(g;s(|\ (|(g" \
+    | awk -F'|' '{a[$3]=a[$3]", c"$2;}END{for (x in a) print "|" substr(a[x],2)"|"  x "|";}' | sort -V
+echo "# TransitionsEnd"
