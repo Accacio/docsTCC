@@ -43,7 +43,7 @@
 | t4          | Center Discharge Cylinder Retracted                  |
 | t5          | Left Discharge Cylinder Retracted                    |
 | t6          |                                                      |
-| tt7         | T=15s                                                |
+| tt7         | T=12s                                                |
 | tt8         | T=2.5s                                               |
 | t9          | Safety Door Opened                                   |
 | t10         | Assembly Unit Holder Extended                        |
