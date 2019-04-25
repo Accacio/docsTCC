@@ -11,7 +11,7 @@
 | p102   | Extend Arm                                            |
 | p103   | Raise and Extend Arm                                  |
 | p104   | Turn Arm CCW                                          |
-| p105   | Arm Stoppen                                           |
+| p105   | Arm Stopped                                           |
 | p106   | Turn HSC On, Turn Arm CW                              |
 | p107   | Arm Stopped ( facing conveyor belt )                  |
 # PlacesEnd
