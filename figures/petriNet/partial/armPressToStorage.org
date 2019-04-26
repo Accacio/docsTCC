@@ -4,13 +4,13 @@
 |--------+-------------------------------------------------------|
 | p96    | Extend Arm e Turn Vacuum On                           |
 | p97    | Raise and Extend Arm and Turn Vacuum On               |
-| p98    | Reset HALFPIECECOUNTER*, Raise Arm and Turn Vacuum On |
-| p99    | Turn HSC On, Raise Arm, Turn Vacuum On, Rotate Arm CW |
+| p98    | Reset HALFPIECECOUNTER*, Raise and Extend Arm and Turn Vacuum On |
+| p99    | Turn HSC On, Raise and Extend Arm, Turn Vacuum On, Rotate Arm CW |
 | p100   | Raise and Extend Arm and Turn Vacuum On               |
 | p101   | Extend Arm and Turn Vacuum On                         |
 | p102   | Extend Arm                                            |
 | p103   | Raise and Extend Arm                                  |
-| p104   | Turn Arm CCW                                          |
+| p104   | Turn HSC On, Turn Arm CCW                                          |
 | p105   | Arm Stopped                                           |
 | p106   | Turn HSC On, Turn Arm CW                              |
 | p107   | Arm Stopped ( facing conveyor belt )                  |
