@@ -26,9 +26,9 @@
 | p21    | Move Storage Device Downwards                         |
 | p22    | Storage Unit ready ( vertical )                       |
 | p23    | Rotate Arm CCW                                        |
-| p24    | Arm Stopped                                           |
-| p25    | Rotate Arm CW e Turn HSC ON                           |
-| p26    | Arm Stopped ( facing conveyor belt )                  |
+| p24    | Turn HSC Off ( Arm Stopped )                          |
+| p25    | Rotate Arm CW                                         |
+| p26    | Arm Stopped facing conveyor belt                      |
 | p27    | System Ready                                          |
 # PlacesEnd
 
@@ -53,7 +53,7 @@
 | tt14        | T=2s                                                 |
 | t15         | Inductive Sensor Arm                                 |
 | tt16        | T=1s                                                 |
-| t17         | ARMCOUNTER = \todo{-1690}                            |
+| t17         | ARMCOUNTER <= BELT_ANGLE_CW                          |
 | t18         |                                                      |
 | t19         | Start Button                                         |
 # TransitionsEnd

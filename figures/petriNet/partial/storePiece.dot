@@ -19,6 +19,7 @@ digraph A {
   p137
   p138
   p139
+  p140
   
   tt145
   tt146
@@ -30,6 +31,7 @@ digraph A {
   t152
   t153
   t154
+  t155
 
 
 # subgraph cluster_9 {
@@ -50,6 +52,7 @@ digraph A {
   p137 -> t152
   p138 -> t153
   p138 -> t154
+  p140 -> t155
 
 
 ## pos
@@ -64,7 +67,8 @@ digraph A {
   t151 -> p137
   t152 -> p138
   t153 -> p139
-
+  t154 -> p140
+  t155 -> p139
 
 # }
 
@@ -72,9 +76,6 @@ ep117
 ep129
 ep117 -> tt145
 ep129 -> tt145
-
-ep0m1
-t154 -> ep0m1
 
 et96
 p139 -> et96

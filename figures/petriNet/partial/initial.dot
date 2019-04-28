@@ -139,13 +139,12 @@ digraph A {
 ep28
 ep107
 ep138
-et154
+
 
 
 t19 -> ep28
 t19 -> ep107
 t19 -> ep138
-et154 -> p0m1
 
 
 # PetriNetEnd

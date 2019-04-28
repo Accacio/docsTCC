@@ -1,19 +1,19 @@
 # PlacesBegin
 #+ATTR_LATEX: :caption  \caption{Arm From Press To Storage Unit Module Places.} :placement [H] :align M{5cm}M{10cm}
-| Places | Meaning                                               |
-|--------+-------------------------------------------------------|
-| p96    | Extend Arm e Turn Vacuum On                           |
-| p97    | Raise and Extend Arm and Turn Vacuum On               |
-| p98    | Reset HALFPIECECOUNTER*, Raise and Extend Arm and Turn Vacuum On |
-| p99    | Turn HSC On, Raise and Extend Arm, Turn Vacuum On, Rotate Arm CW |
-| p100   | Raise and Extend Arm and Turn Vacuum On               |
-| p101   | Extend Arm and Turn Vacuum On                         |
-| p102   | Extend Arm                                            |
-| p103   | Raise and Extend Arm                                  |
-| p104   | Turn HSC On, Turn Arm CCW                                          |
-| p105   | Arm Stopped                                           |
-| p106   | Turn HSC On, Turn Arm CW                              |
-| p107   | Arm Stopped ( facing conveyor belt )                  |
+| Places | Meaning                                                                                         |
+|--------+-------------------------------------------------------------------------------------------------|
+| p96    | Extend Arm e Turn Vacuum On                                                                     |
+| p97    | Raise and Extend Arm and Turn Vacuum On                                                         |
+| p98    | Reset HALFPIECECOUNTER*, Raise and Extend Arm, Turn Vacuum On and Move Storage Unit to the Left |
+| p99    | Raise and Extend Arm, Turn Vacuum On and Rotate Arm CW                                          |
+| p100   | Raise and Extend Arm and Turn Vacuum On                                                         |
+| p101   | Extend Arm and Turn Vacuum On                                                                   |
+| p102   | Extend Arm                                                                                      |
+| p103   | Raise and Extend Arm                                                                            |
+| p104   | Turn Arm CCW                                                                                    |
+| p105   | Turn HSC Off ( Arm Stopped )                                                                    |
+| p106   | Turn Arm CW                                                                                     |
+| p107   | Arm Stopped facing conveyor belt                                                                |
 # PlacesEnd
 
 # TransitionsBegin
@@ -22,13 +22,13 @@
 |-------------+------------------------------------------------------------|
 | tt94        | T=1.5s and Arm Lowered                                     |
 | t95         | Arm Raised, Storage Unit Right and Inferior Limit Switches |
-| t96         |                                                            |
-| t97         | ARMCOUNTER = \todo{-4920}                                  |
+| t96         | Storage Unit Horizontal Encoder                            |
+| t97         | ARMCOUNTER <= STORAGE_ANGLE                                |
 | tt98        | T=2s                                                       |
 | tt99        | T=2s                                                       |
 | t100        | Arm Lowered                                                |
 | t101        | Arm Raised, Storage Unit Right and Inferior Limit Switches |
 | t102        | Inductive Sensor Arm                                       |
 | tt103       | T=1s                                                       |
-| t104        | ARMCOUNTER = \todo{-1690}                                  |
+| t104        | ARMCOUNTER <= BELT_ANGLE_CW                                |
 # TransitionsEnd

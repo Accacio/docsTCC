@@ -18,30 +18,30 @@
 
 # TransitionsBegin
 #+ATTR_LATEX: :caption  \caption{Storage Unit (X axis) Module Transitions.} :placement [H] :align M{5cm}M{10cm}
-| Transitions | Meaning            |
-|-------------+--------------------|
-| t121        | COUNTER4=1         |
-| t122        | COUNTER5=1         |
-| t123        | Horizontal Encoder |
-| t124        | COUNTER4=2         |
-| t125        | COUNTER5=2         |
-| t126        | Horizontal Encoder |
-| t127        | COUNTER4=3         |
-| t128        | COUNTER5=3         |
-| t129        | Horizontal Encoder |
-| t130        | COUNTER4=4         |
-| t131        | COUNTER5=4         |
-| t132        | Horizontal Encoder |
-| t133        | COUNTER4=5         |
-| t134        | COUNTER5=5         |
-| t135        | Horizontal Encoder |
-| t136        | COUNTER4=6         |
-| t137        | COUNTER5=8         |
-| t138        | Horizontal Encoder |
-| t139        | COUNTER4=7         |
-| t140        | COUNTER5=9         |
-| t141        | Horizontal Encoder |
-| t142        |                    |
-| t143        |                    |
-| t144        |                    |
+| Transitions | Meaning                                |
+|-------------+----------------------------------------|
+| t121        | COUNTER4=1                             |
+| t122        | COUNTER5=1 and Horizontal Encoder      |
+| t123        | COUNTER5<=1 and Horizontal Encoder     |
+| t124        | COUNTER4=2                             |
+| t125        | COUNTER5=2 and Horizontal Encoder      |
+| t126        | COUNTER5<=2 and Horizontal Encoder     |
+| t127        | COUNTER4=3                             |
+| t128        | COUNTER5=3 and Horizontal Encoder      |
+| t129        | COUNTER5<=3 and Horizontal Encoder     |
+| t130        | COUNTER4=4                             |
+| t131        | COUNTER5=4 and Horizontal Encoder      |
+| t132        | COUNTER5<=4 and Horizontal Encoder     |
+| t133        | COUNTER4=5                             |
+| t134        | COUNTER5=5 and Horizontal Encoder      |
+| t135        | COUNTER5<=5 and Horizontal Encoder     |
+| t136        | COUNTER4=6                             |
+| t137        | COUNTER5=6 and Horizontal Encoder      |
+| t138        | COUNTER5<=6 and Horizontal Encoder     |
+| t139        | COUNTER4=7                             |
+| t140        | COUNTER5=7 and Horizontal Encoder      |
+| t141        | COUNTER5<=7 and Horizontal Encoder     |
+| t142        |                                        |
+| t143        |                                        |
+| t144        | $\overline{\mbox{Horizontal Encoder}}$ |
 # TransitionsEnd
