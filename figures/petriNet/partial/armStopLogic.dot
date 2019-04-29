@@ -1,0 +1,78 @@
+digraph A {
+    # splines = ortho
+    rankdir=LR;
+    ratio=fill
+    graph [pad="0.01", nodesep="0.1", ranksep="0.01"];
+    size="11.7,8.3!";
+    margin=0;
+
+# PetriNet Begin
+
+  p141
+  p142
+  p143
+  p144
+  p145
+  p146
+
+
+  t156
+  t157
+  t158
+  t159
+  t160
+  t161
+  t162
+  t163
+  t164
+  t165
+
+# subgraph cluster_1 {
+#   label="Arm Stop";
+#   labelloc = b
+#   style="dashed"
+##  color="red"
+##  pre
+
+
+## pre
+
+   t156 -> p141
+   t157 -> p142
+   t158 -> p143
+   t159 -> p144
+   t160 -> p144
+   t161 -> p145
+   
+   t163 -> p146
+   t164 -> p145
+   t165 -> p144
+
+
+
+## pos
+   
+   p141 -> t157
+   p141 -> t160
+   p141 -> t163
+
+   p142 -> t158
+   p143 -> t159
+   p144 -> t161
+   p145 -> t162
+
+   p146 -> t164
+   p146 -> t165
+
+
+   
+
+#}
+
+ep0m1
+
+t162 -> ep0m1
+
+
+# PetriNetEnd
+}

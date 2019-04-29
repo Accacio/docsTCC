@@ -1,0 +1,28 @@
+# PlacesBegin
+#+ATTR_LATEX: :caption  \caption{Arm Stop Logic Module Places.} :placement [H] :align M{5cm}M{10cm}
+| Places | Meaning                        |
+|--------+--------------------------------|
+| p141   |                                |
+| p142   | Raise and Extend Arm           |
+| p143   | Raise, Extend Arm and Turn CCW |
+| p144   | Raise Arm                      |
+| p145   | Raise Arm and Turn CCW         |
+| p146   |                                |
+
+# PlacesEnd
+
+# TransitionsBegin
+#+ATTR_LATEX: :caption  \caption{Arm Stop Logic Module Transitions.} :placement [H] :align M{5cm}M{10cm}
+| Transitions | Meaning                                                                                                     |
+|-------------+-------------------------------------------------------------------------------------------------------------|
+| t156        | Stop Button                                                                                                 |
+| t157        | ARMCOUNTER < STORAGE_ANGLE_BEFORE                                                                           |
+| t158        | Arm Raised and Extended                                                                                     |
+| t159        | ARMCOUNTER >= STORAGE_ANGLE_BEFORE                                                                          |
+| t160        | (ARMCOUNTER >= STORAGE_ANGLE_BEFORE and ARMCOUNTER < PRESS_ANGLE_AFTER) or ARMCOUNTER >= PRESS_ANGLE_BEFORE |
+| t161        | Arm Raised and Retracted                                                                                    |
+| t162        | Inductive Sensor Arm                                                                                        |
+| t163        | ARMCOUNTER >= PRESS_ANGLE_AFTER and ARMCOUNTER < PRESS_ANGLE_BEFORE                                          |
+| t164        | Arm Retracted                                                                                               |
+| t165        | $\overline{\mbox{Arm Retracted }}$                                                                          |
+# TransitionsEnd
