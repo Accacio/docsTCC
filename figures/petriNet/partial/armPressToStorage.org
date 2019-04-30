@@ -22,7 +22,7 @@
 |-------------+------------------------------------------------------------|
 | tt94        | T=1.5s and Arm Lowered                                     |
 | t95         | Arm Raised, Storage Unit Right and Inferior Limit Switches |
-| t96         | Storage Unit Horizontal Encoder                            |
+| t96         | Storage Unit Arm Alignement Encoder                            |
 | t97         | ARMCOUNTER <= STORAGE_ANGLE                                |
 | tt98        | T=2s                                                       |
 | tt99        | T=2s                                                       |
