@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link href="floating.css" rel="stylesheet">
+        <title>Identification And Failure Detection In A Didactic Manufacture System</title>
+        <!-- AWP_In_Variable Name='"DATALOG".Name' -->
+    </head>
+    <body>
+        <div class="form-signin">
+            <div class="text-center mb-4">
+                <h1 class="h3 mb-3 font-weight-normal">Cube Assembly</h1>
+                <p>Operation of Plant</p>
+            </div>
+            <div class="button-container" align="center">
+                    <form method="post" action="">
+                    <button class="btn btn-primary" type="submit"
+                            value="OpenValve">Initialize</button>
+                    <input type="hidden"
+                           name='"OpenValve"' value="1">
+                    </form>
+                    <form method="post" action="">
+                    <button class="btn btn-success" type="submit"
+                            value="BTStart">Start</button>
+                    <input type="hidden"
+                           name='"BTStart"' value="1">
+                    </form>
+                    <form method="post" action="">
+                    <button class="btn btn-danger" type="submit"
+                            value="BTSTOP">Stop</button>
+                    <input type="hidden"
+                           name='"BTStop"' value="1">
+                    </form>
+            </div>
+            <p></p>
+            <div class="text-center mb-4">
+                <p>Data Acquisition</p>
+                <p>filename: :=”DATALOG”.Name:.csv</p>
+            </div>
+
+            <div class="form-label-group">
+                <form method="post" action="">
+                    <input type="text" name='"DATALOG".Name' class="form" placeholder="Datalog Name" required>
+                    <label for="inputPassword">Datalog Name</label>
+                    <button class="btn btn-primary" type="submit">Change Name</button>
+                </form>
+            </div>
+
+            <div class="button-container" align="center">
+                <form method="post" action="">
+                    <button class="btn btn-info" type="submit"
+                            value="StartAcq">Start Acquisition</button>
+                    <input type="hidden"
+                           name='"StartAcq"' value="1">
+                </form>
+                <form method="post" action="">
+                    <button class="btn btn-secondary" type="submit"
+                            value="DeleteDL">Stop Acquisition</button>
+                    <input type="hidden"
+                           name='"DeleteDL"' value="1">
+                </form>
+                <p></p>
+                <form method="post" action="">
+                    <button class="btn btn-danger" type="submit"
+                            value="DeleteDL">Delete Datalog</button>
+                    <input type="hidden"
+                           name='"DeleteDL"' value="1">
+                </form>
+            </div>
+       </div>
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    </body>
+</html>
