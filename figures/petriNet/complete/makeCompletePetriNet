@@ -1,6 +1,6 @@
 #!/bin/bash
 function getPetriNet {
-    cat $1 | sed -n -e '/^# PetriNetBegin$/,/^# PetriNetEnd$/!d;p' | sed '5,$!d' | sed '$d' | sed "s;^\ *;;" | sed -E "s/e([tp])(t|)([0-9]+)(|m[0-9]+)/\1\2\3\4/" | sed -E "s/^#[^#](.*)/\1/" | sed /^#/d
+    cat $1 | sed -n -e '/^# PetriNetBegin$/,/^# PetriNetEnd$/!d;p' | sed '2,$!d' | sed '$d' | sed "s;^\ *;;" | sed -E "s/e([tp])(t|)([0-9]+)(|m[0-9]+)/\1\2\3\4/" | sed -E "s/^#[^#](.*)/\1/" | sed /^#/d
 }
 
 
@@ -20,7 +20,8 @@ echo -e "$(getPetriNet ../partial/initial.dot)\n" \
      "$(getPetriNet ../partial/armPressToStorage.dot)\n" \
      "$(getPetriNet ../partial/storageY.dot)\n" \
      "$(getPetriNet ../partial/storageX.dot)\n" \
-     "$(getPetriNet ../partial/storePiece.dot)" \
+     "$(getPetriNet ../partial/storePiece.dot)\n" \
+     "$(getPetriNet ../partial/armStopLogic.dot)" \
     | sed -E "s|[[:space:]]+| |g;s|^\ *||;s|[[:space:]]*$||" | awk '/(^label|^}|^style)/ { print; next; }; !seen[$0]++' | sed -E "s;([tp])(t|)([0-9]+)(|m[0-9]+);c\1\2\3\4;g"
 
 echo "}"
