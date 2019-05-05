@@ -5,8 +5,7 @@ digraph A {
     graph [pad="0.01", nodesep="0.1", ranksep="0.01"];
     size="11.7,8.3!";
     margin=0;
-
-# PetriNet Begin
+# PetriNetBegin
 
   p141
   p142
@@ -27,12 +26,11 @@ digraph A {
   t164
   t165
 
-# subgraph cluster_1 {
+# subgraph cluster_10 {
 #   label="Arm Stop";
 #   labelloc = b
 #   style="dashed"
 ##  color="red"
-##  pre
 
 
 ## pre
@@ -50,7 +48,7 @@ digraph A {
 
 
 
-## pos
+ ## pos
    
    p141 -> t157
    p141 -> t160
@@ -65,9 +63,7 @@ digraph A {
    p146 -> t165
 
 
-   
-
-#}
+# }
 
 ep0m1
 

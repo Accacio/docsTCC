@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link href="floating.css" rel="stylesheet">
+		<script src="jquery-1.10.2.js"></script>
+        <title>Identification And Failure Detection In A Didactic Manufacture System</title>
+        <!-- AWP_In_Variable Name='"DATALOGDATA".Name' -->
+		<!-- AWP_In_Variable Name='BTInit' -->
+		<!-- AWP_In_Variable Name='BTStart' -->
+		<!-- AWP_In_Variable Name='BTSTOP' -->
+		<!-- AWP_In_Variable Name='startAcquisition' -->
+		<!-- AWP_In_Variable Name='stopAcquisition' -->
+		<!-- AWP_In_Variable Name='Delete' -->
+    </head>
+    <body>
+        <div class="form-signin">
+            <div class="text-center mb-4">
+                <h1 class="h3 mb-3 font-weight-normal">Cube Assembly</h1>
+                <p>Operation of Plant</p>
+            </div>
+            <div class="button-container" align="center">
+			
+                    <form method="post" action="">
+                    <button class="btn btn-primary" type="submit" value="BTInit">Initialize</button>
+                    <input type="hidden" name='BTInit' value="1">
+                    </form>
+					
+                    <form method="post" action="">
+                    <button class="btn btn-success" type="submit" value="BTStart">Start</button>
+                    <input type="hidden" name='BTStart' value="1">
+                    </form>
+					
+                    <form method="post" action="">
+                    <button class="btn btn-danger" type="submit" value="BTSTOP">Stop</button>
+                    <input type="hidden" name='BTSTOP' value="1">
+                    </form>
+					
+            </div>
+            <p></p>
+            <div class="text-center mb-4">
+                <p>Data Acquisition</p>
+                <p>filename: :="DATALOGDATA".Name:.csv</p>
+            </div>
+
+            <div class="form-label-group">
+                <form method="post" action="">
+                    <input type="text" name='"DATALOGDATA".Name' class="form" placeholder="Datalog Name" required>
+                    <label for="inputPassword">Datalog Name</label>
+                    <button class="btn btn-primary" type="submit">Change Name</button>
+                </form>
+            </div>
+
+            <div class="button-container" align="center">
+			
+                <form method="post" action="">
+                <button class="btn btn-info" type="submit" value="startAcquisition">Start Acquisition</button>
+                <input type="hidden" name='startAcquisition' value="1">
+                </form>
+				<!-- <form method="post" action=""> -->
+                <!-- <button class="btn btn-secondary" type="submit" value="stopAcquisition">Stop Acquisition</button> -->
+                <!-- <input type="hidden" name='stopAcquisition' value="1"> -->
+                <!-- </form> -->
+				<p></p>
+                <form method="post" action="">
+                <button class="btn btn-danger" type="submit" value="Delete">Delete Datalog</button>
+                <input type="hidden" name='Delete' value="1">
+                </form>	
+            </div>
+       </div>
+    </body>
+</html>

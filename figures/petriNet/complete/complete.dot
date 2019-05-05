@@ -6,6 +6,8 @@ graph [pad="0.5", nodesep="0.25", ranksep="0.2", nodesep="0.2"];
 margin=0;
 size="1.41,1!";
 
+
+cp0m1
 cp1
 cp2
 cp3
@@ -33,7 +35,6 @@ cp24
 cp25
 cp26
 cp27
-
 ct0
 ct1
 ct2
@@ -117,11 +118,9 @@ ct18 -> cp27
 cp28
 cp107
 cp138
-ct154
 ct19 -> cp28
 ct19 -> cp107
 ct19 -> cp138
-ct154 -> cp0m1
 cp29
 cp30
 cp31
@@ -330,7 +329,7 @@ ct62 -> cp66
 ct63 -> cp67
 ct64 -> cp68
 ct65 -> cp69
-ct66 -> cp52
+ct66 -> cp51
 ct67 -> cp70
 ct68 -> cp71
 ctt69 -> cp72
@@ -501,7 +500,7 @@ cp115
 cp116
 cp117
 ctt105
-ctt106
+ct106
 ct107
 ct108
 ct109
@@ -521,7 +520,7 @@ label="Storage (y)";
 labelloc = b
 style="dashed"
 cp108 -> ctt105
-cp109 -> ctt106
+cp109 -> ct106
 cp110 -> ct107
 cp110 -> ct110
 cp110 -> ct113
@@ -537,7 +536,7 @@ cp114 -> ct118
 cp115 -> ct119
 cp116 -> ct120
 ctt105 -> cp109
-ctt106 -> cp110
+ct106 -> cp110
 ct107 -> cp111
 ct108 -> cp116
 ct109 -> cp115
@@ -557,7 +556,7 @@ ct118 -> cp114
 ct120 -> cp117
 }
 cp118
-ctt106 -> cp118
+ct106 -> cp118
 ctt145
 cp117 -> ctt145
 cp119
@@ -663,6 +662,7 @@ cp134
 cp135
 cp136
 cp137
+cp140
 ctt146
 ctt147
 ctt148
@@ -671,6 +671,8 @@ ct150
 ct151
 ct152
 ct153
+ct154
+ct155
 subgraph cluster_9 {
 label="Store Piece";
 labelloc = t
@@ -685,6 +687,7 @@ cp136 -> ct151
 cp137 -> ct152
 cp138 -> ct153
 cp138 -> ct154
+cp140 -> ct155
 ctt145 -> cp130
 ctt146 -> cp131
 ctt147 -> cp132
@@ -695,6 +698,47 @@ ct150 -> cp135
 ct151 -> cp137
 ct152 -> cp138
 ct153 -> cp139
+ct154 -> cp140
+ct155 -> cp139
 }
-cp0m1
+cp141
+cp142
+cp143
+cp144
+cp145
+cp146
+ct156
+ct157
+ct158
+ct159
+ct160
+ct161
+ct162
+ct163
+ct164
+ct165
+subgraph cluster_10 {
+label="Arm Stop";
+labelloc = b
+style="dashed"
+ct156 -> cp141
+ct157 -> cp142
+ct158 -> cp143
+ct159 -> cp144
+ct160 -> cp144
+ct161 -> cp145
+ct163 -> cp146
+ct164 -> cp145
+ct165 -> cp144
+cp141 -> ct157
+cp141 -> ct160
+cp141 -> ct163
+cp142 -> ct158
+cp143 -> ct159
+cp144 -> ct161
+cp145 -> ct162
+cp146 -> ct164
+cp146 -> ct165
+}
+ct162 -> cp0m1
 }

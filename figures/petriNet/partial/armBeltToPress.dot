@@ -7,7 +7,7 @@ digraph A {
     size="11.7,8.3!";
 # PetriNetBegin
 
-# Modulo Braço (Esteira -> Prensa)
+## Modulo Braço (Esteira -> Prensa)
 
     p74
     p75
