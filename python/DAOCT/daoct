@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 # -*- coding: utf-8 -*-
-
+# use nuitka to compile #
 import sys
 import getopt
 import utils as ut
@@ -18,7 +18,19 @@ paramk=2
 
 
 def usage():
-    print("Usage: daoct [OPTION]")
+    print("Usage: daoct [OPTION] -i FILE ...")
+    print("       daoct [OPTION] -s")
+    print("")
+    print("  -h, --help             give this help list")
+    print("      --debug            emit debuggin messages")
+    print("      --version          print program version")
+    print("  -i, --input            chooses input file")
+    print("  -s, --stdin            chooses stdin as input")
+    print("  -o, --output           chooses output file")
+    print("  -k                     chooses variable k value")
+    print("  -g, --graphviz         output automaton drawing in dot language")
+    print("")
+    print("Report bugs to raccacio@poli.ufrj.br")
     return
 
 try:
