@@ -1,0 +1,23 @@
+.\" Manpage for daoct.
+.\" Contact raccacio@poli.ufrj.br .in to correct errors or typos.
+.TH daoct 1 "04 March 2019" "0.0" "daoct man page"
+.SH NAME
+daoct \- generates a automaton model of type DAOCT (Deterministic
+Automaton With Outputs And Conditional Transitions) using data from a
+log in csv format with inputs and outputs.
+.SH SYNOPSIS
+daoct -i FILE
+daoct -s 
+.SH DESCRIPTION
+daoct is a python program that implements the algorithm shown in
+
+
+
+\# .SH SEE ALSO
+\#useradd(8), passwd(5), nuseradd.debian(8) 
+\# .SH BUGS
+\# No known bugs.
+.SH AUTHOR
+Rafael Accácio Nogueira (raccacio@poli.ufrj.br)
+.SH CREDITS
+Ryan Pitanga, Marcos Moreira

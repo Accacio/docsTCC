@@ -1,0 +1,39 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+DeterministicAutomaton	automaton.py	/^class DeterministicAutomaton(graph.Graph):$/;"	c
+Event	automaton.py	/^class Event:    $/;"	c
+G	paths.py	/^G = daoct.DAOCT(P,2)$/;"	v
+P	paths.py	/^P = pathsConstructionFromFiles('DATA_IDENTIFICATION_BESTSOFAR.csv',$/;"	v
+Record	table_read.py	/^class Record: $/;"	c
+State	automaton.py	/^class State(graph.Vertex): $/;"	c
+__init__	automaton.py	/^    def __init__(self,X,Sigma,f,x0,Xm=set()):$/;"	m	class:DeterministicAutomaton
+__init__	automaton.py	/^    def __init__(self,label):$/;"	m	class:Event
+__init__	automaton.py	/^    def __init__(self,labels):$/;"	m	class:State
+__init__	table_read.py	/^    def __init__(self,seq,date,utctime,time,iovector):$/;"	m	class:Record
+__timeConversion	table_read.py	/^    def __timeConversion(self):$/;"	m	class:Record	file:
+ac	automaton.py	/^    def ac(self):$/;"	m	class:DeterministicAutomaton
+addFaultEvents	automaton.py	/^    def addFaultEvents(self,f):$/;"	m	class:DeterministicAutomaton
+addSubsetOfObservableEvents	automaton.py	/^    def addSubsetOfObservableEvents(self,obs):$/;"	m	class:DeterministicAutomaton
+addUnobservableEvents	automaton.py	/^    def addUnobservableEvents(self,uo):$/;"	m	class:DeterministicAutomaton
+coac	automaton.py	/^    def coac(self):$/;"	m	class:DeterministicAutomaton
+copyRecord	table_read.py	/^    def copyRecord(self):$/;"	m	class:Record
+f	IO.py	/^    def f(state):$/;"	f	function:tagger
+gamma	automaton.py	/^    def gamma(self,x):$/;"	m	class:DeterministicAutomaton
+improveLabel	automaton.py	/^    def improveLabel(self,l):                     $/;"	m	class:State
+ioVectorLength	table_read.py	/^ioVectorLength = 23$/;"	v
+nbOfCycles	paths.py	/^def nbOfCycles(*filenames):$/;"	f
+parallel	automaton.py	/^    def parallel(self,arg):$/;"	m	class:DeterministicAutomaton
+pathDistinction	paths.py	/^def pathDistinction(P,i):$/;"	f
+pathsConstructionFromFiles	paths.py	/^def pathsConstructionFromFiles(*filenames):$/;"	f
+printAutomaton	automaton.py	/^    def printAutomaton(self):$/;"	m	class:DeterministicAutomaton
+printPath	IO.py	/^def printPath(path):$/;"	f
+printPathPrime	IO.py	/^def printPathPrime(path):$/;"	f
+product	automaton.py	/^    def product(self,arg):$/;"	m	class:DeterministicAutomaton
+readRecordsFromFiles	table_read.py	/^def readRecordsFromFiles(*filenames):$/;"	f
+tagger	IO.py	/^def tagger(state):$/;"	f
+trim	automaton.py	/^    def trim(self):$/;"	m	class:DeterministicAutomaton
+uR	automaton.py	/^    def uR(self,B):$/;"	m	class:DeterministicAutomaton
