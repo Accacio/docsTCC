@@ -30,11 +30,10 @@
 | cp25|Rotate Arm CW|
 | cp26, cp107|Arm Stopped facing conveyor belt|
 | cp27|System Ready|
-| cp28|MAG1 Empty|
 | cp29|MAG1 Not Empty|
 | cp30|Extend MAG1's Cylinder *|
 | cp33, cp36, cp39, cp44, cp47, cp48, cp56, cp58, cp62, cp66, cp70, cp71|Turn Conveyor Belt On|
-| cp34, cp42, cp57, cp69, cp110, cp117, cp129, cp138, cp141, cp146||
+| cp34, cp42, cp57, cp69, cp110, cp117, cp129, cp138, cp146||
 | cp35|Plastic Half-cube|
 | cp37, cp63|Extend Right Discharge Cylinder *|
 | cp40, cp67|Extend Center Discharge Cylinder *|
@@ -43,12 +42,10 @@
 | cp45, cp59|Extend Left Discharge Cylinder *|
 | cp49|Metal Half-cube Ready|
 | cp50, cp73|Conveyor Belt Stopped|
-| cp51|MAG2 Empty|
 | cp52|MAG2 Not Empty|
 | cp53|Extend MAG2's Cylinder *|
 | cp65|White Half-Cube|
 | cp72|Plastic Half-cube Ready|
-| cp74, cp84, cp144|Raise Arm|
 | cp75|Raise and Extend Arm, and Turn Vacuum On|
 | cp76, cp81, cp94, cp101|Extend Arm and Turn Vacuum On|
 | cp77, cp80, cp97, cp100|Raise and Extend Arm and Turn Vacuum On|
@@ -56,31 +53,28 @@
 | cp79|Raise Arm, Turn Vacuum On and Rotate Arm CW|
 | cp82, cp102|Extend Arm|
 | cp83, cp95, cp103, cp142|Raise and Extend Arm|
+| cp84, cp144|Raise Arm|
 | cp85|Raise Arm and Rotate Arm CCW|
 | cp86|Raise Arm and HALFPIECECOUNTER:=HALFPIECECOUNTER+1|
-| cp87|Retract Assembly Unit Holder *|
 | cp88|Close Safety Door *|
 | cp89|Lower Press *|
 | cp90|Raise Press *|
 | cp91|Open Safety Door *|
 | cp92|Extend Assembly Unit Holder *|
 | cp93|Cube Ready|
-| cp96|Extend Arm e Turn Vacuum On|
 | cp98|Reset HALFPIECECOUNTER*, Raise and Extend Arm, Turn Vacuum On and Move Storage Unit to the Left|
 | cp99|Raise and Extend Arm, Turn Vacuum On and Rotate Arm CW|
 | cp104|Turn Arm CCW|
 | cp106|Turn Arm CW|
-| cp108|Cube on Storage Unit|
 | cp111, cp112, cp113, cp114|Move Storage Unit Upwards|
 | cp115|COUNTER3:=COUNTER3+1|
 | cp116|RESET COUNTER3*|
-| cp118|COUNTER1:=COUNTER1+1 e COUNTER4:=COUNTER4+1|
 | cp119, cp120, cp121, cp122, cp123, cp124, cp125|Move Storage Unit to the Left|
 | cp126|COUNTER5:=COUNTER5+1|
 | cp127|Reset COUNTER5*|
 | cp128|Reset COUNTER4* , COUNTER2:=COUNTER2+1|
-| cp130, cp132|Extend Storage Unit|
 | cp131|Extend Storage Unit and Move Storage Unit Downwards|
+| cp132|Extend Storage Unit|
 | cp133|Piece Stored|
 | cp135|Storage Unit Ready ( horizontal )|
 | cp136|Move Storage Unit Downwards|
@@ -108,9 +102,8 @@
 | ct12, ct106, ct150|Storage Unit Right Limit Switch|
 | ct13, ct151|Storage Unit Inferior Limit Switch|
 | ct15, ct102, ct162|Inductive Sensor Arm|
-| ct17, ct104|ARMCOUNTER <= BELT_ANGLE_CW|
+| ct17, ct104|ARMCOUNTER <= @@latex:BELT_ANGLE_CW@@|
 | ct19|Start Button|
-| ct20|$\overline{\mbox{MAG1 Empty}}$|
 | ct22|MAG1's Cylinder Extended \uparrow|
 | ct23|MAG1's Cylinder Retracted \uparrow|
 | ct26, ct56|$\overline{\mbox{Metallic Sensor}}$|
@@ -126,18 +119,16 @@
 | ct41, ct62|Concavity Upwards|
 | ct42, ct68|Proximity Sensor End Of Conveyor Belt \uparrow|
 | ct44|Proximity Sensor End Of Conveyor Belt \downarrow|
-| ct46|$\overline{\mbox{MAG2 Empty}}$|
 | ct48|MAG2's Cylinder Extended \uparrow|
 | ct49|MAG2's Cylinder Retracted \uparrow|
 | ct58|Proximity Sensor Right Discharge Cylinder \uparrow|
 | ct70|Proximity Sensor End Of Conveyor Belt \uparrow \downarrow|
-| ct72|Arm Raised|
-| ct77|ARMCOUNTER <= PRESS_ANGLE|
+| ct77|ARMCOUNTER <= @@latex:PRESS_ANGLE@@|
 | ct82|HALFPIECECOUNTER=1, Assembly Unit Holder Extended and Safety Door Opened|
-| ct84|ARMCOUNTER >= BELT_ANGLE_CCW|
+| ct84|ARMCOUNTER >= @@latex:BELT_ANGLE_CCW@@|
 | ct95, ct101|Arm Raised, Storage Unit Right and Inferior Limit Switches|
 | ct96|Storage Unit Arm Alignement Encoder|
-| ct97|ARMCOUNTER <= STORAGE_ANGLE|
+| ct97|ARMCOUNTER <= @@latex:STORAGE_ANGLE@@|
 | ct100|Arm Lowered|
 | ct107|COUNTER2=0|
 | ct108|COUNTER3=4 and Vertical Encoder|
@@ -152,7 +143,6 @@
 | ct117|COUNTER3=1 and Vertical Encoder|
 | ct118|COUNTER3<=1 and Vertical Encoder|
 | ct119|$\overline{\mbox{Vertical Encoder}}$|
-| ct121|COUNTER4=1|
 | ct122|COUNTER5=1 and Horizontal Encoder|
 | ct123|COUNTER5<=1 and Horizontal Encoder|
 | ct124|COUNTER4=2|
@@ -176,26 +166,24 @@
 | ct144|$\overline{\mbox{Horizontal Encoder}}$|
 | ct153|COUNTER1<28|
 | ct154, ct155|COUNTER1=28|
-| ct156|Stop Button|
-| ct157|ARMCOUNTER < STORAGE_ANGLE_BEFORE|
+| ct157|ARMCOUNTER < @@latex:{\footnotesize STORAGE\_ANGLE\_BEFORE}@@|
 | ct158|Arm Raised and Extended|
-| ct159|ARMCOUNTER >= STORAGE_ANGLE_BEFORE|
-| ct160|(ARMCOUNTER >= STORAGE_ANGLE_BEFORE and ARMCOUNTER < PRESS_ANGLE_AFTER) or ARMCOUNTER >= PRESS_ANGLE_BEFORE|
+| ct159|ARMCOUNTER >= @@latex:{\footnotesize STORAGE\_ANGLE\_BEFORE}@@|
+| ct160|(ARMCOUNTER >= @@latex:{\footnotesize STORAGE\_ANGLE\_BEFORE}@@ and ARMCOUNTER < @@latex:{\footnotesize PRESS\_ANGLE\_AFTER}@@) or ARMCOUNTER >= @@latex:{\footnotesize PRESS\_ANGLE\_BEFORE}@@|
 | ct161|Arm Raised and Retracted|
-| ct163|ARMCOUNTER >= PRESS_ANGLE_AFTER and ARMCOUNTER < PRESS_ANGLE_BEFORE|
+| ct163|ARMCOUNTER >= @@latex:{\footnotesize PRESS\_ANGLE\_AFTER}@@ and ARMCOUNTER < @@latex:{\footnotesize PRESS\_ANGLE\_BEFORE}@@|
 | ct164|Arm Retracted|
 | ct165|$\overline{\mbox{Arm Retracted }}$|
 | ctt7|T=12s|
 | ctt8|T=2.5s|
-| ctt14, ctt98, ctt99, ctt105, ctt145|T=2s|
+| ctt14, ctt98, ctt99|T=2s|
 | ctt16, ctt88, ctt89, ctt103|T=1s|
 | ctt24, ctt43, ctt50, ctt69|T=0.5s|
 | ctt25, ctt51|Presence \uparrow T=0.5s|
 | ctt73, ctt80|T=1.5s|
-| ctt74, ctt79, ctt94|T=1.5s and Arm Lowered|
+| ctt74, ctt79|T=1.5s and Arm Lowered|
 | ctt75, ctt76, ctt78, ctt81|T=1.5s and Arm Raised|
 | ctt83|T=1.5s, HALFPIECECOUNTER=0 and Raised Arm|
-| ctt86|T=1s and Assembly Unit Holder Retracted|
 | ctt87|T=1s and Safety Door Closed|
 | ctt90|T=1s and Safety Door Opened|
 | ctt91|T=1s and Assembly Unit Holder Extended|

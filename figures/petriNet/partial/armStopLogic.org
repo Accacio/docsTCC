@@ -12,16 +12,16 @@
 
 # TransitionsBegin
 #+ATTR_LATEX: :caption  \caption{Arm Stop Logic Module Transitions.} :placement [H] :align M{5cm}M{10cm}
-| Transitions | Meaning                                                                                                     |
-|-------------+-------------------------------------------------------------------------------------------------------------|
-| t156        | Stop Button                                                                                                 |
-| t157        | ARMCOUNTER < STORAGE_ANGLE_BEFORE                                                                           |
-| t158        | Arm Raised and Extended                                                                                     |
-| t159        | ARMCOUNTER >= STORAGE_ANGLE_BEFORE                                                                          |
-| t160        | (ARMCOUNTER >= STORAGE_ANGLE_BEFORE and ARMCOUNTER < PRESS_ANGLE_AFTER) or ARMCOUNTER >= PRESS_ANGLE_BEFORE |
-| t161        | Arm Raised and Retracted                                                                                    |
-| t162        | Inductive Sensor Arm                                                                                        |
-| t163        | ARMCOUNTER >= PRESS_ANGLE_AFTER and ARMCOUNTER < PRESS_ANGLE_BEFORE                                          |
-| t164        | Arm Retracted                                                                                               |
-| t165        | $\overline{\mbox{Arm Retracted }}$                                                                          |
+| Transitions | Meaning                                                                                                                                                                                         |
+|-------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| t156        | Stop Button                                                                                                                                                                                     |
+| t157        | ARMCOUNTER < @@latex:{\footnotesize STORAGE\_ANGLE\_BEFORE}@@                                                                                                                                   |
+| t158        | Arm Raised and Extended                                                                                                                                                                         |
+| t159        | ARMCOUNTER >= @@latex:{\footnotesize STORAGE\_ANGLE\_BEFORE}@@                                                                                                                                  |
+| t160        | (ARMCOUNTER >= @@latex:{\footnotesize STORAGE\_ANGLE\_BEFORE}@@ and ARMCOUNTER < @@latex:{\footnotesize PRESS\_ANGLE\_AFTER}@@) or ARMCOUNTER >= @@latex:{\footnotesize PRESS\_ANGLE\_BEFORE}@@ |
+| t161        | Arm Raised and Retracted                                                                                                                                                                        |
+| t162        | Inductive Sensor Arm                                                                                                                                                                            |
+| t163        | ARMCOUNTER >= @@latex:{\footnotesize PRESS\_ANGLE\_AFTER}@@ and ARMCOUNTER < @@latex:{\footnotesize PRESS\_ANGLE\_BEFORE}@@                                                                     |
+| t164        | Arm Retracted                                                                                                                                                                                   |
+| t165        | $\overline{\mbox{Arm Retracted }}$                                                                                                                                                              |
 # TransitionsEnd

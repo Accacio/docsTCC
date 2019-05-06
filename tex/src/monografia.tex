@@ -41,13 +41,16 @@
 
 % include only to speed up tests
 \includeonly{
-  frontMatter/frontMatter
+  % frontMatter/frontMatter
   % ,test/examples
   % ,mainMatter/introduction
-  % ,mainMatter/results
+  % ,mainMatter/background
+  % ,mainMatter/system
   % ,mainMatter/petriNets
+  % ,mainMatter/results
   % ,mainMatter/conclusion
   % ,appendices/complete
+  ,appendices/tools
 }
 \begin{document}
 
@@ -56,17 +59,20 @@
 \include{test/examples}
 
 \include{mainMatter/introduction}
-\include{mainMatter/results}
+\include{mainMatter/background}
+\include{mainMatter/system}
+\include{mainMatter/system}
 \include{mainMatter/petriNets}
+\include{mainMatter/results}
 \include{mainMatter/conclusion}
 
 \backmatter
 
 \bibliographystyle{coppe-unsrt-en}
 \nocite{*}
-\bibliography{bibliography}
+% \bibliography{bibliography}
 
 \appendix
 \include{appendices/complete}
-
+\include{appendices/tools}
 \end{document}

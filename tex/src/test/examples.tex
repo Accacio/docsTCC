@@ -5,25 +5,7 @@
 \section{teste}
 \subsection{teste}
 \subsubsection{teste}
-\begin{figure}[H]
-  \centering
-  \begin{tikzpicture}
-    \node[anchor=south west,inner sep=0] (image) at (0,0) {
-      \includegraphics[width=8cm]{maquete/elevador/69523_3.jpg}
-    };
-    % \draw[red,ultra thick,rounded corners] (0,0) rectangle (9.4,6.2);
-    \begin{scope}[x={(image.south east)},y={(image.north west)}]
-        % \draw[help lines,xstep=.1,ystep=.1] (0,0) grid (1,1);
-        % \foreach \x in {0,1,...,9} { \node [anchor=north] at (\x/10,0) {0.\x}; }
-        % \foreach \y in {0,1,...,9} { \node [anchor=east] at (0,\y/10) {0.\y}; }
-      \draw[red] (1,0.5) node {\textbf{Right}};
-      \draw[red] (0,0.5) node {\textbf{Left}};
-      \draw[red] (0.5,1) node {\textbf{Top}};
-      \draw[red] (0.5,0) node {\textbf{Bottom}};
-      \end{scope}
-  \end{tikzpicture}
-  \caption{Storage Unit}
-\end{figure}
+
 % \tikzset{
 %  every node/.style={font=\tiny},
 %     }
@@ -43,89 +25,7 @@
 {Petri net of Initialization module.}
 {petriinitialization}
 
-\begin{figure}[H]
-  \centering
-  \begin{tikzpicture}
-    \node[anchor=south west,inner sep=0] (image) at (0,0) {
-      \includegraphics[trim={0 6cm 0 5cm},clip,width=8cm]{maquete/esteira/40778_3.jpg}
-    };
-    % \draw[red,ultra thick,rounded corners] (0,0) rectangle (9.4,6.2);
-    \begin{scope}[x={(image.south east)},y={(image.north west)}]
-        % \draw[help lines,xstep=.1,ystep=.1] (0,0) grid (1,1);
-        % \foreach \x in {0,1,...,9} { \node [anchor=north] at (\x/10,0) {0.\x}; }
-        % \foreach \y in {0,1,...,9} { \node [anchor=east] at (0,\y/10) {0.\y}; }
-        \draw [->,>=stealth,red, very thick](0.9,0.7) -- (0.1,0.7);
-        \draw [red] (0.5,0.8) node {Forward};
-        \draw [->,>=stealth,red, very thick](0.1,0.1) -- (0.9,0.1);
-        \draw [red](0.5,0.0) node {Reverse};
-      \end{scope}
-  \end{tikzpicture}
-  \caption{Conveyor Belt}
-\end{figure}
 
-\begin{figure}[H]
-  \centering
-  \begin{tikzpicture}
-    \node[anchor=south west,inner sep=0] (image) at (0,0) {
-      \includegraphics[trim={0 0 0 0},clip,width=8cm]{maquete/sensores/69511_3.jpg}
-    };
-    % \draw[red,ultra thick,rounded corners] (0,0) rectangle (9.4,6.2);
-    \begin{scope}[x={(image.south east)},y={(image.north west)}]
-        % \draw[help lines,xstep=.1,ystep=.1] (0,0) grid (1,1);
-        % \foreach \x in {0,1,...,9} { \node [anchor=north] at (\x/10,0) {0.\x}; }
-        % \foreach \y in {0,1,...,9} { \node [anchor=east] at (0,\y/10) {0.\y};  }
-        \draw[red,ultra thick,rounded corners] (0.15,0.4) rectangle ++ (0.15,0.1);
-        \draw[red] (0.1,0.1) node {\textbf{Left}};
-        \draw[->,>=stealth,red, very thick] (0.2,0.38) -- (0.1,0.15);
-        \draw[magenta,ultra thick,rounded corners] (0.35,0.4) rectangle ++ (0.15,0.1);
-        \draw[magenta] (0.1,0.8) node {\textbf{Center}};
-        \draw[->,>=stealth,magenta, very thick] (0.4,0.52) -- (0.2,0.75);
-        \draw[cyan,ultra thick,rounded corners] (0.53,0.4) rectangle ++ (0.15,0.1);
-        \draw[cyan] (0.7,0.1) node {\textbf{Right}};
-        \draw[->,>=stealth,cyan, very thick] (0.65,0.38) -- (0.7,0.15);
-      \end{scope}
-  \end{tikzpicture}
-  \caption{Sensors}
-\end{figure}
-
-\begin{figure}[H]
-  \centering
-  \begin{tikzpicture}
-    \node[anchor=south west,inner sep=0] (image) at (0,0) {
-      \includegraphics[trim={20cm 0 30cm 20cm},clip,width=0.8\textwidth]{maquete/armAngles.jpg}
-    };
-    % \draw[red,ultra thick,rounded corners] (0,0) rectangle (9.4,6.2);
-    \begin{scope}[x={(image.south east)},y={(image.north west)}]
-        % \draw[help lines,xstep=.1,ystep=.1] (0,0) grid (1,1);
-        % \foreach \x in {0,1,...,9} { \node [anchor=north] at (\x/10,0) {0.\x}; }
-        % \foreach \y in {0,1,...,9} { \node [anchor=east] at (0,\y/10) {0.\y}; }a
-        
-      
-        \draw[red,->,>=stealth,very thick] (0.48,0.9) -- ++(-50:0.7);
-        \draw[red,->,>=stealth,very thick] (0.48,0.9) -- ++(-95:0.7);
-        \draw[red,->,>=stealth,very thick] (0.48,0.9) -- ++(-120:0.7);
-
-        \draw[fill=red, fill opacity=0.2,draw=none] (0.48,0.9) -- ([shift=(-50:0.5)]0.48,0.9) arc (-50:-95:0.5);
-        \draw[fill=blue, fill opacity=0.2,draw=none] (0.48,0.9) -- ([shift=(-95:0.5)]0.48,0.9) arc (-95:-120:0.5);
-
-        \draw [fill,white,fill opacity=0.7,draw=none] (0.02,0.23) rectangle ++ (0.35,0.06);
-        \draw [black] (0.2,0.25) node {\tiny \textbf{STORAGE\_ANGLE\_BEFORE}};
-
-        \draw [fill,white,fill opacity=0.7,draw=none] (0.25,0.13) rectangle ++ (0.3,0.06);
-        \draw [black] (0.4,0.15) node {\tiny \textbf{PRESS\_ANGLE\_AFTER}};
-
-        \draw [fill,white,fill opacity=0.7,draw=none] (0.7,0.28) rectangle ++ (0.3,0.06);
-        \draw [black] (0.85,0.3) node {\tiny \textbf{PRESS\_ANGLE\_BEFORE}};
-
-        \draw [fill,white,fill opacity=0.7,draw=none] (0.1,0.82) rectangle  (0.2,0.96);
-        \draw [red,thick] ([shift=(0:0.03)]0.15,0.9) arc (0:180:0.03);
-        \draw[black,->,>=stealth,very thick] (0.15,0.85) -- ++(0,0.1);
-        \draw [red,->,>=stealth,thick] ([shift=(0:-0.03)]0.15,0.9) arc (-180:-20:0.03);
-
-      \end{scope}
-  \end{tikzpicture}
-  \caption{Sensors}
-\end{figure}
 
 Identification algorithm as seen in \cite{moreira2018enhanced}
 \begin{algorithm2e}
@@ -172,69 +72,6 @@ Add $i$ to $\theta(x,\sigma_{i,j})$
 }
 }
 \end{algorithm2e}
-
-% \begin{table}[H]
-%   \centering
-%   \caption{table}
-%   \begin{tabular}{cc}
-%     \label{tab:tab1}
-%     \hypertarget{tab:1}{}
-%     Transição&Significado\\
-%     \hline \\
-%     \hyperlink{partialNet:t1}{\hypertarget{partialTable:t1}{$t_{1}$}}&Test\\
-%     \hyperlink{partialNet:p1}{\hypertarget{partialTable:p1}{$p_{1}$}}&balbalbal\\
-%     \hyperlink{partialNet:p0m2}{\hypertarget{partialTable:p0m2}{$p_{0}$}}&balbalbal
-%   \end{tabular}
-% \end{table}
-
-% \newpage
-% \begin{figure}[h]
-%   \centering
-%   \input{../../figures/petriNet/example/test}
-%   \caption{example }
-%   \label{fig:example}
-% \end{figure}
-
-% \newpage
-% \begin{figure}[h]
-%   \centering
-%   \input{../../figures/petriNet/example/test2}
-%   \caption{example }
-%   \label{fig:example}
-% \end{figure}
-
-% \newpage
-
-% \begin{figure}[H]
-%   \centering
-%   \includegraphics{../../figures/petriNet/dot/2-metalv/metalv.pdf}
-%   \caption{qlksdjf}
-%   \label{fig:example}
-% \end{figure}
-
-
-% \begin{figure}[H]
-%   \centering
-%   \includegraphics[width=0.4\textwidth]{../../figures/partial/initial.tikz}
-%   \caption{petri net bal}
-%   \label{fig:petrinetexample}
-% \end{figure}
-
-% \addtikzfigure{../../figures/petriNet/partial/initial}
-% {Petri net of cube storage module.}
-% {petri_initialization}
-
-% \addtikzfigure{../../figures/petriNet//partial/metalv}
-% {Petri net of metal cube half sorting module.}
-% {petri_initialization}
-
-\input{../../figures/petriNet/partial/initialPlaces}
-
-\input{../../figures/petriNet/partial/initialTransitions}
-
-\input{../../figures/petriNet/partial/metalvPlaces}
-
-\input{../../figures/petriNet/partial/metalvTransitions}
 
 %%% Local Variables:
 %%% mode: latex

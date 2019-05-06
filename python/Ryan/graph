@@ -1,2 +1,0 @@
-#!/bin/bash
-./paths.py |dot -Tpdf|zathura -

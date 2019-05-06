@@ -30,7 +30,6 @@ Transitions & Meaning \\
 \hyperlink{completeNet:t15}{\hypertarget{completeTable:t15}{$t_{15}$}}, \hyperlink{completeNet:t102}{\hypertarget{completeTable:t102}{$t_{102}$}}, \hyperlink{completeNet:t162}{\hypertarget{completeTable:t162}{$t_{162}$}} & Inductive Sensor Arm\\
 \hyperlink{completeNet:t17}{\hypertarget{completeTable:t17}{$t_{17}$}}, \hyperlink{completeNet:t104}{\hypertarget{completeTable:t104}{$t_{104}$}} & ARMCOUNTER <= BELT\(_{\text{ANGLE}}\)\(_{\text{CW}}\)\\
 \hyperlink{completeNet:t19}{\hypertarget{completeTable:t19}{$t_{19}$}} & Start Button\\
-\hyperlink{completeNet:t20}{\hypertarget{completeTable:t20}{$t_{20}$}} & \(\overline{\mbox{MAG1 Empty}}\)\\
 \hyperlink{completeNet:t22}{\hypertarget{completeTable:t22}{$t_{22}$}} & MAG1's Cylinder Extended \(\uparrow\)\\
 \hyperlink{completeNet:t23}{\hypertarget{completeTable:t23}{$t_{23}$}} & MAG1's Cylinder Retracted \(\uparrow\)\\
 \hyperlink{completeNet:t26}{\hypertarget{completeTable:t26}{$t_{26}$}}, \hyperlink{completeNet:t56}{\hypertarget{completeTable:t56}{$t_{56}$}} & \(\overline{\mbox{Metallic Sensor}}\)\\
@@ -46,12 +45,10 @@ Transitions & Meaning \\
 \hyperlink{completeNet:t41}{\hypertarget{completeTable:t41}{$t_{41}$}}, \hyperlink{completeNet:t62}{\hypertarget{completeTable:t62}{$t_{62}$}} & Concavity Upwards\\
 \hyperlink{completeNet:t42}{\hypertarget{completeTable:t42}{$t_{42}$}}, \hyperlink{completeNet:t68}{\hypertarget{completeTable:t68}{$t_{68}$}} & Proximity Sensor End Of Conveyor Belt \(\uparrow\)\\
 \hyperlink{completeNet:t44}{\hypertarget{completeTable:t44}{$t_{44}$}} & Proximity Sensor End Of Conveyor Belt \(\downarrow\)\\
-\hyperlink{completeNet:t46}{\hypertarget{completeTable:t46}{$t_{46}$}} & \(\overline{\mbox{MAG2 Empty}}\)\\
 \hyperlink{completeNet:t48}{\hypertarget{completeTable:t48}{$t_{48}$}} & MAG2's Cylinder Extended \(\uparrow\)\\
 \hyperlink{completeNet:t49}{\hypertarget{completeTable:t49}{$t_{49}$}} & MAG2's Cylinder Retracted \(\uparrow\)\\
 \hyperlink{completeNet:t58}{\hypertarget{completeTable:t58}{$t_{58}$}} & Proximity Sensor Right Discharge Cylinder \(\uparrow\)\\
 \hyperlink{completeNet:t70}{\hypertarget{completeTable:t70}{$t_{70}$}} & Proximity Sensor End Of Conveyor Belt \(\uparrow\) \(\downarrow\)\\
-\hyperlink{completeNet:t72}{\hypertarget{completeTable:t72}{$t_{72}$}} & Arm Raised\\
 \hyperlink{completeNet:t77}{\hypertarget{completeTable:t77}{$t_{77}$}} & ARMCOUNTER <= PRESS\(_{\text{ANGLE}}\)\\
 \hyperlink{completeNet:t82}{\hypertarget{completeTable:t82}{$t_{82}$}} & HALFPIECECOUNTER=1, Assembly Unit Holder Extended and Safety Door Opened\\
 \hyperlink{completeNet:t84}{\hypertarget{completeTable:t84}{$t_{84}$}} & ARMCOUNTER >= BELT\(_{\text{ANGLE}}\)\(_{\text{CCW}}\)\\
@@ -72,7 +69,6 @@ Transitions & Meaning \\
 \hyperlink{completeNet:t117}{\hypertarget{completeTable:t117}{$t_{117}$}} & COUNTER3=1 and Vertical Encoder\\
 \hyperlink{completeNet:t118}{\hypertarget{completeTable:t118}{$t_{118}$}} & COUNTER3<=1 and Vertical Encoder\\
 \hyperlink{completeNet:t119}{\hypertarget{completeTable:t119}{$t_{119}$}} & \(\overline{\mbox{Vertical Encoder}}\)\\
-\hyperlink{completeNet:t121}{\hypertarget{completeTable:t121}{$t_{121}$}} & COUNTER4=1\\
 \hyperlink{completeNet:t122}{\hypertarget{completeTable:t122}{$t_{122}$}} & COUNTER5=1 and Horizontal Encoder\\
 \hyperlink{completeNet:t123}{\hypertarget{completeTable:t123}{$t_{123}$}} & COUNTER5<=1 and Horizontal Encoder\\
 \hyperlink{completeNet:t124}{\hypertarget{completeTable:t124}{$t_{124}$}} & COUNTER4=2\\
@@ -96,26 +92,24 @@ Transitions & Meaning \\
 \hyperlink{completeNet:t144}{\hypertarget{completeTable:t144}{$t_{144}$}} & \(\overline{\mbox{Horizontal Encoder}}\)\\
 \hyperlink{completeNet:t153}{\hypertarget{completeTable:t153}{$t_{153}$}} & COUNTER1<28\\
 \hyperlink{completeNet:t154}{\hypertarget{completeTable:t154}{$t_{154}$}}, \hyperlink{completeNet:t155}{\hypertarget{completeTable:t155}{$t_{155}$}} & COUNTER1=28\\
-\hyperlink{completeNet:t156}{\hypertarget{completeTable:t156}{$t_{156}$}} & Stop Button\\
-\hyperlink{completeNet:t157}{\hypertarget{completeTable:t157}{$t_{157}$}} & ARMCOUNTER < STORAGE\(_{\text{ANGLE}}\)\(_{\text{BEFORE}}\)\\
+\hyperlink{completeNet:t157}{\hypertarget{completeTable:t157}{$t_{157}$}} & ARMCOUNTER < {\footnotesize STORAGE\_ANGLE\_BEFORE}\\
 \hyperlink{completeNet:t158}{\hypertarget{completeTable:t158}{$t_{158}$}} & Arm Raised and Extended\\
-\hyperlink{completeNet:t159}{\hypertarget{completeTable:t159}{$t_{159}$}} & ARMCOUNTER >= STORAGE\(_{\text{ANGLE}}\)\(_{\text{BEFORE}}\)\\
-\hyperlink{completeNet:t160}{\hypertarget{completeTable:t160}{$t_{160}$}} & (ARMCOUNTER >= STORAGE\(_{\text{ANGLE}}\)\(_{\text{BEFORE}}\) and ARMCOUNTER < PRESS\(_{\text{ANGLE}}\)\(_{\text{AFTER}}\)) or ARMCOUNTER >= PRESS\(_{\text{ANGLE}}\)\(_{\text{BEFORE}}\)\\
+\hyperlink{completeNet:t159}{\hypertarget{completeTable:t159}{$t_{159}$}} & ARMCOUNTER >= {\footnotesize STORAGE\_ANGLE\_BEFORE}\\
+\hyperlink{completeNet:t160}{\hypertarget{completeTable:t160}{$t_{160}$}} & (ARMCOUNTER >= {\footnotesize STORAGE\_ANGLE\_BEFORE} and ARMCOUNTER < {\footnotesize PRESS\_ANGLE\_AFTER}) or ARMCOUNTER >= {\footnotesize PRESS\_ANGLE\_BEFORE}\\
 \hyperlink{completeNet:t161}{\hypertarget{completeTable:t161}{$t_{161}$}} & Arm Raised and Retracted\\
-\hyperlink{completeNet:t163}{\hypertarget{completeTable:t163}{$t_{163}$}} & ARMCOUNTER >= PRESS\(_{\text{ANGLE}}\)\(_{\text{AFTER}}\) and ARMCOUNTER < PRESS\(_{\text{ANGLE}}\)\(_{\text{BEFORE}}\)\\
+\hyperlink{completeNet:t163}{\hypertarget{completeTable:t163}{$t_{163}$}} & ARMCOUNTER >= {\footnotesize PRESS\_ANGLE\_AFTER} and ARMCOUNTER < {\footnotesize PRESS\_ANGLE\_BEFORE}\\
 \hyperlink{completeNet:t164}{\hypertarget{completeTable:t164}{$t_{164}$}} & Arm Retracted\\
 \hyperlink{completeNet:t165}{\hypertarget{completeTable:t165}{$t_{165}$}} & \(\overline{\mbox{Arm Retracted }}\)\\
 \hyperlink{completeNet:tt7}{\hypertarget{completeTable:tt7}{$t_{7}$}} & T=12s\\
 \hyperlink{completeNet:tt8}{\hypertarget{completeTable:tt8}{$t_{8}$}} & T=2.5s\\
-\hyperlink{completeNet:tt14}{\hypertarget{completeTable:tt14}{$t_{14}$}}, \hyperlink{completeNet:tt98}{\hypertarget{completeTable:tt98}{$t_{98}$}}, \hyperlink{completeNet:tt99}{\hypertarget{completeTable:tt99}{$t_{99}$}}, \hyperlink{completeNet:tt105}{\hypertarget{completeTable:tt105}{$t_{105}$}}, \hyperlink{completeNet:tt145}{\hypertarget{completeTable:tt145}{$t_{145}$}} & T=2s\\
+\hyperlink{completeNet:tt14}{\hypertarget{completeTable:tt14}{$t_{14}$}}, \hyperlink{completeNet:tt98}{\hypertarget{completeTable:tt98}{$t_{98}$}}, \hyperlink{completeNet:tt99}{\hypertarget{completeTable:tt99}{$t_{99}$}} & T=2s\\
 \hyperlink{completeNet:tt16}{\hypertarget{completeTable:tt16}{$t_{16}$}}, \hyperlink{completeNet:tt88}{\hypertarget{completeTable:tt88}{$t_{88}$}}, \hyperlink{completeNet:tt89}{\hypertarget{completeTable:tt89}{$t_{89}$}}, \hyperlink{completeNet:tt103}{\hypertarget{completeTable:tt103}{$t_{103}$}} & T=1s\\
 \hyperlink{completeNet:tt24}{\hypertarget{completeTable:tt24}{$t_{24}$}}, \hyperlink{completeNet:tt43}{\hypertarget{completeTable:tt43}{$t_{43}$}}, \hyperlink{completeNet:tt50}{\hypertarget{completeTable:tt50}{$t_{50}$}}, \hyperlink{completeNet:tt69}{\hypertarget{completeTable:tt69}{$t_{69}$}} & T=0.5s\\
 \hyperlink{completeNet:tt25}{\hypertarget{completeTable:tt25}{$t_{25}$}}, \hyperlink{completeNet:tt51}{\hypertarget{completeTable:tt51}{$t_{51}$}} & Presence \(\uparrow\) T=0.5s\\
 \hyperlink{completeNet:tt73}{\hypertarget{completeTable:tt73}{$t_{73}$}}, \hyperlink{completeNet:tt80}{\hypertarget{completeTable:tt80}{$t_{80}$}} & T=1.5s\\
-\hyperlink{completeNet:tt74}{\hypertarget{completeTable:tt74}{$t_{74}$}}, \hyperlink{completeNet:tt79}{\hypertarget{completeTable:tt79}{$t_{79}$}}, \hyperlink{completeNet:tt94}{\hypertarget{completeTable:tt94}{$t_{94}$}} & T=1.5s and Arm Lowered\\
+\hyperlink{completeNet:tt74}{\hypertarget{completeTable:tt74}{$t_{74}$}}, \hyperlink{completeNet:tt79}{\hypertarget{completeTable:tt79}{$t_{79}$}} & T=1.5s and Arm Lowered\\
 \hyperlink{completeNet:tt75}{\hypertarget{completeTable:tt75}{$t_{75}$}}, \hyperlink{completeNet:tt76}{\hypertarget{completeTable:tt76}{$t_{76}$}}, \hyperlink{completeNet:tt78}{\hypertarget{completeTable:tt78}{$t_{78}$}}, \hyperlink{completeNet:tt81}{\hypertarget{completeTable:tt81}{$t_{81}$}} & T=1.5s and Arm Raised\\
 \hyperlink{completeNet:tt83}{\hypertarget{completeTable:tt83}{$t_{83}$}} & T=1.5s, HALFPIECECOUNTER=0 and Raised Arm\\
-\hyperlink{completeNet:tt86}{\hypertarget{completeTable:tt86}{$t_{86}$}} & T=1s and Assembly Unit Holder Retracted\\
 \hyperlink{completeNet:tt87}{\hypertarget{completeTable:tt87}{$t_{87}$}} & T=1s and Safety Door Closed\\
 \hyperlink{completeNet:tt90}{\hypertarget{completeTable:tt90}{$t_{90}$}} & T=1s and Safety Door Opened\\
 \hyperlink{completeNet:tt91}{\hypertarget{completeTable:tt91}{$t_{91}$}} & T=1s and Assembly Unit Holder Extended\\

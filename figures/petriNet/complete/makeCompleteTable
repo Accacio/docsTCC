@@ -13,7 +13,7 @@ echo "# PlacesBegin"
 echo "#+ATTR_LATEX: :caption \caption{Complete Places.} :environment longtable :align M{5cm}M{10cm}"
 echo "| Places | Meaning |"
 echo "|----+---------|"
-echo -e "$(getPlacesTable ../partial/initial.org)\n" \
+echo "$(getPlacesTable ../partial/initial.org)\n" \
      "$(getPlacesTable ../partial/metalv.org)\n" \
      "$(getPlacesTable ../partial/plastic.org)\n" \
      "$(getPlacesTable ../partial/armBeltToPress.org)\n" \
@@ -32,7 +32,7 @@ echo "# TransitionsBegin"
 echo "#+ATTR_LATEX: :caption \caption{Complete Transitions.} :environment longtable :align M{5cm}M{10cm}"
 echo "| Transitions | Meaning |"
 echo "|----+---------|"
-echo -e "$(getTransitionsTable ../partial/initial.org)\n" \
+echo "$(getTransitionsTable ../partial/initial.org)\n" \
      "$(getTransitionsTable ../partial/metalv.org)\n" \
      "$(getTransitionsTable ../partial/plastic.org)\n" \
      "$(getTransitionsTable ../partial/armBeltToPress.org)\n" \
