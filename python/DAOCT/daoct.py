@@ -45,7 +45,7 @@ class DAOCT(ut.MyUtil):
                         x = x_it
                         self.printd(x," is the state such that $\~{\lambda}(x)=y_{i,j}$")
                         break
-                    
+
                 # Lines 6 to 12
                 # if self.LambdaTilde[x] != self.y(self.pK[i][j]):
                 xPrime = []
@@ -95,7 +95,7 @@ class DAOCT(ut.MyUtil):
             return vectorm.ioVec
 
     def printAutomaton(self):
-        
+
         return
     def graphvizAutomaton(self):
         print('digraph a {\nrankdir=LR;')
@@ -103,20 +103,21 @@ class DAOCT(ut.MyUtil):
         print('graph [pad="0.5", nodesep="0.25", ranksep="0.2"];')
         print('node [shape=circle];')
         print('margin=0;')
+        print('size="11.7,8.3!";')
         print('init [style=invis]')
         print('init ->',self.x0)
         for xf in self.Xf:
             print(xf,"[shape=doublecircle];")
         for xe,xout in self.f.items():
-            
+
             a = map(str,self.theta[(xe[0],xout)])
             theta = ", ".join(a)
-            print((xe[0]),' -> ',xout,'[label="',xe[1],", {", theta,"} ",'"]')
+            print((xe[0]),' -> ',xout,'[label="',xe[1],", {",theta,"} ",'"]')
             print('\n')
         print('}')
 
 
-        return    
+        return
 
     def printPathd(self,paths):
         if self.debug==True:
@@ -179,7 +180,7 @@ class DAOCT(ut.MyUtil):
 
                     if j<l-1:
                         newSigmas.append(self.getSigma(path[j],path[j+1]))
-                    
+
                     newpath.append(newVector)
 
                 # for i in newVector:
@@ -201,7 +202,7 @@ class DAOCT(ut.MyUtil):
             for sigma in sigmas:
                 self.printdnl(sigma," | ")
             self.printd()
-                
+
         self.printd("<<== Getting Modified Paths from Paths - END ==>>")
         return (pK, sigmaK)
 
@@ -228,7 +229,6 @@ class DAOCT(ut.MyUtil):
     def getPathsFromRecord(self):
         self.printd("<<== Getting Paths from Record - BEGIN ==>>")
         paths=[]
-
         #Exclude the neighbours vectors that are equal
         newRecord=self.records[0]
         newRecords = [newRecord]
@@ -268,10 +268,10 @@ class DAOCT(ut.MyUtil):
             for p in path:
                 self.printdnl(p.ioVec," ")
             self.printd("")
-            self.printd("end")
             P.append(path)
 
         self.printd("==== Removing superposed")
+
         pathsNoSuper=P.copy()
         for i in pathsNoSuper:
             for j in pathsNoSuper:
@@ -281,8 +281,8 @@ class DAOCT(ut.MyUtil):
                     ioVecj = [rec.ioVec for rec in j]
 
                     if ioVecj==ioVeci[:len(ioVecj)]:
-                        # self.printdnl("Path ", pathsNoSuper.index(i), " includes path ", pathsNoSuper.index(j))
-                        # self.printd(" -> removing path ", pathsNoSuper.index(j))
+                        self.printdnl("Path ", pathsNoSuper.index(i), " includes path ", pathsNoSuper.index(j))
+                        self.printd(" -> removing path ", pathsNoSuper.index(j))
                         pathsNoSuper.remove(j)
 
         self.printPathd(pathsNoSuper)
@@ -312,7 +312,8 @@ class DAOCT(ut.MyUtil):
         # for i in pathsNoTwoElemCircPath:
         #     if i[0].ioVec == i[1].ioVec:
         #         pathsNoTwoElemCircPath.remove(i)
-        pathsNoTwoElemCircPath=list(filter(lambda x: x[0].ioVec!=x[1].ioVec,pathsNoSuper))
+
+        pathsNoTwoElemCircPath=list(filter(lambda x: x[0].ioVec!=x[1].ioVec if len(x)>1 else True ,pathsNoSuper))
 
         self.printPathd(pathsNoTwoElemCircPath)
 
