@@ -1,0 +1,40 @@
+\begin{tikzpicture}[>=latex',line join=bevel,]
+%%
+\node (t165) at (456.0bp,194.43bp) [draw,ellipse,transition, label=above:, label=left:\hyperlink{partialTable:t165}{\hypertarget{partialNet:t165}{$t_{165}$}},rotate=90] {};
+  \node (t164) at (527.0bp,87.431bp) [draw,ellipse,transition, label=above:, label=left:\hyperlink{partialTable:t164}{\hypertarget{partialNet:t164}{$t_{164}$}},rotate=90] {};
+  \node (t163) at (244.0bp,160.43bp) [draw,ellipse,transition, label=above:, label=left:\hyperlink{partialTable:t163}{\hypertarget{partialNet:t163}{$t_{163}$}},rotate=90] {};
+  \node (t157) at (173.0bp,457.43bp) [draw,ellipse,transition, label=above:, label=left:\hyperlink{partialTable:t157}{\hypertarget{partialNet:t157}{$t_{157}$}},rotate=90] {};
+  \node (t161) at (598.0bp,277.43bp) [draw,ellipse,transition, label=above:, label=left:\hyperlink{partialTable:t161}{\hypertarget{partialNet:t161}{$t_{161}$}},rotate=90] {};
+  \node (t160) at (315.0bp,301.43bp) [draw,ellipse,transition, label=above:, label=left:\hyperlink{partialTable:t160}{\hypertarget{partialNet:t160}{$t_{160}$}},rotate=90] {};
+  \node (t158) at (315.0bp,510.43bp) [draw,ellipse,transition, label=above:, label=left:\hyperlink{partialTable:t158}{\hypertarget{partialNet:t158}{$t_{158}$}},rotate=90] {};
+  \node (t159) at (456.0bp,486.43bp) [draw,ellipse,transition, label=above:, label=left:\hyperlink{partialTable:t159}{\hypertarget{partialNet:t159}{$t_{159}$}},rotate=90] {};
+  \node (p141) at (102.0bp,301.43bp) [draw,ellipse,place, label=above:, label=left:\hyperlink{partialTable:p141}{\hypertarget{partialNet:p141}{$p_{141}$}},rotate=90] {};
+  \node (p143) at (386.0bp,491.43bp) [draw,ellipse,place, label=above:, label=left:\hyperlink{partialTable:p143}{\hypertarget{partialNet:p143}{$p_{143}$}},rotate=90] {};
+  \node (p142) at (244.0bp,476.43bp) [draw,ellipse,place, label=above:, label=left:\hyperlink{partialTable:p142}{\hypertarget{partialNet:p142}{$p_{142}$}},rotate=90] {};
+  \node (p145) at (669.0bp,189.43bp) [draw,ellipse,place, label=above:, label=left:\hyperlink{partialTable:p145}{\hypertarget{partialNet:p145}{$p_{145}$}},rotate=90] {};
+  \node (p144) at (527.0bp,316.43bp) [draw,ellipse,place, label=above:, label=left:\hyperlink{partialTable:p144}{\hypertarget{partialNet:p144}{$p_{144}$}},rotate=90] {};
+  \node (p146) at (386.0bp,160.43bp) [draw,ellipse,place, label=above:, label=left:\hyperlink{partialTable:p146}{\hypertarget{partialNet:p146}{$p_{146}$}},rotate=90] {};
+  \node (t156) at (31.0bp,301.43bp) [draw,ellipse,transition, label=above:, label=left:\hyperlink{partialTable:t156}{\hypertarget{partialNet:t156}{$t_{156}$}},rotate=90] {};
+  \node (ep0m1) at (811.0bp,189.43bp) [draw,ellipse,extPlace, tokens=1, label=above:, label=left:\hyperlink{partialNet:p0m1}{$p_{0}$},rotate=90] {};
+  \node (t162) at (740.0bp,189.43bp) [draw,ellipse,transition, label=above:, label=left:\hyperlink{partialTable:t162}{\hypertarget{partialNet:t162}{$t_{162}$}},rotate=90] {};
+  \draw [-Latex] (t160) ..controls (379.34bp,305.98bp) and (447.52bp,310.81bp)  .. (p144);
+  \draw [-Latex] (p141) ..controls (122.24bp,345.9bp) and (146.32bp,398.8bp)  .. (t157);
+  \draw [-Latex] (p141) ..controls (142.29bp,261.43bp) and (192.49bp,211.58bp)  .. (t163);
+  \draw [-Latex] (t165) ..controls (477.85bp,231.97bp) and (498.15bp,266.86bp)  .. (p144);
+  \draw [-Latex] (t164) ..controls (570.23bp,118.48bp) and (613.96bp,149.9bp)  .. (p145);
+  \draw [-Latex] (p146) ..controls (431.12bp,137.07bp) and (469.53bp,117.19bp)  .. (t164);
+  \draw [-Latex] (t156) ..controls (60.386bp,301.43bp) and (62.567bp,301.43bp)  .. (p141);
+  \draw [-Latex] (p145) ..controls (698.39bp,189.43bp) and (700.57bp,189.43bp)  .. (t162);
+  \draw [-Latex] (t163) ..controls (292.91bp,160.43bp) and (323.96bp,160.43bp)  .. (p146);
+  \draw [-Latex] (t158) ..controls (343.68bp,502.75bp) and (347.28bp,501.79bp)  .. (p143);
+  \draw [-Latex] (t161) ..controls (621.83bp,247.89bp) and (637.36bp,228.64bp)  .. (p145);
+  \draw [-Latex] (p146) ..controls (413.38bp,173.73bp) and (419.06bp,176.49bp)  .. (t165);
+  \draw [-Latex] (t159) ..controls (475.75bp,439.15bp) and (500.99bp,378.71bp)  .. (p144);
+  \draw [-Latex] (p144) ..controls (554.22bp,301.48bp) and (561.26bp,297.61bp)  .. (t161);
+  \draw [-Latex] (t162) ..controls (769.39bp,189.43bp) and (771.57bp,189.43bp)  .. (ep0m1);
+  \draw [-Latex] (p142) ..controls (271.63bp,489.66bp) and (277.7bp,492.57bp)  .. (t158);
+  \draw [-Latex] (t157) ..controls (201.68bp,465.11bp) and (205.28bp,466.07bp)  .. (p142);
+  \draw [-Latex] (p143) ..controls (414.83bp,489.37bp) and (416.83bp,489.23bp)  .. (t159);
+  \draw [-Latex] (p141) ..controls (167.11bp,301.43bp) and (235.11bp,301.43bp)  .. (t160);
+%
+\end{tikzpicture}

@@ -24,9 +24,9 @@
   \node (t136) at (193.98bp,361.0bp) [draw,ellipse,transition, label=above:, label=left:\hyperlink{partialTable:t136}{\hypertarget{partialNet:t136}{$t_{136}$}},rotate=90] {};
   \node (t137) at (516.98bp,422.0bp) [draw,ellipse,transition, label=above:, label=left:\hyperlink{partialTable:t137}{\hypertarget{partialNet:t137}{$t_{137}$}},rotate=90] {};
   \node (ett145) at (840.98bp,338.0bp) [draw,ellipse,extTimedtransition, label=above:, label=left:\hyperlink{partialNet:tt145}{$t_{145}$},rotate=90] {};
+  \node (et106) at (31.977bp,288.0bp) [draw,ellipse,extTransition, label=above:, label=left:\hyperlink{partialNet:t106}{$t_{106}$},rotate=90] {};
   \node (p118) at (112.98bp,288.0bp) [draw,ellipse,place, label=above:, label=left:\hyperlink{partialTable:p118}{\hypertarget{partialNet:p118}{$p_{118}$}},rotate=90] {};
   \node (p119) at (274.98bp,288.0bp) [draw,ellipse,place, label=above:, label=left:\hyperlink{partialTable:p119}{\hypertarget{partialNet:p119}{$p_{119}$}},rotate=90] {};
-  \node (ett106) at (31.977bp,288.0bp) [draw,ellipse,extTimedtransition, label=above:, label=left:\hyperlink{partialNet:tt106}{$t_{106}$},rotate=90] {};
   \node (p128) at (436.98bp,513.0bp) [draw,ellipse,place, label=above:, label=left:\hyperlink{partialTable:p128}{\hypertarget{partialNet:p128}{$p_{128}$}},rotate=90] {};
   \node (t129) at (355.98bp,234.0bp) [draw,ellipse,transition, label=above:, label=left:\hyperlink{partialTable:t129}{\hypertarget{partialNet:t129}{$t_{129}$}},rotate=90] {};
   \node (t128) at (436.98bp,206.0bp) [draw,ellipse,transition, label=above:, label=left:\hyperlink{partialTable:t128}{\hypertarget{partialNet:t128}{$t_{128}$}},rotate=90] {};
@@ -68,7 +68,6 @@
   \draw [-Latex] (t139) ..controls (225.55bp,454.92bp) and (233.66bp,457.72bp)  .. (p125);
   \draw [-Latex] (t126) ..controls (379.65bp,183.51bp) and (405.96bp,229.63bp)  .. (p126);
   \draw [-Latex] (t131) ..controls (527.85bp,55.241bp) and (536.85bp,86.694bp)  .. (543.98bp,114.0bp) .. controls (562.33bp,184.29bp) and (581.82bp,267.58bp)  .. (p127);
-  \draw [-Latex] (ett106) ..controls (64.602bp,288.0bp) and (70.126bp,288.0bp)  .. (p118);
   \draw [-Latex] (p122) ..controls (306.87bp,43.301bp) and (313.69bp,43.174bp)  .. (t132);
   \draw [-Latex] (t132) ..controls (369.96bp,80.28bp) and (377.69bp,98.472bp)  .. (382.98bp,115.0bp) .. controls (399.35bp,166.25bp) and (391.23bp,182.57bp)  .. (409.98bp,233.0bp) .. controls (413.14bp,241.5bp) and (417.44bp,250.37bp)  .. (p126);
   \draw [-Latex] (p122) ..controls (304.57bp,31.972bp) and (316.98bp,26.001bp)  .. (328.98bp,23.0bp) .. controls (380.08bp,10.217bp) and (441.44bp,11.56bp)  .. (t131);
@@ -94,5 +93,6 @@
   \draw [-Latex] (p123) ..controls (304.53bp,598.2bp) and (316.94bp,604.16bp)  .. (328.98bp,607.0bp) .. controls (352.42bp,612.53bp) and (379.49bp,611.26bp)  .. (t134);
   \draw [-Latex] (p126) ..controls (469.14bp,284.0bp) and (474.54bp,284.0bp)  .. (t144);
   \draw [-Latex] (t132) ..controls (324.26bp,56.694bp) and (317.44bp,56.824bp)  .. (p122);
+  \draw [-Latex] (et106) ..controls (64.602bp,288.0bp) and (70.126bp,288.0bp)  .. (p118);
 %
 \end{tikzpicture}

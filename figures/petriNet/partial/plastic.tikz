@@ -13,7 +13,7 @@
   \node (t67) at (1251.0bp,913.0bp) [draw,ellipse,transition, label=above:, label=left:\hyperlink{partialTable:t67}{\hypertarget{partialNet:t67}{$t_{67}$}},rotate=90] {};
   \node (t66) at (1795.0bp,179.0bp) [draw,ellipse,transition, label=above:, label=left:\hyperlink{partialTable:t66}{\hypertarget{partialNet:t66}{$t_{66}$}},rotate=90] {};
   \node (t47) at (299.0bp,196.0bp) [draw,ellipse,transition, label=above:, label=left:\hyperlink{partialTable:t47}{\hypertarget{partialNet:t47}{$t_{47}$}},rotate=90] {};
-  \node (t46) at (163.0bp,98.0bp) [draw,ellipse,transition, label=above:, label=left:\hyperlink{partialTable:t46}{\hypertarget{partialNet:t46}{$t_{46}$}},rotate=90] {};
+  \node (t46) at (163.0bp,196.0bp) [draw,ellipse,transition, label=above:, label=left:\hyperlink{partialTable:t46}{\hypertarget{partialNet:t46}{$t_{46}$}},rotate=90] {};
   \node (t63) at (1387.0bp,654.0bp) [draw,ellipse,transition, label=above:, label=left:\hyperlink{partialTable:t63}{\hypertarget{partialNet:t63}{$t_{63}$}},rotate=90] {};
   \node (t62) at (1251.0bp,654.0bp) [draw,ellipse,transition, label=above:, label=left:\hyperlink{partialTable:t62}{\hypertarget{partialNet:t62}{$t_{62}$}},rotate=90] {};
   \node (tt51) at (843.0bp,196.0bp) [draw,ellipse,timedtransition, label=above:, label=left:\hyperlink{partialTable:tt51}{\hypertarget{partialNet:tt51}{$t_{51}$}},rotate=90] {};
@@ -49,14 +49,13 @@
   \node (p56) at (775.0bp,196.0bp) [draw,ellipse,place, label=above:, label=left:\hyperlink{partialTable:p56}{\hypertarget{partialNet:p56}{$p_{56}$}},rotate=90] {};
   \node (p57) at (911.0bp,196.0bp) [draw,ellipse,place, label=above:, label=left:\hyperlink{partialTable:p57}{\hypertarget{partialNet:p57}{$p_{57}$}},rotate=90] {};
   \node (p51) at (95.0bp,98.0bp) [draw,ellipse,place, label=above:, label=left:\hyperlink{partialTable:p51}{\hypertarget{partialNet:p51}{$p_{51}$}},rotate=90] {};
-  \node (p52) at (231.0bp,98.0bp) [draw,ellipse,place, label=above:, label=left:\hyperlink{partialTable:p52}{\hypertarget{partialNet:p52}{$p_{52}$}},rotate=90] {};
+  \node (p52) at (231.0bp,196.0bp) [draw,ellipse,place, label=above:, label=left:\hyperlink{partialTable:p52}{\hypertarget{partialNet:p52}{$p_{52}$}},rotate=90] {};
   \node (p53) at (367.0bp,196.0bp) [draw,ellipse,place, label=above:, label=left:\hyperlink{partialTable:p53}{\hypertarget{partialNet:p53}{$p_{53}$}},rotate=90] {};
   \node (p63) at (1319.0bp,425.0bp) [draw,ellipse,place, label=above:, label=left:\hyperlink{partialTable:p63}{\hypertarget{partialNet:p63}{$p_{63}$}},rotate=90] {};
   \node (ep28) at (1727.0bp,1239.0bp) [draw,ellipse,extPlace, label=above:, label=left:\hyperlink{partialNet:p28}{$p_{28}$},rotate=90] {};
   \draw [-Latex] (tt69) ..controls (1540.2bp,1067.9bp) and (1568.7bp,1164.0bp)  .. (p72);
   \draw [-Latex] (p67) ..controls (1483.0bp,650.29bp) and (1484.6bp,650.08bp)  .. (t64);
   \draw [-Latex] (et44) ..controls (55.375bp,98.0bp) and (56.493bp,98.0bp)  .. (p51);
-  \draw [-Latex] (t66) ..controls (1778.5bp,115.91bp) and (1739.4bp,0.0bp)  .. (1659.0bp,0.0bp) .. controls (367.0bp,0.0bp) and (367.0bp,0.0bp)  .. (367.0bp,0.0bp) .. controls (316.94bp,0.0bp) and (272.75bp,44.249bp)  .. (p52);
   \draw [-Latex] (p65) ..controls (1199.3bp,716.16bp) and (1229.7bp,831.87bp)  .. (t67);
   \draw [-Latex] (ep107) ..controls (1612.3bp,816.99bp) and (1630.7bp,848.06bp)  .. (t71);
   \draw [-Latex] (p60) ..controls (1366.7bp,196.0bp) and (1395.0bp,196.0bp)  .. (t55);
@@ -66,6 +65,7 @@
   \draw [-Latex] (p54) ..controls (531.37bp,196.0bp) and (532.49bp,196.0bp)  .. (t49);
   \draw [-Latex] (t60) ..controls (1578.9bp,371.84bp) and (1656.9bp,321.37bp)  .. (p69);
   \draw [-Latex] (p53) ..controls (395.37bp,196.0bp) and (396.49bp,196.0bp)  .. (t48);
+  \draw [-Latex] (t66) ..controls (1778.5bp,115.91bp) and (1739.4bp,0.0bp)  .. (1659.0bp,0.0bp) .. controls (231.0bp,0.0bp) and (231.0bp,0.0bp)  .. (231.0bp,0.0bp) .. controls (180.94bp,0.0bp) and (136.75bp,44.249bp)  .. (p51);
   \draw [-Latex] (p70) ..controls (1346.7bp,936.92bp) and (1349.1bp,937.52bp)  .. (t68);
   \draw [-Latex] (p56) ..controls (803.37bp,196.0bp) and (804.49bp,196.0bp)  .. (tt51);
   \draw [-Latex] (p57) ..controls (928.18bp,253.85bp) and (956.72bp,349.98bp)  .. (t56);
@@ -79,7 +79,7 @@
   \draw [-Latex] (t57) ..controls (1143.4bp,425.0bp) and (1144.5bp,425.0bp)  .. (p62);
   \draw [-Latex] (p59) ..controls (1211.4bp,196.0bp) and (1212.5bp,196.0bp)  .. (t54);
   \draw [-Latex] (p71) ..controls (1481.7bp,989.37bp) and (1487.0bp,991.99bp)  .. (tt69);
-  \draw [-Latex] (p52) ..controls (253.25bp,130.06bp) and (269.35bp,153.26bp)  .. (t47);
+  \draw [-Latex] (p52) ..controls (259.37bp,196.0bp) and (260.49bp,196.0bp)  .. (t47);
   \draw [-Latex] (p66) ..controls (1347.4bp,654.0bp) and (1348.5bp,654.0bp)  .. (t63);
   \draw [-Latex] (t54) ..controls (1279.4bp,196.0bp) and (1280.5bp,196.0bp)  .. (p60);
   \draw [-Latex] (p62) ..controls (1211.4bp,425.0bp) and (1212.5bp,425.0bp)  .. (t58);
@@ -88,10 +88,10 @@
   \draw [-Latex] (p63) ..controls (1347.4bp,425.0bp) and (1348.5bp,425.0bp)  .. (t59);
   \draw [-Latex] (p61) ..controls (1064.2bp,482.85bp) and (1092.7bp,578.98bp)  .. (t61);
   \draw [-Latex] (t47) ..controls (327.37bp,196.0bp) and (328.49bp,196.0bp)  .. (p53);
-  \draw [-Latex] (p51) ..controls (123.37bp,98.0bp) and (124.49bp,98.0bp)  .. (t46);
+  \draw [-Latex] (p51) ..controls (117.25bp,130.06bp) and (133.35bp,153.26bp)  .. (t46);
   \draw [-Latex] (t55) ..controls (1528.9bp,217.73bp) and (1636.6bp,249.4bp)  .. (p69);
   \draw [-Latex] (t53) ..controls (1143.4bp,196.0bp) and (1144.5bp,196.0bp)  .. (p59);
-  \draw [-Latex] (t46) ..controls (191.37bp,98.0bp) and (192.49bp,98.0bp)  .. (p52);
+  \draw [-Latex] (t46) ..controls (191.37bp,196.0bp) and (192.49bp,196.0bp)  .. (p52);
   \draw [-Latex] (t63) ..controls (1415.4bp,654.0bp) and (1416.5bp,654.0bp)  .. (p67);
   \draw [-Latex] (t48) ..controls (463.37bp,196.0bp) and (464.49bp,196.0bp)  .. (p54);
   \draw [-Latex] (tt69) ..controls (1551.4bp,1010.0bp) and (1552.5bp,1010.0bp)  .. (p73);
