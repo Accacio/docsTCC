@@ -23,12 +23,12 @@
 | tt94        | T=1.5s and Arm Lowered                                     |
 | t95         | Arm Raised, Storage Unit Right and Inferior Limit Switches |
 | t96         | Storage Unit Arm Alignement Encoder                            |
-| t97         | ARMCOUNTER <= @@latex:STORAGE_ANGLE@@                      |
+| t97         | ARMCOUNTER <= @@latex:STORAGE\_ANGLE@@                      |
 | tt98        | T=2s                                                       |
 | tt99        | T=2s                                                       |
 | t100        | Arm Lowered                                                |
 | t101        | Arm Raised, Storage Unit Right and Inferior Limit Switches |
 | t102        | Inductive Sensor Arm                                       |
 | tt103       | T=1s                                                       |
-| t104        | ARMCOUNTER <= @@latex:BELT_ANGLE_CW@@                      |
+| t104        | ARMCOUNTER <= @@latex:BELT\_ANGLE\_CW@@                      |
 # TransitionsEnd

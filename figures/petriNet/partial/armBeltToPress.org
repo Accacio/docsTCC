@@ -26,13 +26,13 @@
 | tt74        | T=1.5s and Arm Lowered                                                   |
 | tt75        | T=1.5s and Arm Raised                                                    |
 | tt76        | T=1.5s and Arm Raised                                                    |
-| t77         | ARMCOUNTER <= @@latex:PRESS_ANGLE@@                                      |
+| t77         | ARMCOUNTER <= @@latex:PRESS\_ANGLE@@                                      |
 | tt78        | T=1.5s and Arm Raised                                                    |
 | tt79        | T=1.5s and Arm Lowered                                                   |
 | tt80        | T=1.5s                                                                   |
 | tt81        | T=1.5s and Arm Raised                                                    |
 | t82         | HALFPIECECOUNTER=1, Assembly Unit Holder Extended and Safety Door Opened |
 | tt83        | T=1.5s, HALFPIECECOUNTER=0 and Raised Arm                                |
-| t84         | ARMCOUNTER >= @@latex:BELT_ANGLE_CCW@@                                   |
+| t84         | ARMCOUNTER >= @@latex:BELT\_ANGLE\_CCW@@                                   |
 | t85         |                                                                          |
 # TransitionsEnd
