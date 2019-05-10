@@ -1,0 +1,23 @@
+\begin{tikzpicture}[>=latex',line join=bevel,]
+%%
+\node (p1) at (272.0bp,64.0bp) [draw,ellipse,place, label=above:, label=left:$p_{1}$,rotate=90] {};
+  \node (et5) at (343.0bp,72.0bp) [draw,ellipse,extTransition, label=above:, label=left:$t_{5}$,rotate=90] {};
+  \node (tt2) at (343.0bp,18.0bp) [draw,ellipse,timedtransition, label=above:, label=left:$t_{2}$,rotate=90] {};
+  \node (ep3) at (414.0bp,18.0bp) [draw,ellipse,extPlace, label=above:, label=left:$p_{3}$,rotate=90] {};
+  \node (t1) at (185.0bp,64.0bp) [draw,ellipse,transition, label=above:, label=left:$t_{1}$,rotate=90] {};
+  \node (p0m3) at (98.0bp,34.0bp) [draw,ellipse,place, tokens=3, label=above:, label=left:$p_{0}$,rotate=90] {};
+  \node (ett6) at (27.0bp,34.0bp) [draw,ellipse,extTimedtransition, label=above:, label=left:$t_{6}$,rotate=90] {};
+  \draw [-Latex,inhibitor] (p1) ..controls (238.51bp,70.719bp) and (229.47bp,70.869bp)  .. (t1);
+  \draw [-Latex] (tt2) ..controls (372.39bp,18.0bp) and (374.57bp,18.0bp)  .. (ep3);
+  \draw [-Latex] (t1) ..controls (218.69bp,57.275bp) and (227.73bp,57.13bp)  .. (p1);
+  \draw [-Latex] (tt2) ..controls (272.18bp,22.625bp) and (185.0bp,28.319bp)  .. (p0m3);
+  \definecolor{strokecol}{rgb}{0.0,0.0,0.0};
+  \pgfsetstrokecolor{strokecol}
+  \draw (228.5bp,35.0bp) node {3};
+  \draw [-Latex] (p1) ..controls (298.68bp,46.714bp) and (307.1bp,41.256bp)  .. (tt2);
+  \draw [-Latex] (p0m3) ..controls (131.19bp,45.445bp) and (141.51bp,49.004bp)  .. (t1);
+  \draw (141.5bp,60.0bp) node {3};
+  \draw [-Latex] (p1) ..controls (301.23bp,67.293bp) and (303.67bp,67.568bp)  .. (et5);
+  \draw [-Latex] (ett6) ..controls (56.386bp,34.0bp) and (58.567bp,34.0bp)  .. (p0m3);
+%
+\end{tikzpicture}

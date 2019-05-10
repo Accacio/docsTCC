@@ -1,0 +1,21 @@
+\begin{tikzpicture}[>=latex',line join=bevel,]
+%%
+\coordinate (init) at (35.773bp,302.3bp);
+  \node (x2) at (479.77bp,302.3bp) [draw,circle, double,place, label=above:,rotate=0] {$x_{2}$};
+  \node (x3) at (642.77bp,302.3bp) [draw,,circle, label=above:,rotate=0] {$x_{3}$};
+  \node (x0) at (114.77bp,302.3bp) [draw,,circle, label=above:,rotate=0] {$x_{0}$};
+  \node (x1) at (299.77bp,302.3bp) [draw,,circle, label=above:,rotate=0] {$x_{1}$};
+  \node (x4) at (818.77bp,302.3bp) [draw,circle, double,place, label=above:,rotate=0] {$x_{4}$};
+  \draw [-Latex] (x2) ..controls (524.75bp,302.3bp) and (588.15bp,302.3bp)  .. (x3);
+  \definecolor{strokecol}{rgb}{0.0,0.0,0.0};
+  \pgfsetstrokecolor{strokecol}
+  \draw (564.77bp,313.3bp) node { $\downarrow$Input1 \\ \{ 0 \}  };
+  \draw [-Latex] (x1) ..controls (339.37bp,302.3bp) and (414.23bp,302.3bp)  .. (x2);
+  \draw (386.77bp,313.3bp) node { $\uparrow$Input1 \\ \{ 0, 1 \}  };
+  \draw [-Latex] (x3) ..controls (681.37bp,302.3bp) and (754.02bp,302.3bp)  .. (x4);
+  \draw (727.77bp,313.3bp) node { $\uparrow$Output1 \\ \{ 0 \}  };
+  \draw [-Latex] (x0) ..controls (155.73bp,302.3bp) and (238.99bp,302.3bp)  .. (x1);
+  \draw (207.77bp,313.3bp) node { $\downarrow$Output1 \\ \{ 0, 1 \}  };
+  \draw [-Latex] (init) ..controls (69.582bp,302.3bp) and (82.632bp,302.3bp)  .. (x0);
+%
+\end{tikzpicture}

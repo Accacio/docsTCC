@@ -1,0 +1,23 @@
+digraph A {
+rankdir=LR;
+ratio=fill
+graph [pad="0.5", nodesep="0.25", ranksep="0.2"];
+
+p0m3
+p1
+ep3
+t1
+tt2
+et5
+ett6
+
+p0m3 -> t1 [label="3"]
+p1 -> t1 [style="inhibitor"]
+p1 -> tt2
+p1 -> et5
+t1 -> p1 
+tt2 -> ep3
+tt2 -> p0m3 [label="3"]
+ett6 -> p0m3
+
+}

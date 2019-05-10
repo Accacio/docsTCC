@@ -1,0 +1,24 @@
+digraph a {
+rankdir=LR;
+ratio=fill
+graph [pad="0.5", nodesep="0.25", ranksep="0.2"];
+node [shape=circle];
+margin=0;
+size="11.7,8.3!";
+init [style=invis]
+init -> x0
+x2 [shape=doublecircle];
+x4 [shape=doublecircle];
+x0  ->  x1 [texlbl=" ⬇Output1 \\ \{ 0, 1 \}  "]
+
+
+x1  ->  x2 [texlbl=" ⬆Input1 \\ \{ 0, 1 \}  "]
+
+
+x2  ->  x3 [texlbl=" ⬇Input1 \\ \{ 0 \}  "]
+
+
+x3  ->  x4 [texlbl=" ⬆Output1 \\ \{ 0 \}  "]
+
+
+}

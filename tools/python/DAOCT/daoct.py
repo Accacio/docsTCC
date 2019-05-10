@@ -78,7 +78,6 @@ class DAOCT(ut.MyUtil):
         self.printd("<<== Creating Automaton - END ==>>")
         return
 
-
     def y(self,vectorm):
         if isinstance(vectorm,list):
             label = ''
@@ -95,8 +94,12 @@ class DAOCT(ut.MyUtil):
             return vectorm.ioVec
 
     def printAutomaton(self):
-
+        for xe,xout in self.f.items():
+            a = map(str,self.theta[(xe[0],xout)])
+            theta = ", ".join(a)
+            print('f(',xe[0],',',xe[1],") =",xout)
         return
+
     def graphvizAutomaton(self):
         print('digraph a {\nrankdir=LR;')
         print('ratio=fill')
@@ -112,7 +115,7 @@ class DAOCT(ut.MyUtil):
 
             a = map(str,self.theta[(xe[0],xout)])
             theta = ", ".join(a)
-            print((xe[0]),' -> ',xout,'[label="',xe[1],", {",theta,"} ",'"]')
+            print((xe[0]),' -> ',xout,'[texlbl="',xe[1],"\\\\ \{",theta,"\} ",'"]')
             print('\n')
         print('}')
 
@@ -215,9 +218,9 @@ class DAOCT(ut.MyUtil):
         sigma=""
         for i in diff:
             if vec[i]=='0' and vecPrime[i]=='1':
-                sigma=sigma + " down" + names[i]
+                sigma=sigma + "⬆" + names[i]
             if vec[i]=='1' and vecPrime[i]=='0':
-                sigma=sigma + " up" + names[i]
+                sigma=sigma + "⬇" + names[i]
         # self.printd("Sigma = ",sigma)
         self.printd(record.ioVec," -> ",recordPrime.ioVec," | ",sigma)
         self.printd()
