@@ -20,3 +20,34 @@
 ** DONE falar sobre doutorado
    CLOSED: [2019-03-29 Fri 16:53]
 
+* 2019-05-10 
+definir theta como conjunto
+ objetivo mostrar que o metodo pode funcionar 
+com comportamento paraelo mostrar a escabilidade
+linguagem em excesso
+** fundamentos teoricos
+sed
+modelar automato
+linguagem de automato
+Rede de petri interpretada para controle
+
+** identifica
+formas de identificação
+algoritmos
+
+** Planta mecatronica
+descrever planta
+** Modelo da planta identificado 
+mostrar a divisão da planta
+
+Linguagem em excesso
+
+
+** conclusões
+
+** Trabalhos futuros
+como automatizar a obtenção de subsistemas para diminuir a explosão de caminhos 
+
+
+** colocar os caminhos na lista de adjacencia
+
