@@ -21,33 +21,35 @@
    CLOSED: [2019-03-29 Fri 16:53]
 
 * 2019-05-10 
-definir theta como conjunto
- objetivo mostrar que o metodo pode funcionar 
-com comportamento paraelo mostrar a escabilidade
-linguagem em excesso
-** fundamentos teoricos
-sed
-modelar automato
-linguagem de automato
-Rede de petri interpretada para controle
+** DONE definir theta como conjunto
+** Calcular Linguagem em Excesso
+*** Monografia
+  objetivo mostrar que o metodo pode funcionar 
+ com comportamento paraelo mostrar a escabilidade
 
-** identifica
-formas de identificação
-algoritmos
+**** fundamentos teoricos
+  sed
+  modelar automato
+  linguagem de automato
+  Rede de petri interpretada para controle
 
-** Planta mecatronica
-descrever planta
-** Modelo da planta identificado 
-mostrar a divisão da planta
+**** identificação
+  formas de identificação
+  algoritmos
+  
+**** Planta mecatronica
+  descrever planta
+**** Modelo da planta identificado 
+  mostrar a divisão da planta
 
-Linguagem em excesso
-
-
-** conclusões
-
-** Trabalhos futuros
-como automatizar a obtenção de subsistemas para diminuir a explosão de caminhos 
+  Linguagem em excesso
 
 
-** colocar os caminhos na lista de adjacencia
+**** conclusões
+
+**** Trabalhos futuros
+  como automatizar a obtenção de subsistemas para diminuir a explosão de caminhos 
+
+
+**** colocar os caminhos na lista de adjacencia
 
