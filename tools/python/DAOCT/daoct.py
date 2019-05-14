@@ -1,3 +1,9 @@
+# -*- coding: utf-8 -*-
+"""
+
+@author: Accacio
+"""
+
 import utils as ut
 import automaton
 

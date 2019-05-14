@@ -1,3 +1,9 @@
+# -*- coding: utf-8 -*-
+"""
+
+@author: Accacio
+"""
+
 import math
 import sys
 import csv
