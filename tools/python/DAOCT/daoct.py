@@ -371,39 +371,42 @@ class DAOCT(ut.MyUtil):
 
         self.printd("==== Removing superposed")
 
-        pathsNoSuper=P.copy()
-        for i in pathsNoSuper:
-            for j in pathsNoSuper:
-                if i!=j:
+        # pathsNoSuper = []
+        # # pathsNoSuper=P.copy()
+        # for i in P:
+        #     for j in P:
+        #         if P.index(i)!=P.index(j):
 
-                    ioVeci = [rec.ioVec for rec in i]
-                    ioVecj = [rec.ioVec for rec in j]
+        #             ioVeci = [rec.ioVec for rec in i]
+        #             ioVecj = [rec.ioVec for rec in j]
 
-                    if ioVecj==ioVeci[:len(ioVecj)]:
-                        self.printdnl("Path ", pathsNoSuper.index(i), " includes path ", pathsNoSuper.index(j))
-                        self.printd(" -> removing path ", pathsNoSuper.index(j))
-                        pathsNoSuper.remove(j)
-
-        self.printPathd(pathsNoSuper)
-
-        # self.printd("==== Removing superposed Met-0")
-        # for i in range(len(P)):
-        #     for j in range(len(P)):
-        #         if i!=j and P[i]!=0 and P[j]!=0:
-        #             ioVeci = [rec.ioVec for rec in P[i]]
-        #             ioVecj = [rec.ioVec for rec in P[j]]
         #             if ioVecj==ioVeci[:len(ioVecj)]:
-        #                 self.printdnl("Path ", i, " includes path ",j)
-        #                 self.printd(" -> removing path ",j)
-        #                 P[j]=0
+        #                 # self.printdnl("Path ", P.index(i), " includes path ", P.index(j))
+        #                 print('equal')
+        #                 # self.printd(" -> removing path ", P.index(j))
+        #             else:
+        #                 pathsNoSuper.append(j)
+        # self.printPathd(pathsNoSuper)
 
-        # i = 0
-        # while i < len(P):
-        #     if P[i]==0:
-        #         del P[i]
-        #     else:
-        #         i+=1
-        # self.printPathd(P)
+        self.printd("==== Removing superposed Met-0")
+        pathsNoSuper = P.copy()
+        for i in range(len(pathsNoSuper)):
+            for j in range(len(pathsNoSuper)):
+                if i!=j and pathsNoSuper[i]!=0 and pathsNoSuper[j]!=0:
+                    ioVeci = [rec.ioVec for rec in pathsNoSuper[i]]
+                    ioVecj = [rec.ioVec for rec in pathsNoSuper[j]]
+                    if ioVecj==ioVeci[:len(ioVecj)]:
+                        self.printdnl("Path ", i, " includes path ",j)
+                        self.printd(" -> removing path ",j)
+                        pathsNoSuper[j]=0
+
+        i = 0
+        while i < len(pathsNoSuper):
+            if pathsNoSuper[i]==0:
+                del pathsNoSuper[i]
+            else:
+                i+=1
+        self.printPathd(pathsNoSuper)
 
         #Eliminate paths formed by two elements where both are the initial state
         self.printd("==== Removing 2 node circular path")
