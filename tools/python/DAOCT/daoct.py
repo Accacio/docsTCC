@@ -18,11 +18,13 @@ class DAOCT(ut.MyUtil):
         counter=0
         r=len(self.pK)
         self.X           = []
+        self.R           = set()
         self.Sigma       = set()
         self.f           = {}
         self.Lambda      = {}
         self.LambdaTilde = {}
         self.theta       = {}
+        self.SigmasPerX  = {}
 
         # begin of algorithm
         # Line 1
@@ -36,6 +38,7 @@ class DAOCT(ut.MyUtil):
         self.Xf = set()
         # Lines 3 to 19
         for i in range(r):
+            self.R.add(i)
             l = len(self.pK[i])
             for j in range(l-1):
                 self.printd("i=",i,", j=",j)
@@ -64,13 +67,25 @@ class DAOCT(ut.MyUtil):
 
                 self.Sigma.add(self.sigmaK[i][j])
                 self.printd(self.sigmaK[i][j])
-                sig=str(self.sigmaK[i][j])
+                sig=self.sigmaK[i][j]
                 self.f[(x,sig)] = xPrime
-                self.printd("f(",x,",",self.sigmaK[i][j],") = ", xPrime)
-                if (x,xPrime) in self.theta:
-                    self.theta[(x,xPrime)].append(i)
+                if xPrime not in self.SigmasPerX:
+                    self.SigmasPerX[xPrime] = []
+                # print(x , xPrime)
+                if x in self.SigmasPerX:
+                    if sig not in self.SigmasPerX[x]:
+                        self.SigmasPerX[x] += [sig]
                 else:
-                    self.theta[(x,xPrime)] = [i]
+                    self.SigmasPerX[x] = [sig]
+                # print("x ",x,self.SigmasPerX[x])
+                # print("xPrime ",xPrime,self.SigmasPerX[xPrime])
+                self.printd("f(",x,",",sig,") = ", xPrime)
+                # Line 14
+                if (x,xPrime) in self.theta:
+                    if i not in self.theta[(x,xPrime)]:
+                        self.theta[(x,xPrime)].add(i)
+                else:
+                    self.theta[(x,xPrime)] = {i}
                 # Lines 15 to 17
                 if j == l - 2:
                     self.Xf.add(xPrime)
@@ -94,11 +109,65 @@ class DAOCT(ut.MyUtil):
             return vectorm.ioVec
 
     def printAutomaton(self):
-        for xe,xout in self.f.items():
-            a = map(str,self.theta[(xe[0],xout)])
+        # for (x,sig),xprime in self.f.items():
+        #     print("f(",x,",",sig,") = ",self.f[(x,sig)],sep="")
+        for (x,sig),xout in self.f.items():
+            a = map(str,self.theta[(x,xout)])
             theta = ", ".join(a)
-            print('f(',xe[0],',',xe[1],") =",xout)
+            print('f(',x,',',sig,") = ",xout," {",theta,"}",sep='')
         return
+
+    def LangLessNNDAAO(self,xnode,n):
+        if n==0:
+            return 0
+        else:
+            return self.getAutoTraces(xnode,n) + self.LangLessNNDAAO(xnode,n-1)
+
+
+    def LangLessNDAOCT(self,xnode,n):
+        if n==0:
+            return 0
+        else:
+            return self.getAutoTracesDAOCT(xnode,n,self.R) + self.LangLessNDAOCT(xnode,n-1)
+
+    def getAutoTracesDAOCT(self,xnode,l,paths):
+        if l == 0:
+            # print("end")
+            return 1
+        else:
+            l = l -1
+            result = 0
+            for sig in self.SigmasPerX[xnode]:
+                paths = set(paths)
+                intersPaths = paths.intersection(self.theta[(xnode,self.f[xnode,sig])])
+                # print(intersPaths)
+                if sig != []:
+                    if intersPaths != set():
+                        result = result + self.getAutoTracesDAOCT(self.f[xnode,sig],l,intersPaths)
+            return result
+
+    def getAutoTraces(self,xnode,l):
+        if l == 0:
+            return 1
+        else:
+            l = l -1
+            result = 0
+            # print("xnode = ",xnode)
+            for sig in self.SigmasPerX[xnode]:
+
+                # print("sig = ",sig)
+
+                # print(self.f[xnode,sig])
+                # print()
+                if sig != []:
+                    result = result + self.getAutoTraces(self.f[xnode,sig],l)
+            return result
+
+        # return
+        # for xe,xout in self.f.items():
+        #     a = map(str,self.theta[(xe[0],xout)])
+        #     theta = ", ".join(a)
+        #     print('f(',xe[0],',',xe[1],") = ",xout," ",theta,sep='')
 
     def graphvizAutomaton(self):
         print('digraph a {\nrankdir=LR;')
@@ -111,15 +180,13 @@ class DAOCT(ut.MyUtil):
         print('init ->',self.x0)
         for xf in self.Xf:
             print(xf,"[shape=doublecircle];")
+        print('')
         for xe,xout in self.f.items():
-
             a = map(str,self.theta[(xe[0],xout)])
             theta = ", ".join(a)
-            print((xe[0]),' -> ',xout,'[texlbl="',xe[1],"\\\\ \{",theta,"\} ",'"]')
-            print('\n')
+            print((xe[0]),' -> ',xout,' [texlbl="',xe[1],"\\\\ \{",theta,"\}",'"]',sep='')
+        print('')
         print('}')
-
-
         return
 
     def printPathd(self,paths):
@@ -132,6 +199,17 @@ class DAOCT(ut.MyUtil):
                 else:
                     print(path)
                 print()
+
+    def printPath(self,paths):
+        for path in paths:
+            print("Path",paths.index(path))
+            if isinstance(path,list):
+                for i in path:
+                    print(i.ioVec,"",end="")
+            else:
+                print(path)
+            print()
+
 
     def printModifiedPathsd(self,paths):
         if self.debug==True:
@@ -146,6 +224,18 @@ class DAOCT(ut.MyUtil):
                     print(path)
                 print()
 
+
+    def printModifiedPaths(self,paths):
+        for path in paths:
+            print("Path",paths.index(path),":")
+            if isinstance(path,list):
+                for i in path:
+                    for j in i:
+                        print(j.ioVec,"")
+                    print()
+            else:
+                print(path)
+            print()
 
 
     def getModifiedPaths(self,k):

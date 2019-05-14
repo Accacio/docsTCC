@@ -16,7 +16,7 @@ ffunction=False
 fromStdin=False
 debug=False
 paramk=2
-
+fullReport=False
 
 def usage():
     print("Usage: daoct [OPTION] -i FILE ...")
@@ -31,12 +31,13 @@ def usage():
     print("  -k                     chooses variable k value")
     print("  -g, --graphviz         output automaton drawing in dot language")
     print("  -f, --ffunction        output automaton in f function")
+    print("  -r, --report           output automaton Full Report")
     print("")
     print("Report bugs to raccacio@poli.ufrj.br")
     return
 
 try:
-    opts, args = getopt.gnu_getopt(sys.argv[1:],"k:shgfi:o:",["input=","output=","verbose","graphviz","ffunction","debug","version","paramk="])
+    opts, args = getopt.gnu_getopt(sys.argv[1:],"k:srhgfi:o:",["input=","output=","verbose","graphviz","ffunction","debug","version","paramk=","report"])
 except getopt.GetoptError:
     usage()
     sys.exit(-1)
@@ -60,6 +61,8 @@ for opt, arg in opts:
         graphviz=True
     if opt in ("-f","--ffunction"):
         ffunction=True
+    if opt in ("-r","--report"):
+        fullReport=True
     if opt in ("-k"):
         paramk=int(arg)
     if opt in ("--debug"):
@@ -110,12 +113,33 @@ myutil.printd("PARAMETER k      :",paramk)
 
 daoct=at.DAOCT(files,paramk,verbose,debug)
 
-if graphviz and not debug:
-    daoct.graphvizAutomaton();
-if ffunction and not debug:
-    daoct.printAutomaton();
 
-# daoct.printAutomaton();
+
+if fullReport:
+    # print("==== Paths  ====")
+    # daoct.printPath(daoct.paths)
+    # print("==== Modified Paths k=",daoct.k, " ====",sep='')
+    # daoct.printModifiedPaths(daoct.pK)
+    # print("==== Automaton f ====")
+    # daoct.printAutomaton();
+    # print("")
+    # print("==== Graphviz  ====")
+    # daoct.graphvizAutomaton();
+    # print("")
+    # print("==== Exceeding Language  ====")
+    # daoct.graphvizAutomaton();
+
+    # print(daoct.LangLessNNDAAO(daoct.x0,10))
+    # print(daoct.getAutoTracesDAOCT(daoct.x0,9,daoct.R))
+    print(daoct.LangLessNDAOCT(daoct.x0,7))
+
+else:
+    if graphviz and not debug:
+        daoct.graphvizAutomaton();
+    if ffunction and not debug:
+        daoct.printAutomaton();
+
+
 # print("original")
 # myPM.printPathd(paths)
 # print("modified")
