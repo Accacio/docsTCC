@@ -152,6 +152,23 @@ class DAOCT(ut.MyUtil):
                         result = result + self.getAutoTracesDAOCT(self.f[xnode,sig],l,intersPaths)
             return result
 
+    def getAutoTracesDAOCTLessN(self,xnode,l,paths,acc):
+        def getAutoTracesDAOCTLessNaux(xnode,l,paths,acc):
+            if l == 0:
+                # print("end")
+                return 1
+            else:
+                l = l -1
+                for sig in self.SigmasPerX[xnode]:
+                    paths = set(paths)
+                    intersPaths = paths.intersection(self.theta[(xnode,self.f[xnode,sig])])
+                    # print(intersPaths)
+                    if sig != []:
+                        if intersPaths != set():
+                            acc = acc + getAutoTracesDAOCTLessNaux(self.f[xnode,sig],l,intersPaths,0)
+                return acc + 1
+        return getAutoTracesDAOCTLessNaux(xnode,l,paths,acc) - 1
+
     def getAutoTraces(self,xnode,l):
         if l == 0:
             return 1

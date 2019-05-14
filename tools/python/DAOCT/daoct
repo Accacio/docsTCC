@@ -134,10 +134,10 @@ if fullReport:
     # print("")
     # print("==== Exceeding Language  ====")
     # daoct.graphvizAutomaton();
-
     # print(daoct.LangLessNNDAAO(daoct.x0,10))
     # print(daoct.getAutoTracesDAOCT(daoct.x0,9,daoct.R))
-    print(daoct.LangLessNDAOCT(daoct.x0,7))
+    print(daoct.getAutoTracesDAOCTLessN(daoct.x0,2,daoct.R,0))
+    # print(daoct.LangLessNDAOCT(daoct.x0,7))
 
 else:
     if graphviz and not debug:
