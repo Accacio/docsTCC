@@ -23,6 +23,7 @@ fromStdin=False
 debug=False
 paramk=2
 fullReport=False
+exceeding=False
 
 def usage():
     print("Usage: daoct [OPTION] -i FILE ...")
@@ -38,12 +39,13 @@ def usage():
     print("  -g, --graphviz         output automaton drawing in dot language")
     print("  -f, --ffunction        output automaton in f function")
     print("  -r, --report           output automaton Full Report")
+    print("  -e, --exceeding        output graphics of the exceeding language")
     print("")
     print("Report bugs to raccacio@poli.ufrj.br")
     return
 
 try:
-    opts, args = getopt.gnu_getopt(sys.argv[1:],"k:srhgfi:o:",["input=","output=","verbose","graphviz","ffunction","debug","version","paramk=","report"])
+    opts, args = getopt.gnu_getopt(sys.argv[1:],"k:sre:hgfi:o:",["input=","output=","verbose","graphviz","ffunction","debug","version","paramk=","report","exceeding="])
 except getopt.GetoptError:
     usage()
     sys.exit(-1)
@@ -79,6 +81,9 @@ for opt, arg in opts:
         fromStdin=True
     if opt in ("-o", "--output"):
         outputFile=arg
+    if opt in ("-e", "--exceeding"):
+        n=int(arg)
+        exceeding=True
 
 myutil = ut.MyUtil(verbose,debug)
 if inputFiles==[] and fromStdin==True:
@@ -122,28 +127,66 @@ daoct=at.DAOCT(files,paramk,verbose,debug)
 
 
 if fullReport:
-    # print("==== Paths  ====")
-    # daoct.printPath(daoct.paths)
+    print("==== Paths  ====")
+    daoct.printPath(daoct.paths)
     # print("==== Modified Paths k=",daoct.k, " ====",sep='')
     # daoct.printModifiedPaths(daoct.pK)
     # print("==== Automaton f ====")
     # daoct.printAutomaton();
-    # print("")
+    print("")
     # print("==== Graphviz  ====")
     # daoct.graphvizAutomaton();
     # print("")
-    # print("==== Exceeding Language  ====")
+    print("==== Traces from paths  ====")
+    print(daoct.getAutoTraces(5))
+    print("==== Traces DAOCT  ====")
+    print(daoct.getAutoTracesDAOCT(5))
+    print("==== Traces NDAAO  ====")
+    print(daoct.getAutoTracesNDAAO(5))
     # daoct.graphvizAutomaton();
     # print(daoct.LangLessNNDAAO(daoct.x0,10))
-    # print(daoct.getAutoTracesDAOCT(daoct.x0,9,daoct.R))
-    print(daoct.getAutoTracesDAOCTLessN(daoct.x0,2,daoct.R,0))
-    # print(daoct.LangLessNDAOCT(daoct.x0,7))
+
+
 
 else:
-    if graphviz and not debug:
+    if exceeding:
+        import matplotlib.pyplot as plt
+        from matplotlib import rc
+        print("==== Traces from paths  ====")
+        print(daoct.getAutoTracesFromPath(n))
+        print("==== Traces from paths Less N  ====")
+        print(daoct.getAutoTracesFromPathLessN(n))
+
+
+        print("==== Traces DAOCT Less N  ====")
+        print(daoct.getAutoTracesDAOCTLessN(n))
+        print("==== Traces NDAAO Less N  ====")
+        print(daoct.getAutoTracesNDAAOLessN(n))
+
+
+
+        # print("==== Traces DAOCT  ====")
+        # print(daoct.getAutoTracesDAOCT(daoct.x0,n,daoct.R))
+        # print("==== Traces NDAAO  ====")
+        # print(daoct.getAutoTracesNDAAO(daoct.x0,n))
+        # print("==== Exceeding Language - DAOCT  ====")
+        # print(daoct.getExceedingLanguageDAOCTLessN(n))
+        # print("==== Exceeding Language - NDAAO  ====")
+        # rc('font',**{'family':'sans-serif','sans-serif':['Helvetica']})
+        ## for Palatino and other serif fonts use:
+        #rc('font',**{'family':'serif','serif':['Palatino']})
+        # rc('text', usetex=True)
+        # f = plt.figure()
+        # plt.plot([1,2,3,4])
+        # plt.ylabel('$L_n$')
+        # f.savefig("foo.pdf", bbox_inches='tight')
+        # plt.show()
+    elif graphviz and not debug:
         daoct.graphvizAutomaton();
-    if ffunction and not debug:
+    elif ffunction and not debug:
         daoct.printAutomaton();
+
+
 
 
 # print("original")

@@ -30,7 +30,7 @@ class DAOCT(ut.MyUtil):
         self.Lambda      = {}
         self.LambdaTilde = {}
         self.theta       = {}
-        self.SigmasPerX  = {}
+        self.Gamma  = {}
 
         # begin of algorithm
         # Line 1
@@ -75,16 +75,16 @@ class DAOCT(ut.MyUtil):
                 self.printd(self.sigmaK[i][j])
                 sig=self.sigmaK[i][j]
                 self.f[(x,sig)] = xPrime
-                if xPrime not in self.SigmasPerX:
-                    self.SigmasPerX[xPrime] = []
+                if xPrime not in self.Gamma:
+                    self.Gamma[xPrime] = []
                 # print(x , xPrime)
-                if x in self.SigmasPerX:
-                    if sig not in self.SigmasPerX[x]:
-                        self.SigmasPerX[x] += [sig]
+                if x in self.Gamma:
+                    if sig not in self.Gamma[x]:
+                        self.Gamma[x] += [sig]
                 else:
-                    self.SigmasPerX[x] = [sig]
-                # print("x ",x,self.SigmasPerX[x])
-                # print("xPrime ",xPrime,self.SigmasPerX[xPrime])
+                    self.Gamma[x] = [sig]
+                # print("x ",x,self.Gamma[x])
+                # print("xPrime ",xPrime,self.Gamma[xPrime])
                 self.printd("f(",x,",",sig,") = ", xPrime)
                 # Line 14
                 if (x,xPrime) in self.theta:
@@ -123,74 +123,118 @@ class DAOCT(ut.MyUtil):
             print('f(',x,',',sig,") = ",xout," {",theta,"}",sep='')
         return
 
-    def LangLessNNDAAO(self,xnode,n):
-        if n==0:
-            return 0
-        else:
-            return self.getAutoTraces(xnode,n) + self.LangLessNNDAAO(xnode,n-1)
 
 
-    def LangLessNDAOCT(self,xnode,n):
-        if n==0:
-            return 0
-        else:
-            return self.getAutoTracesDAOCT(xnode,n,self.R) + self.LangLessNDAOCT(xnode,n-1)
-
-    def getAutoTracesDAOCT(self,xnode,l,paths):
-        if l == 0:
-            # print("end")
+    def getAutoTracesDAOCT(self,xnode,n,paths):
+        if n == 0:
             return 1
         else:
-            l = l -1
+            n = n -1
             result = 0
-            for sig in self.SigmasPerX[xnode]:
+            for sig in self.Gamma[xnode]:
                 paths = set(paths)
                 intersPaths = paths.intersection(self.theta[(xnode,self.f[xnode,sig])])
-                # print(intersPaths)
                 if sig != []:
                     if intersPaths != set():
-                        result = result + self.getAutoTracesDAOCT(self.f[xnode,sig],l,intersPaths)
+                        result = result + self.getAutoTracesDAOCT(self.f[xnode,sig],n,intersPaths)
             return result
 
-    def getAutoTracesDAOCTLessN(self,xnode,l,paths,acc):
-        def getAutoTracesDAOCTLessNaux(xnode,l,paths,acc):
-            if l == 0:
-                # print("end")
+    def getAutoTracesFromPath(self,n):
+        Q = []
+        nodes = n + 1
+        pathsList = list(map(lambda path: list(map(lambda node: node.ioVec,path)),self.paths))
+        for path in pathsList:
+            if len(path) >= nodes:
+                # print("path",path)
+                # print("path nodes nodes",path[:nodes])
+                pathAlreadyAdded=False
+                for q in Q:
+                    if q == path[:nodes]:
+                        pathAlreadyAdded=True
+                if not pathAlreadyAdded:
+                    Q.append(path[:nodes])
+                    # print(Q[-1])
+        return len(Q)
+
+    def getAutoTracesFromPathLessN(self,n):
+        def getAutoTracesFromPathLessNaux(n,acc):
+            if n == 0:
+                return 0
+            else:
+                Q = []
+                nodes = n + 1
+                pathsList = list(map(lambda path: list(map(lambda node: node.ioVec,path)),self.paths))
+                for path in pathsList:
+                    if len(path) >= nodes:
+                        # print("path",path)
+                        # print("path nodes nodes",path[:nodes])
+                        pathAlreadyAdded=False
+                        for q in Q:
+                            if q == path[:nodes]:
+                                pathAlreadyAdded=True
+                        if not pathAlreadyAdded:
+                            Q.append(path[:nodes])
+                            # print(Q[-1])
+
+                return len(Q) + getAutoTracesFromPathLessNaux(n-1,acc)
+        return getAutoTracesFromPathLessNaux(n,0)
+
+    def getExceedingLanguageDAOCTLessN(self,n):
+        def getAutoTracesDAOCTLessNaux(xnode,n,paths,acc):
+            if n == 0:
                 return 1
             else:
-                l = l -1
-                for sig in self.SigmasPerX[xnode]:
+                n = n -1
+                for sig in self.Gamma[xnode]:
                     paths = set(paths)
                     intersPaths = paths.intersection(self.theta[(xnode,self.f[xnode,sig])])
-                    # print(intersPaths)
                     if sig != []:
                         if intersPaths != set():
-                            acc = acc + getAutoTracesDAOCTLessNaux(self.f[xnode,sig],l,intersPaths,0)
+                            acc = acc + getAutoTracesDAOCTLessNaux(self.f[xnode,sig],n,intersPaths,0)
                 return acc + 1
-        return getAutoTracesDAOCTLessNaux(xnode,l,paths,acc) - 1
+        return getAutoTracesDAOCTLessNaux(self.x0,n,self.R,0) - 1
 
-    def getAutoTraces(self,xnode,l):
-        if l == 0:
+
+    def getAutoTracesDAOCTLessN(self,n):
+        def getAutoTracesDAOCTLessNaux(xnode,n,paths,acc):
+            if n == 0:
+                return 1
+            else:
+                n = n -1
+                for sig in self.Gamma[xnode]:
+                    paths = set(paths)
+                    intersPaths = paths.intersection(self.theta[(xnode,self.f[xnode,sig])])
+                    if sig != []:
+                        if intersPaths != set():
+                            acc = acc + getAutoTracesDAOCTLessNaux(self.f[xnode,sig],n,intersPaths,0)
+                return acc + 1
+        return getAutoTracesDAOCTLessNaux(self.x0,n,self.R,0) - 1
+
+    def getAutoTracesNDAAO(self,xnode,n):
+        if n == 0:
             return 1
         else:
-            l = l -1
+            n = n -1
             result = 0
-            # print("xnode = ",xnode)
-            for sig in self.SigmasPerX[xnode]:
-
-                # print("sig = ",sig)
-
-                # print(self.f[xnode,sig])
-                # print()
+            for sig in self.Gamma[xnode]:
                 if sig != []:
-                    result = result + self.getAutoTraces(self.f[xnode,sig],l)
+                    result = result + self.getAutoTracesNDAAO(self.f[xnode,sig],n)
             return result
 
-        # return
-        # for xe,xout in self.f.items():
-        #     a = map(str,self.theta[(xe[0],xout)])
-        #     theta = ", ".join(a)
-        #     print('f(',xe[0],',',xe[1],") = ",xout," ",theta,sep='')
+    def getAutoTracesNDAAOLessN(self,n):
+        def getAutoTracesNDAAOLessNaux(xnode,n,acc):
+            if n == 0:
+                return 1
+            else:
+                n = n -1
+                result = 0
+                for sig in self.Gamma[xnode]:
+                    if sig != []:
+                        result = result + getAutoTracesNDAAOLessNaux(self.f[xnode,sig],n,0)
+                return result + 1
+        return getAutoTracesNDAAOLessNaux(self.x0,n,0) - 1
+
+
 
     def graphvizAutomaton(self):
         print('digraph a {\nrankdir=LR;')
