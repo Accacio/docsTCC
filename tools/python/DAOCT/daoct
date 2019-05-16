@@ -6,16 +6,20 @@
 """
 
 # nuitka --recurse-on --python-version=3.6 daoct;
-
 import sys
+import os
 import getopt
+import matplotlib.pyplot as plt
+from matplotlib import rc
+import matplotlib2tikz
+
 import utils as ut
 import daoct as at
 
 # config variables
 version=0.0
 inputFiles=[]
-outputFile=""
+outputFolder=""
 verbose=False
 graphviz=False
 ffunction=False
@@ -24,28 +28,31 @@ debug=False
 paramk=2
 fullReport=False
 exceeding=False
+multipleK=False
+multipleKArg=""
 
 def usage():
     print("Usage: daoct [OPTION] -i FILE ...")
     print("       daoct [OPTION] -s")
     print("")
-    print("  -h, --help             give this help list")
-    print("      --debug            emit debuggin messages")
-    print("      --version          print program version")
-    print("  -i, --input            chooses input file")
-    print("  -s, --stdin            chooses stdin as input")
-    # print("  -o, --output           chooses output file")
-    print("  -k                     chooses variable k value")
-    print("  -g, --graphviz         output automaton drawing in dot language")
-    print("  -f, --ffunction        output automaton in f function")
-    print("  -r, --report           output automaton Full Report")
-    print("  -e, --exceeding        output graphics of the exceeding language")
+    print("  -h , --help             give this help list")
+    print("       --debug            emit debuggin messages")
+    print("       --version          print program version")
+    print("  -i , --input            chooses input file")
+    print("  -s , --stdin            chooses stdin as input")
+    print("  -k                      chooses variable k value")
+    print("  -g , --graphviz         output automaton drawing in dot language")
+    print("  -f , --ffunction        output automaton in f function")
+    print("  -r , --report           output automaton Full Report")
+    print("  -e , --exceeding        output graphic of the exceeding language")
+    print("  -o , --output           chooses graphic output folder")
+    print("  -m                      use multiple k to plot graphic")
     print("")
     print("Report bugs to raccacio@poli.ufrj.br")
     return
 
 try:
-    opts, args = getopt.gnu_getopt(sys.argv[1:],"k:sre:hgfi:o:",["input=","output=","verbose","graphviz","ffunction","debug","version","paramk=","report","exceeding="])
+    opts, args = getopt.gnu_getopt(sys.argv[1:],"k:sm:re:hgfi:o:",["input=","output=","verbose","graphviz","ffunction","debug","version","paramk=","report","exceeding="])
 except getopt.GetoptError:
     usage()
     sys.exit(-1)
@@ -73,6 +80,9 @@ for opt, arg in opts:
         fullReport=True
     if opt in ("-k"):
         paramk=int(arg)
+    if opt in ("-m"):
+        multipleK=True
+        multipleKArg=arg
     if opt in ("--debug"):
         debug=True
     if opt in ("-i", "--input"):
@@ -80,7 +90,7 @@ for opt, arg in opts:
     if opt in ("-s", "--stdin"):
         fromStdin=True
     if opt in ("-o", "--output"):
-        outputFile=arg
+        outputFolder=arg
     if opt in ("-e", "--exceeding"):
         n=int(arg)
         exceeding=True
@@ -113,7 +123,7 @@ myutil.printd("ARGS             :",args)
 myutil.printd("VERBOSE          :",verbose)
 myutil.printd("GRAPHVIZ         :",graphviz)
 myutil.printd("INPUTFILES       :",inputFiles)
-myutil.printd("OUTPUT FILE NAME :",outputFile)
+myutil.printd("OUTPUT FILE NAME :",outputFolder)
 myutil.printd("PARAMETER k      :",paramk)
 
 # myTR = ut.TableReader(files,verbose,debug)
@@ -121,10 +131,14 @@ myutil.printd("PARAMETER k      :",paramk)
 # myPM = ut.PathManager(records,verbose,debug)
 # paths = myPM.getPaths()
 # modifiedPaths, modifiedSigmas = myPM.getModifiedPaths(paramk)
+# print("original")
+# myPM.printPathd(paths)
+# print("modified")
+# myPM.printModifiedPathsd(modifiedPaths)
+
+
 
 daoct=at.DAOCT(files,paramk,verbose,debug)
-
-
 
 if fullReport:
     print("==== Paths  ====")
@@ -146,41 +160,91 @@ if fullReport:
     # daoct.graphvizAutomaton();
     # print(daoct.LangLessNNDAAO(daoct.x0,10))
 
-
-
 else:
     if exceeding:
-        import matplotlib.pyplot as plt
-        from matplotlib import rc
-        print("==== Traces from paths  ====")
-        print(daoct.getAutoTracesFromPath(n))
-        print("==== Traces from paths Less N  ====")
-        print(daoct.getAutoTracesFromPathLessN(n))
+        if multipleK:
+            from functools import reduce
 
 
-        print("==== Traces DAOCT Less N  ====")
-        print(daoct.getAutoTracesDAOCTLessN(n))
-        print("==== Traces NDAAO Less N  ====")
-        print(daoct.getAutoTracesNDAAOLessN(n))
+            # TODO verify syntax of multiple k
+
+            listOfK = [list(range(int(y.split("-")[0]),int(y.split("-")[1])+1)) if len(y.split("-")) > 1 else int(y) for y in multipleKArg.split(",")]
+
+            # from https://stackoverflow.com/a/2158532/8773303
+            def flatten(x):
+                if isinstance(x, list):
+                    return [a for i in x for a in flatten(i)]
+                else:
+                    return [x]
+            listOfK = list(set(sorted(flatten(listOfK))))
+            f = plt.figure()
+            # print(listOfK)
+            ExcDaoct = []
+            ExcNdaao = []
+            for i in range(len(listOfK)):
+                daoct=at.DAOCT(files,listOfK[i],verbose,debug)
+                vec = []
+                ExcDaocti = []
+                ExcNdaaoi = []
+                for j in range(1,n+1):
+                    vec = vec + [j]
+                    ExcDaocti = ExcDaocti + [daoct.getExceedingLanguageDAOCTLessN(j)]
+                    ExcNdaaoi = ExcNdaaoi + [daoct.getExceedingLanguageNDAAOLessN(j)]
+                    print(ExcDaocti)
+                    print(ExcNdaaoi)
+                plt.plot(vec,ExcDaocti,'k-o',fillstyle='none')
+                plt.text(vec[-1]+1,ExcDaocti[-1],'k =' + str(listOfK[i]))
+                plt.text(vec[-1]+1,ExcNdaaoi[-1],'k =' + str(listOfK[i]))
+                plt.plot(vec,ExcNdaaoi,'k-*')
+
+                ExcNdaao.append(ExcNdaaoi)
+                ExcDaoct.append(ExcDaocti)
+                print(i/len(listOfK))
+
+            plt.ylabel('$|L_{Exc}^{\leq n}|$')
+            plt.xlabel('n')
+
+            print(ExcNdaao)
+            print(ExcDaoct)
+            # print("vec",vec)
 
 
 
-        # print("==== Traces DAOCT  ====")
-        # print(daoct.getAutoTracesDAOCT(daoct.x0,n,daoct.R))
-        # print("==== Traces NDAAO  ====")
-        # print(daoct.getAutoTracesNDAAO(daoct.x0,n))
-        # print("==== Exceeding Language - DAOCT  ====")
-        # print(daoct.getExceedingLanguageDAOCTLessN(n))
-        # print("==== Exceeding Language - NDAAO  ====")
-        # rc('font',**{'family':'sans-serif','sans-serif':['Helvetica']})
-        ## for Palatino and other serif fonts use:
-        #rc('font',**{'family':'serif','serif':['Palatino']})
-        # rc('text', usetex=True)
-        # f = plt.figure()
-        # plt.plot([1,2,3,4])
-        # plt.ylabel('$L_n$')
-        # f.savefig("foo.pdf", bbox_inches='tight')
-        # plt.show()
+            plt.show()
+
+        else:
+
+
+            vec = []
+            ExcDaoct = []
+            ExcNdaao = []
+            for i in range(1,n+1):
+                vec = vec + [i]
+                ExcDaoct = ExcDaoct + [daoct.getExceedingLanguageDAOCTLessN(i)]
+                ExcNdaao = ExcNdaao + [daoct.getExceedingLanguageNDAAOLessN(i)]
+            print(vec)
+            print("==== Exceeding Language - DAOCT  ====")
+            print(ExcDaoct)
+            print("==== Exceeding Language - NDAAO  ====")
+            print(ExcNdaao)
+            title = 'exceedingLanguage-daoct-ndaao_k' + str(paramk) + '_n' + str(n)
+            print(title)
+            f = plt.figure()
+            # plt.style.use("ggplot")
+            # plt.xkcd()
+            # plt.plot(vec,ExcDaoct,'k-d')
+            plt.plot(vec,ExcDaoct,'k-o',fillstyle='none')
+            plt.plot(vec,ExcNdaao,'k-*')
+            plt.ylabel('$|L_{Exc}^{\leq n}|$')
+            plt.xlabel('n')
+
+            if not os.path.exists(outputFolder):
+                os.makedirs(outputFolder)
+            f.savefig(outputFolder + "/" + title +  ".pdf", bbox_inches='tight')
+            f.savefig(outputFolder + "/" + title + ".png", bbox_inches='tight')
+            matplotlib2tikz.save(outputFolder + "/" + title + ".tex")
+            # plt.show()
+
     elif graphviz and not debug:
         daoct.graphvizAutomaton();
     elif ffunction and not debug:
@@ -189,8 +253,5 @@ else:
 
 
 
-# print("original")
-# myPM.printPathd(paths)
-# print("modified")
-# myPM.printModifiedPathsd(modifiedPaths)
+
 

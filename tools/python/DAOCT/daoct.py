@@ -125,19 +125,7 @@ class DAOCT(ut.MyUtil):
 
 
 
-    def getAutoTracesDAOCT(self,xnode,n,paths):
-        if n == 0:
-            return 1
-        else:
-            n = n -1
-            result = 0
-            for sig in self.Gamma[xnode]:
-                paths = set(paths)
-                intersPaths = paths.intersection(self.theta[(xnode,self.f[xnode,sig])])
-                if sig != []:
-                    if intersPaths != set():
-                        result = result + self.getAutoTracesDAOCT(self.f[xnode,sig],n,intersPaths)
-            return result
+
 
     def getAutoTracesFromPath(self,n):
         Q = []
@@ -179,21 +167,19 @@ class DAOCT(ut.MyUtil):
                 return len(Q) + getAutoTracesFromPathLessNaux(n-1,acc)
         return getAutoTracesFromPathLessNaux(n,0)
 
-    def getExceedingLanguageDAOCTLessN(self,n):
-        def getAutoTracesDAOCTLessNaux(xnode,n,paths,acc):
-            if n == 0:
-                return 1
-            else:
-                n = n -1
-                for sig in self.Gamma[xnode]:
-                    paths = set(paths)
-                    intersPaths = paths.intersection(self.theta[(xnode,self.f[xnode,sig])])
-                    if sig != []:
-                        if intersPaths != set():
-                            acc = acc + getAutoTracesDAOCTLessNaux(self.f[xnode,sig],n,intersPaths,0)
-                return acc + 1
-        return getAutoTracesDAOCTLessNaux(self.x0,n,self.R,0) - 1
-
+    def getAutoTracesDAOCT(self,xnode,n,paths):
+        if n == 0:
+            return 1
+        else:
+            n = n -1
+            result = 0
+            for sig in self.Gamma[xnode]:
+                paths = set(paths)
+                intersPaths = paths.intersection(self.theta[(xnode,self.f[xnode,sig])])
+                if sig != []:
+                    if intersPaths != set():
+                        result = result + self.getAutoTracesDAOCT(self.f[xnode,sig],n,intersPaths)
+            return result
 
     def getAutoTracesDAOCTLessN(self,n):
         def getAutoTracesDAOCTLessNaux(xnode,n,paths,acc):
@@ -209,6 +195,9 @@ class DAOCT(ut.MyUtil):
                             acc = acc + getAutoTracesDAOCTLessNaux(self.f[xnode,sig],n,intersPaths,0)
                 return acc + 1
         return getAutoTracesDAOCTLessNaux(self.x0,n,self.R,0) - 1
+
+    def getExceedingLanguageDAOCTLessN(self,n):
+        return self.getAutoTracesDAOCTLessN(n) - self.getAutoTracesFromPathLessN(n)
 
     def getAutoTracesNDAAO(self,xnode,n):
         if n == 0:
@@ -234,7 +223,8 @@ class DAOCT(ut.MyUtil):
                 return result + 1
         return getAutoTracesNDAAOLessNaux(self.x0,n,0) - 1
 
-
+    def getExceedingLanguageNDAAOLessN(self,n):
+        return self.getAutoTracesNDAAOLessN(n) - self.getAutoTracesFromPathLessN(n)
 
     def graphvizAutomaton(self):
         print('digraph a {\nrankdir=LR;')
