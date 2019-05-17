@@ -1,0 +1,45 @@
+% This file was created by matplotlib2tikz v0.7.4.
+\begin{tikzpicture}
+
+\begin{axis}[
+tick pos=both,
+x grid style={white!86.27450980392157!black},
+xlabel={n},
+xmajorgrids,
+xmin=1, xmax=7,
+xminorgrids,
+xtick style={color=black},
+xtick={1,2,3,4,5,6,7},
+xticklabels={\(\displaystyle 1\),\(\displaystyle 2\),\(\displaystyle 3\),\(\displaystyle 4\),\(\displaystyle 5\),\(\displaystyle 6\),\(\displaystyle 7\)},
+y grid style={white!86.27450980392157!black},
+ylabel={\(\displaystyle |L_{Exc}^{\leq n}|\)},
+ymajorgrids,
+ymin=0, ymax=819,
+yminorgrids,
+ytick style={color=black},
+ytick={0,200,400,600,800,1000},
+yticklabels={\(\displaystyle 0\),\(\displaystyle 200\),\(\displaystyle 400\),\(\displaystyle 600\),\(\displaystyle 800\),\(\displaystyle 1000\)}
+]
+\addplot [line width=0.04000000000000001pt, black, mark=*, mark size=3, mark options={solid,fill opacity=0}]
+table {%
+1 0
+2 2
+3 5
+4 9
+5 14
+6 23
+7 35
+};
+\addplot [line width=0.04000000000000001pt, black, mark=x, mark size=3, mark options={solid}]
+table {%
+1 0
+2 4
+3 18
+4 52
+5 134
+6 329
+7 780
+};
+\end{axis}
+
+\end{tikzpicture}
