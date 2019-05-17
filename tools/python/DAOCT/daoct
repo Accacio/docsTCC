@@ -10,6 +10,7 @@ import sys
 import os
 import getopt
 import matplotlib.pyplot as plt
+import matplotlib
 from matplotlib import rc
 import matplotlib2tikz
 
@@ -176,8 +177,9 @@ else:
                     return [a for i in x for a in flatten(i)]
                 else:
                     return [x]
+
             listOfK = list(set(sorted(flatten(listOfK))))
-            f = plt.figure()
+            f , ax= plt.subplots()
             # print(listOfK)
             ExcDaoct = []
             ExcNdaao = []
@@ -190,59 +192,93 @@ else:
                     vec = vec + [j]
                     ExcDaocti = ExcDaocti + [daoct.getExceedingLanguageDAOCTLessN(j)]
                     ExcNdaaoi = ExcNdaaoi + [daoct.getExceedingLanguageNDAAOLessN(j)]
-                    print(ExcDaocti)
-                    print(ExcNdaaoi)
-                plt.plot(vec,ExcDaocti,'k-o',fillstyle='none')
-                plt.text(vec[-1]+1,ExcDaocti[-1],'k =' + str(listOfK[i]))
-                plt.text(vec[-1]+1,ExcNdaaoi[-1],'k =' + str(listOfK[i]))
-                plt.plot(vec,ExcNdaaoi,'k-*')
+                    # print(ExcDaocti)
+                    # print(ExcNdaaoi)
+                plt.plot(vec,ExcDaocti,'k-o',fillstyle='none',linewidth=0.1,clip_on=False)
+                ax.annotate('k = ' + str(listOfK[i]) , xy=(3, 1), xycoords='data',
+                            xytext=(1.02, ExcNdaaoi[-1]-0.1), textcoords=('axes fraction','data'),size=16)
+                ax.annotate('k = ' + str(listOfK[i]) , xy=(3, 1), xycoords='data',
+                            xytext=(1.02, ExcDaocti[-1]-0.1), textcoords=('axes fraction','data'),size=16)
+                plt.plot(vec,ExcNdaaoi,'k-x',linewidth=0.1,clip_on=False)
+
 
                 ExcNdaao.append(ExcNdaaoi)
                 ExcDaoct.append(ExcDaocti)
                 print(i/len(listOfK))
 
-            plt.ylabel('$|L_{Exc}^{\leq n}|$')
-            plt.xlabel('n')
+            plt.ylabel('$|L_{Exc}^{\leq n}|$',fontsize=20)
+            plt.xlabel('n',fontsize=16)
+            ax.tick_params(axis='both', which='major', labelsize=16)
+            x_ticks = range(vec[0],vec[-1]+1,max(int((vec[-1]-vec[0])/5),1))
+            ax.set_xticks(x_ticks)
+            plt.xlim(left=1)
+            plt.xlim(right=vec[-1])
+            plt.ylim(bottom=0)
+            ax.tick_params(axis='x', pad=10)
+            ax.tick_params(axis='y', pad=5)
 
-            print(ExcNdaao)
-            print(ExcDaoct)
-            # print("vec",vec)
+            ax.grid(which='both',color='gainsboro')
+            plt.tick_params(axis='both',bottom=True, top=True, left=True, right=True, direction='in', which='major')
 
 
-
-            plt.show()
-
-        else:
-
-
-            vec = []
-            ExcDaoct = []
-            ExcNdaao = []
-            for i in range(1,n+1):
-                vec = vec + [i]
-                ExcDaoct = ExcDaoct + [daoct.getExceedingLanguageDAOCTLessN(i)]
-                ExcNdaao = ExcNdaao + [daoct.getExceedingLanguageNDAAOLessN(i)]
-            print(vec)
-            print("==== Exceeding Language - DAOCT  ====")
-            print(ExcDaoct)
-            print("==== Exceeding Language - NDAAO  ====")
-            print(ExcNdaao)
-            title = 'exceedingLanguage-daoct-ndaao_k' + str(paramk) + '_n' + str(n)
+            ks = reduce(lambda x,y: str(x)+ '-' + str(y),listOfK)
+            title = 'exceedingLanguage-daoct-ndaao_k' + ks + '_n' + str(n)
             print(title)
-            f = plt.figure()
-            # plt.style.use("ggplot")
-            # plt.xkcd()
-            # plt.plot(vec,ExcDaoct,'k-d')
-            plt.plot(vec,ExcDaoct,'k-o',fillstyle='none')
-            plt.plot(vec,ExcNdaao,'k-*')
-            plt.ylabel('$|L_{Exc}^{\leq n}|$')
-            plt.xlabel('n')
 
             if not os.path.exists(outputFolder):
                 os.makedirs(outputFolder)
-            f.savefig(outputFolder + "/" + title +  ".pdf", bbox_inches='tight')
-            f.savefig(outputFolder + "/" + title + ".png", bbox_inches='tight')
-            matplotlib2tikz.save(outputFolder + "/" + title + ".tex")
+            f.savefig(outputFolder + "/" + title +  ".pdf")
+            # f.savefig(outputFolder + "/" + title + ".png", bbox_inches='tight')
+            # f.savefig(outputfolder + "/" + title + ".tikz", bbox_inches='tight')
+            matplotlib2tikz.save(outputFolder + "/" + title + ".tikz")
+
+
+            # print(excndaao)
+            # print(excdaoct)
+            # print("vec",vec)
+
+            # plt.show()
+
+        else:
+            vec = []
+            excdaoct = []
+            excndaao = []
+            for i in range(1,n+1):
+                vec = vec + [i]
+                excdaoct = excdaoct + [daoct.getExceedingLanguageDAOCTLessN(i)]
+                excndaao = excndaao + [daoct.getExceedingLanguageNDAAOLessN(i)]
+            print(vec)
+            print("==== exceeding language - daoct  ====")
+            print(excdaoct)
+            print("==== exceeding language - ndaao  ====")
+            print(excndaao)
+            title = 'exceedingLanguage-daoct-ndaao_k' + str(paramk) + '_n' + str(n)
+            print(title)
+            f , ax= plt.subplots()
+            ax.plot(vec,excdaoct,'k-o',fillstyle='none',linewidth=0.1,clip_on=False)
+            ax.plot(vec,excndaao,'k-x',linewidth=0.1,clip_on=False)
+
+            plt.ylabel('$|L_{Exc}^{\leq n}|$',fontsize=20)
+            plt.xlabel('n',fontsize=16)
+            ax.tick_params(axis='both', which='major', labelsize=16)
+            x_ticks = range(vec[0],vec[-1]+1,max(int((vec[-1]-vec[0])/5),1))
+            ax.set_xticks(x_ticks)
+            plt.xlim(left=1)
+            plt.xlim(right=vec[-1])
+            plt.ylim(bottom=0)
+            ax.tick_params(axis='x', pad=10)
+            ax.tick_params(axis='y', pad=5)
+
+
+            ax.grid(which='both',color='gainsboro')
+            plt.tick_params(axis='both',bottom=True, top=True, left=True, right=True, direction='in', which='major')
+
+
+            if not os.path.exists(outputFolder):
+                os.makedirs(outputFolder)
+            f.savefig(outputFolder + "/" + title +  ".pdf")
+            # f.savefig(outputFolder + "/" + title + ".png", bbox_inches='tight')
+            matplotlib2tikz.save(outputFolder + "/" + title + ".tikz")
             # plt.show()
 
     elif graphviz and not debug:

@@ -162,7 +162,7 @@ printd InputFile: $inputFile
 # then
     if [ "$outFile" = "" ]
     then
-	      outFile="$inputFile.pdf"
+	      outFile="$inputFile"
     # else
 	  #     outfileext=${outFile##*.}
 	  #     if [ ! $outfileext = "pdf" ]
