@@ -11,7 +11,8 @@ while (( "$#" )); do
     if [ "$file" != "" ]
     then
         dot2petri $file -py
-        linkPetriNets ${file%.*}.tex ${dir##*/}
+        echo ${file%.*}
+        linkPetriNets ${file%.*}.tikz ${dir##*/}
         if [ -f ${file%.*}.org ]
         then
             cat ${file%.*}.org | sed -n -e '/^# TransitionsBegin$/,/^# TransitionsEnd$/!d;p' |  sed '$d' > ${file%.*}Transitions.org
