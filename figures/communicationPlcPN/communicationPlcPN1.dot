@@ -1,0 +1,20 @@
+digraph A {
+splines = ortho
+rankdir=LR;
+ratio=fill
+graph [pad="0.5", nodesep="0.25", ranksep="0.2"];
+margin=0;
+
+ep0m1
+p1
+
+et0
+t1
+
+p1 -> t1
+
+t1 -> ep0m1
+
+et0 -> p1
+
+}

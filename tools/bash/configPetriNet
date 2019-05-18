@@ -12,9 +12,9 @@ while (( "$#" )); do
     then
         dot2petri $file -py
         echo ${file%.*}
-        linkPetriNets ${file%.*}.tikz ${dir##*/}
         if [ -f ${file%.*}.org ]
         then
+            linkPetriNets ${file%.*}.tikz ${dir##*/}
             cat ${file%.*}.org | sed -n -e '/^# TransitionsBegin$/,/^# TransitionsEnd$/!d;p' |  sed '$d' > ${file%.*}Transitions.org
             cat ${file%.*}.org | sed -n -e '/^# PlacesBegin$/,/^# PlacesEnd$/!d;p' |  sed '$d' > ${file%.*}Places.org
             emacs ${file%.*}Transitions.org --batch --eval="(org-latex-export-to-latex nil nil nil t)" --kill;

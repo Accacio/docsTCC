@@ -24,9 +24,54 @@ Adapted from \cite{david1989grafcet}
 
 \input{../../figures/cipnExample/cipnPlaces}
 \input{../../figures/cipnExample/cipnTransitions}
+\usetikzlibrary{arrows,shapes,circuits.plc.ladder,external}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics{cipnExample/cipnLadder.tikz}
+  \caption[cipnexample]{Example of Control Interpreted Petri Net converted to Ladder.}
+  \label{fig:cipnexampleLadder}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}[t]{0.5\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{communicationPlcPN/communicationPlcPN.tikz}
+        \caption{Petri Net on PLC 1.}
+        \label{fig:communicationPlcPN}
+    \end{subfigure}%
+    ~ 
+    \begin{subfigure}[t]{0.5\textwidth}
+        \centering
+  \includegraphics[width=\textwidth]{communicationPlcPN/communicationPlcPN1.tikz}
+  \caption{Petri Net on PLC 2.}
+  \label{fig:communicationPlcPN1}
+    \end{subfigure}
+    \caption{Example of Petri Net divided between 2 PLCs.}
+\end{figure}
 
 
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}[t]{0.5\textwidth}
+        \centering
+        \includegraphics{communicationPlcPN/communicationPlcPNLadder.tikz}
+        \caption{Ladder Logic on PLC 1.}
+        \label{fig:communicationPlcPN}
+    \end{subfigure}%
+    ~ 
+    \begin{subfigure}[t]{0.5\textwidth}
+        \centering
+        \includegraphics{communicationPlcPN/communicationPlcPN1Ladder.tikz}
+  \caption{Ladder Logic on PLC 2.}
+  \label{fig:communicationPlcPN1}
+    \end{subfigure}
+    \caption{Example of Petri Net divided between 2 PLCs.}
+\end{figure}
+  
 
+\autoref{fig:communicationPlcPN}
 %%% Local Variables:
 %%% mode: latex
 %%% TeX-master: "../monografia.tex"
