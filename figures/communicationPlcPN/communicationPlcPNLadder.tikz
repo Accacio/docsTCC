@@ -6,7 +6,7 @@
   \begin{tikzpicture}[circuit plc ladder,
   thick, label distance=0pt,x=\ladderskip,y=\ladderskip]
 \scope
-  \draw(0,0) -- ++(2,0)
+  \draw(0,0) -- ++(2.2,0)
   to [block={inputs={EN,REQ,ADDR\_1,RD\_1},info={GETDB},outputs={Q,NDR},symbol=GET,name=GETDB,
     minimum width=2.2\ladderskip,
     input sep=0.5\ladderskip, output sep=0.5\ladderskip}] ++(2.5,0)  -- ++ (1.5,0) coordinate(laddertopright);
@@ -16,29 +16,29 @@
   (GETDB.input 4) -- +(-0.3\ladderskip,0) node[left]{\scriptsize FROM\_PLC2};
   \ladderrungend{2.5}
 
-  \draw(0,0) -- ++(0.5,0)
-  to [contact NO={info={\scriptsize GETDB.NDR}}] ++(1,0) -- ++(1,0)
+  \draw(0,0) -- ++(0.7,0)
+  to [contact NO={info={\scriptsize PUTDB.DONE}}] ++(1,0) -- ++(1,0)
   to [contact NO={info={\scriptsize TO\_PLC2.$b_0$}}] ++(1,0) -- ++(1,0)
   to [coil R={info={\scriptsize TO\_PLC2.$b_0$}}] +(1,0) -- ++ (1.5,0);
   \ladderrungend{1}
 
-  \draw(0,0) -- ++(0.5,0)
-  to [contact NO={info={\scriptsize GETDB.NDR}}] ++(1,0) -- ++(1,0)
+  \draw(0,0) -- ++(0.7,0)
+  to [contact NO={info={\scriptsize PUTDB.DONE}}] ++(1,0) -- ++(1,0)
   to [contact NO={info={\scriptsize TO\_PLC2.$b_1$}}] ++(1,0) -- ++(1,0)
   to [coil R={info={\scriptsize TO\_PLC2.$b_1$}}] +(1,0) -- ++ (1.5,0);
-  \ladderrungend{1}
+  \ladderrungend{2}
 
-  \draw(0,0) -- ++(0.5,0)
+  \draw(0,0) -- ++(0.7,0)
   to [contact NO={info={$p_0$}}] ++(1,0) -- ++(3,0)
   to [coil={info={$b_0$}}] +(1,0) -- ++ (1.5,0);
   \ladderrungend{1}
 
-  \draw(0,0) -- ++(0.5,0)
-  to [contact NO={info={\scriptsize FROM\_PLC2.$b_1$}}] ++(1,0) -- ++(3,0)
+  \draw(0,0) -- ++(0.7,0)
+  to [contact NO={info={\scriptsize FROM\_PLC2.$b_1$aux}}] ++(1,0) -- ++(3,0)
   to [coil={info={$b_1$}}] +(1,0) -- ++ (1.5,0);
-  \ladderrungend{1}
+  \ladderrungend{2}
 
-  \draw(0,0) -- ++(0.5,0)
+  \draw(0,0) -- ++(0.7,0)
   to [contact NO={info={$b_0$}}] ++(1,0)
   to ++(2,0) coordinate(laddercoil) -- ++(1,0)
   to [coil R={info={$p_0$}}] ++(1,0) -- ++(0.5,0);
@@ -47,17 +47,20 @@
   to [coil S={info={\scriptsize TO\_PLC2.$b_0$}}] ++(1,0) -- ++(0.5,0);
   \ladderrungend{2}
 
-  \draw(0,0) -- ++(0.5,0)
+  \draw(0,0) -- ++(0.7,0)
   to [contact NO={info={$b_1$}}] ++(1,0)
   to ++(2,0) coordinate(laddercoil) -- ++(1,0)
   to [coil S={info={$p_0$}}] ++(1,0) -- ++(0.5,0);
-  \draw(laddercoil) -- ++(0,-1)
-   -- ++(1,0)
-  to [coil S={info={\scriptsize TO\_PLC2.$b_1$}}] ++(1,0) -- ++(0.5,0);
   \ladderrungend{2}
 
-  \draw(0,0) -- ++(2,0)
-  to [block={inputs={EN,REQ,ADDR\_1,RD\_1},info={PUTDB},outputs={Q,NDR},symbol=PUT,name=PUTDB,
+  \draw(0,0) -- ++(0.7,0)
+  to [contact NO={info={$b_1$}}] ++(1,0)
+  to ++(2,0) coordinate(laddercoil) -- ++(1,0)
+  to [coil S={info={\scriptsize TO\_PLC2.$b_1$}}] ++(1,0) -- ++(0.5,0);
+  \ladderrungend{1}
+  
+  \draw(0,0) -- ++(2.2,0)
+  to [block={inputs={EN,REQ,ADDR\_1,RD\_1},info={PUTDB},outputs={Q,DONE},symbol=PUT,name=PUTDB,
     minimum width=2.2\ladderskip,
     input sep=0.5\ladderskip, output sep=0.5\ladderskip}] ++(2.5,0)  -- ++ (1.5,0);
   \draw (PUTDB.output 2) -- +(0.3\ladderskip,0)
@@ -73,22 +76,20 @@
 
   \endscope
 
+  \draw[dashed,gray](-0.2,\ladderskip) rectangle ++(6.6,-5.8);
 
+  \draw[right] (0,-4.6) node {\footnotesize Module of Data Sending/Receiving};
 
-  % \draw[dashed,gray](-0.2,\ladderskip) rectangle ++(5.4,-5.3);
+  \draw[dashed,gray](-0.2,-5) rectangle ++(6.6,-3.3);
 
-  % \draw[right] (0,-4.1) node {\footnotesize Module of firing conditions};
+  \draw[right] (0,-8.1) node {\footnotesize Module of firing conditions};
 
-  % \draw[dashed,gray](-0.2,-4.5) rectangle ++(5.4,-4.7);
+  \draw[dashed,gray](-0.2,-8.5) rectangle ++(6.6,-4.1);
 
-  % \draw[right] (0,-9) node {\footnotesize Module of Petri Net dynamics};
+  \draw[right] (0,-12.4) node {\footnotesize Module of Petri Net dynamics};
 
-  % \draw[dashed,gray](5.5,\ladderskip) rectangle ++(5.4,-5.3);
+  \draw[dashed,gray](-0.2,-13) rectangle ++(6.6,-4.4);
 
-  % \draw[right] (5.7,-4.1) node {\footnotesize Module of Petri Net dynamics (cont.)};
-
-  % \draw[dashed,gray](5.5,-4.5) rectangle ++(5.4,-4.7);
-
-  % \draw[right] (5.7,-9) node {\footnotesize Module of actions};
+  \draw[right] (0,-17.2) node {\footnotesize Module of Data Sending/Receiving (cont.)};
   
   \end{tikzpicture}

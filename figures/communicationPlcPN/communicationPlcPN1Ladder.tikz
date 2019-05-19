@@ -9,18 +9,23 @@
 
   \draw(0,0) -- ++(0.5,0)
   to [contact P={info={\scriptsize FROM\_PLC1.$b_0$}}] ++(1,0) -- ++(3,0)
-  to [coil={info={\scriptsize $b_0$}}] +(1,0) -- ++ (1.5,0);
-  \ladderrungend{1}
-
-    \draw(0,0) -- ++(0.5,0)
-  to [contact P={info={\scriptsize FROM\_PLC1.$b_1$}}] ++(1,0) -- ++(3,0)
-  to [coil R={info={\scriptsize TO\_PLC2.$b_1$}}] +(1,0) -- ++ (1.5,0);
+  to [coil={info={$b_0$}}] +(1,0) -- ++ (1.5,0);
   \ladderrungend{1}
 
   \draw(0,0) -- ++(0.5,0)
-  to [contact NO={info={$p_1$}}] ++(1,0) -- ++(3,0)
-  to [coil={info={$b_1$}}] +(1,0) -- ++ (1.5,0);
-  \ladderrungend{1}
+  to [contact P={info={\scriptsize FROM\_PLC1.$b_1$}}] ++(1,0)
+  to ++(2,0) coordinate(laddercoil) -- ++(1,0)
+  to [coil ={info={$b_1$}}] ++(1,0) -- ++(0.5,0);
+  \draw(laddercoil) -- ++(0,-1)
+   -- ++(1,0)
+  to [coil R={info={$b_1$aux}}] ++(1,0) -- ++(0.5,0);
+  \ladderrungend{3}
+
+  \draw(0,0) -- ++(0.5,0)
+  to [contact NO={info={$p_1$}}] ++(1,0)
+  to ++(2,0) coordinate(laddercoil) -- ++(1,0)
+  to [coil S={info={$b_1$aux}}] ++(1,0) -- ++(0.5,0);
+  \ladderrungend{2}
 
   \draw(0,0) -- ++(0.5,0)
   to [contact NO={info={$b_0$}}] ++(1,0)
@@ -32,10 +37,15 @@
   to [contact NO={info={$b_1$}}] ++(1,0)
   to ++(2,0) coordinate(laddercoil) -- ++(1,0)
   to [coil R={info={$p_1$}}] ++(1,0) -- ++(0.5,0);
-  \draw(laddercoil) -- ++(0,-1)
-   -- ++(1,0)
-  to [coil S={info={\scriptsize TO\_PLC1.$b_1$}}] ++(1,0) -- ++(0.5,0);
   \ladderrungend{2}
+
+  %
+  \draw(0,0) -- ++(0.5,0)
+  to [contact NO={info={$b_1$aux}}] ++(1,0)
+  to ++(2,0) coordinate(laddercoil) -- ++(1,0)
+  to [coil={info={\scriptsize TO\_PLC1$b_1$aux}}] ++(1,0) -- ++(0.5,0);
+  \ladderrungend{1}  
+  %
 
   % power rails
   \draw let \p1=(laddertopright) in
@@ -46,20 +56,20 @@
 
 
 
-  % \draw[dashed,gray](-0.2,\ladderskip) rectangle ++(5.4,-5.3);
+  \draw[dashed,gray](-0.2,\ladderskip) rectangle ++(6.6,-4.1);
 
-  % \draw[right] (0,-4.1) node {\footnotesize Module of firing conditions};
+  \draw[right] (0,-2.9) node {\footnotesize Prepare Received Data};
 
-  % \draw[dashed,gray](-0.2,-4.5) rectangle ++(5.4,-4.7);
+  \draw[dashed,gray](-0.2,-3.3) rectangle ++(6.6,-2.1);
 
-  % \draw[right] (0,-9) node {\footnotesize Module of Petri Net dynamics};
+  \draw[right] (0,-5.2) node {\footnotesize Module of firing conditions};
 
-  % \draw[dashed,gray](5.5,\ladderskip) rectangle ++(5.4,-5.3);
+  \draw[dashed,gray](-0.2,-5.6) rectangle ++(6.6,-3.1);
 
-  % \draw[right] (5.7,-4.1) node {\footnotesize Module of Petri Net dynamics (cont.)};
+  \draw[right] (0,-8.5) node {\footnotesize Module of Petri Net dynamics};
 
-  % \draw[dashed,gray](5.5,-4.5) rectangle ++(5.4,-4.7);
+  \draw[dashed,gray](-0.2,-8.9) rectangle ++(6.6,-2);
 
-  % \draw[right] (5.7,-9) node {\footnotesize Module of actions};
+  \draw[right] (0,-10.7) node {\footnotesize Prepare Data to Send};
   
   \end{tikzpicture}
