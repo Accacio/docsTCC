@@ -227,11 +227,14 @@ class DAOCT(ut.MyUtil):
         return self.getAutoTracesNDAAOLessN(n) - self.getAutoTracesFromPathLessN(n)
 
     def graphvizAutomaton(self):
-        print('digraph a {\nrankdir=LR;')
+        print('digraph a {')
+        print('rankdir=LR;')
+        print('# splines = ortho')
         print('ratio=fill')
-        print('graph [pad="0.5", nodesep="0.25", ranksep="0.2"];')
+        print('graph [pad="0.01", nodesep="0.1", ranksep="0.01"];')
         print('node [shape=circle];')
         print('margin=0;')
+        print('{rank =same;}')
         print('size="11.7,8.3!";')
         print('init [style=invis]')
         print('init ->',self.x0)
