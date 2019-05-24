@@ -244,7 +244,7 @@ class DAOCT(ut.MyUtil):
         for xe,xout in self.f.items():
             a = map(str,self.theta[(xe[0],xout)])
             theta = ", ".join(a)
-            print((xe[0]),' -> ',xout,' [texlbl="',xe[1],"\\\\ \{",theta,"\}",'"]',sep='')
+            print((xe[0]),' -> ',xout,' [texlbl="\\scriptsize ',xe[1]," \{",theta,"\}",'"]',sep='')
         print('')
         print('}')
         return
