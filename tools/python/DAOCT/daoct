@@ -14,13 +14,15 @@ import matplotlib
 from matplotlib import rc
 import matplotlib2tikz
 
+import scipy.io as sio
+
 import utils as ut
 import daoct as at
 
 # config variables
 version=0.0
 inputFiles=[]
-outputFolder=""
+outputFolder="."
 verbose=False
 graphviz=False
 ffunction=False
@@ -143,21 +145,22 @@ daoct=at.DAOCT(files,paramk,verbose,debug)
 
 if fullReport:
     print("==== Paths  ====")
-    daoct.printPath(daoct.paths)
-    # print("==== Modified Paths k=",daoct.k, " ====",sep='')
+    print(len(daoct.paths))
+    print("==== Modified Paths k=",daoct.k, " ====",sep='')
+    print(len(daoct.pK))
     # daoct.printModifiedPaths(daoct.pK)
     # print("==== Automaton f ====")
     # daoct.printAutomaton();
-    print("")
+    # print("")
     # print("==== Graphviz  ====")
     # daoct.graphvizAutomaton();
     # print("")
-    print("==== Traces from paths  ====")
-    print(daoct.getAutoTraces(5))
-    print("==== Traces DAOCT  ====")
-    print(daoct.getAutoTracesDAOCT(5))
-    print("==== Traces NDAAO  ====")
-    print(daoct.getAutoTracesNDAAO(5))
+    # print("==== Traces from paths  ====")
+    # print(daoct.getAutoTraces(5))
+    # print("==== Traces DAOCT  ====")
+    # print(daoct.getAutoTracesDAOCT(5))
+    # print("==== Traces NDAAO  ====")
+    # print(daoct.getAutoTracesNDAAO(5))
     # daoct.graphvizAutomaton();
     # print(daoct.LangLessNNDAAO(daoct.x0,10))
 
@@ -183,8 +186,12 @@ else:
             # print(listOfK)
             ExcDaoct = []
             ExcNdaao = []
+            DaoctPaths = []
+            DaoctStates = []
             for i in range(len(listOfK)):
                 daoct=at.DAOCT(files,listOfK[i],verbose,debug)
+                DaoctPaths = DaoctPaths + [len(daoct.pK)]
+                DaoctStates = DaoctStates + [len(daoct.X)]
                 vec = []
                 ExcDaocti = []
                 ExcNdaaoi = []
@@ -192,12 +199,12 @@ else:
                     vec = vec + [j]
                     ExcDaocti = ExcDaocti + [daoct.getExceedingLanguageDAOCTLessN(j)]
                     ExcNdaaoi = ExcNdaaoi + [daoct.getExceedingLanguageNDAAOLessN(j)]
-                    # print(ExcDaocti)
-                    # print(ExcNdaaoi)
+                    print(ExcDaocti)
+                    print(ExcNdaaoi)
                 plt.plot(vec,ExcDaocti,'k-o',fillstyle='none',linewidth=0.1,clip_on=False)
-                ax.annotate('k = ' + str(listOfK[i]) , xy=(3, 1), xycoords='data',
+                ax.annotate('$k = ' + str(listOfK[i]) + '$', xy=(3, 1), xycoords='data',
                             xytext=(1.02, ExcNdaaoi[-1]-0.1), textcoords=('axes fraction','data'),size=16)
-                ax.annotate('k = ' + str(listOfK[i]) , xy=(3, 1), xycoords='data',
+                ax.annotate('$k = ' + str(listOfK[i]) + '$', xy=(3, 1), xycoords='data',
                             xytext=(1.02, ExcDaocti[-1]-0.1), textcoords=('axes fraction','data'),size=16)
                 plt.plot(vec,ExcNdaaoi,'k-x',linewidth=0.1,clip_on=False)
 
@@ -206,17 +213,17 @@ else:
                 ExcDaoct.append(ExcDaocti)
                 print(i/len(listOfK))
 
-            plt.ylabel('$|L_{Exc}^{\leq n}|$',fontsize=20)
-            plt.xlabel('n',fontsize=16)
+            plt.ylabel('$|L_{Exc}^{\leq n}|$',fontsize=16)
+            plt.xlabel('$n$',fontsize=16)
             ax.tick_params(axis='both', which='major', labelsize=16)
             x_ticks = range(vec[0],vec[-1]+1,max(int((vec[-1]-vec[0])/5),1))
             ax.set_xticks(x_ticks)
             plt.xlim(left=1)
             plt.xlim(right=vec[-1])
             plt.ylim(bottom=0)
-            ax.tick_params(axis='x', pad=10)
-            ax.tick_params(axis='y', pad=5)
-
+            ax.tick_params(axis='x', pad=5)
+            # ax.tick_params(axis='y', pad=5)
+            # plt.figure(figsize=(8,8),edgecolor='k')
             ax.grid(which='both',color='gainsboro')
             plt.tick_params(axis='both',bottom=True, top=True, left=True, right=True, direction='in', which='major')
 
@@ -225,12 +232,17 @@ else:
             title = 'exceedingLanguage-daoct-ndaao_k' + ks + '_n' + str(n)
             print(title)
 
+
+
+            # exit
             if not os.path.exists(outputFolder):
                 os.makedirs(outputFolder)
-            f.savefig(outputFolder + "/" + title +  ".pdf")
+
+                sio.savemat(outputFolder + "/" + title + ".mat", {'K':listOfK,"ExcNdaao":ExcNdaao,"ExcDaoct":ExcDaoct,"DaoctPaths":DaoctPaths,"DaoctStates":DaoctStates})
+            # f.savefig(outputFolder + "/" + title +  ".pdf",bbox_inches='tight')
             # f.savefig(outputFolder + "/" + title + ".png", bbox_inches='tight')
             # f.savefig(outputfolder + "/" + title + ".tikz", bbox_inches='tight')
-            matplotlib2tikz.save(outputFolder + "/" + title + ".tikz")
+            # matplotlib2tikz.save(outputFolder + "/" + title + ".tikz")
 
 
             # print(excndaao)
@@ -258,8 +270,8 @@ else:
             ax.plot(vec,excdaoct,'k-o',fillstyle='none',linewidth=0.1,clip_on=False)
             ax.plot(vec,excndaao,'k-x',linewidth=0.1,clip_on=False)
 
-            plt.ylabel('$|L_{Exc}^{\leq n}|$',fontsize=20)
-            plt.xlabel('n',fontsize=16)
+            plt.ylabel('$|L_{Exc}^{\leq n}|$',fontsize=16)
+            plt.xlabel('$n$',fontsize=16)
             ax.tick_params(axis='both', which='major', labelsize=16)
             x_ticks = range(vec[0],vec[-1]+1,max(int((vec[-1]-vec[0])/5),1))
             ax.set_xticks(x_ticks)
@@ -276,7 +288,7 @@ else:
 
             if not os.path.exists(outputFolder):
                 os.makedirs(outputFolder)
-            f.savefig(outputFolder + "/" + title +  ".pdf")
+            f.savefig(outputFolder + "/" + title +  ".pdf", bbox_inches='tight')
             # f.savefig(outputFolder + "/" + title + ".png", bbox_inches='tight')
             matplotlib2tikz.save(outputFolder + "/" + title + ".tikz")
             # plt.show()
