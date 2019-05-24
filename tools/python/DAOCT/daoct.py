@@ -120,7 +120,7 @@ class DAOCT(ut.MyUtil):
         for (x,sig),xout in self.f.items():
             a = map(str,self.theta[(x,xout)])
             theta = ", ".join(a)
-            print('f(',x,',',sig,") = ",xout," {",theta,"}",sep='')
+            print('f(',x,',',sig,") = ",xout," {",theta,"} \\\\",sep='')
         return
 
 
