@@ -23,6 +23,9 @@
 * 2019-05-10 
 ** DONE definir theta como conjunto
 ** Calcular Linguagem em Excesso
+*** DONE DAOCT 
+    CLOSED: [2019-05-26 Sun 13:23]
+*** NDAAO? 
 ** Monografia
  objetivo mostrar que o metodo pode funcionar 
 com comportamento paraelo mostrar a escabilidade
