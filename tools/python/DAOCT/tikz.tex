@@ -1,0 +1,38 @@
+% This file was created by matplotlib2tikz v0.7.4.
+\begin{tikzpicture}
+
+\begin{axis}[
+tick align=outside,
+tick pos=left,
+x grid style={white!69.01960784313725!black},
+xlabel={n},
+xmin=0.7, xmax=7.3,
+xtick style={color=black},
+y grid style={white!69.01960784313725!black},
+ylabel={\(\displaystyle |L_{Exc}^{\leq n}|\)},
+ymin=-0.55, ymax=11.55,
+ytick style={color=black}
+]
+\addplot [semithick, black, mark=*, mark size=3, mark options={solid,fill opacity=0}]
+table {%
+1 0
+2 0
+3 0
+4 0
+5 0
+6 0
+7 0
+};
+\addplot [semithick, black, mark=asterisk, mark size=3, mark options={solid}]
+table {%
+1 0
+2 0
+3 1
+4 3
+5 6
+6 10
+7 11
+};
+\end{axis}
+
+\end{tikzpicture}

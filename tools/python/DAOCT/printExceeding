@@ -1,0 +1,345 @@
+#!/usr/bin/python3
+# -*- coding: utf-8 -*-
+"""
+
+@author: Accacio
+"""
+
+# nuitka --recurse-on --python-version=3.6 daoct;
+import sys
+import os
+import getopt
+import matplotlib.pyplot as plt
+import matplotlib
+from matplotlib import rc
+import matplotlib2tikz
+from functools import reduce
+import scipy.io as sio
+
+# # config variables
+# version=0.0
+# inputFiles=[]
+# outputFolder="."
+# verbose=False
+# graphviz=False
+# ffunction=False
+# fromStdin=False
+# debug=False
+# paramk=2
+# fullReport=False
+# exceeding=False
+# multipleK=False
+# multipleKArg=""
+
+# def usage():
+#     print("Usage: daoct [OPTION] -i FILE ...")
+#     print("       daoct [OPTION] -s")
+#     print("")
+#     print("  -h , --help             give this help list")
+#     print("       --debug            emit debuggin messages")
+#     print("       --version          print program version")
+#     print("  -i , --input            chooses input file")
+#     print("  -s , --stdin            chooses stdin as input")
+#     print("  -k                      chooses variable k value")
+#     print("  -g , --graphviz         output automaton drawing in dot language")
+#     print("  -f , --ffunction        output automaton in f function")
+#     print("  -r , --report           output automaton Full Report")
+#     print("  -e , --exceeding        output graphic of the exceeding language")
+#     print("  -o , --output           chooses graphic output folder")
+#     print("  -m                      use multiple k to plot graphic")
+#     print("")
+#     print("Report bugs to raccacio@poli.ufrj.br")
+#     return
+
+# try:
+#     opts, args = getopt.gnu_getopt(sys.argv[1:],"k:sm:re:hgfi:o:",["input=","output=","verbose","graphviz","ffunction","debug","version","paramk=","report","exceeding="])
+# except getopt.GetoptError:
+#     usage()
+#     sys.exit(-1)
+
+# if opts==[] or opts==[('--debug','')]or opts in [('--verbose','')]:
+#     usage()
+#     sys.exit(-1)
+
+
+# files=[]
+# for opt, arg in opts:
+#     if opt in ("-h","--help"):
+#         usage()
+#         sys.exit()
+#     if opt in ("--version"):
+#         print("VERSION:",version)
+#         sys.exit()
+#     if opt in ("--verbose"):
+#         verbose=True
+#     if opt in ("-g","--graphviz"):
+#         graphviz=True
+#     if opt in ("-f","--ffunction"):
+#         ffunction=True
+#     if opt in ("-r","--report"):
+#         fullReport=True
+#     if opt in ("-k"):
+#         paramk=int(arg)
+#     if opt in ("-m"):
+#         multipleK=True
+#         multipleKArg=arg
+#     if opt in ("--debug"):
+#         debug=True
+#     if opt in ("-i", "--input"):
+#         inputFiles.append(arg)
+#     if opt in ("-s", "--stdin"):
+#         fromStdin=True
+#     if opt in ("-o", "--output"):
+#         outputFolder=arg
+#     if opt in ("-e", "--exceeding"):
+#         n=int(arg)
+#         exceeding=True
+
+# myutil = ut.MyUtil(verbose,debug)
+# if inputFiles==[] and fromStdin==True:
+#     try:
+#         files.append(sys.stdin.readlines())
+#     except KeyboardInterrupt:
+#         sys.stdout.flush()
+#         sys.exit(-1)
+# elif inputFiles!=[]:
+#     try:
+#         for inputFile in inputFiles:
+#             files.append(open(inputFile,newline=''))
+#         # filedata=file.read()
+#     except FileNotFoundError:
+#         print("File not Found, please insert a valid file name")
+#         sys.exit(-1)
+# else:
+#     usage()
+#     sys.exit(-1)
+
+
+
+# myutil.printd("VERSION          :",version)
+# myutil.printd("ARGUMENTS        :",sys.argv[:])
+# myutil.printd("OPTS             :",opts)
+# myutil.printd("ARGS             :",args)
+# myutil.printd("VERBOSE          :",verbose)
+# myutil.printd("GRAPHVIZ         :",graphviz)
+# myutil.printd("INPUTFILES       :",inputFiles)
+# myutil.printd("OUTPUT FILE NAME :",outputFolder)
+# myutil.printd("PARAMETER k      :",paramk)
+
+# myTR = ut.TableReader(files,verbose,debug)
+# records = myTR.getRecordFromFile()
+# myPM = ut.PathManager(records,verbose,debug)
+# paths = myPM.getPaths()
+# modifiedPaths, modifiedSigmas = myPM.getModifiedPaths(paramk)
+# print("original")
+# myPM.printPathd(paths)
+# print("modified")
+# myPM.printModifiedPathsd(modifiedPaths)
+
+
+
+# daoct=at.DAOCT(files,paramk,verbose,debug)
+
+# if fullReport:
+#     print("==== Paths  ====")
+#     print(len(daoct.paths))
+#     print("==== Modified Paths k=",daoct.k, " ====",sep='')
+#     print(len(daoct.pK))
+#     # daoct.printModifiedPaths(daoct.pK)
+#     # print("==== Automaton f ====")
+#     # daoct.printAutomaton();
+#     # print("")
+#     # print("==== Graphviz  ====")
+#     # daoct.graphvizAutomaton();
+#     # print("")
+#     # print("==== Traces from paths  ====")
+#     # print(daoct.getAutoTraces(5))
+#     # print("==== Traces DAOCT  ====")
+#     # print(daoct.getAutoTracesDAOCT(5))
+#     # print("==== Traces NDAAO  ====")
+#     # print(daoct.getAutoTracesNDAAO(5))
+#     # daoct.graphvizAutomaton();
+#     # print(daoct.LangLessNNDAAO(daoct.x0,10))
+
+# else:
+#     if exceeding:
+#         if multipleK:
+#             from functools import reduce
+
+
+#             # TODO verify syntax of multiple k
+
+#             listOfK = [list(range(int(y.split("-")[0]),int(y.split("-")[1])+1)) if len(y.split("-")) > 1 else int(y) for y in multipleKArg.split(",")]
+
+#             # from https://stackoverflow.com/a/2158532/8773303
+#             def flatten(x):
+#                 if isinstance(x, list):
+#                     return [a for i in x for a in flatten(i)]
+#                 else:
+#                     return [x]
+
+#             listOfK = list(set(sorted(flatten(listOfK))))
+#             f , ax= plt.subplots()
+#             # print(listOfK)
+#             ExcDaoct = []
+#             ExcNdaao = []
+#             DaoctPaths = []
+#             DaoctStates = []
+#             for i in range(len(listOfK)):
+#                 daoct=at.DAOCT(files,listOfK[i],verbose,debug)
+#                 DaoctPaths = DaoctPaths + [len(daoct.pK)]
+#                 DaoctStates = DaoctStates + [len(daoct.X)]
+#                 vec = []
+#                 ExcDaocti = []
+#                 ExcNdaaoi = []
+#                 for j in range(1,n+1):
+#                     vec = vec + [j]
+#                     ExcDaocti = ExcDaocti + [daoct.getExceedingLanguageDAOCTLessN(j)]
+#                     ExcNdaaoi = ExcNdaaoi + [daoct.getExceedingLanguageNDAAOLessN(j)]
+#                     print(ExcDaocti)
+#                     print(ExcNdaaoi)
+#                 plt.plot(vec,ExcDaocti,'k-o',fillstyle='none',linewidth=0.1,clip_on=False)
+#                 ax.annotate('$k = ' + str(listOfK[i]) + '$', xy=(3, 1), xycoords='data',
+#                             xytext=(1.02, ExcNdaaoi[-1]-0.1), textcoords=('axes fraction','data'),size=16)
+#                 ax.annotate('$k = ' + str(listOfK[i]) + '$', xy=(3, 1), xycoords='data',
+#                             xytext=(1.02, ExcDaocti[-1]-0.1), textcoords=('axes fraction','data'),size=16)
+#                 plt.plot(vec,ExcNdaaoi,'k-x',linewidth=0.1,clip_on=False)
+
+
+#                 ExcNdaao.append(ExcNdaaoi)
+#                 ExcDaoct.append(ExcDaocti)
+#                 print(i/len(listOfK))
+
+#             plt.ylabel('$|L_{Exc}^{\leq n}|$',fontsize=16)
+#             plt.xlabel('$n$',fontsize=16)
+#             ax.tick_params(axis='both', which='major', labelsize=16)
+#             x_ticks = range(vec[0],vec[-1]+1,max(int((vec[-1]-vec[0])/5),1))
+#             ax.set_xticks(x_ticks)
+#             plt.xlim(left=1)
+#             plt.xlim(right=vec[-1])
+#             plt.ylim(bottom=0)
+#             ax.tick_params(axis='x', pad=5)
+#             # ax.tick_params(axis='y', pad=5)
+#             # plt.figure(figsize=(8,8),edgecolor='k')
+#             ax.grid(which='both',color='gainsboro')
+#             plt.tick_params(axis='both',bottom=True, top=True, left=True, right=True, direction='in', which='major')
+
+
+#             ks = reduce(lambda x,y: str(x)+ '-' + str(y),listOfK)
+#             title = 'exceedingLanguage-daoct-ndaao_k' + ks + '_n' + str(n)
+#             print(title)
+
+
+
+#             # exit
+#             if not os.path.exists(outputFolder):
+#                 os.makedirs(outputFolder)
+
+#                 sio.savemat(outputFolder + "/" + title + ".mat", {'K':listOfK,"ExcNdaao":ExcNdaao,"ExcDaoct":ExcDaoct,"DaoctPaths":DaoctPaths,"DaoctStates":DaoctStates})
+#             # f.savefig(outputFolder + "/" + title +  ".pdf",bbox_inches='tight')
+#             # f.savefig(outputFolder + "/" + title + ".png", bbox_inches='tight')
+#             # f.savefig(outputfolder + "/" + title + ".tikz", bbox_inches='tight')
+#             # matplotlib2tikz.save(outputFolder + "/" + title + ".tikz")
+
+
+#             # print(excndaao)
+#             # print(excdaoct)
+#             # print("vec",vec)
+
+#             # plt.show()
+
+#         else:
+#             vec = []
+#             excdaoct = []
+#             excndaao = []
+#             for i in range(1,n+1):
+#                 vec = vec + [i]
+#                 excdaoct = excdaoct + [daoct.getExceedingLanguageDAOCTLessN(i)]
+#                 excndaao = excndaao + [daoct.getExceedingLanguageNDAAOLessN(i)]
+#             print(vec)
+#             print("==== exceeding language - daoct  ====")
+#             print(excdaoct)
+#             print("==== exceeding language - ndaao  ====")
+#             print(excndaao)
+#             title = 'exceedingLanguage-daoct-ndaao_k' + str(paramk) + '_n' + str(n)
+#             print(title)
+#             f , ax= plt.subplots()
+#             ax.plot(vec,excdaoct,'k-o',fillstyle='none',linewidth=0.1,clip_on=False)
+#             ax.plot(vec,excndaao,'k-x',linewidth=0.1,clip_on=False)
+
+#             plt.ylabel('$|L_{Exc}^{\leq n}|$',fontsize=16)
+#             plt.xlabel('$n$',fontsize=16)
+#             ax.tick_params(axis='both', which='major', labelsize=16)
+#             x_ticks = range(vec[0],vec[-1]+1,max(int((vec[-1]-vec[0])/5),1))
+#             ax.set_xticks(x_ticks)
+#             plt.xlim(left=1)
+#             plt.xlim(right=vec[-1])
+#             plt.ylim(bottom=0)
+#             ax.tick_params(axis='x', pad=10)
+#             ax.tick_params(axis='y', pad=5)
+
+
+#             ax.grid(which='both',color='gainsboro')
+#             plt.tick_params(axis='both',bottom=True, top=True, left=True, right=True, direction='in', which='major')
+
+
+#             if not os.path.exists(outputFolder):
+#                 os.makedirs(outputFolder)
+#             f.savefig(outputFolder + "/" + title +  ".pdf", bbox_inches='tight')
+#             # f.savefig(outputFolder + "/" + title + ".png", bbox_inches='tight')
+#             matplotlib2tikz.save(outputFolder + "/" + title + ".tikz")
+#             # plt.show()
+
+#     elif graphviz and not debug:
+#         daoct.graphvizAutomaton();
+#     elif ffunction and not debug:
+#         daoct.printAutomaton();
+
+data = sio.loadmat('exceedingLanguage-daoct-ndaao_k1-2-3-4-5-6-7_n12.mat')
+K = data['K'][0]
+ExcNdaao = data['ExcNdaao']
+ExcDaoct = data['ExcDaoct']
+Ks = [1,2]
+Ns = 5
+f , ax= plt.subplots()
+
+print(K)
+print(len(K))
+for i in range(len(Ks)):
+    Daoct = ExcDaoct[i,0:Ns]
+    Ndaao = ExcNdaao[i,0:Ns]
+    plt.plot(range(1,Ns+1),Daoct,'k-o',fillstyle='none',linewidth=0.1,clip_on=False)
+    plt.plot(range(1,Ns+1),Ndaao,'k-x',fillstyle='none',linewidth=0.1,clip_on=False)
+    ax.annotate('$k = ' + str(K[i]) + '$', xy=(3, 1), xycoords='data',
+                xytext=(1.02, Ndaao[-1]-0.1), textcoords=('axes fraction','data'),size=16)
+    ax.annotate('$k = ' + str(K[i]) + '$', xy=(3, 1), xycoords='data',
+                xytext=(1.02, Daoct[-1]-0.1), textcoords=('axes fraction','data'),size=16)
+
+
+
+    # ExcNdaao.append(ExcNdaaoi)
+    # ExcDaoct.append(ExcDaocti)
+    # print(i/len(listOfK))
+
+plt.ylabel('$|L_{Exc}^{\leq n}|$',fontsize=16)
+
+plt.xlabel('$n$',fontsize=16)
+ax.tick_params(axis='both', which='major', labelsize=16)
+x_ticks = range(1,Ns+1,max(int((Ns-1)/5),1))
+ax.set_xticks(x_ticks)
+plt.xlim(left=1)
+plt.xlim(right=Ns)
+plt.ylim(bottom=0)
+ax.tick_params(axis='x', pad=10)
+ax.tick_params(axis='y', pad=10)
+ax.grid(which='both',color='gainsboro')
+plt.tick_params(axis='both',bottom=True, top=True, left=True, right=True, direction='in', which='major')
+
+
+
+
+ks = reduce(lambda x,y: str(x)+ '-' + str(y),Ks)
+title = 'exceedingLanguage-daoct-ndaao_k' + ks + '_n' + str(Ns)
+print(title)
+plt.show()
+f.savefig(title +  ".pdf", bbox_inches='tight')
