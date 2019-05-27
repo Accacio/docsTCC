@@ -3,7 +3,6 @@
 \input{preamble}
 % \usepackage{fontspec}
 % \usepackage{fontawesome}
-\input{glossaires_et_symb}
 \makeindex
 \makelosymbols
 \makeloabbreviations
@@ -43,21 +42,28 @@
 % include only to speed up tests
 \includeonly{
   frontMatter/frontMatter
-  % ,test/examples
-  % ,mainMatter/introduction
-  ,mainMatter/background
-  ,mainMatter/system
+  % ,
+  % test/examples
+  ,
+  mainMatter/introduction
+  % ,mainMatter/background
+  % ,mainMatter/system
   % ,mainMatter/petriNets
-  ,mainMatter/results
-  ,mainMatter/conclusion
+  % ,
+  % mainMatter/results
+  % ,
+  % mainMatter/conclusion
   % ,appendices/complete
-  ,appendices/tools
+  % ,
+  % appendices/automataf
+  % ,
+  % appendices/tools
 }
 \begin{document}
-
+\input{glossaires_et_symb}
 \include{frontMatter/frontMatter}
 \mainmatter
-\include{test/examples}
+% \include{test/examples}
 
 \include{mainMatter/introduction}
 \include{mainMatter/background}
@@ -65,7 +71,6 @@
 \include{mainMatter/petriNets}
 \include{mainMatter/results}
 \include{mainMatter/conclusion}
-
 \backmatter
 
 \bibliographystyle{coppe-unsrt-en}
@@ -74,5 +79,6 @@
 
 \appendix
 \include{appendices/complete}
+% \include{appendices/automataf}
 \include{appendices/tools}
 \end{document}
