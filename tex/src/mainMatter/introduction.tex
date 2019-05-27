@@ -17,31 +17,36 @@ So hackers can infiltrate the system, and depending of the infrastructure
 halt or change somehow the production throughput.
 
 Cyber security is not the theme of this thesis but its theme is another important concern to a
-well-paced throughput, failure detection.
+well-paced throughput, fault detection.
 
-As great part of the manufacture facilities uses conveyor
-belts, pneumatic cylinders and digital sensors, it is very common to see \PLCs
+As great part of the manufacture facilities uses discrete sensors and actuators,
+as conveyor belts, pneumatic cylinders, limit switches and proximity sensors, it is very common to see 
+\PLCs controlling those plants. And when a system is ruled by discrete events
+and also its states are discrete it can be modeled by Discrete Event
+Systems.  
+
+On the literature, we can find an expressive number of articles using Discrete
+Event Systems for identification, fault detection and fault
+diagnosis. \cite{veras2018distributed,cabral2017synchronous,kumar2014comments,klein2005fault}  
+can be used as examples.
+
+This work is based on one of this articles, \cite{moreira2018enhanced}, that
+develops an algorithm to identify a model of the system using just its inputs
+and outputs, using a black box approach, also seen in other works as
+\cite{klein2005fault} and \cite{roth2009fdi}. This identified model can be later
+used to detect faults on the system.
+
+The objective is to apply the identification algorithm shown in
+\cite{moreira2018enhanced} in a Didactic Manufacture
+System with a strong parallel behavior and a moderate number of inputs and
+outputs ( over 40) and show that this algorithm can be used
+dividing the parallel subsystems, so we can achieve scalability. 
 
 
+During this work all steps from the conception of the control of the system to
+its identification. So, in order to ease the path throughout this work we have
+in the next section its outline.
 
-\PLC 
-
-
-
-
-\acr{oi}{oi}{oi}
-\oi
-
-
-
-
-
-khe  the most simple as  In order to prevent these effects lots of 
-\todo{ objetivo mostrar que o metodo pode funcionar 
-com comportamento paraelo mostrar a escabilidade
-}
-\doing{the objective of this thesis is to show that the \DAOCT model works with
-  systems that presents parallel behavior dividing themand can be used to scalability }
 \section{Thesis Outline}
 \label{sec:thesisOutline}
 
