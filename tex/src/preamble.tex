@@ -182,18 +182,51 @@
 %\numberwithin{observation}{chapter}
 \usepackage[export]{adjustbox}
 
-\newcommand{\addtikzfigure}[3]{
+\newcommand{\addtikzfigure}[4][width=0.8\textwidth]{
 \KOMAoptions{paper=landscape}
 \recalctypearea
   \vspace*{\fill}
   \begin{figure}[H]
     \centering
-      \includegraphics[width=0.8\textwidth]{#1}
-    \caption{#2}
-    \label{fig:#3}
+      \includegraphics[#1]{#2}
+    \caption{#3}
+    \label{fig:#4}
   \end{figure}
   \vspace*{\fill}
 \KOMAoptions{paper=portrait}
+\recalctypearea
+}
+
+\newcommand{\addtikzfigureLandscape}[4][width=0.8\textwidth]{
+\KOMAoptions{paper=landscape}
+\recalctypearea
+  \vspace*{\fill}
+  \begin{figure}[H]
+    \centering
+    \ifdebug {\includegraphics[#1]{#2.pdf}}
+    \else  \includegraphics[#1]{#2}\fi
+    \caption{#3}
+    \label{fig:#4}
+  \end{figure}
+  \vspace*{\fill}
+\KOMAoptions{paper=portrait}
+\recalctypearea
+}
+
+\newcommand{\addtikzfigureLandscapeAthree}[4][width=0.8\textwidth]{
+\KOMAoptions{paper=a3,paper=landscape}
+% \KOMAoptions{paper=landscape}
+\recalctypearea
+ \vspace{-2cm}
+  \begin{figure}[H]
+    \centering
+    \ifdebug {\centerline{\includegraphics[#1]{#2.pdf}}}
+    \else  \centerline{\includegraphics[#1]{#2}}
+\fi
+    % \caption{#3}
+    % \label{fig:#4}
+  \end{figure}
+\KOMAoptions{paper=a4,paper=portrait}
 \recalctypearea
 }
 

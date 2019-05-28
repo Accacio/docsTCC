@@ -30,17 +30,9 @@
 
 \input{../../figures/petriNet/complete/completeTransitions}
 
-\KOMAoptions{paper=a3,paper=landscape}
-\recalctypearea
-
-\begin{figure}[H]
-\vspace{-2cm}
-\centerline{\includegraphics[height=1.28\textheight]{../../figures/petriNet/complete/complete.tikz}}
-% \centerline{\resizebox{!}{1.2\textheight}{\input{../../figures/petriNet/complete/stdin.tikz}}}
-\end{figure}
-
-\KOMAoptions{paper=a4,paper=portrait}
-\recalctypearea
+\addtikzfigureLandscapeAthree[height=1.28\textheight]{../../figures/petriNet/complete/complete}
+{Petri net of manipulator Stop Logic module.}
+{petriarmStopLogic}
 
 %%% Local Variables:
 %%% mode: latex
