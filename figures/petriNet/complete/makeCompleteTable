@@ -13,16 +13,16 @@ echo "# PlacesBegin"
 echo "#+ATTR_LATEX: :caption \caption{Complete Places.} :environment longtable :align M{5cm}M{10cm}"
 echo "| Places | Meaning |"
 echo "|----+---------|"
-echo "$(getPlacesTable ../partial/initial.org)\n" \
-     "$(getPlacesTable ../partial/metalv.org)\n" \
-     "$(getPlacesTable ../partial/plastic.org)\n" \
-     "$(getPlacesTable ../partial/armBeltToPress.org)\n" \
-     "$(getPlacesTable ../partial/press.org)\n" \
-     "$(getPlacesTable ../partial/armPressToStorage.org)\n" \
-     "$(getPlacesTable ../partial/storageY.org)\n" \
-     "$(getPlacesTable ../partial/storageX.org)\n" \
-     "$(getPlacesTable ../partial/storePiece.org)\n" \
-     "$(getPlacesTable ../partial/armStopLogic.org)" \
+echo "$(getPlacesTable ../partial/initial.org)
+$(getPlacesTable ../partial/metalv.org)
+$(getPlacesTable ../partial/plastic.org)
+$(getPlacesTable ../partial/armBeltToPress.org)
+$(getPlacesTable ../partial/press.org)\
+$(getPlacesTable ../partial/armPressToStorage.org)
+$(getPlacesTable ../partial/storageY.org)
+$(getPlacesTable ../partial/storageX.org)
+$(getPlacesTable ../partial/storePiece.org)
+$(getPlacesTable ../partial/armStopLogic.org)" \
     | sed -E "s|\ +|\ |g;" | sed "s(\ |(|(g;s(|\ (|(g" \
     | awk -F'|' '{a[$3]=a[$3]", c"$2;}END{for (x in a) print "|" substr(a[x],2)"|"  x "|";}' | sort -V
 echo "# PlacesEnd"
@@ -32,16 +32,16 @@ echo "# TransitionsBegin"
 echo "#+ATTR_LATEX: :caption \caption{Complete Transitions.} :environment longtable :align M{5cm}M{10cm}"
 echo "| Transitions | Meaning |"
 echo "|----+---------|"
-echo "$(getTransitionsTable ../partial/initial.org)\n" \
-     "$(getTransitionsTable ../partial/metalv.org)\n" \
-     "$(getTransitionsTable ../partial/plastic.org)\n" \
-     "$(getTransitionsTable ../partial/armBeltToPress.org)\n" \
-     "$(getTransitionsTable ../partial/press.org)\n" \
-     "$(getTransitionsTable ../partial/armPressToStorage.org)\n" \
-     "$(getTransitionsTable ../partial/storageY.org)\n" \
-     "$(getTransitionsTable ../partial/storageX.org)\n" \
-     "$(getTransitionsTable ../partial/storePiece.org)\n" \
-     "$(getTransitionsTable ../partial/armStopLogic.org)" \
+echo "$(getTransitionsTable ../partial/initial.org)
+$(getTransitionsTable ../partial/metalv.org)
+$(getTransitionsTable ../partial/plastic.org)
+$(getTransitionsTable ../partial/armBeltToPress.org)
+$(getTransitionsTable ../partial/press.org)
+$(getTransitionsTable ../partial/armPressToStorage.org)
+$(getTransitionsTable ../partial/storageY.org)
+$(getTransitionsTable ../partial/storageX.org)
+$(getTransitionsTable ../partial/storePiece.org)
+$(getTransitionsTable ../partial/armStopLogic.org)" \
     | sed -E "s|\ +|\ |g;" | sed "s(\ |(|(g;s(|\ (|(g" \
     | awk -F'|' '{a[$3]=a[$3]", c"$2;}END{for (x in a) print "|" substr(a[x],2)"|"  x "|";}' | sort -V
 echo "# TransitionsEnd"
