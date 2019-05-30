@@ -165,7 +165,9 @@ class DAOCT(ut.MyUtil):
                             # print(Q[-1])
 
                 return len(Q) + getAutoTracesFromPathLessNaux(n-1,acc)
-        return getAutoTracesFromPathLessNaux(n,0)
+        tracespath =  getAutoTracesFromPathLessNaux(n,0)
+        # print ("tracespath",tracespath)
+        return tracespath
 
     def getAutoTracesDAOCT(self,xnode,n,paths):
         if n == 0:
@@ -194,7 +196,9 @@ class DAOCT(ut.MyUtil):
                         if intersPaths != set():
                             acc = acc + getAutoTracesDAOCTLessNaux(self.f[xnode,sig],n,intersPaths,0)
                 return acc + 1
-        return getAutoTracesDAOCTLessNaux(self.x0,n,self.R,0) - 1
+        tracesDAOCT = getAutoTracesDAOCTLessNaux(self.x0,n,self.R,0) - 1
+        # print("traces DAOCT =",tracesDAOCT)
+        return tracesDAOCT
 
     def getExceedingLanguageDAOCTLessN(self,n):
         return self.getAutoTracesDAOCTLessN(n) - self.getAutoTracesFromPathLessN(n)

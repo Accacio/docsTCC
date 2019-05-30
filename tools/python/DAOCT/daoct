@@ -238,8 +238,8 @@ else:
             if not os.path.exists(outputFolder):
                 os.makedirs(outputFolder)
 
-                sio.savemat(outputFolder + "/" + title + ".mat", {'K':listOfK,"ExcDaoct":ExcDaoct,"DaoctPaths":DaoctPaths,"DaoctStates":DaoctStates})
-                # sio.savemat(outputFolder + "/" + title + ".mat", {'K':listOfK,"ExcNdaao":ExcNdaao,"ExcDaoct":ExcDaoct,"DaoctPaths":DaoctPaths,"DaoctStates":DaoctStates})
+            sio.savemat(outputFolder + "/" + title + ".mat", {'K':listOfK,"ExcDaoct":ExcDaoct,"DaoctPaths":DaoctPaths,"DaoctStates":DaoctStates})
+            # sio.savemat(outputFolder + "/" + title + ".mat", {'K':listOfK,"ExcNdaao":ExcNdaao,"ExcDaoct":ExcDaoct,"DaoctPaths":DaoctPaths,"DaoctStates":DaoctStates})
 
             # f.savefig(outputFolder + "/" + title +  ".pdf",bbox_inches='tight')
             # f.savefig(outputFolder + "/" + title + ".png", bbox_inches='tight')
