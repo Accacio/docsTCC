@@ -185,7 +185,7 @@ else:
             f , ax= plt.subplots()
             # print(listOfK)
             ExcDaoct = []
-            ExcNdaao = []
+            # ExcNdaao = []
             DaoctPaths = []
             DaoctStates = []
             for i in range(len(listOfK)):
@@ -194,23 +194,22 @@ else:
                 DaoctStates = DaoctStates + [len(daoct.X)]
                 vec = []
                 ExcDaocti = []
-                ExcNdaaoi = []
+                # ExcNdaaoi = []
                 for j in range(1,n+1):
                     vec = vec + [j]
                     ExcDaocti = ExcDaocti + [daoct.getExceedingLanguageDAOCTLessN(j)]
-                    ExcNdaaoi = ExcNdaaoi + [daoct.getExceedingLanguageNDAAOLessN(j)]
+                    # ExcNdaaoi = ExcNdaaoi + [ndaao.getExceedingLanguageNDAAOLessN(j)]
                     print(ExcDaocti)
-                    print(ExcNdaaoi)
+                    # print(ExcNdaaoi)
                 plt.plot(vec,ExcDaocti,'k-o',fillstyle='none',linewidth=0.1,clip_on=False)
                 ax.annotate('$k = ' + str(listOfK[i]) + '$', xy=(3, 1), xycoords='data',
-                            xytext=(1.02, ExcNdaaoi[-1]-0.1), textcoords=('axes fraction','data'),size=16)
-                ax.annotate('$k = ' + str(listOfK[i]) + '$', xy=(3, 1), xycoords='data',
                             xytext=(1.02, ExcDaocti[-1]-0.1), textcoords=('axes fraction','data'),size=16)
-                plt.plot(vec,ExcNdaaoi,'k-x',linewidth=0.1,clip_on=False)
-
-
-                ExcNdaao.append(ExcNdaaoi)
                 ExcDaoct.append(ExcDaocti)
+
+                # plt.plot(vec,ExcNdaaoi,'k-x',linewidth=0.1,clip_on=False)
+                # ax.annotate('$k = ' + str(listOfK[i]) + '$', xy=(3, 1), xycoords='data',
+                #             xytext=(1.02, ExcNdaaoi[-1]-0.1), textcoords=('axes fraction','data'),size=16)
+                # ExcNdaao.append(ExcNdaaoi)
                 print(i/len(listOfK))
 
             plt.ylabel('$|L_{Exc}^{\leq n}|$',fontsize=16)
@@ -229,7 +228,8 @@ else:
 
 
             ks = reduce(lambda x,y: str(x)+ '-' + str(y),listOfK)
-            title = 'exceedingLanguage-daoct-ndaao_k' + ks + '_n' + str(n)
+            title = 'exceedingLanguage-daoct_k' + ks + '_n' + str(n)
+            # title = 'exceedingLanguage-daoct-ndaao_k' + ks + '_n' + str(n)
             print(title)
 
 
@@ -238,7 +238,9 @@ else:
             if not os.path.exists(outputFolder):
                 os.makedirs(outputFolder)
 
-                sio.savemat(outputFolder + "/" + title + ".mat", {'K':listOfK,"ExcNdaao":ExcNdaao,"ExcDaoct":ExcDaoct,"DaoctPaths":DaoctPaths,"DaoctStates":DaoctStates})
+                sio.savemat(outputFolder + "/" + title + ".mat", {'K':listOfK,"ExcDaoct":ExcDaoct,"DaoctPaths":DaoctPaths,"DaoctStates":DaoctStates})
+                # sio.savemat(outputFolder + "/" + title + ".mat", {'K':listOfK,"ExcNdaao":ExcNdaao,"ExcDaoct":ExcDaoct,"DaoctPaths":DaoctPaths,"DaoctStates":DaoctStates})
+
             # f.savefig(outputFolder + "/" + title +  ".pdf",bbox_inches='tight')
             # f.savefig(outputFolder + "/" + title + ".png", bbox_inches='tight')
             # f.savefig(outputfolder + "/" + title + ".tikz", bbox_inches='tight')
@@ -254,21 +256,22 @@ else:
         else:
             vec = []
             excdaoct = []
-            excndaao = []
+            # excndaao = []
             for i in range(1,n+1):
                 vec = vec + [i]
                 excdaoct = excdaoct + [daoct.getExceedingLanguageDAOCTLessN(i)]
-                excndaao = excndaao + [daoct.getExceedingLanguageNDAAOLessN(i)]
+                # excndaao = excndaao + [ndaao.getExceedingLanguageNDAAOLessN(i)]
             print(vec)
             print("==== exceeding language - daoct  ====")
             print(excdaoct)
-            print("==== exceeding language - ndaao  ====")
-            print(excndaao)
-            title = 'exceedingLanguage-daoct-ndaao_k' + str(paramk) + '_n' + str(n)
+            # print("==== exceeding language - ndaao  ====")
+            # print(excndaao)
+            title = 'exceedingLanguage-daoct_k' + str(paramk) + '_n' + str(n)
+            # title = 'exceedingLanguage-daoct-ndaao_k' + str(paramk) + '_n' + str(n)
             print(title)
             f , ax= plt.subplots()
             ax.plot(vec,excdaoct,'k-o',fillstyle='none',linewidth=0.1,clip_on=False)
-            ax.plot(vec,excndaao,'k-x',linewidth=0.1,clip_on=False)
+            # ax.plot(vec,excndaao,'k-x',linewidth=0.1,clip_on=False)
 
             plt.ylabel('$|L_{Exc}^{\leq n}|$',fontsize=16)
             plt.xlabel('$n$',fontsize=16)

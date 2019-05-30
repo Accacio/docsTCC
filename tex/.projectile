@@ -1,2 +1,6 @@
 -*.pdf
--*.ist 
+-*.ist
+-*.aux
+-*.log
+-*.el
+-*.cls

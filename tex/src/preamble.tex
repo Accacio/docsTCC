@@ -142,7 +142,7 @@
 \makeatother
 
 \let\oldtoc\tableofcontents
-\renewcommand{\tableofcontents}{\oldtoc\hypertarget{tocsection}{}\label{tocsection}}
+\renewcommand{\tableofcontents}{\pagebreak\hypertarget{tocsection}{}\label{tocsection}\oldtoc}
 
 
 \newcommand{\figplaceholder}[2]{
@@ -172,29 +172,20 @@
 \fancyfoot[L]{\warning{TURN DEBUG OFF}}
 \fancyfoot[R]{\warning{DRAFT}}
 
-\newtheorem{example}{Exemplo}
-\numberwithin{example}{chapter}
+% \newtheorem{example}{Example}
+% \numberwithin{example}{chapter}
 
-\newtheorem{theorem}{Definição}
-\numberwithin{theorem}{chapter}
+\newtheorem{definition}{Definition}
+\numberwithin{definition}{chapter}
 
-\newtheorem{observation}{Observação}
-%\numberwithin{observation}{chapter}
+\newtheorem{observation}{N.B.}
+\numberwithin{observation}{chapter}
+
 \usepackage[export]{adjustbox}
 
-\newcommand{\addtikzfigure}[4][width=0.8\textwidth]{
-\KOMAoptions{paper=landscape}
-\recalctypearea
-  \vspace*{\fill}
-  \begin{figure}[H]
-    \centering
-      \includegraphics[#1]{#2}
-    \caption{#3}
-    \label{fig:#4}
-  \end{figure}
-  \vspace*{\fill}
-\KOMAoptions{paper=portrait}
-\recalctypearea
+\newcommand{\includetikzfigure}[2][]{
+    \ifdebug {\includegraphics[#1]{#2.pdf}}
+    \else  \includegraphics[#1]{#2}\fi
 }
 
 \newcommand{\addtikzfigureLandscape}[4][width=0.8\textwidth]{

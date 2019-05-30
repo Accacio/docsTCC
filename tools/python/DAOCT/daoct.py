@@ -30,7 +30,7 @@ class DAOCT(ut.MyUtil):
         self.Lambda      = {}
         self.LambdaTilde = {}
         self.theta       = {}
-        self.Gamma  = {}
+        self.Gamma       = {}
 
         # begin of algorithm
         # Line 1
@@ -44,7 +44,7 @@ class DAOCT(ut.MyUtil):
         self.Xf = set()
         # Lines 3 to 19
         for i in range(r):
-            self.R.add(i)
+            self.R.add(i+1)
             l = len(self.pK[i])
             for j in range(l-1):
                 self.printd("i=",i,", j=",j)
@@ -88,10 +88,10 @@ class DAOCT(ut.MyUtil):
                 self.printd("f(",x,",",sig,") = ", xPrime)
                 # Line 14
                 if (x,xPrime) in self.theta:
-                    if i not in self.theta[(x,xPrime)]:
-                        self.theta[(x,xPrime)].add(i)
+                    if i+1 not in self.theta[(x,xPrime)]:
+                        self.theta[(x,xPrime)].add(i+1)
                 else:
-                    self.theta[(x,xPrime)] = {i}
+                    self.theta[(x,xPrime)] = {i+1}
                 # Lines 15 to 17
                 if j == l - 2:
                     self.Xf.add(xPrime)
@@ -126,7 +126,7 @@ class DAOCT(ut.MyUtil):
 
 
 
-
+# TODO change to modified paths
     def getAutoTracesFromPath(self,n):
         Q = []
         nodes = n + 1
@@ -235,7 +235,7 @@ class DAOCT(ut.MyUtil):
         print('node [shape=circle];')
         print('margin=0;')
         print('{rank =same;}')
-        print('size="11.7,8.3!";')
+        print('# size="11.7,8.3!";')
         print('init [style=invis]')
         print('init ->',self.x0)
         for xf in self.Xf:
@@ -243,8 +243,8 @@ class DAOCT(ut.MyUtil):
         print('')
         for xe,xout in self.f.items():
             a = map(str,self.theta[(xe[0],xout)])
-            theta = ", ".join(a)
-            print((xe[0]),' -> ',xout,' [texlbl="\\scriptsize ',xe[1]," \{",theta,"\}",'"]',sep='')
+            theta = ",".join(a)
+            print((xe[0]),' -> ',xout,' [texlbl="\\scriptsize ',xe[1],",\{",theta,"\}",'"]',sep='')
         print('')
         print('}')
         return

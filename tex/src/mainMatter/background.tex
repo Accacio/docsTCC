@@ -1,21 +1,126 @@
 
 \chapter{Background}
-\todo{
+\label{cha:background}
+This chapter 
  
-\section{Discrete Timme Event Systems}
+\section{Discrete Time Event Systems}
 \label{sec:discreteEventTimeSystems}
-
-\subsection{Petri Nets}
-\label{sec:petriNets}
-
-\subsubsection{Control Interpreted Petri Net}
 
 \subsection{Automata}
 \label{sec:automata}
+\begin{definition}[Deterministic Automaton]
+\label{def:DeterministicAutomaton}~\\  
+A Deterministic Automaton, denoted by G, is a five-tuple
+\[ G = (X,\Sigma,f, x_0,X_m)\]
+where:
+
+\indent X is the set of \textbf{states} \\
+\indent $\Sigma$ is the finite set of \textbf{events} associated with G\\
+\indent f: X $\times \Sigma \rightarrow X$ is the \textbf{transition function}  \\ 
+\indent $x_0$ is the \textbf{initial state} \\
+\indent $X_m \subseteq X $ is the set of \textbf{marked states}
+
+\end{definition}
+\todo{
+
+As in \cite{cassandras2009introduction} the initial states on this thesis are
+going to be identified by an arrow pointing towards them, and marked states by
+double circles.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.5\textwidth]{automata/example/example.tikz}
+  % \includetikzfigure[width=0.5\textwidth]{automata/example/example}
+  \caption{Diagram representing the Automata from example number }
+\end{figure}
+
+
+\subsubsection{DAOCT}
+
+\begin{definition}[Deterministic Automaton With Outputs and Conditional
+  Transitions (DAOCT)]
+\label{def:daoct}~\\  
+A Deterministic Automaton, denoted by DAOCT, is a nine-tuple
+\[ DAOCT = (X,\Sigma,f,\lambda,R,\theta, x_0,X_f)\]
+where:
+
+\indent X is the set of \textbf{states} \\
+\indent $\Sigma$ is the finite set of \textbf{events}\\
+\indent $\Omega \subset \mathbb{N}_1^{m_i+m_o} $ is the set of \textbf{I/O vectors}\\
+\indent f: X $\times \Sigma^\star \rightarrow X$ is the \textbf{deterministic transition function}  \\ 
+\indent $\lambda : X \rightarrow \Omega$ is the \textbf{state output function} \\
+\indent $R = {1,2,\dots,r}$ is the set of \textbf{path indices} \\
+\indent $\theta : X \times \Sigma \rightarrow 2^R$ is the \textbf{path
+  estimation function} \\
+\indent $x_0$ is the \textbf{initial state} \\
+\indent $X_f \subseteq X $ is the set of \textbf{final states}
+\end{definition}
+
+Identification algorithm adapted from \cite{moreira2018enhanced}
+\begin{algorithm2e}
+  \caption{Identification Algorithm}\label{alg:identification}
+\KwIn
+{%
+Modified observed paths $p_i^k$, for i= 1,\dots,$r$
+}
+\KwOut
+{%
+DAOCT = $($\XSet,\SigmaSet,\OmegaSet,\ffunction,\lambdafunction,\RSet,\thetafunction,\xZero,\XfSet$)$
+}
+\BlankLine
+Create an initial state $x_0$, and define $\lambda(x_0) = \tilde{\lambda}(x_0) =
+y_{1,1}$
+
+$X = \{ x_0\}, X_f = \emptyset, R = \emptyset$
+
+\For{$i = 1$ \KwTo $r$}
+{
+  $R = R \cup \{ i \}$
+  
+\For{$j = 1$ \KwTo $l_i - 1$}
+{
+  Find the State $x \in X $ such that $\tilde{\lambda}(x) = y_{i,j+1}$
+
+  \eIf{$\tilde{\lambda}(s) \neq y_{i,j+1}$ for all $ s \in X$}
+  { Create state $x^\prime$ and define $\tilde{\lambda}(x^\prime) = y_{i,j+1}$
+
+$X = X \cup \{ x^\prime\}$
+
+$\lambda(x^\prime) = \tilde{\lambda_l}(x^\prime)$
+
+}
+{
+  Find $x^\prime \in X$ such that $\tilde{\lambda}(x^\prime) = y_{i,j+1}$
+}
+$f(x,\sigma_{i,j}) = x^\prime$
+
+Add $i$ to $\theta(x,\sigma_{i,j})$
+
+\If{$j = l_i - 1$}
+{
+  $X_f = X_f \cup \{x^\prime\}$
+}
+}
+}
+\end{algorithm2e}
+
+
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{automata/daoct/example.tikz}
+  % \includetikzfigure[width=0.5\textwidth]{automata/example/example}
+  \caption{Diagram representing the DAOCT from example number }
+\end{figure}
+
+\subsection{Petri Nets}
+\label{sec:petriNets}
+\subsubsection{Control Interpreted Petri Net}
+% pag 65 discrete continuos and hybrid \cite{david2005discrete} 
 
 \section{Model of automata}
 
-\section{identificação}
+\section{Identification}
   formas de identificação
   algoritmos
 
@@ -24,25 +129,25 @@
 \label{sec:petriNets}
 
 
-% Adapted from \cite{david1989grafcet}
-% \begin{figure}[H]
-%   \centering
-%   \includegraphics[width=0.8\textwidth]{cipnExample/scheme.tikz}
-%   \caption[cipnexample]{Example of System to be controlled by the Petri Net}
-%   \label{fig:cipnexamplescheme}
-% \end{figure}
+Adapted from \cite{david1989grafcet}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.8\textwidth]{cipnExample/scheme.tikz}
+  \caption[cipnexample]{Example of System to be controlled by the Petri Net}
+  \label{fig:cipnexamplescheme}
+\end{figure}
 
-% \pagebreak
-% \begin{figure}[H]
-%   \centering
-%   \includegraphics[width=0.8\textwidth]{cipnExample/cipn.tikz}
-%   \caption[cipnexample]{Example of Control Interpreted Petri Net to control
-%     system in \autoref{fig:cipnexamplescheme}}
-%   \label{fig:cipnexample}
-% \end{figure}
+\pagebreak
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.8\textwidth]{cipnExample/cipn.tikz}
+  \caption[cipnexample]{Example of Control Interpreted Petri Net to control
+    system in \autoref{fig:cipnexamplescheme}}
+  \label{fig:cipnexample}
+\end{figure}
 
-% \input{../../figures/cipnExample/cipnPlaces}
-% \input{../../figures/cipnExample/cipnTransitions}
+\input{../../figures/cipnExample/cipnPlaces}
+\input{../../figures/cipnExample/cipnTransitions}
 \usetikzlibrary{arrows,shapes,circuits.plc.ladder,external}
 
 \begin{figure}[H]
@@ -55,15 +160,15 @@
 \begin{figure}[H]
     \centering
     \begin{subfigure}[t]{0.5\textwidth}
-        \centering
-        \includegraphics[width=\textwidth]{communicationPlcPN/communicationPlcPN.tikz}
+      \centering
+        \includetikzfigure[width=\textwidth]{communicationPlcPN/communicationPlcPN}
         \caption{Petri Net on PLC 1.}
         \label{fig:communicationPlcPN}
     \end{subfigure}%
     ~ 
     \begin{subfigure}[t]{0.5\textwidth}
         \centering
-  \includegraphics[width=\textwidth]{communicationPlcPN/communicationPlcPN1.tikz}
+        \includetikzfigure[width=\textwidth]{communicationPlcPN/communicationPlcPN1}
   \caption{Petri Net on PLC 2.}
   \label{fig:communicationPlcPN1}
     \end{subfigure}
@@ -91,11 +196,6 @@
   
 
 \autoref{fig:communicationPlcPN}
-
-
-
-
-
 
 \usetikzlibrary{patterns}
 \begin{figure}[H]
