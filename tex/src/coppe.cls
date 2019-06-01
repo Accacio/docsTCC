@@ -115,7 +115,7 @@ T\kern-.1667em\lower.5ex\hbox{E}\kern-.125emX\spacefactor1000}
 \DeclareOption{dscexam}{%
   \newcommand{\@degree}{D.Sc.}
   \newcommand{\@degreename}{Doutorado}
-  \newcommand{\local@degname}{Doutor\ifmale o \else a\fi}
+  \newcommand{\local@degname}{Doutor\ifmale \else a\fi}
   \newcommand{\foreign@degname}{Doctor}
   \setboolean{maledoc}{true}
   \newcommand\local@doctype{Exame de Qualifica{\c c}{\~ a}o}
@@ -279,13 +279,13 @@ T\kern-.1667em\lower.5ex\hbox{E}\kern-.125emX\spacefactor1000}
 }
 \newcount\@advisor\@advisor0
 \newcount\@advisorf\@advisorf0
-\newcommand\advisor[5]{%
-  \global\@namedef{CoppeAdvisorTitle:\expandafter\the\@advisor}{#1}
-  \global\@namedef{CoppeAdvisorName:\expandafter\the\@advisor}{#2}
-  \global\@namedef{CoppeAdvisorSurname:\expandafter\the\@advisor}{#3}
-  \global\@namedef{CoppeAdvisorDegree:\expandafter\the\@advisor}{#4}
+\newcommand\advisor[5][m]{%
+  \global\@namedef{CoppeAdvisorTitle:\expandafter\the\@advisor}{#2}
+  \global\@namedef{CoppeAdvisorName:\expandafter\the\@advisor}{#3}
+  \global\@namedef{CoppeAdvisorSurname:\expandafter\the\@advisor}{#4}
+  \global\@namedef{CoppeAdvisorDegree:\expandafter\the\@advisor}{#5}
   \def\f{f}
-  \if f#5 \renewcommand\local@advisorstring{Orientadora} \global\advance\@advisorf by 1\fi
+  \if f#1 \renewcommand\local@advisorstring{Orientadora} \global\advance\@advisorf by 1\fi
   \global\advance\@advisor by 1
   \ifnum\@advisor>1
     \ifnum\@advisor=\@advisorf

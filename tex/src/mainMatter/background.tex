@@ -1,11 +1,83 @@
 
 \chapter{Background}
 \label{cha:background}
-This chapter 
- 
-\section{Discrete Time Event Systems}
-\label{sec:discreteEventTimeSystems}
+This chapter will discuss the main topics needed to understand this work, from
+discrete event systems to discrete control implementation on \PLCs, a more
+detailed explanation of each topic can be found on the respective cited work.
+\section{Systems}
 
+A System as defined by the Cambridge's dictionary is ``a set of connected
+things or devices that operate together''. As seen two basic properties
+of systems
+are :
+\begin{itemize}
+\item they are formed by grouping smaller parts
+\item the smaller parts when grouped work together to carry out a specific function
+\end{itemize}
+
+As its definition is so abstract almost anything can be defined as a system,
+physical or not, beings can be defined as systems and even economic mechanisms
+can also be considered as systems.
+
+Usually systems are modeled by a Input/Output process. The system is fed with a
+set of inputs, it process the inputs resulting on the output set, as we can see in  \autoref{fig:ioProcModel}. 
+
+\figplaceholder{Input/ Output Process model}{ioProcModel}
+
+In some systems, its inputs and outputs can't represent it's behavior, so
+the concept of state is created, and it represents the behavior of the system in
+a given instant $t$.
+
+The states can be continuous or discrete, and the systems which these states
+represent can be considered as Continuous Systems, Discrete Systems or even
+Hybrid Systems, which combine both kind of states.
+
+The systems modeled in this work are Discrete Systems, more details about other
+kinds of systems as well as examples and their analysis can be found on \cite{oppenheim1996signals}
+and \cite{kalouptsidis1997signal}.
+\section{Discrete Event Systems}
+\label{sec:discreteEventSystems}
+Discrete Systems can be driven by time and by events. It means, the states can
+be changed continuously by the time or some external event can interfere at a
+given instant. 
+
+In this thesis we are interest in the event-driven type. Some basic mathematical
+formalisms, nomenclature and representations can be
+developed to facilitate the understanding. Some of those will be presented in
+the following subsections based on \cite{cassandras2009introduction}:
+\subsection{Languages}
+\label{sec:automata}
+A language can be defined by the Merriam-Webster's dictionary as ``a systematic means of communicating ideas or feelings by the use of conventionalized signs, sounds, gestures, or marks having understood meanings''
+And as it is defined by this dictionary entry we pursue to communicate the complete
+behavior of the \DES.
+Firstly we need to define a group, or
+set of marks to characterize the singular behavior of the system.
+So, we define a
+set $\Sigma$. This set contains all elements which combined can create a language.
+Again in analogy with linguistics, each one of these marks, the events can be
+compared to
+letters
+, provided that $\Sigma$ can be called an ``alphabet'', and the combination of
+its events ``words''. We can also define a mark to represent an empty word,
+$\epsilon$, that is, a word that is not formed by any event.
+
+Likewise, we can define the length of a word as the number of events contained by
+this word, we denote the length with two vertical bars, given a word $s$ its
+length is equal to $|s|$ and by definition $|\epsilon| = 0 $.
+
+As we know, there is a great number of human western languages, as portuguese, english,
+french, spanish etc, that roughly are formed by the same alphabet, but overall
+they are formed by different combination of words.  
+Similar things can happen with languages that define the \DESs, so we can define
+as in \cite{cassandras2009introduction}.
+
+\begin{definition}[Language]
+\label{def:language}~\\  
+A Language defined over an event set $\Sigma$ is a finite-length set formed from
+events in $\Sigma$
+\end{definition}
+
+Take for example an alphabet $\Sigma = \{\}$WAs
 \subsection{Automata}
 \label{sec:automata}
 \begin{definition}[Deterministic Automaton]
