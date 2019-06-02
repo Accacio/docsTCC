@@ -44,8 +44,9 @@ given instant.
 In this thesis we are interest in the event-driven type. Some basic mathematical
 formalisms, nomenclature and representations can be
 developed to facilitate the understanding. Some of those will be presented in
-the following subsections based on \cite{cassandras2009introduction}:
-\subsection{Languages}
+the following sections based on \cite{cassandras2009introduction,
+david2005discrete,david1989grafcet}.
+\section{Languages}
 \label{sec:automata}
 A language can be defined by the Merriam-Webster's dictionary as ``a systematic means of communicating ideas or feelings by the use of conventionalized signs, sounds, gestures, or marks having understood meanings''
 And as it is defined by this dictionary entry we pursue to communicate the complete
@@ -58,26 +59,67 @@ Again in analogy with linguistics, each one of these marks, the events can be
 compared to
 letters
 , provided that $\Sigma$ can be called an ``alphabet'', and the combination of
-its events ``words''. We can also define a mark to represent an empty word,
+its events ``words''. Words are also called ``strings '' or even ``traces''. Considering
+the use of the word ``string'' as the variable type used on several programming languages
+used in this work, we prefer the use of the vocables ``word'' and ``trace''. We can also define a mark to represent an empty word,
 $\epsilon$, that is, a word that is not formed by any event.
 
+The combination process to form words is called concatenation. For instance,
+given two events $a$ and $b$, the words $ab$ and $ba$ can be created
+concatenating these two events and there is no particular reason to suppose that
+$ab$ is equal to $ba$, the same way the words ``ten'' and ``net''
+have different meanings in English. 
+
+We can also concatenate two words, to create a different one, we can take the
+words $ab$ and $ba$ and create words like $abba$ and $baab$.
+
+As we extended the definition of concatenation to words,
+we define $\epsilon$, the empty word, as the identity element of concatenation:
+$w\epsilon = \epsilon w = w$ for any word $w$.
+
 Likewise, we can define the length of a word as the number of events contained by
-this word, we denote the length with two vertical bars, given a word $s$ its
-length is equal to $|s|$ and by definition $|\epsilon| = 0 $.
+this word, we denote the length with two vertical bars, given a word $w$ its
+length is equal to $|w|$ and by definition $|\epsilon| = 0 $.
 
 As we know, there is a great number of human western languages, as portuguese, english,
 french, spanish etc, that roughly are formed by the same alphabet, but overall
 they are formed by different combination of words.  
 Similar things can happen with languages that define the \DESs, so we can define
 as in \cite{cassandras2009introduction}.
-
+\pagebreak
 \begin{definition}[Language]
 \label{def:language}~\\  
-A Language defined over an event set $\Sigma$ is a finite-length set formed from
-events in $\Sigma$
+A Language defined over an alphabet $\Sigma$ is formed from 
+finite-length words generated from the concatenation of the events in
+$\Sigma$ and $\epsilon$.
 \end{definition}
 
-Take for example an alphabet $\Sigma = \{\}$WAs
+Take for example an alphabet $\Sigma = \{a,b,g\}$, we can define different
+languages $L_1$~$=$~$\{\epsilon, a, abb\}$, $L_2$~$=$~$\{\text{all possible words of length 3
+starting with g}\}$, $L_3$~$=$~$\{\text{all possible words 
+starting with g}\}$.
+
+The
+cardinality of this sets are $|L_1|=3$, $|L_2|=9$, $|L_3|=\infty$
+
+As we can see from the same alphabet very different languages can be created,
+thus we can define a way to encapsulate all possible languages generated from
+the same alphabet $\Sigma$.
+Let us denote by $\Sigma^*$ the set containing all finite words composed with
+the elements of $\Sigma$ and $\epsilon$. The * operation is called the
+\textit{Kleene-closure}. Similarly to $L_3$ it is countably infinite since it
+contains arbitrarily long words. For instance the \textit{Kleene-closure} of the
+alphabet $\Sigma = \{a, b, c\}$ is:
+\begin{equation*}
+  \label{eq:kleeneExample}
+ \Sigma^* = \{\epsilon,a,b,c,aa,ab,ac,ba,bb,bc,ca,cb,cc,aaa,\dots\} 
+\end{equation*}
+
+\section{Representation of Languages}
+\label{sec:representationLanguages}
+
+
+
 \subsection{Automata}
 \label{sec:automata}
 \begin{definition}[Deterministic Automaton]
@@ -107,7 +149,94 @@ double circles.
 \end{figure}
 
 
-\subsubsection{DAOCT}
+\subsection{Petri Nets}
+\label{sec:petriNets}
+\subsubsection{Control Interpreted Petri Net}
+% pag 65 discrete continuos and hybrid \cite{david2005discrete} 
+
+
+}
+
+
+Adapted from \cite{david1989grafcet}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.8\textwidth]{cipnExample/scheme.tikz}
+  \caption[cipnexample]{Example of System to be controlled by the Petri Net}
+  \label{fig:cipnexamplescheme}
+\end{figure}
+
+\pagebreak
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.8\textwidth]{cipnExample/cipn.tikz}
+  \caption[cipnexample]{Example of Control Interpreted Petri Net to control
+    system in \autoref{fig:cipnexamplescheme}}
+  \label{fig:cipnexample}
+\end{figure}
+
+\input{../../figures/cipnExample/cipnPlaces}
+\input{../../figures/cipnExample/cipnTransitions}
+\usetikzlibrary{arrows,shapes,circuits.plc.ladder,external}
+
+\section{Implementation of Control Interpreted Petri Nets}
+\label{sec:implementPetriNets}
+\begin{figure}[H]
+  \centering
+  \includegraphics{cipnExample/cipnLadder.tikz}
+  \caption[cipnexample]{Example of Control Interpreted Petri Net converted to Ladder.}
+  \label{fig:cipnexampleLadder}
+\end{figure}
+
+
+\subsection{Petri Net divided in multiple PLCs}
+\label{sec:multiplePlcs}
+
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}[t]{0.5\textwidth}
+      \centering
+        \includetikzfigure[width=\textwidth]{communicationPlcPN/communicationPlcPN}
+        \caption{Petri Net on PLC 1.}
+        \label{fig:communicationPlcPN}
+    \end{subfigure}%
+    ~ 
+    \begin{subfigure}[t]{0.5\textwidth}
+        \centering
+        \includetikzfigure[width=\textwidth]{communicationPlcPN/communicationPlcPN1}
+  \caption{Petri Net on PLC 2.}
+  \label{fig:communicationPlcPN1}
+    \end{subfigure}
+    \caption{Example of Petri Net divided between 2 PLCs.}
+\end{figure}
+
+
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}[t]{0.45\textwidth}
+        \centering
+        \includegraphics{communicationPlcPN/communicationPlcPNLadder.tikz}
+        \caption{Ladder Logic on PLC 1.}
+        \label{fig:communicationPlcPN}
+    \end{subfigure}%
+\hfill
+    \begin{subfigure}[t]{0.45\textwidth}
+        \centering
+        \includegraphics{communicationPlcPN/communicationPlcPN1Ladder.tikz}
+  \caption{Ladder Logic on PLC 2.}
+  \label{fig:communicationPlcPN1}
+    \end{subfigure}
+    \caption{Example of Petri Net divided between 2 PLCs.}
+\end{figure}
+  
+
+\autoref{fig:communicationPlcPN}
+
+\section{Identification}
+\label{sec:identification}
+
+
+\subsection{DAOCT}
 
 \begin{definition}[Deterministic Automaton With Outputs and Conditional
   Transitions (DAOCT)]
@@ -184,90 +313,6 @@ Add $i$ to $\theta(x,\sigma_{i,j})$
   % \includetikzfigure[width=0.5\textwidth]{automata/example/example}
   \caption{Diagram representing the DAOCT from example number }
 \end{figure}
-
-\subsection{Petri Nets}
-\label{sec:petriNets}
-\subsubsection{Control Interpreted Petri Net}
-% pag 65 discrete continuos and hybrid \cite{david2005discrete} 
-
-\section{Model of automata}
-
-\section{Identification}
-  formas de identificação
-  algoritmos
-
-}
-\section{Petri Nets}
-\label{sec:petriNets}
-
-
-Adapted from \cite{david1989grafcet}
-\begin{figure}[H]
-  \centering
-  \includegraphics[width=0.8\textwidth]{cipnExample/scheme.tikz}
-  \caption[cipnexample]{Example of System to be controlled by the Petri Net}
-  \label{fig:cipnexamplescheme}
-\end{figure}
-
-\pagebreak
-\begin{figure}[H]
-  \centering
-  \includegraphics[width=0.8\textwidth]{cipnExample/cipn.tikz}
-  \caption[cipnexample]{Example of Control Interpreted Petri Net to control
-    system in \autoref{fig:cipnexamplescheme}}
-  \label{fig:cipnexample}
-\end{figure}
-
-\input{../../figures/cipnExample/cipnPlaces}
-\input{../../figures/cipnExample/cipnTransitions}
-\usetikzlibrary{arrows,shapes,circuits.plc.ladder,external}
-
-\begin{figure}[H]
-  \centering
-  \includegraphics{cipnExample/cipnLadder.tikz}
-  \caption[cipnexample]{Example of Control Interpreted Petri Net converted to Ladder.}
-  \label{fig:cipnexampleLadder}
-\end{figure}
-
-\begin{figure}[H]
-    \centering
-    \begin{subfigure}[t]{0.5\textwidth}
-      \centering
-        \includetikzfigure[width=\textwidth]{communicationPlcPN/communicationPlcPN}
-        \caption{Petri Net on PLC 1.}
-        \label{fig:communicationPlcPN}
-    \end{subfigure}%
-    ~ 
-    \begin{subfigure}[t]{0.5\textwidth}
-        \centering
-        \includetikzfigure[width=\textwidth]{communicationPlcPN/communicationPlcPN1}
-  \caption{Petri Net on PLC 2.}
-  \label{fig:communicationPlcPN1}
-    \end{subfigure}
-    \caption{Example of Petri Net divided between 2 PLCs.}
-\end{figure}
-
-
-\begin{figure}[H]
-    \centering
-    \begin{subfigure}[t]{0.45\textwidth}
-        \centering
-        \includegraphics{communicationPlcPN/communicationPlcPNLadder.tikz}
-        \caption{Ladder Logic on PLC 1.}
-        \label{fig:communicationPlcPN}
-    \end{subfigure}%
-\hfill
-    \begin{subfigure}[t]{0.45\textwidth}
-        \centering
-        \includegraphics{communicationPlcPN/communicationPlcPN1Ladder.tikz}
-  \caption{Ladder Logic on PLC 2.}
-  \label{fig:communicationPlcPN1}
-    \end{subfigure}
-    \caption{Example of Petri Net divided between 2 PLCs.}
-\end{figure}
-  
-
-\autoref{fig:communicationPlcPN}
 
 \usetikzlibrary{patterns}
 \begin{figure}[H]
