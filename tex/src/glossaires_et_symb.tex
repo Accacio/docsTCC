@@ -9,12 +9,12 @@
   } 
 
 \newcommand{\acrSing}[3]{\newacronym{#1}{#2}{#3}
-  \expandafter\newcommand\csname #1\endcsname{\gls{#1} }}
+  \expandafter\newcommand\csname #1\endcsname{\gls{#1}}}
 
 \newcommand{\acrPl}[5]{
   \newacronym[plural=#4,firstplural=#5 (#4)]{#1}{#2}{#3}
-  \expandafter\newcommand\csname #1\endcsname{\gls{#1} }
-  \expandafter\newcommand\csname #4\endcsname{\glspl{#1} }
+  \expandafter\newcommand\csname #1\endcsname{\gls{#1}}
+  \expandafter\newcommand\csname #4\endcsname{\glspl{#1}}
 }
 
 \renewcommand{\symbl}[3]{\newglossaryentry{#1}{name ={#2},	description ={#3}}

@@ -7,21 +7,21 @@
   \definecolor{fillcol}{rgb}{1.0,1.0,1.0};
   \pgfsetfillcolor{fillcol}
 \end{scope}
-  \node (y) at (807.06bp,137.69bp) [draw,ellipse] {y};
-  \node (x) at (311.06bp,137.69bp) [draw,circle, double] {x};
-  \coordinate (init) at (94.057bp,137.69bp);
-  \node (z) at (552.06bp,306.69bp) [draw,circle, double] {z};
+  \node (y) at (194.5bp,22.748bp) [draw,ellipse] {y};
+  \node (x) at (74.996bp,22.748bp) [draw,circle, double] {x};
+  \coordinate (init) at (22.748bp,22.748bp);
+  \node (z) at (133.0bp,50.748bp) [draw,circle, double] {z};
   \draw [-Latex] (z) to[loop above] node {b} (z);
-  \draw [-Latex] (init) ..controls (158.53bp,137.69bp) and (246.48bp,137.69bp)  .. (x);
-  \draw [-Latex] (z) ..controls (602.55bp,273.23bp) and (743.26bp,179.97bp)  .. (y);
+  \draw [-Latex] (init) ..controls (47.79bp,22.748bp) and (50.102bp,22.748bp)  .. (x);
+  \draw [-Latex] (z) ..controls (153.65bp,41.347bp) and (166.44bp,35.52bp)  .. (y);
   \definecolor{strokecol}{rgb}{0.0,0.0,0.0};
   \pgfsetstrokecolor{strokecol}
-  \draw (686.06bp,230.69bp) node {a,g};
+  \draw (165.5bp,49.748bp) node {a,g};
   \draw [-Latex] (y) to[loop above] node {b} (y);
   \draw [-Latex] (x) to[loop above] node {a} (x);
-  \draw [-Latex] (y) ..controls (739.24bp,137.69bp) and (421.97bp,137.69bp)  .. (x);
-  \draw (552.06bp,145.69bp) node {a};
-  \draw [-Latex] (x) ..controls (358.57bp,171.01bp) and (485.52bp,260.03bp)  .. (z);
-  \draw (431.06bp,235.69bp) node {g};
+  \draw [-Latex] (y) ..controls (171.42bp,20.176bp) and (143.89bp,17.722bp)  .. (120.5bp,18.748bp) .. controls (113.13bp,19.071bp) and (105.11bp,19.687bp)  .. (x);
+  \draw (133.0bp,26.748bp) node {a};
+  \draw [-Latex] (x) ..controls (93.843bp,31.846bp) and (103.66bp,36.587bp)  .. (z);
+  \draw (104.0bp,48.748bp) node {g};
 %
 \end{tikzpicture}
