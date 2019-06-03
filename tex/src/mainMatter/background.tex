@@ -142,6 +142,9 @@ countably infinite since it contains arbitrarily long words. For instance the
   \Sigma^* = \{\epsilon,a,b,c,aa,ab,ac,ba,bb,bc,ca,cb,cc,aaa,\dots\} 
 \end{equation*}
 
+There are a few operations with languages and alphabets that can be defined, but
+they are outside the scope of this work, they can be found on \cite{cassandras2009introduction}. 
+
 \section{Representation of Languages}
 \label{sec:representationLanguages}
 
@@ -170,33 +173,48 @@ from a state to other, this function is called \emph{transition function} of the
 denoted as $f : X \times \Sigma \rightarrow X$. For example if a system have an
 alphabet $\Sigma = \{a,b\}$ and 2 states, we can name the states $x$ and
 $y$, and then create the set $X = \{x,y\}$. Knowing that the system begins at state $x$
-and when event $a$ happens it changes to state $z$ we can create a function
+and that when event $a$ happens it changes to state $z$ we can create a function
 $f(x,a)$ and define it as $y$. Likewise if we know that when the system is at
 state $y$ and event $b$ happens, a function $f(y,b)$ can be defined as $a$.
-\todo{put diagram here 2 states x and y and explain state transition diagram    
-have its alphaso we can create a function that represents a diagram called \emph{state transition diagram} can represent
-graphically an automaton. 
-We can begin by an example
-}
+
+As a
+visual aid, a representation of these functions can be made through a diagram, called \emph{state transition diagram}. In this kind of diagram the states are
+represented by circles labeled with their names, and the functions as arcs
+labeled with the corresponding event,connecting two states, with arrows in one of their
+extremities indicating the transition from a state to other. The initial state
+of the automaton has an arc pointing towards it coming from no other state.
+\autoref{fig:functionDiagram} can represent the functions $f(x,a)$ and $f(y,b)$
+described in the last paragraph.
 \begin{figure}[H]
   \centering
   \includegraphics[width=0.3\textwidth]{automata/function/function.tikz}
   \caption{State Transition Diagram}
+  \label{fig:functionDiagram}
 \end{figure}
-Now, a more complex example, from \cite{cassandras2009introduction}:
+Now, for a more complex example, from \cite{cassandras2009introduction}:
 
 \begin{example}[Simple Automaton] ~\\
+  \label{ex:simpleAutomaton}
   Given $\Sigma = \{a,b,g\}$, $X = \{x,y,z\}$ and the following transition functions:
   \begin{align*}
    f(x,a)&=x&f(x,g)&=z\\
    f(y,a)&=x&f(y,b)&=y\\
    f(z,b)&=z&f(z,a)&=f(z,g)=y\\
  \end{align*}
-\todo{continuar} we can represent an automaton,
 \end{example}
+We can represent this automaton with the diagram on \autoref{fig:diagramExapleAutomata}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.5\textwidth]{automata/example/example.tikz}
+  % \includetikzfigure[width=0.5\textwidth]{automata/example/example}
+  \caption{Diagram representing the automaton from example \ref{ex:simpleAutomaton}}
+  \label{fig:diagramExapleAutomata}
+\end{figure}
+We can also mark states that have some special meaning, a final state for instance. In this work, as in \cite{cassandras2009introduction} they are
+  going to be identified by double circles.
 
-
-
+  
+  Now a deterministic Automaton can be defined:
 \begin{definition}[Deterministic Automaton]
   \label{def:DeterministicAutomaton}~\\
   A Deterministic Automaton, denoted by G, is a five-tuple
@@ -209,22 +227,16 @@ Now, a more complex example, from \cite{cassandras2009introduction}:
   \indent $X_m \subseteq X $ is the set of \textbf{marked states}
 
 \end{definition}
+
+
+Other kinds of automata and operations between automata exist but are not going
+to be used in this work, again \cite{cassandras2009introduction} present them.
+
 \todo{
-
-  As in \cite{cassandras2009introduction} the initial states on this thesis are
-  going to be identified by an arrow pointing towards them, and marked states by
-  double circles.
-
-\begin{figure}[H]
-  \centering
-  \includegraphics[width=0.5\textwidth]{automata/example/example.tikz}
-  % \includetikzfigure[width=0.5\textwidth]{automata/example/example}
-  \caption{Diagram representing the Automata from example number }
-\end{figure}
-
-
 \subsection{Petri Nets}
 \label{sec:petriNets}
+Another kind of representation of languages are Petri Nets, created by C.A.Petri in the early 1960's 
+
 \subsubsection{Control Interpreted Petri Net}
 % pag 65 discrete continuos and hybrid \cite{david2005discrete}
 
@@ -267,7 +279,7 @@ Adapted from \cite{david1989grafcet}
 \begin{figure}[H]
   \centering
   \begin{subfigure}[t]{0.5\textwidth}
-    \centering
+    \center
     \includetikzfigure[width=\textwidth]{communicationPlcPN/communicationPlcPN}
     \caption{Petri Net on PLC 1.}
     \label{fig:communicationPlcPN}
@@ -308,6 +320,34 @@ Adapted from \cite{david1989grafcet}
 \label{sec:identification}
 
 
+
+\begin{figure}[H]
+  \centering
+  \begin{tikzpicture}
+    % \node[anchor=south west,inner sep=0] (image) at (0,0) {
+    %   \includegraphics[trim={0 0 0 0},clip,width=8cm]{maquete/sensores/69511_3.jpg}
+    % };
+    % \draw[red,ultra thick,rounded corners] (0,0) rectangle (9.4,6.2);
+    % \begin{scope}[x={(image.south east)},y={(image.north west)}]
+        \draw[help lines,xstep=1,ystep=1] (0,0) grid (10,10);
+        \foreach \x in {0,1,...,10} { \node [anchor=north] at (\x,0) {\x}; }
+        \foreach \y in {0,1,...,10} { \node [anchor=east] at (0,\y) {\y}; }
+        \draw[ultra thick,rounded corners] (3.5,4) rectangle (6.5,6);
+        \draw (5,5) node {\textbf{Process}};
+        \draw (0,5) node {\textbf{Inputs}};
+        \draw[red] (5,5) node {\huge \textbf{TODO}};
+        \draw (10,5) node {\textbf{Outputs}};
+        \draw[->,>=stealth,red, very thick] (1,4.5) -- ++ (2.5,0);
+        \draw[->,>=stealth,red, very thick] (1,5)   -- ++ (2.5,0);
+        \draw[->,>=stealth,red, very thick] (1,5.5) -- ++ (2.5,0);
+        \draw[->,>=stealth,red, very thick] (6.5,4.5) -- ++ (2.5,0);
+        \draw[->,>=stealth,red, very thick] (6.5,5)   -- ++ (2.5,0);
+        \draw[->,>=stealth,red, very thick] (6.5,5.5) -- ++ (2.5,0);
+      % \end{scope}
+    \end{tikzpicture}
+  \caption{Input\slash Output Process model}
+    \label{fig:ioProcModel}
+\end{figure}
 \subsection{DAOCT}
 
 \begin{definition}[Deterministic Automaton With Outputs and Conditional
