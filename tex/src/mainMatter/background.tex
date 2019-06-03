@@ -6,140 +6,214 @@ discrete event systems to discrete control implementation on \PLCs, a more
 detailed explanation of each topic can be found on the respective cited work.
 \section{Systems}
 
-A System as defined by the Cambridge's dictionary is ``a set of connected
-things or devices that operate together''. As seen two basic properties
-of systems
-are :
+A System as defined by the Cambridge's dictionary is ``a set of connected things
+or devices that operate together''. As seen two basic properties of systems are
+:
 \begin{itemize}
 \item they are formed by grouping smaller parts
-\item the smaller parts when grouped work together to carry out a specific function
+\item the smaller parts when grouped work together to carry out a specific
+  function
 \end{itemize}
 
 As its definition is so abstract almost anything can be defined as a system,
 physical or not, beings can be defined as systems and even economic mechanisms
 can also be considered as systems.
 
-Usually systems are modeled by a Input/Output process. The system is fed with a
-set of inputs, it process the inputs resulting on the output set, as we can see in  \autoref{fig:ioProcModel}. 
+Usually systems are modelled by a Input\slash Output process. The system is fed with a
+set of inputs, it process the inputs resulting on the output set, as we can see
+in \autoref{fig:ioProcModel}.
 
-\figplaceholder{Input/ Output Process model}{ioProcModel}
+\begin{figure}[H]
+  \centering
+  \begin{tikzpicture}
+    % \node[anchor=south west,inner sep=0] (image) at (0,0) {
+    %   \includegraphics[trim={0 0 0 0},clip,width=8cm]{maquete/sensores/69511_3.jpg}
+    % };
+    % \draw[red,ultra thick,rounded corners] (0,0) rectangle (9.4,6.2);
+    % \begin{scope}[x={(image.south east)},y={(image.north west)}]
+        \draw[ultra thick,rounded corners] (3.5,4) rectangle (6.5,6);
+        \draw (5,5) node {\textbf{Process}};
+        \draw (0,5) node {\textbf{Inputs}};
+        \draw[->,>=stealth, very thick] (1,4.5) -- ++ (2.5,0);
+        \draw[->,>=stealth, very thick] (1,5)   -- ++ (2.5,0);
+        \draw[->,>=stealth, very thick] (1,5.5) -- ++ (2.5,0);
+        \draw (10,5) node {\textbf{Outputs}};
+        \draw[->,>=stealth, very thick] (6.5,4.5) -- ++ (2.5,0);
+        \draw[->,>=stealth, very thick] (6.5,5)   -- ++ (2.5,0);
+        \draw[->,>=stealth, very thick] (6.5,5.5) -- ++ (2.5,0);
+      % \end{scope}
+    \end{tikzpicture}
+  \caption{Input\slash Output Process model}
+    \label{fig:ioProcModel}
+\end{figure}
 
-In some systems, its inputs and outputs can't represent it's behavior, so
-the concept of state is created, and it represents the behavior of the system in
-a given instant $t$.
+
+In some systems, its inputs and outputs can't represent it's behaviour, so the
+concept of state is created, and it represents the behaviour of the system in a
+given instant $t$.
 
 The states can be continuous or discrete, and the systems which these states
 represent can be considered as Continuous Systems, Discrete Systems or even
 Hybrid Systems, which combine both kind of states.
 
-The systems modeled in this work are Discrete Systems, more details about other
-kinds of systems as well as examples and their analysis can be found on \cite{oppenheim1996signals}
-and \cite{kalouptsidis1997signal}.
+The systems modelled in this work are Discrete Systems, more details about other
+kinds of systems as well as examples and their analysis can be found on
+\cite{oppenheim1996signals} and \cite{kalouptsidis1997signal}.
 \section{Discrete Event Systems}
 \label{sec:discreteEventSystems}
 Discrete Systems can be driven by time and by events. It means, the states can
-be changed continuously by the time or some external event can interfere at a
-given instant. 
+be changed continuously by the time or instantaneously by some ensemble of events.
 
-In this thesis we are interest in the event-driven type. Some basic mathematical
-formalisms, nomenclature and representations can be
-developed to facilitate the understanding. Some of those will be presented in
-the following sections based on \cite{cassandras2009introduction,
-david2005discrete,david1989grafcet}.
+In this thesis we are interested in the event-driven type. Some basic mathematical
+formalisms, nomenclature and representations can be developed to facilitate the
+understanding. Some of those will be presented in the following sections based
+on \cite{cassandras2009introduction, david2005discrete,david1989grafcet}.
 \section{Languages}
 \label{sec:automata}
-A language can be defined by the Merriam-Webster's dictionary as ``a systematic means of communicating ideas or feelings by the use of conventionalized signs, sounds, gestures, or marks having understood meanings''
-And as it is defined by this dictionary entry we pursue to communicate the complete
-behavior of the \DES.
-Firstly we need to define a group, or
-set of marks to characterize the singular behavior of the system.
-So, we define a
-set $\Sigma$. This set contains all elements which combined can create a language.
-Again in analogy with linguistics, each one of these marks, the events can be
-compared to
-letters
-, provided that $\Sigma$ can be called an ``alphabet'', and the combination of
-its events ``words''. Words are also called ``strings '' or even ``traces''. Considering
-the use of the word ``string'' as the variable type used on several programming languages
-used in this work, we prefer the use of the vocables ``word'' and ``trace''. We can also define a mark to represent an empty word,
+A language can be defined by the Merriam-Webster's dictionary as ``a systematic
+means of communicating ideas or feelings by the use of conventionalized signs,
+sounds, gestures, or marks having understood meanings'' And as it is defined by
+this dictionary entry we pursue to communicate the complete behaviour of the
+\DES. Firstly we need to define a group, or set of marks to characterise the
+singular behaviour of the system. So, we define a set $\Sigma$. This set contains
+all elements which combined can create a language. Again in analogy with
+linguistics, each one of these marks, the events can be compared to letters ,
+provided that $\Sigma$ can be called an ``alphabet'', and the combination of its
+events ``words''. Words are also called ``strings '' or even ``traces''.
+Considering the use of the word ``string'' as the variable type used on several
+programming languages used in this work, we prefer the use of the vocables
+``word'' and ``trace''. We can also define a mark to represent an empty word,
 $\epsilon$, that is, a word that is not formed by any event.
 
 The combination process to form words is called concatenation. For instance,
 given two events $a$ and $b$, the words $ab$ and $ba$ can be created
 concatenating these two events and there is no particular reason to suppose that
-$ab$ is equal to $ba$, the same way the words ``ten'' and ``net''
-have different meanings in English. 
+$ab$ is equal to $ba$, the same way the words ``ten'' and ``net'' have different
+meanings in English.
 
 We can also concatenate two words, to create a different one, we can take the
 words $ab$ and $ba$ and create words like $abba$ and $baab$.
 
-As we extended the definition of concatenation to words,
-we define $\epsilon$, the empty word, as the identity element of concatenation:
-$w\epsilon = \epsilon w = w$ for any word $w$.
+As we extended the definition of concatenation to words, we define $\epsilon$,
+the empty word, as the identity element of concatenation: $w\epsilon = \epsilon
+w = w$ for any word $w$.
 
-Likewise, we can define the length of a word as the number of events contained by
-this word, we denote the length with two vertical bars, given a word $w$ its
+Likewise, we can define the length of a word as the number of events contained
+by this word, we denote the length with two vertical bars, given a word $w$ its
 length is equal to $|w|$ and by definition $|\epsilon| = 0 $.
 
-As we know, there is a great number of human western languages, as portuguese, english,
-french, spanish etc, that roughly are formed by the same alphabet, but overall
-they are formed by different combination of words.  
-Similar things can happen with languages that define the \DESs, so we can define
-as in \cite{cassandras2009introduction}.
-\pagebreak
+As we know, there is a great number of human western languages, as portuguese,
+english, french, spanish etc, that roughly are formed by the same alphabet, but
+overall they are formed by different combination of words. Similar things can
+happen with languages that define the \DESs, so we can define as in
+\cite{cassandras2009introduction}. \pagebreak
 \begin{definition}[Language]
-\label{def:language}~\\  
-A Language defined over an alphabet $\Sigma$ is formed from 
-finite-length words generated from the concatenation of the events in
-$\Sigma$ and $\epsilon$.
+  \label{def:language}~\\
+  A Language defined over an alphabet $\Sigma$ is formed from finite-length
+  words generated from the concatenation of the events in $\Sigma$ and
+  $\epsilon$.
 \end{definition}
 
 Take for example an alphabet $\Sigma = \{a,b,g\}$, we can define different
-languages $L_1$~$=$~$\{\epsilon, a, abb\}$, $L_2$~$=$~$\{\text{all possible words of length 3
-starting with g}\}$, $L_3$~$=$~$\{\text{all possible words 
-starting with g}\}$.
+languages
+\begin{subequations}
+  \begin{equation*}
+  L_1=\{\epsilon, a, abb\}
+  \end{equation*}
+  \begin{equation*}
+  L_2=\{\text{all possible words of length 3 starting with g}\}
+  \end{equation*}
+  \begin{equation*}
+  L_3=\{\text{all possible words starting with g}\}
+  \end{equation*}
+\end{subequations}
 
-The
-cardinality of this sets are $|L_1|=3$, $|L_2|=9$, $|L_3|=\infty$
+The cardinality of this sets are $|L_1|=3$, $|L_2|=9$, $|L_3|=\infty$
 
 As we can see from the same alphabet very different languages can be created,
 thus we can define a way to encapsulate all possible languages generated from
-the same alphabet $\Sigma$.
-Let us denote by $\Sigma^*$ the set containing all finite words composed with
-the elements of $\Sigma$ and $\epsilon$. The * operation is called the
-\textit{Kleene-closure}. Similarly to $L_3$ it is countably infinite since it
-contains arbitrarily long words. For instance the \textit{Kleene-closure} of the
-alphabet $\Sigma = \{a, b, c\}$ is:
+the same alphabet $\Sigma$. Let us denote by $\Sigma^*$ the set containing all
+finite words composed with the elements of $\Sigma$ and $\epsilon$. The *
+operation is called the \textit{Kleene-closure}. Similarly to $L_3$ it is
+countably infinite since it contains arbitrarily long words. For instance the
+\textit{Kleene-closure} of the alphabet $\Sigma = \{a, b, c\}$ is:
 \begin{equation*}
   \label{eq:kleeneExample}
- \Sigma^* = \{\epsilon,a,b,c,aa,ab,ac,ba,bb,bc,ca,cb,cc,aaa,\dots\} 
+  \Sigma^* = \{\epsilon,a,b,c,aa,ab,ac,ba,bb,bc,ca,cb,cc,aaa,\dots\} 
 \end{equation*}
 
 \section{Representation of Languages}
 \label{sec:representationLanguages}
 
+Although languages can describe the behaviour of \DESs, there are cases, as the
+one shown
+by the language $L_3$ in the last section, in which the language is enormous, in
+that case countably infinite, what makes them not so simple to communicate the
+behaviour of the system. For this purpose, there are some other formalisms that
+aid the comprehension, since they can be a more compact way of expressing the
+system's behaviour or accompanied by diagrams.
 
+In the following subsections two of the most known representations will be
+presented: Automata and Petri Nets.
 
+\pagebreak
 \subsection{Automata}
 \label{sec:automata}
-\begin{definition}[Deterministic Automaton]
-\label{def:DeterministicAutomaton}~\\  
-A Deterministic Automaton, denoted by G, is a five-tuple
-\[ G = (X,\Sigma,f, x_0,X_m)\]
-where:
+One of the most known representation of languages are automata. The notion of
+automaton is basically the definition of \DESs, as we saw in the
+\autoref{sec:discreteEventSystems}: a set of events can change the state of the
+system. If we know all the events composing the language of the
+system and its states, we can have its alphabet $\Sigma$ and we can create a set $X$ composed
+by all states.
+From $\Sigma$ and $X$ we can derive a function that represents the transition
+from a state to other, this function is called \emph{transition function} of the automaton
+denoted as $f : X \times \Sigma \rightarrow X$. For example if a system have an
+alphabet $\Sigma = \{a,b\}$ and 2 states, we can name the states $x$ and
+$y$, and then create the set $X = \{x,y\}$. Knowing that the system begins at state $x$
+and when event $a$ happens it changes to state $z$ we can create a function
+$f(x,a)$ and define it as $y$. Likewise if we know that when the system is at
+state $y$ and event $b$ happens, a function $f(y,b)$ can be defined as $a$.
+\todo{put diagram here 2 states x and y and explain state transition diagram    
+have its alphaso we can create a function that represents a diagram called \emph{state transition diagram} can represent
+graphically an automaton. 
+We can begin by an example
+}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.3\textwidth]{automata/function/function.tikz}
+  \caption{State Transition Diagram}
+\end{figure}
+Now, a more complex example, from \cite{cassandras2009introduction}:
 
-\indent X is the set of \textbf{states} \\
-\indent $\Sigma$ is the finite set of \textbf{events} associated with G\\
-\indent f: X $\times \Sigma \rightarrow X$ is the \textbf{transition function}  \\ 
-\indent $x_0$ is the \textbf{initial state} \\
-\indent $X_m \subseteq X $ is the set of \textbf{marked states}
+\begin{example}[Simple Automaton] ~\\
+  Given $\Sigma = \{a,b,g\}$, $X = \{x,y,z\}$ and the following transition functions:
+  \begin{align*}
+   f(x,a)&=x&f(x,g)&=z\\
+   f(y,a)&=x&f(y,b)&=y\\
+   f(z,b)&=z&f(z,a)&=f(z,g)=y\\
+ \end{align*}
+\todo{continuar} we can represent an automaton,
+\end{example}
+
+
+
+\begin{definition}[Deterministic Automaton]
+  \label{def:DeterministicAutomaton}~\\
+  A Deterministic Automaton, denoted by G, is a five-tuple
+  \[ G = (X,\Sigma,f, x_0,X_m)\] where:
+
+  \indent X is the set of \textbf{states} \\
+  \indent $\Sigma$ is the finite set of \textbf{events} associated with G\\
+  \indent f: X $\times \Sigma \rightarrow X$ is the \textbf{transition function}  \\
+  \indent $x_0$ is the \textbf{initial state} \\
+  \indent $X_m \subseteq X $ is the set of \textbf{marked states}
 
 \end{definition}
 \todo{
 
-As in \cite{cassandras2009introduction} the initial states on this thesis are
-going to be identified by an arrow pointing towards them, and marked states by
-double circles.
+  As in \cite{cassandras2009introduction} the initial states on this thesis are
+  going to be identified by an arrow pointing towards them, and marked states by
+  double circles.
 
 \begin{figure}[H]
   \centering
@@ -152,7 +226,7 @@ double circles.
 \subsection{Petri Nets}
 \label{sec:petriNets}
 \subsubsection{Control Interpreted Petri Net}
-% pag 65 discrete continuos and hybrid \cite{david2005discrete} 
+% pag 65 discrete continuos and hybrid \cite{david2005discrete}
 
 
 }
@@ -160,16 +234,14 @@ double circles.
 
 Adapted from \cite{david1989grafcet}
 \begin{figure}[H]
-  \centering
-  \includegraphics[width=0.8\textwidth]{cipnExample/scheme.tikz}
+  \centering \includegraphics[width=0.8\textwidth]{cipnExample/scheme.tikz}
   \caption[cipnexample]{Example of System to be controlled by the Petri Net}
   \label{fig:cipnexamplescheme}
 \end{figure}
 
 \pagebreak
 \begin{figure}[H]
-  \centering
-  \includegraphics[width=0.8\textwidth]{cipnExample/cipn.tikz}
+  \centering \includegraphics[width=0.8\textwidth]{cipnExample/cipn.tikz}
   \caption[cipnexample]{Example of Control Interpreted Petri Net to control
     system in \autoref{fig:cipnexamplescheme}}
   \label{fig:cipnexample}
@@ -182,9 +254,9 @@ Adapted from \cite{david1989grafcet}
 \section{Implementation of Control Interpreted Petri Nets}
 \label{sec:implementPetriNets}
 \begin{figure}[H]
-  \centering
-  \includegraphics{cipnExample/cipnLadder.tikz}
-  \caption[cipnexample]{Example of Control Interpreted Petri Net converted to Ladder.}
+  \centering \includegraphics{cipnExample/cipnLadder.tikz}
+  \caption[cipnexample]{Example of Control Interpreted Petri Net converted to
+    Ladder.}
   \label{fig:cipnexampleLadder}
 \end{figure}
 
@@ -193,40 +265,40 @@ Adapted from \cite{david1989grafcet}
 \label{sec:multiplePlcs}
 
 \begin{figure}[H]
+  \centering
+  \begin{subfigure}[t]{0.5\textwidth}
     \centering
-    \begin{subfigure}[t]{0.5\textwidth}
-      \centering
-        \includetikzfigure[width=\textwidth]{communicationPlcPN/communicationPlcPN}
-        \caption{Petri Net on PLC 1.}
-        \label{fig:communicationPlcPN}
-    \end{subfigure}%
-    ~ 
-    \begin{subfigure}[t]{0.5\textwidth}
-        \centering
-        \includetikzfigure[width=\textwidth]{communicationPlcPN/communicationPlcPN1}
-  \caption{Petri Net on PLC 2.}
-  \label{fig:communicationPlcPN1}
-    \end{subfigure}
-    \caption{Example of Petri Net divided between 2 PLCs.}
+    \includetikzfigure[width=\textwidth]{communicationPlcPN/communicationPlcPN}
+    \caption{Petri Net on PLC 1.}
+    \label{fig:communicationPlcPN}
+  \end{subfigure}%
+  ~
+  \begin{subfigure}[t]{0.5\textwidth}
+    \centering
+    \includetikzfigure[width=\textwidth]{communicationPlcPN/communicationPlcPN1}
+    \caption{Petri Net on PLC 2.}
+    \label{fig:communicationPlcPN1}
+  \end{subfigure}
+  \caption{Example of Petri Net divided between 2 PLCs.}
 \end{figure}
 
 
 \begin{figure}[H]
+  \centering
+  \begin{subfigure}[t]{0.45\textwidth}
     \centering
-    \begin{subfigure}[t]{0.45\textwidth}
-        \centering
-        \includegraphics{communicationPlcPN/communicationPlcPNLadder.tikz}
-        \caption{Ladder Logic on PLC 1.}
-        \label{fig:communicationPlcPN}
-    \end{subfigure}%
-\hfill
-    \begin{subfigure}[t]{0.45\textwidth}
-        \centering
-        \includegraphics{communicationPlcPN/communicationPlcPN1Ladder.tikz}
-  \caption{Ladder Logic on PLC 2.}
-  \label{fig:communicationPlcPN1}
-    \end{subfigure}
-    \caption{Example of Petri Net divided between 2 PLCs.}
+    \includegraphics{communicationPlcPN/communicationPlcPNLadder.tikz}
+    \caption{Ladder Logic on PLC 1.}
+    \label{fig:communicationPlcPN}
+  \end{subfigure}%
+  \hfill
+  \begin{subfigure}[t]{0.45\textwidth}
+    \centering
+    \includegraphics{communicationPlcPN/communicationPlcPN1Ladder.tikz}
+    \caption{Ladder Logic on PLC 2.}
+    \label{fig:communicationPlcPN1}
+  \end{subfigure}
+  \caption{Example of Petri Net divided between 2 PLCs.}
 \end{figure}
   
 
@@ -240,84 +312,65 @@ Adapted from \cite{david1989grafcet}
 
 \begin{definition}[Deterministic Automaton With Outputs and Conditional
   Transitions (DAOCT)]
-\label{def:daoct}~\\  
-A Deterministic Automaton, denoted by DAOCT, is a nine-tuple
-\[ DAOCT = (X,\Sigma,f,\lambda,R,\theta, x_0,X_f)\]
-where:
+  \label{def:daoct}~\\
+  A Deterministic Automaton, denoted by DAOCT, is a nine-tuple
+  \[ DAOCT = (X,\Sigma,f,\lambda,R,\theta, x_0,X_f)\] where:
 
-\indent X is the set of \textbf{states} \\
-\indent $\Sigma$ is the finite set of \textbf{events}\\
-\indent $\Omega \subset \mathbb{N}_1^{m_i+m_o} $ is the set of \textbf{I/O vectors}\\
-\indent f: X $\times \Sigma^\star \rightarrow X$ is the \textbf{deterministic transition function}  \\ 
-\indent $\lambda : X \rightarrow \Omega$ is the \textbf{state output function} \\
-\indent $R = {1,2,\dots,r}$ is the set of \textbf{path indices} \\
-\indent $\theta : X \times \Sigma \rightarrow 2^R$ is the \textbf{path
-  estimation function} \\
-\indent $x_0$ is the \textbf{initial state} \\
-\indent $X_f \subseteq X $ is the set of \textbf{final states}
+  \indent X is the set of \textbf{states} \\
+  \indent $\Sigma$ is the finite set of \textbf{events}\\
+  \indent $\Omega \subset \mathbb{N}_1^{m_i+m_o} $ is the set of \textbf{I/O vectors}\\
+  \indent f: X $\times \Sigma^\star \rightarrow X$ is the \textbf{deterministic transition function}  \\
+  \indent $\lambda : X \rightarrow \Omega$ is the \textbf{state output function} \\
+  \indent $R = {1,2,\dots,r}$ is the set of \textbf{path indices} \\
+  \indent $\theta : X \times \Sigma \rightarrow 2^R$ is the \textbf{path
+    estimation function} \\
+  \indent $x_0$ is the \textbf{initial state} \\
+  \indent $X_f \subseteq X $ is the set of \textbf{final states}
 \end{definition}
 
 Identification algorithm adapted from \cite{moreira2018enhanced}
 \begin{algorithm2e}
   \caption{Identification Algorithm}\label{alg:identification}
-\KwIn
-{%
-Modified observed paths $p_i^k$, for i= 1,\dots,$r$
-}
-\KwOut
-{%
-DAOCT = $($\XSet,\SigmaSet,\OmegaSet,\ffunction,\lambdafunction,\RSet,\thetafunction,\xZero,\XfSet$)$
-}
-\BlankLine
-Create an initial state $x_0$, and define $\lambda(x_0) = \tilde{\lambda}(x_0) =
-y_{1,1}$
+  \KwIn {%
+    Modified observed paths $p_i^k$, for i= 1,\dots,$r$ } \KwOut {%
+    DAOCT =
+    $($\XSet,\SigmaSet,\OmegaSet,\ffunction,\lambdafunction,\RSet,\thetafunction,\xZero,\XfSet$)$
+  } \BlankLine Create an initial state $x_0$, and define $\lambda(x_0) =
+  \tilde{\lambda}(x_0) = y_{1,1}$
 
-$X = \{ x_0\}, X_f = \emptyset, R = \emptyset$
+  $X = \{ x_0\}, X_f = \emptyset, R = \emptyset$
 
-\For{$i = 1$ \KwTo $r$}
-{
-  $R = R \cup \{ i \}$
+  \For{$i = 1$ \KwTo $r$} { $R = R \cup \{ i \}$
   
-\For{$j = 1$ \KwTo $l_i - 1$}
-{
-  Find the State $x \in X $ such that $\tilde{\lambda}(x) = y_{i,j+1}$
+    \For{$j = 1$ \KwTo $l_i - 1$} { Find the State $x \in X $ such that
+      $\tilde{\lambda}(x) = y_{i,j+1}$
 
-  \eIf{$\tilde{\lambda}(s) \neq y_{i,j+1}$ for all $ s \in X$}
-  { Create state $x^\prime$ and define $\tilde{\lambda}(x^\prime) = y_{i,j+1}$
+      \eIf{$\tilde{\lambda}(s) \neq y_{i,j+1}$ for all $ s \in X$} { Create
+        state $x^\prime$ and define $\tilde{\lambda}(x^\prime) = y_{i,j+1}$
 
-$X = X \cup \{ x^\prime\}$
+        $X = X \cup \{ x^\prime\}$
 
-$\lambda(x^\prime) = \tilde{\lambda_l}(x^\prime)$
+        $\lambda(x^\prime) = \tilde{\lambda_l}(x^\prime)$
 
-}
-{
-  Find $x^\prime \in X$ such that $\tilde{\lambda}(x^\prime) = y_{i,j+1}$
-}
-$f(x,\sigma_{i,j}) = x^\prime$
+      } { Find $x^\prime \in X$ such that $\tilde{\lambda}(x^\prime) =
+        y_{i,j+1}$ } $f(x,\sigma_{i,j}) = x^\prime$
 
-Add $i$ to $\theta(x,\sigma_{i,j})$
+      Add $i$ to $\theta(x,\sigma_{i,j})$
 
-\If{$j = l_i - 1$}
-{
-  $X_f = X_f \cup \{x^\prime\}$
-}
-}
-}
+      \If{$j = l_i - 1$} { $X_f = X_f \cup \{x^\prime\}$ } } }
 \end{algorithm2e}
 
 
 
 \begin{figure}[H]
-  \centering
-  \includegraphics[width=\textwidth]{automata/daoct/example.tikz}
+  \centering \includegraphics[width=\textwidth]{automata/daoct/example.tikz}
   % \includetikzfigure[width=0.5\textwidth]{automata/example/example}
   \caption{Diagram representing the DAOCT from example number }
 \end{figure}
 
 \usetikzlibrary{patterns}
 \begin{figure}[H]
-  \centering
-  \includegraphics[width=0.5\textwidth]{vennDiagramLanguages.tikz}
+  \centering \includegraphics[width=0.5\textwidth]{vennDiagramLanguages.tikz}
   \caption{Venn diagram showing relations between $L_{Orig}$, $L_{OrigNI}$,
     $L_{Obs}$, $L_{Exc}$ and $L_{Iden}$}
 \end{figure}
