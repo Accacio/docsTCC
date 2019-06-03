@@ -1,27 +1,53 @@
 
 \chapter{Introduction}
 In a world where the majority of the population lives in industrial societies,
-and machines take part on the bulk of the production of almost all goods: from
+and machines take part on the bulk of the production of almost all goods, from
 food to cosmetics and drugs, from toothbrushes to automobiles, 
-a well-paced throughput it is crucial, and any non expected halt on the
+a well-paced throughput is crucial, and any non expected halt on the
 production or change can be disastrous, producing sometimes multimillionaire debts,
 provoking a snowball effect, affecting the economy and consequentially the welfare of the society.
 
 A diverse number of causes of the halt or change of the throughput can be
 accounted for. Some are as simple as a power outage, or a component malfunction,
 but nowadays there are other players. As the industry \textsl{walks}, or even
-better \textsl{runs}, towards the so called Fourth Industrial Revolution, the
-industry urges the use of \textit{connected sensors}, since the Internet of
-Things is the fashion these days, but the concerns about cyber security are now
-and again neglected. So hackers can infiltrate the system, and depending of the
-infrastructure halt or change somehow the production throughput.
+better \textsl{runs}, towards the so called Fourth Industrial Revolution, 
+it urges the use of \textit{connected sensors}, and since the Internet of
+Things is the fashion these days, the chances of a hacker attack increases. All
+these kinds of failures, intended or not can interfere somehow with the
+production throughput. There are two ways to attempt the reduction of the interference these agents can
+cause: prevention (before the interference) and remedy (After the interference).
 
-Cyber security is not the theme of this thesis but its theme is another
-important concern to a well-paced throughput, fault detection.
+The most common means of prevention in the industry are through preventive
+maintenance (for the physical components) and cyber security (for the software
+components).
+
+Once the interference is caused, in order to remedy and reestablish
+the operation some steps are necessary. Detect the fault, determine the faulty
+part, and finally intervene.
+The crucial part of fixing something is to know how it should
+work\footnote{``To determine why something has stopped working, it's useful to
+  know how it was supposed to work in the first place'' \cite{davis1988model}},
+because when we know how it should work, we can distinguish when it is and when
+it is not.
+
+The focus of this bachelor thesis is system identification aimed for fault
+detection and diagnosis.
+% A diverse number of causes of the halt or change of the throughput can be
+% accounted for. Some are as simple as a power outage, or a component malfunction,
+% but nowadays there are other players. As the industry \textsl{walks}, or even
+% better \textsl{runs}, towards the so called Fourth Industrial Revolution, 
+% it urges the use of \textit{connected sensors}, and since the Internet of
+% Things is the fashion these days, but the concerns about cyber security are now
+% and again neglected. So hackers can infiltrate the system, and depending of the
+% infrastructure, halt or change somehow the production throughput.
+
+
+% Cyber security is not the theme of this bachelor thesis but its theme is another
+% important concern to a well-paced throughput, fault detection.
 
 As great part of the manufacture facilities uses discrete sensors and actuators,
 as conveyor belts, pneumatic cylinders, limit switches and proximity sensors, it
-is very common to see \PLCs controlling those plants. And when a system is ruled
+is very common to see \PLCs{} controlling those plants. And when a system is ruled
 by discrete events and also its states are discrete it can be modeled by
 Discrete Event Systems.
 
@@ -39,7 +65,7 @@ used to detect faults on the system.
 The objective is to apply the identification algorithm shown in
 \cite{moreira2018enhanced} in a Didactic Manufacture System with a strong
 parallel behavior and a moderate number of inputs and outputs ( over 40) and
-show that this algorithm can be used dividing the parallel subsystems, so we can
+show that this algorithm can be used on the parallel subsystems, so we can
 achieve scalability.
 
 
@@ -57,11 +83,11 @@ ways of modeling them (Automata and Petri Nets), how to use Petri Nets to design
 a controlled system and how to translate this control to Ladder Logic (as
 presented in \cite{moreira2013bridging}), in order to be programmed on a PLC,
 then finally we show the identification algorithm and the identified model
-\DAOCT (as presented in \cite{moreira2018enhanced}).
+\DAOCT{} (as presented in \cite{moreira2018enhanced}).
 
 \paragraph{\nameref{chap:system}} ~\\
 In \autoref{chap:system} we present the system that is going to be identified,
-the devices that composes it, its sensors and actuators, the addresses and tags
+the devices that compose it, its sensors and actuators, the addresses and tags
 used for the programming and some reference points to simplify the understanding
 of the described movements on the following sections and chapters.
 
