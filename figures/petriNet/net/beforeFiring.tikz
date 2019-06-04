@@ -1,0 +1,12 @@
+\begin{tikzpicture}[>=latex',line join=bevel,]
+%%
+\node (p0m3) at (27.0bp,18.0bp) [draw,ellipse,place, tokens=3, label=above:, label=left:$p_{0}$,rotate=90] {};
+  \node (p1) at (185.0bp,18.0bp) [draw,ellipse,place, label=above:, label=left:$p_{1}$,rotate=90] {};
+  \node (t0) at (114.0bp,18.0bp) [draw,ellipse,transition, label=above:, label=left:$t_{0}$,rotate=90] {};
+  \draw [-Latex] (t0) ..controls (143.39bp,18.0bp) and (145.57bp,18.0bp)  .. (p1);
+  \draw [-Latex] (p0m3) ..controls (61.252bp,18.0bp) and (69.159bp,18.0bp)  .. (t0);
+  \definecolor{strokecol}{rgb}{0.0,0.0,0.0};
+  \pgfsetstrokecolor{strokecol}
+  \draw (70.5bp,27.0bp) node {2};
+%
+\end{tikzpicture}

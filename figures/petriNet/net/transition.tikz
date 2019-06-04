@@ -1,0 +1,5 @@
+\begin{tikzpicture}[>=latex',line join=bevel,]
+%%
+\node (t1) at (27.0bp,18.0bp) [draw,ellipse,transition, label=above:, label=left:$t_{1}$,rotate=90] {};
+%
+\end{tikzpicture}

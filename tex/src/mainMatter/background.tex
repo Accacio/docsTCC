@@ -232,19 +232,131 @@ We can also mark states that have some special meaning, a final state for instan
 Other kinds of automata and operations between automata exist but are not going
 to be used in this work, again \cite{cassandras2009introduction} present them.
 
-\todo{
 \subsection{Petri Nets}
 \label{sec:petriNets}
-Another kind of representation of languages are Petri Nets, created by C.A.Petri in the early 1960's 
+Another kind of representation of languages are Petri Nets, created by C.A.Petri
+in the early 1960's. Differently from the automata representation that are
+basically formed from states, Petri nets are bipartite graphs, formed by nodes
+called \emph{places} and \emph{transitions}. Similarly, arcs are used to connect
+the nodes and have arrowheads to identify the direction,
+but differently, all arcs must have exclusively one node at each end, that means
+no arc is used to identify the initial state of a petri net. As said a petri net is
+bipartite graph, that means places can only connect to transitions and vice
+versa. In this work as in \cite{david2005discrete} places will be represented by
+circles and transitions by bars. 
+\begin{figure}[H]
+  \centering
+  \begin{subfigure}[t]{0.45\textwidth}
+  \centering
+  \includegraphics{petriNet/net/place.tikz}
+  % \includetikzfigure[width=0.5\textwidth]{automata/example/example}
+  \caption{A place.}
+\end{subfigure}
+~
+\begin{subfigure}[t]{0.5\textwidth}
+  \centering
+  \includegraphics{petriNet/net/transition.tikz}
+  % \includetikzfigure[width=0.5\textwidth]{automata/example/example}
+  \caption{A transition}
+\end{subfigure}
+  \caption{Component nodes of a petri net.}  
+\end{figure}
 
-\subsubsection{Control Interpreted Petri Net}
-% pag 65 discrete continuos and hybrid \cite{david2005discrete}
+The same way a function was created to define the transitions of states in an
+automaton, two functions will be created to define the connections between places
+and transitions. First we need to define the sets of places and transitions. $P$
+is the set of places and $T$ the set of transitions. With this two sets we can
+then define these functions. The first one represents the arcs
+from places to transitions, and is denoted as $Pre: P \times T \rightarrow
+\{0, 1\}$, the second one the arcs that connects transitions to places, denoted
+as $Post: P \times T \rightarrow \{0,1\}$. The value $1$ is attributed to arcs
+that exist and $0$ to the nonexistent ones.
 
 
-}
+\begin{example}[Simple Petri Net structure] ~\\
+  \label{ex:simplePetriNetStructure}
+  Given $P = \{p_0,p_1\}$, $T = \{t_0,t_1,t_2\}$ and the following transition
+  functions:
+  \begin{align*}
+   Pre(p_0,t_0)& = 0  &  Post(p_0,t_1) &= 0 & Pre(p_1,t_0) &= 0 &  Post(p_1,t_1) &= 1 \\
+   Post(p_0,t_0) &= 0  &    Pre(p_0,t_2) &= 0   & Post(p_1,t_0) &= 0   & Pre(p_1,t_2) &= 0\\
+   Pre(p_0,t_1) &= 0    &  Post(p_0,t_2) &= 0  &  Pre(p_1,t_1) &= 0     &Post(p_1,t_2) &= 0\\
+  \end{align*}
+  We can represent this petri net structure with the diagram on \autoref{fig:simplePetriNetStructure}
+\end{example}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.5\textwidth]{petriNet/prepost/prepost.tikz}
+  % \includetikzfigure[width=0.5\textwidth]{automata/example/example}
+  \caption{Diagram representing the petri net structure from example \ref{ex:simplePetriNetStructure}}
+\label{fig:simplePetriNetStructure}
+\end{figure}
+A drawback from the definition of this functions, is that is not possible to
+have more than an arc linking two nodes, so we can generalize than to any natural number:
+% \begin{equation}
+  % \label{eq:generalizedPrePost}
+  \begin{align*}
+    Pre:  P \times T \rightarrow \mathbb{N}_0\\
+    Post: P \times T \rightarrow \mathbb{N}_0
+  \end{align*}
+with this new definition we can change the definition of $Post(p_1,t_1)$ from
+$0$ to $2$ resulting on the following petri net structure.
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.5\textwidth]{petriNet/prepost/prepost2.tikz}
+  % \includetikzfigure[width=0.5\textwidth]{automata/example/example}
+  \caption{Diagram representing the petri net structure from example
+    \ref{ex:simplePetriNetStructure}, but with $Post(p_1,t_1)=2$}
+\label{fig:simplePetriNetStructureNatural}
+\end{figure}
+
+\todo{}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.5\textwidth]{petriNet/prepost/prepost3.tikz}
+  % \includetikzfigure[width=0.5\textwidth]{automata/example/example}
+  \caption{Diagram representing the petri net structure from example
+    \ref{ex:simplePetriNetStructure}, but with $Post(p_1,t_1)=2$}
+\label{fig:simplePetriNetStructureGeneralized}
+\end{figure}
+
+% \end{equation}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{petriNet/net/unmarked.tikz}
+  % \includetikzfigure[width=0.5\textwidth]{automata/example/example}
+  \caption{Unmarked}
+\end{figure}
 
 
-Adapted from \cite{david1989grafcet}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{petriNet/net/marked.tikz}
+  % \includetikzfigure[width=0.5\textwidth]{automata/example/example}
+  \caption{Marked}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+ \begin{subfigure}[t]{0.45\textwidth}
+  \centering
+  \includegraphics{petriNet/net/beforeFiring.tikz}
+  % \includetikzfigure[width=0.5\textwidth]{automata/example/example}
+  \caption{Before firing.}
+\end{subfigure}
+~
+\begin{subfigure}[t]{0.45\textwidth}
+  \centering
+  \includegraphics{petriNet/net/afterFiring.tikz}
+  % \includetikzfigure[width=0.5\textwidth]{automata/example/example}
+  \caption{After firing.}
+\end{subfigure}
+ 
+\end{figure}
+
+
 \begin{figure}[H]
   \centering \includegraphics[width=0.8\textwidth]{cipnExample/scheme.tikz}
   \caption[cipnexample]{Example of System to be controlled by the Petri Net}

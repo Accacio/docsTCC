@@ -1,0 +1,33 @@
+digraph a {
+rankdir=LR;
+# splines = ortho
+ratio=fill
+graph [pad="0.01", nodesep="0.1", ranksep="0.01"];
+node [shape=circle];
+margin=0;
+{rank =same;}
+# size="11.7,8.3!";
+init [style=invis]
+init -> x0
+x5 [shape=doublecircle];
+x8 [shape=doublecircle];
+x13 [shape=doublecircle];
+x10 [shape=doublecircle];
+
+x0 -> x1 [texlbl="\scriptsize ⬆2,\{1\}"]
+x1 -> x2 [texlbl="\scriptsize ⬇1⬆3,\{1\}"]
+x2 -> x3 [texlbl="\scriptsize ⬇2⬇3,\{1\}"]
+x3 -> x4 [texlbl="\scriptsize ⬆3,\{1\}"]
+x4 -> x5 [texlbl="\scriptsize ⬆1⬇3,\{1\}"]
+x0 -> x6 [texlbl="\scriptsize ⬇1,\{2,4\}"]
+x6 -> x7 [texlbl="\scriptsize ⬆1⬆2,\{2,4\}"]
+x7 -> x2 [texlbl="\scriptsize ⬇1⬆3,\{2,4\}"]
+x3 -> x8 [texlbl="\scriptsize ⬆1,\{2\}"]
+x0 -> x9 [texlbl="\scriptsize ⬇1⬆2⬆3,\{3\}"]
+x9 -> x10 [texlbl="\scriptsize ⬆1⬇2⬇3,\{3\}"]
+x2 -> x11 [texlbl="\scriptsize ⬆1,\{4\}"]
+x11 -> x12 [texlbl="\scriptsize ⬇1⬇2⬇3,\{4\}"]
+x12 -> x4 [texlbl="\scriptsize ⬆3,\{4\}"]
+x4 -> x13 [texlbl="\scriptsize ⬆1⬆2⬇3,\{4\}"]
+
+}
