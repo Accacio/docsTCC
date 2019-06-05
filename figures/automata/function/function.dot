@@ -1,0 +1,16 @@
+digraph a {
+rankdir=LR;
+# splines = ortho
+ratio=fill
+graph [pad="0.01", nodesep="0.1", ranksep="0.01"];
+node [shape=circle];
+margin=0;
+{rank =same;}
+# size="11.7,8.3!";
+size="4,3!";
+init [style=invis]
+init -> x
+
+x -> y [texlbl="a"] 
+y -> x [texlbl="b"]
+}

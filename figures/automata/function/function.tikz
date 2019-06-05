@@ -1,0 +1,21 @@
+\begin{tikzpicture}[>=latex',line join=bevel,]
+%%
+\begin{scope}
+  \pgfsetstrokecolor{black}
+  \definecolor{strokecol}{rgb}{1.0,1.0,1.0};
+  \pgfsetstrokecolor{strokecol}
+  \definecolor{fillcol}{rgb}{1.0,1.0,1.0};
+  \pgfsetfillcolor{fillcol}
+\end{scope}
+  \node (y) at (269.11bp,109.19bp) [draw,ellipse] {y};
+  \node (x) at (157.11bp,109.19bp) [draw,ellipse] {x};
+  \coordinate (init) at (51.107bp,109.19bp);
+  \draw [-Latex] (y) ..controls (248.94bp,97.392bp) and (224.75bp,86.037bp)  .. (203.61bp,90.19bp) .. controls (193.15bp,92.244bp) and (182.08bp,96.666bp)  .. (x);
+  \definecolor{strokecol}{rgb}{0.0,0.0,0.0};
+  \pgfsetstrokecolor{strokecol}
+  \draw (212.11bp,99.19bp) node {b};
+  \draw [-Latex] (x) ..controls (182.73bp,109.19bp) and (224.93bp,109.19bp)  .. (y);
+  \draw (212.11bp,117.19bp) node {a};
+  \draw [-Latex] (init) ..controls (93.488bp,109.19bp) and (120.85bp,109.19bp)  .. (x);
+%
+\end{tikzpicture}

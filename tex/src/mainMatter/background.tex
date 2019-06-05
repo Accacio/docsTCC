@@ -234,13 +234,23 @@ to be used in this work, again \cite{cassandras2009introduction} present them.
 
 \subsection{Petri Nets}
 \label{sec:petriNets}
-Another kind of representation of languages are Petri Nets, created by C.A.Petri
+Another kind of representation of languages are Petri Nets, whose concept was created by C.A.Petri
 in the early 1960's. Differently from the automata representation that are
 basically formed from states, Petri nets are bipartite graphs, formed by nodes
-called \emph{places} and \emph{transitions}. Similarly, arcs are used to connect
+called \emph{places} and \emph{transitions}.
+Transitions represent the events that drive the system, and places represent the
+conditions for these events to happen. The mechanism to represent the fulfilment
+of the conditions
+is named marking. A petri net is built over three basic concepts, the petri net
+graph\slash structure, its marking and firing transitions.
+The next subsections will be based on \cite{david2005discrete} and \cite{cassandras2009introduction}.
+
+\subsubsection{Petri Net Graph}
+\label{sec:petrinetGraph}
+Similarly, arcs are used to connect
 the nodes and have arrowheads to identify the direction,
 but differently, all arcs must have exclusively one node at each end, that means
-no arc is used to identify the initial state of a petri net. As said a petri net is
+no arc is used to identify the initial state of a petri net. As said, a petri net is
 bipartite graph, that means places can only connect to transitions and vice
 versa. In this work as in \cite{david2005discrete} places will be represented by
 circles and transitions by bars. 
@@ -266,7 +276,7 @@ The same way a function was created to define the transitions of states in an
 automaton, two functions will be created to define the connections between places
 and transitions. First we need to define the sets of places and transitions. $P$
 is the set of places and $T$ the set of transitions. With this two sets we can
-then define these functions. The first one represents the arcs
+then define those functions. The first one represents the arcs
 from places to transitions, and is denoted as $Pre: P \times T \rightarrow
 \{0, 1\}$, the second one the arcs that connects transitions to places, denoted
 as $Post: P \times T \rightarrow \{0,1\}$. The value $1$ is attributed to arcs
@@ -292,13 +302,11 @@ that exist and $0$ to the nonexistent ones.
 \label{fig:simplePetriNetStructure}
 \end{figure}
 A drawback from the definition of this functions, is that is not possible to
-have more than an arc linking two nodes, so we can generalize than to any natural number:
-% \begin{equation}
-  % \label{eq:generalizedPrePost}
-  \begin{align*}
-    Pre:  P \times T \rightarrow \mathbb{N}_0\\
-    Post: P \times T \rightarrow \mathbb{N}_0
-  \end{align*}
+have more than an arc linking two nodes, so we can generalize them to any natural number:
+\begin{align*}
+  Pre:  P \times T \rightarrow \mathbb{N}_0\\
+  Post: P \times T \rightarrow \mathbb{N}_0
+\end{align*}
 with this new definition we can change the definition of $Post(p_1,t_1)$ from
 $0$ to $2$ resulting on the following petri net structure.
 \begin{figure}[H]
@@ -309,35 +317,116 @@ $0$ to $2$ resulting on the following petri net structure.
     \ref{ex:simplePetriNetStructure}, but with $Post(p_1,t_1)=2$}
 \label{fig:simplePetriNetStructureNatural}
 \end{figure}
-
-\todo{}
+In order to reduce the number of arcs in a diagram, usually only one arc is
+drawn and a label is added with the value of its respective function, if it is
+greater than $1$, \autoref{fig:simplePetriNetStructureGeneralized} illustrates it:
 \begin{figure}[H]
   \centering
   \includegraphics[width=0.5\textwidth]{petriNet/prepost/prepost3.tikz}
   % \includetikzfigure[width=0.5\textwidth]{automata/example/example}
-  \caption{Diagram representing the petri net structure from example
-    \ref{ex:simplePetriNetStructure}, but with $Post(p_1,t_1)=2$}
+  \caption{Same diagram as \autoref{fig:simplePetriNetStructureNatural} but with
+    labeled arcs.}
 \label{fig:simplePetriNetStructureGeneralized}
 \end{figure}
 
-% \end{equation}
+\subsubsection{Marking}
+\label{sec:marking}
 
+As said in the beginning of this subsection marking is used as the mechanism to
+represent if the condition of occurrence of a determined event is met or not.
+But also it can be used to represent the state of the system. The mechanism
+works as follows. Tokens can be designated to places and the way the tokens are
+distributed among places is called the marking of a petri net graph. We can define a marking function $x :
+P \rightarrow \mathbb{N}$ that denotes the number of tokens in a determined place.
+In this
+work, as in the majority of articles and books, the tokens will be
+represented as black dots inside the places. 
+
+The
+\Autoref{fig:unmarked,fig:marked} show an unmarked and a marked petri net graph.
 \begin{figure}[H]
+\begin{subfigure}[t]{0.45\textwidth}
   \centering
   \includegraphics[width=\textwidth]{petriNet/net/unmarked.tikz}
   % \includetikzfigure[width=0.5\textwidth]{automata/example/example}
   \caption{Unmarked}
-\end{figure}
-
-
-
-\begin{figure}[H]
+  \label{fig:unmarked}
+\end{subfigure}
+~
+\begin{subfigure}[t]{0.45\textwidth}
   \centering
   \includegraphics[width=\textwidth]{petriNet/net/marked.tikz}
   % \includetikzfigure[width=0.5\textwidth]{automata/example/example}
   \caption{Marked}
+  \label{fig:marked}
+\end{subfigure}
+\caption{Example of unmarked and marked petri net graphs.}
 \end{figure}
 
+The marking of a petri net, can be represented as a
+vector of the function $x$ applied on all places, for example the marking of the
+\autoref{fig:marked} is the following vector $\mathbf{x}$
+
+\begin{equation*}
+\mathbf{x}=\begin{bmatrix}
+  x(p_0)\\
+  x(p_1)\\
+  x(p_2)\\
+  x(p_3)\\
+  x(p_4)\\
+  x(p_5)\\
+  x(p_6)
+\end{bmatrix} =
+\begin{bmatrix}
+  1\\
+  0\\
+  1\\
+  0\\
+  0\\
+  2\\
+  0
+\end{bmatrix}
+\end{equation*}
+
+This vector $\mathbf{x}$, the marking of the petri net, can be identified as the
+state of the petri net. So, different configurations of tokens mean different
+states of the system, now we only need a way to change from a state to other, in
+other words, move the tokens.
+
+\subsubsection{Firing Transitions}
+\label{sec:firingTransitions}
+The mean of move the tokens is firing transitions. When an event  happens and
+the corresponding transition is enabled, this transition is fired and tokens
+are moved between places.
+We can define the functions $I : T \rightarrow 2^P$ and $O : T \rightarrow 2^P$ that
+describe the set of places considered as inputs and outputs of a transition: 
+\begin{align*}
+  I(t_j)= \{p \in P : Pre(p,t)> 0\}\\
+  O(t_j)= \{p \in P : Post(p,t)> 0\}\\
+\end{align*}
+\pagebreak
+\begin{definition}[Enabled transition]
+  \label{def:enabledTransition}~\\
+  A transition is enabled if
+  \[ x(p_i)\geq Pre(p_i,t_j) \text{ for all }{p_i \in I(t_j)}\]
+  if $I(t_j)=\emptyset$, $t_j$ is always enabled. 
+\end{definition}
+
+And we can define the dynamic of the petri net, how the tokens move: 
+
+\begin{definition}[Petri net dynamics]
+  \label{def:petriNetDynamics}~\\
+   It is possible to define a \emph{state transition}
+  function, $f : \mathbb{N}^n \times T \rightarrow \mathbb{N}^n$  , where $n$ is
+  the length of the state vector $\mathbf{x}$. This function $f$ is defined for
+  a transition $t_j \in T$ if and only if this transition is enabled. If
+  $f(\mathbf{x},t_j)$ is defined, then we create a new state vector
+  $\mathbf{x}^\prime$:
+
+  \[ x^\prime(p_i) = x(p_i) - Pre(p_i,t_j) + Post(p_i,t_j), i=1,\dots n \]
+\end{definition}
+  
+As an example we can take \Autoref{fig:petriNetDynamics}:
 \begin{figure}[H]
   \centering
  \begin{subfigure}[t]{0.45\textwidth}
@@ -345,6 +434,7 @@ $0$ to $2$ resulting on the following petri net structure.
   \includegraphics{petriNet/net/beforeFiring.tikz}
   % \includetikzfigure[width=0.5\textwidth]{automata/example/example}
   \caption{Before firing.}
+  \label{fig:beforeFiring}
 \end{subfigure}
 ~
 \begin{subfigure}[t]{0.45\textwidth}
@@ -352,11 +442,31 @@ $0$ to $2$ resulting on the following petri net structure.
   \includegraphics{petriNet/net/afterFiring.tikz}
   % \includetikzfigure[width=0.5\textwidth]{automata/example/example}
   \caption{After firing.}
+  \label{fig:afterFiring}
 \end{subfigure}
- 
+  \caption{Example of petri net Dynamic.}
+  \label{fig:petriNetDynamics}
 \end{figure}
+The state before firing transition $t_0$ is $\mathbf{x}=\begin{bmatrix}3&
+  0\end{bmatrix}^T$ and as we see $Pre(p_0,t_0)=2$ and $Post(p_1,t_0)=1$ so
+applying the petri net dynamic we can find the next state $\mathbf{x}^\prime=\begin{bmatrix}1&
+  1\end{bmatrix}^T$
 
+Once all these fundamentals are presented we can finally define a Petri Net
 
+\begin{definition}[Petri net]
+  \label{def:petriNet}~\\
+  A Petri net is defined as a five-tuple
+  \[PN = (P,T,Pre,Post,\mathbf{x}_0)\]
+  where: \\
+  \indent $P$ is the set of \textbf{places} \\
+  \indent $T$ is the set of \textbf{transitions} \\
+  \indent $Pre$ is the \textbf{input incidence} function  \\
+  \indent $Post$ is the \textbf{output incidence} function\\
+\indent $\mathbf{x}_0$ is the initial marking of the net \\
+And its dynamic is ruled by the \emph{state transition} function $f$ defined at \ref{fig:petriNetDynamics}.
+
+\end{definition}
 \begin{figure}[H]
   \centering \includegraphics[width=0.8\textwidth]{cipnExample/scheme.tikz}
   \caption[cipnexample]{Example of System to be controlled by the Petri Net}

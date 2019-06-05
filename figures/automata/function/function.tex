@@ -1,0 +1,52 @@
+\documentclass{article}
+\usepackage[x11names, rgb]{xcolor}
+\usepackage[utf8]{inputenc}
+\usepackage{tikz}
+\usetikzlibrary{snakes,arrows,shapes}
+\usepackage{amsmath}
+%
+%
+
+%
+
+\usetikzlibrary{arrows,shapes,petri,external,arrows.meta}
+\tikzexternalize
+	\tikzsetnextfilename{figure}%
+
+\begin{document}
+\pagestyle{empty}
+%
+%
+%
+
+\enlargethispage{100cm}
+% Start of code
+\begin{tikzpicture}[>=latex',line join=bevel,]
+%%
+\begin{scope}
+  \pgfsetstrokecolor{black}
+  \definecolor{strokecol}{rgb}{1.0,1.0,1.0};
+  \pgfsetstrokecolor{strokecol}
+  \definecolor{fillcol}{rgb}{1.0,1.0,1.0};
+  \pgfsetfillcolor{fillcol}
+\end{scope}
+  \node (y) at (786.24bp,301.96bp) [draw,ellipse] {y};
+  \node (x) at (460.24bp,301.96bp) [draw,ellipse] {x};
+  \coordinate (init) at (148.24bp,301.96bp);
+  \draw [-Latex] (y) ..controls (751.39bp,294.17bp) and (675.3bp,278.99bp)  .. (611.74bp,282.96bp) .. controls (563.37bp,285.98bp) and (506.82bp,294.38bp)  .. (x);
+  \definecolor{strokecol}{rgb}{0.0,0.0,0.0};
+  \pgfsetstrokecolor{strokecol}
+  \draw (620.24bp,291.96bp) node {b};
+  \draw [-Latex] (x) ..controls (510.29bp,301.96bp) and (704.55bp,301.96bp)  .. (y);
+  \draw (620.24bp,309.96bp) node {a};
+  \draw [-Latex] (init) ..controls (230.57bp,301.96bp) and (388.45bp,301.96bp)  .. (x);
+%
+\end{tikzpicture}
+% End of code
+
+%
+\end{document}
+%
+
+
+
