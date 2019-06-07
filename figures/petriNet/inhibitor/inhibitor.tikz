@@ -1,0 +1,12 @@
+\begin{tikzpicture}[>=latex',line join=bevel,]
+%%
+\node (p0) at (151.0bp,36.0bp) [draw,ellipse,place, label=above:, label=left:$p_{0}$,rotate=90] {};
+  \node (p1) at (27.0bp,18.0bp) [draw,ellipse,place, label=above:, label=left:$p_{1}$,rotate=90] {};
+  \node (t0) at (89.0bp,36.0bp) [draw,ellipse,transition, label=above:, label=left:$t_{0}$,rotate=90] {};
+  \node (t1) at (213.0bp,18.0bp) [draw,ellipse,transition, label=above:, label=left:$t_{1}$,rotate=90] {};
+  \draw [-Latex] (p0) ..controls (174.44bp,27.0bp) and (179.53bp,27.0bp)  .. (t1);
+  \draw [-Latex,inhibitor] (p1) ..controls (50.557bp,9.0bp) and (179.34bp,9.0bp)  .. (t1);
+  \draw [-Latex] (t0) ..controls (116.01bp,36.0bp) and (116.8bp,36.0bp)  .. (p0);
+  \draw [-Latex] (p1) ..controls (50.44bp,27.0bp) and (55.527bp,27.0bp)  .. (t0);
+%
+\end{tikzpicture}

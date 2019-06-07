@@ -68,9 +68,7 @@ In this thesis we are interested in the event-driven type. Some basic mathematic
 formalisms, nomenclature and representations can be developed to facilitate the
 understanding. Some of those will be presented in the following sections based
 on \cite{cassandras2009introduction, david2005discrete,david1989grafcet}.
-\section{Languages}
-\label{sec:automata}
-A language can be defined by the Merriam-Webster's dictionary as ``a systematic
+\section{Languages} \label{sec:automata} A language can be defined by the Merriam-Webster's dictionary as ``a systematic
 means of communicating ideas or feelings by the use of conventionalized signs,
 sounds, gestures, or marks having understood meanings'' And as it is defined by
 this dictionary entry we pursue to communicate the complete behaviour of the
@@ -86,10 +84,7 @@ programming languages used in this work, we prefer the use of the vocables
 $\epsilon$, that is, a word that is not formed by any event.
 
 The combination process to form words is called concatenation. For instance,
-given two events $a$ and $b$, the words $ab$ and $ba$ can be created
-concatenating these two events and there is no particular reason to suppose that
-$ab$ is equal to $ba$, the same way the words ``ten'' and ``net'' have different
-meanings in English.
+given two events $a$ and $b$, the words $ab$ and $ba$ can be created concatenating these two events and there is no particular reason to suppose that $ab$ is equal to $ba$, the same way the words ``ten'' and ``net'' have different meanings in English.
 
 We can also concatenate two words, to create a different one, we can take the
 words $ab$ and $ba$ and create words like $abba$ and $baab$.
@@ -129,9 +124,7 @@ languages
 \end{subequations}
 
 The cardinality of this sets are $|L_1|=3$, $|L_2|=9$, $|L_3|=\infty$
-
-As we can see from the same alphabet very different languages can be created,
-thus we can define a way to encapsulate all possible languages generated from
+As we can see from the same alphabet very different languages can be created, thus we can define a way to encapsulate all possible languages generated from
 the same alphabet $\Sigma$. Let us denote by $\Sigma^*$ the set containing all
 finite words composed with the elements of $\Sigma$ and $\epsilon$. The *
 operation is called the \textit{Kleene-closure}. Similarly to $L_3$ it is
@@ -141,10 +134,7 @@ countably infinite since it contains arbitrarily long words. For instance the
   \label{eq:kleeneExample}
   \Sigma^* = \{\epsilon,a,b,c,aa,ab,ac,ba,bb,bc,ca,cb,cc,aaa,\dots\} 
 \end{equation*}
-
-There are a few operations with languages and alphabets that can be defined, but
-they are outside the scope of this work, they can be found on \cite{cassandras2009introduction}. 
-
+There are a few operations with languages and alphabets that can be defined, but they are outside the scope of this work, they can be found on \cite{cassandras2009introduction}.
 \section{Representation of Languages}
 \label{sec:representationLanguages}
 
@@ -467,13 +457,168 @@ Once all these fundamentals are presented we can finally define a Petri Net
 And its dynamic is ruled by the \emph{state transition} function $f$ defined at \ref{fig:petriNetDynamics}.
 
 \end{definition}
+
+To make the connection between the Petri net and the events of the system, called $\Sigma$, the alphabet, we can
+define a labeling function, $l : T^* \rightarrow \Sigma^*$ that makes the link between a
+sequence of firing transitions and a sequence of events. But each transition
+can only have one respective event. 
+
+\begin{definition}[Labeled Petri net]
+  \label{def:petriNet}~\\
+  A Labeled Petri net is defined as a seven-tuple
+  \[PN = (P,T,Pre,Post,\mathbf{x}_0,\Sigma,l)\]
+  where: \\
+  \indent $(P,T,Pre,Post,\mathbf{x}_0)$ is a Petri Net\\
+  \indent $\Sigma$ is the set of \textbf{events} \\
+  \indent $l$ is the \textbf{labeling} function  \\
+\end{definition}
+
+Usually the events are represented in the petri net graph over its respective
+transition as shown in the \autoref{fig:labeledPetriNet}. This system has an alphabet
+$\Sigma=\{a,b\}$ and labeling functions $l(t_0)=a$ and $l(t_1)=b$.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics{petriNet/labeled/labeled.tikz}
+  % \includetikzfigure[width=0.5\textwidth]{automata/example/example}
+  \caption{Labeled Petri net.}
+  \label{fig:labeledPetriNet}
+\end{figure}
+
+\section{Control Interpreted Petri Nets}
+\label{sec:cipn}
+One of the greatest uses of Petri Nets, besides modeling a system, is its
+ability to model the control of a system. For this intent we use Control Interpreted Petri nets. It is an
+extension from the labeled Petri net, we add actions for places, so it is
+possible to change the outputs of the system, conditions to the transitions, so it
+is possible to change the state of the control based on the inputs of the
+system, and even the ability to delay the firing transitions based on time.
+Another artifice used is an inhibitor arc, that prevents the firing of a
+transition based on the marking of the corresponding place.
+
+\begin{definition}[Control Interpreted Petri net]
+  \label{def:cipn}~\\
+  A Labeled Petri net is defined as a seven-tuple
+  \[PN = (P,T,Pre,Post,\mathbf{x}_0,In,\Sigma,C,l_C,D,L_D,A,I_A)\]
+  where: \\
+  \indent $(P,T,Pre,Post,\mathbf{x}_0)$ is a Petri Net\\
+  \indent $In$ is the \textbf{inhibitor arc} function that prevents the
+  enablement of transitions \\
+  \indent $\Sigma$ is the set of \textbf{events} associated to transitions \\
+  \indent $C$ is the set of \textbf{conditions} associated to transitions \\
+  \indent $l_C$ is the \textbf{labeling} function that associates a transition
+  with events and conditions from $\Sigma$ and $C$\\
+  \indent $D$ is the set of \textbf{delays} associated to transitions \\
+  \indent $l_D$ is the \textbf{labeling} function that associates a transition with a delay from $D$ \\
+  \indent $A$ is the set of \textbf{actions} associated to places \\
+  \indent $l_A$ is the \textbf{labeling} function that assigns actions from $A$ to a place \\
+\end{definition}
+The definition of $In : (P \times T )\rightarrow\mathbb{N}$ is that a transition
+$t_j$ is inhibited if $x(p_i)\geq In(p_i,t_j)$. Inhibitor arcs are not used in
+this work but usually they are represented with an arc with a circle in one of
+its ends, as shown in \autoref{fig:inhibitor}.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics{petriNet/inhibitor/inhibitor.tikz}
+  % \includetikzfigure[width=0.5\textwidth]{automata/example/example}
+  \caption{Example of Petri net with inhibitor arc.}
+  \label{fig:inhibitor}
+\end{figure}
+As we can see from the definition there are two labeling functions to connect 
+transitions, $l_C$ and $l_D$. The $l_c$ is defined for transitions with no
+firing delay and $l_D$ for transitions with firing delay.
+
+The labeling function $l_C : T^0\rightarrow(\Sigma \times C)$ defines a pair of
+event and boolean condition from $\Sigma$ and $C$ respectively. A transition
+$t_i$ belonging to $T^0$ (a subset of $T$ that represents the transitions with
+no time delay) has a corresponding event, condition tuple $(\sigma_i,c_i)$
+For example, take a transition $t_0$, $\Sigma =\{\sigma_0\}$ and $C=\{c_0\}$. If
+a function $l_c(t_0)=(\sigma_0,c_0)$ is defined, this transition will be fired
+when the condition $c_0$ is true and the event $\sigma_0$
+happens, but obviously, if and only if this transitions is enabled and not
+inhibited. The transition $t_0$ is represented graphically as shown in \autoref{fig:condition}
+
+\begin{figure}[H]
+  \centering \includegraphics[width=0.3\textwidth]{petriNet/cipn/condition.tikz}
+  \caption{Representation of new labeling function}
+  \label{fig:condition}
+\end{figure}
+
+If the event is missing from the representation of the transition, it is equal
+to the $\lambda$
+, the always occurring event. And if the condition is missing, that means it is
+equal to $1$, it is always $true$. If both are missing, that means the
+transition will be automatically executed if it is enabled. 
+
+By the other hand, the labeling function $l_D : T^D \rightarrow D$, defines a delay for the
+transition to be fired. A timed transition $t_i$, a transition in $T^D$ (a subset of T
+that represents the transitions with a time delay), has a corresponding delay
+$d_i$. As an example, take a timed transition $t_1$ and $D=\{d_1\}$, after the
+enablement of the transition, it takes $d_1$ time units in order to be fired. In
+this work timed transitions are represented as bars slightly larger than normal
+conditions. An example of this representation we can see \autoref{fig:timedtransition}
+
+\begin{figure}[H]
+  \centering \includegraphics[width=0.3\textwidth]{petriNet/cipn/timedtransition.tikz}
+  \caption{Representation of a timed transition.}
+  \label{fig:timedtransition}
+\end{figure}
+Another labeling function that was created is $l_A : P\rightarrow 2^A$,
+assigning a set of actions belonging to $A$ to a place. Actions can be impulsive or continuous. A
+continuous action happens always that the marking of a place is greater than 0,
+$x(p_i)>0$, an impulsive, on the other hand, happens only when the marking of
+the place changes from 0 to a value greater than 0. 
+Actions are represented graphically as labels in places. Impulsive actions are differed by a star (*) at its end. So an action $F$ is
+continuous and $B^*$ is impulsive. 
+\autoref{fig:actions} show a representation of a Place with both kinds of actions.
+\begin{figure}[H]
+  \centering \includegraphics[width=0.3\textwidth]{petriNet/cipn/actions.tikz}
+  \caption{Representation of labeling of Actions.}
+  \label{fig:actions}
+\end{figure}
+
+Although these representations exist, in this work events, conditions and
+actions labels are suppressed from the diagrams and tables accompany the drawings
+showing the meaning of the transitions (firing events and conditions) and places
+(Actions). This choice was made because when the controlled interpreted Petri nets
+are very
+large as the ones shown in the next chapters, if the events, conditions and
+actions labels are long they can increase the size of the
+diagram.
+
+To illustrate this better we give an example based on one example from \cite{david1989grafcet}.
+\begin{example}[Loading of a wagon] ~\\
+  \label{ex:loadingOfAWagon}
+We consider the system represented by the scheme in
+\autoref{fig:cipnexamplescheme}. A wagon can be moved between the points $a$ and
+$b$, using the inputs $L$ and $R$ (moving it to the left or right,
+respectively). At point $a$ there is a button $m$ that can be pressed by an
+operator and a limit switch called $a$ that is activated when the wagon is on
+the left. At point $b$, an homonym limit switch is placed and activated when the
+wagon is on the right. There is a hopper that can
+be opened when the input $Open$ is turned on and closed when not.If it is opened
+its content is poured. There is also a
+button $p$ that is activated when the weight applied over the plate is equal or
+greater to the weight of a full wagon. 
+
+The objective of the control is, when the wagon is in its leftmost position and
+the button $m$ is pressed, it moves to the right, stops at $b$, the hopper is
+opened and the wagon is loaded, when it is completely full it moves to the left
+and it stops at $a$ waiting to be unloaded and for a next press of $m$ to recommence
+the loop. 
+\end{example}
+
+
 \begin{figure}[H]
   \centering \includegraphics[width=0.8\textwidth]{cipnExample/scheme.tikz}
   \caption[cipnexample]{Example of System to be controlled by the Petri Net}
   \label{fig:cipnexamplescheme}
 \end{figure}
+From the description of the control it is possible to create a Control Interpret
+Petri Net to describe it, as the one in \autoref{fig:cipnexample}
 
-\pagebreak
+
 \begin{figure}[H]
   \centering \includegraphics[width=0.8\textwidth]{cipnExample/cipn.tikz}
   \caption[cipnexample]{Example of Control Interpreted Petri Net to control
@@ -481,12 +626,26 @@ And its dynamic is ruled by the \emph{state transition} function $f$ defined at 
   \label{fig:cipnexample}
 \end{figure}
 
+The meaning\slash description of each place and transition is given by the
+following tables:
+
 \input{../../figures/cipnExample/cipnPlaces}
 \input{../../figures/cipnExample/cipnTransitions}
+
+In this work as in the usual boolean notation, when just the name of a variable is given in a table it means the
+variable is equal to true, and when there is a bar in its top it is equal to
+false, so they determine conditions. E.g.: $b$ and $\overline{b}$.
+And when a variable is preceded by $\uparrow$ and $\downarrow$, they  determine
+events corresponding to its raising and falling edge.
+
 \usetikzlibrary{arrows,shapes,circuits.plc.ladder,external}
 
 \section{Implementation of Control Interpreted Petri Nets}
 \label{sec:implementPetriNets}
+
+
+
+
 \begin{figure}[H]
   \centering \includegraphics{cipnExample/cipnLadder.tikz}
   \caption[cipnexample]{Example of Control Interpreted Petri Net converted to
@@ -554,17 +713,34 @@ And its dynamic is ruled by the \emph{state transition} function $f$ defined at 
         \draw[help lines,xstep=1,ystep=1] (0,0) grid (10,10);
         \foreach \x in {0,1,...,10} { \node [anchor=north] at (\x,0) {\x}; }
         \foreach \y in {0,1,...,10} { \node [anchor=east] at (0,\y) {\y}; }
-        \draw[ultra thick,rounded corners] (3.5,4) rectangle (6.5,6);
-        \draw (5,5) node {\textbf{Process}};
-        \draw (0,5) node {\textbf{Inputs}};
-        \draw[red] (5,5) node {\huge \textbf{TODO}};
-        \draw (10,5) node {\textbf{Outputs}};
-        \draw[->,>=stealth,red, very thick] (1,4.5) -- ++ (2.5,0);
-        \draw[->,>=stealth,red, very thick] (1,5)   -- ++ (2.5,0);
-        \draw[->,>=stealth,red, very thick] (1,5.5) -- ++ (2.5,0);
-        \draw[->,>=stealth,red, very thick] (6.5,4.5) -- ++ (2.5,0);
-        \draw[->,>=stealth,red, very thick] (6.5,5)   -- ++ (2.5,0);
-        \draw[->,>=stealth,red, very thick] (6.5,5.5) -- ++ (2.5,0);
+        \draw[ultra thick,rounded corners] (3.5,0) rectangle (6.5,2);
+        \draw[ultra thick,rounded corners] (0.5,3) rectangle (3.5,5);
+        \draw[ultra thick,rounded corners] (6.5,3) rectangle (9.5,5);
+        \draw[ultra thick,rounded corners] (3.5,6) rectangle (6.5,8);
+        \draw (5,7) node {Controller};
+        \draw (5,1) node {Plant};
+        \draw (2,4) node {Actuators};
+        \draw (8,4) node {Sensors};
+        % \draw (0,5) node {\textbf{Inputs}};
+        % \draw[red] (5,5) node {\huge \textbf{TODO}};
+        % \draw (10,5) node {\textbf{Outputs}};
+        \draw[->,>=stealth, very thick] (2,3) -- (2,1) -- (3.5,1);
+        \draw[->,>=stealth, very thick] (3.5,7) -- (2,7) -- (2,5);
+        \draw[->,>=stealth, very thick] (6.5,1) -- (8,1) -- (8,3);
+        \draw[->,>=stealth, very thick] (8,5) -- (8,7) -- (6.5,7);
+
+
+
+        \draw[->,>=stealth, very thick] (2,5.5) -- (10,5.5);
+        \draw[fill] (2,5.5) circle(.05);
+
+        \draw[->,>=stealth, very thick] (8,6.5) -- (10,6.5);
+        \draw[fill] (8,6.5) circle(.05);
+
+        \draw (12,6) node {Observed Signals};
+
+
+
       % \end{scope}
     \end{tikzpicture}
   \caption{Input\slash Output Process model}

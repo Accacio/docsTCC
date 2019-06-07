@@ -23,72 +23,121 @@ First to show the algorithm developed works, the example data from
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=0.5\textwidth]{exceedingLanguage/example/exceedingLanguage-daoct-ndaao_k2_n7.pdf}
-  \caption{Cardinality of the exceeding language of the DAOCT (o) and NDAAO
-    ($\times$) models. $k = 1$, and $1 \leq n \leq 7$}
-  \label{fig:exceedingLangExample}
+  \begin{tikzpicture}
+        % \draw[help lines,xstep=1,ystep=1] (0,0) grid (10,10);
+        % \foreach \x in {0,1,...,10} { \node [anchor=north] at (\x,0) {\x}; }
+        % \foreach \y in {0,1,...,10} { \node [anchor=east] at (0,\y) {\y}; }
+
+        % Belt 
+        \draw[very thick] (1,1) -- (9,1);
+        \draw[very thick] (1,2) -- (9,2);
+        \draw[very thick] (1,1.5) circle(0.5);
+        \draw[thick,fill] (1,1.5) circle(0.05);
+        \draw[very thick] (9,1.5) circle(0.5);
+        \draw[thick,fill] (9,1.5) circle(0.05);
+
+        % Sensors
+        \newcommand{\beltSensor}[3]{
+          \draw[very thick] (#1-0.25,#2) rectangle ++ (0.5,1);
+          \draw[dashed,very thick] (#1,#2) -- (#1,2);
+          \draw (#1,#2+1.5) node {#3};
+        }
+       \beltSensor{2.5}{4}{$S_1$}
+       \beltSensor{5}{4}{$S_2$}
+       \beltSensor{7.5}{4}{$S_3$}
+
+        % Box
+        \newcommand{\beltBox}[3]{
+          \draw[very thick] (#1,#2) rectangle ++ (#3,#3);
+          \draw[very thick] (#1,#2) -- ++ (#3,#3);
+          \draw[very thick] (#1,#2+#3) -- ++ (#3,-#3);
+        }
+        \beltBox{3.5}{2}{1} 
+        % \draw [fill,white,fill opacity=0.7,draw=none] (0.1,0.82) rectangle  (0.2,0.96);
+        % \draw [red,thick] ([shift=(0:0.03)]0.15,0.9) arc (0:180:0.03);
+        % \draw[black,->,>=stealth,very thick] (0.15,0.85) -- ++(0,0.1);
+        \draw [->,>=stealth,thick] ([shift=(225:0.25)]9,1.5) arc (225:45:0.25);
+        \draw [->,>=stealth,thick] ([shift=(225:0.25)]1,1.5) arc (225:45:0.25);
+
+        % \beltBox{1.5}{2}{0.5} 
+        % \beltBox{4.5}{2}{0.5} 
+        % \beltBox{7.5}{2}{0.5} 
+    \end{tikzpicture}
+  \caption{Input\slash Output Process model}
+    \label{fig:ioProcModel}
 \end{figure}
 
 
-Comparing the results of the \autoref{fig:exceedingLangExample}  with the
-example 3 from \cite{moreira2018enhanced}, we can
-observe that the exceeding language for the DAOCT model drops. This is caused by
-how the acquisition works, in this work, the plant is considered a black box, so
-instead of feeding the algorithm with the
-paths, the raw data is given, and the paths are calculated using the first
-IO\_Vector as the initial state and once this initial state is repeated other
-path 
-is created, resulting on 4 paths instead of 3. This change, can result in a
-smaller path, with no loops, diminishing the exceeding language.
 
 
-\section{Manufacture System}
-\label{sec:results_system}
-
-\begin{figure}[H]
-  \centering
-  \includegraphics[width=0.5\textwidth]{results/all/exceedingLanguage-daoct-ndaao_k1_n7.pdf}
-  \caption{graph}
-\end{figure}
-
-\begin{figure}[H]
-  \centering
-  \includegraphics[width=0.5\textwidth]{results/all/exceedingLanguage-daoct-ndaao_k2-3-7_n25.pdf}
-  \caption{graph}
-\end{figure}
-
-\todo{Choosing the IO\_Vector with the greatest repetition ratio as $x_0$}
-
-\begin{figure}[H]
-  \centering
-  \includegraphics[width=0.5\textwidth]{results/all/best/exceedingLanguage-daoct-ndaao_k1_n7.pdf}
-  \caption{graph}
-\end{figure}
+% \begin{figure}[H]
+%   \centering
+%   \includegraphics[width=0.5\textwidth]{exceedingLanguage/example/exceedingLanguage-daoct-ndaao_k2_n7.pdf}
+%   \caption{Cardinality of the exceeding language of the DAOCT (o) and NDAAO
+%     ($\times$) models. $k = 1$, and $1 \leq n \leq 7$}
+%   \label{fig:exceedingLangExample}
+% \end{figure}
 
 
-\begin{figure}[H]
-  \centering
-  \includegraphics[width=0.5\textwidth]{results/all/best/exceedingLanguage-daoct-ndaao_k2-3-7_n25.pdf}
-  \caption{graph}
-\end{figure}
+% Comparing the results of the \autoref{fig:exceedingLangExample}  with the
+% example 3 from \cite{moreira2018enhanced}, we can
+% observe that the exceeding language for the DAOCT model drops. This is caused by
+% how the acquisition works, in this work, the plant is considered a black box, so
+% instead of feeding the algorithm with the
+% paths, the raw data is given, and the paths are calculated using the first
+% IO\_Vector as the initial state and once this initial state is repeated other
+% path 
+% is created, resulting on 4 paths instead of 3. This change, can result in a
+% smaller path, with no loops, diminishing the exceeding language.
 
-Removing I\_MAG1EMPT and I\_MAG2EMPT
 
-\begin{figure}[H]
-  \centering
-  \includegraphics[width=0.5\textwidth]{results/all-2_5/exceedingLanguage-daoct-ndaao_k1_n7.pdf}
-  \caption{graph}
-\end{figure}
+% \section{Manufacture System}
+% \label{sec:results_system}
 
-\todo{Choosing the IO\_Vector with the greatest repetition ratio as $x_0$}
+% \begin{figure}[H]
+%   \centering
+%   \includegraphics[width=0.5\textwidth]{results/all/exceedingLanguage-daoct-ndaao_k1_n7.pdf}
+%   \caption{graph}
+% \end{figure}
 
-\begin{figure}[H]
-  \centering
-  \includegraphics[width=0.5\textwidth]{results/all-2_5/best/exceedingLanguage-daoct-ndaao_k1_n7.pdf}
-  \caption{graph}
-\end{figure}
+% \begin{figure}[H]
+%   \centering
+%   \includegraphics[width=0.5\textwidth]{results/all/exceedingLanguage-daoct-ndaao_k2-3-7_n25.pdf}
+%   \caption{graph}
+% \end{figure}
 
-As we can see, the exceedingLanguage raises
+% \todo{Choosing the IO\_Vector with the greatest repetition ratio as $x_0$}
+
+% \begin{figure}[H]
+%   \centering
+%   \includegraphics[width=0.5\textwidth]{results/all/best/exceedingLanguage-daoct-ndaao_k1_n7.pdf}
+%   \caption{graph}
+% \end{figure}
+
+
+% \begin{figure}[H]
+%   \centering
+%   \includegraphics[width=0.5\textwidth]{results/all/best/exceedingLanguage-daoct-ndaao_k2-3-7_n25.pdf}
+%   \caption{graph}
+% \end{figure}
+
+% Removing I\_MAG1EMPT and I\_MAG2EMPT
+
+% \begin{figure}[H]
+%   \centering
+%   \includegraphics[width=0.5\textwidth]{results/all-2_5/exceedingLanguage-daoct-ndaao_k1_n7.pdf}
+%   \caption{graph}
+% \end{figure}
+
+% \todo{Choosing the IO\_Vector with the greatest repetition ratio as $x_0$}
+
+% \begin{figure}[H]
+%   \centering
+%   \includegraphics[width=0.5\textwidth]{results/all-2_5/best/exceedingLanguage-daoct-ndaao_k1_n7.pdf}
+%   \caption{graph}
+% \end{figure}
+
+% As we can see, the exceedingLanguage raises
 
 
 

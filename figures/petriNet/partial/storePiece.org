@@ -12,7 +12,7 @@
 | p137   | Storage Unit Ready ( vertical )                           |
 | p138   |                                                           |
 | p139   | Storage Unit Ready                                        |
-| p140   | Reset COUNTER1, COUNTER2, COUNTER3, COUNTER4 and COUNTER5 |
+| p140   | Reset COUNTER1, COUNTER2, COUNTER3, COUNTER4 and COUNTER5* |
 # PlacesEnd
 
 # TransitionsBegin

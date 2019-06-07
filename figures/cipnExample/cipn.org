@@ -3,17 +3,17 @@
 | Places | Meaning                 |
 |--------+-------------------------|
 | p0m1   | System Stopped          |
-| p1     | Car Moving to the Right |
-| p2     | Container Opened        |
-| p3     | Car Moving to the Right |
+| p1     | R (Car Moving to the Right) |
+| p2     | Open (Container Opened) |
+| p3     | L (Car Moving to the Left) |
 # PlacesEnd
 
 # TransitionsBegin
 #+ATTR_LATEX: :caption \caption{Control Interpreted Petri Net Example Transitions.} :placement [H] :align M{5cm}M{10cm}
 | Transitions | Meaning                |
 |-------------+------------------------|
-| t0          | m (filling request)    |
-| t1          | b (Right Limit Switch) |
-| t2          | p (Car is Full)        |
-| t3          | a (Left Limit Switch)  |
+| t0          | \uparrow m (filling request) |
+| t1          | \uparrow b (Right Limit Switch) |
+| t2          | \uparrow p (Car is Full) |
+| t3          | \uparrow a (Left Limit Switch) |
 # TransitionsEnd

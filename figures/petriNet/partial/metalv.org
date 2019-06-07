@@ -33,28 +33,28 @@
 |-------------+-----------------------------------------------------|
 | t20         | $\overline{\mbox{MAG1 Empty}}$                      |
 | t21         |                                                     |
-| t22         | MAG1's Cylinder Extended \uparrow                   |
-| t23         | MAG1's Cylinder Retracted \uparrow                  |
+| t22         | \uparrow MAG1's Cylinder Extended                   |
+| t23         | \uparrow MAG1's Cylinder Retracted                  |
 | tt24        | T=0.5s                                              |
-| tt25        | Presence \uparrow T=0.5s                            |
+| tt25        | \uparrow Presence  T=0.5s                           |
 | t26         | $\overline{\mbox{Metallic Sensor}}$                 |
 | t27         | $\overline{\mbox{White Color Sensor}}$              |
-| t28         | Proximity Sensor Left Discharge Cylinder \uparrow   |
+| t28         | \uparrow Proximity Sensor Left Discharge Cylinder   |
 | t29         | Right Discharge Cylinder Extended                   |
 | t30         | Right Discharge Cylinder Retracted                  |
 | t31         | White Color Sensor                                  |
-| t32         | Proximity Sensor Center Discharge Cylinder \uparrow |
+| t32         | \uparrow Proximity Sensor Center Discharge Cylinder |
 | t33         | Center Discharge Cylinder Extended                  |
 | t34         | Center Discharge Cylinder Retracted                 |
 | t35         | Metallic Sensor                                     |
 | t36         | Concavity Downwards                                 |
-| t37         | Proximity Sensor Left Discharge Cylinder \uparrow   |
+| t37         | \uparrow Proximity Sensor Left Discharge Cylinder   |
 | t38         | Left Discharge Cylinder Extended                    |
 | t39         | Left Discharge Cylinder Retracted                   |
 | t40         |                                                     |
 | t41         | Concavity Upwards                                 |
-| t42         | Proximity Sensor End Of Conveyor Belt \uparrow      |
+| t42         | \uparrow Proximity Sensor End Of Conveyor Belt      |
 | tt43        | T=0.5s                                              |
-| t44         | Proximity Sensor End Of Conveyor Belt \downarrow    |
+| t44         | \downarrow Proximity Sensor End Of Conveyor Belt    |
 | t45         |                                                     |
 # TransitionsEnd

@@ -1,0 +1,9 @@
+\begin{tikzpicture}[>=latex',line join=bevel,]
+%%
+\node (p2) at (27.0bp,18.0bp) [draw,ellipse,place, label=above:, label=left:$p_{2}$,rotate=90] {};
+  \node (p3) at (151.0bp,18.0bp) [draw,ellipse,place, label=above:, label=left:$p_{3}$,rotate=90] {};
+  \node (tt1) at (89.0bp,18.0bp) [draw,ellipse,timedtransition, label=right:$d_1$, label=left:$t_{1}$,rotate=90] {};
+  \draw [-Latex] (p2) ..controls (54.014bp,18.0bp) and (54.801bp,18.0bp)  .. (tt1);
+  \draw [-Latex] (tt1) ..controls (116.01bp,18.0bp) and (116.8bp,18.0bp)  .. (p3);
+%
+\end{tikzpicture}
