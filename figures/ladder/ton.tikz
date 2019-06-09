@@ -1,0 +1,14 @@
+\setlength{\ladderskip}{5\tikzcircuitssizeunit}% 5\tikzcircuitssizeunit = 35pt
+\setlength{\ladderrungsep}{.2\ladderskip}
+\def\ladderrungend#1{\pgftransformyshift{-#1\ladderskip-\ladderrungsep}}
+  \begin{tikzpicture}[circuit plc ladder,
+  thick, label distance=0pt,x=\ladderskip,y=\ladderskip]
+
+\node[block,inputs={IN,PT},outputs={Q,ET},
+symbol=TON,minimum width=18mm] (tp1) {};
+\draw (tp1.input 1) -- +(-5mm,0) node[left]{BOOL}
+(tp1.input 2) -- +(-5mm,0) node[left]{TIME}
+(tp1.output 1) -- +(5mm,0) node[right]{BOOL}
+(tp1.output 2) -- +(5mm,0) node[right]{TIME}; 
+ 
+  \end{tikzpicture}

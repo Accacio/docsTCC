@@ -1,0 +1,23 @@
+%   \newlength{\ladderskip}
+\setlength{\ladderskip}{5\tikzcircuitssizeunit}% 5\tikzcircuitssizeunit = 35pt
+% \newlength{\ladderrungsep}
+\setlength{\ladderrungsep}{.2\ladderskip}
+\def\ladderrungend#1{\pgftransformyshift{-#1\ladderskip-\ladderrungsep}}
+  \begin{tikzpicture}[circuit plc ladder,
+  thick, label distance=0pt,x=\ladderskip,y=\ladderskip]
+\scope
+
+  \draw(0,0)
+  to [contact NO={info={A}}] ++(1,0) coordinate(laddercoil) -- ++(2,0)
+  to [coil={info={C}}] ++(1,0)coordinate(laddertopright);
+  \draw(0,-1)
+  to [contact NO={info={B}}] ++(1,0) -- (laddercoil);
+  \ladderrungend{2.3}
+
+  % power rails
+  \draw let \p1=(laddertopright) in
+  (0,\y1+0.7\ladderskip) -- (0,\ladderskip)
+  (\x1,\y1+0.7\ladderskip) -- (\x1,\ladderskip);
+  \endscope
+  
+  \end{tikzpicture}

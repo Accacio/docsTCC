@@ -1,0 +1,12 @@
+\setlength{\ladderskip}{5\tikzcircuitssizeunit}% 5\tikzcircuitssizeunit = 35pt
+\setlength{\ladderrungsep}{.2\ladderskip}
+\def\ladderrungend#1{\pgftransformyshift{-#1\ladderskip-\ladderrungsep}}
+  \begin{tikzpicture}[circuit plc ladder,
+  thick, label distance=0pt,x=\ladderskip,y=\ladderskip]
+
+  \scope
+  \draw(0,0)
+  to [contact N] ++(1,0);
+  \ladderrungend{1}
+  \endscope
+  \end{tikzpicture}

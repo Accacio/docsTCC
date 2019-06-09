@@ -1,6 +1,6 @@
-  \newlength{\ladderskip}
+%   \newlength{\ladderskip}
 \setlength{\ladderskip}{5\tikzcircuitssizeunit}% 5\tikzcircuitssizeunit = 35pt
-\newlength{\ladderrungsep}
+% \newlength{\ladderrungsep}
 \setlength{\ladderrungsep}{.2\ladderskip}
 \def\ladderrungend#1{\pgftransformyshift{-#1\ladderskip-\ladderrungsep}}
   \begin{tikzpicture}[circuit plc ladder,
