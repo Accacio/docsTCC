@@ -866,6 +866,27 @@ Uses the $Pre$ and $Post$ functions to determine the tokens ``motion''
 \item A module of actions\\
   Determines the places where each action is performed.
 \end{enumerate}
+In this work, the external events and firing conditions was combined in order to
+reduce the size of the program. But every module will be described as in
+\cite{moreira2013bridging}.
+
+\subsubsection{External events}
+As external events are associated with positive and negative edge of the inputs
+of the system, in this module, positive and negative edge contacts are used to
+detect the rising and falling edge events, and they are stored in variables
+using coils, a variable is created for every event.
+
+\subsubsection{Firing Conditions}
+As said in \ref{sec:cipn}, for a transition $t_j$ to be fired, first it needs to be
+enabled ($x(p_i)\geq Pre(p_i,t_j)$ for all $p_i\in I(t_j)$), not inhibited
+($x(p_i)< In(p_i,t_j)$ for all $p_i\in I(t_j)$) and the conditions and events
+$\sigma_jc_j$ are met or the delay $d_j$ is elapsed, depending on the kind of
+transition.
+As places can have multiple tokens, we can use $int$ variables to store the
+number of tokens, and comparator contacts to determine if the transitions are
+enabled and not inhibited. The time delays are implemented using on-delay
+timers. The state of fulfilment of the conditions is stored in variables, one
+for each transition.
 
 
 \begin{figure}[H]
