@@ -1,0 +1,11 @@
+
+* Daoct
+**    Dependencies
+
+
+*** matplotlib
+ pip3 install matplotlib
+ pip3 install matplotlib2tikz
+
+*** scipy
+ pip3 install scipy
