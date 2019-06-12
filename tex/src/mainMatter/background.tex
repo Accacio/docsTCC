@@ -565,12 +565,12 @@ conditions. An example of this representation we can see \autoref{fig:timedtrans
   \label{fig:timedtransition}
 \end{figure}
 Another labeling function that was created is $l_A : P\rightarrow 2^A$,
-assigning a set of actions belonging to $A$ to a place. Actions can be impulsive or continuous. A
+assigning a set of actions belonging to $A$ to a place. Actions can be impulse actions or continuous. A
 continuous action happens always that the marking of a place is greater than 0,
-$x(p_i)>0$, an impulsive, on the other hand, happens only when the marking of
+$x(p_i)>0$, an impulse action, on the other hand, happens only when the marking of
 the place changes from 0 to a value greater than 0. 
-Actions are represented graphically as labels in places. Impulsive actions are differed by a star (*) at its end. So an action $F$ is
-continuous and $B^*$ is impulsive. 
+Actions are represented graphically as labels in places. Impulse actions are differed by a star (*) at its end. So an action $F$ is
+continuous and $B^*$ is an impulse action. 
 \autoref{fig:actions} show a representation of a Place with both kinds of actions.
 \begin{figure}[H]
   \centering \includegraphics[width=0.3\textwidth]{petriNet/cipn/actions.tikz}
@@ -659,11 +659,16 @@ The ladder logic is based on two components, contacts and coils. Their terminals
 interconnected to transmit boolean signals. This connection is similar to the
 ladder physical implementation, from where came its inspiration, the components
 were connect to boards and they formed electric circuits, turning on and off
-motors and other actuators, based on the combination of its inputs. The logic
-values in a \LD
+motors and other actuators, based on the combination of its inputs. The name
+Ladder comes from the resemblance between its structure (circuits formed in
+parallel one above the other) and a ladder, so each circuit is called a Rung by analogy. The logic
+values in a \LD{} rung
 are transmitted from the left to the right of the diagram. The components let
 the logic ``current'' flow from its left terminal to the right terminal
-depending on some conditions, and these conditions vary from component to component.
+depending on some conditions, and these conditions vary from component to
+component.
+The rungs are executed one by one and once the very last rung is executed,
+the first rung is re-executed, thus creating an infinite loop. 
  The graphical representation of the most used types of contacts and coils
 can be seen in \Autoref{fig:contacts,fig:coils}
 
@@ -778,7 +783,7 @@ The conjunction of two inputs, can be made using two contacts in series, as
 shown in \autoref{fig:ladderSeries}
 \begin{figure}[H]
   \centering \includegraphics{ladder/series.tikz}
-  \caption{And logic in Ladder.}
+  \caption{And logic in a Ladder rung.}
   \label{fig:ladderSeries}
 \end{figure}
 In this case C will only be activated if A and B are equal to $true$. ($C=AB$)
@@ -787,7 +792,7 @@ The negation of a variable can be achieved by the use of a normally closed
 contact (\autoref{fig:ladderNot}).
 \begin{figure}[H]
   \centering \includegraphics{ladder/not.tikz}
-  \caption{Not logic in Ladder.}
+  \caption{Not logic in a Ladder rung.}
   \label{fig:ladderNot}
 \end{figure}
 C will only by activated if A is $false$. ($C=\overline{A}$)
@@ -796,9 +801,11 @@ Although all logic connectives can be constructed with this two connectors, the
 OR connector can be achieved by the use contacts in parallel (\autoref{fig:ladderParallel}).
 \begin{figure}[H]
   \centering \includegraphics{ladder/parallel.tikz}
-  \caption{Or logic in Ladder.}
+  \caption{Or logic in a Ladder rung.}
   \label{fig:ladderParallel}
 \end{figure}
+
+
 
 \subsubsection{Function Blocks and extensions}
 In order to increase functionality some function blocks and 
@@ -844,7 +851,8 @@ inputs ($value1$ and $value2$) and the condition is a comparison between both of
 them. In this case, the contact is activated once its left terminals' logic
 value is $true$ and $value1\leq value2$.
 
-Other blocks and functions can be found in the IEC 61131-3.
+Other blocks and functions can be found in the IEC 61131-3, as adders,
+subtractors, communication blocks etc.
 
 \subsection{Conversion from \CIPN{} to \LD}
 \label{sec:cipnToLD}
@@ -875,7 +883,8 @@ As external events are associated with positive and negative edge of the inputs
 of the system, in this module, positive and negative edge contacts are used to
 detect the rising and falling edge events, and they are stored in variables
 using coils, a variable is created for every event.
-
+For visibility's and organisation's sake a rung is used for each event,
+resulting $|\Sigma|$ rungs. 
 \subsubsection{Firing Conditions}
 As said in \ref{sec:cipn}, for a transition $t_j$ to be fired, first it needs to be
 enabled ($x(p_i)\geq Pre(p_i,t_j)$ for all $p_i\in I(t_j)$), not inhibited
@@ -884,11 +893,51 @@ $\sigma_jc_j$ are met or the delay $d_j$ is elapsed, depending on the kind of
 transition.
 As places can have multiple tokens, we can use $int$ variables to store the
 number of tokens, and comparator contacts to determine if the transitions are
-enabled and not inhibited. The time delays are implemented using on-delay
+enabled and not inhibited.
+When a place can only bear at most one single token for all markings of the
+Petri net, a $bool$ variable can be used to store the number of tokens, in this
+case a single normally open contact can be used to determine if there is a token
+in that place.
+The time delays are implemented using on-delay
 timers. The state of fulfilment of the conditions is stored in variables, one
 for each transition.
+Similarly, for organisation's sake a rung is used for each transition, resulting
+$|T|$ rungs.
+\subsubsection{Petri Net Dynamics}
+In this module the dynamic of the tokens is implemented. If the condition for
+the firing of a transition is fulfilled (represented by normally open contacts), adders and subtractors
+can be used to represent the movement of tokens, increasing and decreasing the
+values from the $int$ variables that represent the marking
+of each place, if their capacity is greater than one, if not they are
+represented by boolean variables, and instead Set and Reset coils can be used to
+represent a token entering a place and a token exiting another, respectively.
+Again, for organisation's sake a rung is associated for each transition,
+resulting $|T|$ rungs.
 
+\subsubsection{Actions}
+In the Action module, we use coils to act on the outputs. Depending on the type
+of action and the logic of the control, set\slash reset coils or normal coils
+can be used. The condition to activate\slash deactivate the output is the
+presence of a token in the places where the action is performed, this can be
+achieved by comparing the numbers of tokens in a place. If the tokens of a
+place is represented by an $int$ variable, we use greater or equal comparators,
+but if it is represented by a $bool$ variable, a normally opened contact is
+enough. If the action is an impulse action we can put a positive edge in series
+with the places contact or the comparator.
 
+Differently from the original article, we will use one rung per
+each action in A, resulting in $|A|$ rungs. This is made because in
+\cite{renault2017regles} it is recommended to perform an action in only one
+rung, and group the conditions using OR connectors.
+In the industry this is important in order to reduce errors and to ease the
+debugging process.
+
+\subsubsection{Example}
+
+An example of this conversion can be given using the same \CIPN{} from example 
+\ref{ex:loadingOfAWagon}. As said, the external events and firing condition
+modules are grouped in same module in this work. The converted Ladder Logic
+can be seen in \autoref{fig:cipnexampleLadder}.
 \begin{figure}[H]
   \centering \includegraphics{cipnExample/cipnLadder.tikz}
   \caption[cipnexample]{Example of Control Interpreted Petri Net converted to
@@ -896,28 +945,80 @@ for each transition.
   \label{fig:cipnexampleLadder}
 \end{figure}
 
-
 \subsection{Petri Net divided in multiple PLCs}
 \label{sec:multiplePlcs}
+A problem that can occur, is the case where a \CIPN{} must be divided in
+multiple \PLCs, because of how the assembling of the plant was (some
+inputs\slash outputs are only
+connected to a single \PLC, and other inputs\slash outputs to another \PLC),
+this division can be arbitrarily decided by the
+person who will implement the control.
 
+In \autoref{fig:communicationPlcPN}, it is shown an example of a \CIPN{} divided
+between 2 \PLCs.
+As we can see, in \Autoref{fig:communicationPlcPN1,fig:communicationPlcPN2}
+there are dotted transitions and places. In this work, we will represent as
+dotted, transitions and places that are part of another section of the Petri
+Net. They are not represented in the same figure, 
+but the arcs show the connection between the sections of the net, showing that
+when connected they form a complete Petri net. In the digital form\footnote{Available at: \url{https://github.com/Accacio/docsTCC/raw/master/monografia.pdf}}  of this thesis it is possible to travel between
+figures that are not in the same page just by clicking in the name of the
+corresponding dotted place\slash transition.
 \begin{figure}[H]
   \centering
   \begin{subfigure}[t]{0.5\textwidth}
     \center
     \includetikzfigure[width=\textwidth]{communicationPlcPN/communicationPlcPN}
     \caption{Petri Net on PLC 1.}
-    \label{fig:communicationPlcPN}
+    \label{fig:communicationPlcPN1}
   \end{subfigure}%
   ~
   \begin{subfigure}[t]{0.5\textwidth}
     \centering
     \includetikzfigure[width=\textwidth]{communicationPlcPN/communicationPlcPN1}
     \caption{Petri Net on PLC 2.}
-    \label{fig:communicationPlcPN1}
+    \label{fig:communicationPlcPN2}
   \end{subfigure}
   \caption{Example of Petri Net divided between 2 PLCs.}
+  \label{fig:communicationPlcPN}
 \end{figure}
 
+In order to solve the problem of communication caused by the division, there are
+different ways, one of them is the method shown by \cite{antunesfloriano2019sincronizacao}, where
+different sections are synchronised in a distributed manner using common places.
+In this work, a master\slash slave approach was used. CLP1 was considered as the
+master and CLP2 as a slave. For the master, it is created another module
+called ``Data Sending\slash Receiving'', divided in 2 parts, the first that
+happens before all other modules, with the objective of getting all needed
+variables from other \PLCs, and another part, that happens after all other
+modules, with the objective of sending variables to all other \PLCs.
+By the other side, the slaves have 2 modules, one at the beginning, called
+``Prepare Received Data'' and another at the very end called ``Prepare Data to
+Send'', in which the data received from the master is prepared to be used and
+the data is prepared to be sent to master.
+
+The communication between \PLCs{} can be made using Profinet protocol, and if we
+take for instance Siemens \PLCs, they have two function blocks called ``Get'' and
+``Put'', that are used to establish data transfer between two \PLCs{} using the
+Profinet protocol. Tutorials on how to configure this blocks can be found on \citep{antunesfloriano2019sincronizacao,oliveira2016protocolo,rochapereira2019automacao}.
+
+
+The basic idea is to transfer the state of the variables that determine the
+conditions of firing transitions between both \PLCs. The problem is that as the
+two \PLCs are not in sync, the condition of a firing transition could change in
+the middle of the logic. So, in order to circumvent it, we can duplicate those
+variables in the slave PLC, and in the ``Prepare Received data'' module update
+the values of these variables (using positive edges contacts), forcing them to
+be updated only once in each loop and when their value are changed from $0$ to
+$1$.
+
+When a transition change the value of tokens in more than one \PLCs, as $t_1$,
+an auxiliary variable is created in order to create a kind of
+acknowledgement\slash permission 
+from the master, as an ``ok, you can proceed'' to the slaves to perform the
+dynamic of that transition.
+
+The example of those three new modules are shown in \autoref{fig:communicationPlcPNLadder}
 
 \begin{figure}[H]
   \centering
@@ -925,25 +1026,42 @@ for each transition.
     \centering
     \includegraphics{communicationPlcPN/communicationPlcPNLadder.tikz}
     \caption{Ladder Logic on PLC 1.}
-    \label{fig:communicationPlcPN}
+    \label{fig:communicationPlcPN1Ladder}
   \end{subfigure}%
   \hfill
   \begin{subfigure}[t]{0.45\textwidth}
     \centering
     \includegraphics{communicationPlcPN/communicationPlcPN1Ladder.tikz}
     \caption{Ladder Logic on PLC 2.}
-    \label{fig:communicationPlcPN1}
+    \label{fig:communicationPlcPN2Ladder}
   \end{subfigure}
   \caption{Example of Petri Net divided between 2 PLCs.}
+  \label{fig:communicationPlcPNLadder}
 \end{figure}
   
-
-\autoref{fig:communicationPlcPN}
+As we can expect, this kind of logic of master\slash slave works well when
+there are 2 \PLCs, but when there are more \PLCs, this centralised approach
+creates a single point of failure and as the master \PLC works as a hub, it
+increases the communication delay. When there are more than two \PLCs it is
+preferable to use a distributed approach as the one shown in
+\cite{antunesfloriano2019sincronizacao}.
 
 \section{Identification}
 \label{sec:identification}
 
+Once the control is implemented and the system is working as it should, we
+arrive at the objective of this work, the identification of the system.
+As said in the introduction, this work is based on \cite{moreira2018enhanced}.
+In this article, a new model for \DES{} identification is proposed, called
+\glsreset{DAOCT}\DAOCT. This model was created with aim of fault detection based
+on the observation of the fault free behaviour of the system, as in the models
+proposed by 
+\cite{roth2009fdi} and \cite{klein2005fault}, but its use of paths increases the
+efficiency for fault detection when compared with the latter articles.
 
+This fault free observation is made by the acquisition of the observable signals
+of the system (controller inputs and outputs) for a sufficiently long
+period of time while the system works normally. These signals can be seen on \autoref{fig:obsSignals}.
 
 \begin{figure}[H]
   \centering
@@ -986,13 +1104,70 @@ for each transition.
         \draw (8.5,5.75) node {Controller inputs};
 
     \end{tikzpicture}
-  \caption{Input\slash Output Process model}
-    \label{fig:ioProcModel}
-\end{figure}
-\subsection{DAOCT}
+  \caption{Observed Signals in a closed-Loop \DES.}
+    \label{fig:obsSignals}
+  \end{figure}
 
-\begin{definition}[Deterministic Automaton With Outputs and Conditional
-  Transitions (DAOCT)]
+First, we assume the controller have $m_i$ binary inputs, $i_h$, for $h=1,\dots,m_i$ and $m_o$ binary
+outputs, $o_h$, for $h=1,\dots,m_o$, and we create a Input\slash Output vector called $\mathbf{u}$, that varies with
+time:
+
+\begin{equation*}
+\mathbf{u}(t_1)=
+\begin{bmatrix}
+  i_1(t_1)&
+  \dots&
+  i_{m_i}(t_1)&
+  o_1(t_1)&
+  \dots&
+  o_{m_o}(t_1)
+\end{bmatrix}^T
+\end{equation*}
+\newcommand{\vu}{\mathbf{u}}
+ This vector $\mathbf{u}(t)$ represents the status of the system in a instant
+ $t$. In the \DAOCT model, only untimed system models are considered, thus
+ the status of the system can only be modified via system events, $\sigma$. To
+ reduce the size of the notation $\mathbf{u}(t)$ is going to be represented as $\vu_t$. The
+ transition between status in $t_i$ and $t_j$ is represented as ($\vu_i,\sigma,\vu_j$). If we have a sequence of
+ $l$ input\slash output vectors, we have an observed path of the system,
+ $p=(\vu_1,\sigma_1,\vu_2,\sigma_2,\dots,\sigma_{l-1},\vu_l)$.
+So, if we observe multiple paths meanwhile our observation process, we can
+create multiple paths
+$p_i=(\vu_{i,1},\sigma_{i,1},\vu_{i,2},\sigma_{i,2},\dots,\sigma_{i,l_i-1},\vu_{i,l_i})$,
+for $i=1,\dots,r$, where $r$ is the number of observed paths, and $l_i$ is the
+number of vertices in each path $p_i$.
+
+Supposing that all paths begin with the same I\slash O vector, that means, all
+observations begin from the same status, it is possible to associate to each
+path $p_i$ a sequence of events and a sequence of I\slash O vectors, called,
+$s_i$ and $w_i$, and they are defined as:
+\begin{align*}
+  s_i&= \sigma_{i,1}\sigma_{i,2}\dots\sigma_{i,l_i-1} \\
+  w_i&= \vu_{i,1}\vu_{i,2}\dots\vu_{i,l_i}
+\end{align*}
+Which leads us to defined a Language, using all the sequences of observed
+events, called observed language, $L_{Obs}$:
+
+\begin{equation}
+  L_{Obs}:= \bigcup^r_{i=1}\overline{\{s_i\}}
+\end{equation}
+\begin{observation}
+If any sequence $s_i$ is the prefix of another sequence $s_j$, the path $p_i$ should
+be discarded, along with $s_i$ and $w_i$, since it does not present any new
+information for the identification process.
+\end{observation}
+
+
+
+\usetikzlibrary{patterns}
+\begin{figure}[H]
+  \centering \includegraphics[width=0.5\textwidth]{vennDiagramLanguages.tikz}
+  \caption{Venn diagram showing relations between $L_{Orig}$, $L_{OrigNI}$,
+    $L_{Obs}$, $L_{Exc}$ and $L_{Iden}$}
+\end{figure}
+ 
+\subsection{DAOCT}
+\begin{definition}[DAOCT]
   \label{def:daoct}~\\
   A Deterministic Automaton, denoted by DAOCT, is a nine-tuple
   \[ DAOCT = (X,\Sigma,f,\lambda,R,\theta, x_0,X_f)\] where:
@@ -1010,7 +1185,8 @@ for each transition.
 \end{definition}
 
 Identification algorithm adapted from \cite{moreira2018enhanced}
-\begin{algorithm2e}
+
+\begin{algorithm2e}[H]
   \caption{Identification Algorithm}\label{alg:identification}
   \KwIn {%
     Modified observed paths $p_i^k$, for i= 1,\dots,$r$ } \KwOut {%
@@ -1049,12 +1225,6 @@ Identification algorithm adapted from \cite{moreira2018enhanced}
   \caption{Diagram representing the DAOCT from example number }
 \end{figure}
 
-\usetikzlibrary{patterns}
-\begin{figure}[H]
-  \centering \includegraphics[width=0.5\textwidth]{vennDiagramLanguages.tikz}
-  \caption{Venn diagram showing relations between $L_{Orig}$, $L_{OrigNI}$,
-    $L_{Obs}$, $L_{Exc}$ and $L_{Iden}$}
-\end{figure}
 
 
 %%% Local Variables:
