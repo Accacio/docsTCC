@@ -1,0 +1,42 @@
+digraph a {
+rankdir=TB;
+# splines = ortho
+splines = false
+# ratio=fill
+ graph [pad="0.01", nodesep="0.1", ranksep="0.01"];
+node [shape=circle];
+margin=0;
+{rank =source; x6;x7;x11;x12;x13}
+{rank =same; init; x0;x1;x2;x3;x4;x5 }
+{rank =same; x8;x9;x10}
+size="11.7,4.3!";
+init [style=invis]
+init -> x0
+x13 [shape=doublecircle];
+x10 [shape=doublecircle];
+x5 [shape=doublecircle];
+
+x0 -> x1 [texlbl="a,\{1\}"]
+x0 -> x6  [texlbl="g,\{2,3\}"] 
+
+x1 -> x2 [texlbl="b,\{1\}"]
+
+x2 -> x11 [texlbl="i,\{3\}"]
+x2 -> x3 [texlbl="c,\{1,2\}"]
+
+x3 -> x4 [texlbl="d,\{1\}"]
+x3 -> x8 [texlbl="i,\{2\}"]
+
+x4 -> x13 [texlbl="n,\{3\}"]
+x4 -> x5 [texlbl="e,\{1\}"]
+
+
+x6 -> x7 [texlbl="h,\{2,3\}"]
+
+x7 -> x2 [texlbl="b,\{2,3\}"]
+
+x8 -> x9 [texlbl="j,\{2\}"]
+x9 -> x10 [texlbl="l,\{2\}"]
+x11 -> x12 [texlbl="m,\{3\}"]
+x12 -> x4 [texlbl="d,\{3\}"]
+}
