@@ -19,25 +19,25 @@
 
   \draw(0,0)
   to [contact NO={info={$p_0$}}] ++(1,0)
-  to [contact NO={info={$m$}}] ++(1,0) -- ++(2,0)
+  to [contact P={info={$m$}}] ++(1,0) -- ++(2,0)
   to [coil={info={$b_0$}}] +(1,0)coordinate(laddertopright);
   \ladderrungend{1}
 
   \draw(0,0)
   to [contact NO={info={$p_1$}}] ++(1,0)
-  to [contact NO={info={$b$}}] ++(1,0) -- ++(2,0)
+  to [contact P={info={$b$}}] ++(1,0) -- ++(2,0)
   to [coil={info={$b_1$}}] +(1,0);
   \ladderrungend{1}
 
   \draw(0,0)
   to [contact NO={info={$p_2$}}] ++(1,0)
-  to [contact NO={info={$p$}}] ++(1,0) -- ++(2,0)
+  to [contact P={info={$p$}}] ++(1,0) -- ++(2,0)
   to [coil={info={$b_2$}}] +(1,0);
   \ladderrungend{1}
 
   \draw(0,0)
   to [contact NO={info={$p_3$}}] ++(1,0)
-  to [contact NO={info={$a$}}] ++(1,0) -- ++(2,0)
+  to [contact P={info={$a$}}] ++(1,0) -- ++(2,0)
   to [coil={info={$b_3$}}] +(1,0);
   \ladderrungend{1.5}
 
