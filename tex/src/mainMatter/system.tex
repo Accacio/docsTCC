@@ -1,7 +1,266 @@
 
 \chapter{System}
 \label{chap:system}
+In this chapter, the system to be control and identified is presented.
+The system is a didactic manufacture system assembled from submodules fabricated
+by Christiani\footnote{All images from the Christiani modules are present on its sales
+  catalog, available at \url{www.christiani.de}. All rights are reserved to Christiani.}, a German
+constructor specialised in Mechatronic Systems and Industry Models to
+didactic ends.
+This manufacture system is located in the \LCA, situated in the \UFRJ. This
+system is normally used for the under-graduated studies about Industrial
+Automation and control of \DESs, and also for data acquisition in some
+bachelor\slash master\slash doctorate thesis, as this one.
 
+This manufacture system is a cube assembly system, where the different cube
+halves shown in \autoref{fig:cubeHalves} are put together to form cubes.
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.55\textwidth]{maquete/pieces/workPieces.jpg}
+  \caption{Cube halves.}
+  \label{fig:cubeHalves}
+\end{figure}
+
+The pieces can be of two materials, metal or plastic, and the plastic ones can
+be white or black.
+The
+permutation of cube halves needed to form a cube is selected via a type of
+sorting, selecting the type of piece by material and colour. The assembled cubes
+are then stored. In order to perform these tasks (sorting, handling, assembling
+and stocking), 6 Units from Christiani manufacturer are used. These units can be
+seen in \autoref{fig:units}.
+
+\begin{figure}[H]
+\begin{subfigure}[t]{0.35\textwidth}
+  \centering
+  \includegraphics[width=\textwidth]{maquete/mag/mag.jpg}
+  \caption{Magazine Unit}
+\end{subfigure}
+\hfill
+\begin{subfigure}[t]{0.35\textwidth}
+  \centering
+  \includegraphics[width=\textwidth]{maquete/esteira/esteira.jpg}
+  \caption{Conveyor Belt.}
+\end{subfigure}
+
+\begin{subfigure}[t]{0.35\textwidth}
+  \centering
+  \includegraphics[width=\textwidth]{maquete/sensores/sensores.jpg}
+  \caption{Sorting Unit.}
+\end{subfigure}
+\hfill
+\begin{subfigure}[t]{0.35\textwidth}
+  \centering
+  \includegraphics[width=\textwidth]{maquete/braco/braco.jpg}
+  \caption{Handling Unit.}
+\end{subfigure}
+
+\begin{subfigure}[t]{0.35\textwidth}
+  \centering
+  \includegraphics[width=\textwidth]{maquete/prensa/prensa.jpg}
+  \caption{Assembly Unit.}
+\end{subfigure}
+\hfill
+\begin{subfigure}[t]{0.35\textwidth}
+  \centering
+  \includegraphics[width=\textwidth]{maquete/elevador/elevador.jpg}
+  \caption{Storage Unit.}
+\end{subfigure}
+  \caption{Units of the Manufacture System.}
+  \label{fig:units}
+\end{figure}
+
+In the next sections each unit and their Inputs\slash Outputs will be detailed.
+
+\begin{observation}
+What is described in the next sections as an input of a certain module, it is
+considered as an output for the controller and vice versa.  
+\end{observation}
+
+\section{Magazine Unit}
+\label{sec:magazine}
+The magazine is a unit with the objective to stock the cube halves to be used.
+There are 2 types of magazines, one to stock pieces without connection pins (the pins shown in \autoref{fig:cubeHalves}) and another to
+ stock pieces with those pins inserted, they can stack 10 and 8 pieces
+ respectively. They will be denominated \verb| MAG 1| and \verb|MAG 2|.
+Each magazine has a cylinder and a presence button. The cylinder serves to extract a
+piece from the bottom of the stack, and the button to know if the stack is empty
+or not. These cylinders have 2 inputs and 2
+outputs. The inputs they are used to extend and retract the cylinders (if they
+are set to $true$) and the
+outputs are used to know if the cylinders are extended or retracted, the output
+is equal to $true$ if the respective condition is fulfilled. These
+inputs  are called in this work \verb|Extend MAG 1/2 Cylinder| and
+\verb|Retract MAG 1/2 Cylinder|, and the outputs are called \verb|MAG 1/2 Cylinder Extended| and
+\verb|MAG 1/2 Cylinder Retracted|. The presence button of each magazine outputs a $true$
+value if the stack is empty and $false$, otherwise. Thus this presence buttons
+are called in this work \verb|MAG 1/2 Empty|, their localisation on the magazine
+can be seen in \autoref{fig:magazine2}. 
+\begin{figure}[H]
+  \centering
+  \begin{tikzpicture}
+    \node[anchor=south west,inner sep=0] (image) at (0,0) {
+      \includegraphics[width=8cm]{maquete/mag/30540_4.jpg}
+    };
+    % \draw[red,ultra thick,rounded corners] (0,0) rectangle (9.4,6.2);
+    \begin{scope}[x={(image.south east)},y={(image.north west)}]
+        % \draw[help lines,xstep=.1,ystep=.1] (0,0) grid (1,1);
+        % \foreach \x in {0,1,...,9} { \node [anchor=north] at (\x/10,0) {0.\x}; }
+        % \foreach \y in {0,1,...,9} { \node [anchor=east] at (0,\y/10) {0.\y}; }
+      \draw[red] (0.85,0.55) node {\textbf{Cylinder}};
+      \draw[<-,>=stealth,red,very thick] (0.8,0.5) -- (0.67,0.37);
+      \draw[red] (0.75,0.7) node {\textbf{Presence Button}};
+      \draw[red,very thick, rounded corners] (0.25,0.35) rectangle (0.35,0.45);
+      \draw[<-,>=stealth,red,very thick] (0.6,0.65) -- (0.37,0.45);
+      \end{scope}
+  \end{tikzpicture}
+  \caption{Magazine Unit}
+  \label{fig:magazine2}
+\end{figure}
+
+% only presence button
+% \begin{figure}[H]
+%   \centering
+%   \begin{tikzpicture}
+%     \node[anchor=south west,inner sep=0] (image) at (0,0) {
+%       \includegraphics[width=8cm]{maquete/mag/30540_4.jpg}
+%     };
+%     % \draw[red,ultra thick,rounded corners] (0,0) rectangle (9.4,6.2);
+%     \begin{scope}[x={(image.south east)},y={(image.north west)}]
+%         % \draw[help lines,xstep=.1,ystep=.1] (0,0) grid (1,1);
+%         % \foreach \x in {0,1,...,9} { \node [anchor=north] at (\x/10,0) {0.\x}; }
+%         % \foreach \y in {0,1,...,9} { \node [anchor=east] at (0,\y/10) {0.\y}; }
+%       \draw[red] (0.75,0.5) node {\textbf{Presence Button}};
+%       \draw[red,very thick, rounded corners] (0.25,0.35) rectangle (0.35,0.45);
+%       \draw[->,red,very thick] (0.5,0.5) -- (0.37,0.45);
+%       \end{scope}
+%   \end{tikzpicture}
+%   \caption{Magazine Unit}
+% \end{figure}
+
+\section{Conveyor Belt}
+\label{sec:magazine}
+The conveyor belt is a unit with the objective of transporting the pieces from a
+unit to another. It has 2 inputs and 1 output. The inputs are used to turn the
+belt on, but each input makes it turn in a direction or the other. The output is
+the generated by a presence sensor located in on extremity of the belt (see
+\Autoref{fig:conveyorBelt}), it is equal to $true$ if there is a piece in front
+of it and $false$ otherwise. The directions of the movement of the pieces is
+denominated Forward if it is going towards the presence sensor and reverse if
+not. Thus the names given to the inputs that generate this movements are
+\verb|Conveyor Belt Forward| and \verb|Conveyor Belt Reverse|.
+And the input is called \verb|Proximity Sensor End of Conveyor Belt|.
+
+\begin{figure}[H]
+  \centering
+  \begin{tikzpicture}
+    \node[anchor=south west,inner sep=0] (image) at (0,0) {
+      \includegraphics[trim={0 6cm 0 5cm},clip,width=8cm]{maquete/esteira/40778_3.jpg}
+    };
+    % \draw[red,ultra thick,rounded corners] (0,0) rectangle (9.4,6.2);
+    \begin{scope}[x={(image.south east)},y={(image.north west)}]
+        % \draw[help lines,xstep=.1,ystep=.1] (0,0) grid (1,1);
+        % \foreach \x in {0,1,...,9} { \node [anchor=north] at (\x/10,0) {0.\x}; }
+        % \foreach \y in {0,1,...,9} { \node [anchor=east] at (0,\y/10) {0.\y}; }
+        \draw [->,>=stealth,red, very thick](0.9,0.75) -- ++ (-0.8,0.0);
+        \draw [red] (0.5,0.85) node {Forward};
+        \draw [->,>=stealth,red, very thick](0.1,0.95) -- ++ (0.8,0.0);
+        \draw [red](0.5,1.05) node {Reverse};
+        
+        \draw [red](0.5,0.0) node {Presence Sensor};
+        \draw [red,very thick,rounded corners](0.05,0.45) rectangle (0.12,0.65);
+        \draw [->,>=stealth,red, very thick](0.1,0.4) -- (0.3,0.1);
+      \end{scope}
+  \end{tikzpicture}
+  \caption{Conveyor Belt}
+  \label{fig:conveyorBelt}
+\end{figure}
+
+% no sensor
+% \begin{figure}[H]
+%   \centering
+%   \begin{tikzpicture}
+%     \node[anchor=south west,inner sep=0] (image) at (0,0) {
+%       \includegraphics[trim={0 6cm 0 5cm},clip,width=8cm]{maquete/esteira/40778_3.jpg}
+%     };
+%     % \draw[red,ultra thick,rounded corners] (0,0) rectangle (9.4,6.2);
+%     \begin{scope}[x={(image.south east)},y={(image.north west)}]
+%         % \draw[help lines,xstep=.1,ystep=.1] (0,0) grid (1,1);
+%         % \foreach \x in {0,1,...,9} { \node [anchor=north] at (\x/10,0) {0.\x}; }
+%         % \foreach \y in {0,1,...,9} { \node [anchor=east] at (0,\y/10) {0.\y}; }
+%         \draw [->,>=stealth,red, very thick](0.9,0.7) -- (0.1,0.7);
+%         \draw [red] (0.5,0.8) node {Forward};
+%         \draw [->,>=stealth,red, very thick](0.1,0.1) -- (0.9,0.1);
+%         \draw [red](0.5,0.0) node {Reverse};
+%       \end{scope}
+%   \end{tikzpicture}
+%   \caption{Conveyor Belt}
+% \end{figure}
+
+\section{Sorting Unit}
+\label{sec:sortingUnit}
+As the name says, the sorting unit serves to sort the pieces. 
+\begin{figure}[H]
+  \centering
+  \begin{tikzpicture}
+    \node[anchor=south west,inner sep=0] (image) at (0,0) {
+      \includegraphics[trim={0 0 0 0},clip,width=8cm]{maquete/sensores/69511_2.jpg}
+    };
+    % \draw[red,ultra thick,rounded corners] (0,0) rectangle (9.4,6.2);
+
+    \begin{scope}[x={(image.south east)},y={(image.north west)}]
+        \draw[help lines,xstep=.1,ystep=.1] (0,0) grid (1,1);
+        \foreach \x in {0,1,...,9} { \node [anchor=north] at (\x/10,0) {0.\x}; }
+        \foreach \y in {0,1,...,9} { \node [anchor=east] at (0,\y/10) {0.\y};  }
+        \draw[red,ultra thick,rounded corners] (0.15,0.4) rectangle ++ (0.15,0.1);
+        \draw[red] (0.1,0.1) node {\textbf{Left}};
+        \draw[->,>=stealth,red, very thick] (0.2,0.38) -- (0.1,0.15);
+        \draw[magenta,ultra thick,rounded corners] (0.35,0.4) rectangle ++ (0.15,0.1);
+        \draw[magenta] (0.1,0.8) node {\textbf{Center}};
+        \draw[->,>=stealth,magenta, very thick] (0.4,0.52) -- (0.2,0.75);
+        \draw[cyan,ultra thick,rounded corners] (0.53,0.4) rectangle ++ (0.15,0.1);
+        \draw[cyan] (0.7,0.1) node {\textbf{Right}};
+        \draw[->,>=stealth,cyan, very thick] (0.65,0.38) -- (0.7,0.15);
+      \end{scope}
+  \end{tikzpicture}
+  \caption{Sorting Unit - Identification}
+  \label{fig:sortIden}
+\end{figure}
+\begin{figure}[H]
+  \centering
+  \begin{tikzpicture}
+    \node[anchor=south west,inner sep=0] (image) at (0,0) {
+      \includegraphics[trim={0 0 0 0},clip,width=8cm]{maquete/sensores/69511_3.jpg}
+    };
+    % \draw[red,ultra thick,rounded corners] (0,0) rectangle (9.4,6.2);
+
+    \begin{scope}[x={(image.south east)},y={(image.north west)}]
+        % \draw[help lines,xstep=.1,ystep=.1] (0,0) grid (1,1);
+        % \foreach \x in {0,1,...,9} { \node [anchor=north] at (\x/10,0) {0.\x}; }
+        % \foreach \y in {0,1,...,9} { \node [anchor=east] at (0,\y/10) {0.\y};  }
+        \draw[red,ultra thick,rounded corners] (0.15,0.4) rectangle ++ (0.15,0.1);
+        \draw[red] (0.1,0.1) node {\textbf{Left}};
+        \draw[->,>=stealth,red, very thick] (0.2,0.38) -- (0.1,0.15);
+        \draw[magenta,ultra thick,rounded corners] (0.35,0.4) rectangle ++ (0.15,0.1);
+        \draw[magenta] (0.1,0.8) node {\textbf{Center}};
+        \draw[->,>=stealth,magenta, very thick] (0.4,0.52) -- (0.2,0.75);
+        \draw[cyan,ultra thick,rounded corners] (0.53,0.4) rectangle ++ (0.15,0.1);
+        \draw[cyan] (0.7,0.1) node {\textbf{Right}};
+        \draw[->,>=stealth,cyan, very thick] (0.65,0.38) -- (0.7,0.15);
+      \end{scope}
+  \end{tikzpicture}
+  \caption{Sorting Unit - Discharge}
+  \label{fig:sortDisc}
+\end{figure}
+
+\section{Handling Unit}
+\label{sec:handlingUnit}
+
+\section{Assembly Unit}
+\label{sec:assemblyUnit}
+
+\section{Storage Unit}
+\label{sec:storageUnit}
 \begin{figure}[H]
   \centering
   \begin{tikzpicture}
@@ -22,89 +281,6 @@
   \caption{Storage Unit}
 \end{figure}
 
-\begin{figure}[H]
-  \centering
-  \begin{tikzpicture}
-    \node[anchor=south west,inner sep=0] (image) at (0,0) {
-      \includegraphics[trim={0 6cm 0 5cm},clip,width=8cm]{maquete/esteira/40778_3.jpg}
-    };
-    % \draw[red,ultra thick,rounded corners] (0,0) rectangle (9.4,6.2);
-    \begin{scope}[x={(image.south east)},y={(image.north west)}]
-        % \draw[help lines,xstep=.1,ystep=.1] (0,0) grid (1,1);
-        % \foreach \x in {0,1,...,9} { \node [anchor=north] at (\x/10,0) {0.\x}; }
-        % \foreach \y in {0,1,...,9} { \node [anchor=east] at (0,\y/10) {0.\y}; }
-        \draw [->,>=stealth,red, very thick](0.9,0.7) -- (0.1,0.7);
-        \draw [red] (0.5,0.8) node {Forward};
-        \draw [->,>=stealth,red, very thick](0.1,0.1) -- (0.9,0.1);
-        \draw [red](0.5,0.0) node {Reverse};
-      \end{scope}
-  \end{tikzpicture}
-  \caption{Conveyor Belt}
-\end{figure}
-
-\begin{figure}[H]
-  \centering
-  \begin{tikzpicture}
-    \node[anchor=south west,inner sep=0] (image) at (0,0) {
-      \includegraphics[trim={0 0 0 0},clip,width=8cm]{maquete/sensores/69511_3.jpg}
-    };
-    % \draw[red,ultra thick,rounded corners] (0,0) rectangle (9.4,6.2);
-    \begin{scope}[x={(image.south east)},y={(image.north west)}]
-        % \draw[help lines,xstep=.1,ystep=.1] (0,0) grid (1,1);
-        % \foreach \x in {0,1,...,9} { \node [anchor=north] at (\x/10,0) {0.\x}; }
-        % \foreach \y in {0,1,...,9} { \node [anchor=east] at (0,\y/10) {0.\y};  }
-        \draw[red,ultra thick,rounded corners] (0.15,0.4) rectangle ++ (0.15,0.1);
-        \draw[red] (0.1,0.1) node {\textbf{Left}};
-        \draw[->,>=stealth,red, very thick] (0.2,0.38) -- (0.1,0.15);
-        \draw[magenta,ultra thick,rounded corners] (0.35,0.4) rectangle ++ (0.15,0.1);
-        \draw[magenta] (0.1,0.8) node {\textbf{Center}};
-        \draw[->,>=stealth,magenta, very thick] (0.4,0.52) -- (0.2,0.75);
-        \draw[cyan,ultra thick,rounded corners] (0.53,0.4) rectangle ++ (0.15,0.1);
-        \draw[cyan] (0.7,0.1) node {\textbf{Right}};
-        \draw[->,>=stealth,cyan, very thick] (0.65,0.38) -- (0.7,0.15);
-      \end{scope}
-  \end{tikzpicture}
-  \caption{Sensors}
-\end{figure}
-
-\begin{figure}[H]
-  \centering
-  \begin{tikzpicture}
-    \node[anchor=south west,inner sep=0] (image) at (0,0) {
-      \includegraphics[trim={20cm 0 30cm 20cm},clip,width=0.8\textwidth]{maquete/armAngles.jpg}
-    };
-    % \draw[red,ultra thick,rounded corners] (0,0) rectangle (9.4,6.2);
-    \begin{scope}[x={(image.south east)},y={(image.north west)}]
-        % \draw[help lines,xstep=.1,ystep=.1] (0,0) grid (1,1);
-        % \foreach \x in {0,1,...,9} { \node [anchor=north] at (\x/10,0) {0.\x}; }
-        % \foreach \y in {0,1,...,9} { \node [anchor=east] at (0,\y/10) {0.\y}; }a
-        
-      
-        \draw[red,->,>=stealth,very thick] (0.48,0.9) -- ++(-50:0.7);
-        \draw[red,->,>=stealth,very thick] (0.48,0.9) -- ++(-95:0.7);
-        \draw[red,->,>=stealth,very thick] (0.48,0.9) -- ++(-120:0.7);
-
-        \draw[fill=red, fill opacity=0.2,draw=none] (0.48,0.9) -- ([shift=(-50:0.5)]0.48,0.9) arc (-50:-95:0.5);
-        \draw[fill=blue, fill opacity=0.2,draw=none] (0.48,0.9) -- ([shift=(-95:0.5)]0.48,0.9) arc (-95:-120:0.5);
-
-        \draw [fill,white,fill opacity=0.7,draw=none] (0.02,0.23) rectangle ++ (0.35,0.06);
-        \draw [black] (0.2,0.25) node {\tiny \textbf{STORAGE\_ANGLE\_BEFORE}};
-
-        \draw [fill,white,fill opacity=0.7,draw=none] (0.25,0.13) rectangle ++ (0.3,0.06);
-        \draw [black] (0.4,0.15) node {\tiny \textbf{PRESS\_ANGLE\_AFTER}};
-
-        \draw [fill,white,fill opacity=0.7,draw=none] (0.7,0.28) rectangle ++ (0.3,0.06);
-        \draw [black] (0.85,0.3) node {\tiny \textbf{PRESS\_ANGLE\_BEFORE}};
-
-        \draw [fill,white,fill opacity=0.7,draw=none] (0.1,0.82) rectangle  (0.2,0.96);
-        \draw [red,thick] ([shift=(0:0.03)]0.15,0.9) arc (0:180:0.03);
-        \draw[black,->,>=stealth,very thick] (0.15,0.85) -- ++(0,0.1);
-        \draw [red,->,>=stealth,thick] ([shift=(0:-0.03)]0.15,0.9) arc (-180:-20:0.03);
-
-      \end{scope}
-  \end{tikzpicture}
-  \caption{Arm Stop Logic Angles}
-\end{figure}
 
 %%% Local Variables:
 %%% mode: latex
