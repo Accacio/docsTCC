@@ -85,7 +85,7 @@
 | cp136|Move Storage Unit Downwards|
 | cp137|Storage Unit Ready ( vertical )|
 | cp139|Storage Unit Ready|
-| cp140|Reset COUNTER1, COUNTER2, COUNTER3, COUNTER4 and COUNTER5|
+| cp140|Reset COUNTER1, COUNTER2, COUNTER3, COUNTER4 and COUNTER5*|
 | cp143|Raise, Extend Arm and Turn CCW|
 | cp145|Raise Arm and Turn CCW|
 # PlacesEnd
@@ -110,26 +110,25 @@
 | ct17, ct104|ARMCOUNTER <= @@latex:BELT\_ANGLE\_CW@@|
 | ct19|Start Button|
 | ct20|$\overline{\mbox{MAG1 Empty}}$|
-| ct22|MAG1's Cylinder Extended \uparrow|
-| ct23|MAG1's Cylinder Retracted \uparrow|
+| ct22|\uparrow MAG1's Cylinder Extended|
+| ct23|\uparrow MAG1's Cylinder Retracted|
 | ct26, ct56|$\overline{\mbox{Metallic Sensor}}$|
 | ct27, ct57, ct61|$\overline{\mbox{White Color Sensor}}$|
-| ct28, ct37, ct53|Proximity Sensor Left Discharge Cylinder \uparrow|
+| ct28, ct37, ct53|\uparrow Proximity Sensor Left Discharge Cylinder|
 | ct29, ct59|Right Discharge Cylinder Extended|
 | ct31|White Color Sensor|
-| ct32, ct63|Proximity Sensor Center Discharge Cylinder \uparrow|
+| ct32, ct63|\uparrow Proximity Sensor Center Discharge Cylinder|
 | ct33, ct64|Center Discharge Cylinder Extended|
 | ct35, ct52|Metallic Sensor|
 | ct36, ct67|Concavity Downwards|
 | ct38, ct54|Left Discharge Cylinder Extended|
 | ct41, ct62|Concavity Upwards|
-| ct42, ct68|Proximity Sensor End Of Conveyor Belt \uparrow|
-| ct44|Proximity Sensor End Of Conveyor Belt \downarrow|
+| ct42, ct68|\uparrow Proximity Sensor End Of Conveyor Belt|
+| ct44, ct70|\downarrow Proximity Sensor End Of Conveyor Belt|
 | ct46|$\overline{\mbox{MAG2 Empty}}$|
-| ct48|MAG2's Cylinder Extended \uparrow|
-| ct49|MAG2's Cylinder Retracted \uparrow|
-| ct58|Proximity Sensor Right Discharge Cylinder \uparrow|
-| ct70|Proximity Sensor End Of Conveyor Belt \uparrow \downarrow|
+| ct48|\uparrow MAG2's Cylinder Extended|
+| ct49|\uparrow MAG2's Cylinder Retracted|
+| ct58|\uparrow Proximity Sensor Right Discharge Cylinder|
 | ct72|Arm Raised|
 | ct77|ARMCOUNTER <= @@latex:PRESS\_ANGLE@@|
 | ct82|HALFPIECECOUNTER=1, Assembly Unit Holder Extended and Safety Door Opened|
@@ -189,7 +188,7 @@
 | ctt14, ctt98, ctt99, ctt105, ctt145|T=2s|
 | ctt16, ctt88, ctt89, ctt103|T=1s|
 | ctt24, ctt43, ctt50, ctt69|T=0.5s|
-| ctt25, ctt51|Presence \uparrow T=0.5s|
+| ctt25, ctt51|\uparrow Presence T=0.5s|
 | ctt73, ctt80|T=1.5s|
 | ctt74, ctt79, ctt94|T=1.5s and Arm Lowered|
 | ctt75, ctt76, ctt78, ctt81|T=1.5s and Arm Raised|
