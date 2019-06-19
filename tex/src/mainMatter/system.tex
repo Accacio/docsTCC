@@ -212,14 +212,14 @@ As the name says, the sorting unit serves to sort the pieces.
         \draw[help lines,xstep=.1,ystep=.1] (0,0) grid (1,1);
         \foreach \x in {0,1,...,9} { \node [anchor=north] at (\x/10,0) {0.\x}; }
         \foreach \y in {0,1,...,9} { \node [anchor=east] at (0,\y/10) {0.\y};  }
-        \draw[red,ultra thick,rounded corners] (0.15,0.4) rectangle ++ (0.15,0.1);
-        \draw[red] (0.1,0.1) node {\textbf{Left}};
+        \draw[red,ultra thick,rounded corners] (0.59,0.41) rectangle ++ (0.09,0.2);
+        \draw[red] (0.1,0.1) node {\textbf{Optic}};
         \draw[->,>=stealth,red, very thick] (0.2,0.38) -- (0.1,0.15);
-        \draw[magenta,ultra thick,rounded corners] (0.35,0.4) rectangle ++ (0.15,0.1);
-        \draw[magenta] (0.1,0.8) node {\textbf{Center}};
+        \draw[magenta,ultra thick,rounded corners] (0.48,0.47) rectangle ++ (0.09,0.3);
+        \draw[magenta] (0.1,0.8) node {\textbf{Distance}};
         \draw[->,>=stealth,magenta, very thick] (0.4,0.52) -- (0.2,0.75);
-        \draw[cyan,ultra thick,rounded corners] (0.53,0.4) rectangle ++ (0.15,0.1);
-        \draw[cyan] (0.7,0.1) node {\textbf{Right}};
+        \draw[cyan,ultra thick,rounded corners] (0.53,0.24) rectangle ++ (0.15,0.1);
+        \draw[cyan] (0.7,0.1) node {\textbf{Metal}};
         \draw[->,>=stealth,cyan, very thick] (0.65,0.38) -- (0.7,0.15);
       \end{scope}
   \end{tikzpicture}
