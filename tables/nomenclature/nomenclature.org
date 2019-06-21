@@ -19,7 +19,7 @@
 | Right Discharge Cylinder Extended          | I1.4    | I_RDCEXT   |
 | Right Discharge Cylinder Retracted         | I1.5    | I_RDCRET   |
 | White Color Sensor                         | I1.6    | I_WHIT     |
-| Metalic Sensor                             | I1.7    | I_METAL    |
+| Metallic Sensor                             | I1.7    | I_METAL    |
 | Proximity Sensor End Of Conveyor Belt      | I0.6    | I_PSEOC    |
 | Distance Sensor                            | IW4     | I_DS       |
 
