@@ -29,7 +29,7 @@
 | Extend MAG 1 Cylinder            | Q1.0    | O_MAG1EXT |
 | Retract MAG 1 Cylinder           | Q1.1    | O_MAG1RET |
 | Extend MAG 2 Cylinder            | Q1.2    | O_MAG2EXT |
-| Retra MAG 2 Cylinder             | Q1.3    | O_MAG2RET |
+| Retract MAG 2 Cylinder             | Q1.3    | O_MAG2RET |
 | Extend Right Discharge Cylinder  | Q0.2    | O_RDCEXT  |
 | Extend Center Discharge Cylinder | Q0.1    | O_CDCEXT  |
 | Extend Left Discharge Cylinder   | Q0.0    | O_LDCEXT  |

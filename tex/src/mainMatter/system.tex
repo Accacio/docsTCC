@@ -83,14 +83,14 @@ The magazine is a unit with the objective to stock the cube halves to be used.
 There are 2 types of magazines, one to stock pieces without connection pins (the pins shown in \autoref{fig:cubeHalves}) and another to
  stock pieces with those pins inserted, they can stack 10 and 8 pieces
  respectively. They will be denominated \verb| MAG 1| and \verb|MAG 2|.
-Each magazine has a cylinder and a presence button. The cylinder serves to extract a
+Each magazine has a pneumatic cylinder and a presence button. The cylinder serves to extract a
 piece from the bottom of the stack, and the button to know if the stack is empty
-or not. These cylinders have 2 inputs and 2
-outputs. The inputs they are used to extend and retract the cylinders (if they
-are set to $true$) and the
-outputs are used to know if the cylinders are extended or retracted, the output
-is equal to $true$ if the respective condition is fulfilled. These
-inputs  are called in this work \verb|Extend MAG 1/2 Cylinder| and
+or not. Each one of these cylinders have 2 inputs that are used to extend and retract the cylinders (if they
+are set to $true$), this kind of cylinder is called \emph{double acting
+  pneumatic cylinder}. There are also 2
+outputs  used to know if the cylinders are extended or retracted, the output
+is equal to $true$ if the respective condition is fulfilled. The inputs to
+control the cylinders are called in this work \verb|Extend MAG 1/2 Cylinder| and
 \verb|Retract MAG 1/2 Cylinder|, and the outputs are called \verb|MAG 1/2 Cylinder Extended| and
 \verb|MAG 1/2 Cylinder Retracted|. The presence button of each magazine outputs a $true$
 value if the stack is empty and $false$, otherwise. Thus this presence buttons
@@ -102,16 +102,16 @@ can be seen in \autoref{fig:magazine2}.
     \node[anchor=south west,inner sep=0] (image) at (0,0) {
       \includegraphics[width=8cm]{maquete/mag/30540_4.jpg}
     };
-    % \draw[red,ultra thick,rounded corners] (0,0) rectangle (9.4,6.2);
+    % \draw[color1,ultra thick,rounded corners] (0,0) rectangle (9.4,6.2);
     \begin{scope}[x={(image.south east)},y={(image.north west)}]
         % \draw[help lines,xstep=.1,ystep=.1] (0,0) grid (1,1);
         % \foreach \x in {0,1,...,9} { \node [anchor=north] at (\x/10,0) {0.\x}; }
         % \foreach \y in {0,1,...,9} { \node [anchor=east] at (0,\y/10) {0.\y}; }
-      \draw[red] (0.85,0.55) node {\textbf{Cylinder}};
-      \draw[<-,>=stealth,red,very thick] (0.8,0.5) -- (0.67,0.37);
-      \draw[red] (0.75,0.7) node {\textbf{Presence Button}};
-      \draw[red,very thick, rounded corners] (0.25,0.35) rectangle (0.35,0.45);
-      \draw[<-,>=stealth,red,very thick] (0.6,0.65) -- (0.37,0.45);
+      \draw[color1] (0.85,0.55) node {\textbf{Cylinder}};
+      \draw[<-,>=stealth,color1,very thick] (0.8,0.5) -- (0.67,0.37);
+      \draw[color1] (0.75,0.7) node {\textbf{Presence Button}};
+      \draw[color1,very thick, rounded corners] (0.25,0.35) rectangle (0.35,0.45);
+      \draw[<-,>=stealth,color1,very thick] (0.6,0.65) -- (0.37,0.45);
       \end{scope}
   \end{tikzpicture}
   \caption{Magazine Unit.}
@@ -125,14 +125,14 @@ can be seen in \autoref{fig:magazine2}.
 %     \node[anchor=south west,inner sep=0] (image) at (0,0) {
 %       \includegraphics[width=8cm]{maquete/mag/30540_4.jpg}
 %     };
-%     % \draw[red,ultra thick,rounded corners] (0,0) rectangle (9.4,6.2);
+%     % \draw[color1,ultra thick,rounded corners] (0,0) rectangle (9.4,6.2);
 %     \begin{scope}[x={(image.south east)},y={(image.north west)}]
 %         % \draw[help lines,xstep=.1,ystep=.1] (0,0) grid (1,1);
 %         % \foreach \x in {0,1,...,9} { \node [anchor=north] at (\x/10,0) {0.\x}; }
 %         % \foreach \y in {0,1,...,9} { \node [anchor=east] at (0,\y/10) {0.\y}; }
-%       \draw[red] (0.75,0.5) node {\textbf{Presence Button}};
-%       \draw[red,very thick, rounded corners] (0.25,0.35) rectangle (0.35,0.45);
-%       \draw[->,red,very thick] (0.5,0.5) -- (0.37,0.45);
+%       \draw[color1] (0.75,0.5) node {\textbf{Presence Button}};
+%       \draw[color1,very thick, rounded corners] (0.25,0.35) rectangle (0.35,0.45);
+%       \draw[->,color1,very thick] (0.5,0.5) -- (0.37,0.45);
 %       \end{scope}
 %   \end{tikzpicture}
 %   \caption{Magazine Unit}
@@ -157,19 +157,19 @@ And the input is called \verb|Proximity Sensor End of Conveyor Belt|.
     \node[anchor=south west,inner sep=0] (image) at (0,0) {
       \includegraphics[trim={0 6cm 0 5cm},clip,width=8cm]{maquete/esteira/40778_3.jpg}
     };
-    % \draw[red,ultra thick,rounded corners] (0,0) rectangle (9.4,6.2);
+    % \draw[color1,ultra thick,rounded corners] (0,0) rectangle (9.4,6.2);
     \begin{scope}[x={(image.south east)},y={(image.north west)}]
         % \draw[help lines,xstep=.1,ystep=.1] (0,0) grid (1,1);
         % \foreach \x in {0,1,...,9} { \node [anchor=north] at (\x/10,0) {0.\x}; }
         % \foreach \y in {0,1,...,9} { \node [anchor=east] at (0,\y/10) {0.\y}; }
-        \draw [->,>=stealth,red, very thick](0.9,0.75) -- ++ (-0.8,0.0);
-        \draw [red] (0.5,0.85) node {Forward};
-        \draw [->,>=stealth,red, very thick](0.1,0.95) -- ++ (0.8,0.0);
-        \draw [red](0.5,1.05) node {Reverse};
+        \draw [->,>=stealth,color1, very thick](0.9,0.75) -- ++ (-0.8,0.0);
+        \draw [color1] (0.5,0.85) node {Forward};
+        \draw [->,>=stealth,color1, very thick](0.1,0.95) -- ++ (0.8,0.0);
+        \draw [color1](0.5,1.05) node {Reverse};
         
-        \draw [red](0.5,0.0) node {Presence Sensor};
-        \draw [red,very thick,rounded corners](0.05,0.45) rectangle (0.12,0.65);
-        \draw [->,>=stealth,red, very thick](0.1,0.4) -- (0.3,0.1);
+        \draw [color1](0.5,0.0) node {Presence Sensor};
+        \draw [color1,very thick,rounded corners](0.05,0.45) rectangle (0.12,0.65);
+        \draw [->,>=stealth,color1, very thick](0.1,0.4) -- (0.3,0.1);
       \end{scope}
   \end{tikzpicture}
   \caption{Conveyor Belt.}
@@ -183,15 +183,15 @@ And the input is called \verb|Proximity Sensor End of Conveyor Belt|.
 %     \node[anchor=south west,inner sep=0] (image) at (0,0) {
 %       \includegraphics[trim={0 6cm 0 5cm},clip,width=8cm]{maquete/esteira/40778_3.jpg}
 %     };
-%     % \draw[red,ultra thick,rounded corners] (0,0) rectangle (9.4,6.2);
+%     % \draw[color1,ultra thick,rounded corners] (0,0) rectangle (9.4,6.2);
 %     \begin{scope}[x={(image.south east)},y={(image.north west)}]
 %         % \draw[help lines,xstep=.1,ystep=.1] (0,0) grid (1,1);
 %         % \foreach \x in {0,1,...,9} { \node [anchor=north] at (\x/10,0) {0.\x}; }
 %         % \foreach \y in {0,1,...,9} { \node [anchor=east] at (0,\y/10) {0.\y}; }
-%         \draw [->,>=stealth,red, very thick](0.9,0.7) -- (0.1,0.7);
-%         \draw [red] (0.5,0.8) node {Forward};
-%         \draw [->,>=stealth,red, very thick](0.1,0.1) -- (0.9,0.1);
-%         \draw [red](0.5,0.0) node {Reverse};
+%         \draw [->,>=stealth,color1, very thick](0.9,0.7) -- (0.1,0.7);
+%         \draw [color1] (0.5,0.8) node {Forward};
+%         \draw [->,>=stealth,color1, very thick](0.1,0.1) -- (0.9,0.1);
+%         \draw [color1](0.5,0.0) node {Reverse};
 %       \end{scope}
 %   \end{tikzpicture}
 %   \caption{Conveyor Belt}
@@ -221,21 +221,21 @@ The placement of these 3 sensors can be seen in \Autoref{fig:sortIden}.
     \node[anchor=south west,inner sep=0] (image) at (0,0) {
       \includegraphics[trim={0 0 0 0},clip,width=8cm]{maquete/sensores/69511_2.jpg}
     };
-    % \draw[red,ultra thick,rounded corners] (0,0) rectangle (9.4,6.2);
+    % \draw[color1,ultra thick,rounded corners] (0,0) rectangle (9.4,6.2);
 
     \begin{scope}[x={(image.south east)},y={(image.north west)}]
         % \draw[help lines,xstep=.1,ystep=.1] (0,0) grid (1,1);
         % \foreach \x in {0,1,...,9} { \node [anchor=north] at (\x/10,0) {0.\x}; }
         % \foreach \y in {0,1,...,9} { \node [anchor=east] at (0,\y/10) {0.\y};  }
-        \draw[red,ultra thick,rounded corners] (0.59,0.41) rectangle ++ (0.09,0.2);
-        \draw[red] (0.1,0.3) node {\textbf{Optic}};
-        \draw[->,>=stealth,red, very thick] (0.55,0.43) -- (0.2,0.32);
-        \draw[magenta,ultra thick,rounded corners] (0.48,0.47) rectangle ++ (0.09,0.3);
-        \draw[magenta] (0.1,0.8) node {\textbf{Distance}};
-        \draw[->,>=stealth,magenta, very thick] (0.45,0.6) -- (0.25,0.75);
-        \draw[cyan,ultra thick,rounded corners] (0.53,0.24) rectangle ++ (0.15,0.1);
-        \draw[cyan] (0.6,0.05) node {\textbf{Inductive}};
-        \draw[->,>=stealth,cyan, very thick] (0.6,0.2) -- (0.6,0.1);
+        \draw[color1,ultra thick,rounded corners] (0.59,0.41) rectangle ++ (0.09,0.2);
+        \draw[color1] (0.1,0.3) node {\textbf{Optic}};
+        \draw[->,>=stealth,color1, very thick] (0.55,0.43) -- (0.2,0.32);
+        \draw[color2,ultra thick,rounded corners] (0.48,0.47) rectangle ++ (0.09,0.3);
+        \draw[color2] (0.1,0.8) node {\textbf{Distance}};
+        \draw[->,>=stealth,color2, very thick] (0.45,0.6) -- (0.25,0.75);
+        \draw[color3,ultra thick,rounded corners] (0.53,0.24) rectangle ++ (0.15,0.1);
+        \draw[color3] (0.6,0.05) node {\textbf{Inductive}};
+        \draw[->,>=stealth,color3, very thick] (0.6,0.2) -- (0.6,0.1);
       \end{scope}
   \end{tikzpicture}
   \caption{Sorting Unit - Identification.}
@@ -244,7 +244,7 @@ The placement of these 3 sensors can be seen in \Autoref{fig:sortIden}.
 
 The discharging part is formed by 3 groups of inputs and outputs, denoted Left, Center and
 Right, as shown in \Autoref{fig:sortDisc}. 
-Each group has a cylinder and a presence sensor, and uses them to discharge pieces
+Each group has a pneumatic cylinder and a presence sensor, and uses them to discharge pieces
 depending on the logic of sorting and the identified piece by the identification
 part of the sorting unit.
 \begin{figure}[H]
@@ -253,28 +253,29 @@ part of the sorting unit.
     \node[anchor=south west,inner sep=0] (image) at (0,0) {
       \includegraphics[trim={0 0 0 0},clip,width=8cm]{maquete/sensores/69511_3.jpg}
     };
-    % \draw[red,ultra thick,rounded corners] (0,0) rectangle (9.4,6.2);
+    % \draw[color1,ultra thick,rounded corners] (0,0) rectangle (9.4,6.2);
 
     \begin{scope}[x={(image.south east)},y={(image.north west)}]
         % \draw[help lines,xstep=.1,ystep=.1] (0,0) grid (1,1);
         % \foreach \x in {0,1,...,9} { \node [anchor=north] at (\x/10,0) {0.\x}; }
         % \foreach \y in {0,1,...,9} { \node [anchor=east] at (0,\y/10) {0.\y};  }
-        \draw[red,ultra thick,rounded corners] (0.15,0.4) rectangle ++ (0.15,0.1);
-        \draw[red] (0.1,0.1) node {\textbf{Left}};
-        \draw[->,>=stealth,red, very thick] (0.2,0.38) -- (0.1,0.15);
-        \draw[magenta,ultra thick,rounded corners] (0.35,0.4) rectangle ++ (0.15,0.1);
-        \draw[magenta] (0.1,0.8) node {\textbf{Center}};
-        \draw[->,>=stealth,magenta, very thick] (0.4,0.52) -- (0.2,0.75);
-        \draw[cyan,ultra thick,rounded corners] (0.53,0.4) rectangle ++ (0.15,0.1);
-        \draw[cyan] (0.7,0.1) node {\textbf{Right}};
-        \draw[->,>=stealth,cyan, very thick] (0.65,0.38) -- (0.7,0.15);
+        \draw[color1,ultra thick,rounded corners] (0.15,0.4) rectangle ++ (0.15,0.1);
+        \draw[color1] (0.1,0.1) node {\textbf{Left}};
+        \draw[->,>=stealth,color1, very thick] (0.2,0.38) -- (0.1,0.15);
+        \draw[color2,ultra thick,rounded corners] (0.35,0.4) rectangle ++ (0.15,0.1);
+        \draw[color2] (0.1,0.8) node {\textbf{Center}};
+        \draw[->,>=stealth,color2, very thick] (0.4,0.52) -- (0.2,0.75);
+        \draw[color3,ultra thick,rounded corners] (0.53,0.4) rectangle ++ (0.15,0.1);
+        \draw[color3] (0.7,0.1) node {\textbf{Right}};
+        \draw[->,>=stealth,color3, very thick] (0.65,0.38) -- (0.7,0.15);
       \end{scope}
   \end{tikzpicture}
   \caption{Sorting Unit - Discharging.}
   \label{fig:sortDisc}
 \end{figure}
 Differently from \verb|MAG 1/2|, each cylinder can be extended and retracted
-using a single input. When the corresponding input is equal to $true$ it
+using a single input, the name of this kind of cylinder is \emph{
+single acting pneumatic cylinder}. When the corresponding input is equal to $true$ it
 extends, but when it is $false$ it is automatically retracted.
 A name for each input is given depending on the group name, for
 instance, to extend the left cylinder we use
@@ -305,7 +306,10 @@ section we will use beside these verbs the cylindrical coordinate
 system ($\rho,\phi,z$), where $\rho$ is the axial distance, $\phi$ is the azimuth
 and $z$ is the height.
 The \emph{end-effector} of this manipulator is equipped with a vacuum suction
-device capable of holding the pieces. In order to control the position of the \emph{end-effector} of the manipulator, which for brevity's sake will be called
+device capable of holding the pieces, which is controlled by an input called
+\verb|Turn Vacuum Gripper On| that evidently turns the vacuum on when activated.
+
+In order to control the position of the \emph{end-effector} of the manipulator, which for brevity's sake will be called
 ``arm'' throughout this work, there is a couple of pneumatic cylinders, whose
 behaviour is similar
 to the ones in the sorting unit, placed in each
@@ -329,8 +333,13 @@ the arm in \Autoref{fig:handlingUnit}. This same direction is considered as the
 positive direction where the azimuth $\phi$ increases. The
 \emph{zero position} of the arm azimuth ($\phi=0,$), is considered when the
 \emph{end-effector} is diametrically opposed to the calibration pin shown in
-\Autoref{fig:handlingUnit}, thus the azimuth of the arm in this figure is
-$\phi=180^o$. An encoder is also present in this arm, in order to estimate the
+\Autoref{fig:handlingUnit}. This pin as the name suggests is used for the
+calibration of the arm. The arm has an inductive sensor in the opposite to the
+\emph{end-effector} that is activated when
+it is aligned to this pin.  The azimuth of the arm in \Autoref{fig:handlingUnit} is
+$\phi=180^o$.
+
+An encoder is also present in this arm, in order to estimate the
 azimuth angle, but as the angular velocity of the arm is relatively big, once
 the resolution of the arm is very precise, the output of this encoder is connected to a High Speed
 Counter in a \PLC, in order to correctly estimate the angle. The configuration
@@ -341,21 +350,21 @@ of the High Speed Counter can be seen in \cite{rochapereira2019automacao,antunes
     \node[anchor=south west,inner sep=0] (image) at (0,0) {
       \includegraphics[trim={0 0 0 0},clip,width=8cm]{maquete/braco/69518_6.jpg}
     };
-    % \draw[red,ultra thick,rounded corners] (0,0) rectangle (9.4,6.2);
+    % \draw[color1,ultra thick,rounded corners] (0,0) rectangle (9.4,6.2);
 
     \begin{scope}[x={(image.south east)},y={(image.north west)}]
         % \draw[help lines,xstep=.1,ystep=.1] (0,0) grid (1,1);
         % \foreach \x in {0,1,...,9} { \node [anchor=north] at (\x/10,0) {0.\x}; }
         % \foreach \y in {0,1,...,9} { \node [anchor=east] at (0,\y/10) {0.\y};  }
         % \draw [fill,white,fill opacity=0.4,draw=none] (0.1,0.8) rectangle  (0.4,0.96);
-        \draw [red,rounded corners, very thick] (0.43,0.4) rectangle  (0.5,0.45);
-        \draw [->,>=stealth,red, very thick] (0.51,0.384) -- (0.7,0.1);
-        \draw [red] (0.7,0.04) node {Calibration Pin};
-        \begin{scope}[red, scale=0.1]
+        \draw [color1,rounded corners, very thick] (0.43,0.4) rectangle  (0.5,0.45);
+        \draw [->,>=stealth,color1, very thick] (0.51,0.384) -- (0.7,0.1);
+        \draw [color1] (0.7,0.04) node {\textbf{Calibration Pin}};
+        \begin{scope}[color1, scale=0.1]
           \draw[black, thick] (3.5,10) arc (0:180:1 and 0.3);
         \end{scope}
-        \draw[->,>=stealth,red, very thick] (0.255,0.8) -- (0.255,1.07);
-        \begin{scope}[red, scale=0.1]
+        \draw[->,>=stealth,color1, very thick] (0.255,0.8) -- (0.255,1.07);
+        \begin{scope}[color1, scale=0.1]
           \draw[black,->,>=stealth,thick] (1.5,10) arc (180:350:1 and 0.3);
         \end{scope}
       \end{scope}
@@ -367,49 +376,137 @@ of the High Speed Counter can be seen in \cite{rochapereira2019automacao,antunes
 
 \section{Assembly Unit}
 \label{sec:assemblyUnit}
-The assembly unit serves to mount two pieces, resulting in a fully assembled cube
+The assembly unit serves to mount two pieces, resulting in a fully assembled
+cube. As a safety measure, the assembly unit has a compartment made of
+acrylic, in which a pneumatic cylinder is vertically arranged pointing downwards
+to work as a press.
+When the cylinder is extended, this press is lowered exerting a considerable
+pressure on the pieces binding them together.
 
+The inputs to lower and raise the press are called \verb|Lower Press| and
+\verb|Raise Press|.
+
+In order to open and close the compartment, there is an acrylic door combined
+with a smaller pneumatic cylinder. When this cylinder is extended, the door
+closes and when it is retracted the door opens. The inputs to open and close the
+door are called \verb|Open Safety Door| and
+\verb|Close Safety Door|. There are a couple of sensors to verify if the door is
+opened or closed based on the extension and retraction of the cylinder, their
+respective outputs are called \verb|Safety Door Opened| and
+\verb|Safety Door Closed|.
+
+Since there is a safety compartment, where the cubes are assembled, There must
+be a device with the purpose of transposing the pieces from outside to inside
+and vice-versa. This device is called in this work
+\verb|Assembly Unit Holder|, and as the name says it holds the pieces. This
+device is coupled with another pneumatic cylinder that when it is retracted
+it transports the \verb|Assembly Unit Holder| to the inner part of the
+compartment, and outside the compartment if it is extended. The inputs that move
+the \verb|Assembly Unit Holder| are called
+\verb|Extend Assembly Unit Holder| and
+\verb|Retract Assembly Unit Holder|. The outputs to tell the extension and
+retraction are called \verb|Assembly Unit Holder Extended|
+and \verb|Assembly Unit Holder Retracted|. The position of the cylinders can be
+seen in \Autoref{fig:assemblyUnit}.
 \begin{figure}[H]
   \centering
   \begin{tikzpicture}
     \node[anchor=south west,inner sep=0] (image) at (0,0) {
-      \includegraphics[width=8cm]{maquete/prensa/69514_5.jpg}
+      \includegraphics[width=8cm]{maquete/prensa/69514_4.jpg}
     };
-    % \draw[red,ultra thick,rounded corners] (0,0) rectangle (9.4,6.2);
+    % \draw[color1,ultra thick,rounded corners] (0,0) rectangle (9.4,6.2);
     \begin{scope}[x={(image.south east)},y={(image.north west)}]
         % \draw[help lines,xstep=.1,ystep=.1] (0,0) grid (1,1);
         % \foreach \x in {0,1,...,9} { \node [anchor=north] at (\x/10,0) {0.\x}; }
         % \foreach \y in {0,1,...,9} { \node [anchor=east] at (0,\y/10) {0.\y}; }
-      % \draw[red] (1,0.5) node {\textbf{Right}};
-      % \draw[red] (0,0.5) node {\textbf{Left}};
-      % \draw[red] (0.5,1) node {\textbf{Top}};
-      % \draw[red] (0.5,0) node {\textbf{Bottom}};
+
+
+        \draw[color2] (-0.1,0.8) node {\textbf{Door's Cylinder}};
+      \draw[->,>=stealth,color2, very thick] (0.25,0.7) -- (0.1,.75);
+      \draw[color2,ultra thick,rounded corners] (0.27,0.6) rectangle (.32,0.81);
+
+      \draw[color3] (1,0.8) node {\textbf{Press' Cylinder}};
+        \draw[->,>=stealth,color3, very thick] (0.5,0.8) -- (0.75,.8);
+      \draw[color3,ultra thick,rounded corners] (0.34,0.57) rectangle (.47,0.87);
+
+
+        \draw[color1] (0.7,0) node {\textbf{Holder's Cylinder}};
+        \draw[->,>=stealth,color1, very thick] (0.7,0.38) -- (0.7,0.05);
+      \draw[color1,ultra thick,rounded corners] (0.52,0.4) rectangle (.89,0.44);
+      % \draw[color1] (0,0.5) node {\textbf{Left}};
+      % \draw[color1] (0.5,1) node {\textbf{Top}};
+      % \draw[color1] (0.5,0) node {\textbf{Bottom}};
       \end{scope}
   \end{tikzpicture}
   \caption{Assembly Unit.}
+  \label{fig:assemblyUnit}
 \end{figure}
 
 \section{Storage Unit}
 \label{sec:storageUnit}
+
+The storage unit in reality is a storage and retrieval system, but in this work
+will be called only storage unit, since it will be its sole use.
+The storage unit is a rack composed by 4 shelves, each one of them with enough room to
+store 7 pieces, resulting a total of 28 storage spaces. In order to elevate the
+pieces, a motor with a spiral shaft is used to raise and lower the device where
+the piece is placed to be stored. This piece holder is also called as
+\verb|Storage Device| and sometimes as \verb|Storage Unit|, so when a movement
+is given to the \verb|Storage Unit|, that means this holder is moved and not the
+rack itself.
+There is also another motor with spiral shaft that moves the
+\verb|Storage Unit|
+horizontally from Right to Left and vice versa.
+As a reference for the direction of the movements of the
+\verb|Storage Unit| used in this work the
+\Autoref{fig:storageUnit} shows what is considered the Right, Left, Top and
+Bottom of this unit.
+
 \begin{figure}[H]
   \centering
   \begin{tikzpicture}
     \node[anchor=south west,inner sep=0] (image) at (0,0) {
       \includegraphics[width=8cm]{maquete/elevador/69523_3.jpg}
     };
-    % \draw[red,ultra thick,rounded corners] (0,0) rectangle (9.4,6.2);
+    % \draw[color1,ultra thick,rounded corners] (0,0) rectangle (9.4,6.2);
     \begin{scope}[x={(image.south east)},y={(image.north west)}]
         % \draw[help lines,xstep=.1,ystep=.1] (0,0) grid (1,1);
         % \foreach \x in {0,1,...,9} { \node [anchor=north] at (\x/10,0) {0.\x}; }
         % \foreach \y in {0,1,...,9} { \node [anchor=east] at (0,\y/10) {0.\y}; }
-      \draw[red] (1,0.5) node {\textbf{Right}};
-      \draw[red] (0,0.5) node {\textbf{Left}};
-      \draw[red] (0.5,1) node {\textbf{Top}};
-      \draw[red] (0.5,0) node {\textbf{Bottom}};
+      \draw[color1] (1,0.5) node {\textbf{Right}};
+      \draw[color1] (0,0.5) node {\textbf{Left}};
+      \draw[color1] (0.5,1) node {\textbf{Top}};
+      \draw[color1] (0.5,0) node {\textbf{Bottom}};
       \end{scope}
   \end{tikzpicture}
   \caption{Storage Unit.}
+  \label{fig:storageUnit}
 \end{figure}
+To effectively store the piece in the rack it is needed to move the
+\verb|Storage Device| towards the rack, so a pneumatic cylinder is coupled with
+this device, when this cylinder is extended the device approaches the rack and
+it leaves the rack when the cylinder is retracted. This cylinder is a
+\emph{single acting pneumatic cylinder} and its input is called
+\verb|Extend Storage Unit|. There are also 2 outputs to tell if the cylinder is
+extended or retracted, called \verb|Storage Unit Extended| and
+\verb|Storage Unit Retracted|.
+
+The movement of the \verb|Storage Unit| is controlled by 4 inputs called
+\verb|Move Storage Unit Upwards|, \verb|Move Storage Unit Downwards|,
+\verb|Move Storage Unit to the Right| and
+\verb|Move Storage Unit to the Left|.
+
+In order to estimate the position of the \verb|Storage Device|  there are two
+encoders, called \verb|Storage Unit Vertical Encoder| and
+\verb|Storage Unit Horizontal Encoder|, that in conjunction with holes
+specifically placed, aligned with the store spaces can identify if the device is
+aligned with the store spaces. There are also 4 limit switchers  whose outputs
+are called
+\verb|Storage Unit Inferior Limit Switch|,
+\verb|Storage Unit Superior Limit Switch|,
+\verb|Storage Unit Right Limit Switch| and
+\verb|Storage Unit Left Limit Switch| that have the purpose to tell if the
+\verb|Storage Device| is in one of the limits of the rack.
 
 
 %%% Local Variables:
