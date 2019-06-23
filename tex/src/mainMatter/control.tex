@@ -1,84 +1,143 @@
 
-\chapter{Control and Identification}
-\label{chap:controlAndIdent}
+\chapter{Control}
+\label{cha:control}
 
-\begin{figure}[H]
-  \centering
- \includegraphics[height=0.7\textwidth]{hmi_mobile2}
-  \caption{HMI on mobile.}
-  \label{fig:hmi_mobile}
-\end{figure}
+As said in the \nameref{cha:background} chapter, a \CIPN{} can be used to
+represent the control of a system and then this Petri net can be converted into
+a \LD{}, with the aim of being implemented in a \PLC. So, this section will be divided in two
+parts: the first part to describe the logic of the control and its design using \CIPN{} and
+the second part for the implementation in the \PLC.
 
+\section{Logic}
+The logic of the control is to use the 6 units presented in
+\Autoref{cha:system}, to assemble cubes made of a metallic half cube with a
+white plastic one on top, and once the cube is assembled it is stored in one of
+the store spaces of the \verb|Storage Unit|. 
+The logic is divided in 10 modules:
+ Initialization, Metal Cube half sorting, Plastic Cube half sorting, Arm From
+ Conveyor Belt to Assembly Unit, Assembly Unit, Arm From Assembly Unit to
+ Storage Unit, Storage Unit positioning (y axis), Storage Unit positioning (x
+ axis), Cube Storage and Arm Stop Logic.
 
+Each module will be briefly described in the next subsections, and their Petri
+Nets will be presented along with tables that describe the meaning of each place
+and transition.
 
-\addtikzfigureLandscape{../../figures/petriNet/partial/initial}
-{Petri net of Initialization module.}
-{petriinitialization}
-\newpage
+\begin{observation}
+  Each Petri net shown in this chapter is a section of a complete Petri net.
+  The complete one is presented in \Autoref{cha:CompletePetriNet}. As said
+in \Autoref{cha:background} the dotted places\slash transitions represent places\slash transitions that are part of other sections of the Petri net. In the
+digital form of this work, it is possible to travel between figures by clicking
+the name of the dotted places\slash transitions. By clicking in normal
+places\slash transitions it is possible to travel between the figure and its
+corresponding entry in the table that describes its meaning.
+  
+\end{observation}
+\subsection{Initialization}
+This module has as objective to make sure that all units are in order to begin
+the assembling process, that means, all variables used are reset, the arm is
+calibrated, the conveyor belt is free of pieces, all cylinders are retracted,
+the assembly unit is ready to receive a piece and the storage unit is in its
+rightmost and lower position. The Petri net used for this module can be seen in
+\Autoref{fig:petriInitialization} and the corresponding meaning of its
+transitions and places can be seen in \Autoref{tab:initialPlaces,tab:initialTransitions}
 \input{../../figures/petriNet/partial/initialPlaces}
 \input{../../figures/petriNet/partial/initialTransitions}
-\newpage
+\addtikzfigureLandscape{../../figures/petriNet/partial/initial}
+{Petri net of Initialization module.}
+{petriInitialization}
+\subsection{Metal Cube Half Sorting}
+This module serves to sort the cube halves stacked in MAG 1. The piece is
+extracted from the bottom of the stack to the conveyor belt, and the piece is
+transported by the belt to the identification part of the sorting unit, if it is a
+metal piece with a upwards concavity the piece continues in the belt until it
+reaches the end of it, waiting to be picked by the arm, otherwise this piece is
+discharged using the sorting unit and the cycle recommences and stops only when
+a metallic piece is at the end of the belt.
+In order to recognize the orientation of the pieces (upwards or downwards), the
+distance sensor is combined with comparison blocks to create two variables
+\verb|ConcUP| and \verb|concDWN|.
+The corresponding Petri net and tables can be seen in
+\Autoref{fig:petriMetal} and \Autoref{tab:metalvPlaces,tab:metalvTransitions}.
+\input{../../figures/petriNet/partial/metalvTransitions}
+\input{../../figures/petriNet/partial/metalvPlaces}
 \addtikzfigureLandscape{../../figures/petriNet/partial/metalv}
 {Petri net of metal cube half sorting module.}
-{petrimetal}
-\newpage
-\input{../../figures/petriNet/partial/metalvPlaces}
-\input{../../figures/petriNet/partial/metalvTransitions}
-\newpage
-\addtikzfigureLandscape{../../figures/petriNet/partial/plastic}
-{Petri net of plastic cube half sorting module.}
-{petriplastic}
-\newpage
+{petriMetal}
+\subsection{Plastic Cube Half Sorting}
+This module is similar to its metallic counterpart. This module sorts the cube
+halves stacked in Mag 2 and instead of metal pieces with upwards concavity, this
+module accepts white plastic pieces with downwards concavity.
+The corresponding Petri net and tables can be seen in
+\Autoref{fig:petriPlastic} and \Autoref{tab:plasticPlaces,tab:plasticTransitions}.
 \input{../../figures/petriNet/partial/plasticPlaces}
 \input{../../figures/petriNet/partial/plasticTransitions}
-\newpage
+\addtikzfigureLandscape{../../figures/petriNet/partial/plastic}
+{Petri net of plastic cube half sorting module.}
+{petriPlastic}
+
+\subsection{Arm From Conveyor Belt to Assembly Unit}
+This module uses the manipulator to take a piece present at the end of the
+conveyor belt and puts it in the assembly holder of the Assembly Unit. It places
+a metal piece
+and then a plastic piece, so they can be assembled to form a cube using the press.
+The corresponding Petri net and tables can be seen in
+\Autoref{fig:petriArmBeltToPress} and \Autoref{tab:armBeltToPressPlaces,tab:armBeltToPressTransitions}.
+\input{../../figures/petriNet/partial/armBeltToPressPlaces}
+\input{../../figures/petriNet/partial/armBeltToPressTransitions}
 \addtikzfigureLandscape{../../figures/petriNet/partial/armBeltToPress}
 {Petri net of manipulator taking a cube half from conveyor belt to assembly unit
   module.}
-{petriarmBeltToPress}
-\newpage
-\input{../../figures/petriNet/partial/armBeltToPressPlaces}
-\input{../../figures/petriNet/partial/armBeltToPressTransitions}
-\clearpage
-\pagebreak
-\addtikzfigureLandscape{../../figures/petriNet/partial/press}
-{Petri net of assembly unit module.}
-{petripress}
-\newpage
+{petriArmBeltToPress}
+\subsection{Assembly Unit}
+This module serves to press the two pieces, mounting a cube. Once both pieces
+are placed in the Assembly Unit Holder, it is retracted, the safety door is
+closed and the press is lowered, forming the cube. Then the press is raised, the
+door is opened, and the holder extended, waiting for the cube to be removed by
+the manipulator.
+The corresponding Petri net and tables can be seen in
+\Autoref{fig:petriPress} and \Autoref{tab:pressPlaces,tab:pressTransitions}.
+
 \input{../../figures/petriNet/partial/pressPlaces}
 \input{../../figures/petriNet/partial/pressTransitions}
-\newpage
+\addtikzfigureLandscape{../../figures/petriNet/partial/press}
+{Petri net of assembly unit module.}
+{petriPress}
+\subsection{Arm From Assembly Unit To Storage Unit}
+This module uses the manipulator to move the cube from the Assembly Unit Holder
+to the storage device of the Storage Unit. Because of the way the system was
+assembled and the distances between the units, an additional encoder similar to \newline
+\verb|Storage Unit Horizontal Encoder| was placed just besides it, in order to
+help the alignment of the arm with the Storage Device, this encoder is called \newline
+\verb|Storage Unit Arm Alignment Encoder|, and is present in the logic of this module.
+The corresponding Petri net and tables can be seen in
+\Autoref{fig:petriPress} and \Autoref{tab:pressPlaces,tab:pressTransitions}.
+\input{../../figures/petriNet/partial/armPressToStoragePlaces}
+\input{../../figures/petriNet/partial/armPressToStorageTransitions}
 \addtikzfigureLandscape{../../figures/petriNet/partial/armPressToStorage}
 {Petri net of manipulator taking cube from assembly unit to storage module.}
 {petriarmPressToStorage}
-\newpage
-\input{../../figures/petriNet/partial/armPressToStoragePlaces}
-\input{../../figures/petriNet/partial/armPressToStorageTransitions}
-\newpage
+\subsection{Storage Unit Positioning (y Axis)}
+\input{../../figures/petriNet/partial/storageYPlaces}
+\input{../../figures/petriNet/partial/storageYTransitions}
 \addtikzfigureLandscape{../../figures/petriNet/partial/storageY}
 {Petri net of storage unit positioning module (y axis).}
 {petristorageY}
-\newpage
-\input{../../figures/petriNet/partial/storageYPlaces}
-\input{../../figures/petriNet/partial/storageYTransitions}
-\newpage
+\subsection{Storage Unit Positioning (x Axis)}
+\input{../../figures/petriNet/partial/storageXPlaces}
+\input{../../figures/petriNet/partial/storageXTransitions}
 \addtikzfigureLandscape{../../figures/petriNet/partial/storageX}
 {Petri net of storage unit positioning module (x axis).}
 {petristorageX}
-\newpage
-\input{../../figures/petriNet/partial/storageXPlaces}
-\input{../../figures/petriNet/partial/storageXTransitions}
-\newpage
+\subsection{Cube Storage}
+\input{../../figures/petriNet/partial/storePiecePlaces}
+\input{../../figures/petriNet/partial/storePieceTransitions}
 \addtikzfigureLandscape{../../figures/petriNet/partial/storePiece}
 {Petri net of cube storage module.}
 {petristorePiece}
-\newpage
-
-\input{../../figures/petriNet/partial/storePiecePlaces}
-\input{../../figures/petriNet/partial/storePieceTransitions}
-
-\newpage
-
+\subsection{Arm Stop Logic}
+\input{../../figures/petriNet/partial/armStopLogicPlaces}
+\input{../../figures/petriNet/partial/armStopLogicTransitions}
 \begin{figure}[H]
   \centering
   \begin{tikzpicture}
@@ -122,25 +181,18 @@
 {Petri net of manipulator Stop Logic module.}
 {petriarmStopLogic}
 
-\newpage
-
-\input{../../figures/petriNet/partial/armStopLogicPlaces}
-\input{../../figures/petriNet/partial/armStopLogicTransitions}
-
-A tutorial on how to configure the connection between two \PLCs can be seen in
+\section{Implementation of the Control}
+A tutorial on how to configure the connection between two \PLCs{} can be seen in
 section 3.4 of \cite{rochapereira2019automacao}
 
-
-
-
-The implementation of the complete Petri Net divided between the two \PLCs was
+The implementation of the complete Petri Net divided between the two \PLCs{} was
 made in Ladder using the methods shown in \autoref{cha:background}  and for
 brevity's sake the ladder logic was concealed, but can easily be
 found at the following link
 \url{https://github.com/Accacio/docsTCC/tree/master/PLC/TCC}.
 
-As for the
-complete Petri Net, it can be seen in \autoref{chap:CompletePetriNet} 
+
+
 
 %%% Local Variables:
 %%% mode: latex
