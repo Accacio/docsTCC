@@ -1,8 +1,19 @@
-\begin{table}[H]
-\caption{Arm Stop Logic Module Transitions.}
-\centering
-\begin{tabular}{M{5cm}M{10cm}}
+\begin{longtable}{M{5cm}M{10cm}}
+\caption{Arm Stop Logic Module Transitions.} \label{tab:armStopLogicTransitions}
+\\
 Transitions & Meaning\\
+\hline
+\endfirsthead
+\multicolumn{2}{l}{Continued from previous page} \\
+\hline
+
+Transitions & Meaning \\
+
+\hline
+\endhead
+\hline\multicolumn{2}{r}{Continued on next page} \\
+\endfoot
+\endlastfoot
 \hline
 \hyperlink{partialNet:t156}{\hypertarget{partialTable:t156}{$t_{156}$}} & Stop Button\\
 \hyperlink{partialNet:t157}{\hypertarget{partialTable:t157}{$t_{157}$}} & ARMCOUNTER < {\footnotesize STORAGE\_ANGLE\_BEFORE}\\
@@ -14,5 +25,4 @@ Transitions & Meaning\\
 \hyperlink{partialNet:t163}{\hypertarget{partialTable:t163}{$t_{163}$}} & ARMCOUNTER >= {\footnotesize PRESS\_ANGLE\_AFTER} and ARMCOUNTER < {\footnotesize PRESS\_ANGLE\_BEFORE}\\
 \hyperlink{partialNet:t164}{\hypertarget{partialTable:t164}{$t_{164}$}} & Arm Retracted\\
 \hyperlink{partialNet:t165}{\hypertarget{partialTable:t165}{$t_{165}$}} & \(\overline{\mbox{Arm Retracted }}\)\\
-\end{tabular}
-\end{table}
+\end{longtable}

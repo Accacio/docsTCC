@@ -1,5 +1,5 @@
 # PlacesBegin
-#+ATTR_LATEX: :caption  \caption{Storage Unit (Y axis) Module Places.} :placement [H] :align M{5cm}M{10cm}
+#+ATTR_LATEX: :caption  \caption{Storage Unit (Y axis) Module Places.} \label{tab:storageYPlaces} :environment longtable :placement [H] :align M{5cm}M{10cm}
 | Places | Meaning                        |
 |--------+--------------------------------|
 | p108   | Cube on Storage Unit           |
@@ -15,7 +15,7 @@
 # PlacesEnd
 
 # TransitionsBegin
-#+ATTR_LATEX: :caption  \caption{Storage Unit (Y axis) Module Transitions.} :placement [H] :align M{5cm}M{10cm}
+#+ATTR_LATEX: :caption  \caption{Storage Unit (Y axis) Module Transitions.} \label{tab:storageYTransitions} :environment longtable :placement [H] :align M{5cm}M{10cm}
 | Transitions | Meaning                              |
 |-------------+--------------------------------------|
 | tt105       | T=2s                                 |

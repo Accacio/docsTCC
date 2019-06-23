@@ -1,5 +1,5 @@
 # PlacesBegin
-#+ATTR_LATEX: :caption  \caption{Plastic Half-cube Selection Module Places.} :placement [H] :align M{5cm}M{10cm}
+#+ATTR_LATEX: :caption  \caption{Plastic Half-cube Selection Module Places.} \label{tab:plasticPlaces} :environment longtable :placement [H] :align M{5cm}M{10cm}
 | Places | Meaning                             |
 |--------+-------------------------------------|
 | p51    | MAG2 Empty                          |
@@ -28,7 +28,7 @@
 # PlacesEnd
 
 # TransitionsBegin
-#+ATTR_LATEX: :caption  \caption{Plastic Half-cube Selection Module Transitions.} :placement [H] :align M{5cm}M{10cm}
+#+ATTR_LATEX: :caption  \caption{Plastic Half-cube Selection Module Transitions.} \label{tab:plasticTransitions} :environment longtable :placement [H] :align M{5cm}M{10cm}
 | Transitions | Meaning                                                         |
 |-------------+-----------------------------------------------------------------|
 | t46         | $\overline{\mbox{MAG2 Empty}}$                                  |

@@ -1,5 +1,5 @@
 # PlacesBegin
-#+ATTR_LATEX: :caption \caption{Metal Half-cube Selection Module Places.} :placement [H] :align M{5cm}M{10cm}
+#+ATTR_LATEX: :caption \caption{Metal Half-cube Selection Module Places.} \label{tab:metalvPlaces} :environment longtable :placement [H] :align M{5cm}M{10cm}
 | Places | Meaning                             |
 |--------+-------------------------------------|
 | p28    | MAG1 Empty                          |
@@ -28,7 +28,7 @@
 # PlacesEnd
 
 # TransitionsBegin
-#+ATTR_LATEX: :caption  \caption{Metal Half-cube Selection Module Transitions.} :placement [H] :align M{5cm}M{10cm}
+#+ATTR_LATEX: :caption  \caption{Metal Half-cube Selection Module Transitions.} \label{tab:metalvTransitions} :environment longtable :placement [H] :align M{5cm}M{10cm}
 | Transitions | Meaning                                             |
 |-------------+-----------------------------------------------------|
 | t20         | $\overline{\mbox{MAG1 Empty}}$                      |

@@ -1,5 +1,5 @@
 # PlacesBegin
-#+ATTR_LATEX: :caption  \caption{Arm From Conveyor Belt to Press Module Places.} :placement [H] :align M{5cm}M{10cm}
+#+ATTR_LATEX: :caption  \caption{Arm From Conveyor Belt to Press Module Places.} \label{tab:armBeltToPressPlaces} :environment longtable :placement [H] :align M{5cm}M{10cm}
 | Places | Meaning                                                    |
 |--------+------------------------------------------------------------|
 | p74    | Raise Arm                                                  |
@@ -18,7 +18,7 @@
 # PlacesEnd
 
 # TransitionsBegin
-#+ATTR_LATEX: :caption  \caption{Arm From Conveyor Belt to Press Module Transitions.} :placement [H] :align M{5cm}M{10cm}
+#+ATTR_LATEX: :caption  \caption{Arm From Conveyor Belt to Press Module Transitions.} \label{tab:armBeltToPressTransitions} :environment longtable :placement [H] :align M{5cm}M{10cm}
 | Transitions | Meaning                                                                  |
 |-------------+--------------------------------------------------------------------------|
 | t72         | Arm Raised                                                               |

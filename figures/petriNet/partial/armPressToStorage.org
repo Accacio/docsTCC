@@ -1,5 +1,5 @@
 # PlacesBegin
-#+ATTR_LATEX: :caption  \caption{Arm From Press To Storage Unit Module Places.} :placement [H] :align M{5cm}M{10cm}
+#+ATTR_LATEX: :caption \caption{Arm From Press To Storage Unit Module Places.} \label{tab:armPressToStoragePlaces} :environment longtable :placement [H] :align M{5cm}M{10cm}
 | Places | Meaning                                                                                         |
 |--------+-------------------------------------------------------------------------------------------------|
 | p96    | Extend Arm e Turn Vacuum On                                                                     |
@@ -17,7 +17,7 @@
 # PlacesEnd
 
 # TransitionsBegin
-#+ATTR_LATEX: :caption  \caption{Arm From Press To Storage Unit Module Transitions.} :placement [H] :align M{5cm}M{10cm}
+#+ATTR_LATEX: :caption  \caption{Arm From Press To Storage Unit Module Transitions.} \label{tab:armPressToStorageTransitions} :environment longtable :placement [H] :align M{5cm}M{10cm}
 | Transitions | Meaning                                                    |
 |-------------+------------------------------------------------------------|
 | tt94        | T=1.5s and Arm Lowered                                     |

@@ -1,5 +1,5 @@
 # PlacesBegin
-#+ATTR_LATEX: :caption  \caption{Cube Storage Module Places.} :placement [H] :align M{5cm}M{10cm}
+#+ATTR_LATEX: :caption  \caption{Cube Storage Module Places.} \label{tab:storePiecePlaces} :environment longtable :placement [H] :align M{5cm}M{10cm}
 | Places | Meaning                                                   |
 |--------+-----------------------------------------------------------|
 | p130   | Extend Storage Unit                                       |
@@ -16,7 +16,7 @@
 # PlacesEnd
 
 # TransitionsBegin
-#+ATTR_LATEX: :caption  \caption{Cube Storage Module Transitions.} :placement [H] :align M{5cm}M{10cm}
+#+ATTR_LATEX: :caption  \caption{Cube Storage Module Transitions.} \label{tab:storePieceTransitions} :environment longtable :placement [H] :align M{5cm}M{10cm}
 | Transitions | Meaning                            |
 |-------------+------------------------------------|
 | tt145       | T=2s                               |

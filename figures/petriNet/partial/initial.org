@@ -1,5 +1,5 @@
 # PlacesBegin
-#+ATTR_LATEX: :caption  \caption{Initialization Module Places.} :align M{5cm}M{10cm}
+#+ATTR_LATEX: :caption  \caption{Initialization Module Places.} \label{tab:initialPlaces} :environment longtable :align M{5cm}M{10cm}
 | Places | Meaning                                               |
 |--------+-------------------------------------------------------|
 | p0m1   | System Stopped                                        |
@@ -33,7 +33,7 @@
 # PlacesEnd
 
 # TransitionsBegin
-#+ATTR_LATEX: :caption \caption{Initialization Module Transitions.} :placement [H] :align M{5cm}M{10cm}
+#+ATTR_LATEX: :caption \caption{Initialization Module Transitions.}  \label{tab:initialTransitions} :environment longtable :placement [H] :align M{5cm}M{10cm}
 | Transitions | Meaning                                              |
 |-------------+------------------------------------------------------|
 | t0          | Initialization Button                                |

@@ -1,5 +1,5 @@
 # PlacesBegin
-#+ATTR_LATEX: :caption  \caption{Assembly Unit Module Places.} :placement [H] :align M{5cm}M{10cm}
+#+ATTR_LATEX: :caption  \caption{Assembly Unit Module Places.} \label{tab:pressPlaces} :environment longtable :placement [H] :align M{5cm}M{10cm}
 | Places | Meaning                        |
 |--------+--------------------------------|
 | p87    | Retract Assembly Unit Holder * |
@@ -14,7 +14,7 @@
 # PlacesEnd
 
 # TransitionsBegin
-#+ATTR_LATEX: :caption  \caption{Assembly Unit Module Transitions.} :placement [H] :align M{5cm}M{10cm}
+#+ATTR_LATEX: :caption  \caption{Assembly Unit Module Transitions.} \label{tab:pressTransitions} :environment longtable :placement [H] :align M{5cm}M{10cm}
 | Transitions | Meaning                                 |
 |-------------+-----------------------------------------|
 | tt86        | T=1s and Assembly Unit Holder Retracted |

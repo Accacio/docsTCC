@@ -1,5 +1,5 @@
 # PlacesBegin
-#+ATTR_LATEX: :caption  \caption{Storage Unit (X axis) Module Places.} :placement [H] :align M{5cm}M{10cm}
+#+ATTR_LATEX: :caption  \caption{Storage Unit (X axis) Module Places.} \label{tab:storageXPlaces} :environment longtable :placement [H] :align M{5cm}M{10cm}
 | Places | Meaning                                                  |
 |--------+----------------------------------------------------------|
 | p118   | COUNTER1:=COUNTER1+1 e COUNTER4:=COUNTER4+1              |
@@ -17,7 +17,7 @@
 # PlacesEnd
 
 # TransitionsBegin
-#+ATTR_LATEX: :caption  \caption{Storage Unit (X axis) Module Transitions.} :placement [H] :align M{5cm}M{10cm}
+#+ATTR_LATEX: :caption  \caption{Storage Unit (X axis) Module Transitions.} \label{tab:storageXTransitions} :environment longtable :placement [H] :align M{5cm}M{10cm}
 | Transitions | Meaning                                |
 |-------------+----------------------------------------|
 | t121        | COUNTER4=1                             |

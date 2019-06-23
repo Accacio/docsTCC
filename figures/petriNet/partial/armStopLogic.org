@@ -1,5 +1,5 @@
 # PlacesBegin
-#+ATTR_LATEX: :caption  \caption{Arm Stop Logic Module Places.} :placement [H] :align M{5cm}M{10cm}
+#+ATTR_LATEX: :caption  \caption{Arm Stop Logic Module Places.} \label{tab:armStopLogicPlaces} :environment longtable :placement [H] :align M{5cm}M{10cm}
 | Places | Meaning                        |
 |--------+--------------------------------|
 | p141   |                                |
@@ -11,7 +11,7 @@
 # PlacesEnd
 
 # TransitionsBegin
-#+ATTR_LATEX: :caption  \caption{Arm Stop Logic Module Transitions.} :placement [H] :align M{5cm}M{10cm}
+#+ATTR_LATEX: :caption  \caption{Arm Stop Logic Module Transitions.} \label{tab:armStopLogicTransitions} :environment longtable :placement [H] :align M{5cm}M{10cm}
 | Transitions | Meaning                                                                                                                                                                                         |
 |-------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | t156        | Stop Button                                                                                                                                                                                     |
