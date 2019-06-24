@@ -118,26 +118,54 @@ The corresponding Petri net and tables can be seen in
 {Petri net of manipulator taking cube from assembly unit to storage module.}
 {petriarmPressToStorage}
 \subsection{Storage Unit Positioning (y Axis)}
+This module sets the vertical position of the Storage Device. Once the cube is
+in the Storage Device, it is raised until the device is vertically aligned with
+corresponding store space. The order of storage in the rack is from top to
+bottom, right to left.   
+The corresponding Petri net and tables can be seen in
+\Autoref{fig:petriStorageY} and \Autoref{tab:storageYPlaces,tab:storageYTransitions}.
 \input{../../figures/petriNet/partial/storageYPlaces}
 \input{../../figures/petriNet/partial/storageYTransitions}
 \addtikzfigureLandscape{../../figures/petriNet/partial/storageY}
 {Petri net of storage unit positioning module (y axis).}
-{petristorageY}
+{petriStorageY}
 \subsection{Storage Unit Positioning (x Axis)}
+This module sets the horizontal position of the Storage Device. IT happens
+simultaneously with the last module. Instead of raising the Storage Device, this
+module makes it move from right to left until it is horizontally aligned with the
+corresponding store space.  
+The corresponding Petri net and tables can be seen in
+\Autoref{fig:petriStorageX} and \Autoref{tab:storageXPlaces,tab:storageXTransitions}.
 \input{../../figures/petriNet/partial/storageXPlaces}
 \input{../../figures/petriNet/partial/storageXTransitions}
 \addtikzfigureLandscape{../../figures/petriNet/partial/storageX}
 {Petri net of storage unit positioning module (x axis).}
-{petristorageX}
+{petriStorageX}
 \subsection{Cube Storage}
+This module has as objective to store the cube in the store space with which the
+storage device is vertically and horizontally aligned. 
+The corresponding Petri net and tables can be seen in
+\Autoref{fig:petriStorePiece} and \Autoref{tab:storePiecePlaces,tab:storePieceTransitions}.
 \input{../../figures/petriNet/partial/storePiecePlaces}
 \input{../../figures/petriNet/partial/storePieceTransitions}
 \addtikzfigureLandscape{../../figures/petriNet/partial/storePiece}
 {Petri net of cube storage module.}
-{petristorePiece}
+{petriStorePiece}
 \subsection{Arm Stop Logic}
-\input{../../figures/petriNet/partial/armStopLogicPlaces}
-\input{../../figures/petriNet/partial/armStopLogicTransitions}
+Since the arm is controlled by \emph{single acting pneumatic cylinders}, if in any
+moment the inputs of these cylinders is powered off voluntarily or not, they are going to retract,
+and because of the layout of the system, the way it was assembled, this can
+cause some incidents that can damage the arm. So, in order to prevent these
+kinds of
+accidents when the arm is powered off voluntarily, this module was created,
+turning the arm in a safe position before turning it off. With aim of stopping
+the system and consequentially the arm in any part of the process, a virtual button was created
+in the implementation phase. A transition with this button is created from every
+place in all other modules to the first place in this module, for organisation's
+sake all transitions are represented in the Petri net as the transition $t_156$.
+
+Some angles were chosen to divide the areas where the arm can be, and the
+rotation logic is different for each one of them. These can be seen in \Autoref{fig:armStopLogicAngles}.
 \begin{figure}[H]
   \centering
   \begin{tikzpicture}
@@ -175,8 +203,15 @@ The corresponding Petri net and tables can be seen in
       \end{scope}
   \end{tikzpicture}
   \caption{Arm Stop Logic Angles}
+  \label{fig:armStopLogicAngles}
 \end{figure}
 
+The corresponding Petri net and tables can be seen in
+\Autoref{fig:petriStorePiece} and
+\Autoref{tab:storePiecePlaces,tab:storePieceTransitions}.
+\newline
+\input{../../figures/petriNet/partial/armStopLogicPlaces}
+\input{../../figures/petriNet/partial/armStopLogicTransitions}
 \addtikzfigureLandscape{../../figures/petriNet/partial/armStopLogic}
 {Petri net of manipulator Stop Logic module.}
 {petriarmStopLogic}
