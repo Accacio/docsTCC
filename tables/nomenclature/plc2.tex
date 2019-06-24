@@ -1,0 +1,72 @@
+\begin{longtable}{c|c|c}
+\caption{Inputs Handling-Assembly-Storage PLC} \label{tab:plcHandlingInput}
+\\
+Input & Address & Tag\\
+\hline
+\endfirsthead
+\multicolumn{3}{l}{Continued from previous page} \\
+\hline
+
+Input & Address & Tag \\
+
+\hline
+\endhead
+\hline\multicolumn{3}{r}{Continued on next page} \\
+\endfoot
+\endlastfoot
+\hline
+Safety Door Opened & I1.0 & I\_SDO      \\
+Safety Door Closed & I1.1 & I\_SDC      \\
+Assembly Unit Holder Extended & I1.2 & I\_AUHEXT   \\
+Assembly Unit Holder Retracted & I1.3 & I\_AUHRET   \\
+Inductive Sensor Arm & I0.2 & I\_INDARM   \\
+Arm Lowered & I0.4 & I\_ARMLOW   \\
+Arm Raised & I0.3 & I\_ARMHIG   \\
+Arm Retracted & I0.6 & I\_ARMRET   \\
+Arm Extended & I0.5 & I\_ARMEXT   \\
+Storage Unit Vertical Encoder & I2.0 & I\_SUVE     \\
+Storage Unit Inferior Limit Switch & I2.2 & I\_SUILS    \\
+Storage Unit Superior Limit Switch & I2.1 & I\_SUSLS    \\
+Storage Unit Extended & I2.3 & I\_SUEXT    \\
+Storage Unit Retracted & I2.4 & I\_SURET    \\
+Relay & I2.5 & I\_RELAY2   \\
+Storage Unit Horizontal Encoder & I1.4 & I\_SUHE     \\
+Storage Unit Right Limit Switch & I1.5 & I\_SURLS    \\
+Storage Unit Left Limit Switch & I1.6 & I\_SULLS    \\
+Storage Unit Arm Alignement Encoder & I1.7 & I\_SUARMALE \\
+\end{longtable}
+
+\begin{longtable}{c|c|c}
+\caption{Outputs Handling-Assembly-Storage PLC} \label{tab:plcHandlingOutput}
+\\
+Output & Address & Tag\\
+\hline
+\endfirsthead
+\multicolumn{3}{l}{Continued from previous page} \\
+\hline
+
+Output & Address & Tag \\
+
+\hline
+\endhead
+\hline\multicolumn{3}{r}{Continued on next page} \\
+\endfoot
+\endlastfoot
+\hline
+Open Safety Door & Q0.6 & O\_SDO      \\
+Close Safety Door & Q0.7 & O\_SDC      \\
+Retract Assembly Unit Holder & Q1.1 & O\_AUHRET   \\
+Extend Assembly Unit Holder & Q1.0 & O\_AUHEXT   \\
+Lower Press & Q1.2 & O\_PRESSLOW \\
+Raise Press & Q1.3 & O\_PRESSHIG \\
+Raise Arm & Q0.0 & O\_ARMHIG   \\
+Turn Vacuum Gripper ON & Q0.1 & O\_VACON    \\
+Extend Arm & Q0.2 & O\_ARMEXT   \\
+Turn Arm CCW & Q0.3 & O\_ARMCCW   \\
+Turn Arm CW & Q0.4 & O\_ARMCW    \\
+Extend Storage Unit & Q0.5 & O\_SUEXT    \\
+Move Storage Unit Upwards & Q1.6 & O\_SUUP     \\
+Move Storage Unit Downwards & Q1.7 & O\_SUDWN    \\
+Move Storage Unit to the Right & Q1.5 & O\_SURIGHT  \\
+Move Storage Unit to the Left & Q1.4 & O\_SULEFT   \\
+\end{longtable}

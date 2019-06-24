@@ -1,0 +1,36 @@
+#+ATTR_LATEX: :caption \caption{Inputs Selection PLC} \label{tab:plcSelectionInput} :environment longtable :align c|c|c :placement [H]
+| Input                                      | Address | Tag        |
+|--------------------------------------------+---------+------------|
+| MAG 1 Cylinder Extended                    | I0.0    | @@latex:I\_MAG1EXT@@ |
+| MAG 1 Cylinder Retracted                   | I0.1    | @@latex:I\_MAG1RET @@ |
+| MAG 1 Empty                                | I0.2    | @@latex:I\_MAG1EMPT@@ |
+| MAG 2 Cylinder Extended                    | I0.3    | @@latex:I\_MAG2EXT @@ |
+| MAG 2 Cylinder Retracted                   | I0.4    | @@latex:I\_MAG2RET @@ |
+| MAG 2 Empty                                | I0.5    | @@latex:I\_MAG2EMPT@@ |
+| Proximity Sensor Left Discharge Cylinder   | I2.0    | @@latex:I\_PSLD@@ |
+| Proximity Sensor Center Discharge Cylinder | I2.1    | @@latex:I\_PSCD@@ |
+| Proximity Sensor Right Discharge Cylinder  | I2.2    | @@latex:I\_PSRD@@ |
+| Relay                                      | I2.3    | @@latex:I\_RELAY1@@ |
+| Left Discharge Cylinder Extended           | I1.0    | @@latex:I\_LDCEXT@@ |
+| Left Discharge Cylinder Retracted          | I1.1    | @@latex:I\_LDCRET@@ |
+| Center Discharge Cylinder Extended         | I1.2    | @@latex:I\_CDCEXT@@ |
+| Center Discharge Cylinder Retracted        | I1.3    | @@latex:I\_CDCRET@@ |
+| Right Discharge Cylinder Extended          | I1.4    | @@latex:I\_RDCEXT@@ |
+| Right Discharge Cylinder Retracted         | I1.5    | @@latex:I\_RDCRET@@ |
+| White Color Sensor                         | I1.6    | @@latex:I\_WHIT@@ |
+| Metallic Sensor                            | I1.7    | @@latex:I\_METAL@@ |
+| Proximity Sensor End Of Conveyor Belt      | I0.6    | @@latex:I\_PSEOC@@ |
+| Distance Sensor                            | IW4     | @@latex:I\_DS@@ |
+
+#+ATTR_LATEX: :caption \caption{Outputs Selection PLC} \label{tab:plcSelectionOutput} :environment longtable :align c|c|c :placement [H]
+| Output                           | Address | Tag       |
+|----------------------------------+---------+-----------|
+| Extend MAG 1 Cylinder            | Q1.0    | @@latex:O\_MAG1EXT@@ |
+| Retract MAG 1 Cylinder           | Q1.1    | @@latex:O\_MAG1RET@@ |
+| Extend MAG 2 Cylinder            | Q1.2    | @@latex:O\_MAG2EXT@@ |
+| Retract MAG 2 Cylinder           | Q1.3    | @@latex:O\_MAG2RET@@ |
+| Extend Right Discharge Cylinder  | Q0.2    | @@latex:O\_RDCEXT@@|
+| Extend Center Discharge Cylinder | Q0.1    | @@latex:O\_CDCEXT@@|
+| Extend Left Discharge Cylinder   | Q0.0    | @@latex:O\_LDCEXT@@|
+| Conveyor Belt Forward            | Q1.4    | @@latex:O\_CBFW@@|
+| Conveyor Belt Reverse            | Q1.5    | @@latex:O\_CBREV@@|

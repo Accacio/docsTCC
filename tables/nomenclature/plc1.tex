@@ -1,0 +1,66 @@
+\begin{longtable}{c|c|c}
+\caption{Inputs Selection PLC} \label{tab:plcSelectionInput}
+\\
+Input & Address & Tag\\
+\hline
+\endfirsthead
+\multicolumn{3}{l}{Continued from previous page} \\
+\hline
+
+Input & Address & Tag \\
+
+\hline
+\endhead
+\hline\multicolumn{3}{r}{Continued on next page} \\
+\endfoot
+\endlastfoot
+\hline
+MAG 1 Cylinder Extended & I0.0 & I\_MAG1EXT\\
+MAG 1 Cylinder Retracted & I0.1 & I\_MAG1RET \\
+MAG 1 Empty & I0.2 & I\_MAG1EMPT\\
+MAG 2 Cylinder Extended & I0.3 & I\_MAG2EXT \\
+MAG 2 Cylinder Retracted & I0.4 & I\_MAG2RET \\
+MAG 2 Empty & I0.5 & I\_MAG2EMPT\\
+Proximity Sensor Left Discharge Cylinder & I2.0 & I\_PSLD\\
+Proximity Sensor Center Discharge Cylinder & I2.1 & I\_PSCD\\
+Proximity Sensor Right Discharge Cylinder & I2.2 & I\_PSRD\\
+Relay & I2.3 & I\_RELAY1\\
+Left Discharge Cylinder Extended & I1.0 & I\_LDCEXT\\
+Left Discharge Cylinder Retracted & I1.1 & I\_LDCRET\\
+Center Discharge Cylinder Extended & I1.2 & I\_CDCEXT\\
+Center Discharge Cylinder Retracted & I1.3 & I\_CDCRET\\
+Right Discharge Cylinder Extended & I1.4 & I\_RDCEXT\\
+Right Discharge Cylinder Retracted & I1.5 & I\_RDCRET\\
+White Color Sensor & I1.6 & I\_WHIT\\
+Metallic Sensor & I1.7 & I\_METAL\\
+Proximity Sensor End Of Conveyor Belt & I0.6 & I\_PSEOC\\
+Distance Sensor & IW4 & I\_DS\\
+\end{longtable}
+
+\begin{longtable}{c|c|c}
+\caption{Outputs Selection PLC} \label{tab:plcSelectionOutput}
+\\
+Output & Address & Tag\\
+\hline
+\endfirsthead
+\multicolumn{3}{l}{Continued from previous page} \\
+\hline
+
+Output & Address & Tag \\
+
+\hline
+\endhead
+\hline\multicolumn{3}{r}{Continued on next page} \\
+\endfoot
+\endlastfoot
+\hline
+Extend MAG 1 Cylinder & Q1.0 & O\_MAG1EXT\\
+Retract MAG 1 Cylinder & Q1.1 & O\_MAG1RET\\
+Extend MAG 2 Cylinder & Q1.2 & O\_MAG2EXT\\
+Retract MAG 2 Cylinder & Q1.3 & O\_MAG2RET\\
+Extend Right Discharge Cylinder & Q0.2 & O\_RDCEXT\\
+Extend Center Discharge Cylinder & Q0.1 & O\_CDCEXT\\
+Extend Left Discharge Cylinder & Q0.0 & O\_LDCEXT\\
+Conveyor Belt Forward & Q1.4 & O\_CBFW\\
+Conveyor Belt Reverse & Q1.5 & O\_CBREV\\
+\end{longtable}
