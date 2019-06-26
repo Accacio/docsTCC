@@ -1,0 +1,99 @@
+\begin{table}[htbp]
+\caption{Inputs PLC1}
+\centering
+\begin{tabular}{c|c|c}
+Input & Address & Tag\\
+\hline
+MAG 1 Cylinder Extended & I0.0 & I\(_{\text{MAG1EXT}}\)\\
+MAG 1 Cylinder Retracted & I0.1 & I\(_{\text{MAG1RET}}\)\\
+MAG 1 Empty & I0.2 & I\(_{\text{MAG1EMPT}}\)\\
+MAG 2 Cylinder Extended & I0.3 & I\(_{\text{MAG2EXT}}\)\\
+MAG 2 Cylinder Retracted & I0.4 & I\(_{\text{MAG2RET}}\)\\
+MAG 2 Empty & I0.5 & I\(_{\text{MAG2EMPT}}\)\\
+Proximity Sensor Left Discharge Cylinder & I2.0 & I\(_{\text{PSLD}}\)\\
+Proximity Sensor Center Discharge Cylinder & I2.1 & I\(_{\text{PSCD}}\)\\
+Proximity Sensor Right Discharge Cylinder & I2.2 & I\(_{\text{PSRD}}\)\\
+Relay & I2.3 & I\(_{\text{RELAY1}}\)\\
+Left Discharge Cylinder Extended & I1.0 & I\(_{\text{LDCEXT}}\)\\
+Left Discharge Cylinder Retracted & I1.1 & I\(_{\text{LDCRET}}\)\\
+Center Discharge Cylinder Extended & I1.2 & I\(_{\text{CDCEXT}}\)\\
+Center Discharge Cylinder Retracted & I1.3 & I\(_{\text{CDCRET}}\)\\
+Right Discharge Cylinder Extended & I1.4 & I\(_{\text{RDCEXT}}\)\\
+Right Discharge Cylinder Retracted & I1.5 & I\(_{\text{RDCRET}}\)\\
+White Color Sensor & I1.6 & I\(_{\text{WHIT}}\)\\
+Metallic Sensor & I1.7 & I\(_{\text{METAL}}\)\\
+Proximity Sensor End Of Conveyor Belt & I0.6 & I\(_{\text{PSEOC}}\)\\
+Distance Sensor & IW4 & I\(_{\text{DS}}\)\\
+\end{tabular}
+\end{table}
+
+\begin{table}[htbp]
+\caption{Outputs PLC1}
+\centering
+\begin{tabular}{c|c|c}
+Output & Address & Tag\\
+\hline
+Extend MAG 1 Cylinder & Q1.0 & O\(_{\text{MAG1EXT}}\)\\
+Retract MAG 1 Cylinder & Q1.1 & O\(_{\text{MAG1RET}}\)\\
+Extend MAG 2 Cylinder & Q1.2 & O\(_{\text{MAG2EXT}}\)\\
+Retract MAG 2 Cylinder & Q1.3 & O\(_{\text{MAG2RET}}\)\\
+Extend Right Discharge Cylinder & Q0.2 & O\(_{\text{RDCEXT}}\)\\
+Extend Center Discharge Cylinder & Q0.1 & O\(_{\text{CDCEXT}}\)\\
+Extend Left Discharge Cylinder & Q0.0 & O\(_{\text{LDCEXT}}\)\\
+Conveyor Belt Forward & Q1.4 & O\(_{\text{CBFW}}\)\\
+Conveyor Belt Reverse & Q1.5 & O\(_{\text{CBREV}}\)\\
+\end{tabular}
+\end{table}
+
+\begin{table}[htbp]
+\caption{Inputs PLC2}
+\centering
+\begin{tabular}{c|c|c}
+Input & Address & Tag\\
+\hline
+Safety Door Opened & I1.0 & I\(_{\text{SDO}}\)\\
+Safety Door Closed & I1.1 & I\(_{\text{SDC}}\)\\
+Assembly Unit Holder Extended & I1.2 & I\(_{\text{AUHEXT}}\)\\
+Assembly Unit Holder Retracted & I1.3 & I\(_{\text{AUHRET}}\)\\
+Inductive Sensor Arm & I0.2 & I\(_{\text{INDARM}}\)\\
+Arm Lowered & I0.4 & I\(_{\text{ARMLOW}}\)\\
+Arm Raised & I0.3 & I\(_{\text{ARMHIG}}\)\\
+Arm Retracted & I0.6 & I\(_{\text{ARMRET}}\)\\
+Arm Extended & I0.5 & I\(_{\text{ARMEXT}}\)\\
+Storage Unit Vertical Encoder & I2.0 & I\(_{\text{SUVE}}\)\\
+Storage Unit Inferior Limit Switch & I2.2 & I\(_{\text{SUILS}}\)\\
+Storage Unit Superior Limit Switch & I2.1 & I\(_{\text{SUSLS}}\)\\
+Storage Unit Extended & I2.3 & I\(_{\text{SUEXT}}\)\\
+Storage Unit Retracted & I2.4 & I\(_{\text{SURET}}\)\\
+Relay & I2.5 & I\(_{\text{RELAY2}}\)\\
+Storage Unit Horizontal Encoder & I1.4 & I\(_{\text{SUHE}}\)\\
+Storage Unit Right Limit Switch & I1.5 & I\(_{\text{SURLS}}\)\\
+Storage Unit Left Limit Switch & I1.6 & I\(_{\text{SULLS}}\)\\
+Storage Unit Arm Alignement Encoder & I1.7 & I\(_{\text{SUARMALE}}\)\\
+\end{tabular}
+\end{table}
+
+\begin{table}[htbp]
+\caption{Outputs PLC2}
+\centering
+\begin{tabular}{c|c|c}
+Output & Address & Tag\\
+\hline
+Open Safety Door & Q0.6 & O\(_{\text{SDO}}\)\\
+Close Safety Door & Q0.7 & O\(_{\text{SDC}}\)\\
+Retract Assembly Unit Holder & Q1.1 & O\(_{\text{AUHRET}}\)\\
+Extend Assembly Unit Holder & Q1.0 & O\(_{\text{AUHEXT}}\)\\
+Lower Press & Q1.2 & O\(_{\text{PRESSLOW}}\)\\
+Raise Press & Q1.3 & O\(_{\text{PRESSHIG}}\)\\
+Raise Arm & Q0.0 & O\(_{\text{ARMHIG}}\)\\
+Turn Vacuum Gripper ON & Q0.1 & O\(_{\text{VACON}}\)\\
+Extend Arm & Q0.2 & O\(_{\text{ARMEXT}}\)\\
+Turn Arm CCW & Q0.3 & O\(_{\text{ARMCCW}}\)\\
+Turn Arm CW & Q0.4 & O\(_{\text{ARMCW}}\)\\
+Extend Storage Unit & Q0.5 & O\(_{\text{SUEXT}}\)\\
+Move Storage Unit Upwards & Q1.6 & O\(_{\text{SUUP}}\)\\
+Move Storage Unit Downwards & Q1.7 & O\(_{\text{SUDWN}}\)\\
+Move Storage Unit to the Right & Q1.5 & O\(_{\text{SURIGHT}}\)\\
+Move Storage Unit to the Left & Q1.4 & O\(_{\text{SULEFT}}\)\\
+\end{tabular}
+\end{table}
