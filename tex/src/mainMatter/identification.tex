@@ -232,19 +232,19 @@ can be seen in \Autoref{fig:putInDataStructBlockCode}.
   containing all the inputs and outputs of the Handling-Assembly-Storage \PLC.
   The aspect of these datablocks can be seen in \Autoref{fig:iovecFromPlc,fig:iovecFromPlctwo}
 \end{observation}
-
 \begin{figure}[H] \centering
+\begin{subfigure}[h]{\textwidth} \centering
  \includegraphics[width=\textwidth]{tutorial/iovecfromplc2.PNG}
-  \caption{IOVEC\_FROMPLC2.}
+  \caption{IOVEC\_FROMPLC2 DataBlock.}
   \label{fig:iovecFromPlc}
-\end{figure}
-
-\begin{figure}[H] \centering
- \includegraphics[width=\textwidth]{tutorial/iovecfromplc2-1.PNG}
-  \caption{IOVEC\_FROMPLC2 - Continuing.}
+\end{subfigure}
+\begin{subfigure}[h]{\textwidth} \centering
+ \includegraphics[width=\textwidth,clip,trim={0 1cm 0 0}]{tutorial/iovecfromplc2-1.PNG}
+  \caption{IOVEC\_FROMPLC2 DataBlock - Continuing.}
   \label{fig:iovecFromPlctwo}
+\end{subfigure}
+\caption{Inputs\slash Outputs from Handling-Assembly-Storage \PLC.}
 \end{figure}
-
 % \subsection{HMI}
 % \cite{webserverSiemens,userdefinedwebpagesSiemens}
 % As a tool to facilitate the control of the system and the start and stop of acquisition, it was created a web page that is used as an  \HMI. It was created
@@ -257,7 +257,13 @@ can be seen in \Autoref{fig:putInDataStructBlockCode}.
 %   \caption{HMI on mobile.}
 %   \label{fig:hmi_mobile}
 % \end{figure}
-
+\begin{observation}
+  Since this is the first version of the block, that are still lots of
+  improvements to be made to optimise its use. Some variables can be changed, in
+  order to be used as 
+  internal variables, instead of creating new variables in a DataBlock. And
+  maybe some variables and even rungs can be removed or substituted.
+\end{observation}
 \section{Model Identification}
 As said previously, once the data is logged, the \verb|.csv| file can be downloaded from a Web Server, if
 this one is configured, or from the SD card. Simply following the steps shown in
@@ -271,9 +277,62 @@ The address ``192.168.2.132'' should be changed by the address of the \PLC{} in 
 the web server is running.
 
 When the \verb|.csv| is already copied to a PC, the identification algorithm can
-be run. This identification algorithm, \Autoref{alg:identification}
+be run. This identification algorithm, \Autoref{alg:identification}, was
+implemented in python, but as the algorithm takes modified paths as input, the paths
+are needed to be extracted from the \verb|.csv| and then modified using the
+\Autoref{eq:modifiedPath,eq:modifiedPathb}, also implemented in ptyhon. As the identification is
+made using a black box approach, we do not have any previous information of what is
+considered a path in the file, so the first vector is considered as the initial
+vector, and every time it is repeats another branch is created.
 
-\ref{sec:daoct}
+So, as an example, if we had the observed data of the example from
+\cite{moreira2018enhanced}, the one shown in \Autoref{sec:identification}, in a
+\verb|.csv| file, instead of 3 paths, as shown in the example, 4 paths would be
+created, as follows:
+\newcommand{\colvec}[2][1]{%
+  \scalebox{#1}{%
+    \renewcommand{\arraystretch}{.7}%
+    $\begin{bmatrix}#2\end{bmatrix}$%
+  }
+}
+\setlength\arraycolsep{2pt}
+\begin{align*}
+  p_1&= \left(\colvec{1\\0\\0},a,\colvec{1\\1\\0},b,\colvec{0\\1\\1},c,\colvec{0\\0\\0},d,\colvec{0\\0\\1},e,\colvec{1\\0\\0}\right) \\
+  p_2&= \left(\colvec{1\\0\\0},g,\colvec{0\\0\\0},h,\colvec{1\\1\\0},b,\colvec{0\\1\\1},c,\colvec{0\\0\\0},i,\colvec{1\\0\\0}\right) \\
+  p_3&= \left(\colvec{1\\0\\0},j,\colvec{0\\1\\1},l,\colvec{1\\0\\0}\right) \\
+  p_4&= \left(\colvec{1\\0\\0},g,\colvec{0\\0\\0},h,\colvec{1\\1\\0},b,\colvec{0\\1\\1},i,\colvec{1\\1\\1},m,\colvec{0\\0\\0},d,\colvec{0\\0\\1},n,\colvec{1\\1\\0}\right) \\
+\end{align*}
+If we compare these paths with those shown in \Autoref{sec:identification},
+we can see that $p_3$ of this section is part of $p_2$ from
+\Autoref{sec:identification}. This change in number of paths is reflected on the
+identified model. Running the identification algorithm with the extracted paths and using
+the same parameters, $k=1$ and $k=2$, it was possible to identify the state
+transition diagrams seen in \Autoref{fig:identExamplekone,fig:identExamplektwo}.
+Comparing them with \Autoref{fig:examplek1,fig:examplek2}, we can see the difference
+caused by the additional path in the identified model. A brief discussion about
+the way the paths are chosen will be made in \Autoref{cha:results}.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{example/examplek1NoArrows}
+  % \includetikzfigure[width=\textwidth]{example/stdin}
+  \caption{Identified model from paths extracted from \texttt{.csv} file using $k=1$.}
+  \label{fig:identExamplekone}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \centering
+  \includegraphics[width=\textwidth]{example/examplek2NoArrows}
+  % \includetikzfigure[width=\textwidth]{example/examplek2}
+  \caption{Identified model from paths extracted from \texttt{.csv} file using $k=2$.}
+  \label{fig:identExamplektwo}
+\end{figure}
+The tools created to implement the extraction of the paths and the
+identification algorithm will be commented in \Autoref{sec:daoct}, together with
+other useful tools used in this work.
+
+
 %%% Local Variables:
 %%% mode: latex
 %%% TeX-master: "../monografia"

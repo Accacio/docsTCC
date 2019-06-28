@@ -8,12 +8,12 @@
   \pgfsetfillcolor{fillcol}
 \end{scope}
   \coordinate (init) at (22.748bp,94.0bp);
-  \node (x2) at (277.5bp,92.0bp) [draw,ellipse] {x2};
-  \node (x3) at (488.5bp,93.0bp) [draw,ellipse] {x3};
-  \node (x0) at (77.996bp,94.0bp) [draw,circle, double] {x0};
-  \node (x1) at (168.5bp,48.0bp) [draw,circle, double] {x1};
-  \node (x4) at (566.5bp,28.0bp) [draw,ellipse] {x4};
-  \node (x5) at (386.5bp,118.0bp) [draw,ellipse] {x5};
+  \node (x2) at (277.5bp,92.0bp) [draw,,circle, label=above:,rotate=0] {$x_{2}$};
+  \node (x3) at (488.5bp,93.0bp) [draw,,circle, label=above:,rotate=0] {$x_{3}$};
+  \node (x0) at (77.996bp,94.0bp) [draw,circle, double,place, label=above:,rotate=0] {$x_{0}$};
+  \node (x1) at (168.5bp,48.0bp) [draw,circle, double,place, label=above:,rotate=0] {$x_{1}$};
+  \node (x4) at (566.5bp,28.0bp) [draw,,circle, label=above:,rotate=0] {$x_{4}$};
+  \node (x5) at (386.5bp,118.0bp) [draw,,circle, label=above:,rotate=0] {$x_{5}$};
   \draw [-Latex] (x4) ..controls (540.26bp,28.0bp) and (512.33bp,28.0bp)  .. (488.5bp,28.0bp) .. controls (277.5bp,28.0bp) and (277.5bp,28.0bp)  .. (277.5bp,28.0bp) .. controls (248.23bp,28.0bp) and (215.26bp,35.061bp)  .. (x1);
   \definecolor{strokecol}{rgb}{0.0,0.0,0.0};
   \pgfsetstrokecolor{strokecol}

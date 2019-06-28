@@ -1,0 +1,80 @@
+\begin{tikzpicture}[>=latex',line join=bevel,]
+%%
+\begin{scope}
+  \pgfsetstrokecolor{black}
+  \definecolor{strokecol}{rgb}{1.0,1.0,1.0};
+  \pgfsetstrokecolor{strokecol}
+  \definecolor{fillcol}{rgb}{1.0,1.0,1.0};
+  \pgfsetfillcolor{fillcol}
+\end{scope}
+\begin{scope}
+  \pgfsetstrokecolor{black}
+  \definecolor{strokecol}{rgb}{1.0,1.0,1.0};
+  \pgfsetstrokecolor{strokecol}
+  \definecolor{fillcol}{rgb}{1.0,1.0,1.0};
+  \pgfsetfillcolor{fillcol}
+\end{scope}
+\begin{scope}
+  \pgfsetstrokecolor{black}
+  \definecolor{strokecol}{rgb}{1.0,1.0,1.0};
+  \pgfsetstrokecolor{strokecol}
+  \definecolor{fillcol}{rgb}{1.0,1.0,1.0};
+  \pgfsetfillcolor{fillcol}
+\end{scope}
+\begin{scope}
+  \pgfsetstrokecolor{black}
+  \definecolor{strokecol}{rgb}{1.0,1.0,1.0};
+  \pgfsetstrokecolor{strokecol}
+  \definecolor{fillcol}{rgb}{1.0,1.0,1.0};
+  \pgfsetfillcolor{fillcol}
+\end{scope}
+  \node (x1) at (132.75bp,92.748bp) [draw,,circle, label=above:,rotate=0] {$x_{1}$};
+  \node (x0) at (69.748bp,92.748bp) [draw,,circle, label=above:,rotate=0] {$x_{0}$};
+  \node (x8) at (274.75bp,17.5bp) [draw,circle, double,place, label=above:,rotate=0] {$x_{8}$};
+  \node (x10) at (154.75bp,17.5bp) [draw,circle, double,place, label=above:,rotate=0] {$x_{10}$};
+  \coordinate (init) at (22.748bp,92.748bp);
+  \node (x9) at (69.748bp,17.5bp) [draw,,circle, label=above:,rotate=0] {$x_{9}$};
+  \node (x3) at (274.75bp,92.748bp) [draw,,circle, label=above:,rotate=0] {$x_{3}$};
+  \node (x2) at (203.75bp,92.748bp) [draw,,circle, label=above:,rotate=0] {$x_{2}$};
+  \node (x11) at (208.75bp,168.0bp) [draw,,circle, label=above:,rotate=0] {$x_{11}$};
+  \node (x12) at (291.75bp,168.0bp) [draw,,circle, label=above:,rotate=0] {$x_{12}$};
+  \node (x13) at (337.75bp,168.0bp) [draw,circle, double,place, label=above:,rotate=0] {$x_{13}$};
+  \node (x6) at (71.748bp,168.0bp) [draw,,circle, label=above:,rotate=0] {$x_{6}$};
+  \node (x7) at (148.75bp,168.0bp) [draw,,circle, label=above:,rotate=0] {$x_{7}$};
+  \node (x4) at (337.75bp,92.748bp) [draw,,circle, label=above:,rotate=0] {$x_{4}$};
+  \node (x5) at (412.75bp,92.748bp) [draw,circle, double,place, label=above:,rotate=0] {$x_{5}$};
+  \draw [-Latex] (x4) ..controls (337.75bp,113.59bp) and (337.75bp,127.42bp)  .. (x13);
+  \definecolor{strokecol}{rgb}{0.0,0.0,0.0};
+  \pgfsetstrokecolor{strokecol}
+  \draw (362.75bp,133.0bp) node {\scriptsize $\uparrow$1$\uparrow$2$\downarrow$3,\{4\}};
+  \draw [-Latex] (x2) ..controls (205.19bp,114.47bp) and (206.3bp,131.09bp)  .. (x11);
+  \draw (224.75bp,133.0bp) node {\scriptsize $\uparrow$1,\{4\}};
+  \draw [-Latex] (x0) ..controls (89.432bp,92.748bp) and (101.2bp,92.748bp)  .. (x1);
+  \draw (101.25bp,105.25bp) node {\scriptsize $\uparrow$2,\{1\}};
+  \draw [-Latex] (x2) ..controls (225.1bp,92.748bp) and (240.62bp,92.748bp)  .. (x3);
+  \draw (239.25bp,105.25bp) node {\scriptsize $\downarrow$2$\downarrow$3,\{1\}};
+  \draw [-Latex] (x6) ..controls (94.445bp,168.0bp) and (113.13bp,168.0bp)  .. (x7);
+  \draw (110.25bp,180.5bp) node {\scriptsize $\uparrow$1$\uparrow$2,\{2,4\}};
+  \draw [-Latex] (x3) ..controls (274.75bp,71.616bp) and (274.75bp,56.472bp)  .. (x8);
+  \draw (291.75bp,52.5bp) node {\scriptsize $\uparrow$1,\{2\}};
+  \draw [-Latex] (x0) ..controls (70.343bp,115.14bp) and (70.812bp,132.78bp)  .. (x6);
+  \draw (91.748bp,133.0bp) node {\scriptsize $\downarrow$1,\{2,4\}};
+  \draw [-Latex] (init) ..controls (46.452bp,92.748bp) and (47.391bp,92.748bp)  .. (x0);
+  \draw [-Latex] (x11) ..controls (234.62bp,168.0bp) and (253.65bp,168.0bp)  .. (x12);
+  \draw (250.25bp,180.5bp) node {\scriptsize $\downarrow$1$\downarrow$2$\downarrow$3,\{4\}};
+  \draw [-Latex] (x1) ..controls (154.1bp,92.748bp) and (169.62bp,92.748bp)  .. (x2);
+  \draw (168.25bp,105.25bp) node {\scriptsize $\downarrow$1$\uparrow$3,\{1\}};
+  \draw [-Latex] (x12) ..controls (305.92bp,144.82bp) and (317.83bp,125.33bp)  .. (x4);
+  \draw (319.75bp,133.0bp) node {\scriptsize $\uparrow$3,\{4\}};
+  \draw [-Latex] (x4) ..controls (358.81bp,92.748bp) and (373.9bp,92.748bp)  .. (x5);
+  \draw (373.0bp,105.25bp) node {\scriptsize $\uparrow$1$\downarrow$3,\{1\}};
+  \draw [-Latex] (x9) ..controls (92.487bp,17.5bp) and (111.2bp,17.5bp)  .. (x10);
+  \draw (109.0bp,30.0bp) node {\scriptsize $\uparrow$1$\downarrow$2$\downarrow$3,\{3\}};
+  \draw [-Latex] (x7) ..controls (164.12bp,146.96bp) and (180.1bp,125.1bp)  .. (x2);
+  \draw (181.75bp,133.0bp) node {\scriptsize $\downarrow$1$\uparrow$3,\{2,4\}};
+  \draw [-Latex] (x3) ..controls (294.43bp,92.748bp) and (306.2bp,92.748bp)  .. (x4);
+  \draw (306.25bp,105.25bp) node {\scriptsize $\uparrow$3,\{1\}};
+  \draw [-Latex] (x0) ..controls (69.748bp,70.419bp) and (69.748bp,52.784bp)  .. (x9);
+  \draw (94.748bp,52.5bp) node {\scriptsize $\downarrow$1$\uparrow$2$\uparrow$3,\{3\}};
+%
+\end{tikzpicture}

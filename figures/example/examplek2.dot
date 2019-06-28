@@ -1,12 +1,16 @@
 digraph a {
-rankdir=LR;
+rankdir=TB;
 # splines = ortho
-ratio=fill
+splines = false
+# ratio=fill
 graph [pad="0.01", nodesep="0.1", ranksep="0.01"];
 node [shape=circle];
 margin=0;
 {rank =same;}
-# size="11.7,8.3!";
+{rank = source; x6;x7;x11;x12;x13}
+{rank = same; init;x0;x1;x2;x3;x4;x5}
+{rank = same; x8;x9;x10}
+size="11.7,8.3!";
 init [style=invis]
 init -> x0
 x5 [shape=doublecircle];
