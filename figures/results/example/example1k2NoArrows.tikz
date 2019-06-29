@@ -1,0 +1,34 @@
+\begin{tikzpicture}[>=latex',line join=bevel,]
+%%
+\begin{scope}
+  \pgfsetstrokecolor{black}
+  \definecolor{strokecol}{rgb}{1.0,1.0,1.0};
+  \pgfsetstrokecolor{strokecol}
+  \definecolor{fillcol}{rgb}{1.0,1.0,1.0};
+  \pgfsetfillcolor{fillcol}
+\end{scope}
+  \coordinate (init) at (22.748bp,22.748bp);
+  \node (x2) at (217.5bp,22.748bp) [draw,,circle, label=above:,rotate=0] {$x_{2}$};
+  \node (x3) at (289.5bp,22.748bp) [draw,,circle, label=above:,rotate=0] {$x_{3}$};
+  \node (x0) at (73.496bp,22.748bp) [draw,,circle, label=above:,rotate=0] {$x_{0}$};
+  \node (x1) at (145.5bp,22.748bp) [draw,,circle, label=above:,rotate=0] {$x_{1}$};
+  \node (x6) at (510.0bp,22.748bp) [draw,circle, double,place, label=above:,rotate=0] {$x_{6}$};
+  \node (x4) at (361.5bp,22.748bp) [draw,,circle, label=above:,rotate=0] {$x_{4}$};
+  \node (x5) at (433.5bp,22.748bp) [draw,,circle, label=above:,rotate=0] {$x_{5}$};
+  \draw [-Latex] (x5) ..controls (455.15bp,22.748bp) and (470.88bp,22.748bp)  .. (x6);
+  \definecolor{strokecol}{rgb}{0.0,0.0,0.0};
+  \pgfsetstrokecolor{strokecol}
+  \draw (469.5bp,32.248bp) node {\scriptsize $\uparrow$1,\{1\}};
+  \draw [-Latex] (x3) ..controls (311.15bp,22.748bp) and (326.89bp,22.748bp)  .. (x4);
+  \draw (325.5bp,32.248bp) node {\scriptsize $\uparrow$3,\{1\}};
+  \draw [-Latex] (x1) ..controls (167.15bp,22.748bp) and (182.89bp,22.748bp)  .. (x2);
+  \draw (181.5bp,32.248bp) node {\scriptsize $\uparrow$2,\{1\}};
+  \draw [-Latex] (init) ..controls (47.91bp,22.748bp) and (50.097bp,22.748bp)  .. (x0);
+  \draw [-Latex] (x2) ..controls (239.15bp,22.748bp) and (254.89bp,22.748bp)  .. (x3);
+  \draw (253.5bp,32.248bp) node {\scriptsize $\downarrow$2,\{1\}};
+  \draw [-Latex] (x4) ..controls (383.15bp,22.748bp) and (398.89bp,22.748bp)  .. (x5);
+  \draw (397.5bp,32.248bp) node {\scriptsize $\downarrow$3,\{1\}};
+  \draw [-Latex] (x0) ..controls (95.147bp,22.748bp) and (110.89bp,22.748bp)  .. (x1);
+  \draw (109.5bp,32.248bp) node {\scriptsize $\downarrow$1,\{1\}};
+%
+\end{tikzpicture}

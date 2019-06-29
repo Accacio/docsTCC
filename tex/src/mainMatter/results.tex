@@ -1,75 +1,79 @@
 \chapter{Results}
 \label{cha:results}
 
+In this 2 paths
+best 80 paths States
+all
+1321  2166  2962  3744  4508  5235  5939
+
+best
+1294  2127  2904  3663  4395  5088  5746
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.5\textwidth]{results/all/states.pdf}
+  \caption{Input\slash Output Process model}
+    \label{fig:ioProcModel}
+\end{figure}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.5\textwidth]{results/all/best/states.pdf}
+  \caption{Input\slash Output Process model}
+    \label{fig:ioProcModel}
+\end{figure}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.5\textwidth]{results/all/exceedingLanguage-daoct-ndaao_k1-2_n12.pdf}
+  \caption{Input\slash Output Process model}
+    \label{fig:ioProcModel}
+\end{figure}
+
+ \section{best} 
+\begin{figure}[H]
+\begin{subfigure}[H]{0.5\textwidth}
+  \centering
+  \includegraphics[width=\textwidth]{results/all/best/exceedingLanguage-daoct-ndaao_k1_n12.pdf}
+  \caption{Input\slash Output Process model}
+    \label{fig:ioProcModel}
+\end{subfigure}
+\begin{subfigure}[h]{0.5\textwidth}
+  \centering
+  \includegraphics[width=\textwidth]{results/all/best/exceedingLanguage-daoct-ndaao_k2_n12.pdf}
+  \caption{Input\slash Output Process model}
+    \label{fig:ioProcModel}
+\end{subfigure}
+\end{figure}
 \section{DAOCT}
 \label{sec:results_daoct}
 
-First to show the algorithm developed works, the example data from
-\cite{moreira2018enhanced} will be used.
-\todo{comentar os grafos}
+\section{Discussion about the identification}
 \begin{figure}[H]
   \centering
-  \includetikzfigure[width=\textwidth]{example/examplek1}
-  \caption{DAOCT of example 2 from }
-  \label{fig:exceedingLangExample}
-\end{figure}
-
-\begin{figure}[H]
-  \centering
-  \includetikzfigure[width=\textwidth]{example/examplek2}
-  \caption{DAOCT of example 2 from }
-  \label{fig:exceedingLangExample}
-\end{figure}
-
-\begin{figure}[H]
-  \centering
-  \begin{tikzpicture}
-        % \draw[help lines,xstep=1,ystep=1] (0,0) grid (10,10);
-        % \foreach \x in {0,1,...,10} { \node [anchor=north] at (\x,0) {\x}; }
-        % \foreach \y in {0,1,...,10} { \node [anchor=east] at (0,\y) {\y}; }
-
-        % Belt 
-        \draw[very thick] (1,1) -- (9,1);
-        \draw[very thick] (1,2) -- (9,2);
-        \draw[very thick] (1,1.5) circle(0.5);
-        \draw[thick,fill] (1,1.5) circle(0.05);
-        \draw[very thick] (9,1.5) circle(0.5);
-        \draw[thick,fill] (9,1.5) circle(0.05);
-
-        % Sensors
-        \newcommand{\beltSensor}[3]{
-          \draw[very thick] (#1-0.25,#2) rectangle ++ (0.5,1);
-          \draw[dashed,very thick] (#1,#2) -- (#1,2);
-          \draw (#1,#2+1.5) node {#3};
-        }
-       \beltSensor{2.5}{4}{$S_1$}
-       \beltSensor{5}{4}{$S_2$}
-       \beltSensor{7.5}{4}{$S_3$}
-
-        % Box
-        \newcommand{\beltBox}[3]{
-          \draw[very thick] (#1,#2) rectangle ++ (#3,#3);
-          \draw[very thick] (#1,#2) -- ++ (#3,#3);
-          \draw[very thick] (#1,#2+#3) -- ++ (#3,-#3);
-        }
-        \beltBox{3.5}{2}{1} 
-        % \draw [fill,white,fill opacity=0.7,draw=none] (0.1,0.82) rectangle  (0.2,0.96);
-        % \draw [red,thick] ([shift=(0:0.03)]0.15,0.9) arc (0:180:0.03);
-        % \draw[black,->,>=stealth,very thick] (0.15,0.85) -- ++(0,0.1);
-        \draw [->,>=stealth,thick] ([shift=(225:0.25)]9,1.5) arc (225:45:0.25);
-        \draw [->,>=stealth,thick] ([shift=(225:0.25)]1,1.5) arc (225:45:0.25);
-
-        % \beltBox{1.5}{2}{0.5} 
-        % \beltBox{4.5}{2}{0.5} 
-        % \beltBox{7.5}{2}{0.5} 
-    \end{tikzpicture}
+  \includegraphics{results/example/example}
   \caption{Input\slash Output Process model}
     \label{fig:ioProcModel}
 \end{figure}
 
 
+\begin{figure}[H]
+  \centering
+  \includegraphics{results/example/examplek1NoArrows}
+  \caption{Input\slash Output Process model}
+    \label{fig:ioProcModel}
+\end{figure}
 
+\begin{figure}[H]
+  \centering
+  \includegraphics{results/example/example1k1NoArrows}
+  \caption{Input\slash Output Process model}
+    \label{fig:ioProcModel}
+\end{figure}
 
+\begin{figure}[H]
+  \centering
+  \includegraphics{results/example/example1k2NoArrows}
+  \caption{Input\slash Output Process model}
+    \label{fig:ioProcModel}
+\end{figure}
 % \begin{figure}[H]
 %   \centering
 %   \includegraphics[width=0.5\textwidth]{exceedingLanguage/example/exceedingLanguage-daoct-ndaao_k2_n7.pdf}

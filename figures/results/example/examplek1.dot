@@ -1,0 +1,23 @@
+digraph a {
+rankdir=LR;
+# splines = ortho
+ratio=fill
+graph [pad="0.01", nodesep="0.1", ranksep="0.01"];
+node [shape=circle];
+margin=0;
+{rank =same;}
+# size="11.7,8.3!";
+init [style=invis]
+init -> x0
+x2 [shape=doublecircle];
+x6 [shape=doublecircle];
+x4 [shape=doublecircle];
+
+x0 -> x1 [texlbl="\scriptsize ⬆1,\{1\}"]
+x1 -> x2 [texlbl="\scriptsize ⬇1,\{1\}"]
+x0 -> x3 [texlbl="\scriptsize ⬆2,\{2\}"]
+x3 -> x4 [texlbl="\scriptsize ⬇2,\{2\}"]
+x0 -> x5 [texlbl="\scriptsize ⬆3,\{3\}"]
+x5 -> x6 [texlbl="\scriptsize ⬇3,\{3\}"]
+
+}
