@@ -319,6 +319,12 @@
  }
  \makeatother
 
+\newcommand{\colvec}[2][1]{%
+  \scalebox{#1}{%
+    \renewcommand{\arraystretch}{.7}%
+    $\begin{bmatrix}#2\end{bmatrix}$%
+  }
+}
 
 
 %%% Local Variables:

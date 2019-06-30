@@ -612,7 +612,7 @@ the loop.
 
 \begin{figure}[H]
   \centering \includegraphics[width=0.8\textwidth]{cipnExample/scheme.tikz}
-  \caption[cipnexample]{Example of System to be controlled by the Petri Net}
+  \caption{Example of System to be controlled by the Petri Net}
   \label{fig:cipnexamplescheme}
 \end{figure}
 From the description of the control it is possible to create a Control Interpret
@@ -621,7 +621,7 @@ Petri Net to describe it, as the one in \autoref{fig:cipnexample}
 
 \begin{figure}[H]
   \centering \includegraphics[width=0.8\textwidth]{cipnExample/cipn.tikz}
-  \caption[cipnexample]{Example of Control Interpreted Petri Net to control
+  \caption{Example of Control Interpreted Petri Net to control
     system in \autoref{fig:cipnexamplescheme}}
   \label{fig:cipnexample}
 \end{figure}
@@ -646,9 +646,7 @@ Once the control of a system is modeled by a \CIPN, it
 is needed to implement the control in a real controller. The most used
 controllers in the industry are \PLCs. The international standard IEC 61131,
 defines all the standards for \PLCs, and its third part (IEC 61131-3) defines
-five languages to program \PLCs: \LD, Function Block Diagram
-(FBD),  Structured Text (ST), Instruction List (IL) and Sequential Function
-Chart (SFC). One of the most used in the industry is \LD, because of its
+five languages to program \PLCs: \LD, \FBD, \ST, IL{} and \SFC. One of the most used in the industry is \LD, because of its
 resemblance with electric connections. So we are going to use \LD{} to implement the
 control designed with the \CIPN.
 
@@ -940,7 +938,7 @@ modules are grouped in same module in this work. The converted Ladder Logic
 can be seen in \autoref{fig:cipnexampleLadder}.
 \begin{figure}[H]
   \centering \includegraphics{cipnExample/cipnLadder.tikz}
-  \caption[cipnexample]{Example of Control Interpreted Petri Net converted to
+  \caption{Example of Control Interpreted Petri Net converted to
     Ladder.}
   \label{fig:cipnexampleLadder}
 \end{figure}
@@ -1265,12 +1263,6 @@ corresponding path $p_i$.
 
 As an example of the computation of the paths $p_i^k$, we can take the observation of the following
 paths, from \cite{moreira2018enhanced}:
-\newcommand{\colvec}[2][1]{%
-  \scalebox{#1}{%
-    \renewcommand{\arraystretch}{.7}%
-    $\begin{bmatrix}#2\end{bmatrix}$%
-  }
-}
 \setlength\arraycolsep{2pt}
 \begin{align*}
   p_1&= \left(\colvec{1\\0\\0},a,\colvec{1\\1\\0},b,\colvec{0\\1\\1},c,\colvec{0\\0\\0},d,\colvec{0\\0\\1},e,\colvec{1\\0\\0}\right) \\
