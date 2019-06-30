@@ -35,10 +35,10 @@ saved in a SD card. To retrieve this file, the SD card can be connected to a PC,
 or it can be downloaded using a web browser if a Web Server is configured in the
 \PLC.
 
-The four blocks created to log data are called
+The five blocks created to log data are called
 \verb|DataLogCreate|,
-\verb|DataLogOpen|, \verb|DataLogClose| and \verb|DataLogDelete|.
-They can be seen used in a \LD{} in \Autoref{fig:datalogcreate,fig:datalogopen,fig:datalogclose,fig:datalogdelete}.
+\verb|DataLogOpen|, \verb|DataLogWrite|, \verb|DataLogClose| and \verb|DataLogDelete|.
+They can be seen used in a \LD{} in \Autoref{fig:datalogcreate,fig:datalogopen,fig:datalogwrite,fig:datalogclose,fig:datalogdelete}.
 
 The \verb|REQ| input in all blocks trigger the action to be performed in a
 datalog: create the datalog file,
@@ -72,26 +72,32 @@ The \verb|TIMESTAMP| input is a boolean that if it is $true$ the resulting
 to the time when the data line was inserted. 
 
 \begin{figure}[H] \centering
- \includegraphics[width=0.7\textwidth]{tutorial/datalogcreate}
+ \includegraphics[width=0.7\textwidth]{tutorial/create}
   \caption{DataLogCreate block.}
   \label{fig:datalogcreate}
 \end{figure}
 
 \begin{figure}[H] \centering
  % \includegraphics[width=0.7\textwidth]{tutorial/datalogopen}
- \includegraphics[width=0.7\textwidth]{tutorial/datalogclose}
-\caption{\todo{DataLogOpen block.}}
+ \includegraphics[width=0.7\textwidth]{tutorial/open}
+\caption{DataLogOpen block.}
   \label{fig:datalogopen}
 \end{figure}
 
 \begin{figure}[H] \centering
- \includegraphics[width=0.7\textwidth]{tutorial/datalogclose}
+	\includegraphics[width=0.7\textwidth]{tutorial/write}
+	\caption{DataLogWrite block.}
+	\label{fig:datalogwrite}
+\end{figure}
+
+\begin{figure}[H] \centering
+ \includegraphics[width=0.7\textwidth]{tutorial/close}
   \caption{DataLogClose block.}
   \label{fig:datalogclose}
 \end{figure}
 
 \begin{figure}[H] \centering
- \includegraphics[width=0.7\textwidth]{tutorial/datalogdelete.png}
+ \includegraphics[width=0.7\textwidth]{tutorial/delete}
   \caption{DataLogDelete block.}
   \label{fig:datalogdelete}
 \end{figure}
@@ -171,10 +177,11 @@ Inside this block some things are done in a certain order:
 \item Compare \verb|AcqValuesNew| and \verb|AcqValuesPrev| 
 \item prepare \verb|AcqValuesNew| to be stored (If different from \verb|AcqValuesPrev|) 
 \item Create and open datalog if asked
+\item Write the data if asked
 \item Close and delete datalog if asked
 \end{enumerate}
 
-The last two steps are already depicted in
+The last three steps are already depicted in
 \Crefrange{fig:datalogcreate}{fig:datalogdelete}, the other ones will be shown
 in the next paragraphs.
 
