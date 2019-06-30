@@ -230,7 +230,7 @@ the one shown in \Autoref{fig:plc}.
 \begin{figure}[H]
 \centering
 \includegraphics[width=0.7\textwidth,clip,trim={25cm 12cm 15cm 10cm}]{maquete/plc.jpg} 
-  \caption{s7-1500}
+  \caption{Siemens \PLC{} S7-1500}
   \label{fig:plc}
 \end{figure}
 
@@ -250,8 +250,8 @@ following comparisons:
   \begin{align}
   \label{eq:concUpconcDown}
     % \verb|ConcUP|=2
-    \text{\tt ConcUP} &=\text{\tt Distance Sensor} > \warning{values}\\
-    \text{\tt ConcDWN}&=\text{\tt Distance Sensor} \leq \warning{values}
+    \text{\tt ConcUP} &=\text{\tt Distance Sensor} \geq 1000 \& \text{\tt Distance Sensor} < 10000 \\
+    \text{\tt ConcDWN}&=\text{\tt Distance Sensor} \geq 10000
   \end{align}
 
 The other units (Handling Unit, Assembly Unit and Storage Unit) are connected to
