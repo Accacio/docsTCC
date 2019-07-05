@@ -3,6 +3,52 @@
 \definecolor{numberstyle}{rgb}{0.5,0.5,0.5}
 \definecolor{stringstyle}{rgb}{0.58,0,0.82}
 
+	\tikzset{
+	place/.style={
+	circle,
+	thick,
+	draw=black!100, % draw=blue!75,
+    % fill=blue!20,
+    minimum size=6mm
+  },
+  extPlace/.style={
+    circle,
+    dotted,
+    draw=black!100, % draw=blue!75,
+    % fill=blue!20,
+    minimum size=6mm
+  },
+  extTransition/.style={
+    rectangle,
+    dotted,
+    fill=white,
+    minimum width=8mm,
+    inner ysep=0.7pt
+  },
+  transition/.style={
+    rectangle,
+    thick,
+    fill=black,
+    minimum width=8mm,
+    inner ysep=0.7pt
+  },
+  extTimedtransition/.style={
+    rectangle,
+    dotted,
+    fill=white,
+    minimum width=8mm,
+    inner ysep=2pt
+  },
+  timedtransition/.style={
+    rectangle,
+    thick,
+    fill=white,
+    minimum width=8mm,
+    inner ysep=2pt
+  },
+  inhibitor/.style={-o},
+  text/.style={}
+}
 \chapter{Tools}
 \label{cha:Tools}
 
@@ -194,8 +240,8 @@ to the one shown in \Autoref{lst:Includetikz}, can result in the following figur
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=0.72\textwidth]{tools/dot2petri/sampleData.tikz}
-  \caption{dot2automata output.}
+  \includegraphics[width=0.9\textwidth]{tools/dot2petri/sampleData.tikz}
+  \caption{dot2petri output.}
   \label{fig:Dot2automataSampleOutput}
 \end{figure}
 

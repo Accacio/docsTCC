@@ -9,7 +9,7 @@
 
   \draw(0,0) -- ++(0.5,0)
   to [contact P={info={\scriptsize FROM\_PLC1.$b_0$}}] ++(1,0) -- ++(3,0)
-  to [coil={info={$b_0$}}] +(1,0) -- ++ (1.5,0);
+  to [coil={info={$b_0$}}] +(1,0) -- ++ (1.5,0) coordinate(laddertopright);
   \ladderrungend{1}
 
   \draw(0,0) -- ++(0.5,0)
@@ -56,19 +56,19 @@
 
 
 
-  \draw[dashed,gray](-0.2,\ladderskip) rectangle ++(6.6,-4.1);
+  \draw[dashed,gray](-0.2,\ladderskip) rectangle ++(6.4,-4.1);
 
   \draw[right] (0,-2.9) node {\footnotesize Prepare Received Data};
 
-  \draw[dashed,gray](-0.2,-3.3) rectangle ++(6.6,-2.1);
+  \draw[dashed,gray](-0.2,-3.3) rectangle ++(6.4,-2.1);
 
   \draw[right] (0,-5.2) node {\footnotesize Module of firing conditions};
 
-  \draw[dashed,gray](-0.2,-5.6) rectangle ++(6.6,-3.1);
+  \draw[dashed,gray](-0.2,-5.6) rectangle ++(6.4,-3.1);
 
   \draw[right] (0,-8.5) node {\footnotesize Module of Petri Net dynamics};
 
-  \draw[dashed,gray](-0.2,-8.9) rectangle ++(6.6,-2);
+  \draw[dashed,gray](-0.2,-8.9) rectangle ++(6.4,-2);
 
   \draw[right] (0,-10.7) node {\footnotesize Prepare Data to Send};
   

@@ -6,7 +6,7 @@
   \draw [-Latex] (p0m1) ..controls (61.252bp,18.0bp) and (69.159bp,18.0bp)  .. (t0);
   \definecolor{strokecol}{rgb}{0.0,0.0,0.0};
   \pgfsetstrokecolor{strokecol}
-  \draw (70.5bp,27.0bp) node {2};
+  \draw (70.5bp,27.0bp) node {2\\|};
   \draw [-Latex] (t0) ..controls (143.39bp,18.0bp) and (145.57bp,18.0bp)  .. (p1m1);
 %
 \end{tikzpicture}

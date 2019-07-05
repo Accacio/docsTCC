@@ -9,7 +9,8 @@
   \draw [-Latex] (t1) ..controls (196.05bp,18.0bp) and (218.97bp,18.0bp)  .. (p1);
   \definecolor{strokecol}{rgb}{0.0,0.0,0.0};
   \pgfsetstrokecolor{strokecol}
-  \draw (212.5bp,27.0bp) node {2};
+  \draw (212.5bp,27.0bp) node {2\\};
+  \draw (212.5bp,18.0bp) node {|};
   \draw [-Latex] (t0) ..controls (54.247bp,18.0bp) and (60.943bp,18.0bp)  .. (p0);
   \draw [-Latex] (p1) ..controls (283.25bp,18.0bp) and (289.94bp,18.0bp)  .. (t2);
 %

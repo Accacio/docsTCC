@@ -17,13 +17,13 @@
   \ladderrungend{2.5}
 
   \draw(0,0) -- ++(0.7,0)
-  to [contact NO={info={\scriptsize PUTDB.DONE}}] ++(1,0) -- ++(1,0)
+  to [contact NO={info={\scriptsize GETDB.NDR}}] ++(1,0) -- ++(1,0)
   to [contact NO={info={\scriptsize TO\_PLC2.$b_0$}}] ++(1,0) -- ++(1,0)
   to [coil R={info={\scriptsize TO\_PLC2.$b_0$}}] +(1,0) -- ++ (1.5,0);
   \ladderrungend{1}
 
   \draw(0,0) -- ++(0.7,0)
-  to [contact NO={info={\scriptsize PUTDB.DONE}}] ++(1,0) -- ++(1,0)
+  to [contact NO={info={\scriptsize GETDB.NDR}}] ++(1,0) -- ++(1,0)
   to [contact NO={info={\scriptsize TO\_PLC2.$b_1$}}] ++(1,0) -- ++(1,0)
   to [coil R={info={\scriptsize TO\_PLC2.$b_1$}}] +(1,0) -- ++ (1.5,0);
   \ladderrungend{2}
