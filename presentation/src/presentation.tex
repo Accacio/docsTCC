@@ -1,19 +1,24 @@
-\documentclass[aspectratio=169,14pt]{beamer}
+\documentclass[aspectratio=169,14pt]{beamer} % \documentclass[14pt]{beamer}
 \input{preamble}
 \input{beameroptions}
-\author{\footnotesize \textbf{Rafael Accácio NOGUEIRA}}
-\title{\setlength\lineskip{10pt} \Large \textbf{Identification of an Educational~Manufacturing~System}}
+\author{\small \textbf{Rafael Accácio Nogueira}}
+\title{\setlength\lineskip{10pt} \Large \textbf{Identificação de um Sistema de Manufatura Didático}}
 \institute{}
-\date{}
+\date{19 de Julho de 2019}
 \usepackage[absolute,overlay]{textpos} %needed for textblock
 \setbeamertemplate{navigation symbols}{} % don't use navigation tools on slides
 \usepackage[timeinterval=60]{tdclock}
-\setbeamertemplate{headline}{\initclock\tiny{\tdyear-\tdmonth-\tdday\quad\tdhours:\tdminutes}}
 % \setbeameroption{show notes on second screen}
 \setbeamertemplate{note page}{\pagecolor{white}\vfill\insertnote\vfill}
+\makeindex
+
+
 \begin{document}
 \input{page_de_garde} 
-% \input{Sommaire}
+\input{Sommaire}
+\newcommand{\bulletpoint}[1]{\begin{itemize}
+		\item #1
+\end{itemize}}
 
 % \begin{frame}{Cycle}
 % \centering
@@ -26,7 +31,7 @@
 % \href{run:../../videos/TCCVIDEO_HTML-HTMI.avi}{\includegraphics[width=0.7\textwidth]{../../videos/TCCVIDEO_HTML-HTMI.jpg}}
 %  % \inlineMovie[]{../../videos/TCCVIDEO_HTML-HTMI.avi}{../../videos/TCCVIDEO_HTML-HTMI.jpg}{width=0.7\textwidth}
 % \end{frame}
-
+% \section{Title}
 % \begin{frame}{Exemplo de frases espaçadas tipo Afonso}
 % 	\onslide<1,2,3,5>{\quad First Line of Text}
 % 	\only<2,3>{\\ \quad \quad Second Line of Text}
@@ -39,6 +44,162 @@
 % \caption{Figura}
 % \end{figure}
 % \end{frame}
+\begin{frame}{Rede de Petri}
+\begin{figure}[H]
+  \centering \includegraphics[width=0.8\textwidth]{cipnExample/schemePresentation.tikz}
+  \caption{Exemplo de sistema a ser controlado.}
+  \label{fig:cipnexamplescheme}
+\end{figure}
+\end{frame}
+ 
+\begin{frame}{Rede de Petri}
+\begin{figure}[H]
+  \centering \includegraphics[width=\textwidth]{cipnExample/cipnPresentation.tikz}
+  \caption{Exemplo de Rede de Petri interpretada para controle.}
+  \label{fig:cipnexample}
+\end{figure}
+\end{frame}
+
+\begin{frame}{Rede de Petri}
+\begin{figure}[H]
+ \sbox0{
+   \includegraphics[width=0.5\textwidth]{vennDiagramLanguagesPresentation.tikz}
+ }
+  % \centering
+ \begin{minipage}{1.2\wd0}
+  \centering
+   \usebox0
+   \caption{Diagram de Venn com relações entre $L_{Orig}$, $L_{OrigNI}$,
+    $L_{Obs}$, $L_{Exc}$ and $L_{Iden}$}.
+ \end{minipage}
+  \label{fig:languagesVenn}
+\end{figure}
+\end{frame}
+
+
+\begin{frame}
+\begin{definition}[DAOCT]
+  \label{def:daoct}
+  \small
+  \[ DAOCT = (X,\Sigma,f,\lambda,R,\theta, x_0,X_f)\]
+  \indent X conjunto de \textbf{estados} \\
+  \indent $\Sigma$ conjunto de \textbf{eventos}\\
+  \indent $\Omega \subset \mathbb{N}_1^{m_i+m_o} $ conjunto de \textbf{vetores E/S}\\
+  \indent $f:  X \times \Sigma^\star \rightarrow X$ função de  \textbf{transição determinística}\\
+  \indent $\lambda : X \rightarrow \Omega$ função de  \textbf{saídas do stado}\\
+  \indent $R = {1,2,\dots,r}$ conjunto de \textbf{indices dos caminhos}\\
+  \indent $\theta : X \times \Sigma \rightarrow 2^R$ função de \textbf{estimação
+    de caminho}\\
+  \indent $x_0$ \textbf{estado inicial} \\
+  \indent $X_f \subseteq X $ conjunto de \textbf{estados finais}
+\end{definition}
+\end{frame}
+
+\begin{frame}{Caminhos Observados}
+  \setlength\arraycolsep{2pt}
+  \vspace{-0.5cm}
+\small \begin{align*}
+  p_1&= \left(\colvec{1\\0\\0},a,\colvec{1\\1\\0},b,\colvec{0\\1\\1},c,\colvec{0\\0\\0},d,\colvec{0\\0\\1},e,\colvec{1\\0\\0}\right) \\
+  p_2&= \left(\colvec{1\\0\\0},g,\colvec{0\\0\\0},h,\colvec{1\\1\\0},b,\colvec{0\\1\\1},c,\colvec{0\\0\\0},i,\colvec{1\\0\\0},j,\colvec{0\\1\\1},l,\colvec{1\\0\\0}\right) \\
+  p_3&= \left(\colvec{1\\0\\0},g,\colvec{0\\0\\0},h,\colvec{1\\1\\0},b,\colvec{0\\1\\1},i,\colvec{1\\1\\1},m,\colvec{0\\0\\0},d,\colvec{0\\0\\1},n,\colvec{1\\1\\0}\right) \\
+\end{align*}
+\end{frame}
+
+\begin{frame}{Caminhos Modificados}
+  \setlength\arraycolsep{2pt}
+ $\bullet$ $k=2$
+ \small
+ \begin{align*}
+  p_1&= \left(\colvec{1\\0\\0},a,\colvec{1\\1\\0},b,\colvec{0\\1\\1},c,\colvec{0\\0\\0},d,\colvec{0\\0\\1},e,\colvec{1\\0\\0}\right)
+\end{align*}
+ \begin{align*}
+  p_1^2&= \left(\colvec{1\\0\\0},a,\colvec{1&1\\0&1\\0&0},b,\colvec{1&0\\1&1\\0&1},c,\colvec{0&0\\1&0\\1&0},d,\colvec{0&0\\0&0\\0&1},e,\colvec{0&1\\0&0\\0&0}\right) \\ 
+\end{align*}
+\end{frame}
+
+\begin{frame}{Caminhos Modificados}
+  \setlength\arraycolsep{2pt}
+ $\bullet$ $k=2$
+  \small \begin{align*}
+  p_1^2&= \left(\colvec{1\\0\\0},a,\colvec{1&1\\0&1\\0&0},b,\colvec{1&0\\1&1\\0&1},c,\colvec{0&0\\1&0\\1&0},d,\colvec{0&0\\0&0\\0&1},e,\colvec{0&1\\0&0\\0&0}\right) \\ 
+  p_2^2&= \left(\colvec{1\\0\\0},g,\colvec{1&0\\0&0\\0&0},h,\colvec{0&1\\0&1\\0&0},b,\colvec{1&0\\1&1\\0&1},c,\colvec{0&0\\1&0\\1&0},i,\colvec{0&1\\0&0\\0&0},j,\colvec{1&0\\0&1\\0&1},l,\colvec{0&1\\1&0\\1&0}\right) \\
+  p_3^2&= \left(\colvec{1\\0\\0},g,\colvec{1&0\\0&0\\0&0},h,\colvec{0&1\\0&1\\0&0},b,\colvec{1&0\\1&1\\0&1},i,\colvec{0&1\\1&1\\1&1},m,\colvec{1&0\\1&0\\1&0},d,\colvec{0&0\\0&0\\0&1},n,\colvec{0&1\\0&1\\1&0}\right) \\
+\end{align*}
+\end{frame}
+
+\begin{frame}{}
+  \begin{figure}[H]
+    \footnotesize
+  \centering \includegraphics[width=0.8\textwidth]{automata/daoct/example.tikz}
+  % \includetikzfigure[width=0.5\textwidth]{automata/example/example}
+  \caption{Diagrama de transição de estados para $k=1$.}
+  \label{fig:examplek1}
+\end{figure}
+
+\end{frame}
+
+\begin{frame}{}
+\begin{figure}[H]
+    \footnotesize
+  \centering \includegraphics[width=0.9\textwidth]{automata/daoct/examplek2.tikz}
+  % \includetikzfigure[width=0.5\textwidth]{automata/example/example}
+  \caption{Diagrama de transição de estados para $k=2$.}
+  \label{fig:examplek2}
+\end{figure}
+
+\end{frame}
+\begin{frame}{}
+\begin{figure}[H]
+  \centering\small
+   \sbox0{
+\begin{tikzpicture}[scale=0.8]
+        % \draw[help lines,xstep=1,ystep=1] (0,0) grid (10,10);
+        % \foreach \x in {0,1,...,10} { \node [anchor=north] at (\x,0) {\x}; }
+        % \foreach \y in {0,1,...,10} { \node [anchor=east] at (0,\y) {\y}; }
+        
+        \draw[ultra thick,rounded corners] (3.5,0) rectangle (6.5,1.5);
+        \draw[ultra thick,rounded corners] (0.5,2) rectangle (3.5,3.5);
+        \draw[ultra thick,rounded corners] (6.5,2) rectangle (9.5,3.5);
+        \draw[ultra thick,rounded corners] (3.5,4.5) rectangle (6.5,6);
+        \draw (5,5.25) node {Controlador};
+        \draw (5,0.75) node {Planta};
+        \draw (2,2.75) node {Atuadores};
+        \draw (8,2.75) node {Sensores};
+
+        % actuators to plant
+        \draw[->,>=stealth, very thick] (2,2) -- (2,0.75) -- (3.5,0.75);
+
+        % controller to actuators
+        \draw[->,>=stealth, very thick] (3.5,5.25) -- (2,5.25) -- (2,3.5);
+
+        % Plant to sensors
+        \draw[->,>=stealth, very thick] (6.5,0.75) -- (8,0.75) -- (8,2);
+
+        % Sensors to controller
+        \draw[->,>=stealth, very thick] (8,3.5) -- (8,5.25) -- (6.5,5.25);
+
+        \draw[->,>=stealth, very thick] (2,4) -- (10,4);
+        \draw[fill] (2,4) circle(.05);
+
+        \draw[->,>=stealth, very thick] (8,4.5) -- (10,4.5);
+        \draw[fill] (8,4.5) circle(.05);
+
+        \draw (11.4,4.5) node {Sinais};
+        \draw (11.4,4.15) node {observavdos};
+
+        % \draw (1.5,5.75) node {Saídas do Controlador};
+        % \draw (8.5,5.75) node {Entradas do Controlador};
+
+      \end{tikzpicture}
+      }
+ \begin{minipage}{1.2\wd0}
+  \centering
+   \usebox0
+  \caption{Sinais Observados de um sistema em malha fechada.}
+ \end{minipage}
+    \label{fig:obsSignals}
+  \end{figure}
+\end{frame}
 
 
 \end{document}

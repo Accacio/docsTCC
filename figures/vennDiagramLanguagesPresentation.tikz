@@ -1,0 +1,28 @@
+  \begin{tikzpicture}
+    % \begin{scope}[blend group = soft light]
+
+      \def\LOrig{(0,0) ellipse (3 and 2)}
+      \def\LIden{(1.5,0) circle (3 and 2)}
+
+      \scope
+      \draw[line width=0.5mm,pattern=vertical lines] \LOrig;
+      \draw[line width=0.5mm,pattern=horizontal lines] \LIden;
+      \clip \LIden;
+      \draw[line width=0.5mm,fill=white] \LOrig;
+      \clip \LOrig;
+      \draw[line width=0.5mm] \LIden;
+      \endscope
+
+      \draw[line width=0.5mm]  (0.75,0) circle (2 and 1.5);
+      
+      \node at (0.75,0)    {\scriptsize $L_{Obs}$};
+      \fill[white] (-2.82,-0.25) rectangle + (1.2,0.5);
+      \node at (-2.2,0)    {\scriptsize $L_{OrigNI}$};
+
+      
+      \node at (-2.2,2)    {\scriptsize $L_{Orig}$};
+      \fill[white] (3.2,-0.25) rectangle + (1,0.5);
+      \node at (3.7,0)    {\scriptsize $L_{Exc}$};
+
+      \node at (3.7,2)    {\scriptsize $L_{Iden}$};
+  \end{tikzpicture}

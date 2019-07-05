@@ -13,6 +13,91 @@
 % \usepackage{media9}
 \usepackage{stmaryrd} 
 
+\usepackage{tikzscale}
+\usepackage{tikz}
+
+\usepackage{pgfplots}
+\pgfplotsset{compat=newest}
+\usepgfplotslibrary{groupplots}
+\usepgfplotslibrary{dateplot}
+
+
+
+\usetikzlibrary{patterns}
+
+\usetikzlibrary{arrows,shapes,automata,petri,external,arrows.meta}
+	\tikzset{
+	place/.style={
+	circle,
+	thick,
+	draw=black!100, % draw=blue!75,
+    % fill=blue!20,
+    minimum size=6mm
+  },
+  extPlace/.style={
+    circle,
+    dotted,
+    draw=black!100, % draw=blue!75,
+    % fill=blue!20,
+    minimum size=6mm
+  },
+  extTransition/.style={
+    rectangle,
+    dotted,
+    fill=white,
+    minimum width=8mm,
+    inner ysep=0.7pt
+  },
+  transition/.style={
+    rectangle,
+    thick,
+    fill=black,
+    minimum width=8mm,
+    inner ysep=0.7pt
+  },
+  extTimedtransition/.style={
+    rectangle,
+    dotted,
+    fill=white,
+    minimum width=8mm,
+    inner ysep=2pt
+  },
+  timedtransition/.style={
+    rectangle,
+    thick,
+    fill=white,
+    minimum width=8mm,
+    inner ysep=2pt
+  },
+  inhibitor/.style={-o},
+  text/.style={}
+}
+
+\makeatletter
+\tikz@def@grow@tokens{2}{1}{-1.5}{0}
+\tikz@def@grow@tokens{2}{2}{1.5}{0}
+% \tikz@def@grow@tokens{3}{1}{-1}{0}
+% \tikz@def@grow@tokens{3}{2}{0}{1}
+% \tikz@def@grow@tokens{3}{3}{1.5}{-1}
+\makeatother
+\newcommand{\colvec}[2][1]{%
+  \scalebox{#1}{%
+    \renewcommand{\arraystretch}{.7}%
+    $\begin{bmatrix}#2\end{bmatrix}$%
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
 %%% Local Variables:
 %%% mode: latex
 %%% TeX-master: "presentation"
