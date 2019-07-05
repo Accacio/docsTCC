@@ -1,8 +1,7 @@
 
 \chapter{Background}
 \label{cha:background}
-This chapter will discuss the main topics needed to understand this work, from
-discrete event systems to discrete control implementation on \PLCs, a more
+In this chapter the main topics needed to understand this work are presented. A more
 detailed explanation of each topic can be found on the respective cited work.
 \section{Systems}
 
@@ -15,12 +14,8 @@ or devices that operate together''. As seen two basic properties of systems are
   function
 \end{itemize}
 
-As its definition is so abstract almost anything can be defined as a system,
-physical or not, beings can be defined as systems and even economic mechanisms
-can also be considered as systems.
-
 Usually systems are modelled by a Input\slash Output process. The system is fed with a
-set of inputs, it process the inputs resulting on the output set, as we can see
+set of inputs, it processes the inputs resulting on the output set, as we can see
 in \autoref{fig:ioProcModel}.
 
 \begin{figure}[H]
@@ -47,24 +42,18 @@ in \autoref{fig:ioProcModel}.
     \label{fig:ioProcModel}
 \end{figure}
 
-
-In some systems, its inputs and outputs can't represent it's behaviour, so the
-concept of state is created, and it represents the behaviour of the system in a
-given instant $t$.
-
-The states can be continuous or discrete, and the systems which these states
-represent can be considered as Continuous Systems, Discrete Systems or even
+The states of the system can be continuous or discrete, and the systems can be considered as Continuous, Discrete or 
 Hybrid Systems, which combine both kind of states.
 
-The systems modelled in this work are Discrete Systems, more details about other
+The systems modelled in this work are Discrete Systems. More details about other
 kinds of systems as well as examples and their analysis can be found on
 \cite{oppenheim1996signals} and \cite{kalouptsidis1997signal}.
 \section{Discrete Event Systems}
 \label{sec:discreteEventSystems}
-Discrete Systems can be driven by time and by events. It means, the states can
-be changed continuously by the time or instantaneously by some ensemble of events.
+Discrete Systems can be driven by time or by events, i.e., the states can
+change continuously with the time or instantaneously with the occurrence of events.
 
-In this thesis we are interested in the event-driven type. Some basic mathematical
+In this work, we are interested in the event-driven type. Some basic mathematical
 formalisms, nomenclature and representations can be developed to facilitate the
 understanding. Some of those will be presented in the following sections based
 on \cite{cassandras2009introduction, david2005discrete,david1989grafcet}.
@@ -79,14 +68,14 @@ linguistics, each one of these marks, the events can be compared to letters ,
 provided that $\Sigma$ can be called an ``alphabet'', and the combination of its
 events ``words''. Words are also called ``strings '' or even ``traces''.
 Considering the use of the word ``string'' as the variable type used on several
-programming languages used in this work, we prefer the use of the vocables
-``word'' and ``trace''. We can also define a mark to represent an empty word,
+programming languages used in this work, we prefer the use of the terms
+``word'' and ``trace''. We can also define the empty word,
 $\epsilon$, that is, a word that is not formed by any event.
 
-The combination process to form words is called concatenation. For instance,
+The operation to form words is called concatenation. For instance,
 given two events $a$ and $b$, the words $ab$ and $ba$ can be created concatenating these two events and there is no particular reason to suppose that $ab$ is equal to $ba$, the same way the words ``ten'' and ``net'' have different meanings in English.
 
-We can also concatenate two words, to create a different one, we can take the
+We can also concatenate two words to create a different one. For instance, we can take the
 words $ab$ and $ba$ and create words like $abba$ and $baab$.
 
 As we extended the definition of concatenation to words, we define $\epsilon$,
@@ -94,23 +83,23 @@ the empty word, as the identity element of concatenation: $w\epsilon = \epsilon
 w = w$ for any word $w$.
 
 Likewise, we can define the length of a word as the number of events contained
-by this word, we denote the length with two vertical bars, given a word $w$ its
+by this word. We denote the length with two vertical bars. Thus, given a word $w$ its
 length is equal to $|w|$ and by definition $|\epsilon| = 0 $.
 
-As we know, there is a great number of human western languages, as portuguese,
-english, french, spanish etc, that roughly are formed by the same alphabet, but
-overall they are formed by different combination of words. Similar things can
-happen with languages that define the \DESs, so we can define as in
-\cite{cassandras2009introduction}.
+% As we know, there is a great number of human western languages, as portuguese,
+% english, french, spanish etc, that roughly are formed by the same alphabet, but
+% overall they are formed by different combination of words. Similar things can
+% happen with languages that define the \DESs, so we can define as in
+% \cite{cassandras2009introduction}.
 % \pagebreak
 \begin{definition}[Language]
   \label{def:language}~\\
-  A Language defined over an alphabet $\Sigma$ is formed from finite-length
+  A Language defined over an alphabet $\Sigma$ is formed of finite-length
   words generated from the concatenation of the events in $\Sigma$ and
   $\epsilon$.
 \end{definition}
 
-Take for example an alphabet $\Sigma = \{a,b,g\}$, we can define different
+Let us consider for example an alphabet $\Sigma = \{a,b,g\}$. We can define different
 languages
 \begin{subequations}
   \begin{equation*}
@@ -124,28 +113,25 @@ languages
   \end{equation*}
 \end{subequations}
 
-The cardinality of this sets are $|L_1|=3$, $|L_2|=9$, $|L_3|=\infty$
-As we can see from the same alphabet very different languages can be created, thus we can define a way to encapsulate all possible languages generated from
+The cardinality of these sets are $|L_1|=3$, $|L_2|=9$, $|L_3|=\infty$.
+As we can see, from the same alphabet several languages can be created and sometimes very different from each other. Thus, we can define a way to encapsulate all possible languages generated from
 the same alphabet $\Sigma$. Let us denote by $\Sigma^*$ the set containing all
-finite words composed with the elements of $\Sigma$ and $\epsilon$. The *
-operation is called the \textit{Kleene-closure}. Similarly to $L_3$ it is
+finite words composed of the elements of $\Sigma$ and $\epsilon$. The *
+operation is called the \textit{Kleene-closure}. Similarly to $L_3$, $\Sigma^*$ is
 countably infinite since it contains arbitrarily long words. For instance the
 \textit{Kleene-closure} of the alphabet $\Sigma = \{a, b, c\}$ is:
 \begin{equation*}
   \label{eq:kleeneExample}
   \Sigma^* = \{\epsilon,a,b,c,aa,ab,ac,ba,bb,bc,ca,cb,cc,aaa,\dots\} 
 \end{equation*}
-There are a few operations with languages and alphabets that can be defined, but they are outside the scope of this work, they can be found on \cite{cassandras2009introduction}.
+% There are a few operations with languages and alphabets that can be defined, but they are outside the scope of this work, they can be found on \cite{cassandras2009introduction}.
 \section{Representation of Languages}
 \label{sec:representationLanguages}
 
-Although languages can describe the behaviour of \DESs, there are cases, as the
-one shown
-by the language $L_3$ in the last section, in which the language is enormous, in
-that case countably infinite, what makes them not so simple to communicate the
+Although languages can describe the behaviour of \DESs, there are cases in which the language is countably infinite, what makes them not so simple to express the
 behaviour of the system. For this purpose, there are some other formalisms that
-aid the comprehension, since they can be a more compact way of expressing the
-system's behaviour or accompanied by diagrams.
+are a more compact way of expressing the
+system's behaviour.
 
 In the following subsections two of the most known representations will be
 presented: Automata and Petri Nets.
@@ -158,7 +144,7 @@ automaton is basically the definition of \DESs, as we saw in the
 \autoref{sec:discreteEventSystems}: a set of events can change the state of the
 system. If we know all the events composing the language of the
 system and its states, we can have its alphabet $\Sigma$ and we can create a set $X$ composed
-by all states.
+of all states.
 From $\Sigma$ and $X$ we can derive a function that represents the transition
 from a state to other, this function is called \emph{transition function} of the automaton
 denoted as $f : X \times \Sigma \rightarrow X$. For example if a system have an
@@ -168,8 +154,7 @@ and that when event $a$ happens it changes to state $z$ we can create a function
 $f(x,a)$ and define it as $y$. Likewise if we know that when the system is at
 state $y$ and event $b$ happens, a function $f(y,b)$ can be defined as $a$.
 
-As a
-visual aid, a representation of these functions can be made through a diagram, called \emph{state transition diagram}. In this kind of diagram the states are
+ A representation of the transition function can be made through a diagram, called \emph{state transition diagram}. In this kind of diagram the states are
 represented by circles labeled with their names, and the functions as arcs
 labeled with the corresponding event,connecting two states, with arrows in one of their
 extremities indicating the transition from a state to other. The initial state
@@ -186,14 +171,15 @@ Now, for a more complex example, from \cite{cassandras2009introduction}:
 
 \begin{example}[Simple Automaton] ~\\
   \label{ex:simpleAutomaton}
-  Given $\Sigma = \{a,b,g\}$, $X = \{x,y,z\}$ and the following transition functions:
+  Let $\Sigma = \{a,b,g\}$, $X = \{x,y,z\}$ and the following transition
+  functions \cite{cassandras2009introduction}:
   \begin{align*}
    f(x,a)&=x&f(x,g)&=z\\
    f(y,a)&=x&f(y,b)&=y\\
    f(z,b)&=z&f(z,a)&=f(z,g)=y\\
  \end{align*}
 \end{example}
-We can represent this automaton with the diagram on \autoref{fig:diagramExapleAutomata}
+We can represent this automaton with the diagram of \autoref{fig:diagramExapleAutomata}
 \begin{figure}[H]
   \centering
   \includegraphics[width=0.5\textwidth]{automata/example/example.tikz}
@@ -201,11 +187,11 @@ We can represent this automaton with the diagram on \autoref{fig:diagramExapleAu
   \caption{Diagram representing the automaton from example \ref{ex:simpleAutomaton}}
   \label{fig:diagramExapleAutomata}
 \end{figure}
-We can also mark states that have some special meaning, a final state for instance. In this work, as in \cite{cassandras2009introduction} they are
-  going to be identified by double circles.
+We can also mark states that have some special meaning, as for instance, a final
+state. In this work, as in \cite{cassandras2009introduction} the marked states are identified by double circles.
 
   
-  Now a deterministic Automaton can be defined:
+  Now a deterministic Automaton can be defined.
 \begin{definition}[Deterministic Automaton]
   \label{def:DeterministicAutomaton}~\\
   A Deterministic Automaton, denoted by G, is a five-tuple
@@ -219,32 +205,26 @@ We can also mark states that have some special meaning, a final state for instan
 
 \end{definition}
 
-
-Other kinds of automata and operations between automata exist but are not going
-to be used in this work, again \cite{cassandras2009introduction} present them.
-
 \subsection{Petri Nets}
 \label{sec:petriNets}
 Another kind of representation of languages are Petri Nets, whose concept was created by C.A.Petri
-in the early 1960's. Differently from the automata representation that are
-basically formed from states, Petri nets are bipartite graphs, formed by nodes
+in the early 1960's. Differently from the automata representation Petri nets are bipartite graphs, formed by nodes
 called \emph{places} and \emph{transitions}.
 Transitions represent the events that drive the system, and places represent the
 conditions for these events to happen. The mechanism to represent the fulfilment
 of the conditions
-is named marking. A petri net is built over three basic concepts, the petri net
+is named marking. A Petri net is built over three basic concepts, the petri net
 graph\slash structure, its marking and firing transitions.
 The next subsections will be based on \cite{david2005discrete} and \cite{cassandras2009introduction}.
 
 \subsubsection{Petri Net Graph}
 \label{sec:petrinetGraph}
-Similarly, arcs are used to connect
-the nodes and have arrowheads to identify the direction,
-but differently, all arcs must have exclusively one node at each end, that means
-no arc is used to identify the initial state of a petri net. As said, a petri net is
-bipartite graph, that means places can only connect to transitions and vice
-versa. In this work as in \cite{david2005discrete} places will be represented by
-circles and transitions by bars. 
+Arcs are used to connect
+nodes and have arrowheads to identify the direction. All arcs must have exclusively one node at each end, that means
+no arc is used to identify the initial state of a Petri net. A Petri net is
+bipartite graph, which means that places can only connect to transitions and vice
+versa. In this work, as in \cite{david2005discrete} places are represented by
+circles and transitions by bars, as shown in \Autoref{fig:componentsPetriNet}. 
 \begin{figure}[H]
   \centering
   \begin{subfigure}[t]{0.45\textwidth}
@@ -260,7 +240,8 @@ circles and transitions by bars.
   % \includetikzfigure[width=0.5\textwidth]{automata/example/example}
   \caption{A transition}
 \end{subfigure}
-  \caption{Component nodes of a petri net.}  
+\caption{Component nodes of a petri net.}
+\label{fig:componentsPetriNet}
 \end{figure}
 
 The same way a function was created to define the transitions of states in an
@@ -269,72 +250,71 @@ and transitions. First we need to define the sets of places and transitions. $P$
 is the set of places and $T$ the set of transitions. With this two sets we can
 then define those functions. The first one represents the arcs
 from places to transitions, and is denoted as $Pre: P \times T \rightarrow
-\{0, 1\}$, the second one the arcs that connects transitions to places, denoted
-as $Post: P \times T \rightarrow \{0,1\}$. The value $1$ is attributed to arcs
-that exist and $0$ to the nonexistent ones.
+\mathbb{N}$, the second one represents the arcs that connect transitions to places, denoted
+as $Post: P \times T \rightarrow \mathbb{N}$. Where $\mathbb{N}=\{0,1,2,\dots\}$
+is the set of non-negative integers.
+
+% The value $1$ is attributed to arcs that exist and $0$ to the nonexistent ones.
 
 
 \begin{example}[Simple Petri Net structure] ~\\
   \label{ex:simplePetriNetStructure}
-  Given $P = \{p_0,p_1\}$, $T = \{t_0,t_1,t_2\}$ and the following transition
-  functions:
+  Given $P = \{p_0,p_1\}$, $T = \{t_0,t_1,t_2\}$ and the following functions:
   \begin{align*}
-   Pre(p_0,t_0)& = 0  &  Post(p_0,t_1) &= 0 & Pre(p_1,t_0) &= 0 &  Post(p_1,t_1) &= 1 \\
-   Post(p_0,t_0) &= 0  &    Pre(p_0,t_2) &= 0   & Post(p_1,t_0) &= 0   & Pre(p_1,t_2) &= 0\\
-   Pre(p_0,t_1) &= 0    &  Post(p_0,t_2) &= 0  &  Pre(p_1,t_1) &= 0     &Post(p_1,t_2) &= 0\\
+   Pre(p_0,t_0)& = 0  &  Post(p_0,t_1) &= 0 & Pre(p_1,t_0) &= 0 &  Post(p_1,t_1) &= 2 \\
+   Post(p_0,t_0) &= 1  &    Pre(p_0,t_2) &= 0   & Post(p_1,t_0) &= 0   & Pre(p_1,t_2) &= 1\\
+   Pre(p_0,t_1) &= 1    &  Post(p_0,t_2) &= 0  &  Pre(p_1,t_1) &= 0     &Post(p_1,t_2) &= 0\\
   \end{align*}
-  We can represent this petri net structure with the diagram on \autoref{fig:simplePetriNetStructure}
+  We can represent this petri net structure with the diagram on \autoref{fig:simplePetriNetStructureGeneralized}
 \end{example}
-\begin{figure}[H]
-  \centering
-  \includegraphics[width=0.5\textwidth]{petriNet/prepost/prepost.tikz}
-  % \includetikzfigure[width=0.5\textwidth]{automata/example/example}
-  \caption{Diagram representing the petri net structure from example \ref{ex:simplePetriNetStructure}}
-\label{fig:simplePetriNetStructure}
-\end{figure}
-A drawback from the definition of this functions, is that is not possible to
-have more than an arc linking two nodes, so we can generalize them to any natural number:
-\begin{align*}
-  Pre:  P \times T \rightarrow \mathbb{N}_0\\
-  Post: P \times T \rightarrow \mathbb{N}_0
-\end{align*}
-with this new definition we can change the definition of $Post(p_1,t_1)$ from
-$0$ to $2$ resulting on the following petri net structure.
-\begin{figure}[H]
-  \centering
-  \includegraphics[width=0.5\textwidth]{petriNet/prepost/prepost2.tikz}
-  % \includetikzfigure[width=0.5\textwidth]{automata/example/example}
-  \caption{Diagram representing the petri net structure from example
-    \ref{ex:simplePetriNetStructure}, but with $Post(p_1,t_1)=2$}
-\label{fig:simplePetriNetStructureNatural}
-\end{figure}
-In order to reduce the number of arcs in a diagram, usually only one arc is
-drawn and a label is added with the value of its respective function, if it is
-greater than $1$, \autoref{fig:simplePetriNetStructureGeneralized} illustrates it:
+% \begin{figure}[H]
+%   \centering
+%   \includegraphics[width=0.5\textwidth]{petriNet/prepost/prepost.tikz}
+%   % \includetikzfigure[width=0.5\textwidth]{automata/example/example}
+%   \caption{Diagram representing the petri net structure from example \ref{ex:simplePetriNetStructure}}
+% \label{fig:simplePetriNetStructure}
+% \end{figure}
+% A drawback from the definition of this functions, is that is not possible to
+% have more than an arc linking two nodes, so we can generalize them to any natural number:
+% \begin{align*}
+%   Pre:  P \times T \rightarrow \mathbb{N}\\
+%   Post: P \times T \rightarrow \mathbb{N}
+% \end{align*}
+% with this new definition we can change the definition of $Post(p_1,t_1)$ from
+% $0$ to $2$ resulting on the following petri net structure.
+% \begin{figure}[H]
+%   \centering
+%   \includegraphics[width=0.5\textwidth]{petriNet/prepost/prepost2.tikz}
+%   % \includetikzfigure[width=0.5\textwidth]{automata/example/example}
+%   \caption{Diagram representing the petri net structure from example
+%     \ref{ex:simplePetriNetStructure}, but with $Post(p_1,t_1)=2$}
+% \label{fig:simplePetriNetStructureNatural}
+% \end{figure}
+% In order to reduce the number of arcs in a diagram, usually only one arc is
+% drawn and a label is added with the value of its respective function, if it is
+% greater than $1$, \autoref{fig:simplePetriNetStructureGeneralized} illustrates it:
 \begin{figure}[H]
   \centering
   \includegraphics[width=0.5\textwidth]{petriNet/prepost/prepost3.tikz}
   % \includetikzfigure[width=0.5\textwidth]{automata/example/example}
-  \caption{Same diagram as \autoref{fig:simplePetriNetStructureNatural} but with
-    labeled arcs.}
+  \caption{Diagram representing the petri net structure from example \ref{ex:simplePetriNetStructure}}
 \label{fig:simplePetriNetStructureGeneralized}
 \end{figure}
 
 \subsubsection{Marking}
 \label{sec:marking}
 
-As said in the beginning of this subsection marking is used as the mechanism to
+The marking is used as the mechanism to
 represent if the condition of occurrence of a determined event is met or not.
-But also it can be used to represent the state of the system. The mechanism
-works as follows. Tokens can be designated to places and the way the tokens are
+The marking also represents the state of the system. The mechanism
+works as follows. Tokens can be assigned to places and the way the tokens are
 distributed among places is called the marking of a petri net graph. We can define a marking function $x :
 P \rightarrow \mathbb{N}$ that denotes the number of tokens in a determined place.
 In this
 work, as in the majority of articles and books, the tokens will be
 represented as black dots inside the places. 
 
-The
-\Autoref{fig:unmarked,fig:marked} show an unmarked and a marked petri net graph.
+\Autoref{fig:unmarked,fig:marked} show an unmarked and a marked petri net graph, respectively.
 \begin{figure}[H]
 \begin{subfigure}[t]{0.45\textwidth}
   \centering
@@ -355,8 +335,8 @@ The
 \end{figure}
 
 The marking of a petri net, can be represented as a
-vector of the function $x$ applied on all places, for example the marking of the
-\autoref{fig:marked} is the following vector $\mathbf{x}$
+vector of the function $x$ applied on all places, for example the marking of 
+\autoref{fig:marked} is the following vector.
 
 \begin{equation*}
 \mathbf{x}=\begin{bmatrix}
@@ -379,16 +359,13 @@ vector of the function $x$ applied on all places, for example the marking of the
 \end{bmatrix}
 \end{equation*}
 
-This vector $\mathbf{x}$, the marking of the petri net, can be identified as the
+ The marking of the petri net, can be identified as the
 state of the petri net. So, different configurations of tokens mean different
-states of the system, now we only need a way to change from a state to other, in
-other words, move the tokens.
-
+states of the system, now we only need a way to change from one state to other.
 \subsubsection{Firing Transitions}
 \label{sec:firingTransitions}
-The mean of move the tokens is firing transitions. When an event  happens and
-the corresponding transition is enabled, this transition is fired and tokens
-are moved between places.
+ When an event associated with a transition $t_j$  happens and $t_j$
+is enabled, $t_j$ is fired and  a new marking is reached.
 We can define the functions $I : T \rightarrow 2^P$ and $O : T \rightarrow 2^P$ that
 describe the set of places considered as inputs and outputs of a transition: 
 \begin{align*}
@@ -399,16 +376,16 @@ describe the set of places considered as inputs and outputs of a transition:
   \label{def:enabledTransition}~\\
   A transition is enabled if
   \[ x(p_i)\geq Pre(p_i,t_j) \text{ for all }{p_i \in I(t_j)}\]
-  if $I(t_j)=\emptyset$, $t_j$ is always enabled. 
+  If $I(t_j)=\emptyset$, $t_j$ is always enabled. 
 \end{definition}
 
-And we can define the dynamic of the petri net, how the tokens move: 
+And we can define the dynamic of the Petri net as follows. 
 
 \begin{definition}[Petri net dynamics]
   \label{def:petriNetDynamics}~\\
    It is possible to define a \emph{state transition}
   function, $f : \mathbb{N}^n \times T \rightarrow \mathbb{N}^n$  , where $n$ is
-  the length of the state vector $\mathbf{x}$. This function $f$ is defined for
+  the size of the state vector $\mathbf{x}$. This function $f$ is defined for
   a transition $t_j \in T$ if and only if this transition is enabled. If
   $f(\mathbf{x},t_j)$ is defined, then we create a new state vector
   $\mathbf{x}^\prime$:
@@ -423,7 +400,7 @@ As an example we can take \Autoref{fig:petriNetDynamics}:
   \centering
   \includegraphics{petriNet/net/beforeFiring.tikz}
   % \includetikzfigure[width=0.5\textwidth]{automata/example/example}
-  \caption{Before firing.}
+  \caption{Before firing of $t_0$.}
   \label{fig:beforeFiring}
 \end{subfigure}
 ~
@@ -431,18 +408,18 @@ As an example we can take \Autoref{fig:petriNetDynamics}:
   \centering
   \includegraphics{petriNet/net/afterFiring.tikz}
   % \includetikzfigure[width=0.5\textwidth]{automata/example/example}
-  \caption{After firing.}
+  \caption{After firing of $t_0$.}
   \label{fig:afterFiring}
 \end{subfigure}
   \caption{Example of petri net Dynamic.}
   \label{fig:petriNetDynamics}
 \end{figure}
 The state before firing transition $t_0$ is $\mathbf{x}=\begin{bmatrix}3&
-  0\end{bmatrix}^T$ and as we see $Pre(p_0,t_0)=2$ and $Post(p_1,t_0)=1$ so
+  0\end{bmatrix}^T$ and as we see $Pre(p_0,t_0)=2$ and $Post(p_1,t_0)=1$. So
 applying the petri net dynamic we can find the next state $\mathbf{x}^\prime=\begin{bmatrix}1&
   1\end{bmatrix}^T$
 
-Once all these fundamentals are presented we can finally define a Petri Net
+A Petri Net is defined as follows.
 
 \begin{definition}[Petri net]
   \label{def:petriNet}~\\
@@ -454,28 +431,28 @@ Once all these fundamentals are presented we can finally define a Petri Net
   \indent $Pre$ is the \textbf{input incidence} function  \\
   \indent $Post$ is the \textbf{output incidence} function\\
 \indent $\mathbf{x}_0$ is the initial marking of the net \\
-And its dynamic is ruled by the \emph{state transition} function $f$ defined at \ref{fig:petriNetDynamics}.
+And its dynamic is ruled by the \emph{state transition} function $f$ defined in
+Definition \Autoref{def:petriNetDynamics}.
 
 \end{definition}
 
-To make the connection between the Petri net and the events of the system, called $\Sigma$, the alphabet, we can
+To make the connection between the Petri net and the events of the system, we can
 define a labeling function, $l : T^* \rightarrow \Sigma^*$ that makes the link between a
-sequence of firing transitions and a sequence of events. But each transition
-can only have one respective event. 
+sequence of firing transitions and a sequence of events.
 
-\begin{definition}[Labeled Petri net]
+\begin{definition}[Labelled Petri net]
   \label{def:petriNet}~\\
-  A Labeled Petri net is defined as a seven-tuple
+  A Labelled Petri net is defined as a seven-tuple
   \[PN = (P,T,Pre,Post,\mathbf{x}_0,\Sigma,l)\]
   where: \\
   \indent $(P,T,Pre,Post,\mathbf{x}_0)$ is a Petri Net\\
   \indent $\Sigma$ is the set of \textbf{events} \\
-  \indent $l$ is the \textbf{labeling} function  \\
+  \indent $l$ is the \textbf{labelling} function  \\
 \end{definition}
 
 Usually the events are represented in the petri net graph over its respective
-transition as shown in the \autoref{fig:labeledPetriNet}. This system has an alphabet
-$\Sigma=\{a,b\}$ and labeling functions $l(t_0)=a$ and $l(t_1)=b$.
+transition as shown in \autoref{fig:labeledPetriNet}. This system has an alphabet
+$\Sigma=\{a,b\}$ and labelling functions $l(t_0)=a$ and $l(t_1)=b$.
 
 \begin{figure}[H]
   \centering
@@ -487,18 +464,16 @@ $\Sigma=\{a,b\}$ and labeling functions $l(t_0)=a$ and $l(t_1)=b$.
 
 \section{Control Interpreted Petri Nets}
 \label{sec:cipn}
-One of the greatest uses of Petri Nets, besides modeling a system, is its
+One of the important application of Petri nets, besides modeling a system, is its
 ability to model the control of a system. For this intent we use Control Interpreted Petri nets. It is an
-extension from the labeled Petri net, we add actions for places, so it is
+extension of labelled Petri nets, where we add actions to places, so it is
 possible to change the outputs of the system, conditions to the transitions, so it
 is possible to change the state of the control based on the inputs of the
-system, and even the ability to delay the firing transitions based on time.
-Another artifice used is an inhibitor arc, that prevents the firing of a
-transition based on the marking of the corresponding place.
+system, and the ability to delay the firing transitions based on time.
 
 \begin{definition}[Control Interpreted Petri net]
   \label{def:cipn}~\\
-  A Labeled Petri net is defined as a seven-tuple
+  A Control Interpreted Petri net is defined as a thirteen-tuple
   \[PN = (P,T,Pre,Post,\mathbf{x}_0,In,\Sigma,C,l_C,D,L_D,A,I_A)\]
   where: \\
   \indent $(P,T,Pre,Post,\mathbf{x}_0)$ is a Petri Net\\
@@ -508,7 +483,7 @@ transition based on the marking of the corresponding place.
   \indent $C$ is the set of \textbf{conditions} associated to transitions \\
   \indent $l_C$ is the \textbf{labeling} function that associates a transition
   with events and conditions from $\Sigma$ and $C$\\
-  \indent $D$ is the set of \textbf{delays} associated to transitions \\
+  \indent $D$ is the set of \textbf{delays} associated to timed transitions \\
   \indent $l_D$ is the \textbf{labeling} function that associates a transition with a delay from $D$ \\
   \indent $A$ is the set of \textbf{actions} associated to places \\
   \indent $l_A$ is the \textbf{labeling} function that assigns actions from $A$ to a place \\
@@ -526,18 +501,18 @@ its ends, as shown in \autoref{fig:inhibitor}.
   \label{fig:inhibitor}
 \end{figure}
 As we can see from the definition there are two labeling functions to connect 
-transitions, $l_C$ and $l_D$. The $l_c$ is defined for transitions with no
+transitions, $l_C$ and $l_D$. The $l_C$ is defined for transitions with no
 firing delay and $l_D$ for transitions with firing delay.
 
 The labeling function $l_C : T^0\rightarrow(\Sigma \times C)$ defines a pair of
 event and boolean condition from $\Sigma$ and $C$ respectively. A transition
 $t_i$ belonging to $T^0$ (a subset of $T$ that represents the transitions with
-no time delay) has a corresponding event, condition tuple $(\sigma_i,c_i)$
+no time delay) has a corresponding $(event, condition)$ tuple $(\sigma_i,c_i)$
 For example, take a transition $t_0$, $\Sigma =\{\sigma_0\}$ and $C=\{c_0\}$. If
-a function $l_c(t_0)=(\sigma_0,c_0)$ is defined, this transition will be fired
+a function $l_C(t_0)=(\sigma_0,c_0)$ is defined, transition $t_0$ is fired
 when the condition $c_0$ is true and the event $\sigma_0$
-happens, but obviously, if and only if this transitions is enabled and not
-inhibited. The transition $t_0$ is represented graphically as shown in \autoref{fig:condition}
+happens, but obviously, if and only if this transition is enabled.
+The transition $t_0$ is represented graphically as shown in \autoref{fig:condition}
 
 \begin{figure}[H]
   \centering \includegraphics[width=0.3\textwidth]{petriNet/cipn/condition.tikz}
@@ -546,66 +521,67 @@ inhibited. The transition $t_0$ is represented graphically as shown in \autoref{
 \end{figure}
 
 If the event is missing from the representation of the transition, it is equal
-to the $\lambda$
-, the always occurring event. And if the condition is missing, that means it is
-equal to $1$, it is always $true$. If both are missing, that means the
+to the always occurring event $\lambda$
+. And if the condition is missing, that means it is
+equal to $1$, i.e. it is always $true$. If both are missing, that means the
 transition will be automatically executed if it is enabled. 
 
-By the other hand, the labeling function $l_D : T^D \rightarrow D$, defines a delay for the
-transition to be fired. A timed transition $t_i$, a transition in $T^D$ (a subset of T
+On the other hand, the labeling function $l_D : T^D \rightarrow D$, defines a delay for the
+transition to be fired. A timed transition $t_i \in T^D$ (a subset of T
 that represents the transitions with a time delay), has a corresponding delay
-$d_i$. As an example, take a timed transition $t_1$ and $D=\{d_1\}$, after the
+$d_i$. As an example, consider a timed transition $t_1$ and $D=\{d_1\}$. Then after the
 enablement of the transition, it takes $d_1$ time units in order to be fired. In
-this work timed transitions are represented as bars slightly larger than normal
-conditions. An example of this representation we can see \autoref{fig:timedtransition}
+this work timed transitions are represented by white bars slightly larger than normal
+conditions. An example of this representation we can see in \autoref{fig:timedtransition}
 
 \begin{figure}[H]
   \centering \includegraphics[width=0.3\textwidth]{petriNet/cipn/timedtransition.tikz}
   \caption{Representation of a timed transition.}
   \label{fig:timedtransition}
 \end{figure}
-Another labeling function that was created is $l_A : P\rightarrow 2^A$,
-assigning a set of actions belonging to $A$ to a place. Actions can be impulse actions or continuous. A
+Another labelling function is $l_A : P\rightarrow 2^A$,
+assigning a set of actions belonging to $A$ to a place. Actions can be impulse
+or continuous actions. A
 continuous action happens always that the marking of a place is greater than 0,
-$x(p_i)>0$, an impulse action, on the other hand, happens only when the marking of
-the place changes from 0 to a value greater than 0. 
-Actions are represented graphically as labels in places. Impulse actions are differed by a star (*) at its end. So an action $F$ is
-continuous and $B^*$ is an impulse action. 
-\autoref{fig:actions} show a representation of a Place with both kinds of actions.
+$x(p_i)>0$. An impulse action, on the other hand, happens only when the marking of
+the place changes from 0 to 1. 
+Actions are represented graphically as labels in places. Impulse actions are
+differed by a star (*) at its end.
+
+In \autoref{fig:actions} a representation of a place with both kinds of actions
+is presented where $F$ is continuous and $B^\star$.
 \begin{figure}[H]
   \centering \includegraphics[width=0.3\textwidth]{petriNet/cipn/actions.tikz}
   \caption{Representation of labeling of Actions.}
   \label{fig:actions}
 \end{figure}
 
-Although these representations exist, in this work events, conditions and
-actions labels are suppressed from the diagrams and tables accompany the drawings
+Although these representations exist, in this work event, condition and
+action labels are suppressed from the diagrams, and tables are added to the drawings
 showing the meaning of the transitions (firing events and conditions) and places
-(Actions). This choice was made because when the controlled interpreted Petri nets
-are very
-large as the ones shown in the next chapters, if the events, conditions and
-actions labels are long they can increase the size of the
-diagram.
+(Actions). This choice was made because the control interpreted Petri nets
+presented in this work are very
+large.
 
-To illustrate this better we give an example based on one example from \cite{david1989grafcet}.
+To illustrate how the tables are used to complement the information of the diagram, we give an example based on one example from \cite{david1989grafcet}.
 \begin{example}[Loading of a wagon] ~\\
   \label{ex:loadingOfAWagon}
 We consider the system represented by the scheme in
-\autoref{fig:cipnexamplescheme}. A wagon can be moved between the points $a$ and
-$b$, using the inputs $L$ and $R$ (moving it to the left or right,
-respectively). At point $a$ there is a button $m$ that can be pressed by an
-operator and a limit switch called $a$ that is activated when the wagon is on
-the left. At point $b$, an homonym limit switch is placed and activated when the
+\autoref{fig:cipnexamplescheme}. A wagon can be moved between the points \emph{a} and
+\emph{b}, using the inputs \emph{L} and \emph{R} (moving it to the left or right,
+respectively). At point \emph{a} there is a button \emph{M} that can be pressed by an
+operator and a limit switch called \emph{a} that is activated when the wagon is on
+the left. At point \emph{b}, an homonym limit switch is placed and activated when the
 wagon is on the right. There is a hopper that can
-be opened when the input $Open$ is turned on and closed when not.If it is opened
+be opened when the input \emph{Open} is turned on and closed when not.If it is opened
 its content is poured. There is also a
-button $p$ that is activated when the weight applied over the plate is equal or
+button \emph{p} that is activated when the weight applied over the plate is equal or
 greater to the weight of a full wagon. 
 
 The objective of the control is, when the wagon is in its leftmost position and
-the button $m$ is pressed, it moves to the right, stops at $b$, the hopper is
+the button \emph{m} is pressed, it moves to the right, stops at \emph{b}, the hopper is
 opened and the wagon is loaded, when it is completely full it moves to the left
-and it stops at $a$ waiting to be unloaded and for a next press of $m$ to recommence
+and it stops at \emph{a} waiting to be unloaded and for a next press of \emph{m} to re-initiate
 the loop. 
 \end{example}
 
@@ -616,7 +592,7 @@ the loop.
   \label{fig:cipnexamplescheme}
 \end{figure}
 From the description of the control it is possible to create a Control Interpret
-Petri Net to describe it, as the one in \autoref{fig:cipnexample}
+Petri Net to represent it, as the one in \autoref{fig:cipnexample}
 
 
 \begin{figure}[H]
@@ -636,7 +612,7 @@ In this work as in the usual boolean notation, when just the name of a variable 
 variable is equal to true, and when there is a bar in its top it is equal to
 false, so they determine conditions. E.g.: $b$ and $\overline{b}$.
 And when a variable is preceded by $\uparrow$ and $\downarrow$, they  determine
-events corresponding to its raising and falling edge.
+events corresponding to its rising and falling edge.
 
 \usetikzlibrary{arrows,shapes,circuits.plc.ladder,external}
 
@@ -644,9 +620,9 @@ events corresponding to its raising and falling edge.
 \label{sec:implementPetriNets}
 Once the control of a system is modeled by a \CIPN, it
 is needed to implement the control in a real controller. The most used
-controllers in the industry are \PLCs. The international standard IEC 61131,
-defines all the standards for \PLCs, and its third part (IEC 61131-3) defines
-five languages to program \PLCs: \LD, \FBD, \ST, IL{} and \SFC. One of the most used in the industry is \LD, because of its
+controllers in the industry are \PLCs. The IEC 61131 standard,
+defines in its third part (IEC 61131-3) the 
+five languages to program \PLCs: \LD, \FBD, \ST, \IL{} and \SFC. One of the most used in the industry is \LD, because of its
 resemblance with electric connections. So we are going to use \LD{} to implement the
 control designed with the \CIPN.
 
@@ -654,10 +630,7 @@ control designed with the \CIPN.
 \label{sec:ladder}
 
 The ladder logic is based on two components, contacts and coils. Their terminals are
-interconnected to transmit boolean signals. This connection is similar to the
-ladder physical implementation, from where came its inspiration, the components
-were connect to boards and they formed electric circuits, turning on and off
-motors and other actuators, based on the combination of its inputs. The name
+interconnected to transmit boolean signals.
 Ladder comes from the resemblance between its structure (circuits formed in
 parallel one above the other) and a ladder, so each circuit is called a Rung by analogy. The logic
 values in a \LD{} rung
@@ -677,7 +650,7 @@ can be seen in \Autoref{fig:contacts,fig:coils}
 \begin{figure}[H]
 \begin{subfigure}[t]{0.45\textwidth}
   \centering \includegraphics{ladder/contactNO.tikz}
-  \caption{Normally Opened Contact.}
+  \caption{Normally Open Contact.}
   \label{fig:contactNO}
 \end{subfigure}
 ~
@@ -738,7 +711,7 @@ can be seen in \Autoref{fig:contacts,fig:coils}
 \subsubsection{Contacts}
 Contacts represent the conditions of the ladder logic depending on inputs. These inputs can be any variable in a
 \PLC, an external input ( sensors of the system to be controlled), a variable stored in memory or the current
-value sent to an output from the \PLC. A normally opened contact
+value sent to an output from the \PLC. A normally open contact
 activates its right terminal (set it to $true$) if the logic value in its left terminal
 is $true$ and its corresponding input is equal to $true$ 
 A normally closed contact activates its right terminal if the logic value in its
@@ -749,8 +722,8 @@ left terminal is $true$. And the Negative Edge contact activates its right
 terminal only in the instant that its input change from logic value $true$ to
 $false$.
 
-As we can see, positive and negative contacts can be used to represent raising ($\uparrow$)
-and falling edge  ($\downarrow$) events and normally opened and closed contacts
+As we can see, positive and negative contacts can be used to represent rising ($\uparrow$)
+and falling edge  ($\downarrow$) events and normally open and closed contacts
 to represent conditions (and their negation).
 
 \subsubsection{Coils}
@@ -771,7 +744,7 @@ value of its terminal is $true$ and it remains $false$ until the variable is
 set.
 
 \subsubsection{Combinational Logic}
-In boolean logic, in order to show functional completeness, it is need to show a
+In boolean logic, in order to show functional completeness, it is needed to show a
 complete set of connectives ( a set that can create all other logic connectives
 as a combination of its elements ). A well-know complete set is $S=\{AND,NOT\}$,
 binary conjunction and negation.
@@ -796,7 +769,7 @@ contact (\autoref{fig:ladderNot}).
 C will only by activated if A is $false$. ($C=\overline{A}$)
 
 Although all logic connectives can be constructed with this two connectors, the
-OR connector can be achieved by the use contacts in parallel (\autoref{fig:ladderParallel}).
+OR connector can be achieved by using contacts in parallel (\autoref{fig:ladderParallel}).
 \begin{figure}[H]
   \centering \includegraphics{ladder/parallel.tikz}
   \caption{Or logic in a Ladder rung.}
@@ -858,43 +831,44 @@ subtractors, communication blocks etc.
 A simple method of conversion from \CIPN{} to \LD{} is presented in
 \cite{moreira2013bridging}.
 
-It consists in dividing the \CIPN{} in 4 modules:
+It consists in dividing the \CIPN{} into 4 modules:
 \begin{enumerate}
 \item A module of external events\\
   To create conditions to the firing of transitions based on external events
   (inputs)
 \item A module of firing conditions\\
-  To indicate what condition will be fired using the $Pre$, and $In$ functions, the conditions found on the
+  To indicate what condition can be fired using the $Pre$, and $In$ functions, the conditions found on the
   last module and time delays (if it is a timed transition 
   )
 \item A module of Petri Net dynamics\\
-Uses the $Pre$ and $Post$ functions to determine the tokens ``motion''
+Uses the $Pre$ and $Post$ functions to determine the dynamics of the Petri net
 \item A module of actions\\
-  Determines the places where each action is performed.
+  It determines the places where each action is performed.
 \end{enumerate}
 In this work, the external events and firing conditions was combined in order to
 reduce the size of the program. But every module will be described as in
 \cite{moreira2013bridging}.
 
 \subsubsection{External events}
-As external events are associated with positive and negative edge of the inputs
+As external events are associated with positive and negative edges of the inputs
 of the system, in this module, positive and negative edge contacts are used to
-detect the rising and falling edge events, and they are stored in variables
-using coils, a variable is created for every event.
+detect the rising and falling edge events. The variables are stored in variables
+using coils and a variable is created for each event.
 For visibility's and organisation's sake a rung is used for each event,
-resulting $|\Sigma|$ rungs. 
+resulting $|\Sigma|$ rungs. This module is not necessary when using Siemens
+\PLCs. So it will not be used in this work.
 \subsubsection{Firing Conditions}
-As said in \ref{sec:cipn}, for a transition $t_j$ to be fired, first it needs to be
+As said in \Autoref{sec:cipn}, a transition $t_j$ fires, if it is 
 enabled ($x(p_i)\geq Pre(p_i,t_j)$ for all $p_i\in I(t_j)$), not inhibited
 ($x(p_i)< In(p_i,t_j)$ for all $p_i\in I(t_j)$) and the conditions and events
-$\sigma_jc_j$ are met or the delay $d_j$ is elapsed, depending on the kind of
+$\sigma_jc_j$ are met or the delay $d_j$ has elapsed, depending on the kind of
 transition.
 As places can have multiple tokens, we can use $int$ variables to store the
 number of tokens, and comparator contacts to determine if the transitions are
 enabled and not inhibited.
-When a place can only bear at most one single token for all markings of the
-Petri net, a $bool$ variable can be used to store the number of tokens, in this
-case a single normally open contact can be used to determine if there is a token
+When a place can have at most one token for all reachable markings of the
+Petri net, a $boolean$ variable can be used to store the number of tokens. In this
+case a normally open contact can be used to determine if there is a token
 in that place.
 The time delays are implemented using on-delay
 timers. The state of fulfilment of the conditions is stored in variables, one
@@ -902,13 +876,13 @@ for each transition.
 Similarly, for organisation's sake a rung is used for each transition, resulting
 $|T|$ rungs.
 \subsubsection{Petri Net Dynamics}
-In this module the dynamic of the tokens is implemented. If the condition for
+In this module the dynamic of the Petri net is implemented. If the condition for
 the firing of a transition is fulfilled (represented by normally open contacts), adders and subtractors
-can be used to represent the movement of tokens, increasing and decreasing the
+can be used to represent the change in the Petri net marking. These blocks, increase and decrease the
 values from the $int$ variables that represent the marking
-of each place, if their capacity is greater than one, if not they are
-represented by boolean variables, and instead Set and Reset coils can be used to
-represent a token entering a place and a token exiting another, respectively.
+of each place. If the capacity of the places is not greater than one, then the
+marking of those places can be represented by boolean variables. Set and Reset coils can be used to
+represent the marking of such places.
 Again, for organisation's sake a rung is associated for each transition,
 resulting $|T|$ rungs.
 
@@ -916,26 +890,23 @@ resulting $|T|$ rungs.
 In the Action module, we use coils to act on the outputs. Depending on the type
 of action and the logic of the control, set\slash reset coils or normal coils
 can be used. The condition to activate\slash deactivate the output is the
-presence of a token in the places where the action is performed, this can be
+presence of a token in the places where the action is performed.
+This can be
 achieved by comparing the numbers of tokens in a place. If the tokens of a
-place is represented by an $int$ variable, we use greater or equal comparators,
-but if it is represented by a $bool$ variable, a normally opened contact is
-enough. If the action is an impulse action we can put a positive edge in series
-with the places contact or the comparator.
-
-Differently from the original article, we will use one rung per
-each action in A, resulting in $|A|$ rungs. This is made because in
-\cite{renault2017regles} it is recommended to perform an action in only one
-rung, and group the conditions using OR connectors.
-In the industry this is important in order to reduce errors and to ease the
-debugging process.
-
+place is represented by an $int$ variable, we use ``greater'' or ``equal to'' comparators,
+but if it is represented by a $bool$ variable, a normally open contact can be
+used.
+% Differently from the original article, we will use one rung per
+% each action in A, resulting in $|A|$ rungs. This is made because in
+% \cite{renault2017regles} it is recommended to perform an action in only one
+% rung, and group the conditions using OR connectors.
+% In the industry this is important in order to reduce errors and to ease the
+% debugging process.
 \subsubsection{Example}
-
-An example of this conversion can be given using the same \CIPN{} from example 
-\ref{ex:loadingOfAWagon}. As said, the external events and firing condition
-modules are grouped in same module in this work. The converted Ladder Logic
-can be seen in \autoref{fig:cipnexampleLadder}.
+An example of this conversion can be given using the same \CIPN{} from 
+\Autoref{ex:loadingOfAWagon}.  The external events and firing condition
+modules are grouped in the same module in this work. The converted Ladder Logic
+is depicted in \autoref{fig:cipnexampleLadder}.
 \begin{figure}[H]
   \centering \includegraphics{cipnExample/cipnLadder.tikz}
   \caption{Example of Control Interpreted Petri Net converted to
@@ -943,25 +914,23 @@ can be seen in \autoref{fig:cipnexampleLadder}.
   \label{fig:cipnexampleLadder}
 \end{figure}
 
-\subsection{Petri Net divided in multiple PLCs}
+\subsection{Control Interpreted Petri Net implemented in multiple PLCs}
 \label{sec:multiplePlcs}
-A problem that can occur, is the case where a \CIPN{} must be divided in
-multiple \PLCs, because of how the assembling of the plant was (some
-inputs\slash outputs are only
-connected to a single \PLC, and other inputs\slash outputs to another \PLC),
-this division can be arbitrarily decided by the
-person who will implement the control.
+In some cases, the implementation of the control code must be carried out in
+several \PLCs.
 
-In \autoref{fig:communicationPlcPN}, it is shown an example of a \CIPN{} divided
+In \autoref{fig:communicationPlcPN}, it is shown an example of a \CIPN{} implemented
 between 2 \PLCs.
 As we can see, in \Autoref{fig:communicationPlcPN1,fig:communicationPlcPN2}
 there are dotted transitions and places. In this work, we will represent as
 dotted, transitions and places that are part of another section of the Petri
-Net. They are not represented in the same figure, 
+Net.
+Those transitions and places are not represented in the same figure, 
 but the arcs show the connection between the sections of the net, showing that
-when connected they form a complete Petri net. In the digital form\footnote{Available at: \url{https://github.com/Accacio/docsTCC/raw/master/monografia.pdf}}  of this thesis it is possible to travel between
-figures that are not in the same page just by clicking in the name of the
-corresponding dotted place\slash transition.
+when connected they form a complete Petri net.
+% In the digital form\footnote{Available at: \url{https://github.com/Accacio/docsTCC/raw/master/monografia.pdf}}  of this thesis it is possible to travel between
+% figures that are not in the same page just by clicking in the name of the
+% corresponding dotted place\slash transition.
 \begin{figure}[H]
   \centering
   \begin{subfigure}[t]{0.5\textwidth}
@@ -977,44 +946,31 @@ corresponding dotted place\slash transition.
     \caption{Petri Net on PLC 2.}
     \label{fig:communicationPlcPN2}
   \end{subfigure}
-  \caption{Example of Petri Net divided between 2 PLCs.}
+  \caption{Example of Petri Net implemented in 2 PLCs.}
   \label{fig:communicationPlcPN}
 \end{figure}
 
 In order to solve the problem of communication caused by the division, there are
 different ways, one of them is the method shown by \cite{antunesfloriano2019sincronizacao}, where
 different sections are synchronised in a distributed manner using common places.
-In this work, a master\slash slave approach was used. CLP1 was considered as the
-master and CLP2 as a slave. For the master, it is created another module
-called ``Data Sending\slash Receiving'', divided in 2 parts, the first that
-happens before all other modules, with the objective of getting all needed
-variables from other \PLCs, and another part, that happens after all other
-modules, with the objective of sending variables to all other \PLCs.
-By the other side, the slaves have 2 modules, one at the beginning, called
+In this work, a master\slash slave approach is used. CLP1 is considered as the
+master device and CLP2 as a slave. For the master, it is created another ladder module
+called ``Data Sending\slash Receiving'', divided in 2 parts.
+The first part is implemented before all modules of the Ladder code, with the objective of getting all needed
+variables from other \PLCs.
+The second part, that is implemented after all modules of the Ladder code, with the objective of sending variables to all other \PLCs.
+On the other side, the slaves have 2 additional modules, one at the beginning of
+the Ladder code, called
 ``Prepare Received Data'' and another at the very end called ``Prepare Data to
-Send'', in which the data received from the master is prepared to be used and
-the data is prepared to be sent to master.
+Send''.
+Those modules are created in order to avoid modification of variables in the
+middle of the program cycle. Change on variables used by the
+slaves \PLCs{} caused by the master during the logic can entail unexpected behaviour. 
 
-The communication between \PLCs{} can be made using Profinet protocol, and if we
-take for instance Siemens \PLCs, they have two function blocks called ``Get'' and
+The communication between \PLCs{} can be accomplished by using Profinet
+protocol. Siemens \PLCs{} have two function blocks called ``Get'' and
 ``Put'', that are used to establish data transfer between two \PLCs{} using the
 Profinet protocol. Tutorials on how to configure this blocks can be found on \citep{antunesfloriano2019sincronizacao,oliveira2016protocolo,rochapereira2019automacao}.
-
-
-The basic idea is to transfer the state of the variables that determine the
-conditions of firing transitions between both \PLCs. The problem is that as the
-two \PLCs are not in sync, the condition of a firing transition could change in
-the middle of the logic. So, in order to circumvent it, we can duplicate those
-variables in the slave PLC, and in the ``Prepare Received data'' module update
-the values of these variables (using positive edges contacts), forcing them to
-be updated only once in each loop and when their value are changed from $0$ to
-$1$.
-
-When a transition change the value of tokens in more than one \PLCs, as $t_1$,
-an auxiliary variable is created in order to create a kind of
-acknowledgement\slash permission 
-from the master, as an ``ok, you can proceed'' to the slaves to perform the
-dynamic of that transition.
 
 The example of those three new modules are shown in \autoref{fig:communicationPlcPNLadder}
 
@@ -1036,7 +992,9 @@ The example of those three new modules are shown in \autoref{fig:communicationPl
   \caption{Example of Petri Net divided between 2 PLCs.}
   \label{fig:communicationPlcPNLadder}
 \end{figure}
-  
+
+
+
 As we can expect, this kind of logic of master\slash slave works well when
 there are 2 \PLCs, but when there are more \PLCs, this centralised approach
 creates a single point of failure and as the master \PLC{} works as a hub, it
@@ -1257,7 +1215,7 @@ y_{i,j}=\begin{cases}
 \begin{observation}
 Depending on the choice of the value of $k$, some characteristics can be
 observed on $p_i^k$. For instance, if $k=1$, $p_i^k=p_i$. And if $k$ is equal to
-the larger $l_i$, then all $y_{i,l_i}$ are composed with all vertices of its
+the larger $l_i$, then all $y_{i,l_i}$ are composed of all vertices of its
 corresponding path $p_i$.
 \end{observation}
 

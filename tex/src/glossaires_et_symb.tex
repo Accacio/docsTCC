@@ -43,8 +43,9 @@
  \renewcommand*{\glossentry}[2]{%
  \glstarget{##1}{\glossentryname{##1}}\\% \kill % the entry name
  \=\glossentrysymbol{##1}% the symbol in brackets
- \space \glossentrydesc{##1},% the description
- \space p. ##2\\% the number list in square brackets
+ \space \glossentrydesc{##1} \\% the description
+ % \space p. ##2\\
+ % the number list in square brackets
  }%
  % set how sub-entries appear:
  \renewcommand*{\subglossentry}[3]{%
@@ -66,8 +67,8 @@
  \glstarget{##1}{\glossentryname{##1}}\\% \kill % the entry name
  \=\textbf{\glossentrysymbol{##1}}% the symbol in brackets
  
- \space \glossentrydesc{##1},% the description
- \space p. ##2\\% the number list in square brackets
+ \space \glossentrydesc{##1}\\% the description
+ % \space p. ##2\\% the number list in square brackets
  }%
  % set how sub-entries appear:
  \renewcommand*{\subglossentry}[3]{%

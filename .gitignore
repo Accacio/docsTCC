@@ -1,5 +1,5 @@
-**/petriNet/**/*.pdf
-**/src/*.pdf
+# **/petriNet/**/*.pdf
+# **/src/*.pdf
 **/auto/*
 **/aux/*
 *.aux

@@ -39,7 +39,7 @@ vida comigo e por toda a força dada para o término desse ciclo. Eu te amo!
 
 * Orientador :ignore:
 Por fim às pessoas que me ajudaram mais diretamente neste projeto, Ryan
-Pitanga e ao meu orientador Marcos Moreira 
+Pitanga e ao meu orientador Marcos Moreira.
 
 #+BEGIN_EXPORT latex
 %%% Local Variables: mode: latex TeX-master: "../monografia.tex" End:

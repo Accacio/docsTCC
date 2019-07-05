@@ -15,7 +15,7 @@ it urges the use of \textit{connected sensors}, and since the Internet of
 Things is the fashion these days, the chances of a hacker attack increases. All
 these kinds of failures, intended or not can interfere somehow with the
 production throughput. There are two ways to attempt the reduction of the interference these agents can
-cause: prevention (before the interference) and remedy (After the interference).
+cause: prevention (before the interference) and remedy (after the interference).
 
 The most common means of prevention in the industry are through preventive
 maintenance (for the physical components) and cyber security (for the software
@@ -24,13 +24,13 @@ components).
 Once the interference is caused, in order to remedy and reestablish
 the operation some steps are necessary. Detect the fault, determine the faulty
 part, and finally intervene.
-The crucial part of fixing something is to know how it should
+The crucial part of fixing something is to know how this thing should
 work\footnote{``To determine why something has stopped working, it's useful to
   know how it was supposed to work in the first place'' \cite{davis1988model}},
 because when we know how it should work, we can distinguish when it is and when
 it is not.
 
-The focus of this bachelor thesis is system identification aimed for fault
+The focus of this work is system identification aimed for fault
 detection and diagnosis.
 % A diverse number of causes of the halt or change of the throughput can be
 % accounted for. Some are as simple as a power outage, or a component malfunction,
@@ -48,7 +48,7 @@ detection and diagnosis.
 As great part of the manufacture facilities uses discrete sensors and actuators,
 as conveyor belts, pneumatic cylinders, limit switches and proximity sensors, it
 is very common to see \PLCs{} controlling those plants. And when a system is ruled
-by discrete events and also its states are discrete it can be modeled by
+by discrete events and also its states are discrete it can be modeled as
 Discrete Event Systems.
 
 On the literature, we can find an expressive number of articles using Discrete
@@ -56,16 +56,16 @@ Event Systems for identification, fault detection and fault diagnosis.
 \cite{veras2018distributed,cabral2017synchronous,kumar2014comments,klein2005fault}
 can be used as examples.
 
-This work is based on one of this articles, \cite{moreira2018enhanced}, that
-develops an algorithm to identify a model of the system using just its inputs
+This work is based on \cite{moreira2018enhanced}, that
+develops an algorithm to identify a model of the system using its inputs
 and outputs, using a black box approach, also seen in other works as
 \cite{klein2005fault} and \cite{roth2009fdi}. This identified model can be later
 used to detect faults on the system.
 
 The objective is to apply the identification algorithm shown in
-\cite{moreira2018enhanced} in a Didactic Manufacture System with a strong
-parallel behavior and a moderate number of inputs and outputs ( over 40) and
-show that this algorithm can be used on the parallel subsystems, so we can
+\cite{moreira2018enhanced} in a Didactic Manufacture System with a
+concurrent behaviour and a moderate number of inputs and outputs ( over 40) and
+show that the identification method can be used on concurrent subsystems, so we can
 achieve scalability.
 
 
@@ -73,45 +73,43 @@ During this work all steps from the conception of the control of the system to
 its identification will be described. So, in order to ease the path throughout
 this work we have in the next section its outline.
 
-\section{Thesis Outline}
+\section{Work Outline}
 \label{sec:thesisOutline}
 
 \paragraph{\nameref{cha:background}} ~\\
-In \autoref{cha:background} the minimal background material needed to understand
-this work is presented: the basic principles of Discrete Event Systems, two
-ways of modeling them (Automata and Petri Nets), how to use Petri Nets to design
-a controlled system and how to translate this control to Ladder Logic (as
-presented in \cite{moreira2013bridging}), in order to be programmed on a PLC,
-then finally we show the identification algorithm and the identified model
-\DAOCT{} (as presented in \cite{moreira2018enhanced}).
+In \autoref{cha:background} a background to understand
+this work is presented. First are presented the basic principles of Discrete
+Event Systems and two
+ways of modelling them (Automata and Petri Nets). After, a way to use Petri Nets to design
+a controlled system and to translate this control to Ladder Logic are depicted (as
+in \cite{moreira2013bridging}).
+% The Ladder Logic is used to program a PLC.
+And finally we present the identification algorithm,
+\DAOCT{} (as in \cite{moreira2018enhanced}).
 
 \paragraph{\nameref{cha:system}} ~\\
-In \autoref{cha:system} we present the system that is going to be identified,
-the devices that compose it, its sensors and actuators and some reference points to simplify the understanding
-of the described movements on the following sections and chapters.
-
+In \autoref{cha:system} we present the manufacturing system, its devices, sensors and actuators. 
 
 \paragraph{\nameref{cha:control}} ~\\
 In \autoref{cha:control} we describe the design process of the control and its
 implementation on the \PLCs.
 
 \paragraph{\nameref{cha:ident}} ~\\
-In \autoref{cha:ident} we describe the process of identification of the system,
-logging of its input and output data and
-and using the algorithm shown in
+In \autoref{cha:ident} we describe the process of identifying the system,
+logging its input and output data and
+using the algorithm shown in
 \autoref{cha:background} to identify the model.
 
 \paragraph{\nameref{cha:results}} ~\\
 In \autoref{cha:results}, the data acquired on the steps described on
-\autoref{cha:ident} is discussed and fed to the algorithm, then the
+\autoref{cha:ident} are discussed and fed to the algorithm, then the
 output models are discussed and the behavior of the system is addressed.
 
 
 \paragraph{\nameref{cha:conclusion}} ~\\
-In \autoref{cha:conclusion}, this thesis is concluded, with some final remarks
-about the work done. The drawbacks presented during the implementation are
+In \autoref{cha:conclusion}, the conclusions are drawn. The drawbacks presented during the implementation are
 collected, and other approaches on some specific parts of this work are proposed
-as a sequel of this work.
+as future works.
 
 
 %%% Local Variables:
