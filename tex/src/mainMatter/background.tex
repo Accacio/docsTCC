@@ -972,7 +972,7 @@ protocol. Siemens \PLCs{} have two function blocks called ``Get'' and
 ``Put'', that are used to establish data transfer between two \PLCs{} using the
 Profinet protocol. Tutorials on how to configure this blocks can be found on \citep{antunesfloriano2019sincronizacao,oliveira2016protocolo,rochapereira2019automacao}.
 
-The example of those three new modules are shown in \autoref{fig:communicationPlcPNLadder}
+The example of those three new modules is shown in \autoref{fig:communicationPlcPNLadder}
 
 \begin{figure}[H]
   \centering
@@ -995,9 +995,9 @@ The example of those three new modules are shown in \autoref{fig:communicationPl
 
 
 
-As we can expect, this kind of logic of master\slash slave works well when
-there are 2 \PLCs, but when there are more \PLCs, this centralised approach
-creates a single point of failure and as the master \PLC{} works as a hub, it
+The logic presented, master\slash slave, works well when
+there are 2 \PLCs. When there are more \PLCs, this centralised approach
+creates a single point of failure. Since master \PLC{} works as a hub, it
 increases the communication delay. When there are more than two \PLCs{} it is
 preferable to use a distributed approach as the one shown in
 \cite{antunesfloriano2019sincronizacao}.
@@ -1012,12 +1012,13 @@ In this article, a new model for \DES{} identification is proposed, called
 \glsreset{DAOCT}\DAOCT. This model was created with aim of fault detection based
 on the observation of the fault free behaviour of the system, as in the models
 proposed by 
-\cite{roth2009fdi} and \cite{klein2005fault}, but its use of paths increases the
-efficiency for fault detection when compared with the latter articles.
+\cite{roth2009fdi} and \cite{klein2005fault}.
+% , but its use of paths increases the
+% efficiency for fault detection when compared with the latter articles.
 
-This fault free observation is made by the acquisition of the observable signals
+This fault free observation is made by acquiring the observable signals
 of the system (controller inputs and outputs) for a sufficiently long
-period of time while the system works normally. These signals can be seen on \autoref{fig:obsSignals}.
+period of time while the system works normally. Those signals can be seen on \autoref{fig:obsSignals}.
 
 \begin{figure}[H]
   \centering
@@ -1064,10 +1065,13 @@ period of time while the system works normally. These signals can be seen on \au
     \label{fig:obsSignals}
   \end{figure}
 
-First, we assume the controller have $m_i$ binary inputs, $i_h$, for $h=1,\dots,m_i$ and $m_o$ binary
-outputs, $o_h$, for $h=1,\dots,m_o$, and we create a Input\slash Output vector called $\mathbf{u}$, that varies with
-time:
-
+  First, we assume the controller have $m_i$ binary inputs
+  % , $i_h$, for $h=1,\dots,m_i$
+  and $m_o$ binary outputs.
+  % ,
+  % $o_h$, for $h=1,\dots,m_o$,
+  We create a Input\slash Output vector called $\mathbf{u}$ as follows:
+  
 \begin{equation*}
 \mathbf{u}(t_1)=
 \begin{bmatrix}
@@ -1081,14 +1085,16 @@ time:
 \end{equation*}
 \newcommand{\vu}{\mathbf{u}}
  This vector $\mathbf{u}(t)$ represents the status of the system in a instant
- $t$. In the \DAOCT model, only untimed system models are considered, thus
- the status of the system can only be modified via system events, $\sigma$. To
- reduce the size of the notation $\mathbf{u}(t)$ is going to be represented as $\vu_t$. The
+ $t$. In the \DAOCT{} model, only untimed system models are considered, thus
+ the status of the system can only be modified via system events, $\sigma$.
+ % To reduce the size of the notation $\mathbf{u}(t)$ is going to be represented as $\vu_t$.
+The vector $\mathbf{u}(t)$ is also represented as $\vu_t$.
+ The
  transition between status in $t_i$ and $t_j$ is represented as ($\vu_i,\sigma,\vu_j$). If we have a sequence of
  $l$ input\slash output vectors, we have an observed path of the system,
  $p=(\vu_1,\sigma_1,\vu_2,\sigma_2,\dots,\sigma_{l-1},\vu_l)$.
-So, if we observe multiple paths meanwhile our observation process, we can
-create multiple paths
+So, if we observe multiple paths meanwhile the observation process, 
+multiple paths can be created
 $p_i=(\vu_{i,1},\sigma_{i,1},\vu_{i,2},\sigma_{i,2},\dots,\sigma_{i,l_i-1},\vu_{i,l_i})$,
 for $i=1,\dots,r$, where $r$ is the number of observed paths, and $l_i$ is the
 number of vertices in each path $p_i$.
@@ -1101,7 +1107,7 @@ $s_i$ and $\omega_i$, and they are defined as:
   s_i&= \sigma_{i,1}\sigma_{i,2}\dots\sigma_{i,l_i-1} \\
   \omega_i&= \vu_{i,1}\vu_{i,2}\dots\vu_{i,l_i}
 \end{align*}
-Using these observed sequences of events $s_i$, we can define a language
+Using the observed sequences of events $s_i$, we can define a language
 , called observed language, $L_{Obs}$:
 
 \begin{equation}
@@ -1117,51 +1123,62 @@ can simulate this observed language. This language of the identified model is
 called $L_{Iden}$.
 We can describe this relation between these languages as $L_{Obs} \subseteq
 L_{Iden}$.
-As said in
+As presented in
 \cite{moreira2018enhanced}, in finite time only part of the sequences  of events
 the system can generate are observed. So we can define a language $L_{Orig}$,
-the original language generated by the system, that we is never known.
+the original language generated by the system, that is never known.
 
-From $L_{Orig}$ and $L_{Iden}$, we can define another language, an exceeding
-language $L_{Exc}$, that is, part of the identified language that is not present in the
+From $L_{Orig}$ and $L_{Iden}$, another language can be defined, an exceeding
+language $L_{Exc}$. The exceeding language represents the part of the identified language that is not present in the
 original language, $L_{Exc}=L_{Iden}\backslash L_{Orig}$.  The
 relation between $l_{Orig}$ and $l_{Obs}$ is $L_{Obs} \subset L_{Orig}$. And from
-these two languages we can define another language $L_{OrigNI}$, part of the
-original language that was not identified, $L_{OrigNI}=L_{Orig}\backslash L_{Iden}$
-The relation between all these languages is shown in \autoref{fig:languagesVenn}.
+these $l_{Orig}$ and $l_{Iden}$, $L_{OrigNI}$ can be defined. $L_{OrigNI}$
+represents the part of the
+original language that was not identified, $L_{OrigNI}=L_{Orig}\backslash L_{Iden}$.
+The relation between all languages presented is shown in \autoref{fig:languagesVenn}.
 
 \usetikzlibrary{patterns}
 \begin{figure}[H]
-  \centering \includegraphics[width=0.5\textwidth]{vennDiagramLanguages.tikz}
+  \centering
+  \sbox0{
+    \includegraphics[width=0.5\textwidth]{vennDiagramLanguages.tikz}
+  }
+  \begin{minipage}{1.1\wd0}
+  \centering
+   \usebox0
   \caption{Venn diagram showing the relation between $L_{Orig}$, $L_{OrigNI}$,
     $L_{Obs}$, $L_{Exc}$ and $L_{Iden}$}.
+  
   \label{fig:languagesVenn}
+ \end{minipage}
 \end{figure}
-As $L_{Exc}$ represents a part of the identified language that is not part of
+As $L_{Exc}$ represents the part of the identified language that is not part of
 the original language, some faulty sequences will not be detected, as they are
 part of the identified language. So in order to reduce the number of these non
-detected faults, $L_{Exc}$ should have a cardinality as close to $0$ as it is
-possible, this is possible by creating identification models that generate
+detected faults, $L_{Exc}$ should have a cardinality as close to $0$ as 
+possible. Reducing the cardinality of $L_{Exc}$ is possible by creating identification models that generate
 smaller $L_{Exc}$.
 
 And as $L_{OrigNI}$ represents the part of the original system that was not
-identified, that means some sequences present on the fault-free behaviour of the
-system will be detected as faults, generating false alarms. This language should
+identified, that means some sequences present on the never-known original language of the
+system will be detected as faults, generating false alarms. $L_{OrigNI}$ should
 also be reduced, so the false alarms generated are reduced. As the original
-language of the system is never known, it is very difficult to know for sure if
+language of the system is never known, it is very difficult to estimate if
 $L_{OrigNI}$ is small or not. \cite{klein2005fault} show that if a system is
 observed for a sufficiently long time, there exists a number $n_0\in \mathbb{N}$
 such that $L_{Orig}^{\leq n_0}\backslash L_{Obs}^{\leq n_0}\approx \emptyset$,
 where $L_{Orig}^{\leq n_0}$ and $L_{Obs}^{\leq n_0}$ denote the languages formed
 by all sequences of events of length smaller than or equal to $n_0$ of
-$L_{Orig}$ and $L_{Orig}$. Since $L_{Obs}\subseteq L_{Iden}$, $L_{OrigNI}^{\leq
+$L_{Orig}$ and $L_{Orig}$, respectively. Since $L_{Obs}\subseteq L_{Iden}$, $L_{OrigNI}^{\leq
   n_0}$ is also approximately the empty set.
 
 In this work we assume that all
 sequences of events that have length $n_0+1$ were observed, thus
-$L_{OrigNI}^{\leq n_0}=\emptyset$. So it leaves to the identification model the
-sole problem of reducing the language $L_{Exc}^{\leq n_0}$ and $L_{Exc}$ consequentially.
-
+$L_{OrigNI}^{\leq n_0}=\emptyset$.
+% So it leaves to the identification model the sole problem of reducing the language $L_{Exc}^{\leq n_0}$ and $L_{Exc}$ consequentially.
+Thus, the remaining identification problem is reducing the language
+$L_{Exc}^{\leq n_0}$ and consequentially $L_{Exc}$.
+\newpage
 \subsection{DAOCT}
 In this subsection the modified automaton model proposed by
 \cite{moreira2018enhanced} will be explained and the algorithm to construct it
@@ -1189,16 +1206,13 @@ and $\Omega_i$. Thus $\Sigma$ and $\Omega$ can be calculated by the union of
 this sets: $\Sigma=\bigcup_{i=1}^r\Sigma_i$ and
 $\Omega=\bigcup_{i=1}^r\Omega_i$.
 From the vertices of the paths $p_i$, the I\slash O vectors, the states of the model are extracted.
-Each vertex is chosen as a new state. But depending on the system, the vertices
-can be repeated in different paths and even in the same path, so a kind of
-memory of the past I\slash O vectors can be interesting to differentiate them,
-that means, taking them as different status of the system. This kind of memory
-is presented on the form of a sequence of I\slash O vectors that stores a
-certain number of the past ones. To determine the number of vectors stored in this sequence an
-arbitrary variable $k$, a free parameter, is created. 
-The modified paths created by substituting the vertices for these sequences of
-I\slash O vectors are
-denoted $p_i^k$ and are defined as follows:
+Each vertex is chosen as a new state.
+% But depending on the system, the vertices can be repeated in different paths and even in the same path, so a kind of memory of the past I\slash O vectors can be interesting to differentiate them, that means, taking them as different status of the system.
+In some systems, certain I\slash O vectors are repeated in the same path, but with different preceding vectors.
+In order to differentiate these vectors, its preceding vectors are stored in a sequence of I\slash O vectors.
+% This kind of memory is presented on the form of a sequence of I\slash O vectors that stores a certain number of the past ones.
+To determine the number of vectors stored in this sequence, an arbitrary variable $k$, a free parameter, is created. 
+The modified paths created by substituting the vertices for these sequences of I\slash O vectors are denoted $p_i^k$ and are defined as follows:
 \begin{equation}
   \label{eq:modifiedPath}
  p_i^k= (y_{i,1},\sigma_{i,1},y_{i,2},\sigma_{i,2},\dots,\sigma_{i,l_1-1},y_{i,l_i}) 
@@ -1212,16 +1226,16 @@ y_{i,j}=\begin{cases}
   \end{cases}
 \end{equation}
 
-\begin{observation}
-Depending on the choice of the value of $k$, some characteristics can be
-observed on $p_i^k$. For instance, if $k=1$, $p_i^k=p_i$. And if $k$ is equal to
-the larger $l_i$, then all $y_{i,l_i}$ are composed of all vertices of its
-corresponding path $p_i$.
-\end{observation}
+% \begin{observation}
+% Depending on the choice of the value of $k$, some characteristics can be
+% observed on $p_i^k$. For instance, if $k=1$, $p_i^k=p_i$. And if $k$ is equal to
+% the larger $l_i$, then all $y_{i,l_i}$ are composed of all vertices of its
+% corresponding path $p_i$.
+% \end{observation}
 
+\setlength\arraycolsep{2pt}
 As an example of the computation of the paths $p_i^k$, we can take the observation of the following
 paths, from \cite{moreira2018enhanced}:
-\setlength\arraycolsep{2pt}
 \begin{align*}
   p_1&= \left(\colvec{1\\0\\0},a,\colvec{1\\1\\0},b,\colvec{0\\1\\1},c,\colvec{0\\0\\0},d,\colvec{0\\0\\1},e,\colvec{1\\0\\0}\right) \\
   p_2&= \left(\colvec{1\\0\\0},g,\colvec{0\\0\\0},h,\colvec{1\\1\\0},b,\colvec{0\\1\\1},c,\colvec{0\\0\\0},i,\colvec{1\\0\\0},j,\colvec{0\\1\\1},l,\colvec{1\\0\\0}\right) \\
@@ -1233,8 +1247,8 @@ controller signal, that is $a=\uparrow$2 and the event $l$ the rising edge of th
 controller signal and the falling edge of the second
 and third controller signals, $l=\uparrow$1$\downarrow$2$\downarrow$3.
 
-As said, for $k=1$, $p_i^k=p_i$, so in order to better illustrate the
-construction of $p_i^k$, we choose $k=2$. Using \Autoref{eq:modifiedPath,eq:modifiedPathb} we can
+Since $p_i^k=p_i$, for $k=1$, in order to better illustrate the
+construction of $p_i^k$, $k=2$ is chosen. Using \Autoref{eq:modifiedPath,eq:modifiedPathb} we can
 obtain the following modified paths: 
 \begin{align*}
   p_1^2&= \left(\colvec{1\\0\\0},a,\colvec{1&1\\0&1\\0&0},b,\colvec{1&0\\1&1\\0&1},c,\colvec{0&0\\1&0\\1&0},d,\colvec{0&0\\0&0\\0&1},e,\colvec{0&1\\0&0\\0&0}\right) \\
@@ -1292,9 +1306,11 @@ identification algorithm of the \DAOCT{} model. This identification algorithm, a
 
 \vspace{1cm}
 
-Feeding the paths modified paths $p_1^1,p_2^1,p_3^1$, that are equal to the
-normal paths $p_1,p_2,p_3$, and the paths $p_1^2,p_2^2,p_3^2$ to \Autoref{alg:identification}, two models are identified, one for $k=1$ and another for
-$k=2$, their state transition diagrams are represented in \Autoref{fig:examplek1,fig:examplek2} respectively. 
+Feeding the paths modified paths $p_1^1,p_2^1,p_3^1$,
+% that are equal to the normal paths $p_1,p_2,p_3$,
+and the paths $p_1^2,p_2^2,p_3^2$ to \Autoref{alg:identification}, two models are identified, one for $k=1$ and another for
+$k=2$.
+The state transition diagrams for the identified models are represented in \Autoref{fig:examplek1,fig:examplek2} respectively. 
 
 \begin{figure}[H]
   \centering \includegraphics[width=\textwidth]{automata/daoct/example.tikz}
@@ -1325,7 +1341,6 @@ needed to expand the domain of function $\theta$ to consider sequence of events,
 instead of only an event. This new estimation function will be denoted as
 $\theta_s : X \times \Sigma^\star \rightarrow 2^R$. And it is defined
 recursively as:
-
 \begin{align}
   \theta_s(x,\epsilon)&=R,\nonumber\\
   \theta_s(x,s\sigma)&=
@@ -1342,9 +1357,8 @@ identified model:
   L(DAOCT)&:=\{s \in \Sigma^\star : f(x_0,s)! \wedge \theta_s(x_0,s)\neq \emptyset \}
 \end{align}
 
-From a similar way it is possible to define the language formed by all
+Using a similar logic, it is possible to define the language formed by all
 subsequences of events of length $n$ generated by the identified model:
-
 \begin{align}
   L_S^n(DAOCT)&:=\{s \in \Sigma^\star : (|s| = n)\left[\exists x_i \in X,f(x_i,s)! \wedge \theta_s(x_i,s)\neq \emptyset \right]\}
 \end{align}
@@ -1359,8 +1373,8 @@ L_{Orig}^{\leq n}$.
   L^{\leq n}(DAOCT)&:=\left( \bigcup_{i=0}^n L_S^i(DAOCT) \right)\cap L(DAOCT)
 \end{align}
 As we assumed that all sequences of events that have length $n_0+1$ were
-observed, then $L_{Orig}^{\leq n_0}\approx L_{Orig}^{\leq n_0}$. If $n\leq n_0$,
-then $L_{Orig}^{\leq n}\approx L_{Orig}^{\leq n}$, and $L_{Exc}^{\leq n}=L^{\leq n}(DAOCT)\backslash
+observed, then $L_{Orig}^{\leq n_0}\approx L_{Obs}^{\leq n_0}$. If $n\leq n_0$,
+then $L_{Orig}^{\leq n}\approx L_{Obs}^{\leq n}$. Thus, $L_{Exc}^{\leq n}=L^{\leq n}(DAOCT)\backslash
 L_{Obs}^{\leq n}$, and this formula will be used to calculate $L_{Exc}^{\leq n}$
 throughout this work. 
 %%% Local Variables:
