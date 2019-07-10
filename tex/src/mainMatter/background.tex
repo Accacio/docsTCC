@@ -14,7 +14,7 @@ or devices that operate together''. As seen two basic properties of systems are
   function
 \end{itemize}
 
-Usually systems are modelled by a Input\slash Output process. The system is fed with a
+Usually, systems are modelled by an Input\slash Output process. The system is fed with a
 set of inputs, it processes the inputs resulting on the output set, as we can see
 in \autoref{fig:ioProcModel}.
 
@@ -59,12 +59,12 @@ understanding. Some of those will be presented in the following sections based
 on \cite{cassandras2009introduction, david2005discrete,david1989grafcet}.
 \section{Languages} \label{sec:automata} A language can be defined by the Merriam-Webster's dictionary as ``a systematic
 means of communicating ideas or feelings by the use of conventionalized signs,
-sounds, gestures, or marks having understood meanings'' And as it is defined by
+sounds, gestures, or marks having understood meanings'', and as it is defined by
 this dictionary entry we pursue to communicate the complete behaviour of the
 \DES. Firstly we need to define a group, or set of marks to characterise the
 singular behaviour of the system. So, we define a set $\Sigma$. This set contains
 all elements which combined can create a language. Again in analogy with
-linguistics, each one of these marks, the events can be compared to letters ,
+linguistics, each one of these marks, the events can be compared to letters,
 provided that $\Sigma$ can be called an ``alphabet'', and the combination of its
 events ``words''. Words are also called ``strings '' or even ``traces''.
 Considering the use of the word ``string'' as the variable type used on several
@@ -73,7 +73,9 @@ programming languages used in this work, we prefer the use of the terms
 $\epsilon$, that is, a word that is not formed by any event.
 
 The operation to form words is called concatenation. For instance,
-given two events $a$ and $b$, the words $ab$ and $ba$ can be created concatenating these two events and there is no particular reason to suppose that $ab$ is equal to $ba$, the same way the words ``ten'' and ``net'' have different meanings in English.
+given two events $a$ and $b$, the words $ab$ and $ba$ can be created
+concatenating these two events and there is no particular reason to suppose that
+$ab$ is equal to $ba$. The same goes for the words ``ten'' and ``net'', that have different meanings in English.
 
 We can also concatenate two words to create a different one. For instance, we can take the
 words $ab$ and $ba$ and create words like $abba$ and $baab$.
@@ -143,7 +145,7 @@ One of the most known representation of languages are automata. The notion of
 automaton is basically the definition of \DESs, as we saw in the
 \autoref{sec:discreteEventSystems}: a set of events can change the state of the
 system. If we know all the events composing the language of the
-system and its states, we can have its alphabet $\Sigma$ and we can create a set $X$ composed
+system and its states, we can have its alphabet $\Sigma$, and we can create a set $X$ composed
 of all states.
 From $\Sigma$ and $X$ we can derive a function that represents the transition
 from a state to other, this function is called \emph{transition function} of the automaton
@@ -151,12 +153,12 @@ denoted as $f : X \times \Sigma \rightarrow X$. For example if a system have an
 alphabet $\Sigma = \{a,b\}$ and 2 states, we can name the states $x$ and
 $y$, and then create the set $X = \{x,y\}$. Knowing that the system begins at state $x$
 and that when event $a$ happens it changes to state $z$ we can create a function
-$f(x,a)$ and define it as $y$. Likewise if we know that when the system is at
+$f(x,a)$ and define it as $y$. Likewise, if we know that when the system is at
 state $y$ and event $b$ happens, a function $f(y,b)$ can be defined as $a$.
 
  A representation of the transition function can be made through a diagram, called \emph{state transition diagram}. In this kind of diagram the states are
 represented by circles labeled with their names, and the functions as arcs
-labeled with the corresponding event,connecting two states, with arrows in one of their
+labeled with the corresponding event, connecting two states, with arrows in one of their
 extremities indicating the transition from a state to other. The initial state
 of the automaton has an arc pointing towards it coming from no other state.
 \autoref{fig:functionDiagram} can represent the functions $f(x,a)$ and $f(y,b)$
@@ -172,7 +174,7 @@ Now, for a more complex example, from \cite{cassandras2009introduction}:
 \begin{example}[Simple Automaton] ~\\
   \label{ex:simpleAutomaton}
   Let $\Sigma = \{a,b,g\}$, $X = \{x,y,z\}$ and the following transition
-  functions \cite{cassandras2009introduction}:
+  functions \citep{cassandras2009introduction}:
   \begin{align*}
    f(x,a)&=x&f(x,g)&=z\\
    f(y,a)&=x&f(y,b)&=y\\
@@ -188,10 +190,10 @@ We can represent this automaton with the diagram of \autoref{fig:diagramExapleAu
   \label{fig:diagramExapleAutomata}
 \end{figure}
 We can also mark states that have some special meaning, as for instance, a final
-state. In this work, as in \cite{cassandras2009introduction} the marked states are identified by double circles.
+state. In this work, as in \cite{cassandras2009introduction}, the marked states are identified by double circles.
 
   
-  Now a deterministic Automaton can be defined.
+Now a deterministic Automaton can be defined.
 \begin{definition}[Deterministic Automaton]
   \label{def:DeterministicAutomaton}~\\
   A Deterministic Automaton, denoted by G, is a five-tuple
@@ -207,8 +209,8 @@ state. In this work, as in \cite{cassandras2009introduction} the marked states a
 
 \subsection{Petri Nets}
 \label{sec:petriNets}
-Another kind of representation of languages are Petri Nets, whose concept was created by C.A.Petri
-in the early 1960's. Differently from the automata representation Petri nets are bipartite graphs, formed by nodes
+Another kind of representation of languages are Petri nets, whose concept was created by C.A.Petri
+in the early 1960s. Differently from the automata representation, Petri nets are bipartite graphs, formed by nodes
 called \emph{places} and \emph{transitions}.
 Transitions represent the events that drive the system, and places represent the
 conditions for these events to happen. The mechanism to represent the fulfilment
@@ -247,7 +249,7 @@ circles and transitions by bars, as shown in \Autoref{fig:componentsPetriNet}.
 The same way a function was created to define the transitions of states in an
 automaton, two functions will be created to define the connections between places
 and transitions. First we need to define the sets of places and transitions. $P$
-is the set of places and $T$ the set of transitions. With this two sets we can
+is the set of places and $T$ the set of transitions. With these two sets, we can
 then define those functions. The first one represents the arcs
 from places to transitions, and is denoted as $Pre: P \times T \rightarrow
 \mathbb{N}$, the second one represents the arcs that connect transitions to places, denoted
@@ -265,13 +267,13 @@ is the set of non-negative integers.
    Post(p_0,t_0) &= 1  &    Pre(p_0,t_2) &= 0   & Post(p_1,t_0) &= 0   & Pre(p_1,t_2) &= 1\\
    Pre(p_0,t_1) &= 1    &  Post(p_0,t_2) &= 0  &  Pre(p_1,t_1) &= 0     &Post(p_1,t_2) &= 0\\
   \end{align*}
-  We can represent this petri net structure with the diagram on \autoref{fig:simplePetriNetStructureGeneralized}
+  We can represent this Petri net structure with the diagram of \autoref{fig:simplePetriNetStructureGeneralized}
 \end{example}
 % \begin{figure}[H]
 %   \centering
 %   \includegraphics[width=0.5\textwidth]{petriNet/prepost/prepost.tikz}
 %   % \includetikzfigure[width=0.5\textwidth]{automata/example/example}
-%   \caption{Diagram representing the petri net structure from example \ref{ex:simplePetriNetStructure}}
+%   \caption{Diagram representing the Petri net structure from example \ref{ex:simplePetriNetStructure}}
 % \label{fig:simplePetriNetStructure}
 % \end{figure}
 % A drawback from the definition of this functions, is that is not possible to
@@ -297,7 +299,7 @@ is the set of non-negative integers.
   \centering
   \includegraphics[width=0.5\textwidth]{petriNet/prepost/prepost3.tikz}
   % \includetikzfigure[width=0.5\textwidth]{automata/example/example}
-  \caption{Diagram representing the petri net structure from example \ref{ex:simplePetriNetStructure}}
+  \caption{Diagram representing the Petri net structure from example \ref{ex:simplePetriNetStructure}}
 \label{fig:simplePetriNetStructureGeneralized}
 \end{figure}
 
@@ -308,13 +310,13 @@ The marking is used as the mechanism to
 represent if the condition of occurrence of a determined event is met or not.
 The marking also represents the state of the system. The mechanism
 works as follows. Tokens can be assigned to places and the way the tokens are
-distributed among places is called the marking of a petri net graph. We can define a marking function $x :
+distributed among places is called the marking of a Petri net graph. We can define a marking function $x :
 P \rightarrow \mathbb{N}$ that denotes the number of tokens in a determined place.
 In this
 work, as in the majority of articles and books, the tokens will be
 represented as black dots inside the places. 
 
-\Autoref{fig:unmarked,fig:marked} show an unmarked and a marked petri net graph, respectively.
+\Autoref{fig:unmarked,fig:marked} show an unmarked and a marked Petri net graph, respectively.
 \begin{figure}[H]
 \begin{subfigure}[t]{0.45\textwidth}
   \centering
@@ -331,10 +333,10 @@ represented as black dots inside the places.
   \caption{Marked}
   \label{fig:marked}
 \end{subfigure}
-\caption{Example of unmarked and marked petri net graphs.}
+\caption{Example of unmarked and marked Petri net graphs.}
 \end{figure}
 
-The marking of a petri net, can be represented as a
+The marking of a Petri net, can be represented as a
 vector of the function $x$ applied on all places, for example the marking of 
 \autoref{fig:marked} is the following vector.
 
@@ -359,13 +361,13 @@ vector of the function $x$ applied on all places, for example the marking of
 \end{bmatrix}
 \end{equation*}
 
- The marking of the petri net, can be identified as the
-state of the petri net. So, different configurations of tokens mean different
+ The marking of the Petri net, can be identified as the
+state of the Petri net. So, different configurations of tokens mean different
 states of the system, now we only need a way to change from one state to other.
 \subsubsection{Firing Transitions}
 \label{sec:firingTransitions}
- When an event associated with a transition $t_j$  happens and $t_j$
-is enabled, $t_j$ is fired and  a new marking is reached.
+ When an event associated with a transition $t_j$ happens and $t_j$
+is enabled, $t_j$ is fired and a new marking is reached.
 We can define the functions $I : T \rightarrow 2^P$ and $O : T \rightarrow 2^P$ that
 describe the set of places considered as inputs and outputs of a transition: 
 \begin{align*}
@@ -384,7 +386,7 @@ And we can define the dynamic of the Petri net as follows.
 \begin{definition}[Petri net dynamics]
   \label{def:petriNetDynamics}~\\
    It is possible to define a \emph{state transition}
-  function, $f : \mathbb{N}^n \times T \rightarrow \mathbb{N}^n$  , where $n$ is
+  function, $f : \mathbb{N}^n \times T \rightarrow \mathbb{N}^n$ , where $n$ is
   the size of the state vector $\mathbf{x}$. This function $f$ is defined for
   a transition $t_j \in T$ if and only if this transition is enabled. If
   $f(\mathbf{x},t_j)$ is defined, then we create a new state vector
@@ -411,13 +413,12 @@ As an example we can take \Autoref{fig:petriNetDynamics}:
   \caption{After firing of $t_0$.}
   \label{fig:afterFiring}
 \end{subfigure}
-  \caption{Example of petri net Dynamic.}
+  \caption{Example of Petri net Dynamic.}
   \label{fig:petriNetDynamics}
 \end{figure}
 The state before firing transition $t_0$ is $\mathbf{x}=\begin{bmatrix}3&
-  0\end{bmatrix}^T$ and as we see $Pre(p_0,t_0)=2$ and $Post(p_1,t_0)=1$. So
-applying the petri net dynamic we can find the next state $\mathbf{x}^\prime=\begin{bmatrix}1&
-  1\end{bmatrix}^T$
+  0\end{bmatrix}^T$ and as we see $Pre(p_0,t_0)=2$ and $Post(p_1,t_0)=1$. So, applying the Petri net dynamic, we can find the next state $\mathbf{x}^\prime=\begin{bmatrix}1&
+  1\end{bmatrix}^T$.
 
 A Petri Net is defined as follows.
 
@@ -450,7 +451,7 @@ sequence of firing transitions and a sequence of events.
   \indent $l$ is the \textbf{labelling} function  \\
 \end{definition}
 
-Usually the events are represented in the petri net graph over its respective
+Usually, the events are represented in the Petri net graph over its respective
 transition as shown in \autoref{fig:labeledPetriNet}. This system has an alphabet
 $\Sigma=\{a,b\}$ and labelling functions $l(t_0)=a$ and $l(t_1)=b$.
 
@@ -465,8 +466,8 @@ $\Sigma=\{a,b\}$ and labelling functions $l(t_0)=a$ and $l(t_1)=b$.
 \section{Control Interpreted Petri Nets}
 \label{sec:cipn}
 One of the important application of Petri nets, besides modeling a system, is its
-ability to model the control of a system. For this intent we use Control Interpreted Petri nets. It is an
-extension of labelled Petri nets, where we add actions to places, so it is
+ability to model the control of a system. For this intent we use \CIPNs. It is an
+extension of labelled Petri nets, in which we add actions to places, so it is
 possible to change the outputs of the system, conditions to the transitions, so it
 is possible to change the state of the control based on the inputs of the
 system, and the ability to delay the firing transitions based on time.
@@ -521,17 +522,16 @@ The transition $t_0$ is represented graphically as shown in \autoref{fig:conditi
 \end{figure}
 
 If the event is missing from the representation of the transition, it is equal
-to the always occurring event $\lambda$
-. And if the condition is missing, that means it is
+to $\lambda$, the always occurring event. And if the condition is missing, that means it is
 equal to $1$, i.e. it is always $true$. If both are missing, that means the
 transition will be automatically executed if it is enabled. 
 
 On the other hand, the labeling function $l_D : T^D \rightarrow D$, defines a delay for the
 transition to be fired. A timed transition $t_i \in T^D$ (a subset of T
 that represents the transitions with a time delay), has a corresponding delay
-$d_i$. As an example, consider a timed transition $t_1$ and $D=\{d_1\}$. Then after the
+$d_i$. As an example, consider a timed transition $t_1$ and $D=\{d_1\}$. Then, after the
 enablement of the transition, it takes $d_1$ time units in order to be fired. In
-this work timed transitions are represented by white bars slightly larger than normal
+this work, timed transitions are represented by white bars slightly larger than normal
 transitions. An example of this representation we can see in \autoref{fig:timedtransition}
 
 \begin{figure}[H]
@@ -542,24 +542,24 @@ transitions. An example of this representation we can see in \autoref{fig:timedt
 Another labelling function is $l_A : P\rightarrow 2^A$,
 assigning a set of actions belonging to $A$ to a place. Actions can be impulse
 or continuous actions. A
-continuous action happens always that the marking of a place is greater than 0,
+continuous action happens when the marking of a place is greater than 0,
 $x(p_i)>0$. An impulse action, on the other hand, happens only when the marking of
 the place changes from 0 to 1. 
 Actions are represented graphically as labels in places. Impulse actions are
 differed by a star (*) at its end.
 
-In \autoref{fig:actions} a representation of a place with both kinds of actions
-is presented where $F$ is continuous and $B^\star$.
+In \autoref{fig:actions}, a representation of a place with both kinds of actions
+is presented, where $F$ is continuous and $B^\star$.
 \begin{figure}[H]
   \centering \includegraphics[width=0.3\textwidth]{petriNet/cipn/actions.tikz}
   \caption{Representation of labeling of Actions.}
   \label{fig:actions}
 \end{figure}
 
-Although these representations exist, in this work event, condition and
+Although these representations exist, in this work events, conditions and
 action labels are suppressed from the diagrams, and tables are added to the drawings
 showing the meaning of the transitions (firing events and conditions) and places
-(Actions). This choice was made because the control interpreted Petri nets
+(Actions). This choice was made because the \CIPNs{}
 presented in this work are very
 large.
 
@@ -571,16 +571,16 @@ We consider the system represented by the scheme in
 \emph{b}, using the inputs \emph{L} and \emph{R} (moving it to the left or right,
 respectively). At point \emph{a} there is a button \emph{M} that can be pressed by an
 operator and a limit switch called \emph{a} that is activated when the wagon is on
-the left. At point \emph{b}, an homonym limit switch is placed and activated when the
+the left. At point \emph{b}, a homonym limit switch is placed and activated when the
 wagon is on the right. There is a hopper that can
-be opened when the input \emph{Open} is turned on and closed when not.If it is opened
+be opened when the input \emph{Open} is turned on and closed when not. If it is opened
 its content is poured. There is also a
 button \emph{p} that is activated when the weight applied over the plate is equal or
 greater to the weight of a full wagon. 
 
 The objective of the control is, when the wagon is in its leftmost position and
 the button \emph{m} is pressed, it moves to the right, stops at \emph{b}, the hopper is
-opened and the wagon is loaded, when it is completely full it moves to the left
+opened and the wagon is loaded. When it is completely full it moves to the left
 and it stops at \emph{a} waiting to be unloaded and for a next press of \emph{m} to re-initiate
 the loop. 
 \end{example}
@@ -591,8 +591,7 @@ the loop.
   \caption{Example of System to be controlled by the Petri Net}
   \label{fig:cipnexamplescheme}
 \end{figure}
-From the description of the control it is possible to create a Control Interpret
-Petri Net to represent it, as the one in \autoref{fig:cipnexample}
+From the description of the control it is possible to create a \CIPN{} to represent it, as the one in \autoref{fig:cipnexample}
 
 
 \begin{figure}[H]
@@ -611,7 +610,7 @@ following tables:
 In this work as in the usual boolean notation, when just the name of a variable is given in a table it means the
 variable is equal to true, and when there is a bar in its top it is equal to
 false, so they determine conditions. E.g.: $b$ and $\overline{b}$.
-And when a variable is preceded by $\uparrow$ and $\downarrow$, they  determine
+And when a variable is preceded by $\uparrow$ and $\downarrow$, they determine
 events corresponding to its rising and falling edge.
 
 \usetikzlibrary{arrows,shapes,circuits.plc.ladder,external}
@@ -710,7 +709,7 @@ can be seen in \Autoref{fig:contacts,fig:coils}
 
 \subsubsection{Contacts}
 Contacts represent the conditions of the ladder logic depending on inputs. These inputs can be any variable in a
-\PLC, an external input ( sensors of the system to be controlled), a variable stored in memory or the current
+\PLC, an external input (sensors of the system to be controlled), a variable stored in memory or the current
 value sent to an output from the \PLC. A normally open contact
 activates its right terminal (set it to $true$) if the logic value in its left terminal
 is $true$ and its corresponding input is equal to $true$ 
@@ -723,7 +722,7 @@ terminal only in the instant that its input change from logic value $true$ to
 $false$.
 
 As we can see, positive and negative contacts can be used to represent rising ($\uparrow$)
-and falling edge  ($\downarrow$) events and normally open and closed contacts
+and falling edge ($\downarrow$) events and normally open and closed contacts
 to represent conditions (and their negation).
 
 \subsubsection{Coils}
@@ -745,8 +744,8 @@ set.
 
 \subsubsection{Combinational Logic}
 In boolean logic, in order to show functional completeness, it is needed to show a
-complete set of connectives ( a set that can create all other logic connectives
-as a combination of its elements ). A well-know complete set is $S=\{AND,NOT\}$,
+complete set of connectives (a set that can create all other logic connectives
+as a combination of its elements). A well-know complete set is $S=\{AND,NOT\}$,
 binary conjunction and negation.
 To show that the ladder logic is functional complete we need only to present how
 to construct this two connectors in it.
@@ -780,7 +779,7 @@ OR connector can be achieved by using contacts in parallel (\autoref{fig:ladderP
 
 \subsubsection{Function Blocks and extensions}
 In order to increase functionality some function blocks and 
-extensions to contacts were created. We can see examples of theses blocks and
+extensions to contacts were created. We can see examples of these blocks and
 contacts in the next figure:
 
 \begin{figure}[H]
@@ -825,7 +824,7 @@ value is $true$ and $value1\leq value2$.
 Other blocks and functions can be found in the IEC 61131-3, as adders,
 subtractors, communication blocks etc.
 
-\subsection{Conversion from \CIPN{} to \LD}
+\subsection{Conversion from Control Interpreted Petri Nets to Ladder Diagram}
 \label{sec:cipnToLD}
 
 A simple method of conversion from \CIPN{} to \LD{} is presented in
@@ -839,7 +838,7 @@ It consists in dividing the \CIPN{} into 4 modules:
 \item A module of firing conditions\\
   To indicate what condition can be fired using the $Pre$, and $In$ functions, the conditions found on the
   last module and time delays (if it is a timed transition 
-  )
+ )
 \item A module of Petri Net dynamics\\
 Uses the $Pre$ and $Post$ functions to determine the dynamics of the Petri net
 \item A module of actions\\
@@ -904,7 +903,7 @@ used.
 % debugging process.
 \subsubsection{Example}
 An example of this conversion can be given using the same \CIPN{} from 
-\Autoref{ex:loadingOfAWagon}.  The external events and firing condition
+Example \ref{ex:loadingOfAWagon}.  The external events and firing condition
 modules are grouped in the same module in this work. The converted Ladder Logic
 is depicted in \autoref{fig:cipnexampleLadder}.
 \begin{figure}[H]
@@ -918,7 +917,6 @@ is depicted in \autoref{fig:cipnexampleLadder}.
 \label{sec:multiplePlcs}
 In some cases, the implementation of the control code must be carried out in
 several \PLCs.
-
 In \autoref{fig:communicationPlcPN}, it is shown an example of a \CIPN{} implemented
 between 2 \PLCs.
 As we can see, in \Autoref{fig:communicationPlcPN1,fig:communicationPlcPN2}
@@ -970,9 +968,9 @@ slaves \PLCs{} caused by the master during the logic can entail unexpected behav
 The communication between \PLCs{} can be accomplished by using Profinet
 protocol. Siemens \PLCs{} have two function blocks called ``Get'' and
 ``Put'', that are used to establish data transfer between two \PLCs{} using the
-Profinet protocol. Tutorials on how to configure this blocks can be found on \citep{antunesfloriano2019sincronizacao,oliveira2016protocolo,rochapereira2019automacao}.
-
-The example of those three new modules are shown in \autoref{fig:communicationPlcPNLadder}
+Profinet protocol. Tutorials on how to configure those blocks can be found on \citep{antunesfloriano2019sincronizacao,oliveira2016protocolo,rochapereira2019automacao}.
+The complete implementation of the \CIPN{} depicted in
+\Autoref{fig:communicationPlcPN} using \LD{} is shown in \autoref{fig:communicationPlcPNLadder}.
 
 \begin{figure}[H]
   \centering
@@ -995,9 +993,9 @@ The example of those three new modules are shown in \autoref{fig:communicationPl
 
 
 
-As we can expect, this kind of logic of master\slash slave works well when
-there are 2 \PLCs, but when there are more \PLCs, this centralised approach
-creates a single point of failure and as the master \PLC{} works as a hub, it
+The logic presented, using the master\slash slave approach, works well when
+there are 2 \PLCs. When there are more \PLCs, this centralised approach
+creates a single point of failure. Since master \PLC{} works as a hub, it
 increases the communication delay. When there are more than two \PLCs{} it is
 preferable to use a distributed approach as the one shown in
 \cite{antunesfloriano2019sincronizacao}.
@@ -1005,19 +1003,16 @@ preferable to use a distributed approach as the one shown in
 \section{Identification}
 \label{sec:identification}
 
-Once the control is implemented and the system is working as it should, we
-arrive at the objective of this work, the identification of the system.
-As said in the introduction, this work is based on \cite{moreira2018enhanced}.
-In this article, a new model for \DES{} identification is proposed, called
-\glsreset{DAOCT}\DAOCT. This model was created with aim of fault detection based
-on the observation of the fault free behaviour of the system, as in the models
-proposed by 
-\cite{roth2009fdi} and \cite{klein2005fault}, but its use of paths increases the
+Once the control is implemented and the system is working as expected, the
+identification of the system can be carried out.
+In \cite{moreira2018enhanced}, a new model for \DES{} identification is proposed, called
+\glsreset{DAOCT}\DAOCT. This model is created with the aim of fault detection based
+on the observation of the fault free behaviour of the system, as in \cite{roth2009fdi} and \cite{klein2005fault}, but the use of path indices increases the
 efficiency for fault detection when compared with the latter articles.
 
-This fault free observation is made by the acquisition of the observable signals
+The fault free observation is made by acquiring the observable signals
 of the system (controller inputs and outputs) for a sufficiently long
-period of time while the system works normally. These signals can be seen on \autoref{fig:obsSignals}.
+period while the system works normally. Those signals can be seen on \autoref{fig:obsSignals}.
 
 \begin{figure}[H]
   \centering
@@ -1064,10 +1059,13 @@ period of time while the system works normally. These signals can be seen on \au
     \label{fig:obsSignals}
   \end{figure}
 
-First, we assume the controller have $m_i$ binary inputs, $i_h$, for $h=1,\dots,m_i$ and $m_o$ binary
-outputs, $o_h$, for $h=1,\dots,m_o$, and we create a Input\slash Output vector called $\mathbf{u}$, that varies with
-time:
-
+  First, we assume the controller has $m_i$ binary inputs
+  % , $i_h$, for $h=1,\dots,m_i$
+  and $m_o$ binary outputs.
+  % ,
+  % $o_h$, for $h=1,\dots,m_o$,
+  We create an Input\slash Output vector called $\mathbf{u}$ as follows:
+  
 \begin{equation*}
 \mathbf{u}(t_1)=
 \begin{bmatrix}
@@ -1080,15 +1078,19 @@ time:
 \end{bmatrix}^T
 \end{equation*}
 \newcommand{\vu}{\mathbf{u}}
- This vector $\mathbf{u}(t)$ represents the status of the system in a instant
- $t$. In the \DAOCT model, only untimed system models are considered, thus
- the status of the system can only be modified via system events, $\sigma$. To
- reduce the size of the notation $\mathbf{u}(t)$ is going to be represented as $\vu_t$. The
- transition between status in $t_i$ and $t_j$ is represented as ($\vu_i,\sigma,\vu_j$). If we have a sequence of
- $l$ input\slash output vectors, we have an observed path of the system,
+ Vector $\mathbf{u}(t)$ represents the status of the system in an instant
+ $t$. In the \DAOCT{} model, only untimed system models are considered, thus
+ the status of the system can only be modified via system events, $\sigma$.
+The vector $\mathbf{u}(t)$ is also represented as $\vu_t$.
+ The
+ transition between status in $t_i$ and $t_j$ is represented as
+ ($\vu_i,\sigma,\vu_j$).
+ If a sequence of
+ $l$ input\slash output vectors is observed, then the observed path of the
+ system is
  $p=(\vu_1,\sigma_1,\vu_2,\sigma_2,\dots,\sigma_{l-1},\vu_l)$.
-So, if we observe multiple paths meanwhile our observation process, we can
-create multiple paths
+So, if we observe multiple paths in the observation process, 
+multiple paths can be created
 $p_i=(\vu_{i,1},\sigma_{i,1},\vu_{i,2},\sigma_{i,2},\dots,\sigma_{i,l_i-1},\vu_{i,l_i})$,
 for $i=1,\dots,r$, where $r$ is the number of observed paths, and $l_i$ is the
 number of vertices in each path $p_i$.
@@ -1096,13 +1098,12 @@ number of vertices in each path $p_i$.
 Supposing that all paths begin with the same I\slash O vector, that means, all
 observations begin from the same status, it is possible to associate to each
 path $p_i$ a sequence of events and a sequence of I\slash O vectors, called,
-$s_i$ and $\omega_i$, and they are defined as:
+$s_i$ and $\omega_i$, defined as:
 \begin{align*}
   s_i&= \sigma_{i,1}\sigma_{i,2}\dots\sigma_{i,l_i-1} \\
   \omega_i&= \vu_{i,1}\vu_{i,2}\dots\vu_{i,l_i}
 \end{align*}
-Using these observed sequences of events $s_i$, we can define a language
-, called observed language, $L_{Obs}$:
+From the observed sequences of events $s_i$, we can define a language, called observed language, $L_{Obs}$:
 
 \begin{equation}
   L_{Obs}:= \bigcup^r_{i=1}\overline{\{s_i\}}
@@ -1112,61 +1113,73 @@ If any sequence $s_i$ is the prefix of another sequence $s_j$, the path $p_i$ sh
 be discarded, along with $s_i$ and $\omega_i$, since it does not present any new
 information for the identification process.
 \end{observation}
-The objective of identification is to find a model with a language that
-can simulate this observed language. This language of the identified model is
+The objective of identification is to find a model that
+can simulate the observed language. The language of the identified model is
 called $L_{Iden}$.
-We can describe this relation between these languages as $L_{Obs} \subseteq
+We can describe the relation between these languages as $L_{Obs} \subseteq
 L_{Iden}$.
-As said in
-\cite{moreira2018enhanced}, in finite time only part of the sequences  of events
-the system can generate are observed. So we can define a language $L_{Orig}$,
-the original language generated by the system, that we is never known.
+In
+\cite{moreira2018enhanced}, it is shown that in finite time only part of the
+sequences of events that
+the system can generate are observed. So, we can define the never-known language $L_{Orig}$,
+the original language generated by the system.
 
-From $L_{Orig}$ and $L_{Iden}$, we can define another language, an exceeding
-language $L_{Exc}$, that is, part of the identified language that is not present in the
+From $L_{Orig}$ and $L_{Iden}$, another language can be defined, an exceeding
+language $L_{Exc}$. The exceeding language represents the part of the identified language that is not presented in the
 original language, $L_{Exc}=L_{Iden}\backslash L_{Orig}$.  The
-relation between $l_{Orig}$ and $l_{Obs}$ is $L_{Obs} \subset L_{Orig}$. And from
-these two languages we can define another language $L_{OrigNI}$, part of the
-original language that was not identified, $L_{OrigNI}=L_{Orig}\backslash L_{Iden}$
-The relation between all these languages is shown in \autoref{fig:languagesVenn}.
+relation between $L_{Orig}$ and $L_{Obs}$ is $L_{Obs} \subset L_{Orig}$.
+And from
+$L_{Orig}$ and $L_{Iden}$, $L_{OrigNI}$ can be defined. $L_{OrigNI}$
+represents the part of the
+original language that is not identified, $L_{OrigNI}=L_{Orig}\backslash L_{Iden}$.
+The relation between all languages presented is shown in \autoref{fig:languagesVenn}.
 
 \usetikzlibrary{patterns}
 \begin{figure}[H]
-  \centering \includegraphics[width=0.5\textwidth]{vennDiagramLanguages.tikz}
-  \caption{Venn diagram showing the relation between $L_{Orig}$, $L_{OrigNI}$,
+  \centering
+  % \sbox0{
+    \includegraphics[width=0.5\textwidth]{vennDiagramLanguages.tikz}
+  % }
+  % \begin{minipage}{1.1\wd0}
+  % \centering
+   % \usebox0
+  \caption{Relation between $L_{Orig}$, $L_{OrigNI}$,
     $L_{Obs}$, $L_{Exc}$ and $L_{Iden}$}.
+  
   \label{fig:languagesVenn}
+ % \end{minipage}
 \end{figure}
-As $L_{Exc}$ represents a part of the identified language that is not part of
+As $L_{Exc}$ represents the part of the identified language that is not in
 the original language, some faulty sequences will not be detected, as they are
 part of the identified language. So in order to reduce the number of these non
-detected faults, $L_{Exc}$ should have a cardinality as close to $0$ as it is
-possible, this is possible by creating identification models that generate
-smaller $L_{Exc}$.
+detected faults, $L_{Exc}$ should have a cardinality as close to $0$ as 
+possible.
+% Reducing the cardinality of $L_{Exc}$ is possible by creating identification models that generate smaller $L_{Exc}$.
 
-And as $L_{OrigNI}$ represents the part of the original system that was not
-identified, that means some sequences present on the fault-free behaviour of the
-system will be detected as faults, generating false alarms. This language should
+As $L_{OrigNI}$ represents the part of the original system that is not
+identified, some sequences in the fault-free behaviour of the
+system will be detected as faults, generating false alarms. $L_{OrigNI}$ must
 also be reduced, so the false alarms generated are reduced. As the original
-language of the system is never known, it is very difficult to know for sure if
+language of the system is never-known, it is very difficult to estimate if
 $L_{OrigNI}$ is small or not. \cite{klein2005fault} show that if a system is
 observed for a sufficiently long time, there exists a number $n_0\in \mathbb{N}$
 such that $L_{Orig}^{\leq n_0}\backslash L_{Obs}^{\leq n_0}\approx \emptyset$,
 where $L_{Orig}^{\leq n_0}$ and $L_{Obs}^{\leq n_0}$ denote the languages formed
-by all sequences of events of length smaller than or equal to $n_0$ of
-$L_{Orig}$ and $L_{Orig}$. Since $L_{Obs}\subseteq L_{Iden}$, $L_{OrigNI}^{\leq
+of all sequences of events of length smaller than or equal to $n_0$ of
+$L_{Orig}$ and $L_{Orig}$, respectively. Since $L_{Obs}\subseteq L_{Iden}$, $L_{OrigNI}^{\leq
   n_0}$ is also approximately the empty set.
 
 In this work we assume that all
 sequences of events that have length $n_0+1$ were observed, thus
-$L_{OrigNI}^{\leq n_0}=\emptyset$. So it leaves to the identification model the
-sole problem of reducing the language $L_{Exc}^{\leq n_0}$ and $L_{Exc}$ consequentially.
-
+$L_{OrigNI}^{\leq n_0}=\emptyset$.
+Thus, the identified model must reduce the language $L_{Exc}^{\leq n_0}$.
+% Thus, the remaining identification problem is reducing the language
+% $L_{Exc}^{\leq n_0}$ and consequentially $L_{Exc}$.
+\newpage
 \subsection{DAOCT}
 In this subsection the modified automaton model proposed by
-\cite{moreira2018enhanced} will be explained and the algorithm to construct it
-by the observed paths $p_i$ will be described. 
-The definition of the automaton is the following:
+\cite{moreira2018enhanced} is explained and the algorithm to construct it
+by the observed paths $p_i$ is described. 
 \begin{definition}[DAOCT]
   \label{def:daoct}~\\
   A Deterministic Automaton, denoted by DAOCT, is a nine-tuple
@@ -1184,21 +1197,18 @@ The definition of the automaton is the following:
   \indent $X_f \subseteq X $ is the set of \textbf{final states}
 \end{definition}
 
-The sets of events and I\slash O vectors of each path $p_i$ are denoted $\Sigma_i$
-and $\Omega_i$. Thus $\Sigma$ and $\Omega$ can be calculated by the union of
-this sets: $\Sigma=\bigcup_{i=1}^r\Sigma_i$ and
+The sets of events and I\slash O vectors of each path $p_i$ are denoted by $\Sigma_i$
+and $\Omega_i$. Thus, $\Sigma$ and $\Omega$ can be calculated by the union of
+these sets: $\Sigma=\bigcup_{i=1}^r\Sigma_i$ and
 $\Omega=\bigcup_{i=1}^r\Omega_i$.
-From the vertices of the paths $p_i$, the I\slash O vectors, the states of the model are extracted.
-Each vertex is chosen as a new state. But depending on the system, the vertices
-can be repeated in different paths and even in the same path, so a kind of
-memory of the past I\slash O vectors can be interesting to differentiate them,
-that means, taking them as different status of the system. This kind of memory
-is presented on the form of a sequence of I\slash O vectors that stores a
-certain number of the past ones. To determine the number of vectors stored in this sequence an
-arbitrary variable $k$, a free parameter, is created. 
-The modified paths created by substituting the vertices for these sequences of
-I\slash O vectors are
-denoted $p_i^k$ and are defined as follows:
+The states of the model are obtained from the vertices of the paths $p_i$, the I\slash O vectors.
+Each vertex is chosen as a new state.
+% But depending on the system, the vertices can be repeated in different paths and even in the same path, so a kind of memory of the past I\slash O vectors can be interesting to differentiate them, that means, taking them as different status of the system.
+In some systems, certain I\slash O vectors are repeated in the same path, but with different preceding vectors.
+In order to differentiate these vectors, its preceding vectors are stored in a sequence of I\slash O vectors.
+% This kind of memory is presented on the form of a sequence of I\slash O vectors that stores a certain number of the past ones.
+To determine the number of vectors stored in this sequence a free parameter $k$ is used. 
+The modified paths created by substituting the vertices for these sequences of I\slash O vectors are denoted $p_i^k$ and are defined as follows:
 \begin{equation}
   \label{eq:modifiedPath}
  p_i^k= (y_{i,1},\sigma_{i,1},y_{i,2},\sigma_{i,2},\dots,\sigma_{i,l_1-1},y_{i,l_i}) 
@@ -1211,7 +1221,7 @@ y_{i,j}=\begin{cases}
     (\vu_{i,1},\dots,\vu_{i,j}),  & \quad \text{if } j<k
   \end{cases}
 \end{equation}
-
+\newline
 \begin{observation}
 Depending on the choice of the value of $k$, some characteristics can be
 observed on $p_i^k$. For instance, if $k=1$, $p_i^k=p_i$. And if $k$ is equal to
@@ -1219,22 +1229,22 @@ the larger $l_i$, then all $y_{i,l_i}$ are composed of all vertices of its
 corresponding path $p_i$.
 \end{observation}
 
-As an example of the computation of the paths $p_i^k$, we can take the observation of the following
-paths, from \cite{moreira2018enhanced}:
 \setlength\arraycolsep{2pt}
+As an example of the computation of the paths $p_i^k$, let us consider the following
+paths, \citep{moreira2018enhanced}:
 \begin{align*}
   p_1&= \left(\colvec{1\\0\\0},a,\colvec{1\\1\\0},b,\colvec{0\\1\\1},c,\colvec{0\\0\\0},d,\colvec{0\\0\\1},e,\colvec{1\\0\\0}\right) \\
   p_2&= \left(\colvec{1\\0\\0},g,\colvec{0\\0\\0},h,\colvec{1\\1\\0},b,\colvec{0\\1\\1},c,\colvec{0\\0\\0},i,\colvec{1\\0\\0},j,\colvec{0\\1\\1},l,\colvec{1\\0\\0}\right) \\
   p_3&= \left(\colvec{1\\0\\0},g,\colvec{0\\0\\0},h,\colvec{1\\1\\0},b,\colvec{0\\1\\1},i,\colvec{1\\1\\1},m,\colvec{0\\0\\0},d,\colvec{0\\0\\1},n,\colvec{1\\1\\0}\right) \\
 \end{align*}
 The events of each path is associated with the rising or the falling edges of
-the controller signals. The event $a$ represents the rising edge of the second
-controller signal, that is $a=\uparrow$2 and the event $l$ the rising edge of the first
+the controller signals. Event $a$ represents the rising edge of the second
+controller signal, that is $a=\uparrow$2 and event $l$ the rising edge of the first
 controller signal and the falling edge of the second
 and third controller signals, $l=\uparrow$1$\downarrow$2$\downarrow$3.
 
-As said, for $k=1$, $p_i^k=p_i$, so in order to better illustrate the
-construction of $p_i^k$, we choose $k=2$. Using \Autoref{eq:modifiedPath,eq:modifiedPathb} we can
+Since $p_i^k=p_i$, for $k=1$, in order to better illustrate the
+construction of $p_i^k$, $k=2$ is chosen. Using \Autoref{eq:modifiedPath,eq:modifiedPathb} we can
 obtain the following modified paths: 
 \begin{align*}
   p_1^2&= \left(\colvec{1\\0\\0},a,\colvec{1&1\\0&1\\0&0},b,\colvec{1&0\\1&1\\0&1},c,\colvec{0&0\\1&0\\1&0},d,\colvec{0&0\\0&0\\0&1},e,\colvec{0&1\\0&0\\0&0}\right) \\
@@ -1242,20 +1252,19 @@ obtain the following modified paths:
   p_3^2&= \left(\colvec{1\\0\\0},g,\colvec{1&0\\0&0\\0&0},h,\colvec{0&1\\0&1\\0&0},b,\colvec{1&0\\1&1\\0&1},i,\colvec{0&1\\1&1\\1&1},m,\colvec{1&0\\1&0\\1&0},d,\colvec{0&0\\0&0\\0&1},n,\colvec{0&1\\0&1\\1&0}\right) \\
 \end{align*}
 
-As we can see, comparing the vertices from $p_i$ with the vertices from $p_i^k$,
-the number of unique vertices from the latter is greater than the number from the former.
+% As we can see, comparing the vertices from $p_i$ with the vertices from $p_i^k$,
+% the number of unique vertices from the latter is greater than the number from the former.
 
-As presented, the states of the system are extracted from these vertices, in order to
-do so a labelling function is defined, denoted $\tilde{\lambda}$, which
-definition is $\tilde{\lambda}:X\rightarrow \Omega^k$. Where $\Omega^k$ is
-formed by all sequences of $\Omega$ of length smaller than or equal to $k$. This
+The states of the system are obtained from these vertices. In order to
+do so, the labelling function is defined, $\tilde{\lambda}:X\rightarrow \Omega^k$. Where $\Omega^k$ is
+composed of all sequences of $\Omega$ of length smaller than or equal to $k$. This
 function $\tilde{\lambda}$ associates a sequence of I\slash O vectors $\omega^k
-\in \Omega^k$ to each state $x \in X$. And we can denote $\tilde{\lambda_l}(x)$
+\in \Omega^k$ to each state $x \in X$. Let us denote $\tilde{\lambda_l}(x)$
 as the last vector of $\tilde{\lambda}(x)$.
-
 These functions are used in the
-identification algorithm of the \DAOCT{} model. This identification algorithm, adapted from
-\cite{moreira2018enhanced}, is presented in algorithm \ref{alg:identification}.
+identification algorithm of the \DAOCT{} model.
+% This identification algorithm, adapted from
+% \cite{moreira2018enhanced}, is presented in algorithm \ref{alg:identification}.
 
 
 \vspace{1cm}
@@ -1292,9 +1301,11 @@ identification algorithm of the \DAOCT{} model. This identification algorithm, a
 
 \vspace{1cm}
 
-Feeding the paths modified paths $p_1^1,p_2^1,p_3^1$, that are equal to the
-normal paths $p_1,p_2,p_3$, and the paths $p_1^2,p_2^2,p_3^2$ to \Autoref{alg:identification}, two models are identified, one for $k=1$ and another for
-$k=2$, their state transition diagrams are represented in \Autoref{fig:examplek1,fig:examplek2} respectively. 
+Using the modified paths $p_1^1,p_2^1,p_3^1$,
+% that are equal to the normal paths $p_1,p_2,p_3$,
+and $p_1^2,p_2^2,p_3^2$ as inputs of \Autoref{alg:identification}, two models can be identified, one for $k=1$ and another for
+$k=2$.
+The state transition diagrams for the identified models are represented in \Autoref{fig:examplek1,fig:examplek2} respectively. 
 
 \begin{figure}[H]
   \centering \includegraphics[width=\textwidth]{automata/daoct/example.tikz}
@@ -1311,21 +1322,18 @@ $k=2$, their state transition diagrams are represented in \Autoref{fig:examplek1
   \label{fig:examplek2}
 \end{figure}
 
-As expected, with a greater value of $k$, more states are identified, since the
-number of unique vertices increases with $k$.
+As expected, with a greater value of $k$, more states are created in the
+identification process.
 
-One thing that can be noted in those state transition diagrams is that the
-resulting set
-of the path estimation function $\theta$ of each transition is represented
+The path estimation function $\theta$ of each transition is represented
 besides the corresponding event of that transition. That is made with the
 purpose of showing the ``conditional transitions'' part of the \DAOCT{} model. A
 transition is enabled and can occur if and only if all previous transitions are
 associated to the same path. To summarise this in mathematical language it is
 needed to expand the domain of function $\theta$ to consider sequence of events,
-instead of only an event. This new estimation function will be denoted as
-$\theta_s : X \times \Sigma^\star \rightarrow 2^R$. And it is defined
+instead of only one event. This new estimation function will be denoted as
+$\theta_s : X \times \Sigma^\star \rightarrow 2^R$, and it is defined
 recursively as:
-
 \begin{align}
   \theta_s(x,\epsilon)&=R,\nonumber\\
   \theta_s(x,s\sigma)&=
@@ -1336,15 +1344,13 @@ recursively as:
 \end{align}
 Where ! denotes \emph{is defined}.
 
-And once this function is defined we can describe the language generated by this
-identified model:
+The language generated by the identified \DAOCT{} model is given by:
 \begin{align}
   L(DAOCT)&:=\{s \in \Sigma^\star : f(x_0,s)! \wedge \theta_s(x_0,s)\neq \emptyset \}
 \end{align}
 
-From a similar way it is possible to define the language formed by all
+Using a similar logic, it is possible to define the language formed of all
 subsequences of events of length $n$ generated by the identified model:
-
 \begin{align}
   L_S^n(DAOCT)&:=\{s \in \Sigma^\star : (|s| = n)\left[\exists x_i \in X,f(x_i,s)! \wedge \theta_s(x_i,s)\neq \emptyset \right]\}
 \end{align}
@@ -1358,9 +1364,9 @@ L_{Orig}^{\leq n}$.
 \begin{align}
   L^{\leq n}(DAOCT)&:=\left( \bigcup_{i=0}^n L_S^i(DAOCT) \right)\cap L(DAOCT)
 \end{align}
-As we assumed that all sequences of events that have length $n_0+1$ were
-observed, then $L_{Orig}^{\leq n_0}\approx L_{Orig}^{\leq n_0}$. If $n\leq n_0$,
-then $L_{Orig}^{\leq n}\approx L_{Orig}^{\leq n}$, and $L_{Exc}^{\leq n}=L^{\leq n}(DAOCT)\backslash
+Assuming all sequences of events that have length $n_0+1$ have been
+observed, then $L_{Orig}^{\leq n_0}\approx L_{Obs}^{\leq n_0}$. If $n\leq n_0$,
+then $L_{Orig}^{\leq n}\approx L_{Obs}^{\leq n}$. Thus, $L_{Exc}^{\leq n}=L^{\leq n}(DAOCT)\backslash
 L_{Obs}^{\leq n}$, and this formula will be used to calculate $L_{Exc}^{\leq n}$
 throughout this work. 
 %%% Local Variables:

@@ -6,7 +6,7 @@
 \usepackage{graphicx}
 \usepackage{pax}
 \usepackage{tikzscale}
-
+\usepackage[titletoc]{appendix}
 \usepackage{pgfplots}
 \pgfplotsset{compat=newest}
 \usepgfplotslibrary{groupplots}
@@ -195,7 +195,7 @@
 \newtheorem{definition}{Definition}
 \numberwithin{definition}{chapter}
 
-\newtheorem{observation}{N.B.}
+\newtheorem{observation}{Remark}
 \numberwithin{observation}{chapter}
 
 \usepackage[export]{adjustbox}
@@ -260,6 +260,10 @@
 
 \newcolumntype{P}[1]{>{\centering\arraybackslash}p{#1}}
 \newcolumntype{M}[1]{>{\centering\arraybackslash}m{#1}}
+\definecolor{keywordstyle}{rgb}{0,0,0.82}
+\definecolor{commentstyle}{rgb}{0,0.6,0}
+\definecolor{numberstyle}{rgb}{0.5,0.5,0.5}
+\definecolor{stringstyle}{rgb}{0.58,0,0.82}
 
 % Listing options
 \lstset{ 
