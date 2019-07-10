@@ -7,8 +7,8 @@
 \makelosymbols
 \makeloabbreviations
 
-% \final
-\draft
+\final
+% \draft
 
 
 \signedFrontPage{../../figures/poli-logo.pdf}
@@ -27,7 +27,7 @@
 \date{04}{2019}
 \keyword{Discrete~Event~Systems}
 \keyword{Identification}
-\keyword{Failure~Detection}
+\keyword{Fault~Detection}
 
 
 
@@ -37,35 +37,35 @@
 
 \tikzset{every node/.style={align=center}}
 
+
 % include only to speed up tests
 \includeonly{
-  % test/examples
-  % ,
-  % mainMatter/introduction
-  % ,
-  % mainMatter/background
-  % ,
-  % mainMatter/system
-  % ,
+%   % test/examples
+%   % ,
+  mainMatter/introduction
+  ,
+  mainMatter/background
+  ,
+  mainMatter/system
+  ,
   mainMatter/control
-  % ,
-  % mainMatter/identification
-  % 
-  % mainMatter/results
-  % ,
-  % mainMatter/conclusion
-  % ,
-  % appendices/complete
+  ,
+  mainMatter/identification
+  ,  
+  mainMatter/results
+  ,
+  mainMatter/conclusion
+  ,
+  appendices/complete
   % ,
   % appendices/automataf
-  % ,
-  % appendices/tools
+  ,
+  appendices/tools
 }
 \begin{document}
 
 \input{glossaires_et_symb}
-% \input{frontMatter/frontMatter}
-\mainmatter
+\input{frontMatter/frontMatter} \mainmatter
 % \include{test/examples}
 
 \include{mainMatter/introduction}
@@ -78,11 +78,13 @@
 \backmatter
 
 \bibliographystyle{coppe-unsrt-en}
-\nocite{*}
+% \nocite{*}
 \bibliography{bibliography}
-
+\newpage
 \appendix
+% \begin{appendices}
 \include{appendices/complete}
 % \include{appendices/automataf}
 \include{appendices/tools}
+% \end{appendices}
 \end{document}

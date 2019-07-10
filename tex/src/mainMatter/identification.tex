@@ -6,7 +6,7 @@ explained. This identification process can be divided in two parts: the data acq
   acquired, and the model identification, where the acquired data is
   used in the identification algorithm, \Autoref{alg:identification}, and the
   identified model is generated.
-  
+ 
 In the next sections these two parts will be described.
 
 \section{Data Acquisition}
@@ -17,7 +17,7 @@ and registered in batches from time to time.
 The first one is usually used for online processes, where the continuous flow of
 information is necessary, and processes that are repeated
 extensively. Examples of these processes are control loops and fault
-detection modules. On the other hand, the second one usually is used for offline
+detection modules. On the other hand, the second one is usually used for offline
 processes, processes that are computationally expensive and sporadic processes.
 An example of such processes can be modelling a big system, what can be a
 resource-intensive task.
@@ -27,7 +27,8 @@ acquired beforehand. The data can
 be acquired in batches, and once all the data is collected, the algorithm can be
 executed.
 
-The most straightforward way to obtain the data from a Siemens \PLC{} is by using datalogs. The Siemens \PLC{} S7-1500 includes function blocks to
+The most straightforward way to obtain the data from a Siemens \PLC{} is by
+using data logs. The Siemens \PLC{} S7-1500 includes function blocks to
 use inside a \LD{} to store custom data in a \CSV{} formatted file. This file is
 saved in a SD card. In order to download this file to a computer, the SD card can be connected to a PC,
 or the file can be downloaded using a web browser, if a Web Server is configured in the
@@ -114,7 +115,7 @@ The actions performed by these blocks are: Create the \verb|.csv| file, open the
 file to be written, write data to the file, close the file, and delete the file. 
 The inputs and outputs of these blocks are used to determine the information
 about the \verb|.csv| file and the data to be stored.
-% Most of inputs and outputs of the presented blocks are similar.
+% Most of the inputs and outputs of the presented blocks are similar.
 So, the function
 of these inputs and
 outputs will be presented in the following paragraphs.
@@ -148,7 +149,7 @@ is not.
 
 The outputs \verb|DONE|, \verb|BUSY|, \verb|ERROR| and \verb|STATUS| are not used
 in this work, but they can be used to identify the status of the action to be
-performed. The status of each datalog function block can be the following: the action is being
+performed. The status of each data log function block can be the following: the action is being
 performed (BUSY), the action is done (DONE) or an error occurred (ERROR). Each
 status has its corresponding boolean output. If an error occurred, \verb|STATUS| outputs
 a code to identify the error. This code is used for troubleshooting
@@ -172,7 +173,8 @@ boolean variables. One restriction to the storage of these vectors is that there
 must not be two consecutive vectors with the same data.
 
 In order to achieve the needs of the project, a
-function block was created to be used in the \LD. This new function block uses the datalog function blocks from \Crefrange{fig:datalogcreate}{fig:datalogdelete} and some additional logic. This function block is called \emph{LOGDATA}, and it is
+function block was created to be used in the \LD. This new function block uses
+the data log function blocks from \Crefrange{fig:datalogcreate}{fig:datalogdelete} and some additional logic. This function block is called \emph{LOGDATA}, and it is
 depicted in
 \Autoref{fig:logdataBlock}.
 \begin{figure}[H] \centering
@@ -196,13 +198,14 @@ changed from inside the block via an update block.
 
 \verb|IOVEC| is also an input that is changed from inside the block. It
 is used as a buffer for the vectors. The data of this buffer is periodically copied to the variable connected to the
-\verb|DATA| input. \verb|DATA|, in turn, is internally connected to the \verb|DATA| input of the datalog function blocks. 
+\verb|DATA| input. \verb|DATA|, in turn, is internally connected to the
+\verb|DATA| input of the data log function blocks. 
 
 Instead of writing the tags of the variables in the \verb|HEADER| input string, a \verb|DATA_HEADERS| input is created.
 An array of strings of size \verb|IOVECSIZE| is created and connected to \verb|DATA_HEADERS|. This array contains the tags of all variables to be
 stored in \verb|DATA|. The contents of the array are concatenated with
 commas placed between them, and a new string is created. This new string is assigned to the variable
-\emph{header}, connected to the \verb|HEADER| of the datalog function blocks. 
+\emph{header}, connected to the \verb|HEADER| of the data log function blocks. 
 
 An example of the data stored in this work can be seen in
 \Autoref{fig:exampleDataStruct}. In this figure is possible to notice that the data structure is composed of variables whose tags are shown
@@ -215,8 +218,8 @@ in \Autoref{sec:implementation}.
 The code inside the \verb|LOGDATA| block uses the following logic.
 First the value of \verb|AcqValuesNew| is copied to \verb|AcqValuesPrev|. Then \verb|AcqValuesNew| is updated with the values of the inputs\slash outputs of the controller. After that, \verb|AcqValuesNew| and \verb|AcqValuesPrev| are compared and if they differ, \verb|AcqValuesNew| is prepared to be stored.
 Once the data is prepared, it is stored in the file. 
-The last step, storage in the file, is made using the datalog function blocks depicted in
-\Crefrange{fig:datalogcreate}{fig:datalogdelete}. The other steps  will be shown
+The last step, storage in the file, is made using the data log function blocks depicted in
+\Crefrange{fig:datalogcreate}{fig:datalogdelete}. The other steps will be shown
 in the next paragraphs.
 
 The copy of the values from the \verb|AcqValuesNew| array is made by using the \mbox{\emph{MOVE\_BLK}} function block present in the Siemens \PLC. 
@@ -267,11 +270,11 @@ variable \verb|IOVEC| is copied to \verb|DATA|. The copy is carried out by using
 
 \begin{observation}
   Since the tags are divided between the 2 \PLCs{}, in order to have all tags in
-  a same \PLC, ``Get'' and ``Put'' blocks were used. Two Datablocks
+  a same \PLC, ``Get'' and ``Put'' blocks were used. Two Data blocks
   are used to store the inputs and outputs of the Handling-Assembly-Storage \PLC{} and send\slash receive data using those function blocks.
   % One datablock is used to send the data to other PLC and another to receive.
-  Each datablock is located in a different \PLC.
-  The aspect of these datablocks can be seen in \Autoref{fig:iovecFromPlc,fig:iovecFromPlctwo}
+ Each data block is located in a different \PLC.
+ The aspect of these data blocks can be seen in \Autoref{fig:iovecFromPlc,fig:iovecFromPlctwo}
 \end{observation}
 \begin{figure}[H] \centering
 \begin{subfigure}[h]{\textwidth} \centering

@@ -14,7 +14,7 @@ to identify a didactic manufacturing system.
 % acquisition , from its conception.
 
 Through the process of preparation of the methodology and tools, some issues
-were found and they are compiled in this chapter. Some
+were found, and they are compiled in this chapter. Some
 workarounds are proposed as new approaches to solve these issues in future works.
 
 \section{Concluding Remarks}
@@ -22,11 +22,11 @@ workarounds are proposed as new approaches to solve these issues in future works
 So, in this work we could see the methodology to control, observe and identify a
 \DES{}. First, the control logic was created using a \CIPN, and then implemented
 in \LD{} to be used in a Siemens \PLC{} (\Autoref{cha:control}). After this, the observation of its
-inputs\slash outputs was made using datalog function blocks that saved the data in
+inputs\slash outputs was made using data log function blocks that saved the data in
 \verb|.csv| files, and finally these \verb|.csv| files were input in the
 identification algorithm generating a \DAOCT{} model (\Autoref{cha:ident}). In
 \Autoref{cha:results} we could see that if the system was observed for a long
-time and the initial state of observation was well chosen, then the \DAOCT{} is
+time and the initial state of observation was well-chosen, then the \DAOCT{} is
 a good candidate for modelling, if the aim of this modelling is fault-detection.
 The fact that the exceeding language of the \DAOCT{} model drops to $0$ more
 rapidly than other models, with a smaller value of the variable $k$, proves that it is less resource intensive than the
@@ -39,20 +39,20 @@ An issue found in the implementation of the control is the use of \LD{} to
 program the logic. Although \LD{} is very used
 in the industry, as it is a visual language, it creates a difficulty for the
 automation of the conversion from Petri net. An approach that can be used in
-future works would be to represent the Petri net in a text format, petri net
+future works would be to represent the Petri net in a text format, Petri net
 markup language for instance (presented in \cite{weber2003petri}), and create a
 tool that automatically converts this file to a text based language standardised
 by the IEC 61131-1, \IL{} or \ST{}. Since \IL{} is less and less used, \ST{}
 would be the logical choice. Using a text based language increases portability
 of the code and it helps the development, since version control can be used in
 text files, allowing the collaboration of multiple people to edit the code if
-needed, and track who made the changes and when, increasing the maintenability
+needed, and track who made the changes and when, increasing the maintainability
 of the code.
 
 
 
 Another issue was about the observation. Although the acquisition of
-inputs\slash outputs using datalogs and saving the data in batches on
+inputs\slash outputs using data logs and saving the data in batches on
 \verb|.csv| files can be used for the identification process, for
 fault-detection it is not optimal to use this approach, a better one would be to
 acquire the data in real time, by using some API, snap7 for example, or using
@@ -72,12 +72,12 @@ one using the observation of the complete system.
 Another issue shown in \Autoref{cha:results}, is the choice of the first
 vector to be used as initial state in the identification algorithm. Here we
 propose for future works a study on how to find the optimal vector. Two
-scenarios could be considered: the first one taking a grey box approach, where some of the behaviour
+scenarios could be considered: the first one taking a grey box approach, where some behaviour
 is previously known, by a simple description of the function of the system and another considering a black box approach.
 
 Another proposition for a future work is made in \Autoref{cha:results}. Instead
 of using an identification model based on the observation of inputs\slash
-outputs of the system, an alternative would be create and use a model that uses the observation of
+outputs of the system, an alternative would be to create and use a model that uses the observation of
 the events of the system.
 
 

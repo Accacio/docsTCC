@@ -4,7 +4,7 @@
 
 A \CIPN{} can be used to
 represent the control of the system, and then this Petri net can be converted
-into a \LD, with the aim of being implemented in a \PLC.So, this chapter will be
+into a \LD, with the aim of being implemented in a \PLC. So, this chapter will be
 divided in two parts: the first part to describe the logic of the control and
 its design using \CIPN, and the second part for the implementation in the \PLC.
 \section{Control Interpreted Petri net for the manufacturing system}
@@ -16,8 +16,7 @@ the store spaces of the \verb|Storage Unit|.
 The logic is divided in 10 modules:
  Initialization, Metal Cube half sorting, Plastic Cube half sorting, Arm From
  Conveyor Belt to Assembly Unit, Assembly Unit, Arm From Assembly Unit to
- Storage Unit, Storage Unit positioning (y axis), Storage Unit positioning (x
- axis), Cube Storage and Arm Stop Logic.
+ Storage Unit, Storage Unit positioning (y-axis), Storage Unit positioning (x-axis), Cube Storage and Arm Stop Logic.
 
 Each module will be briefly described in the next subsections, and their Petri
 Nets will be presented along with tables that describe the meaning of each place
@@ -25,7 +24,7 @@ and transition.
 
 \begin{observation}
   Each Petri net shown in this chapter is a section of a complete Petri net.
-  The complete one is presented in \Autoref{cha:CompletePetriNet}. The dotted
+ The complete one is presented in \Autoref{cha:CompletePetriNet}. The dotted
   places\slash transitions represent places\slash transitions that are part of
   other sections of the Petri net.
 %   In the
@@ -50,9 +49,10 @@ transitions and places can be seen in \Autoref{tab:initialTransitions,tab:initia
 \subsection{Metal Cube Half Sorting}
 This module serves to sort the cube halves stacked in MAG 1. The piece is
 extracted from the bottom of the stack to the conveyor belt, and the piece is
-transported by the belt to the identification part of the sorting unit. If the
-piece is made of metal with an upwards concavity the piece continues in the belt until it
-reaches the its end, waiting to be picked by the arm. Otherwise, the piece is
+transported by the belt to the identification part of the sorting unit. If it is
+a metallic
+piece with an upwards concavity the piece continues in the belt until it
+reaches the end of the belt, waiting to be picked by the arm. Otherwise, the piece is
 discarded using the sorting unit and the cycle recommences and stops only when
 a metallic piece is at the end of the belt.
 In order to recognize the orientation of the pieces (upwards or downwards), the
@@ -124,14 +124,14 @@ The corresponding Petri net and tables can be seen in
 This module sets the vertical position of the Storage Device. Once the cube is
 in the Storage Device, it is raised until the device is vertically aligned with the
 corresponding store space. The order of storage in the rack is from top to
-bottom, right to left.   
+bottom, right to left.  
 The corresponding Petri net and tables can be seen in
 \Autoref{fig:petriStorageY} and \Autoref{tab:storageYTransitions,tab:storageYPlaces}.
 \input{../../figures/petriNet/partial/storageYTransitions}
 \pagebreak
 \input{../../figures/petriNet/partial/storageYPlaces}
 \addtikzfigureLandscape{../../figures/petriNet/partial/storageY}
-{Petri net of storage unit positioning module (y axis).}
+{Petri net of storage unit positioning module (y-axis).}
 {petriStorageY}
 \subsection{Storage Unit Positioning (x Axis)}
 This module sets the horizontal position of the Storage Device. This module and
@@ -143,7 +143,7 @@ The corresponding Petri net and tables can be seen in
 \input{../../figures/petriNet/partial/storageXTransitions}
 \input{../../figures/petriNet/partial/storageXPlaces}
 \addtikzfigureLandscape{../../figures/petriNet/partial/storageX}
-{Petri net of storage unit positioning module (x axis).}
+{Petri net of storage unit positioning module (x-axis).}
 {petriStorageX}
 \subsection{Cube Storage}
 This module has the objective of storing the cube in the correct space with which the
