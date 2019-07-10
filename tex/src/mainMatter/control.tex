@@ -1,13 +1,13 @@
 
-\chapter{Control}
+\chapter{Control Logic}
 \label{cha:control}
 
-As shown in the \nameref{cha:background} chapter, a \CIPN{} can be used to
-represent the control of a system. This chapter will describe the logic of the
-control of the system depicted in \Autoref{cha:system} and its design using
-\CIPN{}. And after that the information needed to implement it in \LD.
-
-\section{Logic}
+A \CIPN{} can be used to
+represent the control of the system, and then this Petri net can be converted
+into a \LD, with the aim of being implemented in a \PLC.So, this chapter will be
+divided in two parts: the first part to describe the logic of the control and
+its design using \CIPN, and the second part for the implementation in the \PLC.
+\section{Control Interpreted Petri net for the manufacturing system}
 \label{sec:logic}
 The logic of the control is to use the 6 units presented in
 \Autoref{cha:system}, to assemble cubes made of a plastic half cube on top of a
@@ -23,15 +23,17 @@ Each module will be briefly described in the next subsections, and their Petri
 Nets will be presented along with tables that describe the meaning of each place
 and transition.
 
-% \begin{observation}
-%   Each Petri net shown in this chapter is a section of a complete Petri net.
-%   The complete one is presented in \Autoref{cha:CompletePetriNet}. As said
-% in \Autoref{cha:background} the dotted places\slash transitions represent places\slash transitions that are part of other sections of the Petri net. In the
+\begin{observation}
+  Each Petri net shown in this chapter is a section of a complete Petri net.
+  The complete one is presented in \Autoref{cha:CompletePetriNet}. The dotted
+  places\slash transitions represent places\slash transitions that are part of
+  other sections of the Petri net.
+%   In the
 % digital form of this work, it is possible to travel between figures by clicking
 % the name of the dotted places\slash transitions. By clicking in normal
 % places\slash transitions it is possible to travel between the figure and its
 % corresponding entry in the table that describes its meaning.
-% \end{observation}
+\end{observation}
 \subsection{Initialization}
 This module has as objective to make sure that all units are in order to begin
 the assembling process, that means, all variables used are reset, the arm is
@@ -50,8 +52,8 @@ This module serves to sort the cube halves stacked in MAG 1. The piece is
 extracted from the bottom of the stack to the conveyor belt, and the piece is
 transported by the belt to the identification part of the sorting unit. If the
 piece is made of metal with an upwards concavity the piece continues in the belt until it
-reaches the end of it, waiting to be picked by the arm, otherwise this piece is
-discharged using the sorting unit and the cycle recommences and stops only when
+reaches the its end, waiting to be picked by the arm. Otherwise, the piece is
+discarded using the sorting unit and the cycle recommences and stops only when
 a metallic piece is at the end of the belt.
 In order to recognize the orientation of the pieces (upwards or downwards), the
 distance sensor is combined with comparison blocks to create two variables
@@ -65,7 +67,7 @@ The corresponding Petri net and tables can be seen in
 {petriMetal}
 \subsection{Plastic Cube Half Sorting}
 This module is similar to its metallic counterpart. This module sorts the cube
-halves stacked in Mag 2 and instead of metal pieces with upwards concavity, this
+halves stacked in Mag 2. Instead of metal pieces with upwards concavity, this
 module accepts white plastic pieces with downwards concavity.
 The corresponding Petri net and tables can be seen in
 \Autoref{fig:petriPlastic} and \Autoref{tab:plasticTransitions,tab:plasticPlaces}.
@@ -76,8 +78,8 @@ The corresponding Petri net and tables can be seen in
 {petriPlastic}
 
 \subsection{Arm From Conveyor Belt to Assembly Unit}
-This module uses the manipulator to take a piece present at the end of the
-conveyor belt and puts it in the assembly holder of the Assembly Unit. It places
+This module uses the manipulator to remove a piece from the end of the
+conveyor belt and place it in the assembly holder of the Assembly Unit. It places
 a metal piece
 and then a plastic piece, so they can be assembled to form a cube using the press.
 The corresponding Petri net and tables can be seen in
@@ -106,9 +108,10 @@ The corresponding Petri net and tables can be seen in
 \subsection{Arm From Assembly Unit To Storage Unit}
 This module uses the arm to move the cube from the Assembly Unit Holder
 to the storage device of the Storage Unit. An additional encoder similar to \newline
-\verb|Storage Unit Horizontal Encoder| was placed just beside this same encoder, in order to
+\verb|Storage Unit Horizontal Encoder| was placed just beside this same encoder.
+In order to
 help the alignment of the arm with the Storage Device. This new encoder is called \newline
-\verb|Storage Unit Arm Alignment Encoder|, and is present in the logic of this module.
+\verb|Storage Unit Arm Alignment Encoder|, and is presented in the logic of this module.
 The corresponding Petri net and tables can be seen in
 \Autoref{fig:petriPress} and \Autoref{tab:armPressToStorageTransitions,tab:armPressToStoragePlaces}.
 \input{../../figures/petriNet/partial/armPressToStorageTransitions}
@@ -119,7 +122,7 @@ The corresponding Petri net and tables can be seen in
 {petriarmPressToStorage}
 \subsection{Storage Unit Positioning (y Axis)}
 This module sets the vertical position of the Storage Device. Once the cube is
-in the Storage Device, it is raised until the device is vertically aligned with
+in the Storage Device, it is raised until the device is vertically aligned with the
 corresponding store space. The order of storage in the rack is from top to
 bottom, right to left.   
 The corresponding Petri net and tables can be seen in
@@ -131,8 +134,8 @@ The corresponding Petri net and tables can be seen in
 {Petri net of storage unit positioning module (y axis).}
 {petriStorageY}
 \subsection{Storage Unit Positioning (x Axis)}
-This module sets the horizontal position of the Storage Device. IT happens
-simultaneously with the last module. Instead of raising the Storage Device, this
+This module sets the horizontal position of the Storage Device. This module and
+the last module occurs simultaneously. Instead of raising the Storage Device, this
 module makes it move from right to left until it is horizontally aligned with the
 corresponding store space.  
 The corresponding Petri net and tables can be seen in
@@ -143,7 +146,7 @@ The corresponding Petri net and tables can be seen in
 {Petri net of storage unit positioning module (x axis).}
 {petriStorageX}
 \subsection{Cube Storage}
-This module has as objective to store the cube in the store space with which the
+This module has the objective of storing the cube in the correct space with which the
 storage device is vertically and horizontally aligned. 
 The corresponding Petri net and tables can be seen in
 \Autoref{fig:petriStorePiece} and \Autoref{tab:storePieceTransitions,tab:storePiecePlaces}.
@@ -155,19 +158,23 @@ The corresponding Petri net and tables can be seen in
 {petriStorePiece}
 \subsection{Arm Stop Logic}
 Since the arm is controlled by \emph{single acting pneumatic cylinders}, if in any
-moment the inputs of these cylinders is powered off voluntarily or not, they are going to retract,
-and because of the layout of the system this can
-cause some incidents that can damage the arm. So, in order to prevent these
+moment the inputs of these cylinders is turned off voluntarily or not, they are
+going to retract, which can damage the arm. So, in order to prevent these
 kinds of
-accidents when the arm is powered off voluntarily, this module was created,
-turning the arm in a safe position before turning it off. With aim of stopping
-the system and consequentially the arm in any part of the process, a virtual button was created
-in the implementation phase. A transition with this button is created from every
-place in all other modules to the first place in this module, for organisation's
-sake all transitions are represented in the Petri net as the transition $t_{156}$.
+accidents this module was created.
+This module creates different behaviours for the turning off of the arm
+depending on the angle it is. 
+Each behaviour turns the arm to a safe position before retracting the cylinders.
+% With aim of stopping
+% the system and consequentially the arm in any part of the process, a virtual button was created
+% in the implementation phase.
+A transition is created from every
+place in all other modules to the first place in this module. This transition
+corresponds to the will of stopping the system and consequently the arm. For organisation's
+sake all those transitions are represented in the Petri net as the transition $t_{156}$.
 
 Some angles were chosen to divide the areas where the arm can be, and the
-rotation logic is different for each one of them. These can be seen in \Autoref{fig:armStopLogicAngles}.
+rotation logic is different for each one of them. These angles can be seen in \Autoref{fig:armStopLogicAngles}.
 \begin{figure}[H]
   \centering
   \begin{tikzpicture}
@@ -211,7 +218,7 @@ rotation logic is different for each one of them. These can be seen in \Autoref{
 The corresponding Petri net and tables can be seen in
 \Autoref{fig:petriStorePiece} and
 \Autoref{tab:storePieceTransitions,tab:storePiecePlaces}.
-\newline
+\newpage
 \input{../../figures/petriNet/partial/armStopLogicTransitions}
 \input{../../figures/petriNet/partial/armStopLogicPlaces}
 \addtikzfigureLandscape{../../figures/petriNet/partial/armStopLogic}
@@ -220,7 +227,7 @@ The corresponding Petri net and tables can be seen in
 
 \section{Implementation of the Control}
 \label{sec:implementation}
-As said in other chapters, the implementation of the control in this work be implemented using \PLCs{}. The units shown in \Autoref{cha:system} are
+The implementation of the control in this work is carried out using \PLCs{}. The units shown in \Autoref{cha:system} are
 divided in two groups. Each group is connected to a Siemens \PLC{} S7-1500, as
 the one shown in \Autoref{fig:plc}.
 
@@ -231,17 +238,17 @@ the one shown in \Autoref{fig:plc}.
   \label{fig:plc}
 \end{figure}
 
-The first \PLC{} was connected with both magazines,the conveyor belt and the
+The first \PLC{} is connected with both magazines,the conveyor belt and the
 sorting unit. As those units are used to select the kind of pieces, this \PLC{}
 is identified as Selection. In order to program the Ladder logic it is needed to
-create tags to represent every input and output, so in
+create tags to represent every input and output. In
 \Autoref{tab:plcSelectionInput,tab:plcSelectionOutput} we can see the
 correspondence between the name of the input\slash output, the address in which
 it is connected and the name of the tag created to represent it in the Ladder
 Logic.
 
 \input{../../tables/nomenclature/plc1}
-As said in \Autoref{cha:system}, the \verb|Distance Sensor| outputs an integer
+The \verb|Distance Sensor| outputs an integer
 so the variables \verb|ConcUP| and \verb|ConcDWN| were created using the
 following comparisons:
   \begin{align}
@@ -252,16 +259,16 @@ following comparisons:
   \end{align}
 
 The other units (Handling Unit, Assembly Unit and Storage Unit) are connected to
-the second \PLC, identified as Handling-Assembly-Storage. The
+the second \PLC, identified as Handling-Assembly-Storage. 
 \Autoref{tab:plcHandlingInput,tab:plcHandlingOutput} identify the addresses and
 tags for this \PLC.  
  
 \input{../../tables/nomenclature/plc2}
 
-To convert the \CIPN{} from the \Autoref{sec:logic} in to \LD{} the method
+To convert the \CIPN{} from \Autoref{sec:logic} into \LD{} the method
 presented in \Autoref{sec:cipnToLD} was used. And in order to implement the connection
 between the two \PLCs{} the method shown in \Autoref{sec:multiplePlcs} was used.
-In order to configure the ``Get'' and ``Put'' blocks and consequentially the
+In order to configure the ``Get'' and ``Put'' blocks and consequently the
 connection between the two \PLCs, the tutorials shown in
 section 3.4 of \cite{rochapereira2019automacao} was used.
 
