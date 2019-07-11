@@ -7,12 +7,12 @@ explained. This identification process can be divided in two parts: the data acq
   used in the identification algorithm, \Autoref{alg:identification}, and the
   identified model is generated.
  
-In the next sections these two parts will be described.
+In the next sections these two parts are described.
 
 \section{Data Acquisition}
 There are multiple ways to obtain the values of the
 inputs\slash outputs of a system. The data acquisition methods can be divided in two categories. In the first one,
-the data is continuously registered, and in the other the data is buffered
+the data is continuously registered, and in the second one the data is buffered
 and registered in batches from time to time.
 The first one is usually used for online processes, where the continuous flow of
 information is necessary, and processes that are repeated
@@ -37,7 +37,7 @@ or the file can be downloaded using a web browser, if a Web Server is configured
 The five function blocks used to log data are called
 \verb|DataLogCreate|,
 \verb|DataLogOpen|, \verb|DataLogWrite|, \verb|DataLogClose| and \verb|DataLogDelete|.
-These blocks are used in the \LD{} of \Autoref{fig:datalogcreate,fig:datalogopen,fig:datalogwrite,fig:datalogclose,fig:datalogdelete}.
+These blocks are shown in the \LD{} of \Autoref{fig:datalogcreate,fig:datalogopen,fig:datalogwrite,fig:datalogclose,fig:datalogdelete}.
 
 
 % \begin{figure}[H] \centering
@@ -331,12 +331,11 @@ Once the \verb|.csv| is downloaded to the PC, the paths can be obtained from the
 be executed. The acquisition of the paths and the identification algorithm, \Autoref{alg:identification}, were
 implemented in python.
 
-For the acquisition of the paths, since the identification is
-made using a black box approach, we do not have any previous information of what is
+Since the identification is
+performed by using a black box approach, we do not have any previous information of what is
 considered a path in the file. So, the first vector is considered as the initial
 vector, and every time it is repeated in the file another path is created.
-Once the paths are obtained they are modified using the
-\Autoref{eq:modifiedPath,eq:modifiedPathb}.
+Once the paths are obtained they are modified using \Autoref{eq:modifiedPath,eq:modifiedPathb}.
 
 A brief example of this method of path acquisition can be presented. Consider the observed data of the example shown in \Autoref{sec:identification}, is in the following
 \verb|.csv| file:
@@ -380,8 +379,9 @@ caused by the additional path in the identified model.
   \label{fig:identExamplektwo}
 \end{figure}
 
-The path acquisition method presented is used in the identification of the manufacturing system and its results are discussed in the next chapter. 
-The tools created to implement the path acquisition method and the identification algorithm are presented in \Autoref{sec:daoct}.
+The path acquisition method presented in this work is used in the identification of the manufacturing system and its results are discussed in the next chapter. 
+The tools created to implement the path acquisition method and the
+identification algorithm are presented in Appendix \ref{sec:daoct}.
 
 
 %%% Local Variables:

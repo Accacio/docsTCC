@@ -7,28 +7,25 @@
   \definecolor{fillcol}{rgb}{1.0,1.0,1.0};
   \pgfsetfillcolor{fillcol}
 \end{scope}
-  \coordinate (init) at (22.748bp,53.5bp);
-  \node (x2) at (222.0bp,91.5bp) [draw,circle, double,place, label=above:,rotate=0] {$x_{2}$};
-  \node (x3) at (145.5bp,53.5bp) [draw,,circle, label=above:,rotate=0] {$x_{3}$};
-  \node (x0) at (73.496bp,53.5bp) [draw,,circle, label=above:,rotate=0] {$x_{0}$};
-  \node (x1) at (145.5bp,89.5bp) [draw,,circle, label=above:,rotate=0] {$x_{1}$};
-  \node (x6) at (222.0bp,15.5bp) [draw,circle, double,place, label=above:,rotate=0] {$x_{6}$};
-  \node (x4) at (222.0bp,53.5bp) [draw,circle, double,place, label=above:,rotate=0] {$x_{4}$};
-  \node (x5) at (145.5bp,17.5bp) [draw,,circle, label=above:,rotate=0] {$x_{5}$};
-  \draw [-Latex] (x5) ..controls (167.15bp,16.934bp) and (182.88bp,16.523bp)  .. (x6);
+  \node (x2) at (154.5bp,83.553bp) [draw,,circle, label=above:,rotate=0] {$x_{2}$};
+  \node (x3) at (154.5bp,21.553bp) [draw,,circle, label=above:,rotate=0] {$x_{3}$};
+  \coordinate (init) at (22.748bp,82.553bp);
+  \node (x1) at (154.5bp,144.55bp) [draw,,circle, label=above:,rotate=0] {$x_{1}$};
+  \node (x0) at (77.996bp,82.553bp) [draw,circle, double,place, label=above:,rotate=0] {$x_{0}$};
+  \draw [-Latex] (x0) ..controls (95.87bp,86.793bp) and (98.758bp,87.265bp)  .. (101.5bp,87.553bp) .. controls (114.06bp,88.874bp) and (118.87bp,89.08bp)  .. (x2);
   \definecolor{strokecol}{rgb}{0.0,0.0,0.0};
   \pgfsetstrokecolor{strokecol}
-  \draw (181.5bp,26.0bp) node {\scriptsize $\downarrow$3,\{3\}};
-  \draw [-Latex] (x3) ..controls (167.15bp,53.5bp) and (182.88bp,53.5bp)  .. (x4);
-  \draw (181.5bp,63.0bp) node {\scriptsize $\downarrow$2,\{2\}};
-  \draw [-Latex] (x1) ..controls (167.15bp,90.066bp) and (182.88bp,90.477bp)  .. (x2);
-  \draw (181.5bp,100.0bp) node {\scriptsize $\downarrow$1,\{1\}};
-  \draw [-Latex] (init) ..controls (47.91bp,53.5bp) and (50.097bp,53.5bp)  .. (x0);
-  \draw [-Latex] (x0) ..controls (83.721bp,40.493bp) and (87.929bp,36.313bp)  .. (92.496bp,33.5bp) .. controls (102.11bp,27.577bp) and (114.07bp,23.72bp)  .. (x5);
-  \draw (109.5bp,43.0bp) node {\scriptsize $\uparrow$3,\{3\}};
-  \draw [-Latex] (x0) ..controls (83.721bp,66.507bp) and (87.929bp,70.687bp)  .. (92.496bp,73.5bp) .. controls (102.11bp,79.423bp) and (114.07bp,83.28bp)  .. (x1);
-  \draw (109.5bp,95.0bp) node {\scriptsize $\uparrow$1,\{1\}};
-  \draw [-Latex] (x0) ..controls (95.147bp,53.5bp) and (110.89bp,53.5bp)  .. (x3);
-  \draw (109.5bp,63.0bp) node {\scriptsize $\uparrow$2,\{2\}};
+  \draw (118.5bp,98.053bp) node {\scriptsize $\uparrow$2,\{2\}};
+  \draw [-Latex] (x1) ..controls (142.59bp,134.78bp) and (138.94bp,131.96bp)  .. (135.5bp,129.55bp) .. controls (120.95bp,119.37bp) and (115.14bp,119.92bp)  .. (101.5bp,108.55bp) .. controls (99.217bp,106.65bp) and (96.954bp,104.54bp)  .. (x0);
+  \draw (118.5bp,139.05bp) node {\scriptsize $\downarrow$1,\{1\}};
+  \draw [-Latex] (x0) ..controls (85.301bp,115.61bp) and (92.898bp,143.46bp)  .. (101.5bp,149.55bp) .. controls (110.88bp,156.21bp) and (123.67bp,155.21bp)  .. (x1);
+  \draw (118.5bp,164.05bp) node {\scriptsize $\uparrow$1,\{1\}};
+  \draw [-Latex] (x2) ..controls (143.94bp,72.247bp) and (139.87bp,69.15bp)  .. (135.5bp,67.553bp) .. controls (121.3bp,62.372bp) and (116.0bp,63.318bp)  .. (101.5bp,67.553bp) .. controls (100.76bp,67.766bp) and (100.03bp,68.011bp)  .. (x0);
+  \draw (118.5bp,77.053bp) node {\scriptsize $\downarrow$2,\{2\}};
+  \draw [-Latex] (init) ..controls (47.721bp,82.553bp) and (49.946bp,82.553bp)  .. (x0);
+  \draw [-Latex] (x3) ..controls (143.94bp,10.247bp) and (139.87bp,7.1495bp)  .. (135.5bp,5.5527bp) .. controls (121.3bp,0.37194bp) and (113.64bp,-3.4387bp)  .. (101.5bp,5.5527bp) .. controls (93.069bp,11.792bp) and (86.448bp,37.166bp)  .. (x0);
+  \draw (118.5bp,15.053bp) node {\scriptsize $\downarrow$3,\{3\}};
+  \draw [-Latex] (x0) ..controls (87.954bp,59.906bp) and (93.829bp,50.156bp)  .. (101.5bp,43.553bp) .. controls (110.78bp,35.556bp) and (123.38bp,30.165bp)  .. (x3);
+  \draw (118.5bp,53.053bp) node {\scriptsize $\uparrow$3,\{3\}};
 %
 \end{tikzpicture}
