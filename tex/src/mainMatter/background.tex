@@ -489,11 +489,12 @@ system, and the ability to delay the firing transitions based on time.
   \indent $A$ is the set of \textbf{actions} associated to places \\
   \indent $l_A$ is the \textbf{labeling} function that assigns actions from $A$ to a place \\
 \end{definition}
+% \vspace{-0.5cm}
 The definition of $In : (P \times T )\rightarrow\mathbb{N}$ is that a transition
 $t_j$ is inhibited if $x(p_i)\geq In(p_i,t_j)$. Inhibitor arcs are not used in
 this work but usually they are represented with an arc with a circle in one of
 its ends, as shown in \autoref{fig:inhibitor}.
-
+% \vspace{-1cm}
 \begin{figure}[H]
   \centering
   \includegraphics{petriNet/inhibitor/inhibitor.tikz}
@@ -501,6 +502,7 @@ its ends, as shown in \autoref{fig:inhibitor}.
   \caption{Example of Petri net with inhibitor arc.}
   \label{fig:inhibitor}
 \end{figure}
+% \vspace{-1cm}
 As we can see from the definition there are two labeling functions to connect 
 transitions, $l_C$ and $l_D$. The $l_C$ is defined for transitions with no
 firing delay and $l_D$ for transitions with firing delay.
@@ -514,13 +516,12 @@ a function $l_C(t_0)=(\sigma_0,c_0)$ is defined, transition $t_0$ is fired
 when the condition $c_0$ is true and the event $\sigma_0$
 happens, but obviously, if and only if this transition is enabled.
 The transition $t_0$ is represented graphically as shown in \autoref{fig:condition}
-
 \begin{figure}[H]
   \centering \includegraphics[width=0.3\textwidth]{petriNet/cipn/condition.tikz}
   \caption{Representation of new labeling function}
   \label{fig:condition}
 \end{figure}
-
+% \vspace{-0.4cm}
 If the event is missing from the representation of the transition, it is equal
 to $\lambda$, the always occurring event. And if the condition is missing, that means it is
 equal to $1$, i.e. it is always $true$. If both are missing, that means the
@@ -533,12 +534,12 @@ $d_i$. As an example, consider a timed transition $t_1$ and $D=\{d_1\}$. Then, a
 enablement of the transition, it takes $d_1$ time units in order to be fired. In
 this work, timed transitions are represented by white bars slightly larger than normal
 transitions. An example of this representation we can see in \autoref{fig:timedtransition}
-
 \begin{figure}[H]
   \centering \includegraphics[width=0.3\textwidth]{petriNet/cipn/timedtransition.tikz}
   \caption{Representation of a timed transition.}
   \label{fig:timedtransition}
 \end{figure}
+% \vspace{-0.2cm}
 Another labelling function is $l_A : P\rightarrow 2^A$,
 assigning a set of actions belonging to $A$ to a place. Actions can be impulse
 or continuous actions. A
@@ -614,7 +615,7 @@ And when a variable is preceded by $\uparrow$ and $\downarrow$, they determine
 events corresponding to its rising and falling edge.
 
 \usetikzlibrary{arrows,shapes,circuits.plc.ladder,external}
-
+% \pagebreak[How much [0 - 4]]
 \section{Implementation of Control Interpreted Petri Nets}
 \label{sec:implementPetriNets}
 Once the control of a system is modeled by a \CIPN, it
