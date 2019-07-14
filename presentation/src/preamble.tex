@@ -1,10 +1,13 @@
 \usepackage{graphicx}
 \usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
 \usepackage{pgfpages}
 \usepackage{multicol}
 \usepackage{picture}
 \usepackage{bbding}
-% \usepackage[francais]{babel}
+% \usepackage[portuguese]{babel}
+\uselanguage{Portuguese}
+\languagepath{Portuguese}
 \setbeamertemplate{caption}[numbered]
 \usepackage{sansmathaccent}
 \pdfmapfile{+Sensationsmache.map}
@@ -15,29 +18,54 @@
 
 \usepackage{tikzscale}
 \usepackage{tikz}
-
+\usepackage{adjustbox}
 \usepackage{pgfplots}
+% \newcommand{\bulletpoint}[1]{\begin{itemize}
+% 		\item #1
+% \end{itemize}}
+
+\newcommand{\bulletpoint}[1]{$\bullet$ #1}
+\newif\ifdebug
+\newcommand{\draft}{\debugtrue}
+\newcommand{\final}{\debugfalse}
+\newcommand{\includetikzfigure}[2][]{
+    \ifdebug {\includegraphics[#1]{#2.pdf}}
+    \else  \includegraphics[#1]{#2}\fi
+}
+
 \pgfplotsset{compat=newest}
 \usepgfplotslibrary{groupplots}
 \usepgfplotslibrary{dateplot}
+% \newtheorem{theorem}{Teorema}
+% \numberwithin{theorem}{section}
 
+% \newtheorem{example}{Examplo}
+% \numberwithin{example}{section}
 
+% \newtheorem{definition}{Definição}
+% \numberwithin{definition}{section}
 
+% \newtheorem{observation}{Observação}
+% \numberwithin{observation}{section}
+
+\newlength{\ladderskip}
+\newlength{\ladderrungsep}
 \usetikzlibrary{patterns}
-
+\usetikzlibrary{arrows,shapes,circuits.plc.ladder,external}
 \usetikzlibrary{arrows,shapes,automata,petri,external,arrows.meta}
-	\tikzset{
+\tikzset{
 	place/.style={
 	circle,
 	thick,
-	draw=black!100, % draw=blue!75,
+	% draw=black!100,
+  % draw=blue!75,
     % fill=blue!20,
     minimum size=6mm
   },
   extPlace/.style={
     circle,
     dotted,
-    draw=black!100, % draw=blue!75,
+    % draw=black!100, % draw=blue!75,
     % fill=blue!20,
     minimum size=6mm
   },
@@ -72,10 +100,9 @@
   inhibitor/.style={-o},
   text/.style={}
 }
-
 \makeatletter
-\tikz@def@grow@tokens{2}{1}{-1.5}{0}
-\tikz@def@grow@tokens{2}{2}{1.5}{0}
+\tikz@def@grow@tokens{2}{1}{-1.}{0}
+\tikz@def@grow@tokens{2}{2}{1.}{0}
 % \tikz@def@grow@tokens{3}{1}{-1}{0}
 % \tikz@def@grow@tokens{3}{2}{0}{1}
 % \tikz@def@grow@tokens{3}{3}{1.5}{-1}

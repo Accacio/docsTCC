@@ -7,7 +7,7 @@
   \node (t3) at (503.0bp,18.0bp) [draw,ellipse,transition, label=right:$\uparrow a$, label=left:\hyperlink{cipnExampleTable:t3}{\hypertarget{cipnExampleNet:t3}{$t_{3}$}},rotate=90] {};
   \node (t0) at (95.0bp,41.0bp) [draw,ellipse,transition, label=right:$\uparrow m$, label=left:\hyperlink{cipnExampleTable:t0}{\hypertarget{cipnExampleNet:t0}{$t_{0}$}},rotate=90] {};
   \node (t1) at (231.0bp,41.0bp) [draw,ellipse,transition, label=right:$\uparrow b$, label=left:\hyperlink{cipnExampleTable:t1}{\hypertarget{cipnExampleNet:t1}{$t_{1}$}},rotate=90] {};
-  \node (p0m1) at (27.0bp,18.0bp) [draw,ellipse,place, tokens=1, label=above:, label=left:\hyperlink{cipnExampleTable:p0m1}{\hypertarget{cipnExampleNet:p0m1}{$p_{0}$}},rotate=90] {};
+  \node (p0m1) at (27.0bp,18.0bp) [draw,ellipse,place, tokens=1,colored tokens=lettercolor, label=above:, label=left:\hyperlink{cipnExampleTable:p0m1}{\hypertarget{cipnExampleNet:p0m1}{$p_{0}$}},rotate=90] {} ;
   \draw [-Latex] (p1) ..controls (190.27bp,41.0bp) and (193.73bp,41.0bp)  .. (t1);
   \draw [-Latex] (t2) ..controls (394.27bp,41.0bp) and (397.73bp,41.0bp)  .. (p3);
   \draw [-Latex] (p3) ..controls (455.77bp,29.5bp) and (471.89bp,29.5bp)  .. (t3);

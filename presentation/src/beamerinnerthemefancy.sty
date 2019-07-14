@@ -81,7 +81,7 @@
   \@tempdima=\textwidth\textwidth=\paperwidth\hsize=\textwidth\def\\{,}\vbox{}\vskip-1.5ex%
     % Title.
     \begin{beamercolorbox}[wd=\paperwidth,ht=.4\paperheight,center,#1]{title page header}
-      \usebeamerfont{title}\huge \inserttitle\par%
+      \usebeamerfont{title}\parbox{0.8\textwidth}{\centering \LARGE \inserttitle}\par%
       \ifx\insertsubtitle\@empty%
       \else%
         \vskip0.25em%
@@ -126,7 +126,7 @@
               % Logo.
               \begin{centering}
                   \vbox{}\vfill
-                  \includegraphics[height=.3\paperheight]{\beamer@fancy@titlepagelogo}
+                  \includegraphics[width=.45\paperwidth]{\beamer@fancy@titlepagelogo}
                   \vfill
               \end{centering}
           \column{.5\textwidth}

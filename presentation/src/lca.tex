@@ -1,0 +1,36 @@
+\useinnertheme{default}
+\useoutertheme[subsection=true,shadow,footline=authorinstitutetitle]{miniframes}
+
+\defbeamertemplate*{footline}{shadow theme}
+{%
+ \leavevmode%
+ \hbox{\begin{beamercolorbox}[wd=.25\paperwidth,ht=2.5ex,dp=1.125ex,leftskip=.3cm plus1fil,rightskip=.3cm]{author in head/foot}%
+   \usebeamerfont{author in head/foot}\insertframenumber\,/\,\inserttotalframenumber\hfill\insertshortauthor
+ \end{beamercolorbox}%
+ \begin{beamercolorbox}[wd=.75\paperwidth,ht=2.5ex,dp=1.125ex,leftskip=.3cm,rightskip=.3cm plus1fil]{title in head/foot}%
+   \usebeamerfont{title in head/foot}\insertshorttitle%
+ \end{beamercolorbox}}%
+ \vskip0pt%
+}
+
+\definecolor{lettercolor}{rgb}{0, 0.2,  0.5}
+\usefonttheme{serif}
+\usepackage{palatino}
+\setbeamerfont{title like}{shape=\scshape}
+\setbeamerfont{frametitle}{shape=\scshape}
+\setbeamercolor*{lower separation line head}{bg=DeepSkyBlue4}
+%\setbeamercolor*{normal text}{fg=black,bg=white}
+\setbeamercolor*{alerted text}{fg=red!100}
+\setbeamercolor*{example text}{fg=black}
+\setbeamercolor*{structure}{fg=lettercolor}%fg=lettercolor
+\setbeamercolor*{normal text}{fg=lettercolor,bg=BgColor!10}
+\setbeamercolor*{frametitle}{fg=lettercolor}
+\setbeamercolor*{palette tertiary}{fg=black,bg=black!10}
+\setbeamercolor*{palette quaternary}{fg=black,bg=black!10}
+\setbeamercolor*{block title}{fg=lettercolor,bg=white}
+\setbeamercolor*{block body}{fg=lettercolor,bg=white}
+\setbeamertemplate{blocks}[rounded][shadow=true]
+\addtobeamertemplate{block begin}{\pgfsetfillopacity{0.7}}{\pgfsetfillopacity{1}}%0.7 / 1
+\addtobeamertemplate{block alerted begin}{\pgfsetfillopacity{0.5}}{\pgfsetfillopacity{1}}%0.5/1
+
+\logo{\pgfputat{\pgfxy(-6,-0.24)}{\pgfbox[center,base]{\pgfsetfillopacity{0.09}{\includegraphics[width=1.1\textwidth]{pres_fondo1.png}}}}}

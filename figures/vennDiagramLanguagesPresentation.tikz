@@ -5,15 +5,15 @@
       \def\LIden{(1.5,0) circle (3 and 2)}
 
       \scope
-      \draw[line width=0.5mm,pattern=vertical lines] \LOrig;
-      \draw[line width=0.5mm,pattern=horizontal lines] \LIden;
+      \draw[line width=0.2mm,pattern=vertical lines,pattern color = lettercolor] \LOrig;
+      \draw[line width=0.2mm,pattern=horizontal lines,pattern color = red] \LIden;
       \clip \LIden;
-      \draw[line width=0.5mm,fill=white] \LOrig;
+      \draw[line width=0.2mm,fill=white] \LOrig;
       \clip \LOrig;
-      \draw[line width=0.5mm] \LIden;
+      \draw[line width=0.2mm] \LIden;
       \endscope
 
-      \draw[line width=0.5mm]  (0.75,0) circle (2 and 1.5);
+      \draw[line width=0.2mm]  (0.75,0) circle (2 and 1.5);
       
       \node at (0.75,0)    {\scriptsize $L_{Obs}$};
       \fill[white] (-2.82,-0.25) rectangle + (1.2,0.5);
