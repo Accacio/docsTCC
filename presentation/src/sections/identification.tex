@@ -7,8 +7,6 @@
     \item Caixa preta, não se conhece a planta
     \item Observar sinais de entrada e saida do controlador
     \item criar modelo a partir deles 
-    \item a linguagem produzida pelo modelo deve ser o mais similar possível a
-      linguagem original do sistema 
     \end{itemize}
   }
 
@@ -48,7 +46,7 @@
         % \draw[fill] (8,4.5) circle(.05);
 
         % \draw (11.4,4.5) node {Sinais};
-        % \draw (11.4,4.15) node {observavdos};
+        % \draw (11.4,4.15) node {observados};
 
         % \draw (1.5,5.75) node {Saídas do Controlador};
         % \draw (8.5,5.75) node {Entradas do Controlador};
@@ -97,7 +95,7 @@
         \draw[fill] (8,4.5) circle(.05);
 
         \draw (11.4,4.5) node {Sinais};
-        \draw (11.4,4.15) node {observavdos};
+        \draw (11.4,4.15) node {observados};
 
         % \draw (1.5,5.75) node {Saídas do Controlador};
         % \draw (8.5,5.75) node {Entradas do Controlador};
@@ -113,8 +111,14 @@
 \end{frame}
 
 \begin{frame}
-Vetores de Entrada/Saída  \note{armazenar os vetores de entrada e usar para
-  gerar a linguagem do modelo}
+  Vetores de Entrada/Saída  \note{
+    \begin{itemize}
+    \item armazenar os vetores de entrada e usar para
+      gerar a linguagem do modelo
+  \item a linguagem produzida pelo modelo deve ser o mais similar possível a
+    linguagem original do sistema 
+  \end{itemize}
+}
 \begin{equation*}
 \mathbf{u}(t_1)=
 \begin{bmatrix}
@@ -130,8 +134,13 @@ Vetores de Entrada/Saída  \note{armazenar os vetores de entrada e usar para
 \begin{frame}{Relação entre Linguagens}
   \note{
     \begin{itemize}
-    \item vermelha corresponde as falhas não detectadas
-    \item preta aos falsos alarmes
+    \item Linguagem original do sistema, Linguagem observada e Linguagem
+      identificada
+    \item preta A parte do sistema original que não foi identificada, gera
+      falsos alarmes já que o que foi considerado uma falha pode estar presente
+      na linguagem original do sistema mas não ter sido identificado 
+    \item vermelha corresponde a parte identificada que não está presente na
+      linguagem original, gera falhas não detectadas
     \item objetivo é minimizar as duas áreas 
     \end{itemize}
   }
@@ -152,23 +161,28 @@ Vetores de Entrada/Saída  \note{armazenar os vetores de entrada e usar para
 
 \begin{frame}{Redução de Linguagens}
 \begin{itemize}
-\item Problema: $L_{Orig}$ não é conhecida \pause (Caixa-Preta) \pause
-\item KLEIN et al. (2005):  $\exists n_0\in\mathbb{N}$ no qual
-  $L_{Orig}^{\leq n_0}\L_{Obs}^{\leq n_0}\approx \emptyset $ \note{Se o sistem for observado
-  tempo o suficiente existe um número $n_0$ para o qual o conjunto das
-  sequências de eventos de comprimento menor que $n_0$ das linguagem observada e
-  original são
-  aproximadamente iguais \par} \pause \\
+\item Problema: minimizar $L_{OrigNI}$ \pause \\$L_{Orig}$ não é conhecida \pause
+\item \cite{klein2005fault}:  $\exists n_0\in\mathbb{N}$ no qual
+  $L_{Orig}^{\leq n_0}\backslash L_{Obs}^{\leq n_0}\approx \emptyset $  \pause \\
 Considerando que $L_{Obs}\subseteq L_{Iden}$ então  $L_{Iden}^{\leq n_0}\approx
 \emptyset$  \pause
-\item Suposição: Todas sequências de eventos com comprimento $n_0 + 1$ são observados\note{Neste trabalho supomos que todos
-    eventos \par}  \pause
+\item Suposição: Todas sequências de eventos com comprimento $n_0 + 1$ são observados  \pause
 \item Modelo identificado deve reduzir $L_{Exc}$ \pause
-  \item MOREIRA e LESAGE (2018) apresentam modelo \\Derministic Automaton with
-    Outputs and Conditional Transitions (DAOCT) \note{Modelo que utiliza índice
-      de caminhos para reduzir a
-    linguagem excedente, comparando com outros modelos da literatura}
+  \item \cite{moreira2018enhanced} apresentam modelo \\Derministic Automaton with
+    Outputs and Conditional Transitions (DAOCT) 
 \end{itemize}
+
+\note{
+\begin{enumerate}
+  \item
+\item Se o sistema for observado tempo o suficiente existe um número $n_0$ para
+    o qual o conjunto das sequências de eventos de comprimento menor que $n_0$
+    das linguagem observada e original são aproximadamente iguais
+\item Neste trabalho supomos que todos eventos
+\item
+\item Modelo que utiliza índice de caminhos para reduzir a linguagem excedente, comparando com outros modelos da literatura
+\end{enumerate}
+}
 \end{frame}
 \begin{frame}
 \begin{definition}[DAOCT]
@@ -186,21 +200,35 @@ Considerando que $L_{Obs}\subseteq L_{Iden}$ então  $L_{Iden}^{\leq n_0}\approx
   \indent $x_0$ \textbf{estado inicial} \\
   \indent $X_f \subseteq X $ conjunto de \textbf{estados finais}
 \end{definition}
+\note{
+\begin{enumerate}
+\item usa sequências de vetores de entrada e saídas e eventos, denominados caminhos  
+\end{enumerate}
+}
 \end{frame}
 
 
 \begin{frame}{Caminhos Observados}
-  \setlength\arraycolsep{2pt}
-  \vspace{-0.5cm}
+  \note{
+\begin{itemize}
+\item Os caminhos são formados por vetores e eventos
+\item Os eventos caracterizam a mudança do vetor E\slash S, exemplo a bordo de
+  subida de 1 ...
+\end{itemize}}
+  \setlength\arraycolsep{2pt}  \vspace{-0.5cm}
 \small \begin{align*}
   p_1&= \left(\colvec{1\\0\\0},a,\colvec{1\\1\\0},b,\colvec{0\\1\\1},c,\colvec{0\\0\\0},d,\colvec{0\\0\\1},e,\colvec{1\\0\\0}\right) \\
   p_2&= \left(\colvec{1\\0\\0},g,\colvec{0\\0\\0},h,\colvec{1\\1\\0},b,\colvec{0\\1\\1},c,\colvec{0\\0\\0},i,\colvec{1\\0\\0},j,\colvec{0\\1\\1},l,\colvec{1\\0\\0}\right) \\
   p_3&= \left(\colvec{1\\0\\0},g,\colvec{0\\0\\0},h,\colvec{1\\1\\0},b,\colvec{0\\1\\1},i,\colvec{1\\1\\1},m,\colvec{0\\0\\0},d,\colvec{0\\0\\1},n,\colvec{1\\1\\0}\right) \\
-\end{align*}
+       \end{align*}
+\centering
+      \only<2>{$a$ = $\uparrow$2, $b$ = $\downarrow$1$\uparrow$3, \dots} 
 \end{frame}
 \newcommand{\vu}{\mathbf{u}}
 
 \begin{frame}{Caminhos Modificados}
+  \note{Para diferenciar cada vetor é criada a variável livre k, que é usada
+    para armazenar os $k-1$ vetores anteriores gerando caminhos modificados usando a seguinte fórmula }
 \begin{equation}
   \label{eq:modifiedPath}
  p_i^k= (y_{i,1},\sigma_{i,1},y_{i,2},\sigma_{i,2},\dots,\sigma_{i,l_1-1},y_{i,l_i}) 
@@ -214,8 +242,14 @@ y_{i,j}=\begin{cases}
   \end{cases}
 \end{equation}
 \end{frame}
+
+
 % http://www.texample.net/tikz/examples/beamer-arrows/
 \begin{frame}{Caminhos Modificados}
+  \note{
+    Como que para $k=1$ são armazenados $0$ vetores anteriores, o
+        modificado é igual o observado.
+      } 
   \setlength\arraycolsep{2pt}
  $\bullet$ $k=2$
  \small
@@ -245,14 +279,12 @@ y_{i,j}=\begin{cases}
         },c,\colvec{0&0\\1&0\\1&0},d,\colvec{0&0\\0&0\\0&1},e,\colvec{0&1\\0&0\\0&0}\right) \\ 
  \end{align*}
  \begin{tikzpicture}[overlay]
-        \path[->,>=stealth,red]<2> (n1) edge [bend left] (t1);
-        \path[->,>=stealth,red]<3> (n1) edge [bend right] (t2);
-        \path[->,>=stealth,red]<3> (n2) edge [bend left] (t2);
-        \path[->,>=stealth,red]<4> (n2) edge [bend right] (t3);
-        \path[->,>=stealth,red]<4> (n3) edge [bend left] (t3);
-        % \path[->]<2-> (n2) edge [bend right] (t2);
-        % \path[->]<3-> (n3) edge [out=0, in=-90] (t3);
-\end{tikzpicture}
+        \only<2>{\path[->,>=stealth,red] (n1) edge [bend left] (t1);}
+        \only<3>{\path[->,>=stealth,red] (n1) edge [bend right] (t2);}
+        \only<3>{\path[->,>=stealth,red] (n2) edge [bend left] (t2);}
+        \only<4>{\path[->,>=stealth,red] (n2) edge [bend right] (t3);}
+        \only<4>{\path[->,>=stealth,red] (n3) edge [bend left] (t3);}
+      \end{tikzpicture}
 \end{frame}
 
 

@@ -4,18 +4,22 @@
 \begin{figure}[H]
   \centering
   \includegraphics[width=0.5\textwidth]{maquete/pieces/workPieces.jpg}
-  \caption{Cube halves.}
+  \caption{Metades de cubo.}
   \label{fig:cubeHalves}
 \end{figure}
+\note{Consiste em montar e estocar cubos formados por metades de metal e
+  plástico branco. }
 \end{frame}
 
 \begin{frame}{Sistema de Manufatura Didático}
 \centering
    \begin{figure}[ht]
 \href{run:../../videos/timelapse.avi?start=75&stop=85}{\includegraphics[width=0.7\textwidth]{../../videos/TCCVIDEO_cycle.jpg}}
-\note{Exemplo de }
   \caption{Funcionamento da Planta.}
    \end{figure}
+   \note{3 ações básicas: Selecionar as peças, prensar e estocar.
+    Consiste em montar e estocar cubos formados por metades de metal e
+  plástico branco. }
 \end{frame}
 
 \begin{frame}{Planta}
@@ -64,6 +68,14 @@
        \end{minipage}
   \caption{Módulos da Planta.}
    \end{figure}
+   \note{
+\begin{itemize}
+\item essa imagem mostra os módulos do sistema. (comentar brevemente)
+\item devido a forma que foi montado, foi separado em dois PLCs da seguinte forma
+\item A seguir um exemplo simples da implementação da rede de petri em
+  multiplos plcs
+\end{itemize}}
+
 \end{frame}
 
 \begin{frame}{Rede de Petri implementada em múltiplos PLCs}
@@ -71,18 +83,20 @@
        \begin{minipage}[b]{0.45\linewidth}
            \centering
            \includetikzfigure[width=\textwidth]{communicationPlcPN/communicationPlcPN}
-           \caption{Rede de Petri no PLC 1.}
+           \caption{Rede de Petri - PLC 1.}
            \label{fig:a}
        \end{minipage}
-       \hspace{0.5cm}
+       % \hspace{0.5cm}
        \begin{minipage}[b]{0.45\linewidth}
            \centering
            \includetikzfigure[width=\textwidth]{communicationPlcPN/communicationPlcPN1}
-           \caption{Rede de Petri no PLC 2.}
+           \caption{Rede de Petri - PLC 2.}
            \label{fig:b}
        \end{minipage}
   % \caption{Examplo de Rede de Petri implementeda em 2 PLCs.}
-   \end{figure}
+     \end{figure}
+   \note{Os lugares e transições tracejadas indicam que pertencem a outra parte
+     da rede }
 \end{frame}
 
 
@@ -105,6 +119,18 @@
        \end{minipage}
   \caption{Diagrama Ladder de Rede de Petri no PLC 1.}
    \end{figure}
+   \note{
+    \begin{enumerate}
+    \item Foi usada técnica de mestre\slash escravo. PLC 1 é o mestre que recebe
+      a informação dos outros e ao fim do seu ciclo retorna informação para os
+      outros PLCS 
+    \item A parte de dinâmica é implementada da mesma forma que mostrada
+     anteriormente
+   \item são adicionados 2 módulos, para comunicação
+     \item usando blocos de comunicação
+    \end{enumerate} 
+
+   }
 \end{frame}
 
 
@@ -125,6 +151,16 @@
        \end{minipage}
   \caption{Diagrama Ladder de Rede de Petri no PLC 2.}
    \end{figure}
+   \note{
+    \begin{enumerate}
+    \item A parte de dinâmica é implementada da mesma forma que mostrada
+     anteriormente
+   \item é adicionado um módulos, para preparar os dados para serem enviados.
+     \item Dados são copiados para não causar escrita inesperada durante o ciclo
+       de varredura
+    \end{enumerate} 
+
+   }
  \end{frame}
 
 %%% Local Variables:

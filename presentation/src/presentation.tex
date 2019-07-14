@@ -3,7 +3,9 @@
 \input{preamble}
 \input{beameroptions}
 % \input{lca}
-
+\usepackage{appendixnumberbeamer}
+\usepackage{natbib}
+% \usepackage{biblatex}
 \definecolor{BgColor}{rgb}{ 0.98823529,  0.98823529,  0.58039216}
 \author{Rafael Accácio Nogueira}
 \title{Identificação de um Sistema de Manufatura Didático}
@@ -11,7 +13,7 @@
 \date{19 de Julho de 2019}
 \usepackage[absolute,overlay]{textpos} %needed for textblock
 \usepackage[timeinterval=60]{tdclock}
-\setbeameroption{show notes on second screen}
+% \setbeameroption{show notes on second screen}
 \setbeamertemplate{note page}{\pagecolor{white}\vfill\insertnote\vfill}
 \makeindex
 
@@ -27,7 +29,22 @@
 \input{sections/system}
 \input{sections/results}
 \input{sections/conclusion}
+
+\appendix
+\begin{frame}[allowframebreaks] %allow to expand references to multiple frames (slides)
+
+\frametitle{References}
+
+\scriptsize{\bibliographystyle{plainnat}}
+
+\nocite{moreira2013bridging}
+\bibliography{bibliography}
+\end{frame}
+
+
+
 \end{document}
+
 
 % Examples
 % convert video to theora

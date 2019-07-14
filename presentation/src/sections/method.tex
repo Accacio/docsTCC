@@ -2,13 +2,32 @@
 \tikzstyle{every picture}+=[remember picture]
 \section{Método}
 
-\begin{frame}{Rede de Petri Interpretada para Controle}
+\begin{frame}{Controle a Identificação}
+  \begin{enumerate}
+   \item Projetar o controle\pause 
+   \item Implementar o Controle \pause PLC - Ladder \pause
+   \item Observar entradas e saídas\pause
+   \item Obter caminhos\pause
+   \item Identificar usando DAOCT 
+\end{enumerate}
+\end{frame}
+
+\begin{frame}{Examplo de Sistema}
 \begin{figure}[H]
   \centering
   \includegraphics[width=0.8\textwidth]{cipnExample/schemePresentation.tikz}
   \caption{Exemplo de sistema a ser controlado.}
   \label{fig:cipnexamplescheme}
 \end{figure}
+% \note{
+%   \begin{enumerate}
+%    \item Projetar o controle\pause 
+%    \item Implementar o Controle \pause PLC - Ladder \pause
+%    \item Observar entradas e saídas\pause
+%    \item Obter caminhos\pause
+%    \item Identificar usando DAOCT 
+%    \end{enumerate}
+%  }
 \end{frame}
 
 
@@ -25,12 +44,16 @@
     \centering
     \resizebox{0.7\textwidth}{!}{
    \includegraphics{cipnExample/cipnLadderPresentation.tikz}}
-  \caption{Example of Control Interpreted Petri Net converted to Ladder.}
+ \caption{Rede de Petri do exemplo implementada em Ladder.}
   \label{fig:cipnexampleLadder}
-\end{figure}
+\end{figure}\note{método demonstrado por MOREIRA e BASILIO (2013)}
 \end{frame}
 
 \begin{frame}{Datalog}
+  \note{
+Uma vez implementado o controle no PLC, é feita a observação. PLC Siemens possui
+os blocos functionais mostrados para gravar os dados num arquivo csv.
+  }
    \begin{figure}[ht]
        \begin{minipage}[b]{0.3\linewidth}
          \centering
@@ -58,8 +81,7 @@
 \end{frame}
 
 
-\begin{frame}
-  \begin{figure}
+\begin{frame} \begin{figure}
     \centering
 \begin{tikzpicture}[scale=0.8]
      \def\corner{0.15in};
@@ -96,6 +118,10 @@
   \caption{Modelo identificado a partir do arquivo csv.}
   % \label{fig:identExamplekone}
 \end{figure}
+\note{
+progama daoct criado para fazer obtenção dos caminhos, modificação e
+implementação do algoritmo de modelagem.
+}
 \end{frame}
 
 
@@ -103,10 +129,10 @@
   \setlength\arraycolsep{2pt}
  \small
  \begin{align*}
-   \tikz[baseline]{
+   {\only<2>{\color{blue}}\tikz[baseline]{
             \node[anchor=base] (n1)
             {\colvec{1\\0\\0}};
-        },\colvec{1\\1\\0}
+        }},\colvec{1\\1\\0}
         ,\colvec{0\\1\\1},\colvec{0\\0\\0},\colvec{0\\0\\1},\tikz[baseline]{
             \node[anchor=base] (n2)
             {\colvec{1\\0\\0}};
@@ -119,9 +145,9 @@
         }\dots \\
 \end{align*}
  \begin{tikzpicture}[overlay]
-        \path[->,>=stealth,red]<2-> (n1) edge [in = -120, out= -60] node[below,black] {$p_1$} (n2);
-        \path[->,>=stealth,red]<3-> (n2) edge [in = 120, out= 60] node[above,black] {$p_2$} (n3);
-        \path[->,>=stealth,red]<4-> (n3) edge [in = -120, out= -60] node[below,black] {$p_3$} (n4);
+        \path[->,>=stealth,red]<3-> (n1) edge [in = -120, out= -60] node[below,black] {$p_1$} (n2);
+        \path[->,>=stealth,red]<4-> (n2) edge [in = 120, out= 60] node[above,black] {$p_2$} (n3);
+        \path[->,>=stealth,red]<5-> (n3) edge [in = -120, out= -60] node[below,black] {$p_3$} (n4);
         % \path[->,>=stealth,red]<3> (n1) edge [bend right] (t2);
         % \path[->,>=stealth,red]<3> (n2) edge [bend left] (t2);
         % \path[->,>=stealth,red]<4> (n2) edge [bend right] (t3);
@@ -129,6 +155,15 @@
         % \path[->]<2-> (n2) edge [bend right] (t2);
         % \path[->]<3-> (n3) edge [out=0, in=-90] (t3);
 \end{tikzpicture}
+\note{
+\begin{itemize}
+\item Como usa-se um método de caixa-preta e os caminhos não são conhecidos, eles
+são extraídos do csv da seguinte forma.
+\item Consideramos a seguinte sequencia extraída do csv
+  \item o primeiro vetor é considerado o inicial e toda vez que se repete um
+    novo caminho é gerado
+\end{itemize}
+}
 \end{frame}
 
 %%% Local Variables:
