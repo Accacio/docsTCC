@@ -1,11 +1,6 @@
 
+\tikzstyle{every picture}+=[remember picture]
 \section{Método}
-
-\begin{frame}{Exemplo de frases espaçadas tipo Afonso}
-	\onslide<1,2,3,5>{\quad First Line of Text}
-	\only<2,3>{\\ \quad \quad Second Line of Text}
-	\onslide<3>{\\ \quad \quad \quad Third Line of Text}
-\end{frame}
 
 \begin{frame}{Rede de Petri Interpretada para Controle}
 \begin{figure}[H]
@@ -58,8 +53,82 @@
            \centering
            \includegraphics[width=\textwidth,clip,trim={0 -0.8cm 3cm 0}]{tutorial/delete}
        \end{minipage}
-  \caption{Módulos da Planta.}
+  \caption{Blocos Funcionais para gravação de dados.}
    \end{figure}
+\end{frame}
+
+
+\begin{frame}
+  \begin{figure}
+    \centering
+\begin{tikzpicture}[scale=0.8]
+     \def\corner{0.15in};
+     \def\cornerradius{0.02in};
+     \def\lwidth{0.02in};
+     \def\h{1.1in};
+     \def\w{0.85in};
+     \def\nline{10};
+     \def\iconmargin{0.1in};
+     \def\topmargin{0.3in};
+     \foreach[count=\i] \filename in {file.csv}
+     {
+     \coordinate (nw) at ($(-0.05in*\i,-0.15in*\i)$);
+     \coordinate (ne0) at ($(nw) + (\w, 0)$);
+     \coordinate (ne1) at ($(ne0) - (\corner, 0)$);
+     \coordinate (ne2) at ($(ne0) - (0, \corner)$);
+     \coordinate (se) at ($(ne0) + (0, -\h)$); 
+     \filldraw [-, line width = \lwidth, fill=white] (nw) -- (ne1) -- (ne2)
+      [rounded corners=\cornerradius]--(se) -- (nw|-se) -- cycle;
+     \draw [-, line width = \lwidth] (ne1) [rounded corners=\cornerradius]-- (ne1|-ne2) -- (ne2);
+     \node [anchor=north west] at (nw) {\scriptsize \tt \filename};
+     \foreach \k in {1,...,\nline}
+     {
+       \draw [-, line width = \lwidth, line cap=round] 
+         ($(nw|-se) + (\iconmargin,\iconmargin) + (0,{(\k-1)/(\nline-1)*(\h - \iconmargin - \topmargin)})$)
+           -- ++ ($(\w,0) - 2*(\iconmargin,0)$);
+     }
+   }
+   \node[inner sep=0pt] at (8,0) {\includegraphics[width=0.4\textwidth]{example/example.pdf}};
+   \draw[->] (1,0) to [bend left] (6,1);
+   \draw (4,1.7) node {daoct};
+   \end{tikzpicture}
+  % \includetikzfigure[width=\textwidth]{example/stdin}
+  \caption{Modelo identificado a partir do arquivo csv.}
+  % \label{fig:identExamplekone}
+\end{figure}
+\end{frame}
+
+
+\begin{frame}{Obtenção de Caminhos}
+  \setlength\arraycolsep{2pt}
+ \small
+ \begin{align*}
+   \tikz[baseline]{
+            \node[anchor=base] (n1)
+            {\colvec{1\\0\\0}};
+        },\colvec{1\\1\\0}
+        ,\colvec{0\\1\\1},\colvec{0\\0\\0},\colvec{0\\0\\1},\tikz[baseline]{
+            \node[anchor=base] (n2)
+            {\colvec{1\\0\\0}};
+        },\colvec{0\\0\\0},\colvec{1\\1\\0},\colvec{0\\1\\1},\colvec{0\\0\\0},\tikz[baseline]{
+            \node[anchor=base] (n3)
+            {\colvec{1\\0\\0}};
+        },\colvec{0\\1\\1},\tikz[baseline]{
+            \node[anchor=base] (n4)
+            {\colvec{1\\0\\0}};
+        }\dots \\
+\end{align*}
+ \begin{tikzpicture}[overlay]
+        \path[->,>=stealth,red]<2-> (n1) edge [in = -120, out= -60] node[below,black] {$p_1$} (n2);
+        \path[->,>=stealth,red]<3-> (n2) edge [in = 120, out= 60] node[above,black] {$p_2$} (n3);
+        \path[->,>=stealth,red]<4-> (n3) edge [in = -120, out= -60] node[below,black] {$p_3$} (n4);
+        % \path[->,>=stealth,red]<3> (n1) edge [bend right] (t2);
+        % \path[->,>=stealth,red]<3> (n2) edge [bend left] (t2);
+        % \path[->,>=stealth,red]<4> (n2) edge [bend right] (t3);
+        % \path[->,>=stealth,red]<4> (n3) edge [bend left] (t3);
+        % \path[->]<2-> (n2) edge [bend right] (t2);
+        % \path[->]<3-> (n3) edge [out=0, in=-90] (t3);
+\end{tikzpicture}
 \end{frame}
 
 %%% Local Variables:
