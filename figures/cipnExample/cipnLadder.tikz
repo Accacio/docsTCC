@@ -99,7 +99,7 @@
   \draw(0,0)
   to [contact NC={info={$b_{ini}$}}] ++(1,0)
   to ++(2,0) coordinate(laddercoil) -- ++(1,0)
-  to [coil S={info={$b_0$}}] ++(1,0);
+  to [coil S={info={$p_0$}}] ++(1,0);
   \draw(laddercoil) -- ++(0,-1)
    -- ++(1,0)
   to [coil S={info={$b_{ini}$}}] ++(1,0);
