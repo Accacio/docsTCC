@@ -1,0 +1,75 @@
+        % \newlength{\ladderskip}
+\setlength{\ladderskip}{5\tikzcircuitssizeunit}% 5\tikzcircuitssizeunit = 35pt
+% \newlength{\ladderrungsep}
+\setlength{\ladderrungsep}{.2\ladderskip}
+\def\ladderrungend#1{\pgftransformyshift{-#1\ladderskip-\ladderrungsep}}
+  \begin{tikzpicture}[circuit plc ladder,
+  thick, label distance=0pt,x=\ladderskip,y=\ladderskip]
+\scope
+
+  \draw(0,0) -- ++(0.5,0)
+  to [contact P={info={\scriptsize FROM\_PLC1.$b_0$}}] ++(1,0) -- ++(3,0)
+  to [coil={info={$b_0$}}] +(1,0) -- ++ (1.5,0) coordinate(laddertopright);
+  \ladderrungend{1}
+
+  \draw(0,0) -- ++(0.5,0)
+  to [contact P={info={\scriptsize FROM\_PLC1.$b_1$}}] ++(1,0)
+  to ++(2,0) coordinate(laddercoil) -- ++(1,0)
+  to [coil ={info={$b_1$}}] ++(1,0) -- ++(0.5,0);
+  \draw(laddercoil) -- ++(0,-1)
+   -- ++(1,0)
+  to [coil R={info={$b_1$aux}}] ++(1,0) -- ++(0.5,0);
+  \ladderrungend{3}
+
+  \draw(0,0) -- ++(0.5,0)
+  to [contact NO={info={$p_1$}}] ++(1,0)
+  to ++(2,0) coordinate(laddercoil) -- ++(1,0)
+  to [coil S={info={$b_1$aux}}] ++(1,0) -- ++(0.5,0);
+  \ladderrungend{2}
+
+  \draw(0,0) -- ++(0.5,0)
+  to [contact NO={info={$b_0$}}] ++(1,0)
+  to ++(2,0) coordinate(laddercoil) -- ++(1,0)
+  to [coil S={info={$p_1$}}] ++(1,0) -- ++(0.5,0);
+  \ladderrungend{1}
+
+  \draw(0,0) -- ++(0.5,0)
+  to [contact NO={info={$b_1$}}] ++(1,0)
+  to ++(2,0) coordinate(laddercoil) -- ++(1,0)
+  to [coil R={info={$p_1$}}] ++(1,0) -- ++(0.5,0);
+  \ladderrungend{2}
+
+  %
+  \draw(0,0) -- ++(0.5,0)
+  to [contact NO={info={$b_1$aux}}] ++(1,0)
+  to ++(2,0) coordinate(laddercoil) -- ++(1,0)
+  to [coil={info={\scriptsize TO\_PLC1$b_1$aux}}] ++(1,0) -- ++(0.5,0);
+  \ladderrungend{1}  
+  %
+
+  % power rails
+  \draw let \p1=(laddertopright) in
+  (0,\y1+0.7\ladderskip) -- (0,\ladderskip)
+  (\x1,\y1+0.7\ladderskip) -- (\x1,\ladderskip);
+
+  \endscope
+
+
+
+  \draw[dashed,gray](-0.2,\ladderskip) rectangle ++(6.4,-4.1);
+
+  \draw[right] (0,-2.9) node {\footnotesize Prepara dados recebidos};
+
+  \draw[dashed,gray](-0.2,-3.3) rectangle ++(6.4,-2.1);
+
+  \draw[right] (0,-5.2) node {\footnotesize Módulo das ações};
+
+  \draw[dashed,gray](-0.2,-5.6) rectangle ++(6.4,-3.1);
+
+  \draw[right] (0,-8.5) node {\footnotesize Módulo da dinâmica};
+
+  \draw[dashed,gray](-0.2,-8.9) rectangle ++(6.4,-2);
+
+  \draw[right] (0,-10.7) node {\footnotesize Prepara dados para serem enviados};
+  
+  \end{tikzpicture}

@@ -26,7 +26,7 @@
   to [contact NO={info={\scriptsize GETDB.NDR}}] ++(1,0) -- ++(1,0)
   to [contact NO={info={\scriptsize TO\_PLC2.$b_1$}}] ++(1,0) -- ++(1,0)
   to [coil R={info={\scriptsize TO\_PLC2.$b_1$}}] +(1,0) -- ++ (1.5,0);
-  \ladderrungend{2}
+  \ladderrungend{1.7}
 
   \draw(0,0) -- ++(0.7,0)
   to [contact NO={info={$p_0$}}] ++(1,0) -- ++(3,0)
@@ -36,7 +36,7 @@
   \draw(0,0) -- ++(0.7,0)
   to [contact NO={info={\scriptsize FROM\_PLC2.$b_1$aux}}] ++(1,0) -- ++(3,0)
   to [coil={info={$b_1$}}] +(1,0) -- ++ (1.5,0);
-  \ladderrungend{2}
+  \ladderrungend{1.7}
 
   \draw(0,0) -- ++(0.7,0)
   to [contact NO={info={$b_0$}}] ++(1,0)
@@ -45,13 +45,22 @@
   \draw(laddercoil) -- ++(0,-1)
    -- ++(1,0)
   to [coil S={info={\scriptsize TO\_PLC2.$b_0$}}] ++(1,0) -- ++(0.5,0);
-  \ladderrungend{2}
+  \ladderrungend{1.7}
 
   \draw(0,0) -- ++(0.7,0)
   to [contact NO={info={$b_1$}}] ++(1,0)
   to ++(2,0) coordinate(laddercoil) -- ++(1,0)
   to [coil S={info={$p_0$}}] ++(1,0) -- ++(0.5,0);
-  \ladderrungend{2}
+  \ladderrungend{1.3}
+
+  \draw(0,0) -- ++(0.7,0)
+  to [contact NC={info={$b_{ini}$}}] ++(1,0)
+  to ++(2,0) coordinate(laddercoil) -- ++(1,0)
+  to [coil S={info={$p_0$}}] ++(1,0) -- ++(0.5,0);
+  \draw(laddercoil) -- ++(0,-1)
+   -- ++(1,0)
+  to [coil S={info={$b_{ini}$}}] ++(1,0) -- ++(0.5,0);
+  \ladderrungend{2.3}
 
   \draw(0,0) -- ++(0.7,0)
   to [contact NO={info={$b_1$}}] ++(1,0)
@@ -67,7 +76,7 @@
   (PUTDB.input 2) -- +(-0.3\ladderskip,0) node[left]{\scriptsize CLK}
   (PUTDB.input 3) -- +(-0.3\ladderskip,0) node[left]{\scriptsize FROM\_PLC1}
   (PUTDB.input 4) -- +(-0.3\ladderskip,0) node[left]{\scriptsize TO\_PLC2};
-  \ladderrungend{2.5}
+  \ladderrungend{3.5}
 
   % power rails
   \draw let \p1=(laddertopright) in
@@ -78,18 +87,22 @@
 
   \draw[dashed,gray](-0.2,\ladderskip) rectangle ++(6.6,-5.8);
 
-  \draw[right] (0,-4.6) node {\footnotesize Module of Data Sending/Receiving};
+  \draw[right] (0,-4.6) node {\footnotesize Módulo de recebimento/envio de dados};
 
-  \draw[dashed,gray](-0.2,-5) rectangle ++(6.6,-3.3);
+  \draw[dashed,gray](-0.2,-5) rectangle ++(6.6,-2.8);
 
-  \draw[right] (0,-8.1) node {\footnotesize Module of firing conditions};
+  \draw[right] (0,-7.55) node {\footnotesize Módulo das condições};
 
-  \draw[dashed,gray](-0.2,-8.5) rectangle ++(6.6,-4.1);
+  \draw[dashed,gray](-0.2,-8.35) rectangle ++(6.6,-3.2);
 
-  \draw[right] (0,-12.4) node {\footnotesize Module of Petri Net dynamics};
+  \draw[right] (0,-11.4) node {\footnotesize Módulo da dinâmica};
 
-  \draw[dashed,gray](-0.2,-13) rectangle ++(6.6,-4.4);
+  \draw[dashed,gray](-0.2,-11.7) rectangle ++(6.6,-2.2);
 
-  \draw[right] (0,-17.2) node {\footnotesize Module of Data Sending/Receiving (cont.)};
+  \draw[right] (0,-13.7) node {\footnotesize Módulo de Inicialização};
+
+  \draw[dashed,gray](-0.2,-14) rectangle ++(6.6,-4.4);
+
+  \draw[right] (0,-18.2) node {\footnotesize Módulo de recebimento/envio de dados (cont.)};
   
   \end{tikzpicture}
