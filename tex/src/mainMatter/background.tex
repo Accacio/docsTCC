@@ -973,24 +973,66 @@ Profinet protocol. Tutorials on how to configure those blocks can be found on \c
 The complete implementation of the \CIPN{} depicted in
 \Autoref{fig:communicationPlcPN} using \LD{} is shown in \autoref{fig:communicationPlcPNLadder}.
 
-\begin{figure}[H]
-  \centering
-  \begin{subfigure}[t]{0.45\textwidth}
+  \begin{figure}[H]
     \centering
-    \includegraphics{communicationPlcPN/communicationPlcPNLadder.tikz}
-    \caption{Ladder Logic on PLC 1.}
-    \label{fig:communicationPlcPN1Ladder}
-  \end{subfigure}%
-  \hfill
-  \begin{subfigure}[t]{0.45\textwidth}
-    \centering
-    \includegraphics{communicationPlcPN/communicationPlcPN1Ladder.tikz}
-    \caption{Ladder Logic on PLC 2.}
-    \label{fig:communicationPlcPN2Ladder}
-  \end{subfigure}
-  \caption{Example of Petri Net divided between 2 PLCs.}
-  \label{fig:communicationPlcPNLadder}
-\end{figure}
+    \begin{subfigure}[t]{\textwidth}
+      \begin{minipage}[b]{0.45\linewidth}
+        \centering
+        \resizebox{1\textwidth}{!}{
+          \adjustbox{trim=0 0 0 11.5cm,clip}{
+            \includegraphics{communicationPlcPN/communicationPlcPNLadder.tikz}}}
+      \end{minipage}
+      \hspace{0.5cm}
+      \begin{minipage}[b]{0.45\linewidth}
+        \centering
+        \resizebox{0.8\textwidth}{!}{
+           \adjustbox{trim=0 0 0 11.5cm,clip}{
+           \includegraphics{communicationPlcPN/communicationPlcPNLadder.tikz}}}
+      \end{minipage}
+      \caption{Ladder Logic on PLC 1.}
+      \label{fig:communicationPlcPN1Ladder}
+    \end{subfigure}%
+    \hfill
+    \begin{subfigure}[t]{\textwidth}
+      \begin{minipage}[b]{0.45\linewidth}
+        \centering
+        \resizebox{0.8\textwidth}{!}{
+          \adjustbox{trim=0 0 0 8cm,clip}{
+            \includegraphics{communicationPlcPN/communicationPlcPN1Ladder.tikz}}}
+      \end{minipage}
+      \hspace{0.5cm}
+      \begin{minipage}[b]{0.45\linewidth}
+        \centering
+        \resizebox{0.8\textwidth}{!}{
+          \adjustbox{trim=0 0 0 8cm,clip}{
+            \includegraphics{communicationPlcPN/communicationPlcPN1Ladder.tikz}}}
+      \end{minipage}
+      \caption{Ladder Logic on PLC 2.}
+      \label{fig:communicationPlcPN2Ladder}
+    \end{subfigure}
+    \caption{Example of Petri Net divided between 2 PLCs.}
+    \label{fig:communicationPlcPNLadder}
+  \end{figure}
+
+
+% \begin{figure}[H]
+%   \centering
+%   \begin{subfigure}[t]{0.45\textwidth}
+%     \centering
+%     \includegraphics{communicationPlcPN/communicationPlcPNLadder.tikz}
+%     \caption{Ladder Logic on PLC 1.}
+%     \label{fig:communicationPlcPN1Ladder}
+%   \end{subfigure}%
+%   \hfill
+%   \begin{subfigure}[t]{0.45\textwidth}
+%     \centering
+%     \includegraphics{communicationPlcPN/communicationPlcPN1Ladder.tikz}
+%     \caption{Ladder Logic on PLC 2.}
+%     \label{fig:communicationPlcPN2Ladder}
+%   \end{subfigure}
+%   \caption{Example of Petri Net divided between 2 PLCs.}
+%   \label{fig:communicationPlcPNLadder}
+% \end{figure}
 
 
 

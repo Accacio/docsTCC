@@ -107,7 +107,7 @@
        \begin{minipage}[b]{0.45\linewidth}
          \centering
          \resizebox{0.8\textwidth}{!}{
-           \adjustbox{trim=0pt 11cm 0 0,clip}{
+           \adjustbox{trim=0pt 12.8cm 0 0,clip}{
            \includegraphics{communicationPlcPN/communicationPlcPNLadder.tikz}}}
        \end{minipage}
        \hspace{0.5cm}
@@ -127,7 +127,12 @@
     \item A parte de dinâmica é implementada da mesma forma que mostrada
      anteriormente
    \item são adicionados 2 módulos, para comunicação
-     \item usando blocos de comunicação
+   \item usando blocos de comunicação get and put da seguinte forma
+    \item o Bloco get pega os valores de uma area de memória do outro PLC e
+      coloca numa área de memória do próprio PLC. E o put para colocar alterar
+      variáveis numa área de memória de outro PLC.
+      \item foram criados blocos de dados para parear esses dados, como
+        FROMPLC1, FROMPLC2, TOPLC2 e TOPLC1
     \end{enumerate} 
 
    }

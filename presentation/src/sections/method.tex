@@ -1,18 +1,15 @@
 
 \tikzstyle{every picture}+=[remember picture]
-\section{Método}
+\section{Projeto do Controlador a Eventos discretos}
 
-\begin{frame}{Controle a Identificação}
+\begin{frame}{Projeto do Controlador a Eventos discretos}
   \begin{enumerate}
    \item Projetar o controle\pause 
-   \item Implementar o Controle \pause PLC - Ladder \pause
-   \item Observar entradas e saídas\pause
-   \item Obter caminhos\pause
-   \item Identificar usando DAOCT 
+   \item Implementar o Controle \pause PLC - Ladder
 \end{enumerate}
 \end{frame}
 
-\begin{frame}{Examplo de Sistema}
+\begin{frame}{Exemplo de Sistema}
 \begin{figure}[H]
   \centering
   \includegraphics[width=0.8\textwidth]{cipnExample/schemePresentation.tikz}
@@ -51,8 +48,9 @@
 
 \begin{frame}{Datalog}
   \note{
-Uma vez implementado o controle no PLC, é feita a observação. PLC Siemens possui
-os blocos functionais mostrados para gravar os dados num arquivo csv.
+    Uma vez implementado o controle no PLC, é feita a observação. PLC Siemens possui
+    os blocos functionais mostrados para gravar os dados num arquivo csv.\\
+    Explicar cada bloco
   }
    \begin{figure}[ht]
        \begin{minipage}[b]{0.3\linewidth}
@@ -119,50 +117,9 @@ os blocos functionais mostrados para gravar os dados num arquivo csv.
   % \label{fig:identExamplekone}
 \end{figure}
 \note{
-progama daoct criado para fazer obtenção dos caminhos, modificação e
-implementação do algoritmo de modelagem.
-}
-\end{frame}
-
-
-\begin{frame}{Obtenção de Caminhos}
-  \setlength\arraycolsep{2pt}
- \small
- \begin{align*}
-   {\only<2>{\color{blue}}\tikz[baseline]{
-            \node[anchor=base] (n1)
-            {\colvec{1\\0\\0}};
-        }},\colvec{1\\1\\0}
-        ,\colvec{0\\1\\1},\colvec{0\\0\\0},\colvec{0\\0\\1},\tikz[baseline]{
-            \node[anchor=base] (n2)
-            {\colvec{1\\0\\0}};
-        },\colvec{0\\0\\0},\colvec{1\\1\\0},\colvec{0\\1\\1},\colvec{0\\0\\0},\tikz[baseline]{
-            \node[anchor=base] (n3)
-            {\colvec{1\\0\\0}};
-        },\colvec{0\\1\\1},\tikz[baseline]{
-            \node[anchor=base] (n4)
-            {\colvec{1\\0\\0}};
-        }\dots \\
-\end{align*}
- \begin{tikzpicture}[overlay]
-        \path[->,>=stealth,red]<3-> (n1) edge [in = -120, out= -60] node[below,black] {$p_1$} (n2);
-        \path[->,>=stealth,red]<4-> (n2) edge [in = 120, out= 60] node[above,black] {$p_2$} (n3);
-        \path[->,>=stealth,red]<5-> (n3) edge [in = -120, out= -60] node[below,black] {$p_3$} (n4);
-        % \path[->,>=stealth,red]<3> (n1) edge [bend right] (t2);
-        % \path[->,>=stealth,red]<3> (n2) edge [bend left] (t2);
-        % \path[->,>=stealth,red]<4> (n2) edge [bend right] (t3);
-        % \path[->,>=stealth,red]<4> (n3) edge [bend left] (t3);
-        % \path[->]<2-> (n2) edge [bend right] (t2);
-        % \path[->]<3-> (n3) edge [out=0, in=-90] (t3);
-\end{tikzpicture}
-\note{
-\begin{itemize}
-\item Como usa-se um método de caixa-preta e os caminhos não são conhecidos, eles
-são extraídos do csv da seguinte forma.
-\item Consideramos a seguinte sequencia extraída do csv
-  \item o primeiro vetor é considerado o inicial e toda vez que se repete um
-    novo caminho é gerado
-\end{itemize}
+progama daoct criado para fazer obtenção dos caminhos da forma mostrada no
+capítulo anterior, modificar os caminhos usando a formula descrita e
+implementar o algoritmo de modelagemdo DAOCT.
 }
 \end{frame}
 

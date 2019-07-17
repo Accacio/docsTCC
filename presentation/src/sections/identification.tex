@@ -159,12 +159,12 @@
 \end{figure}
 \end{frame}
 
-\begin{frame}{Redução de Linguagens}
+\begin{frame}{Relação de Linguagens}
 \begin{itemize}
-\item Problema: minimizar $L_{OrigNI}$ \pause \\$L_{Orig}$ não é conhecida \pause
+\item $L_{Orig}$ não é conhecida \pause $\rightarrow$ minimizar $L_{OrigNI}$ \pause \\
 \item \cite{klein2005fault}:  $\exists n_0\in\mathbb{N}$ no qual
   $L_{Orig}^{\leq n_0}\backslash L_{Obs}^{\leq n_0}\approx \emptyset $  \pause \\
-Considerando que $L_{Obs}\subseteq L_{Iden}$ então  $L_{Iden}^{\leq n_0}\approx
+Considerando que $L_{Obs}\subseteq L_{Iden}$ então  $L_{OrigNI}^{\leq n_0}\approx
 \emptyset$  \pause
 \item Suposição: Todas sequências de eventos com comprimento $n_0 + 1$ são observados  \pause
 \item Modelo identificado deve reduzir $L_{Exc}$ \pause
@@ -193,8 +193,8 @@ Considerando que $L_{Obs}\subseteq L_{Iden}$ então  $L_{Iden}^{\leq n_0}\approx
   \indent $\Sigma$ conjunto de \textbf{eventos}\\
   \indent $\Omega \subset \mathbb{N}_1^{m_i+m_o} $ conjunto de \textbf{vetores E/S}\\
   \indent $f:  X \times \Sigma^\star \rightarrow X$ função de  \textbf{transição determinística}\\
-  \indent $\lambda : X \rightarrow \Omega$ função de  \textbf{saídas do stado}\\
-  \indent $R = {1,2,\dots,r}$ conjunto de \textbf{indices dos caminhos}\\
+  \indent $\lambda : X \rightarrow \Omega$ função de  \textbf{saídas do estado}\\
+  \indent $R = {1,2,\dots,r}$ conjunto de \textbf{índices dos caminhos}\\
   \indent $\theta : X \times \Sigma \rightarrow 2^R$ função de \textbf{estimação
     de caminho}\\
   \indent $x_0$ \textbf{estado inicial} \\
@@ -207,13 +207,17 @@ Considerando que $L_{Obs}\subseteq L_{Iden}$ então  $L_{Iden}^{\leq n_0}\approx
 }
 \end{frame}
 
-
 \begin{frame}{Caminhos Observados}
   \note{
 \begin{itemize}
-\item Os caminhos são formados por vetores e eventos
+\item Os caminhos são formados por vetores e eventos, provindos de um mesmo
+  estado inicial.
 \item Os eventos caracterizam a mudança do vetor E\slash S, exemplo a bordo de
   subida de 1 ...
+  \item os caminhos podem ser cíclicos (mostrar caminho 1 ) ou não (caminho 3). E
+    dentro deles podem haver ciclos também como caminho 2.
+    \item Contudo, nem sempre é possível conhecer bons caminhos, as vezes é
+      preciso extrair de uma sequencia de entradas e saídas.
 \end{itemize}}
   \setlength\arraycolsep{2pt}  \vspace{-0.5cm}
 \small \begin{align*}
@@ -224,6 +228,47 @@ Considerando que $L_{Obs}\subseteq L_{Iden}$ então  $L_{Iden}^{\leq n_0}\approx
 \centering
       \only<2>{$a$ = $\uparrow$2, $b$ = $\downarrow$1$\uparrow$3, \dots} 
 \end{frame}
+\begin{frame}{Obtenção de Caminhos}
+  \setlength\arraycolsep{2pt}
+ \small
+ \begin{align*}
+   {\only<2>{\color{blue}}\tikz[baseline]{
+            \node[anchor=base] (n1)
+            {\colvec{1\\0\\0}};
+        }},\colvec{1\\1\\0}
+        ,\colvec{0\\1\\1},\colvec{0\\0\\0},\colvec{0\\0\\1},\tikz[baseline]{
+            \node[anchor=base] (n2)
+            {\colvec{1\\0\\0}};
+        },\colvec{0\\0\\0},\colvec{1\\1\\0},\colvec{0\\1\\1},\colvec{0\\0\\0},\tikz[baseline]{
+            \node[anchor=base] (n3)
+            {\colvec{1\\0\\0}};
+        },\colvec{0\\1\\1},\tikz[baseline]{
+            \node[anchor=base] (n4)
+            {\colvec{1\\0\\0}};
+        }\dots \\
+\end{align*}
+ \begin{tikzpicture}[overlay]
+        \path[->,>=stealth,red]<3-> (n1) edge [in = -120, out= -60] node[below,black] {$p_1$} (n2);
+        \path[->,>=stealth,red]<4-> (n2) edge [in = 120, out= 60] node[above,black] {$p_2$} (n3);
+        \path[->,>=stealth,red]<5-> (n3) edge [in = -120, out= -60] node[below,black] {$p_3$} (n4);
+        % \path[->,>=stealth,red]<3> (n1) edge [bend right] (t2);
+        % \path[->,>=stealth,red]<3> (n2) edge [bend left] (t2);
+        % \path[->,>=stealth,red]<4> (n2) edge [bend right] (t3);
+        % \path[->,>=stealth,red]<4> (n3) edge [bend left] (t3);
+        % \path[->]<2-> (n2) edge [bend right] (t2);
+        % \path[->]<3-> (n3) edge [out=0, in=-90] (t3);
+\end{tikzpicture}
+\note{
+\begin{itemize}
+\item Como usa-se uma abordagem de caixa-preta e os caminhos não são conhecidos, eles
+são extraídos do csv da seguinte forma.
+\item Consideramos a seguinte sequencia vinda da observação do sistema
+  \item o primeiro vetor é considerado o inicial e toda vez que se repete um
+    novo caminho é gerado
+\end{itemize}
+}
+\end{frame}
+
 \newcommand{\vu}{\mathbf{u}}
 
 \begin{frame}{Caminhos Modificados}
@@ -323,6 +368,8 @@ y_{i,j}=\begin{cases}
   \label{fig:examplek2}
 \end{figure}
 \end{frame}
+
+
 
 %%% Local Variables:
 %%% mode: latex

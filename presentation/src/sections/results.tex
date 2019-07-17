@@ -28,7 +28,10 @@
 \item usando o método de obtenção de caminhos foram encontrados 2 caminhos.
   \item pode ser explicado ao fato de ter comportamento concorrente no sistema,
     o que torna raro de voltarem ao mesmo estado inicial.
-  \item vemos o aumento de estados com o valor de k
+    \item mas também mostra que o sistema não foi observado por tempo
+      suficiente. O que mostra que seria necessária a observação durante muitas
+      horas e talvez dias.
+  \item No gráfico vemos o aumento de estados com o valor de k
 \end{itemize}
   }
 \end{frame}
@@ -41,7 +44,10 @@
     \label{fig:daoctNdaaoOriginal}
 \end{figure}
   \note{
-\begin{itemize}
+    \begin{itemize}
+      \item Ndaao não usa os índices dos caminhos. Como poucos caminhos foram
+        encontrados não aparenta uma diferennça tão significativa entre os
+        modelos encontrados.
 \item Comparando o modelo daoct encontrado com NDAAO, que é outro modelo de identificação, vemos que daoct tem menor
   linguagem excedente
 \end{itemize}
@@ -116,7 +122,9 @@
   \caption{Linguagens Excedentes - DAOCT (o), NDAAO ($\times$).}
    \end{figure}
   \note{
-\begin{itemize}
+    \begin{itemize}
+      \item Como dessa vez existem mais caminhos, a diferença por causa do uso
+        dos índices de caminho do daoct aumenta.
 \item para k=1 vemos a diferença consideravel: DAOCT está 50000 enquanto NDAAO
   está 400000
 \item para k =3 enquanto NDAAO está acima de 700
@@ -220,8 +228,10 @@
   \note{
 \begin{itemize}
 \item Vemos a ordem descrita no exemplo
-\item Ainda não representa fielmente o descrito, mas representa melhor que o
-  modelo usando 000
+\item Esse modelo representa fielmente o descrito no exemplo.
+  \item podemos ver que o modelo depende de bons caminhos. E que
+    se não conhecemos é difícil julgar se os caminhos obtidos são de fato bons
+    ou não.
 \end{itemize}
   }
 \end{frame}
