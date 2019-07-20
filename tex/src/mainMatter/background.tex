@@ -1219,14 +1219,14 @@ Thus, the identified model must reduce the language $L_{Exc}^{\leq n_0}$.
 % Thus, the remaining identification problem is reducing the language
 % $L_{Exc}^{\leq n_0}$ and consequentially $L_{Exc}$.
 \newpage
-\subsection{DAOCT}
+\subsection{\todo{Deterministic Automaton with Outputs and conditional Transitions}}
 In this subsection the modified automaton model proposed by
 \cite{moreira2018enhanced} is explained and the algorithm to construct it
 by the observed paths $p_i$ is described. 
 \begin{definition}[DAOCT]
   \label{def:daoct}~\\
   A Deterministic Automaton, denoted by DAOCT, is a nine-tuple
-  \[ DAOCT = (X,\Sigma,f,\lambda,R,\theta, x_0,X_f)\] where:
+  \[ DAOCT = (X,\Sigma,\Omega,f,\lambda,R,\theta, x_0,X_f)\] where:
 
   \indent X is the set of \textbf{states} \\
   \indent $\Sigma$ is the finite set of \textbf{events}\\
@@ -1290,7 +1290,7 @@ Since $p_i^k=p_i$, for $k=1$, in order to better illustrate the
 construction of $p_i^k$, $k=2$ is chosen. Using \Autoref{eq:modifiedPath,eq:modifiedPathb} we can
 obtain the following modified paths: 
 \begin{align*}
-  p_1^2&= \left(\colvec{1\\0\\0},a,\colvec{1&1\\0&1\\0&0},b,\colvec{1&0\\1&1\\0&1},c,\colvec{0&0\\1&0\\1&0},d,\colvec{0&0\\0&0\\0&1},e,\colvec{0&1\\0&0\\0&0}\right) \\
+  p_1^2&= \left(\colvec{1\\0\\0},a,\colvec{1&1\\0&1\\0&0},b,\colvec{1&0\\1&1\\0&1},c,\colvec{0&0\\1&0\\1&0},d,\colvec{0&0\\0&0\\0&1},e,\colvec{0&1\\0&0\\1&0}\right) \\
   p_2^2&= \left(\colvec{1\\0\\0},g,\colvec{1&0\\0&0\\0&0},h,\colvec{0&1\\0&1\\0&0},b,\colvec{1&0\\1&1\\0&1},c,\colvec{0&0\\1&0\\1&0},i,\colvec{0&1\\0&0\\0&0},j,\colvec{1&0\\0&1\\0&1},l,\colvec{0&1\\1&0\\1&0}\right) \\
   p_3^2&= \left(\colvec{1\\0\\0},g,\colvec{1&0\\0&0\\0&0},h,\colvec{0&1\\0&1\\0&0},b,\colvec{1&0\\1&1\\0&1},i,\colvec{0&1\\1&1\\1&1},m,\colvec{1&0\\1&0\\1&0},d,\colvec{0&0\\0&0\\0&1},n,\colvec{0&1\\0&1\\1&0}\right) \\
 \end{align*}
