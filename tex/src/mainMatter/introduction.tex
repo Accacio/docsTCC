@@ -1,14 +1,14 @@
 
 \chapter{Introduction}
 In a world where the majority of the population lives in industrial societies,
-and machines take part on the bulk of the production of almost all goods, from
+and machines take part in the bulk of the production of almost all goods, from
 food to cosmetics and drugs, from toothbrushes to automobiles, 
-a well-paced throughput is crucial, and any non expected halt on the
+a well-paced throughput is crucial, and any non-expected halt on the
 production or change can be disastrous, producing sometimes multimillionaire debts,
 provoking a snowball effect, affecting the economy and consequentially the welfare of the society.
 
 A diverse number of causes of the halt or change of the throughput can be
-accounted for. Some are as simple as a power outage, or a component malfunction,
+accounted for. Some causes are simple as a power outage, or a component malfunction,
 but nowadays there are other players. As the industry \textsl{walks}, or even
 better \textsl{runs}, towards the so called Fourth Industrial Revolution, 
 it urges the use of \textit{connected sensors}, and since the Internet of
@@ -18,7 +18,7 @@ production throughput. There are two ways to attempt the reduction of the interf
 cause: prevention (before the interference) and remedy (after the interference).
 
 The most common means of prevention in the industry are through preventive
-maintenance (for the physical components) and cyber security (for the software
+maintenance (for the physical components) and cyber-security (for the software
 components).
 
 Once the interference is caused, in order to remedy and reestablish
@@ -33,7 +33,6 @@ it is not.
 The focus of this work is system identification aimed for fault
 detection and diagnosis.
 
-\todo{Fugir da abordagem usar comportamento normal SAMPATH artigo Marcos }
 % A diverse number of causes of the halt or change of the throughput can be
 % accounted for. Some are as simple as a power outage, or a component malfunction,
 % but nowadays there are other players. As the industry \textsl{walks}, or even
@@ -55,8 +54,20 @@ Discrete Event Systems.
 
 On the literature, we can find an expressive number of articles using Discrete
 Event Systems for identification, fault detection and fault diagnosis.
-\cite{veras2018distributed,cabral2017synchronous,kumar2014comments,klein2005fault}
-\todo{adicionar trabalhos da banca}can be used as examples.
+\cite{veras2018distributed,cabral2017synchronous,kumar2014comments,klein2005fault,CARVALHO2017315,VIANA2019354,sampath1995}
+can be used as examples.
+
+The procedure for detection and isolation of failure events proposed in
+\cite{sampath1995} is based on the complete system behaviour. Although this
+procedure is used for small systems, applying
+the same procedure on larger systems can be challenging. The difficulty on the
+implementation of the procedure for large systems is caused by the concurrent
+behaviour they can present. As the procedure is based on the system behaviour,
+it is necessary to know the system and also people that are familiar with
+discrete-event modelling techniques. So, other approaches were created in order
+to make the modelling process automatically repeatable and without the need of
+knowing the system, using observation of the system and modelling algorithms. 
+
 
 This work is based on \cite{moreira2018enhanced}, that
 develops an algorithm to identify a model of the system using its inputs

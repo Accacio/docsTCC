@@ -43,7 +43,7 @@
  \renewcommand*{\glossentry}[2]{%
  \glstarget{##1}{\glossentryname{##1}}\\% \kill % the entry name
  \=\glossentrysymbol{##1}% the symbol in brackets
- \space \glossentrydesc{##1} \\% the description
+ \quad \glossentrydesc{##1} \\~\\% the description
  % \space p. ##2\\
  % the number list in square brackets
  }%
@@ -64,7 +64,7 @@
  \renewcommand*{\glsgroupskip}{}%
  % set how each entry should appear:
  \renewcommand*{\glossentry}[2]{%
- \glstarget{##1}{\glossentryname{##1}}\\% \kill % the entry name
+ \glstarget{##1}{\glossentryname{##1}} :% \kill % the entry name
  \=\textbf{\glossentrysymbol{##1}}% the symbol in brackets
  
  \space \glossentrydesc{##1}\\% the description
@@ -106,18 +106,18 @@
 \acr{CIPNs}{CIPNs}{Control Interpreted Petri Nets}
 
 % DAOCT
-\symbl{OmegaSet}{$\Omega$}{$\Omega \subset \mathbb{N}_1^{m_i + m_0}$ Set of IO vectors}
+\symbl{OmegaSet}{$\Omega$}{Set of IO vectors}
 \symbl{SigmaSet}{$\Sigma$}{Set of events}
 \symbl{XSet}{$X$}{Set of states}
-\symbl{ffunction}{$f$}{$f : X \times \Sigma^* \rightarrow X$ Deterministic
+\symbl{ffunction}{$f$}{Deterministic
   transition function}
-\symbl{lambdafunction}{$\lambda$}{$\lambda : X \rightarrow \Omega$ State
+\symbl{lambdafunction}{$\lambda$}{State
   output function}
-\symbl{RSet}{$R$}{$R = \{1,2,\dots,r\} $ Set of path indices}
-\symbl{thetafunction}{$\theta$}{$\theta : X \times \Sigma \rightarrow 2^R$ Path
+\symbl{RSet}{$R$}{Set of path indices}
+\symbl{thetafunction}{$\theta$}{Path
   estimation function}
 \symbl{xZero}{$x_0$}{Initial State}
-\symbl{XfSet}{$X_f$}{$X_f \subseteq X$ Set of final states}
+\symbl{XfSet}{$X_f$}{Set of final states}
 %%% Local Variables:
 %%% mode: latex
 %%% TeX-master: "./monografia.tex"

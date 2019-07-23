@@ -567,14 +567,17 @@ T\kern-.1667em\lower.5ex\hbox{E}\kern-.125emX\spacefactor1000}
   \end{tabularx}\par
   \vspace*{2mm}
   \noindent\local@deptstring: \local@deptname\par
-  \vspace*{7mm}}{\par \vspace*{7mm}
-      \count1=0
-      \count2=1
-      \nohyphens{\@whilenum \count1<\value{keywords} \do {%
-        \number\count2. \csname CoppeKeyword:\the\count1 \endcsname.
-        \advance\count1 by 1
-        \advance\count2 by 1}}
-  \vspace*{\fill}}
+  \vspace*{7mm}}
+{
+  \par \vspace*{7mm}
+  %     \count1=0
+  %     \count2=1
+  %     \nohyphens{\@whilenum \count1<\value{keywords} \do {%
+  %       \number\count2. \csname CoppeKeyword:\the\count1 \endcsname.
+  %       \advance\count1 by 1
+  %       \advance\count2 by 1}}
+    \vspace*{\fill}
+  }
 \newenvironment{foreignabstract}{%
   \clearpage
   \thispagestyle{plain}
@@ -612,16 +615,18 @@ T\kern-.1667em\lower.5ex\hbox{E}\kern-.125emX\spacefactor1000}
   \end{tabularx}\par
   \vspace*{2mm}
   \noindent\foreign@deptstring: \foreign@deptname\par
-  \vspace*{7mm}}{%
+  \vspace*{7mm}}
+{%
   \end{otherlanguage}
 \par \vspace*{7mm}
-      \count1=0
-      \count2=1
-      \nohyphens{\@whilenum \count1<\value{keywords} \do {%
-        \number\count2. \csname CoppeKeyword:\the\count1 \endcsname.
-        \advance\count1 by 1
-        \advance\count2 by 1}}
-  \vspace*{\fill}}
+      % \count1=0
+      % \count2=1
+      % \nohyphens{\@whilenum \count1<\value{keywords} \do {%
+      %   \number\count2. \csname CoppeKeyword:\the\count1 \endcsname.
+      %   \advance\count1 by 1
+      %   \advance\count2 by 1}}
+    \vspace*{\fill}
+  }
   % \vspace*{\fill}
   % \global\let\@author\@empty
   % \global\let\@date\@empty

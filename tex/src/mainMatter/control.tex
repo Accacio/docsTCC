@@ -1,7 +1,6 @@
 
 \chapter{Control Logic}
 \label{cha:control}
-\todo{reduzir e juntar e}
 A \CIPN{} can be used to
 represent the control of the system, and then this Petri net can be converted
 into a \LD, with the aim of being implemented in a \PLC. So, this chapter will be
@@ -23,10 +22,10 @@ Nets will be presented along with tables that describe the meaning of each place
 and transition.
 
 \begin{observation}
-  Each Petri net shown in this chapter is a section of a complete Petri net.
+  Each Petri net shown in this chapter is a part of a complete Petri net.
  The complete one is presented in \Autoref{cha:CompletePetriNet}. The dotted
-  places\slash transitions represent places\slash transitions that are part of
-  other sections of the Petri net.
+  places\slash transitions represent places\slash transitions that belong to
+  other parts of the complete Petri net.
 %   In the
 % digital form of this work, it is possible to travel between figures by clicking
 % the name of the dotted places\slash transitions. By clicking in normal
@@ -107,11 +106,11 @@ The corresponding Petri net and tables can be seen in
 {petriPress}
 \subsection{Arm From Assembly Unit To Storage Unit}
 This module uses the arm to move the cube from the Assembly Unit Holder
-to the storage device of the Storage Unit. An additional encoder similar to \newline
-\verb|Storage Unit Horizontal Encoder| was placed just beside this same encoder.
+to the storage device of the Storage Unit. An additional encoder similar to 
+\texttt{Storage Unit Horizontal Encoder} was placed just beside this same encoder.
 In order to
-help the alignment of the arm with the Storage Device. This new encoder is called \newline
-\verb|Storage Unit Arm Alignment Encoder|, and is presented in the logic of this module.
+help the alignment of the arm with the Storage Device. This new encoder is called 
+\texttt{Storage Unit Arm Alignment Encoder}, and is presented in the logic of this module.
 The corresponding Petri net and tables can be seen in
 \Autoref{fig:petriPress} and \Autoref{tab:armPressToStorageTransitions,tab:armPressToStoragePlaces}.
 \input{../../figures/petriNet/partial/armPressToStorageTransitions}

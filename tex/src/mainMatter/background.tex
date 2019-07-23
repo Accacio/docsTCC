@@ -136,7 +136,7 @@ are a more compact way of expressing the
 system's behaviour.
 
 In the following subsections two of the most known representations will be
-presented: Automata and Petri Nets.
+presented: Automata and Petri nets.
 
 % \pagebreak
 \subsection{Automata}
@@ -465,7 +465,7 @@ $\Sigma=\{a,b\}$ and labelling functions $l(t_0)=a$ and $l(t_1)=b$.
 
 \section{Control Interpreted Petri Nets}
 \label{sec:cipn}
-One of the important application of Petri nets, besides modeling a system, is its
+One of the important application of Petri nets, besides modelling a system, is its
 ability to model the control of a system. For this intent we use \CIPNs. It is an
 extension of labelled Petri nets, in which we add actions to places, so it is
 possible to change the outputs of the system, conditions to the transitions, so it
@@ -592,7 +592,7 @@ the loop.
   \caption{Example of System to be controlled by the Petri Net}
   \label{fig:cipnexamplescheme}
 \end{figure}
-From the description of the control it is possible to create a \CIPN{} to represent it, as the one in \autoref{fig:cipnexample}
+From the description of the control it is possible to create a \CIPN{} to represent it, as the one in \autoref{fig:cipnexample}.
 
 
 \begin{figure}[H]
@@ -751,7 +751,7 @@ binary conjunction and negation.
 To show that the ladder logic is functional complete we need only to present how
 to construct this two connectors in it.
 The conjunction of two inputs, can be made using two contacts in series, as
-shown in \autoref{fig:ladderSeries}
+shown in \autoref{fig:ladderSeries}.
 \begin{figure}[H]
   \centering \includegraphics{ladder/series.tikz}
   \caption{And logic in a Ladder rung.}
@@ -842,6 +842,8 @@ It consists in dividing the \CIPN{} into 4 modules:
  )
 \item A module of Petri Net dynamics\\
 Uses the $Pre$ and $Post$ functions to determine the dynamics of the Petri net
+\item A module of initialization\\
+  It determines the initial marking of the net.
 \item A module of actions\\
   It determines the places where each action is performed.
 \end{enumerate}
@@ -885,6 +887,13 @@ marking of those places can be represented by boolean variables. Set and Reset c
 represent the marking of such places.
 Again, for organisation's sake a rung is associated for each transition,
 resulting $|T|$ rungs.
+
+\subsubsection{Initialization}
+The Initialization module works similarly to the dynamics module. A
+initial transition is created and when this transition is fired, the marking of
+the Petri net is changed to its initial marking. When the system is turned on, the condition for firing this
+initial transition is true and it is disabled immediately, so this transition
+can only be fired once, in the initialization phase. 
 
 \subsubsection{Actions}
 In the Action module, we use coils to act on the outputs. Depending on the type
@@ -971,7 +980,13 @@ protocol. Siemens \PLCs{} have two function blocks called ``Get'' and
 ``Put'', that are used to establish data transfer between two \PLCs{} using the
 Profinet protocol. Tutorials on how to configure those blocks can be found on \citep{antunesfloriano2019sincronizacao,oliveira2016protocolo,rochapereira2019automacao}.
 The complete implementation of the \CIPN{} depicted in
-\Autoref{fig:communicationPlcPN} using \LD{} is shown in \autoref{fig:communicationPlcPNLadder}.
+\Autoref{fig:communicationPlcPN} using \LD{} is shown in
+\autoref{fig:communicationPlcPNLadder}. In
+\Autoref{fig:communicationPlcPN1Ladder,fig:communicationPlcPN2Ladder}, we can see
+the
+conditions for transition $b0$ being transmitted from \PLC 1 to \PLC 2, and the
+conditions for transition $b1$ being transmitted from \PLC 2 to PLC 1. Since the
+dynamic of both conditions is divided in the two \PLCs.
 
   \begin{figure}[H]
     \centering
@@ -1219,13 +1234,15 @@ Thus, the identified model must reduce the language $L_{Exc}^{\leq n_0}$.
 % Thus, the remaining identification problem is reducing the language
 % $L_{Exc}^{\leq n_0}$ and consequentially $L_{Exc}$.
 \newpage
-\subsection{\todo{Deterministic Automaton with Outputs and conditional Transitions}}
+\subsection{Deterministic Automaton
+  with Outputs and Conditional Transitions}
 In this subsection the modified automaton model proposed by
 \cite{moreira2018enhanced} is explained and the algorithm to construct it
 by the observed paths $p_i$ is described. 
 \begin{definition}[DAOCT]
   \label{def:daoct}~\\
-  A Deterministic Automaton, denoted by DAOCT, is a nine-tuple
+  A Deterministic Automaton
+  with Outputs and Conditional Transitions, denoted by DAOCT, is a nine-tuple
   \[ DAOCT = (X,\Sigma,\Omega,f,\lambda,R,\theta, x_0,X_f)\] where:
 
   \indent X is the set of \textbf{states} \\
@@ -1306,8 +1323,9 @@ function $\tilde{\lambda}$ associates a sequence of I\slash O vectors $\omega^k
 as the last vector of $\tilde{\lambda}(x)$.
 These functions are used in the
 identification algorithm of the \DAOCT{} model.
-% This identification algorithm, adapted from
-% \cite{moreira2018enhanced}, is presented in algorithm \ref{alg:identification}.
+
+This identification algorithm, adapted from
+\cite{moreira2018enhanced}, is presented in algorithm \ref{alg:identification}.
 
 
 \vspace{1cm}
@@ -1343,6 +1361,10 @@ identification algorithm of the \DAOCT{} model.
 \end{algorithm2e}
 
 \vspace{1cm}
+
+In this algorithm, each state created represents an unique vertex of the
+modified paths, and the states marked as final states represent the last vertex
+of each modified path. 
 
 Using the modified paths $p_1^1,p_2^1,p_3^1$,
 % that are equal to the normal paths $p_1,p_2,p_3$,

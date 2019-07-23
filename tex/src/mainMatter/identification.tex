@@ -28,47 +28,16 @@ be acquired in batches, and once all the data is collected, the algorithm can be
 executed.
 
 The most straightforward way to obtain the data from a Siemens \PLC{} is by
-using data logs. The Siemens \PLC{} S7-1500 includes function blocks to
+using datalogs \citep{datalogSiemens}. The Siemens \PLC{} S7-1500 includes function blocks to
 use inside a \LD{} to store custom data in a \CSV{} formatted file. This file is
 saved in a SD card. In order to download this file to a computer, the SD card can be connected to a PC,
 or the file can be downloaded using a web browser, if a Web Server is configured in the
 \PLC.
 
 The five function blocks used to log data are called
-\verb|DataLogCreate|,
-\verb|DataLogOpen|, \verb|DataLogWrite|, \verb|DataLogClose| and \verb|DataLogDelete|.
+\texttt{DataLogCreate},
+\texttt{DataLogOpen}, \texttt{DataLogWrite}, \texttt{DataLogClose} and \texttt{DataLogDelete}.
 These blocks are shown in the \LD{} of \Autoref{fig:datalogcreate,fig:datalogopen,fig:datalogwrite,fig:datalogclose,fig:datalogdelete}.
-
-
-% \begin{figure}[H] \centering
-%  \includegraphics[width=0.5\textwidth,clip,trim={0 0 3cm 0}]{tutorial/create}
-%   \caption{DataLogCreate block.}
-%   \label{fig:datalogcreate}
-% \end{figure}
-
-% \begin{figure}[H] \centering
-%  \includegraphics[width=0.5\textwidth,clip,trim={0 0 3cm 0}]{tutorial/open}
-% \caption{DataLogOpen block.}
-%   \label{fig:datalogopen}
-% \end{figure}
-
-% \begin{figure}[H] \centering
-% 	\includegraphics[width=0.5\textwidth,clip,trim={0 0 3cm 0}]{tutorial/write}
-% 	\caption{DataLogWrite block.}
-% 	\label{fig:datalogwrite}
-% \end{figure}
-
-% \begin{figure}[H] \centering
-%  \includegraphics[width=0.5\textwidth,clip,trim={0 0 3cm 0}]{tutorial/close}
-%   \caption{DataLogClose block.}
-%   \label{fig:datalogclose}
-% \end{figure}
-
-% \begin{figure}[H] \centering
-%  \includegraphics[width=0.7\textwidth,clip,trim={0 0 3cm 0}]{tutorial/delete}
-%   \caption{DataLogDelete block.}
-%   \label{fig:datalogdelete}
-% \end{figure}
 
 \begin{figure}[H] \centering
 \begin{minipage}{.45\textwidth}
@@ -111,8 +80,13 @@ These blocks are shown in the \LD{} of \Autoref{fig:datalogcreate,fig:datalogope
   \label{fig:datalogdelete}
 \end{minipage}
 \end{figure}
-\todo{explicar melhor cada bloco}The actions performed by these blocks are: Create the \verb|.csv| file, open the
-file to be written, write data to the file, close the file, and delete the file. 
+
+The \texttt{DataLogCreate} block creates the \texttt{.csv} file.
+The \texttt{DataLogOpen} block opens the file, allowing it to be written.
+The \texttt{DataLogWrite} block writes the data to the file.
+The \texttt{DataLogClose} block closes the file, forbidding it to be
+written. The \texttt{DataLogDelete} block deletes the file if it is needed.
+
 The inputs and outputs of these blocks are used to determine the information
 about the \verb|.csv| file and the data to be stored.
 % Most of the inputs and outputs of the presented blocks are similar.
@@ -327,7 +301,7 @@ and
 Where the address ``192.168.2.132'' should be the address of the \PLC{} in which
 the web server is running and ``name\_of\_the\_file.csv'' should be the name of the file.
 
-Once the \verb|.csv| is downloaded to the PC, the paths can be obtained from the data and the identification algorithm can
+Once the \verb|.csv| file is downloaded to the PC, the paths can be obtained from the data and the identification algorithm can
 be executed. The acquisition of the paths and the identification algorithm, \Autoref{alg:identification}, were
 implemented in python.
 
@@ -356,7 +330,7 @@ If we analyse the path $p_2$ from \Autoref{sec:identification}, we can notice th
 \begin{align*}
   p_2&= \left(\colvec{1\\0\\0},g,\colvec{0\\0\\0},h,\colvec{1\\1\\0},b,\colvec{0\\1\\1},c,\colvec{0\\0\\0},i,{\color{gray} \colvec{1\\0\\0}},j,\colvec{0\\1\\1},l,\colvec{1\\0\\0}\right) \\
 \end{align*}
-Since is not possible to have a repeated vector in a path using the method proposed, this path $p_2$ is divided in two, resulting on the $p_2$ and $p_3$ of this section. 
+Since it is not possible to have a repeated vector in a path using the method proposed, this path $p_2$ is divided in two, resulting on the $p_2$ and $p_3$ of this section. 
 
  The change in the number of paths is reflected on the
  identified model. Choosing $k=1$ and $k=2$ for the modified paths and executing the identification algorithm, the models depicted in \Autoref{fig:identExamplekone,fig:identExamplektwo} were obtained.
